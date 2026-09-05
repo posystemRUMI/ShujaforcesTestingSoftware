@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed-variant":"#354c3a","secondary-container":"#ceead1","surface-variant":"#d9e3f6","on-secondary-fixed":"#092011","secondary-fixed-dim":"#b2cdb6","primary":"#000000","primary-fixed-dim":"#bac7dc","on-tertiary":"#ffffff","inverse-primary":"#bac7dc","surface-container-highest":"#d9e3f6","on-primary-fixed-variant":"#3b4858","on-primary-fixed":"#0f1c2b","on-error":"#ffffff","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#e4c377","on-secondary":"#ffffff","on-primary-container":"#788598","on-secondary-container":"#526a56","surface-container-high":"#dee9fc","on-background":"#121c2a","tertiary-fixed":"#ffdf98","surface-dim":"#d0dbed","outline-variant":"#c5c6cc","surface":"#f8f9ff","surface-container":"#e6eeff","on-tertiary-fixed-variant":"#5a4301","on-surface-variant":"#44474c","on-primary":"#ffffff","error-container":"#ffdad6","on-tertiary-container":"#513c00","error":"#ba1a1a","secondary-fixed":"#ceead1","primary-container":"#0f1c2b","inverse-surface":"#27313f","primary-fixed":"#d6e3f8","surface-tint":"#535f71","inverse-on-surface":"#eaf1ff","secondary":"#4c6451","background":"#f8f9ff","on-surface":"#121c2a","outline":"#75777d","surface-container-low":"#eff4ff","tertiary":"#745b19","tertiary-container":"#c6a75e","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-tertiary-fixed":"#251a00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"24px","grid-margin":"24px","space-2xs":"2px","space-base":"16px","space-xs":"4px","space-sm":"8px","space-md":"12px","space-xl":"32px","space-3xl":"64px","grid-gutter":"16px","space-2xl":"48px"},"fontFamily":{"headline-xl-mobile":["Geist"],"label-code":["Geist"],"body-sm":["Inter"],"display-hero":["Geist"],"headline-md":["Geist"],"headline-sm":["Geist"],"headline-xl":["Geist"],"caption-caps":["Geist"],"body-lg":["Inter"],"label-tabular":["Geist"],"body-md":["Inter"],"headline-lg":["Geist"]},"fontSize":{"headline-xl-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"caption-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.1em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-tabular":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="h-16 flex items-center px-space-base gap-space-sm bg-primary-container shrink-0"><img alt="Forces Academy Official Insignia Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xq0mtWO3Tu8FZEW0ZmFWK2udXHODJ-fPpXHfChswjXEZwK2IscnTwG4XM59SkcK2p6GrwVTl3SL3wet4wtmsZhCQ9gusB3Yx2VB2hziXDX3p-h5yBz8zU4zAH-LHxH3zbN_F7CFeHgXwL3wb71-cXBgfthCbq7njM8KlXWL9xI6YEbbY4HdZFlH5aOSH3OJp6MwywWGzhFrKh8lBDvLw-E8RSnKoLIWxsTAmmcsSNIvhxrscrtbfkkXXI"/><div class="flex flex-col overflow-hidden"><span class="font-headline-sm text-headline-sm text-surface truncate">FORCES ACADEMY</span><span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-primary-container truncate">Testing Protocol</span></div></div><div class="overflow-y-auto flex-1 px-space-sm py-space-sm space-y-space-md"><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Operations</span><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-surface-container-high text-on-surface font-headline-sm rounded" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="truncate">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="students" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="truncate">Students</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="teachers" href="#"><span class="material-symbols-outlined text-[18px]">badge</span><span class="truncate">Teachers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="batches" href="#"><span class="material-symbols-outlined text-[18px]">military_tech</span><span class="truncate">Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="question-bank" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="truncate">Question Bank</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">quiz</span><span class="truncate">Tests</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="live-monitoring" href="#"><div class="flex items-center gap-space-sm min-w-0"><span class="material-symbols-outlined text-[18px] text-error">videocam</span><span class="truncate">Live Monitoring</span></div><span class="bg-error text-on-error font-label-tabular text-label-tabular px-space-xs py-space-2xs rounded">24</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="results" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span class="truncate">Results</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="retakes" href="#"><span class="material-symbols-outlined text-[18px]">replay</span><span class="truncate">Retakes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span class="truncate">Reports</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Configuration</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="forces" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="truncate">Forces</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="courses" href="#"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="truncate">Courses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="subjects" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span><span class="truncate">Subjects</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">System</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="truncate">Settings</span></a></nav></div></div><div class="p-space-base bg-surface-container-lowest shrink-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0"><span class="font-label-tabular text-label-tabular text-on-surface font-semibold truncate">Muhammad Usman</span><span class="font-caption-caps text-caption-caps text-on-surface-variant truncate">Senior Instructor</span></div></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">home</span><span>/</span><span class="text-on-surface font-semibold">Console</span></div><div class="relative w-80 max-w-sm"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-10 pl-9 pr-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)] placeholder:text-on-surface-variant/70" placeholder="Search students, tests, questions..." type="text"/></div></div><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-label-code text-label-code"><span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span><span>TELEMETRY ONLINE</span></div><span class="font-label-tabular text-label-tabular px-space-sm py-space-2xs bg-surface-container-high text-on-surface rounded">SPRING 2026</span><div class="relative flex items-center"><button class="w-10 h-10 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></div><button class="flex items-center gap-space-xs px-space-base h-10 bg-primary text-on-primary rounded font-label-tabular text-label-tabular shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-surface-tint hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[18px]">cached</span><span>Switch Role</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-lg bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-3xl space-y-space-lg">
+<!-- Top Page Header Strip -->
+<section class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-base bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-tabular text-label-tabular mb-space-xs">
+<span>Console</span>
+<span>/</span>
+<span class="text-on-surface font-semibold">Question Bank</span>
+<span class="px-space-xs py-space-2xs bg-secondary-container text-on-secondary-container rounded font-label-code text-label-code uppercase tracking-wider ml-space-xs">Verified V2.8</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Question Bank & Content Management</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Centralized repository of verified exam questions for Pakistan Army (PMA Long Course / TCC), Pakistan Air Force (GDP / CAE / AD), and Pakistan Navy (PN Cadet) operational cadres.
+      </p>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-primary-container text-on-primary rounded font-label-tabular text-label-tabular hover:bg-surface-tint transition-all shadow-sm" onclick="toggleAuthoringModal(true)">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">add_circle</span>
+<span>+ Add New Question</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-surface-container-high text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-variant transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">rule_folder</span>
+<span>Create Multi-Step Test</span>
+</button>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md h-10 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-container-high transition-colors shadow-sm" title="Batch CSV/Docx Import">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span class="hidden sm:inline">Import</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md h-10 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-container-high transition-colors shadow-sm" title="Export Repository">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="hidden sm:inline">Export</span>
+</button>
+</div>
+</div>
+</section>
+<!-- KPI Summary Metric Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-base">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Total Questions</span>
+<span class="p-space-xs rounded bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">2,480</span>
+<span class="font-label-tabular text-label-tabular text-secondary flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span> +142 this mo.
+        </span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Active In Bank</span>
+<span class="p-space-xs rounded bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">2,216</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Ready for Mocks</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 89%;"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Faculty Review</span>
+<span class="p-space-xs rounded bg-tertiary-fixed text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]">pending_actions</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">184</span>
+<span class="font-label-code text-label-code text-tertiary font-medium">Pending Moderation</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 7.4%;"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Archived / Retired</span>
+<span class="p-space-xs rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">80</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Historical Cadre</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-outline text-surface h-full rounded-full" style="width: 3.6%;"></div>
+</div>
+</div>
+</section>
+<!-- View Mode Switcher / Tabs -->
+<section class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-lowest px-space-base py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-base py-space-xs rounded font-label-tabular text-label-tabular bg-primary-container text-on-primary shadow-sm transition-all" id="tab-repo-btn" onclick="switchView('repo')">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+<span>Question Repository Table (2,480)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-base py-space-xs rounded font-label-tabular text-label-tabular bg-surface-container-high text-on-surface hover:bg-surface-container transition-all" id="tab-studio-btn" onclick="switchView('studio')">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+<span>+ Add New Question Studio</span>
+<span class="px-space-xs py-space-2xs text-[10px] bg-tertiary text-on-tertiary rounded font-label-code ml-space-2xs">Split Sandbox</span>
+</button>
+</div>
+<div class="flex items-center gap-space-base text-on-surface-variant font-label-tabular text-label-tabular">
+<span class="flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Database Sync: OK
+      </span>
+<span class="hidden md:inline font-label-code text-label-code text-on-surface-variant">REV-2026.04</span>
+</div>
+</section>
+<!-- FILTERS & SEARCH ROW -->
+<section class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm space-y-space-md">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm items-center">
+<!-- Search -->
+<div class="md:col-span-4 relative">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-space-sm bg-surface-container-low rounded text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-inner placeholder:text-on-surface-variant/60 transition-all" placeholder="Search questions by ID, stem keywords, formula, concept..." type="text"/>
+</div>
+<!-- Dropdown: Branch/Force -->
+<div class="md:col-span-2">
+<select class="w-full h-10 px-space-sm bg-surface-container-low rounded text-on-surface font-label-tabular text-label-tabular focus:outline-none focus:ring-1 focus:ring-primary shadow-inner">
+<option>All Forces (Army, Navy, PAF)</option>
+<option>Pakistan Army (PMA / TCC)</option>
+<option>Pakistan Air Force (GDP / CAE)</option>
+<option>Pakistan Navy (PN Cadet)</option>
+</select>
+</div>
+<!-- Dropdown: Subject -->
+<div class="md:col-span-2">
+<select class="w-full h-10 px-space-sm bg-surface-container-low rounded text-on-surface font-label-tabular text-label-tabular focus:outline-none focus:ring-1 focus:ring-primary shadow-inner">
+<option>All Subjects</option>
+<option>Verbal Intelligence</option>
+<option>Non-Verbal Intelligence</option>
+<option>Physics (Academic)</option>
+<option>Mathematics (Academic)</option>
+<option>English Grammar & Vocab</option>
+<option>Pakistan Studies & GK</option>
+</select>
+</div>
+<!-- Dropdown: Type -->
+<div class="md:col-span-2">
+<select class="w-full h-10 px-space-sm bg-surface-container-low rounded text-on-surface font-label-tabular text-label-tabular focus:outline-none focus:ring-1 focus:ring-primary shadow-inner">
+<option>All Types</option>
+<option>MCQ Single Choice</option>
+<option>Formula & Calculation</option>
+<option>Spatial Matrix Pattern</option>
+<option>Comprehension Passage</option>
+</select>
+</div>
+<!-- Dropdown: Status & Reset -->
+<div class="md:col-span-2 flex items-center gap-space-xs">
+<select class="w-full h-10 px-space-sm bg-surface-container-low rounded text-on-surface font-label-tabular text-label-tabular focus:outline-none focus:ring-1 focus:ring-primary shadow-inner">
+<option>Active Only</option>
+<option>Under Review</option>
+<option>Archived</option>
+<option>All Statuses</option>
+</select>
+<button class="h-10 px-space-sm bg-surface-container-high hover:bg-surface-variant text-on-surface rounded flex items-center justify-center transition-colors" title="Reset Filters">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- VIEW 1: REPOSITORY TABLE -->
+<div class="flex flex-col space-y-space-base" id="repository-view">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="bg-surface-container text-on-surface font-caption-caps text-caption-caps uppercase tracking-wider">
+<th class="py-space-md px-space-base w-24">Item ID</th>
+<th class="py-space-md px-space-base">Question Stem & Contents</th>
+<th class="py-space-md px-space-base w-48">Subject & Cadre</th>
+<th class="py-space-md px-space-base w-40">Forces</th>
+<th class="py-space-md px-space-base w-32">Format</th>
+<th class="py-space-md px-space-base w-28">Status</th>
+<th class="py-space-md px-space-base w-44">Author / Reviewer</th>
+<th class="py-space-md px-space-base text-right w-36">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-space-base px-space-base font-label-code text-label-code font-bold text-on-surface whitespace-nowrap">
+<span class="bg-surface-container-high px-space-xs py-space-2xs rounded">Q-1084</span>
+</td>
+<td class="py-space-base px-space-base max-w-lg">
+<p class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+                  Choose the word most nearly opposite in meaning to <strong class="text-primary font-bold">OBDURATE</strong>:
+                </p>
+<div class="flex flex-wrap gap-space-xs mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="bg-surface-container px-space-xs rounded">A. Adamant</span>
+<span class="bg-secondary-container text-on-secondary-container font-semibold px-space-xs rounded">B. Compliant ✓</span>
+<span class="bg-surface-container px-space-xs rounded">C. Callous</span>
+<span class="bg-surface-container px-space-xs rounded">D. Rigid</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Verbal Intelligence</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vocabulary & Antonyms</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-2xs bg-primary-container text-on-primary rounded font-caption-caps text-caption-caps uppercase" title="Pakistan Army">PA</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-highest text-on-surface rounded font-caption-caps text-caption-caps uppercase" title="Pakistan Air Force">PAF</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-highest text-on-surface rounded font-caption-caps text-caption-caps uppercase" title="Pakistan Navy">PN</span>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular text-on-surface-variant">
+<span class="inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">text_fields</span> Text MCQ
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-caption-caps text-caption-caps font-semibold uppercase tracking-wider inline-flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">M. Usman</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Senior Instructor</span>
+</td>
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="quickPreview('Q-1084')" title="Candidate View Preview">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="switchView('studio')" title="Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-secondary-container text-on-surface transition-colors" title="Add to Active Test">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<td class="py-space-base px-space-base font-label-code text-label-code font-bold text-on-surface whitespace-nowrap">
+<span class="bg-surface-container-high px-space-xs py-space-2xs rounded">Q-1085</span>
+</td>
+<td class="py-space-base px-space-base max-w-lg">
+<p class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+                  A projectile is fired at an angle <code class="font-label-code text-label-code bg-surface-container px-space-xs rounded">θ = 45°</code> with initial velocity <code class="font-label-code text-label-code bg-surface-container px-space-xs rounded">v₀ = 20 m/s</code>. Neglecting air resistance, what is its maximum height achieved? (g = 10 m/s²)
+                </p>
+<div class="flex items-center gap-space-sm mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-label-tabular text-label-tabular font-semibold text-secondary">Key: H_max = (v₀² sin²θ) / 2g = 10.0 m</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Academic Core</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Physics (Ballistics)</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-2xs bg-primary-container text-on-primary rounded font-caption-caps text-caption-caps uppercase" title="Army Technical Cadet Course">PA (TCC)</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-highest text-on-surface rounded font-caption-caps text-caption-caps uppercase" title="PAF CAE / GDP">PAF (CAE)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular text-on-surface-variant">
+<span class="inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">calculate</span> Formula MCQ
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-caption-caps text-caption-caps font-semibold uppercase tracking-wider inline-flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Engr. Tariq Niazi</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Physics Specialist</span>
+</td>
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="quickPreview('Q-1085')" title="Candidate View Preview">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="switchView('studio')" title="Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-secondary-container text-on-surface transition-colors" title="Add to Active Test">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<td class="py-space-base px-space-base font-label-code text-label-code font-bold text-on-surface whitespace-nowrap">
+<span class="bg-surface-container-high px-space-xs py-space-2xs rounded">Q-1086</span>
+</td>
+<td class="py-space-base px-space-base max-w-lg">
+<div class="flex items-start gap-space-sm">
+<!-- Tactical Matrix Diagram Thumbnail SVG -->
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center shrink-0">
+<svg class="w-8 h-8 text-on-surface" fill="none" stroke="currentColor" viewbox="0 0 32 32">
+<rect height="28" rx="2" stroke-width="1.5" width="28" x="2" y="2"></rect>
+<line stroke-dasharray="2 2" stroke-width="1" x1="16" x2="16" y1="2" y2="30"></line>
+<line stroke-dasharray="2 2" stroke-width="1" x1="2" x2="30" y1="16" y2="16"></line>
+<circle cx="8" cy="8" fill="currentColor" r="3"></circle>
+<polygon fill="currentColor" points="24,20 28,28 20,28"></polygon>
+</svg>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">
+                      Identify the 4th logical vector matrix in 45° clockwise sequential increment with inverted apex dots.
+                    </p>
+<span class="inline-flex items-center gap-space-2xs font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+<span class="material-symbols-outlined text-[14px]">image</span> 3 Sequential Matrix Steps Attached
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Non-Verbal Intelligence</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Spatial Vector Matrix</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-2xs bg-primary-container text-on-primary rounded font-caption-caps text-caption-caps uppercase">PA</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-highest text-on-surface rounded font-caption-caps text-caption-caps uppercase">PAF</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-highest text-on-surface rounded font-caption-caps text-caption-caps uppercase">PN</span>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular text-on-surface-variant">
+<span class="inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">grid_view</span> Diagram Matrix
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-caption-caps text-caption-caps font-semibold uppercase tracking-wider inline-flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Capt. Rehan (Retd)</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Psych Evaluator</span>
+</td>
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="quickPreview('Q-1086')" title="Candidate View Preview">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="switchView('studio')" title="Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-secondary-container text-on-surface transition-colors" title="Add to Active Test">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<td class="py-space-base px-space-base font-label-code text-label-code font-bold text-on-surface whitespace-nowrap">
+<span class="bg-surface-container-high px-space-xs py-space-2xs rounded">Q-1087</span>
+</td>
+<td class="py-space-base px-space-base max-w-lg">
+<p class="font-headline-sm text-headline-sm text-on-surface">
+                  Which constitutional amendment or presidential order established the Federal Shariat Court under President General Zia-ul-Haq in 1980?
+                </p>
+<div class="flex items-center gap-space-xs mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-label-code text-label-code bg-surface-container px-space-xs rounded">Constitution (Amendment) Order, 1980 (P.O. No. 1 of 1980)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Academic Core</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pakistan Studies & Law</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-2xs bg-primary-container text-on-primary rounded font-caption-caps text-caption-caps uppercase">PA</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-highest text-on-surface rounded font-caption-caps text-caption-caps uppercase">PN</span>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular text-on-surface-variant">
+<span class="inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">text_fields</span> Text MCQ
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="px-space-sm py-space-2xs bg-tertiary-fixed text-on-tertiary-container rounded font-caption-caps text-caption-caps font-semibold uppercase tracking-wider inline-flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Under Review
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Prof. Asim Malik</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">National History Lead</span>
+</td>
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="quickPreview('Q-1087')" title="Candidate View Preview">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="switchView('studio')" title="Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-space-xs rounded bg-tertiary-fixed hover:bg-tertiary-fixed-dim text-on-tertiary-container transition-colors" title="Moderate & Approve">
+<span class="material-symbols-outlined text-[16px]">fact_check</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<td class="py-space-base px-space-base font-label-code text-label-code font-bold text-on-surface whitespace-nowrap">
+<span class="bg-surface-container-high px-space-xs py-space-2xs rounded">Q-1088</span>
+</td>
+<td class="py-space-base px-space-base max-w-lg">
+<p class="font-headline-sm text-headline-sm text-on-surface">
+                  In a marine navigational chart, 1 nautical mile corresponds to one minute of latitude arc along any meridian. True value in SI units:
+                </p>
+<div class="flex flex-wrap gap-space-xs mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="bg-surface-container px-space-xs rounded">A. 1,609.34 m</span>
+<span class="bg-secondary-container text-on-secondary-container font-semibold px-space-xs rounded">B. 1,852.00 m ✓</span>
+<span class="bg-surface-container px-space-xs rounded">C. 2,000.00 m</span>
+<span class="bg-surface-container px-space-xs rounded">D. 1,760.00 m</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Academic Core</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Maritime General & Physics</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-2xs">
+<span class="px-space-xs py-space-2xs bg-primary-container text-on-primary rounded font-caption-caps text-caption-caps uppercase" title="Pakistan Navy Special Cadet">PN</span>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular text-on-surface-variant">
+<span class="inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">text_fields</span> Text MCQ
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-caption-caps text-caption-caps font-semibold uppercase tracking-wider inline-flex items-center gap-space-2xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active
+                </span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium block">Lt. Cdr. Bilal (Retd)</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Naval Doctrine Lead</span>
+</td>
+<td class="py-space-base px-space-base text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="quickPreview('Q-1088')" title="Candidate View Preview">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors" onclick="switchView('studio')" title="Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-secondary-container text-on-surface transition-colors" title="Add to Active Test">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Strip -->
+<div class="flex flex-col sm:flex-row items-center justify-between p-space-base bg-surface-container-lowest gap-space-base">
+<div class="flex items-center gap-space-sm font-label-tabular text-label-tabular text-on-surface-variant">
+<span>Showing <strong class="text-on-surface">1 - 5</strong> of <strong>2,480</strong> items</span>
+<span class="text-outline-variant">|</span>
+<span>Per page:</span>
+<select class="bg-surface-container px-space-xs py-space-2xs rounded font-label-tabular text-label-tabular text-on-surface focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-tabular text-label-tabular disabled:opacity-40" disabled="">
+            Previous
+          </button>
+<button class="w-8 h-8 rounded bg-primary-container text-on-primary font-label-tabular text-label-tabular font-bold shadow-sm">1</button>
+<button class="w-8 h-8 rounded bg-surface-container-high hover:bg-surface-container text-on-surface font-label-tabular text-label-tabular transition-colors">2</button>
+<button class="w-8 h-8 rounded bg-surface-container-high hover:bg-surface-container text-on-surface font-label-tabular text-label-tabular transition-colors">3</button>
+<span class="px-space-xs text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded bg-surface-container-high hover:bg-surface-container text-on-surface font-label-tabular text-label-tabular transition-colors">248</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high text-on-surface hover:bg-surface-container transition-colors font-label-tabular text-label-tabular">
+            Next
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- VIEW 2: SPLIT-PANE LIVE QUESTION AUTHORING STUDIO (Interactive Sandbox) -->
+<div class="hidden flex-col space-y-space-base" id="studio-view">
+<!-- Sandbox Header Bar -->
+<div class="bg-primary-container text-on-primary p-space-base rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-tertiary text-on-tertiary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">draw</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-primary">Quick Author & Test Sandbox</h2>
+<span class="font-label-code text-label-code bg-surface/20 text-on-primary px-space-xs py-space-2xs rounded">ITEM #Q-1089</span>
+<span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container">Live Synchronized Cadet-Facing Terminal Preview. Changes update instantly.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md h-9 bg-surface/10 hover:bg-surface/20 text-on-primary rounded font-label-tabular text-label-tabular transition-colors" onclick="clearAuthoringForm()">
+          Clear Fields
+        </button>
+<button class="flex items-center gap-space-xs px-space-base h-9 bg-tertiary-fixed text-on-tertiary-container hover:bg-tertiary-fixed-dim rounded font-label-tabular text-label-tabular font-semibold transition-colors shadow-sm" onclick="saveAndPublishQuestion()">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Save & Commit to Bank</span>
+</button>
+</div>
+</div>
+<!-- 2-Column Split Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-base items-start">
+<!-- LEFT COLUMN: Authoring Controls (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-base">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant font-bold">1. Classification & Cadre Targets</span>
+<span class="font-label-code text-label-code text-secondary font-medium">Standard PMA / CAE Format</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div>
+<label class="font-caption-caps text-caption-caps uppercase text-on-surface-variant block mb-space-2xs">Subject Category</label>
+<select class="w-full h-10 px-space-sm bg-surface-container-low rounded text-on-surface font-label-tabular text-label-tabular focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="input-subject" onchange="syncLivePreview()">
+<option value="Physics · Kinematics & Aerodynamics">Physics · Kinematics & Aerodynamics</option>
+<option value="Verbal Intelligence · Vocabulary & Analogies">Verbal Intelligence · Vocabulary</option>
+<option value="Non-Verbal · Spatial Vector Pattern">Non-Verbal · Spatial Vector</option>
+<option value="Academic Core · Pakistan Studies">Academic Core · Pakistan Studies</option>
+<option value="Mathematics · Calculus & Vectors">Mathematics · Calculus & Vectors</option>
+</select>
+</div>
+<div>
+<label class="font-caption-caps text-caption-caps uppercase text-on-surface-variant block mb-space-2xs">Question Type</label>
+<select class="w-full h-10 px-space-sm bg-surface-container-low rounded text-on-surface font-label-tabular text-label-tabular focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="input-type" onchange="syncLivePreview()">
+<option value="Single Choice MCQ">Single Choice MCQ</option>
+<option value="Calculation / Formula">Calculation / Formula</option>
+<option value="Diagrammatic Pattern">Diagrammatic Pattern</option>
+</select>
+</div>
+<div>
+<label class="font-caption-caps text-caption-caps uppercase text-on-surface-variant block mb-space-2xs">Target Cadre</label>
+<div class="flex items-center gap-space-xs h-10">
+<label class="flex items-center gap-space-2xs text-xs font-semibold cursor-pointer bg-surface-container-low px-space-xs py-space-xs rounded">
+<input checked="" class="accent-primary" type="checkbox"/> Army
+              </label>
+<label class="flex items-center gap-space-2xs text-xs font-semibold cursor-pointer bg-surface-container-low px-space-xs py-space-xs rounded">
+<input checked="" class="accent-primary" type="checkbox"/> PAF
+              </label>
+<label class="flex items-center gap-space-2xs text-xs font-semibold cursor-pointer bg-surface-container-low px-space-xs py-space-xs rounded">
+<input class="accent-primary" type="checkbox"/> Navy
+              </label>
+</div>
+</div>
+</div>
+<!-- Question Stem Input -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant font-bold">2. Question Statement (Stem)</label>
+<span class="font-label-code text-label-code text-on-surface-variant">Markdown / LaTeX supported</span>
+</div>
+<textarea class="w-full p-space-sm bg-surface-container-low rounded text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-inner placeholder:text-on-surface-variant/60" id="input-stem" oninput="syncLivePreview()" placeholder="Type military exam problem statement here..." rows="3">A supersonic fighter aircraft executes a high-G pull-up maneuver with radius R = 800 meters at a steady velocity of 400 m/s. Calculate the total centripetal acceleration experienced by the pilot airframe in multiples of gravity (g = 9.8 m/s²).</textarea>
+</div>
+<!-- Options Builder -->
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant font-bold">3. Answer Options & Verified Key</span>
+<span class="font-caption-caps text-caption-caps text-secondary uppercase font-semibold">Select radio to set Official Key</span>
+</div>
+<!-- Option A -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-xs rounded">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs shrink-0">A</div>
+<input class="flex-1 h-9 px-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none shadow-inner" id="opt-a" oninput="syncLivePreview()" placeholder="Option A text" type="text" value="10.2 G"/>
+<label class="flex items-center gap-space-xs px-space-xs cursor-pointer">
+<input class="accent-secondary w-4 h-4" name="correct-key" onchange="syncCorrectKey('A')" type="radio" value="A"/>
+<span class="font-label-code text-label-code text-on-surface-variant">Key</span>
+</label>
+</div>
+<!-- Option B (Selected Key) -->
+<div class="flex items-center gap-space-sm bg-secondary-container/40 p-space-xs rounded">
+<div class="w-8 h-8 rounded bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shrink-0">B</div>
+<input class="flex-1 h-9 px-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none shadow-inner" id="opt-b" oninput="syncLivePreview()" placeholder="Option B text" type="text" value="20.4 G (Approx. ~20.41 G)"/>
+<label class="flex items-center gap-space-xs px-space-xs cursor-pointer">
+<input checked="" class="accent-secondary w-4 h-4" name="correct-key" onchange="syncCorrectKey('B')" type="radio" value="B"/>
+<span class="font-label-code text-label-code text-secondary font-bold">Correct Key</span>
+</label>
+</div>
+<!-- Option C -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-xs rounded">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs shrink-0">C</div>
+<input class="flex-1 h-9 px-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none shadow-inner" id="opt-c" oninput="syncLivePreview()" placeholder="Option C text" type="text" value="5.1 G"/>
+<label class="flex items-center gap-space-xs px-space-xs cursor-pointer">
+<input class="accent-secondary w-4 h-4" name="correct-key" onchange="syncCorrectKey('C')" type="radio" value="C"/>
+<span class="font-label-code text-label-code text-on-surface-variant">Key</span>
+</label>
+</div>
+<!-- Option D -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-xs rounded">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-xs shrink-0">D</div>
+<input class="flex-1 h-9 px-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none shadow-inner" id="opt-d" oninput="syncLivePreview()" placeholder="Option D text" type="text" value="31.8 G"/>
+<label class="flex items-center gap-space-xs px-space-xs cursor-pointer">
+<input class="accent-secondary w-4 h-4" name="correct-key" onchange="syncCorrectKey('D')" type="radio" value="D"/>
+<span class="font-label-code text-label-code text-on-surface-variant">Key</span>
+</label>
+</div>
+</div>
+<!-- Solution Derivation Note -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant font-bold">4. Tactical Derivation & Explanation</label>
+<span class="font-caption-caps text-caption-caps text-tertiary uppercase">Displayed only post-test review</span>
+</div>
+<textarea class="w-full p-space-sm bg-surface-container-low rounded text-on-surface font-body-md text-body-md focus:outline-none shadow-inner" id="input-exp" oninput="syncLivePreview()" placeholder="Provide mathematical derivation or vocabulary context..." rows="2">Formula: a_c = v² / R. a_c = (400 m/s)² / (800 m) = 160,000 / 800 = 200 m/s². In G-load: a_c / g = 200 / 9.8 = 20.408 G ≈ 20.4 G.</textarea>
+</div>
+</div>
+<!-- RIGHT COLUMN: Student Terminal Live Preview (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-base rounded-xl shadow-sm space-y-space-base sticky top-20">
+<!-- Terminal Header Mock -->
+<div class="bg-primary-container text-on-primary p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-code text-label-code uppercase tracking-wider">Cadet Terminal Preview</span>
+</div>
+<span class="font-label-code text-label-code text-on-primary-container">SIMULATED EXAM VIEW</span>
+</div>
+<!-- Cadre & Timer Top Strip -->
+<div class="flex items-center justify-between px-space-sm py-space-xs bg-surface-container rounded font-label-tabular text-label-tabular">
+<span class="font-semibold text-on-surface truncate" id="preview-subject">Physics · Kinematics & Aerodynamics</span>
+<span class="text-tertiary font-bold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">timer</span> 00:42
+          </span>
+</div>
+<!-- Student Question Card -->
+<div class="bg-surface p-space-base rounded-lg space-y-space-md shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant font-bold">Question 14 of 50</span>
+<span class="font-caption-caps text-caption-caps text-secondary font-bold bg-secondary-container px-space-xs py-space-2xs rounded">Points: +1.0</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-snug" id="preview-stem">
+            A supersonic fighter aircraft executes a high-G pull-up maneuver with radius R = 800 meters at a steady velocity of 400 m/s. Calculate the total centripetal acceleration experienced by the pilot airframe in multiples of gravity (g = 9.8 m/s²).
+          </p>
+<!-- Candidate Options List -->
+<div class="space-y-space-xs font-body-md text-body-md">
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-lowest rounded cursor-pointer hover:bg-surface-container-high transition-all shadow-sm" id="card-opt-a" onclick="candidateSelect('A')">
+<span class="w-7 h-7 rounded bg-surface-container text-on-surface font-bold text-xs flex items-center justify-center" id="badge-opt-a">A</span>
+<span class="text-on-surface" id="preview-text-a">10.2 G</span>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded cursor-pointer transition-all shadow-sm" id="card-opt-b" onclick="candidateSelect('B')">
+<span class="w-7 h-7 rounded bg-primary-container text-on-primary font-bold text-xs flex items-center justify-center" id="badge-opt-b">B</span>
+<span class="text-on-surface font-semibold" id="preview-text-b">20.4 G (Approx. ~20.41 G)</span>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-lowest rounded cursor-pointer hover:bg-surface-container-high transition-all shadow-sm" id="card-opt-c" onclick="candidateSelect('C')">
+<span class="w-7 h-7 rounded bg-surface-container text-on-surface font-bold text-xs flex items-center justify-center" id="badge-opt-c">C</span>
+<span class="text-on-surface" id="preview-text-c">5.1 G</span>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-lowest rounded cursor-pointer hover:bg-surface-container-high transition-all shadow-sm" id="card-opt-d" onclick="candidateSelect('D')">
+<span class="w-7 h-7 rounded bg-surface-container text-on-surface font-bold text-xs flex items-center justify-center" id="badge-opt-d">D</span>
+<span class="text-on-surface" id="preview-text-d">31.8 G</span>
+</div>
+</div>
+<!-- Bottom Candidate Action Controls -->
+<div class="flex items-center justify-between pt-space-xs">
+<button class="flex items-center gap-space-2xs px-space-sm py-space-xs rounded bg-surface-container-high text-tertiary font-label-tabular text-label-tabular">
+<span class="material-symbols-outlined text-[16px]">flag</span> Flag Item
+            </button>
+<button class="px-space-base py-space-xs bg-primary-container text-on-primary rounded font-label-tabular text-label-tabular font-medium shadow-sm">
+              Confirm & Next →
+            </button>
+</div>
+</div>
+<!-- Faculty Solution Card Preview -->
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-space-xs">
+<div class="flex items-center gap-space-2xs font-caption-caps text-caption-caps text-on-surface-variant font-bold uppercase">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span>Faculty Solution Walkthrough</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="preview-explanation">
+            Formula: a_c = v² / R. a_c = (400 m/s)² / (800 m) = 160,000 / 800 = 200 m/s². In G-load: a_c / g = 200 / 9.8 = 20.408 G ≈ 20.4 G.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- INSTITUTIONAL FOOTER / METRIC STRIP -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-space-base bg-surface-container-lowest p-space-base rounded-xl shadow-sm font-label-tabular text-label-tabular text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified_user</span>
+<div>
+<span class="font-semibold text-on-surface block">Strict Moderation Protocol</span>
+<span class="font-caption-caps text-caption-caps">Dual-instructor sign-off required prior to PMA/PAF live deployment</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[24px]">balance</span>
+<div>
+<span class="font-semibold text-on-surface block">Algorithmic Balance</span>
+<span class="font-caption-caps text-caption-caps">Maintains 40% Verbal, 40% Non-Verbal, 20% Academic distribution</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface text-[24px]">lock</span>
+<div>
+<span class="font-semibold text-on-surface block">Tamper-Proof Question Seals</span>
+<span class="font-caption-caps text-caption-caps">SHA-256 integrity hash verification active for Spring 2026</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function switchView(view) {
+    const repoView = document.getElementById('repository-view');
+    const studioView = document.getElementById('studio-view');
+    const repoBtn = document.getElementById('tab-repo-btn');
+    const studioBtn = document.getElementById('tab-studio-btn');
+
+    if (view === 'repo') {
+      repoView.classList.remove('hidden');
+      studioView.classList.add('hidden');
+      repoBtn.className = 'flex items-center gap-space-xs px-space-base py-space-xs rounded font-label-tabular text-label-tabular bg-primary-container text-on-primary shadow-sm transition-all';
+      studioBtn.className = 'flex items-center gap-space-xs px-space-base py-space-xs rounded font-label-tabular text-label-tabular bg-surface-container-high text-on-surface hover:bg-surface-container transition-all';
+    } else {
+      studioView.classList.remove('hidden');
+      repoView.classList.add('hidden');
+      studioBtn.className = 'flex items-center gap-space-xs px-space-base py-space-xs rounded font-label-tabular text-label-tabular bg-primary-container text-on-primary shadow-sm transition-all';
+      repoBtn.className = 'flex items-center gap-space-xs px-space-base py-space-xs rounded font-label-tabular text-label-tabular bg-surface-container-high text-on-surface hover:bg-surface-container transition-all';
+    }
+  }
+
+  function toggleAuthoringModal(open) {
+    switchView('studio');
+    window.scrollTo({ top: 180, behavior: 'smooth' });
+  }
+
+  function syncLivePreview() {
+    const stem = document.getElementById('input-stem').value;
+    const optA = document.getElementById('opt-a').value;
+    const optB = document.getElementById('opt-b').value;
+    const optC = document.getElementById('opt-c').value;
+    const optD = document.getElementById('opt-d').value;
+    const exp = document.getElementById('input-exp').value;
+    const subj = document.getElementById('input-subject').value;
+
+    document.getElementById('preview-stem').innerText = stem || 'Question stem will appear here...';
+    document.getElementById('preview-text-a').innerText = optA || 'Option A';
+    document.getElementById('preview-text-b').innerText = optB || 'Option B';
+    document.getElementById('preview-text-c').innerText = optC || 'Option C';
+    document.getElementById('preview-text-d').innerText = optD || 'Option D';
+    document.getElementById('preview-explanation').innerText = exp || 'No solution walkthrough provided.';
+    document.getElementById('preview-subject').innerText = subj;
+  }
+
+  let selectedCandidateKey = 'B';
+  function candidateSelect(key) {
+    selectedCandidateKey = key;
+    ['a', 'b', 'c', 'd'].forEach(k => {
+      const card = document.getElementById('card-opt-' + k);
+      const badge = document.getElementById('badge-opt-' + k);
+      if (k.toUpperCase() === key) {
+        card.className = 'flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded cursor-pointer transition-all shadow-sm';
+        badge.className = 'w-7 h-7 rounded bg-primary-container text-on-primary font-bold text-xs flex items-center justify-center';
+      } else {
+        card.className = 'flex items-center gap-space-sm p-space-sm bg-surface-container-lowest rounded cursor-pointer hover:bg-surface-container-high transition-all shadow-sm';
+        badge.className = 'w-7 h-7 rounded bg-surface-container text-on-surface font-bold text-xs flex items-center justify-center';
+      }
+    });
+  }
+
+  function syncCorrectKey(key) {
+    candidateSelect(key);
+  }
+
+  function clearAuthoringForm() {
+    document.getElementById('input-stem').value = '';
+    document.getElementById('opt-a').value = '';
+    document.getElementById('opt-b').value = '';
+    document.getElementById('opt-c').value = '';
+    document.getElementById('opt-d').value = '';
+    document.getElementById('input-exp').value = '';
+    syncLivePreview();
+  }
+
+  function saveAndPublishQuestion() {
+    alert('Question item committed successfully to Spring 2026 repository with SHA-256 seal.');
+    switchView('repo');
+  }
+
+  function quickPreview(qId) {
+    alert('Opening candidate full fidelity inspector for item: ' + qId);
+  }
+</script></main></div></body></html>

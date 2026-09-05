@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed-variant":"#354c3a","secondary-container":"#ceead1","surface-variant":"#d9e3f6","on-secondary-fixed":"#092011","secondary-fixed-dim":"#b2cdb6","primary":"#000000","primary-fixed-dim":"#bac7dc","on-tertiary":"#ffffff","inverse-primary":"#bac7dc","surface-container-highest":"#d9e3f6","on-primary-fixed-variant":"#3b4858","on-primary-fixed":"#0f1c2b","on-error":"#ffffff","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#e4c377","on-secondary":"#ffffff","on-primary-container":"#788598","on-secondary-container":"#526a56","surface-container-high":"#dee9fc","on-background":"#121c2a","tertiary-fixed":"#ffdf98","surface-dim":"#d0dbed","outline-variant":"#c5c6cc","surface":"#f8f9ff","surface-container":"#e6eeff","on-tertiary-fixed-variant":"#5a4301","on-surface-variant":"#44474c","on-primary":"#ffffff","error-container":"#ffdad6","on-tertiary-container":"#513c00","error":"#ba1a1a","secondary-fixed":"#ceead1","primary-container":"#0f1c2b","inverse-surface":"#27313f","primary-fixed":"#d6e3f8","surface-tint":"#535f71","inverse-on-surface":"#eaf1ff","secondary":"#4c6451","background":"#f8f9ff","on-surface":"#121c2a","outline":"#75777d","surface-container-low":"#eff4ff","tertiary":"#745b19","tertiary-container":"#c6a75e","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-tertiary-fixed":"#251a00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"24px","grid-margin":"24px","space-2xs":"2px","space-base":"16px","space-xs":"4px","space-sm":"8px","space-md":"12px","space-xl":"32px","space-3xl":"64px","grid-gutter":"16px","space-2xl":"48px"},"fontFamily":{"headline-xl-mobile":["Geist"],"label-code":["Geist"],"body-sm":["Inter"],"display-hero":["Geist"],"headline-md":["Geist"],"headline-sm":["Geist"],"headline-xl":["Geist"],"caption-caps":["Geist"],"body-lg":["Inter"],"label-tabular":["Geist"],"body-md":["Inter"],"headline-lg":["Geist"]},"fontSize":{"headline-xl-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"caption-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.1em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-tabular":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="h-16 flex items-center px-space-base gap-space-sm bg-primary-container shrink-0"><img alt="Forces Academy Official Insignia Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xq0mtWO3Tu8FZEW0ZmFWK2udXHODJ-fPpXHfChswjXEZwK2IscnTwG4XM59SkcK2p6GrwVTl3SL3wet4wtmsZhCQ9gusB3Yx2VB2hziXDX3p-h5yBz8zU4zAH-LHxH3zbN_F7CFeHgXwL3wb71-cXBgfthCbq7njM8KlXWL9xI6YEbbY4HdZFlH5aOSH3OJp6MwywWGzhFrKh8lBDvLw-E8RSnKoLIWxsTAmmcsSNIvhxrscrtbfkkXXI"/><div class="flex flex-col overflow-hidden"><span class="font-headline-sm text-headline-sm text-surface truncate">FORCES ACADEMY</span><span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-primary-container truncate">Testing Protocol</span></div></div><div class="overflow-y-auto flex-1 px-space-sm py-space-sm space-y-space-md"><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Operations</span><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-surface-container-high text-on-surface font-headline-sm rounded" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="truncate">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="students" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="truncate">Students</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="teachers" href="#"><span class="material-symbols-outlined text-[18px]">badge</span><span class="truncate">Teachers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="batches" href="#"><span class="material-symbols-outlined text-[18px]">military_tech</span><span class="truncate">Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="question-bank" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="truncate">Question Bank</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">quiz</span><span class="truncate">Tests</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="live-monitoring" href="#"><div class="flex items-center gap-space-sm min-w-0"><span class="material-symbols-outlined text-[18px] text-error">videocam</span><span class="truncate">Live Monitoring</span></div><span class="bg-error text-on-error font-label-tabular text-label-tabular px-space-xs py-space-2xs rounded">24</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="results" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span class="truncate">Results</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="retakes" href="#"><span class="material-symbols-outlined text-[18px]">replay</span><span class="truncate">Retakes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span class="truncate">Reports</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Configuration</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="forces" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="truncate">Forces</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="courses" href="#"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="truncate">Courses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="subjects" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span><span class="truncate">Subjects</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">System</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="truncate">Settings</span></a></nav></div></div><div class="p-space-base bg-surface-container-lowest shrink-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0"><span class="font-label-tabular text-label-tabular text-on-surface font-semibold truncate">Muhammad Usman</span><span class="font-caption-caps text-caption-caps text-on-surface-variant truncate">Senior Instructor</span></div></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">home</span><span>/</span><span class="text-on-surface font-semibold">Console</span></div><div class="relative w-80 max-w-sm"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-10 pl-9 pr-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)] placeholder:text-on-surface-variant/70" placeholder="Search students, tests, questions..." type="text"/></div></div><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-label-code text-label-code"><span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span><span>TELEMETRY ONLINE</span></div><span class="font-label-tabular text-label-tabular px-space-sm py-space-2xs bg-surface-container-high text-on-surface rounded">SPRING 2026</span><div class="relative flex items-center"><button class="w-10 h-10 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></div><button class="flex items-center gap-space-xs px-space-base h-10 bg-primary text-on-primary rounded font-label-tabular text-label-tabular shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-surface-tint hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[18px]">cached</span><span>Switch Role</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-lg bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-2xl space-y-space-lg">
+<!-- TOP BREADCRUMB & CONSOLE CONTROL BANNER -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface-variant">
+<span class="hover:text-on-surface cursor-pointer">Command</span>
+<span>/</span>
+<span class="hover:text-on-surface cursor-pointer">Live Monitoring</span>
+<span>/</span>
+<span class="text-on-surface font-semibold">Active Session Hall Alpha</span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+            Proctor Command & Active Terminal Radar
+          </h1>
+<span class="bg-primary-container text-surface font-caption-caps text-caption-caps px-space-sm py-space-2xs rounded uppercase tracking-wider flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+            GHQ CBT PROTOCOL V4.2 LIVE
+          </span>
+<span class="bg-secondary-container text-on-secondary-container font-label-tabular text-label-tabular px-space-sm py-space-2xs rounded font-semibold">
+            24 Active Terminals
+          </span>
+<span class="bg-error-container text-on-error-container font-label-tabular text-label-tabular px-space-sm py-space-2xs rounded font-semibold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+            3 Flagged Irregularities
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Cadet Telemetry Feed • Hall Alpha (Central Proctor Console #04) • Synchronized UTC+05:00
+        </p>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-surface-container-lowest text-on-surface rounded font-label-tabular text-label-tabular shadow-sm hover:bg-surface-container transition-colors" id="btnBroadcast">
+<span class="material-symbols-outlined text-[18px] text-tertiary">campaign</span>
+<span>Broadcast Warning</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-error text-on-error rounded font-label-tabular text-label-tabular shadow-sm hover:bg-on-error-container transition-colors" id="btnLockAll">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>Emergency Lock All</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-surface-container-lowest text-on-surface rounded font-label-tabular text-label-tabular shadow-sm hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Log</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-primary-container text-surface rounded font-label-tabular text-label-tabular shadow-sm hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span>Hall Grid 3D</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TELEMETRY SNAPSHOT METRICS (4 CARDS) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-base">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Active Examinees</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">sensors</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">24 / 24</span>
+<span class="font-label-tabular text-label-tabular text-secondary font-semibold">100% Online</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs">
+<span>Average RTT Ping:</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">8.4 ms (Gigabit Hub)</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Mean Completion Pace</span>
+<span class="material-symbols-outlined text-on-surface text-[20px]">speed</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">68.2%</span>
+<span class="font-label-tabular text-label-tabular text-on-surface-variant">Avg Rem: 18m 42s</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs">
+<span>Section In Progress:</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-semibold">Module 02 Non-Verbal</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-primary-container h-full w-[68%]"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-error font-semibold">Algorithmic Integrity Flags</span>
+<span class="material-symbols-outlined text-error text-[20px]">shield_with_heart</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-error font-semibold">03</span>
+<span class="font-label-tabular text-label-tabular text-error font-medium">Terminal Incursions</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs">
+<span>Breakdown:</span>
+<span class="font-label-tabular text-label-tabular text-on-surface">2 Rapid Clicks • 1 Blur</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-error h-full w-[35%]"></div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-col justify-between space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Post-Exam Handover Gate</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">verified_user</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">ARMED</span>
+<span class="font-label-tabular text-label-tabular text-secondary font-semibold">Self-Audit Ready</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs">
+<span>Submission Route:</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-semibold">Direct Derivations Portal</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-tertiary-container h-full w-full"></div>
+</div>
+</div>
+</div>
+<!-- CONTROL & FILTER STRIP -->
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant px-space-xs">Filter Status:</span>
+<button class="px-space-sm py-1 bg-primary-container text-surface rounded font-label-tabular text-label-tabular font-medium">
+        All Terminals (24)
+      </button>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-tabular text-label-tabular">
+        Normal (21)
+      </button>
+<button class="px-space-sm py-1 bg-error-container text-on-error-container rounded font-label-tabular text-label-tabular font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+        Flagged Anomalies (3)
+      </button>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-tabular text-label-tabular">
+        Expiring Soon <5m (2)
+      </button>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-tabular text-label-tabular">
+<span>Force Cadre:</span>
+<select class="bg-surface-container text-on-surface px-space-sm py-1 rounded focus:outline-none font-label-tabular text-label-tabular">
+<option>All Services (Tri-Service)</option>
+<option>Pakistan Army (PMA 154 LC / TCC)</option>
+<option>Pakistan Air Force (GDP 158 / CAE)</option>
+<option>Pakistan Navy (PN Cadet 2026-A)</option>
+</select>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1 bg-surface-container p-0.5 rounded">
+<button class="p-1 rounded bg-surface-container-lowest text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">view_module</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN SECTION: RADAR GRID (LEFT) + DEEP-DIVE PROCTOR TERMINAL (RIGHT) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-base items-start">
+<!-- LEFT RADAR TERMINALS GRID (8 COLS) -->
+<div class="lg:col-span-8 flex flex-col space-y-space-base">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">grid_on</span>
+          Hall Workstations Radar Matrix
+        </span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider">
+          Auto-Refreshing Telemetry (1.2s Sync)
+        </span>
+</div>
+<!-- WORKSTATION CARDS GRID -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-base">
+<!-- CARD 1: TERMINAL T-09 (SELECTED / HIGH FLAG) -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-md relative overflow-hidden cursor-pointer bg-gradient-to-br from-error-container/20 to-transparent">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">T-09</span>
+<span class="font-label-code text-label-code bg-surface-container px-space-xs py-0.5 rounded text-on-surface-variant">192.168.10.49</span>
+<span class="font-caption-caps text-caption-caps bg-tertiary-container/30 text-tertiary px-space-xs py-0.5 rounded uppercase font-semibold">TCC</span>
+</div>
+<span class="bg-error-container text-on-error-container font-caption-caps text-caption-caps px-space-sm py-space-2xs rounded font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span> Velocity Incursion
+            </span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-primary-container text-surface flex items-center justify-center font-headline-sm text-headline-sm">
+              DZ
+            </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Daniyal Zafar</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">CADET ID: TCC-2026-0309</span>
+</div>
+</div>
+<!-- Question Progress & Telemetry Alert -->
+<div class="mt-space-sm p-space-sm bg-error-container/40 rounded space-y-space-2xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-semibold text-error">Warning Event Detected</span>
+<span class="font-label-tabular text-label-tabular font-bold text-error">4 Qs / 8.1 sec</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+              Violates minimum reading latency threshold on Non-Verbal Matrix items.
+            </p>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-2xs">
+<div class="flex flex-col">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Progress</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold">Q24 / 40 • 60%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Time Rem.</span>
+<span class="font-label-tabular text-label-tabular text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 14:18
+              </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1.5 bg-primary-container text-surface text-caption-caps font-caption-caps rounded uppercase font-semibold flex items-center justify-center gap-1 hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Screen Mirror
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Whisper
+            </button>
+<button class="px-space-sm py-1.5 bg-error text-on-error text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-on-error-container transition-colors">
+              Pause
+            </button>
+</div>
+</div>
+<!-- CARD 2: TERMINAL T-04 (NORMAL PACED / PN CADET) -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm relative overflow-hidden hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">T-04</span>
+<span class="font-label-code text-label-code bg-surface-container px-space-xs py-0.5 rounded text-on-surface-variant">192.168.10.44</span>
+<span class="font-caption-caps text-caption-caps bg-secondary-container text-on-secondary-container px-space-xs py-0.5 rounded uppercase font-semibold">PN CADET</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-caption-caps text-caption-caps px-space-sm py-space-2xs rounded font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> Active & Steady
+            </span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm">
+              BF
+            </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Bilal Farooq</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">ROLL: PN-2026-A-0812</span>
+</div>
+</div>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded space-y-space-2xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">Non-Verbal Spatial Rotation</span>
+<span class="font-label-code text-label-code text-secondary font-semibold">Pacing: 42s/Q</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-secondary h-full w-[47%]"></div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-2xs">
+<div class="flex flex-col">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Progress</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold">Q19 / 40 • 47%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Time Rem.</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 21:05
+              </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Inspect
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Whisper
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Lock
+            </button>
+</div>
+</div>
+<!-- CARD 3: TERMINAL T-14 (HIGH FLIER / PMA 154 LC) -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm relative overflow-hidden hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">T-14</span>
+<span class="font-label-code text-label-code bg-surface-container px-space-xs py-0.5 rounded text-on-surface-variant">192.168.10.54</span>
+<span class="font-caption-caps text-caption-caps bg-primary-fixed text-on-primary-fixed px-space-xs py-0.5 rounded uppercase font-semibold">PMA LC</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-caption-caps text-caption-caps px-space-sm py-space-2xs rounded font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 95% Accuracy Run
+            </span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm">
+              AK
+            </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Ahmed Khan</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">ROLL: PMA-154-8902</span>
+</div>
+</div>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded space-y-space-2xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">Nearing Final Submittal</span>
+<span class="font-label-code text-label-code text-secondary font-semibold">Ready for Review Gate</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-secondary h-full w-[95%]"></div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-2xs">
+<div class="flex flex-col">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Progress</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold">Q38 / 40 • 95%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Time Rem.</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 07:11
+              </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Inspect
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Whisper
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Lock
+            </button>
+</div>
+</div>
+<!-- CARD 4: TERMINAL T-17 (WARNING / PAF GDP) -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm relative overflow-hidden hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">T-17</span>
+<span class="font-label-code text-label-code bg-surface-container px-space-xs py-0.5 rounded text-on-surface-variant">192.168.10.57</span>
+<span class="font-caption-caps text-caption-caps bg-surface-variant text-on-surface px-space-xs py-0.5 rounded uppercase font-semibold">PAF GDP</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant font-caption-caps text-caption-caps px-space-sm py-space-2xs rounded font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">visibility_off</span> Viewport Blur
+            </span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm">
+              HT
+            </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Hamza Tariq</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">ROLL: PAF-GDP-158-44</span>
+</div>
+</div>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded space-y-space-2xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-semibold text-tertiary">Window Focus Loss</span>
+<span class="font-label-tabular text-label-tabular text-tertiary font-bold">Lost for 4.2 sec</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+              OS background window or peripheral click detected.
+            </p>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-2xs">
+<div class="flex flex-col">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Progress</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold">Q29 / 40 • 72%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Time Rem.</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 11:45
+              </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Inspect
+            </button>
+<button class="px-space-sm py-1.5 bg-tertiary text-on-tertiary text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-on-tertiary-fixed-variant transition-colors">
+              Warn
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Lock
+            </button>
+</div>
+</div>
+<!-- CARD 5: TERMINAL T-01 (NORMAL) -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm relative overflow-hidden hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">T-01</span>
+<span class="font-label-code text-label-code bg-surface-container px-space-xs py-0.5 rounded text-on-surface-variant">192.168.10.41</span>
+<span class="font-caption-caps text-caption-caps bg-primary-fixed text-on-primary-fixed px-space-xs py-0.5 rounded uppercase font-semibold">PMA LC</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-caption-caps text-caption-caps px-space-sm py-space-2xs rounded font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active & Steady
+            </span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm">
+              ZA
+            </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Zubair Arshad</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">ROLL: PMA-154-7711</span>
+</div>
+</div>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded space-y-space-2xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface font-medium">Verbal Reasoning Matrix</span>
+<span class="font-label-code text-label-code text-secondary font-semibold">Pacing: 38s/Q</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-secondary h-full w-[80%]"></div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-2xs">
+<div class="flex flex-col">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Progress</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold">Q32 / 40 • 80%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Time Rem.</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 10:18
+              </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Inspect
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Whisper
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Lock
+            </button>
+</div>
+</div>
+<!-- CARD 6: TERMINAL T-07 (RAPID GUESS DETECTED) -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm relative overflow-hidden hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">T-07</span>
+<span class="font-label-code text-label-code bg-surface-container px-space-xs py-0.5 rounded text-on-surface-variant">192.168.10.47</span>
+<span class="font-caption-caps text-caption-caps bg-surface-variant text-on-surface px-space-xs py-0.5 rounded uppercase font-semibold">PAF CAE</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant font-caption-caps text-caption-caps px-space-sm py-space-2xs rounded font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">speed</span> High Speed Skip
+            </span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm">
+              RM
+            </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Raza Malik</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">ROLL: PAF-CAE-102-19</span>
+</div>
+</div>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded space-y-space-2xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-semibold text-tertiary">Consecutive Option Skipping</span>
+<span class="font-label-tabular text-label-tabular text-tertiary font-bold">3 Qs Skipped</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+              Cadet is flipping without review flag marking.
+            </p>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-2xs">
+<div class="flex flex-col">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Progress</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold">Q16 / 40 • 40%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Time Rem.</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 23:50
+              </span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Inspect
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Whisper
+            </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface text-caption-caps font-caption-caps rounded uppercase font-semibold hover:bg-surface-container-high transition-colors">
+              Lock
+            </button>
+</div>
+</div>
+</div>
+<!-- ACTIVE WORKSTATIONS PAGINATION STRIP -->
+<div class="bg-surface-container-lowest p-space-sm rounded shadow-sm flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant">
+          Showing 6 of 24 Live Terminals
+        </span>
+<div class="flex items-center gap-1 font-label-tabular text-label-tabular">
+<button class="px-space-sm py-1 bg-primary-container text-surface rounded">1</button>
+<button class="px-space-sm py-1 bg-surface-container text-on-surface rounded hover:bg-surface-container-high">2</button>
+<button class="px-space-sm py-1 bg-surface-container text-on-surface rounded hover:bg-surface-container-high">3</button>
+<button class="px-space-sm py-1 bg-surface-container text-on-surface rounded hover:bg-surface-container-high">4</button>
+</div>
+</div>
+</div>
+<!-- RIGHT PROCTOR DEEP-DIVE & CONTROL TERMINAL (4 COLS) -->
+<div class="lg:col-span-4 flex flex-col space-y-space-base">
+<div class="bg-surface-container-lowest p-space-base rounded shadow-md flex flex-col space-y-space-base">
+<!-- DEEP DIVE HEADER -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span> High Priority Audit
+            </span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Terminal Audit • T-09</span>
+<span class="font-label-tabular text-label-tabular text-on-surface-variant">Hall Alpha • Bay C • Seat 09</span>
+</div>
+<span class="bg-error-container text-on-error-container font-label-tabular text-label-tabular px-space-sm py-1 rounded font-bold">
+            FLAGGED
+          </span>
+</div>
+<!-- CANDIDATE PROFILE CHIP -->
+<div class="bg-surface-container-low p-space-sm rounded flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded bg-primary-container text-surface flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+            DZ
+          </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Daniyal Zafar</span>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span>TCC ENGR</span>
+<span>•</span>
+<span class="text-on-surface font-medium">TCC-2026-0309</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">CNIC: 37405-*******-1 • Seat IP: 192.168.10.49</span>
+</div>
+</div>
+<!-- REAL-TIME LIVE MIRROR / MINIATURE SCREEN PREVIEW -->
+<div class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">desktop_windows</span> Live Workstation Telemetry Mirror
+            </span>
+<span class="font-label-code text-label-code text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> 60 FPS Stream
+            </span>
+</div>
+<!-- MINI SCREEN CANVAS SIMULATION -->
+<div class="bg-surface-container p-space-sm rounded overflow-hidden shadow-inner flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-1 rounded text-body-sm font-body-sm">
+<span class="font-label-code text-label-code text-on-surface font-bold">MODULE 02: NON-VERBAL PATTERNS</span>
+<span class="font-label-tabular text-label-tabular text-error font-semibold">Q24 of 40</span>
+</div>
+<!-- Vector Pattern Mock for Spatial Test -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-col items-center justify-center space-y-space-xs">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">3x3 Matrix Incomplete Pattern</span>
+<div class="grid grid-cols-3 gap-1 bg-surface-container p-1 rounded">
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">change_history</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">square</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">circle</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">circle</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">change_history</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">square</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">square</span>
+</div>
+<div class="w-8 h-8 bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">circle</span>
+</div>
+<div class="w-8 h-8 bg-error-container text-error flex items-center justify-center font-bold text-headline-sm">
+                  ?
+                </div>
+</div>
+<div class="text-body-sm font-body-sm text-center text-on-surface font-medium pt-1">
+                Candidate Selected: <span class="font-bold text-primary underline">Option [ C ]</span>
+</div>
+</div>
+<!-- Instant Derivation Key Teaser -->
+<div class="flex items-center justify-between text-body-sm font-body-sm px-space-xs text-on-surface-variant">
+<span>Expected Latency: 32s</span>
+<span class="text-error font-bold font-label-tabular text-label-tabular">Actual: 1.8s (Outlier)</span>
+</div>
+</div>
+</div>
+<!-- TELEMETRY EVENT LOG STREAM -->
+<div class="flex flex-col space-y-space-xs">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">format_list_bulleted</span> Workstation Audit Trail
+          </span>
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col space-y-space-xs font-label-code text-label-code max-h-48 overflow-y-auto">
+<div class="flex items-start gap-space-xs text-on-surface-variant">
+<span class="text-on-surface font-semibold shrink-0">10:42:15</span>
+<span>Candidate confirmed Module 01 submission. Auto-routed to Module 02 Non-Verbal.</span>
+</div>
+<div class="flex items-start gap-space-xs text-on-surface-variant">
+<span class="text-on-surface font-semibold shrink-0">10:48:30</span>
+<span>Q12 answered. Latency: 34.2s. Biometric sensor heartbeat valid.</span>
+</div>
+<div class="flex items-start gap-space-xs text-error font-semibold bg-error-container/50 p-1 rounded">
+<span class="shrink-0">10:52:04</span>
+<span>RAPID VELOCITY ALERT: Q15 to Q18 committed within 8.1s. Flags tripped.</span>
+</div>
+<div class="flex items-start gap-space-xs text-on-surface-variant">
+<span class="text-on-surface font-semibold shrink-0">10:52:10</span>
+<span>Display configuration verified: Single primary monitor (1920x1080@60Hz).</span>
+</div>
+</div>
+</div>
+<!-- INTERVENTION COMMAND CENTER -->
+<div class="flex flex-col space-y-space-xs pt-space-xs">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant font-bold">
+            Proctor Interventions
+          </span>
+<div class="grid grid-cols-1 gap-space-xs">
+<button class="w-full py-2 bg-primary-container text-surface rounded font-label-tabular text-label-tabular font-medium flex items-center justify-center gap-space-xs hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+<span>Send Warning Whisper (Rule #14 Pace)</span>
+</button>
+<button class="w-full py-2 bg-surface-container text-on-surface rounded font-label-tabular text-label-tabular font-medium flex items-center justify-center gap-space-xs hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+<span>Force 30-Second Breath Pause</span>
+</button>
+<button class="w-full py-2 bg-tertiary-container text-on-tertiary-container rounded font-label-tabular text-label-tabular font-medium flex items-center justify-center gap-space-xs hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">rule</span>
+<span>Flag for Post-Exam Oral Derivation Audit</span>
+</button>
+<button class="w-full py-2 bg-error text-on-error rounded font-label-tabular text-label-tabular font-medium flex items-center justify-center gap-space-xs hover:bg-on-error-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Invalidate Session & Summon Chief Proctor</span>
+</button>
+</div>
+</div>
+<!-- POST-EXAM DERIVATION HANDOVER REMINDER NOTICE -->
+<div class="bg-surface-container p-space-sm rounded flex items-start gap-space-sm text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col space-y-1">
+<span class="font-semibold text-on-surface">Automated Derivation Gate Protocol</span>
+<p class="text-on-surface-variant text-[11px] leading-tight">
+              Upon session expiry or manual submit, Terminal T-09 will immediately transition to the
+              <span class="text-on-surface font-semibold">Self-Audit Answer Key & Mathematical Derivations Portal</span>.
+              The flagged questions will require step-by-step typed explanations.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- INSTITUTIONAL COMPLIANCE FOOTER STRIP -->
+<div class="bg-surface-container-lowest p-space-base rounded shadow-sm flex flex-wrap items-center justify-between gap-space-base mt-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-primary-container text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-tabular text-label-tabular font-bold text-on-surface">
+          GHQ / AHQ Computerized Testing Protocol Standards Compliant
+        </span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase tracking-wider">
+          Standard Operating Procedure #08-B • Cryptographic SHA-256 Event Ledger
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-wrap font-label-tabular text-label-tabular text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Local Database Sync: 100%</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>CCTV Hall Recording: Channel 08 Locked</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-on-surface">lock</span>
+<span>Chief Proctor Token: Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- INLINE INTERACTION SCRIPT -->
+<script>
+  (function() {
+    const btnLockAll = document.getElementById('btnLockAll');
+    if (btnLockAll) {
+      btnLockAll.addEventListener('click', function() {
+        const confirmed = window.confirm("SECURITY OVERRIDE: Are you sure you wish to trigger an EMERGENCY LOCK on all 24 active terminals in Hall Alpha?");
+        if (confirmed) {
+          alert("COMMENCE LOCKDOWN: Emergency state dispatched via GHQ Protocol V4.2. All candidate keyboards and mice suspended.");
+        }
+      });
+    }
+
+    const btnBroadcast = document.getElementById('btnBroadcast');
+    if (btnBroadcast) {
+      btnBroadcast.addEventListener('click', function() {
+        const msg = window.prompt("Enter Proctored Broadcast Message to be displayed on all candidate monitors:", "Cadets, 15 minutes remaining in Module 02. Ensure all answer confirmations are clicked.");
+        if (msg) {
+          alert("TRANSMISSION DISPATCHED: Broadcast overlay rendered across all 24 workstations.");
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>

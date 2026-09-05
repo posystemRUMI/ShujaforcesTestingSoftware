@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed-variant":"#354c3a","secondary-container":"#ceead1","surface-variant":"#d9e3f6","on-secondary-fixed":"#092011","secondary-fixed-dim":"#b2cdb6","primary":"#000000","primary-fixed-dim":"#bac7dc","on-tertiary":"#ffffff","inverse-primary":"#bac7dc","surface-container-highest":"#d9e3f6","on-primary-fixed-variant":"#3b4858","on-primary-fixed":"#0f1c2b","on-error":"#ffffff","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#e4c377","on-secondary":"#ffffff","on-primary-container":"#788598","on-secondary-container":"#526a56","surface-container-high":"#dee9fc","on-background":"#121c2a","tertiary-fixed":"#ffdf98","surface-dim":"#d0dbed","outline-variant":"#c5c6cc","surface":"#f8f9ff","surface-container":"#e6eeff","on-tertiary-fixed-variant":"#5a4301","on-surface-variant":"#44474c","on-primary":"#ffffff","error-container":"#ffdad6","on-tertiary-container":"#513c00","error":"#ba1a1a","secondary-fixed":"#ceead1","primary-container":"#0f1c2b","inverse-surface":"#27313f","primary-fixed":"#d6e3f8","surface-tint":"#535f71","inverse-on-surface":"#eaf1ff","secondary":"#4c6451","background":"#f8f9ff","on-surface":"#121c2a","outline":"#75777d","surface-container-low":"#eff4ff","tertiary":"#745b19","tertiary-container":"#c6a75e","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-tertiary-fixed":"#251a00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"24px","grid-margin":"24px","space-2xs":"2px","space-base":"16px","space-xs":"4px","space-sm":"8px","space-md":"12px","space-xl":"32px","space-3xl":"64px","grid-gutter":"16px","space-2xl":"48px"},"fontFamily":{"headline-xl-mobile":["Geist"],"label-code":["Geist"],"body-sm":["Inter"],"display-hero":["Geist"],"headline-md":["Geist"],"headline-sm":["Geist"],"headline-xl":["Geist"],"caption-caps":["Geist"],"body-lg":["Inter"],"label-tabular":["Geist"],"body-md":["Inter"],"headline-lg":["Geist"]},"fontSize":{"headline-xl-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"caption-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.1em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-tabular":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="h-16 flex items-center px-space-base gap-space-sm bg-primary-container shrink-0"><img alt="Forces Academy Official Insignia Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xq0mtWO3Tu8FZEW0ZmFWK2udXHODJ-fPpXHfChswjXEZwK2IscnTwG4XM59SkcK2p6GrwVTl3SL3wet4wtmsZhCQ9gusB3Yx2VB2hziXDX3p-h5yBz8zU4zAH-LHxH3zbN_F7CFeHgXwL3wb71-cXBgfthCbq7njM8KlXWL9xI6YEbbY4HdZFlH5aOSH3OJp6MwywWGzhFrKh8lBDvLw-E8RSnKoLIWxsTAmmcsSNIvhxrscrtbfkkXXI"/><div class="flex flex-col overflow-hidden"><span class="font-headline-sm text-headline-sm text-surface truncate">FORCES ACADEMY</span><span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-primary-container truncate">Testing Protocol</span></div></div><div class="overflow-y-auto flex-1 px-space-sm py-space-sm space-y-space-md"><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Operations</span><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-surface-container-high text-on-surface font-headline-sm rounded" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="truncate">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="students" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="truncate">Students</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="teachers" href="#"><span class="material-symbols-outlined text-[18px]">badge</span><span class="truncate">Teachers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="batches" href="#"><span class="material-symbols-outlined text-[18px]">military_tech</span><span class="truncate">Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="question-bank" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="truncate">Question Bank</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">quiz</span><span class="truncate">Tests</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="live-monitoring" href="#"><div class="flex items-center gap-space-sm min-w-0"><span class="material-symbols-outlined text-[18px] text-error">videocam</span><span class="truncate">Live Monitoring</span></div><span class="bg-error text-on-error font-label-tabular text-label-tabular px-space-xs py-space-2xs rounded">24</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="results" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span class="truncate">Results</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="retakes" href="#"><span class="material-symbols-outlined text-[18px]">replay</span><span class="truncate">Retakes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span class="truncate">Reports</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Configuration</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="forces" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="truncate">Forces</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="courses" href="#"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="truncate">Courses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="subjects" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span><span class="truncate">Subjects</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">System</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="truncate">Settings</span></a></nav></div></div><div class="p-space-base bg-surface-container-lowest shrink-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0"><span class="font-label-tabular text-label-tabular text-on-surface font-semibold truncate">Muhammad Usman</span><span class="font-caption-caps text-caption-caps text-on-surface-variant truncate">Senior Instructor</span></div></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">home</span><span>/</span><span class="text-on-surface font-semibold">Console</span></div><div class="relative w-80 max-w-sm"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-10 pl-9 pr-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)] placeholder:text-on-surface-variant/70" placeholder="Search students, tests, questions..." type="text"/></div></div><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-label-code text-label-code"><span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span><span>TELEMETRY ONLINE</span></div><span class="font-label-tabular text-label-tabular px-space-sm py-space-2xs bg-surface-container-high text-on-surface rounded">SPRING 2026</span><div class="relative flex items-center"><button class="w-10 h-10 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></div><button class="flex items-center gap-space-xs px-space-base h-10 bg-primary text-on-primary rounded font-label-tabular text-label-tabular shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-surface-tint hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[18px]">cached</span><span>Switch Role</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-lg bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-3xl space-y-space-xl">
+<!-- Page Header & Action Bar -->
+<section class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-base bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-space-2xs min-w-0">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface-variant">
+<span>Console</span>
+<span class="text-outline-variant">/</span>
+<span>Batches & Cadets</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Batch Telemetry & Performance</span>
+</div>
+<div class="flex items-center gap-space-sm pt-space-2xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Batches & Cadet Performance Console</h1>
+<span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-secondary-container text-on-secondary-container font-label-code text-label-code uppercase tracking-wider">
+          Live Operational
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+        Monitor active course batches across Army, Air Force, and Navy wings, track post-exam benchmark pass rates, inspect student readiness, and manage retake permissions with instant post-submission rationales.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-base h-10 bg-surface-container-high text-on-surface font-label-tabular text-label-tabular rounded-lg shadow-sm hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Dossier</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-base h-10 bg-surface-container-high text-on-surface font-label-tabular text-label-tabular rounded-lg shadow-sm hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>Create Batch</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-base h-10 bg-primary-container text-surface-container-lowest font-label-tabular text-label-tabular rounded-lg shadow-md hover:bg-on-background transition-colors">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Enroll New Cadet</span>
+</button>
+</div>
+</section>
+<!-- Top Telemetry KPI Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-base">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="space-y-space-2xs">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Active Enrolled Cadets</span>
+<div class="font-headline-xl text-headline-xl text-on-surface font-semibold">428</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-space-xs font-label-tabular text-label-tabular text-secondary">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-semibold">+24</span>
+<span class="text-on-surface-variant">newly inducted this week (6 Wings)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="space-y-space-2xs">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Benchmark Pass Rate</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold">81.4%</span>
+<span class="font-label-code text-label-code text-on-surface-variant">/ 75% Goal</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-space-xs font-label-tabular text-label-tabular text-secondary">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+<span class="font-semibold">+3.8%</span>
+<span class="text-on-surface-variant">vs. previous assessment cycle</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 81.4%"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="space-y-space-2xs">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface-variant">Auto-Graded Submissions</span>
+<div class="font-headline-xl text-headline-xl text-on-surface font-semibold">1,894</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+<span class="text-on-surface font-medium">100% Instant Resolution</span>
+<span>with unlocked keys</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="space-y-space-2xs">
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-tertiary">Pending Retake Requests</span>
+<div class="font-headline-xl text-headline-xl text-on-surface font-semibold">14</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">assignment_late</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-space-xs font-label-tabular text-label-tabular text-tertiary">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span class="font-semibold">Action Required</span>
+<span class="text-on-surface-variant">by Senior Proctor</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</section>
+<!-- Wing Cadre Filter Navigation Tabs -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-low p-space-xs rounded-xl shadow-sm">
+<div class="flex items-center gap-space-2xs overflow-x-auto p-space-2xs" id="wing-tabs">
+<button class="px-space-md py-space-xs rounded-lg font-label-tabular text-label-tabular bg-primary-container text-surface-container-lowest shadow-sm transition-all whitespace-nowrap">
+        All Active Batches (6)
+      </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-tabular text-label-tabular text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap">
+        Pakistan Army (PMA 154 LC)
+      </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-tabular text-label-tabular text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap">
+        PAF Air Weapon (GDP 158)
+      </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-tabular text-label-tabular text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap">
+        Pakistan Navy (PN Cadet 2026-A)
+      </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-tabular text-label-tabular text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap">
+        Technical Cadet Course (TCC 36)
+      </button>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-2xs text-on-surface-variant font-label-tabular text-label-tabular shrink-0">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Cycle: March 2026</span>
+</div>
+</section>
+<!-- Featured Batch Spotlight Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-base">
+<div class="space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-caption-caps text-caption-caps uppercase tracking-wider font-semibold">Flagship Batch Focus</span>
+<span class="px-space-xs py-space-2xs rounded bg-secondary-container text-on-secondary-container font-caption-caps text-caption-caps uppercase tracking-wider font-semibold">ISSB Recommended Cadre</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">
+          Batch: PMA 154 Long Course (Alpha Wing - Rawalpindi Sector)
+        </h2>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-xs font-label-tabular text-label-tabular text-on-surface-variant pt-space-2xs">
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary-container">school</span> 42 Cadets Enrolled</span>
+<span>•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-secondary">fact_check</span> 6 Full Mocks Administered</span>
+<span>•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary-container">query_stats</span> Mean Aggregate: <span class="font-semibold text-on-surface ml-1">76.2%</span></span>
+<span>•</span>
+<span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-tertiary">alarm</span> Next Mock: <span class="font-semibold text-tertiary ml-1">Tomorrow 09:00 PKT</span></span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-base h-10 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-tabular text-label-tabular rounded-lg shadow-sm transition-colors flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+<span>Batch Analytics Drilldown</span>
+</button>
+<button class="px-space-base h-10 bg-primary-container hover:bg-on-background text-surface-container-lowest font-label-tabular text-label-tabular rounded-lg shadow-md transition-colors flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span>Schedule Diagnostic Drill</span>
+</button>
+</div>
+</div>
+<!-- Mastery Progression Bars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-base pt-space-xs">
+<!-- Domain 1 -->
+<div class="p-space-base bg-surface-container-low rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-tabular text-label-tabular font-semibold text-on-surface">Verbal Intelligence & Speed</span>
+<span class="font-label-tabular text-label-tabular font-bold text-secondary">84.5%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 84.5%"></div>
+</div>
+<div class="flex items-center justify-between text-caption-caps font-caption-caps text-on-surface-variant">
+<span>High Proficiency (ISSB Cut: 70%)</span>
+<span class="text-secondary font-semibold">Class Rank 1</span>
+</div>
+</div>
+<!-- Domain 2 -->
+<div class="p-space-base bg-surface-container-low rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-tabular text-label-tabular font-semibold text-on-surface">Non-Verbal & Matrix Reasoning</span>
+<span class="font-label-tabular text-label-tabular font-bold text-primary-container">78.2%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 78.2%"></div>
+</div>
+<div class="flex items-center justify-between text-caption-caps font-caption-caps text-on-surface-variant">
+<span>Target Metric Standard Met</span>
+<span class="text-on-surface font-semibold">Median Steady</span>
+</div>
+</div>
+<!-- Domain 3 -->
+<div class="p-space-base bg-surface-container-low rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-tabular text-label-tabular font-semibold text-on-surface">Academic Core (Phy / Math / Pak Studies)</span>
+<span class="font-label-tabular text-label-tabular font-bold text-tertiary">68.9%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full transition-all duration-500" style="width: 68.9%"></div>
+</div>
+<div class="flex items-center justify-between text-caption-caps font-caption-caps text-on-surface-variant">
+<span class="text-tertiary font-semibold">Remediation Focus Required</span>
+<span>Below 70% Cut-off</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Cadets Roster & Examination Records Table View -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Filter Controls Bar -->
+<div class="p-space-lg flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-base bg-surface-container-lowest">
+<div class="relative flex-1 max-w-lg">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:bg-surface-container-lowest focus:outline-none transition-all placeholder:text-on-surface-variant/70 shadow-sm" placeholder="Search by Cadet Roll No, Name, CNIC, or Target Force..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<!-- Force Filter -->
+<select class="h-10 px-space-sm bg-surface-container-low rounded-lg font-label-tabular text-label-tabular text-on-surface focus:outline-none shadow-sm cursor-pointer">
+<option>Force Filter: All Wings</option>
+<option>Pak Army (PMA / TCC)</option>
+<option>Pak Air Force (GDP / CAE)</option>
+<option>Pak Navy (PN Cadet)</option>
+</select>
+<!-- Readiness Status Filter -->
+<select class="h-10 px-space-sm bg-surface-container-low rounded-lg font-label-tabular text-label-tabular text-on-surface focus:outline-none shadow-sm cursor-pointer">
+<option>Readiness: All Levels</option>
+<option>Cleared for Recommendation</option>
+<option>On Track</option>
+<option>Requires Remediation</option>
+</select>
+<!-- Sorting -->
+<select class="h-10 px-space-sm bg-surface-container-low rounded-lg font-label-tabular text-label-tabular text-on-surface focus:outline-none shadow-sm cursor-pointer">
+<option>Sort: Avg Score (High-to-Low)</option>
+<option>Sort: Roll No (Ascending)</option>
+<option>Sort: Recent Test Activity</option>
+<option>Sort: Needs Attention</option>
+</select>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="bg-surface-container-low font-caption-caps text-caption-caps uppercase text-on-surface-variant">
+<th class="py-space-md px-space-lg">Cadet Information</th>
+<th class="py-space-md px-space-base">Mocks Completed</th>
+<th class="py-space-md px-space-base">Latest Score</th>
+<th class="py-space-md px-space-base">Domain Breakdown</th>
+<th class="py-space-md px-space-base">Key & Explanations Telemetry</th>
+<th class="py-space-md px-space-base">ISSB Readiness</th>
+<th class="py-space-md px-space-lg text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-none">
+<!-- Row 1: High Distinction -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Official portrait photograph of a young disciplined Pakistani military academy cadet candidate wearing a crisp navy cadet training uniform in bright, clean studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBapIWFsY655l9VYSD58ANCuFA8L8b5FzpU64AoIEY2VncMkGxL3MYB6zWmVZ_gu13iHE7VWVstQYBK7ve9d1Xf6IrG8PLpq7-hHv6lLS_YW7jVBuDFMghwX9oALzdSvh3HQEb023R6mqFi_VfTH929f5y6A33obC8t8CJLPYZH8YlMBaAP5h1HQDsq-alqM76Adppl3Ft-5wc6u7hoi6SSYNZlzwLhVYCrYe7qwLtu64cybI1EVW2DZQ"/>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Ahmed Khan Sherwani</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span>PMA-2026-0145</span>
+<span>•</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-semibold uppercase">PA Kakul</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular">
+<span class="font-semibold text-on-surface">6 of 6</span>
+<span class="text-on-surface-variant block text-caption-caps font-caption-caps">100% Attendance</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">91.5%</span>
+<span class="px-space-xs py-space-2xs rounded bg-secondary-container text-on-secondary-container font-caption-caps text-caption-caps font-semibold uppercase">Distinction</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant block">Mock #6 • 14 Mar 2026</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface" title="Verbal: 94%">V: 94%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface" title="Non-Verbal: 92%">NV: 92%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface" title="Academic: 88%">AC: 88%</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs text-secondary font-label-tabular text-label-tabular">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-semibold">Answer Key Reviewed</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Completed 12 mins post-submission</span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-secondary-container text-on-secondary-fixed font-caption-caps text-caption-caps font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Cleared for ISSB Rec.
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface transition-colors" title="View Transcript & Explanations">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Authorize Retake">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Standard Passed -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Close up professional ID style portrait of a focused cadet applicant candidate from Rawalpindi preparing for Air Force academy induction, serious neutral demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDinNqUPAAcmA0eqoqvdFq-XeROK2lLsdn8z54dMLIskIuaLLNQ8elGE9dT4hs5w32Atzo8Peu_5OzbWS-ALk1_-ut1OgBcMaeXlS653HToTRyG8ZCDMK9KSnPsEch8qn7U6J-HXNUkT_aMTUcoZhJls9c0xVE260MEPg60AcFsatQ-vK2XcFNXdxlq9oTwKvT0P4RuCgK9KQOrCfYa_OuzP-ubeMkL1NqRj1NZeei8_SjrHT_Xxe2qrA"/>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Hamza Tariq Niazi</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span>PAF-2026-0892</span>
+<span>•</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold uppercase">PAF Risalpur</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular">
+<span class="font-semibold text-on-surface">5 of 6</span>
+<span class="text-on-surface-variant block text-caption-caps font-caption-caps">1 Missed (Medical Leave)</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">78.0%</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-caption-caps text-caption-caps font-semibold uppercase">Passed</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant block">Mock #5 • 12 Mar 2026</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">V: 80%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">NV: 82%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">AC: 72%</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs text-secondary font-label-tabular text-label-tabular">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span class="font-medium text-on-surface">Review In-Progress</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">3 of 5 domains verified</span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-high text-on-surface font-caption-caps text-caption-caps font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                On Track
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface transition-colors" title="View Transcript & Explanations">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Authorize Retake">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Warning / Academic Remediation Needed -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm text-headline-sm flex items-center justify-center font-bold">
+                  BF
+                </div>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Bilal Farooq</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span>PN-2026-0412</span>
+<span>•</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold uppercase">PN Manora</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular">
+<span class="font-semibold text-on-surface">6 of 6</span>
+<span class="text-on-surface-variant block text-caption-caps font-caption-caps">All Mocks Filed</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-error">54.0%</span>
+<span class="px-space-xs py-space-2xs rounded bg-error-container text-on-error-container font-caption-caps text-caption-caps font-semibold uppercase">Warning</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant block">Mock #6 • 14 Mar 2026</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">V: 62%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">NV: 58%</span>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-semibold">AC: 42%</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs text-tertiary font-label-tabular text-label-tabular">
+<span class="material-symbols-outlined text-[18px]">pending_actions</span>
+<span class="font-semibold">Explanations Pending View</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Candidate has not logged into review key</span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-caption-caps text-caption-caps font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Remediation Focus
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface transition-colors" title="View Transcript & Explanations">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</button>
+<button class="p-space-xs rounded bg-tertiary text-on-tertiary hover:opacity-90 transition-opacity" title="Authorize Retake">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Retake Requested / Actionable -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface font-headline-sm text-headline-sm flex items-center justify-center font-bold">
+                  DZ
+                </div>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Daniyal Zafar</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span>TCC-2026-0309</span>
+<span>•</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-semibold uppercase">E&ME Rawalpindi</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular">
+<span class="font-semibold text-on-surface">4 of 6</span>
+<span class="text-on-surface-variant block text-caption-caps font-caption-caps">Retake Requested</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">67.5%</span>
+<span class="px-space-xs py-space-2xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption-caps text-caption-caps font-semibold uppercase">Marginal</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant block">Mock #4 • 10 Mar 2026</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">V: 74%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">NV: 70%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">AC: 59%</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs text-secondary font-label-tabular text-label-tabular">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-semibold">Key Rationales Studied</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">98 mins in remediation portal</span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-highest text-on-surface font-caption-caps text-caption-caps font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                Retake Verification
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm h-8 bg-primary-container text-surface-container-lowest font-label-tabular text-label-tabular rounded hover:bg-on-background transition-colors flex items-center gap-space-2xs" title="Approve Retake Immediate">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+<span>Authorize</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: High Performer -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed font-headline-sm text-headline-sm flex items-center justify-center font-bold">
+                  ZA
+                </div>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Zeeshan Ali Bukhari</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span>PMA-2026-0177</span>
+<span>•</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-semibold uppercase">PA Kakul</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base font-label-tabular text-label-tabular">
+<span class="font-semibold text-on-surface">6 of 6</span>
+<span class="text-on-surface-variant block text-caption-caps font-caption-caps">100% Attendance</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">86.0%</span>
+<span class="px-space-xs py-space-2xs rounded bg-secondary-container text-on-secondary-container font-caption-caps text-caption-caps font-semibold uppercase">Passed</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant block">Mock #6 • 14 Mar 2026</span>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">V: 88%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">NV: 86%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-medium text-on-surface">AC: 84%</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex items-center gap-space-xs text-secondary font-label-tabular text-label-tabular">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-semibold">Answer Key Reviewed</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant">Immediate review verified</span>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-secondary-container text-on-secondary-fixed font-caption-caps text-caption-caps font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Cleared for ISSB Rec.
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface transition-colors" title="View Transcript & Explanations">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Authorize Retake">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Bulk Status Footer -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="font-label-tabular text-label-tabular text-on-surface-variant">
+        Showing <span class="font-semibold text-on-surface">1 - 5</span> of <span class="font-semibold text-on-surface">42</span> active batch candidates
+      </div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm h-8 bg-surface-container-lowest text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-container-high transition-colors shadow-sm disabled:opacity-50" disabled="">
+          Previous
+        </button>
+<button class="w-8 h-8 bg-primary-container text-surface-container-lowest rounded font-label-tabular text-label-tabular font-semibold shadow-sm">
+          1
+        </button>
+<button class="w-8 h-8 bg-surface-container-lowest text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-container-high transition-colors shadow-sm">
+          2
+        </button>
+<button class="w-8 h-8 bg-surface-container-lowest text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-container-high transition-colors shadow-sm">
+          3
+        </button>
+<button class="px-space-sm h-8 bg-surface-container-lowest text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-container-high transition-colors shadow-sm">
+          Next
+        </button>
+</div>
+</div>
+</section>
+<!-- Proctor Standards, Automated Grading & Biometric Governance Panel -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-space-base">
+<!-- Box 1: Auto Grading Protocol -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Instant Telemetry Grading</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Submissions trigger instantaneous server-side answer key cross-referencing. Item-level analysis, graphical solution pathways, and syllabus tags become available to faculty and candidates without batch delays.
+      </p>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-secondary">
+<span class="material-symbols-outlined text-[14px]">shield_with_heart</span>
+<span>Cryptographically Seeded Seed Keys</span>
+</div>
+</div>
+<!-- Box 2: ISSB Benchmark Standards -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">ISSB Recommendation Standard</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Evaluation algorithms compute a normalized Stanine Index based on Verbal (30%), Non-Verbal (35%), and General Academic (35%) scores. Cadets exceeding 75.0% aggregate with 0 domain flags earn clearing endorsement.
+      </p>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface">
+<span class="material-symbols-outlined text-[14px]">checklist</span>
+<span>GHQ / AHQ Standardized Norms</span>
+</div>
+</div>
+<!-- Box 3: Retake & Proctor Governance -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Retake Authorization Rules</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Candidates who fail benchmark criteria may request 1 randomized parallel diagnostic variant once they spend a mandatory 45 minutes reviewing their wrong-item explanations in the remediation chamber.
+      </p>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-tertiary">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+<span>14 Faculty Authorizations Waiting</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Micro-interaction for wing Cadre tabs
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('#wing-tabs button');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => {
+          b.className = 'px-space-md py-space-xs rounded-lg font-label-tabular text-label-tabular text-on-surface hover:bg-surface-container-high transition-all whitespace-nowrap';
+        });
+        btn.className = 'px-space-md py-space-xs rounded-lg font-label-tabular text-label-tabular bg-primary-container text-surface-container-lowest shadow-sm transition-all whitespace-nowrap';
+      });
+    });
+  });
+</script></main></div></body></html>

@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;      /* #F6F8FA */
+    --foreground: 215 28% 17%;      /* #1F2937 */
+
+    --card: 0 0% 100%;              /* #FFFFFF */
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 213 50% 11%;         /* #0E1B2A Command Navy */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 133 15% 32%;       /* #455D4A Tactical Slate */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 214 16% 94%;           /* #EDF1F5 Surface Recessed */
+    --muted-foreground: 215 16% 47%;/* #64748B */
+
+    --accent: 42 47% 57%;           /* #C6A75E Muted Brass */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 52% 31%;       /* #782525 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 13% 85%;          /* #D4D9DF Hairline Border */
+    --input: 214 13% 85%;
+    --ring: 213 50% 11%;
+
+    --radius: 4px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Strict Tabular Numerals for metrics, timers, and grids */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbars for high-density tables and drawers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EDF1F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9CFD6;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A9B3BD;
+}
+
+/* Exam Mode Focus Trap & Anti-Distraction */
+.exam-runner {
+  user-select: none;
+  -webkit-user-select: none;
+}

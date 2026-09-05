@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forces Academy - Student Computerized Examination Interface</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0E1B2A',
+              navyLight: '#16283D',
+              green: '#455D4A',
+              gold: '#C6A75E',
+              goldLight: '#F5EEDB',
+              surface: '#F8F9FA',
+              border: '#E2E8F0',
+              textMain: '#0F172A',
+              textMuted: '#64748B'
+            }
+          },
+          fontFamily: {
+            sans: ['Geist', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Geist', sans-serif;
+      background-color: #F6F8FA;
+      color: #0F172A;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+    .mono-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden bg-slate-100/70 text-slate-800">
+
+  <!-- TOP PROTOCOL BAR (Institutional Header) -->
+  <header class="bg-[#0E1B2A] text-white px-6 py-2.5 flex items-center justify-between border-b border-slate-800 shadow-md shrink-0 select-none z-30">
+    <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-8 h-8 rounded bg-gradient-to-br from-amber-500/20 to-transparent border border-[#C6A75E]/60 flex items-center justify-center text-[#C6A75E]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold tracking-widest text-[#C6A75E] uppercase">Forces Academy</span>
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-white/10 text-slate-300 border border-white/15">CBT NODE 04</span>
+          </div>
+          <h1 class="text-sm font-semibold tracking-tight text-white flex items-center gap-2">
+            PMA 154 Long Course · Full Mock 06
+            <span class="text-slate-400 font-normal text-xs">| Serial: PMA-2026-M06-A1</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Section Status Indicator -->
+    <div class="hidden md:flex items-center bg-slate-900/90 border border-slate-700/80 rounded-full px-4 py-1.5 space-x-3 shadow-inner">
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-xs font-medium text-slate-300">Active Module:</span>
+        <span class="text-xs font-bold text-white tracking-wide">02. NON-VERBAL INTELLIGENCE</span>
+      </div>
+      <span class="text-slate-600">|</span>
+      <div class="text-xs text-slate-300">
+        Question <span class="text-white font-bold mono-num">18</span> of <span class="text-slate-400 mono-num">40</span>
+      </div>
+    </div>
+
+    <!-- Right Controls: Cadet Profile & Active Countdown Timer -->
+    <div class="flex items-center space-x-5">
+      <!-- Section Timer Box -->
+      <div class="bg-gradient-to-b from-slate-900 to-black border border-amber-500/40 rounded-lg px-4 py-1.5 flex items-center space-x-3 shadow-lg">
+        <div class="flex flex-col items-end">
+          <span class="text-[9px] uppercase tracking-wider font-semibold text-amber-400/90">Section Remaining</span>
+          <div class="text-lg font-bold mono-num tracking-tight text-amber-300 flex items-center gap-1 leading-none">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+              <polyline points="12 6 12 12 16 14" stroke-width="2"></polyline>
+            </svg>
+            21:44
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadet Profile Pill -->
+      <div class="flex items-center pl-3 border-l border-slate-800 space-x-3">
+        <div class="w-8 h-8 rounded-full bg-slate-700 border border-slate-500 flex items-center justify-center font-bold text-xs text-slate-200 uppercase">
+          AK
+        </div>
+        <div class="hidden lg:block text-left leading-tight">
+          <div class="text-xs font-semibold text-white">Ahmed Khan</div>
+          <div class="text-[10px] text-slate-400 mono-num">ROLL: PMA-2026-0145</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUB-HEADER: SECTION PROGRESS & AUTOSAVE STATUS -->
+  <nav class="bg-white border-b border-slate-200 px-6 py-2 flex items-center justify-between shadow-sm shrink-0 select-none">
+    <!-- Module Tabs -->
+    <div class="flex items-center space-x-1 sm:space-x-2">
+      <div class="flex items-center px-3 py-1.5 rounded text-xs font-medium text-slate-500 bg-slate-100 hover:bg-slate-200 cursor-not-allowed">
+        <svg class="w-3.5 h-3.5 mr-1.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>Module 01: Verbal Intelligence</span>
+        <span class="ml-2 text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.2 rounded font-mono">Completed (50/50)</span>
+      </div>
+
+      <div class="flex items-center px-3.5 py-1.5 rounded text-xs font-semibold text-[#0E1B2A] bg-amber-50 border border-amber-300/80 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-amber-500 mr-2 animate-ping"></span>
+        <span>Module 02: Non-Verbal Intelligence</span>
+        <span class="ml-2 text-[10px] bg-amber-200/70 text-amber-900 font-bold px-1.5 py-0.2 rounded font-mono">18 / 40 Answered</span>
+      </div>
+
+      <div class="flex items-center px-3 py-1.5 rounded text-xs font-medium text-slate-400 bg-slate-50 border border-slate-200 opacity-70">
+        <svg class="w-3.5 h-3.5 mr-1.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke-width="2"></rect>
+          <path d="M7 11V7a5 5 0 0110 0v4" stroke-width="2"></path>
+        </svg>
+        <span>Module 03: Academic Core</span>
+        <span class="ml-2 text-[10px] text-slate-400 font-mono">Locked</span>
+      </div>
+    </div>
+
+    <!-- Real-time Synchronization Status -->
+    <div class="flex items-center space-x-3 text-xs">
+      <div class="flex items-center space-x-1.5 text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+        <svg class="w-3.5 h-3.5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="animation-duration: 3s;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+        </svg>
+        <span class="font-medium">Responses Encrypted & Autosaved</span>
+      </div>
+      <div class="text-slate-400">|</div>
+      <div class="text-[11px] text-slate-500 font-medium">Terminal ID: <span class="font-mono text-slate-700 font-semibold">T-14-RAWALPINDI</span></div>
+    </div>
+  </nav>
+
+  <!-- MAIN EXAMINATION WORKSPACE: TWO COLUMNS (QUESTION AREA + NAVIGATOR DRAWER) -->
+  <main class="flex-1 flex overflow-hidden">
+
+    <!-- LEFT: QUESTION PRESENTATION AREA (Primary Stress-Free View) -->
+    <section class="flex-1 flex flex-col justify-between overflow-y-auto custom-scrollbar p-6 lg:p-8">
+      
+      <!-- Question Container Card -->
+      <div class="max-w-4xl w-full mx-auto bg-white rounded-xl border border-slate-200 shadow-sm p-6 sm:p-8 relative">
+        
+        <!-- Question Metadata Bar -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+          <div class="flex items-center space-x-3">
+            <span class="px-2.5 py-1 rounded bg-[#0E1B2A] text-white font-mono text-xs font-bold tracking-wider">QUESTION 18</span>
+            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Category: Matrix Rotational Pattern & Spatial Reasoning</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs text-slate-400 font-medium">Positive: <span class="text-emerald-600 font-semibold font-mono">+1.0</span></span>
+            <span class="text-slate-300">·</span>
+            <span class="text-xs text-slate-400 font-medium">Negative: <span class="text-slate-600 font-semibold font-mono">0.0</span></span>
+            <button class="ml-3 flex items-center space-x-1 text-xs text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1 rounded transition-colors" title="Flag this question to review before submission">
+              <svg class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+              </svg>
+              <span>Mark for Review</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Prompt & Statement -->
+        <div class="mb-6">
+          <h2 class="text-base sm:text-lg font-semibold text-slate-900 leading-snug">
+            Identify the figure among the four options (<span class="font-bold text-[#0E1B2A]">A, B, C, D</span>) that logically continues the sequential geometric rotation from Left to Right:
+          </h2>
+          <p class="text-xs text-slate-500 mt-1">Carefully inspect the step increment of the pointer and outer quadrant tick.</p>
+        </div>
+
+        <!-- PROBLEM MATRIX / VISUAL GRAPHIC (Non-Verbal Intelligence Graphic Display) -->
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-5 mb-8 flex flex-col items-center">
+          <div class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">Sequence Progression Sequence</div>
+          
+          <div class="flex items-center justify-center gap-3 sm:gap-6 flex-wrap">
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center">
+              <div class="w-18 h-18 sm:w-20 sm:h-20 bg-white rounded border-2 border-slate-300 flex items-center justify-center p-2 shadow-xs">
+                <!-- SVG Diagram 1: Arrow pointing Up (0 deg) -->
+                <svg viewBox="0 0 60 60" class="w-14 h-14">
+                  <rect x="2" y="2" width="56" height="56" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="2 2" rx="4"/>
+                  <circle cx="30" cy="30" r="4" fill="#0E1B2A"/>
+                  <line x1="30" y1="30" x2="30" y2="10" stroke="#0E1B2A" stroke-width="3" stroke-linecap="round"/>
+                  <polygon points="30,6 25,14 35,14" fill="#0E1B2A"/>
+                  <circle cx="48" cy="12" r="3" fill="#C6A75E"/>
+                </svg>
+              </div>
+              <span class="text-[11px] font-mono text-slate-500 mt-1">Step 1</span>
+            </div>
+
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center">
+              <div class="w-18 h-18 sm:w-20 sm:h-20 bg-white rounded border-2 border-slate-300 flex items-center justify-center p-2 shadow-xs">
+                <!-- SVG Diagram 2: Arrow pointing Up-Right (45 deg) -->
+                <svg viewBox="0 0 60 60" class="w-14 h-14">
+                  <rect x="2" y="2" width="56" height="56" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="2 2" rx="4"/>
+                  <circle cx="30" cy="30" r="4" fill="#0E1B2A"/>
+                  <line x1="30" y1="30" x2="44" y2="16" stroke="#0E1B2A" stroke-width="3" stroke-linecap="round"/>
+                  <polygon points="48,12 38,15 45,22" fill="#0E1B2A"/>
+                  <circle cx="48" cy="48" r="3" fill="#C6A75E"/>
+                </svg>
+              </div>
+              <span class="text-[11px] font-mono text-slate-500 mt-1">Step 2</span>
+            </div>
+
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center">
+              <div class="w-18 h-18 sm:w-20 sm:h-20 bg-white rounded border-2 border-slate-300 flex items-center justify-center p-2 shadow-xs">
+                <!-- SVG Diagram 3: Arrow pointing Right (90 deg) -->
+                <svg viewBox="0 0 60 60" class="w-14 h-14">
+                  <rect x="2" y="2" width="56" height="56" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="2 2" rx="4"/>
+                  <circle cx="30" cy="30" r="4" fill="#0E1B2A"/>
+                  <line x1="30" y1="30" x2="50" y2="30" stroke="#0E1B2A" stroke-width="3" stroke-linecap="round"/>
+                  <polygon points="54,30 46,25 46,35" fill="#0E1B2A"/>
+                  <circle cx="12" cy="48" r="3" fill="#C6A75E"/>
+                </svg>
+              </div>
+              <span class="text-[11px] font-mono text-slate-500 mt-1">Step 3</span>
+            </div>
+
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+
+            <!-- Step ? Target -->
+            <div class="flex flex-col items-center">
+              <div class="w-18 h-18 sm:w-20 sm:h-20 bg-amber-50/70 rounded border-2 border-dashed border-amber-400 flex flex-col items-center justify-center shadow-inner">
+                <span class="text-2xl font-bold font-mono text-amber-600">?</span>
+                <span class="text-[9px] font-bold text-amber-700 tracking-tight">FIND NEXT</span>
+              </div>
+              <span class="text-[11px] font-mono font-semibold text-amber-700 mt-1">Target</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 DISTINCT OPTIONS (Grid Layout) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <!-- Option A -->
+          <label class="group relative flex items-center p-4 rounded-xl border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50/80 cursor-pointer transition-all">
+            <input type="radio" name="exam_option" value="A" class="sr-only">
+            <div class="w-7 h-7 rounded-full border border-slate-300 flex items-center justify-center font-bold text-xs text-slate-600 group-hover:border-slate-400 mr-4 shrink-0 bg-white">
+              A
+            </div>
+            <div class="flex items-center space-x-4 flex-1">
+              <div class="w-14 h-14 bg-white rounded border border-slate-200 flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 60 60" class="w-11 h-11">
+                  <circle cx="30" cy="30" r="3" fill="#0E1B2A"/>
+                  <line x1="30" y1="30" x2="30" y2="50" stroke="#0E1B2A" stroke-width="2.5"/>
+                  <polygon points="30,54 26,46 34,46" fill="#0E1B2A"/>
+                  <circle cx="12" cy="12" r="2.5" fill="#C6A75E"/>
+                </svg>
+              </div>
+              <div class="text-xs font-medium text-slate-700">Downward Vector (180°), Top-Left Dot</div>
+            </div>
+          </label>
+
+          <!-- Option B -->
+          <label class="group relative flex items-center p-4 rounded-xl border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50/80 cursor-pointer transition-all">
+            <input type="radio" name="exam_option" value="B" class="sr-only">
+            <div class="w-7 h-7 rounded-full border border-slate-300 flex items-center justify-center font-bold text-xs text-slate-600 group-hover:border-slate-400 mr-4 shrink-0 bg-white">
+              B
+            </div>
+            <div class="flex items-center space-x-4 flex-1">
+              <div class="w-14 h-14 bg-white rounded border border-slate-200 flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 60 60" class="w-11 h-11">
+                  <circle cx="30" cy="30" r="3" fill="#0E1B2A"/>
+                  <line x1="30" y1="30" x2="16" y2="44" stroke="#0E1B2A" stroke-width="2.5"/>
+                  <polygon points="12,48 15,38 22,45" fill="#0E1B2A"/>
+                  <circle cx="48" cy="12" r="2.5" fill="#C6A75E"/>
+                </svg>
+              </div>
+              <div class="text-xs font-medium text-slate-700">Down-Left Vector (225°), Top-Right Dot</div>
+            </div>
+          </label>
+
+          <!-- Option C (CURRENTLY SELECTED STATE) -->
+          <label class="relative flex items-center p-4 rounded-xl border-2 border-[#0E1B2A] bg-blue-50/40 shadow-xs cursor-pointer transition-all ring-1 ring-[#0E1B2A]/30">
+            <input type="radio" name="exam_option" value="C" checked class="sr-only">
+            <div class="w-7 h-7 rounded-full bg-[#0E1B2A] text-white flex items-center justify-center font-bold text-xs mr-4 shrink-0 shadow-sm">
+              ✓
+            </div>
+            <div class="flex items-center space-x-4 flex-1">
+              <div class="w-14 h-14 bg-white rounded border-2 border-[#0E1B2A] flex items-center justify-center shrink-0 shadow-xs">
+                <!-- Correct 135 deg rotation (Down-Right) with dot in Top-Left (90 deg counter) -->
+                <svg viewBox="0 0 60 60" class="w-11 h-11">
+                  <circle cx="30" cy="30" r="3" fill="#0E1B2A"/>
+                  <line x1="30" y1="30" x2="44" y2="44" stroke="#0E1B2A" stroke-width="2.5"/>
+                  <polygon points="48,48 45,38 38,45" fill="#0E1B2A"/>
+                  <circle cx="12" cy="12" r="2.5" fill="#C6A75E"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-[#0E1B2A]">Option C · Selected</div>
+                <div class="text-[11px] text-slate-600">Down-Right Vector (135° Clockwise Progression)</div>
+              </div>
+            </div>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded ml-2">Active Choice</span>
+          </label>
+
+          <!-- Option D -->
+          <label class="group relative flex items-center p-4 rounded-xl border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50/80 cursor-pointer transition-all">
+            <input type="radio" name="exam_option" value="D" class="sr-only">
+            <div class="w-7 h-7 rounded-full border border-slate-300 flex items-center justify-center font-bold text-xs text-slate-600 group-hover:border-slate-400 mr-4 shrink-0 bg-white">
+              D
+            </div>
+            <div class="flex items-center space-x-4 flex-1">
+              <div class="w-14 h-14 bg-white rounded border border-slate-200 flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 60 60" class="w-11 h-11">
+                  <circle cx="30" cy="30" r="3" fill="#0E1B2A"/>
+                  <line x1="30" y1="30" x2="10" y2="30" stroke="#0E1B2A" stroke-width="2.5"/>
+                  <polygon points="6,30 14,26 14,34" fill="#0E1B2A"/>
+                  <circle cx="48" cy="48" r="2.5" fill="#C6A75E"/>
+                </svg>
+              </div>
+              <div class="text-xs font-medium text-slate-700">Horizontal Left Vector (270°), Bottom-Right Dot</div>
+            </div>
+          </label>
+
+        </div>
+
+      </div>
+
+      <!-- BOTTOM CONTROL BAR: ACTION BUTTONS (Previous / Clear / Next / Section Finish) -->
+      <div class="max-w-4xl w-full mx-auto mt-6 flex items-center justify-between pt-4 border-t border-slate-200/80">
+        <div class="flex items-center space-x-3">
+          <button class="px-4 py-2 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-semibold hover:bg-slate-50 hover:border-slate-400 transition-colors flex items-center gap-1.5 shadow-xs">
+            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Previous (Q-17)
+          </button>
+          
+          <button class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-700 text-xs font-medium hover:bg-slate-200/60 transition-colors">
+            Clear Response
+          </button>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <button class="px-3.5 py-2 rounded-lg border border-amber-300 bg-amber-50 text-amber-800 text-xs font-semibold hover:bg-amber-100 transition-colors">
+            Skip Question
+          </button>
+
+          <button class="px-6 py-2 rounded-lg bg-[#0E1B2A] text-white text-xs font-semibold hover:bg-[#16283D] transition-colors flex items-center gap-2 shadow-sm">
+            Save & Next (Q-19)
+            <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT: QUESTION NAVIGATOR DRAWER / PALETTE (Distraction-Free Sticky Sidebar) -->
+    <aside class="w-80 border-l border-slate-200 bg-white flex flex-col justify-between p-5 shrink-0 select-none shadow-sm">
+      
+      <div>
+        <!-- Navigator Header -->
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-800">Question Palette</h3>
+            <p class="text-[11px] text-slate-400">Non-Verbal · 40 Questions</p>
+          </div>
+          <span class="text-xs font-mono font-bold text-[#0E1B2A] bg-slate-100 px-2 py-0.5 rounded">45% Done</span>
+        </div>
+
+        <!-- Palette Status Legend -->
+        <div class="grid grid-cols-2 gap-2 text-[10px] mb-4 pb-4 border-b border-slate-100">
+          <div class="flex items-center space-x-1.5">
+            <span class="w-3.5 h-3.5 rounded bg-emerald-600 text-white font-mono flex items-center justify-center text-[9px] font-bold">✓</span>
+            <span class="text-slate-600 font-medium">Answered (18)</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <span class="w-3.5 h-3.5 rounded bg-slate-100 border border-slate-300 text-slate-600 font-mono flex items-center justify-center text-[9px]"></span>
+            <span class="text-slate-600 font-medium">Unanswered (19)</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <span class="w-3.5 h-3.5 rounded bg-amber-400 text-white font-mono flex items-center justify-center text-[9px] font-bold">★</span>
+            <span class="text-slate-600 font-medium">Flagged Review (2)</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <span class="w-3.5 h-3.5 rounded bg-[#0E1B2A] ring-2 ring-blue-400 text-white font-mono flex items-center justify-center text-[9px] font-bold">18</span>
+            <span class="text-slate-800 font-bold">Current</span>
+          </div>
+        </div>
+
+        <!-- 40-Question Interactive Grid -->
+        <div class="grid grid-cols-5 gap-1.5 max-h-[340px] overflow-y-auto pr-1 custom-scrollbar">
+          <!-- 1 to 17 (Answered) -->
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">01</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">02</button>
+          <button class="h-8 rounded bg-amber-400 text-slate-900 text-xs font-mono font-bold flex items-center justify-center" title="Flagged">03 ★</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">04</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">05</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">06</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">07</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">08</button>
+          <button class="h-8 rounded bg-amber-400 text-slate-900 text-xs font-mono font-bold flex items-center justify-center" title="Flagged">09 ★</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">10</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">11</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">12</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">13</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">14</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">15</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">16</button>
+          <button class="h-8 rounded bg-emerald-600 text-white text-xs font-mono font-semibold hover:opacity-90">17</button>
+          
+          <!-- 18 (Current) -->
+          <button class="h-8 rounded bg-[#0E1B2A] text-amber-300 text-xs font-mono font-bold ring-2 ring-blue-500 shadow-md">18</button>
+
+          <!-- 19 to 40 (Unanswered) -->
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">19</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">20</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">21</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">22</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">23</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">24</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">25</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">26</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">27</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">28</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">29</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">30</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">31</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">32</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">33</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">34</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">35</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">36</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">37</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">38</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">39</button>
+          <button class="h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono border border-slate-200">40</button>
+        </div>
+      </div>
+
+      <!-- Bottom Module Transition / Emergency Finalize Box -->
+      <div class="mt-4 pt-4 border-t border-slate-200">
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-3">
+          <div class="flex justify-between text-xs text-slate-600 mb-1">
+            <span>Overall Test Time:</span>
+            <span class="font-mono font-bold text-slate-800">58m 16s left</span>
+          </div>
+          <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-600 h-full w-[45%]"></div>
+          </div>
+        </div>
+
+        <button class="w-full py-2.5 px-4 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs tracking-wide shadow-sm transition-all flex items-center justify-center gap-2">
+          <span>Complete Section & Proceed</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </button>
+        
+        <p class="text-[10px] text-center text-slate-400 mt-2">Answers lock when section expires or manually finalized.</p>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- CONFIRMATION SUBMIT DIALOG (MODAL SIMULATION IN BACKGROUND) -->
+  <div class="hidden fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-md w-full p-6 text-center">
+      <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+        !
+      </div>
+      <h3 class="text-base font-bold text-slate-900 mb-2">Finalize Examination Submission?</h3>
+      <p class="text-xs text-slate-600 mb-6 leading-relaxed">
+        You have answered <span class="font-bold text-emerald-600">68 of 140 questions</span> across all sections. Unanswered items will be marked as skipped. Once submitted, your official answer key, solution rationale, and diagnostic scorecard will be generated instantly.
+      </p>
+      <div class="flex items-center justify-end space-x-3">
+        <button class="px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-lg">Return to Test</button>
+        <button class="px-5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg">Confirm & Submit Test</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

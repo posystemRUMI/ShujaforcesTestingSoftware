@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed-variant":"#354c3a","secondary-container":"#ceead1","surface-variant":"#d9e3f6","on-secondary-fixed":"#092011","secondary-fixed-dim":"#b2cdb6","primary":"#000000","primary-fixed-dim":"#bac7dc","on-tertiary":"#ffffff","inverse-primary":"#bac7dc","surface-container-highest":"#d9e3f6","on-primary-fixed-variant":"#3b4858","on-primary-fixed":"#0f1c2b","on-error":"#ffffff","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#e4c377","on-secondary":"#ffffff","on-primary-container":"#788598","on-secondary-container":"#526a56","surface-container-high":"#dee9fc","on-background":"#121c2a","tertiary-fixed":"#ffdf98","surface-dim":"#d0dbed","outline-variant":"#c5c6cc","surface":"#f8f9ff","surface-container":"#e6eeff","on-tertiary-fixed-variant":"#5a4301","on-surface-variant":"#44474c","on-primary":"#ffffff","error-container":"#ffdad6","on-tertiary-container":"#513c00","error":"#ba1a1a","secondary-fixed":"#ceead1","primary-container":"#0f1c2b","inverse-surface":"#27313f","primary-fixed":"#d6e3f8","surface-tint":"#535f71","inverse-on-surface":"#eaf1ff","secondary":"#4c6451","background":"#f8f9ff","on-surface":"#121c2a","outline":"#75777d","surface-container-low":"#eff4ff","tertiary":"#745b19","tertiary-container":"#c6a75e","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-tertiary-fixed":"#251a00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"24px","grid-margin":"24px","space-2xs":"2px","space-base":"16px","space-xs":"4px","space-sm":"8px","space-md":"12px","space-xl":"32px","space-3xl":"64px","grid-gutter":"16px","space-2xl":"48px"},"fontFamily":{"headline-xl-mobile":["Geist"],"label-code":["Geist"],"body-sm":["Inter"],"display-hero":["Geist"],"headline-md":["Geist"],"headline-sm":["Geist"],"headline-xl":["Geist"],"caption-caps":["Geist"],"body-lg":["Inter"],"label-tabular":["Geist"],"body-md":["Inter"],"headline-lg":["Geist"]},"fontSize":{"headline-xl-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"caption-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.1em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-tabular":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[240px] bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="h-16 flex items-center px-space-base gap-space-sm bg-primary-container shrink-0"><img alt="Forces Academy Official Insignia Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xq0mtWO3Tu8FZEW0ZmFWK2udXHODJ-fPpXHfChswjXEZwK2IscnTwG4XM59SkcK2p6GrwVTl3SL3wet4wtmsZhCQ9gusB3Yx2VB2hziXDX3p-h5yBz8zU4zAH-LHxH3zbN_F7CFeHgXwL3wb71-cXBgfthCbq7njM8KlXWL9xI6YEbbY4HdZFlH5aOSH3OJp6MwywWGzhFrKh8lBDvLw-E8RSnKoLIWxsTAmmcsSNIvhxrscrtbfkkXXI"/><div class="flex flex-col overflow-hidden"><span class="font-headline-sm text-headline-sm text-surface truncate">FORCES ACADEMY</span><span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-primary-container truncate">Testing Protocol</span></div></div><div class="overflow-y-auto flex-1 px-space-sm py-space-sm space-y-space-md"><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Operations</span><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-surface-container-high text-on-surface font-headline-sm rounded" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="truncate">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="students" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="truncate">Students</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="teachers" href="#"><span class="material-symbols-outlined text-[18px]">badge</span><span class="truncate">Teachers</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="batches" href="#"><span class="material-symbols-outlined text-[18px]">military_tech</span><span class="truncate">Batches</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="question-bank" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="truncate">Question Bank</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="tests" href="#"><span class="material-symbols-outlined text-[18px]">quiz</span><span class="truncate">Tests</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="live-monitoring" href="#"><div class="flex items-center gap-space-sm min-w-0"><span class="material-symbols-outlined text-[18px] text-error">videocam</span><span class="truncate">Live Monitoring</span></div><span class="bg-error text-on-error font-label-tabular text-label-tabular px-space-xs py-space-2xs rounded">24</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="results" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span class="truncate">Results</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="retakes" href="#"><span class="material-symbols-outlined text-[18px]">replay</span><span class="truncate">Retakes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">summarize</span><span class="truncate">Reports</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">Configuration</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="forces" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="truncate">Forces</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="courses" href="#"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="truncate">Courses</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="subjects" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span><span class="truncate">Subjects</span></a></nav><nav class="space-y-space-2xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm rounded"><span class="px-space-sm font-caption-caps text-caption-caps uppercase text-on-primary-container block mb-space-2xs">System</span><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-surface hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span class="truncate">Settings</span></a></nav></div></div><div class="p-space-base bg-surface-container-lowest shrink-0 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0"><span class="font-label-tabular text-label-tabular text-on-surface font-semibold truncate">Muhammad Usman</span><span class="font-caption-caps text-caption-caps text-on-surface-variant truncate">Senior Instructor</span></div></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg flex-1"><div class="flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">home</span><span>/</span><span class="text-on-surface font-semibold">Console</span></div><div class="relative w-80 max-w-sm"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-10 pl-9 pr-space-sm bg-surface-container-lowest rounded text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)] placeholder:text-on-surface-variant/70" placeholder="Search students, tests, questions..." type="text"/></div></div><div class="flex items-center gap-space-base"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs bg-secondary-container text-on-secondary-container rounded font-label-code text-label-code"><span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span><span>TELEMETRY ONLINE</span></div><span class="font-label-tabular text-label-tabular px-space-sm py-space-2xs bg-surface-container-high text-on-surface rounded">SPRING 2026</span><div class="relative flex items-center"><button class="w-10 h-10 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></div><button class="flex items-center gap-space-xs px-space-base h-10 bg-primary text-on-primary rounded font-label-tabular text-label-tabular shadow-[0_1px_8px_rgba(0,0,0,0.04)] hover:bg-surface-tint hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[18px]">cached</span><span>Switch Role</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-space-lg bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-3xl">
+<!-- Interactive State Sync for Shell Navigation -->
+<script>
+    (function () {
+      const activePath = 'retakes';
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach((link) => {
+        if (link.getAttribute('data-path') === activePath) {
+          link.className =
+            'flex items-center gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-high text-on-surface font-headline-sm shadow-sm transition-all';
+          const icon = link.querySelector('.material-symbols-outlined');
+          if (icon) icon.className = 'material-symbols-outlined text-[18px] text-primary';
+        }
+      });
+    })();
+  </script>
+<!-- Top Context Header & Directive Strip -->
+<div class="flex flex-col gap-space-md mb-space-xl">
+<div class="flex flex-wrap items-center justify-between gap-space-base">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant uppercase">
+<span>Command</span>
+<span class="text-outline-variant">/</span>
+<span>Approvals & Retakes</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Diagnostic Remediation Console</span>
+</div>
+<div class="flex items-center gap-space-md mt-space-2xs">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Retakes & Proctor Diagnostic Chamber</h1>
+<div class="px-space-sm py-space-2xs bg-surface-container-highest text-on-primary-container font-caption-caps text-caption-caps rounded flex items-center gap-space-xs shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+<span>ACADEMY DISCIPLINE DIRECTIVE #09</span>
+</div>
+</div>
+</div>
+<!-- Proctor Tactical Actions -->
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-primary-container text-on-primary rounded font-label-tabular text-label-tabular shadow-sm hover:bg-surface-tint transition-all" id="btnBatchApprove" onclick="batchApproveAction()">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Batch Authorize Eligible (<span id="eligibleCounter">8</span>)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-base h-10 bg-surface-container-lowest text-on-surface font-label-tabular text-label-tabular rounded shadow-sm hover:bg-surface-container-high transition-colors" onclick="triggerExportNotice()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Proctor Log</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface rounded flex items-center justify-center shadow-sm transition-colors" title="Audit Rules Configuration">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Remediation Mandate Alert Banner -->
+<div class="p-space-base bg-surface-container-high rounded flex items-start gap-space-md shadow-sm">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[20px]">lock_clock</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">GHQ / Air HQ / NHQ Mandatory Remediation Protocol</span>
+<span class="px-space-xs py-space-2xs bg-secondary-container text-on-secondary-container font-label-code text-label-code rounded">SYSTEM ENFORCED</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          Cadets scoring beneath competitive operational cutoff cannot access randomized retake variants without verifying an active 45-minute minimum review of question derivations and missed answer keys. Parallel test instances are cryptographically seeded via SHA-256 with 0% item duplication.
+        </p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-tabular text-label-tabular text-on-surface font-semibold block">COUNCIL CYCLE 26-1</span>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase block">Status: Locked Active</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Stat Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-base mb-space-xl">
+<!-- Stat 1: Pending Queue -->
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant">Pending Retake Requests</span>
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_late</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-sm">
+<span class="font-display-hero text-display-hero text-on-surface tracking-tight">14</span>
+<span class="font-label-tabular text-label-tabular text-secondary font-semibold">8 Ready</span>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-code text-label-code">
+<span>6 IN REMEDIATION REVIEW</span>
+<span class="text-tertiary">42% RESTRICTED</span>
+</div>
+</div>
+<!-- Stat 2: Mandatory Key Review Compliance -->
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant">Key Review Compliance</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">fact_check</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-sm">
+<span class="font-display-hero text-display-hero text-on-surface tracking-tight">86.4%</span>
+<span class="font-label-tabular text-label-tabular text-secondary flex items-center">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>+4.2%
+        </span>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-code text-label-code">
+<span>AVG REVIEW: 52 MINS</span>
+<span class="text-on-surface">GATE: 45 MINS</span>
+</div>
+</div>
+<!-- Stat 3: Variant Generation Protocol -->
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant">Parallel Hash Engine</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">fingerprint</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight truncate">SHA-256 SEED</span>
+<span class="font-label-tabular text-label-tabular text-secondary">ACTIVE</span>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-code text-label-code">
+<span>ZERO OVERLAP RE-TEST</span>
+<span>SEED #0412-B</span>
+</div>
+</div>
+<!-- Stat 4: Post-Retake Improvement Rate -->
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps uppercase text-on-surface-variant">Post-Remediation Uplift</span>
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-space-sm">
+<span class="font-display-hero text-display-hero text-on-surface tracking-tight">+18.2%</span>
+<span class="font-label-tabular text-label-tabular text-secondary font-semibold">SIGMA +1.4</span>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-code text-label-code">
+<span>ACADEMIC DELTA</span>
+<span>N=142 RE-EVALUATIONS</span>
+</div>
+</div>
+</div>
+<!-- Operational Filter Strip -->
+<div class="p-space-base bg-surface-container-lowest rounded shadow-sm mb-space-base flex flex-wrap items-center justify-between gap-space-base">
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Force Filter -->
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded text-on-surface font-label-tabular text-label-tabular">
+<span class="text-on-surface-variant">Target Branch:</span>
+<select class="bg-transparent font-semibold focus:outline-none cursor-pointer">
+<option>All Forces Unified (PA, PAF, PN)</option>
+<option>Pakistan Army (PMA Kakul / TCC)</option>
+<option>Pakistan Air Force (PAF Risalpur)</option>
+<option>Pakistan Navy (PNA Manora)</option>
+</select>
+</div>
+<!-- Retake Eligibility Filter -->
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded text-on-surface font-label-tabular text-label-tabular">
+<span class="text-on-surface-variant">Discipline State:</span>
+<select class="bg-transparent font-semibold focus:outline-none cursor-pointer" id="statusFilter" onchange="filterQueue(this.value)">
+<option value="all">All Dossiers (14)</option>
+<option value="eligible">Eligible for Retake (8)</option>
+<option value="review">In Explanation Review (6)</option>
+<option value="resolved">Resolved / Cleared (2)</option>
+</select>
+</div>
+<!-- Quick Toggles -->
+<button class="px-space-sm py-1.5 bg-surface-container-high text-on-surface rounded font-label-code text-label-code hover:bg-surface-variant transition-colors">
+        TIME CRITICAL (>60m)
+      </button>
+<button class="px-space-sm py-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface rounded font-label-code text-label-code transition-colors">
+        REMEDIAL OVERRIDE REQUIRED
+      </button>
+</div>
+<!-- Quick Search -->
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-space-sm bg-surface-container rounded text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/70" id="cadetSearch" oninput="searchCadets(this.value)" placeholder="Filter Cadet Roll, Name, or Lab..." type="text"/>
+</div>
+</div>
+<!-- Remediation Verification Dossier Table -->
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden mb-space-xl">
+<div class="px-space-lg py-space-base bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Remediation Verification & Retake Clearance Queue</span>
+<span class="font-label-code text-label-code px-space-xs py-space-2xs bg-surface-container-highest text-on-primary-container rounded">LIVE TELEMETRY STREAM</span>
+</div>
+<div class="flex items-center gap-space-base font-label-tabular text-label-tabular text-on-surface-variant">
+<span>Showing 4 Priority Dossiers</span>
+<span class="text-outline-variant">•</span>
+<span>Auto-syncing every 15s</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-caption-caps text-caption-caps uppercase tracking-wider">
+<th class="py-space-md px-space-lg">Cadet Dossier</th>
+<th class="py-space-md px-space-base">Initial Test Attempt</th>
+<th class="py-space-md px-space-base">Remediation Gate Telemetry</th>
+<th class="py-space-md px-space-base">Diagnostics & Weak Topic</th>
+<th class="py-space-md px-space-base">Gate Clearance</th>
+<th class="py-space-md px-space-lg text-right">Proctor Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="cadetTableBody">
+<!-- Cadet 1: Eligible -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-high/30 cursor-pointer" id="cadet-row-1" onclick="selectCadet('bilal')">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary flex items-center justify-center font-label-tabular text-label-tabular font-bold">
+                  BF
+                </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Bilal Farooq</span>
+<span class="px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-code text-label-code rounded">PN CADET</span>
+</div>
+<span class="font-label-tabular text-label-tabular text-on-surface-variant">Roll: PN-2026-0412 • Terminal T-04</span>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-label-tabular text-label-tabular text-on-surface font-semibold">Mock #6 - Full Academic</span>
+<span class="font-label-code text-label-code text-error">54.0% (Core Failed: 42.0%)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-label-tabular text-label-tabular">
+<span>1h 14m in Remediation</span>
+<span class="text-secondary font-semibold">100% Derivations</span>
+</div>
+<div class="w-48 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-full"></div>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Gate: 45m required (Passed +29m)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Physics Dynamics</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate max-w-xs">Circular Motion ($a_c=v^2/r$), Projectile Range</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-xs bg-secondary-container text-on-secondary-container rounded font-caption-caps text-caption-caps uppercase">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Remediation Verified
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs" onclick="event.stopPropagation()">
+<button class="px-space-base h-9 bg-primary-container text-on-primary rounded font-label-tabular text-label-tabular shadow-sm hover:bg-surface-tint transition-all flex items-center gap-space-2xs" onclick="authorizeCadet('Bilal Farooq', 'Mock 06-B')">
+<span class="material-symbols-outlined text-[16px]">key</span>
+<span>Authorize Parallel Mock 06-B</span>
+</button>
+<button class="px-space-sm h-9 bg-surface-container-high text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-variant transition-colors" onclick="selectCadet('bilal')" title="Inspect Error Log">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cadet 2: In Remediation Review (Locked) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" id="cadet-row-2" onclick="selectCadet('daniyal')">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-high text-on-surface flex items-center justify-center font-label-tabular text-label-tabular font-bold">
+                  DZ
+                </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Daniyal Zafar</span>
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-on-primary-container font-label-code text-label-code rounded">TCC ENGR</span>
+</div>
+<span class="font-label-tabular text-label-tabular text-on-surface-variant">Roll: TCC-2026-0309 • Lab Bravo T-12</span>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-label-tabular text-label-tabular text-on-surface font-semibold">Mock #4 - Intelligence & Engr</span>
+<span class="font-label-code text-label-code text-tertiary">67.5% (Spatial Matrix: 54.0%)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-label-tabular text-label-tabular">
+<span>28m of 45m Required</span>
+<span class="text-tertiary font-semibold">4/8 Rationale Read</span>
+</div>
+<div class="w-48 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[62%]"></div>
+</div>
+<span class="font-caption-caps text-caption-caps text-tertiary uppercase">Remediation Gate: 17 mins Remaining</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Non-Verbal Spatial Matrix</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate max-w-xs">3D Isometric Folding, Pattern Reflection</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-xs bg-surface-container-high text-tertiary rounded font-caption-caps text-caption-caps uppercase">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+                Review In-Progress (38% Left)
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs" onclick="event.stopPropagation()">
+<button class="px-space-base h-9 bg-surface-container-high text-on-surface-variant/50 rounded font-label-tabular text-label-tabular cursor-not-allowed flex items-center gap-space-2xs" disabled="" title="Locked: Must complete 17 more minutes studying official solution keys">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Locked (Review Incomplete)</span>
+</button>
+<button class="px-space-sm h-9 bg-surface-container text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-container-high transition-colors" onclick="promptOverride('Daniyal Zafar')" title="Proctor Diagnostic Override">
+<span class="material-symbols-outlined text-[18px]">security_update_warning</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cadet 3: Eligible with Faculty Note -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" id="cadet-row-3" onclick="selectCadet('haris')">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary flex items-center justify-center font-label-tabular text-label-tabular font-bold">
+                  HJ
+                </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Haris Javed</span>
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-on-primary-container font-label-code text-label-code rounded">PAF GDP</span>
+</div>
+<span class="font-label-tabular text-label-tabular text-on-surface-variant">Roll: PAF-2026-0941 • Terminal T-19</span>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-label-tabular text-label-tabular text-on-surface font-semibold">Mock #5 - Flight Aptitude</span>
+<span class="font-label-code text-label-code text-tertiary">62.0% (Non-Verbal Speed Deficit)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-label-tabular text-label-tabular">
+<span>58m in Remediation</span>
+<span class="text-secondary font-semibold">12/12 Explanations</span>
+</div>
+<div class="w-48 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-full"></div>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Gate: 45m required (Cleared +13m)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Cognitive Processing Speed</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate max-w-xs">Aviation Instruments / Compass Orientation</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-xs bg-secondary-container text-on-secondary-container rounded font-caption-caps text-caption-caps uppercase">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Remediation Verified
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs" onclick="event.stopPropagation()">
+<button class="px-space-base h-9 bg-primary-container text-on-primary rounded font-label-tabular text-label-tabular shadow-sm hover:bg-surface-tint transition-all flex items-center gap-space-2xs" onclick="authorizeCadet('Haris Javed', 'Mock 05-B')">
+<span class="material-symbols-outlined text-[16px]">key</span>
+<span>Authorize Parallel Mock 05-B</span>
+</button>
+<button class="px-space-sm h-9 bg-surface-container-high text-on-surface rounded font-label-tabular text-label-tabular hover:bg-surface-variant transition-colors" onclick="selectCadet('haris')" title="Inspect Error Log">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cadet 4: Resolved / Retake Cleared -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" id="cadet-row-4" onclick="selectCadet('zeeshan')">
+<td class="py-space-base px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-secondary text-on-secondary flex items-center justify-center font-label-tabular text-label-tabular font-bold">
+                  ZB
+                </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Zeeshan Ali Bukhari</span>
+<span class="px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-code text-label-code rounded">PA KAKUL</span>
+</div>
+<span class="font-label-tabular text-label-tabular text-on-surface-variant">Roll: PMA-2026-0177 • Mock #3-B (Passed)</span>
+</div>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-label-tabular text-label-tabular text-on-surface font-semibold">Initial: 64.0% → Retake: 86.0%</span>
+<span class="font-label-code text-label-code text-secondary font-semibold">+22.0% Score Uplift</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-label-tabular text-label-tabular">
+<span>Cycle Completed</span>
+<span class="text-secondary font-semibold">Derivations Verified</span>
+</div>
+<div class="w-48 h-2 bg-secondary-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-full"></div>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Authorized by Maj. Tariq (Ret.)</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-secondary font-semibold">Deficiency Resolved</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate max-w-xs">Trigonometric Projections & Vectors</span>
+</div>
+</td>
+<td class="py-space-base px-space-base">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-xs bg-surface-container-high text-on-surface rounded font-caption-caps text-caption-caps uppercase">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                Resolved / Cleared
+              </span>
+</td>
+<td class="py-space-base px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs" onclick="event.stopPropagation()">
+<button class="px-space-base h-9 bg-surface-container text-on-surface-variant font-label-tabular text-label-tabular rounded hover:bg-surface-container-high transition-colors flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">history_edu</span>
+<span>View Delta Record</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Cadet Diagnostic Deep-Dive Inspection Chamber (Bento Two-Column Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="diagnosticChamber">
+<!-- Left Column: Missed Question Derivation Audit (7 Columns) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded shadow-sm p-space-lg flex flex-col">
+<div class="flex items-start justify-between pb-space-base bg-surface-container-low -mx-space-lg -mt-space-lg p-space-lg rounded-t mb-space-base">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-primary-container text-on-primary flex items-center justify-center font-headline-md text-headline-md">
+            BF
+          </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="deepDiveName">Cadet Bilal Farooq</span>
+<span class="px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-code text-label-code rounded">DOSSIER AUDIT #0412</span>
+</div>
+<span class="font-label-tabular text-label-tabular text-on-surface-variant">PN Cadet 2026-A • Mock #6 Analysis (Physics Core Deficiency)</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-caption-caps text-caption-caps text-secondary font-bold block uppercase">REMEDIATION COMPLIANT</span>
+<span class="font-label-tabular text-label-tabular text-on-surface font-medium">1h 14m / 45m Gate</span>
+</div>
+</div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs font-label-tabular text-label-tabular text-on-surface">
+<span class="material-symbols-outlined text-error text-[18px]">error</span>
+<span class="font-semibold">Failed Question Remediation Trace (Sample Item #24 of 60)</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Time on Derivation: 04m 18s</span>
+</div>
+<!-- Question Card Sample from Cadet's attempt -->
+<div class="p-space-base bg-surface-container-low rounded mb-space-base">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-code text-label-code text-on-surface-variant">QUESTION ID: PHY-CIRC-2026-89</span>
+<span class="px-space-xs py-0.5 bg-surface-container-highest text-on-surface font-caption-caps text-caption-caps rounded">WEIGHTAGE: 2.0 MARKS</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface font-medium mb-space-base">
+          A fighter aircraft of mass \(m = 12,000 \text{ kg}\) executes a level turn at velocity \(v = 300 \text{ m/s}\) with a turn radius \(r = 1,500 \text{ m}\). What is the magnitude of the centripetal acceleration \(a_c\) experienced by the pilot, and the corresponding load factor in standard \(g\) units (\(g = 9.8 \text{ m/s}^2\))?
+        </p>
+<!-- Response Contrast Options -->
+<div class="space-y-space-xs font-label-tabular text-label-tabular">
+<div class="p-space-sm bg-surface-container-lowest rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded bg-surface-container flex items-center justify-center font-bold text-on-surface">A</span>
+<span>\(a_c = 45 \text{ m/s}^2\), Load Factor = \(4.6 g\)</span>
+</div>
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Unselected</span>
+</div>
+<div class="p-space-sm bg-error-container/40 text-on-surface rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded bg-error text-on-error flex items-center justify-center font-bold">B</span>
+<span class="font-semibold">\(a_c = 60 \text{ m/s}^2\), Load Factor = \(6.12 g\)</span>
+</div>
+<span class="font-label-code text-label-code px-space-xs py-0.5 bg-error text-on-error rounded font-semibold">CADET'S INCORRECT CHOICE</span>
+</div>
+<div class="p-space-sm bg-secondary-container/60 text-on-surface rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded bg-secondary text-on-secondary flex items-center justify-center font-bold">C</span>
+<span class="font-semibold">\(a_c = 60 \text{ m/s}^2\), Load Factor = \(6.12 g\) with vector bank angle \(\theta = \arctan(a_c/g)\)</span>
+</div>
+<span class="font-label-code text-label-code px-space-xs py-0.5 bg-secondary text-on-secondary rounded font-semibold">OFFICIAL DERIVATION KEY</span>
+</div>
+</div>
+</div>
+<!-- Proctor Verified Explanation & Step-by-Step Derivation -->
+<div class="p-space-base bg-surface-container rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+            Cadet Remediated Derivation Proof
+          </span>
+<span class="font-caption-caps text-caption-caps text-secondary font-bold uppercase">STUDY LOG CONFIRMED</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Cadet logged full view of derivation: \(a_c = \frac{v^2}{r} = \frac{300^2}{1500} = \frac{90,000}{1500} = 60\text{ m/s}^2\). Then calculated the total vertical plus lateral load vector: \(n = \sqrt{1 + (a_c/g)^2} = \sqrt{1 + (6.12)^2} \approx 6.20\text{ g}\). Cadet completed the self-check diagnostic problem correctly at 10:48:12 PKT.
+        </p>
+</div>
+</div>
+<!-- Right Column: Parallel Test Dispatch & Proctor Controls (5 Columns) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded shadow-sm p-space-lg flex flex-col justify-between">
+<div class="flex flex-col">
+<div class="flex items-center justify-between pb-space-sm mb-space-base bg-surface-container-low -mx-space-lg -mt-space-lg p-space-lg rounded-t">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Parallel Retake Configuration</span>
+</div>
+<span class="font-label-code text-label-code text-secondary uppercase font-semibold">PROCTOR DESK 01</span>
+</div>
+<!-- Cadet Retake Specific Controls -->
+<div class="space-y-space-md">
+<!-- Target Attempt Details -->
+<div class="p-space-sm bg-surface-container rounded flex items-center justify-between">
+<span class="font-caption-caps text-caption-caps text-on-surface-variant uppercase">Authorized Target Instance</span>
+<span class="font-label-tabular text-label-tabular font-bold text-on-surface">MOCK 06-B (VARIANT-PARALLEL)</span>
+</div>
+<!-- Parameter 1: Permutation Toggle -->
+<div class="p-space-base bg-surface-container rounded flex items-center justify-between">
+<div class="flex flex-col pr-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Enforce Seed Permutation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SHA-256 guarantees 0% identical numerical or diagram stems from Mock #6.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Parameter 2: Weak Topic Adaptive Difficulty -->
+<div class="p-space-base bg-surface-container rounded flex items-center justify-between">
+<div class="flex flex-col pr-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Remedial Reinforcement (+10% Rigor)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Appends 4 additional high-order questions in Classical Mechanics and Rotational Dynamics.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Proctored Lab Terminal Slot Assignment -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-caption-caps text-caption-caps uppercase text-on-surface-variant">Proctored Session Slot & Workstation</label>
+<div class="relative">
+<select class="w-full h-10 px-space-sm bg-surface-container rounded text-on-surface font-label-tabular text-label-tabular focus:outline-none focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option>Today 16:00 PKT - Lab Alpha (Workstation T-08)</option>
+<option>Today 17:30 PKT - Lab Alpha (Workstation T-02)</option>
+<option>Tomorrow 08:30 PKT - Main Cadre Testing Hall (Workstation M-22)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Faculty Instructor Endorsement Note -->
+<div class="flex flex-col gap-space-2xs">
+<label class="font-caption-caps text-caption-caps uppercase text-on-surface-variant">Supervising Proctor Endorsement</label>
+<textarea class="w-full p-space-sm bg-surface-container rounded text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary resize-none placeholder:text-on-surface-variant/70" placeholder="e.g. Cadet reviewed circular kinematics derivation. Permitted second variant under standard proctor timer." rows="2">Candidate satisfied minimum 45m remediation threshold. Physics derivation log validated by Senior Instructor Usman.</textarea>
+</div>
+</div>
+</div>
+<!-- Action Final Dispatch -->
+<div class="mt-space-lg pt-space-base bg-surface-container-low -mx-space-lg -mb-space-lg p-space-lg rounded-b flex items-center justify-between gap-space-base">
+<button class="px-space-base h-10 bg-surface-container-highest text-error font-label-tabular text-label-tabular rounded hover:bg-error-container transition-colors" onclick="rejectRetakePrompt('Bilal Farooq')">
+          Reject Authorization
+        </button>
+<button class="flex-1 h-10 bg-primary-container text-on-primary rounded font-label-tabular text-label-tabular shadow-sm hover:bg-surface-tint transition-all flex items-center justify-center gap-space-xs" id="btnAuthorizeSingle" onclick="authorizeCadet('Bilal Farooq', 'Mock 06-B')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Dispatch & Unlock Mock 06-B</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Institutional Warning & Discipline Protocol Footer -->
+<div class="mt-space-xl p-space-base bg-surface-container-highest/60 rounded flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">gavel</span>
+<span class="font-caption-caps text-caption-caps uppercase tracking-wider text-on-surface">
+        Institutional Integrity Policy: Retake authorizations are archived into Cadet Service Files (Form AF-309). Unauthorized bypass is subject to GHQ Tri-Services Examination Board review.
+      </span>
+</div>
+<span class="font-label-code text-label-code text-on-surface font-mono shrink-0">SHA256: 8F3D...E901</span>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="px-space-base py-space-sm bg-primary-container text-on-primary rounded shadow-xl flex items-center gap-space-sm font-label-tabular text-label-tabular">
+<span class="material-symbols-outlined text-secondary text-[20px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">Retake successfully authorized.</span>
+</div>
+</div>
+</div>
+<!-- Inline Interaction Logic -->
+<script>
+  function showToast(msg, isSuccess = true) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+    
+    toastMsg.textContent = msg;
+    toastIcon.textContent = isSuccess ? 'check_circle' : 'warning';
+    toastIcon.className = isSuccess 
+      ? 'material-symbols-outlined text-secondary text-[20px]'
+      : 'material-symbols-outlined text-error text-[20px]';
+
+    toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+      toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+    }, 3800);
+  }
+
+  function authorizeCadet(name, testVariant) {
+    showToast(`Parallel instance ${testVariant} unlocked for Cadet ${name}. Terminal token dispatched.`);
+    const counter = document.getElementById('eligibleCounter');
+    let current = parseInt(counter.textContent);
+    if (current > 0) {
+      counter.textContent = current - 1;
+    }
+  }
+
+  function batchApproveAction() {
+    showToast('Batch approved 8 eligible candidates. All parallel hash seeds successfully locked.');
+    document.getElementById('eligibleCounter').textContent = '0';
+    document.getElementById('btnBatchApprove').disabled = true;
+    document.getElementById('btnBatchApprove').classList.add('opacity-50', 'cursor-not-allowed');
+  }
+
+  function triggerExportNotice() {
+    showToast('Proctor Diagnostic Remediation Log (PDF & CSV) queued for export.');
+  }
+
+  function promptOverride(name) {
+    const reason = prompt(`Proctor Diagnostic Override for ${name}:\nCadet has not met 45m mandatory explanation requirement. Enter GHQ Exception Authorization Code:`);
+    if (reason) {
+      showToast(`Emergency override logged for ${name}. Notice sent to Chief Proctor.`);
+    }
+  }
+
+  function rejectRetakePrompt(name) {
+    if (confirm(`Are you sure you want to deny retake clearance for ${name}? Cadet must repeat full classroom review cycle.`)) {
+      showToast(`Authorization denied for ${name}. Retake cycle locked.`, false);
+    }
+  }
+
+  function selectCadet(cadetKey) {
+    const rows = document.querySelectorAll('#cadetTableBody tr');
+    rows.forEach(r => r.classList.remove('bg-surface-container-high/30'));
+
+    if (cadetKey === 'bilal') {
+      document.getElementById('cadet-row-1').classList.add('bg-surface-container-high/30');
+      document.getElementById('deepDiveName').textContent = 'Cadet Bilal Farooq';
+    } else if (cadetKey === 'daniyal') {
+      document.getElementById('cadet-row-2').classList.add('bg-surface-container-high/30');
+      document.getElementById('deepDiveName').textContent = 'Cadet Daniyal Zafar';
+    } else if (cadetKey === 'haris') {
+      document.getElementById('cadet-row-3').classList.add('bg-surface-container-high/30');
+      document.getElementById('deepDiveName').textContent = 'Cadet Haris Javed';
+    } else if (cadetKey === 'zeeshan') {
+      document.getElementById('cadet-row-4').classList.add('bg-surface-container-high/30');
+      document.getElementById('deepDiveName').textContent = 'Cadet Zeeshan Ali Bukhari';
+    }
+  }
+
+  function filterQueue(status) {
+    const rows = document.querySelectorAll('#cadetTableBody tr');
+    rows.forEach(row => {
+      row.style.display = '';
+      if (status === 'eligible' && (row.id === 'cadet-row-2' || row.id === 'cadet-row-4')) {
+        row.style.display = 'none';
+      } else if (status === 'review' && row.id !== 'cadet-row-2') {
+        row.style.display = 'none';
+      } else if (status === 'resolved' && row.id !== 'cadet-row-4') {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function searchCadets(query) {
+    const q = query.toLowerCase();
+    const rows = document.querySelectorAll('#cadetTableBody tr');
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(q) ? '' : 'none';
+    });
+  }
+</script></main></div></body></html>
