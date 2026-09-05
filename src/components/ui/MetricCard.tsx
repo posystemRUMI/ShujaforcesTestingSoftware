@@ -7,7 +7,7 @@ export interface MetricCardProps extends React.HTMLAttributes<HTMLDivElement> {
   value: React.ReactNode;
   subtext?: React.ReactNode;
   subtitle?: React.ReactNode;
-  icon?: React.ReactNode;
+  icon?: React.ReactNode | React.ComponentType<{ className?: string }>;
   badge?: {
     text: string;
     variant?: string;
@@ -49,7 +49,15 @@ export const MetricCard: React.FC<MetricCardProps> = ({
               {badge.text}
             </span>
           )}
-          {icon && <div className="text-[#0E1B2A]">{icon}</div>}
+          {icon && (
+            <div className="text-[#0E1B2A]">
+              {React.isValidElement(icon)
+                ? icon
+                : typeof icon === 'function' || (typeof icon === 'object' && icon !== null)
+                ? React.createElement(icon as React.ComponentType<{ className?: string }>, { className: 'w-4 h-4' })
+                : null}
+            </div>
+          )}
         </div>
       </div>
 

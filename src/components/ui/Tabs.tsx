@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 export interface TabItem {
   id: string;
   label: string;
-  icon?: React.ReactNode;
+  icon?: React.ReactNode | React.ComponentType<{ className?: string }>;
   badge?: string | number;
 }
 
@@ -51,7 +51,15 @@ export const Tabs: React.FC<TabsProps> = ({
                 : 'border-transparent text-[#64748B] hover:text-[#0E1B2A] hover:border-[#D4D9DF]',
             )}
           >
-            {tab.icon && <span className="w-4 h-4">{tab.icon}</span>}
+            {tab.icon && (
+              <span className="w-4 h-4 flex items-center justify-center">
+                {React.isValidElement(tab.icon)
+                  ? tab.icon
+                  : typeof tab.icon === 'function' || (typeof tab.icon === 'object' && tab.icon !== null)
+                  ? React.createElement(tab.icon as React.ComponentType<{ className?: string }>, { className: 'w-4 h-4' })
+                  : null}
+              </span>
+            )}
             <span>{tab.label}</span>
             {tab.badge !== undefined && (
               <span

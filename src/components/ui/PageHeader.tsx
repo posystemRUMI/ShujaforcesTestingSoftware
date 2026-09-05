@@ -63,11 +63,11 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
                 className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xs text-xs font-semibold uppercase tracking-wider bg-[#0E1B2A] text-white hover:bg-[#1E293B] transition-colors"
               >
                 {action.icon && (
-                  typeof action.icon === 'function' ? (
-                    <action.icon className="w-3.5 h-3.5" />
-                  ) : (
+                  React.isValidElement(action.icon) ? (
                     action.icon
-                  )
+                  ) : typeof action.icon === 'function' || (typeof action.icon === 'object' && action.icon !== null) ? (
+                    React.createElement(action.icon as React.ComponentType<{ className?: string }>, { className: 'w-3.5 h-3.5' })
+                  ) : null
                 )}
                 <span>{action.label}</span>
               </button>

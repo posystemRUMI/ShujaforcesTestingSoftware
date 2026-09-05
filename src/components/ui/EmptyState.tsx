@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 export interface EmptyStateProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   description: string;
-  icon?: React.ReactNode;
+  icon?: React.ReactNode | React.ComponentType<{ className?: string }>;
   action?: React.ReactNode | { label: string; onClick: () => void };
 }
 
@@ -26,7 +26,15 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
       {...props}
     >
       <div className="w-12 h-12 rounded bg-[#EDF1F5] flex items-center justify-center text-[#0E1B2A] mb-3">
-        {icon || <FileQuestion className="w-6 h-6 stroke-[1.75]" />}
+        {icon ? (
+          React.isValidElement(icon)
+            ? icon
+            : typeof icon === 'function' || (typeof icon === 'object' && icon !== null)
+            ? React.createElement(icon as React.ComponentType<{ className?: string }>, { className: 'w-6 h-6 stroke-[1.75]' })
+            : null
+        ) : (
+          <FileQuestion className="w-6 h-6 stroke-[1.75]" />
+        )}
       </div>
       <h3 className="text-sm font-bold uppercase tracking-wider text-[#0E1B2A] font-display">
         {title}
