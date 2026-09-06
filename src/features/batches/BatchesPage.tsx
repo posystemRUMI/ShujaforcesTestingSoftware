@@ -33,7 +33,7 @@ import {
 
 export const BatchesPage: React.FC = () => {
   const navigate = useNavigate();
-  const [batches, setBatches] = useState<BatchItem[]>(batchStore.getBatches());
+  const [batches, setBatches] = useState<BatchItem[]>(() => batchStore.getBatches());
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBranch, setSelectedBranch] = useState<string>('ALL');
   const [selectedStatus, setSelectedStatus] = useState<string>('ALL');
@@ -54,10 +54,27 @@ export const BatchesPage: React.FC = () => {
   });
 
   useEffect(() => {
+    let isMounted = true;
+    async function fetchBatches() {
+      try {
+        const { batchService } = await import('@/services/batchService');
+        const data = await batchService.getBatches();
+        if (isMounted && data && data.length > 0) {
+          setBatches(data);
+        }
+      } catch (e) {
+        console.warn('Failed to fetch batches:', e);
+      }
+    }
+    fetchBatches();
+
     const unsub = batchStore.subscribe(() => {
       setBatches(batchStore.getBatches());
     });
-    return unsub;
+    return () => {
+      isMounted = false;
+      unsub();
+    };
   }, []);
 
   // Compute metrics

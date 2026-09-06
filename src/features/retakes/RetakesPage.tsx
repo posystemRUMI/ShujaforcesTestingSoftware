@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { mockService } from '@/lib/mock-service';
+import { retakeService } from '@/services/retakeService';
+import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { RetakeDocket } from '@/types';
 import { ShieldCheck, Plus, Search, Calendar, CheckCircle2, X } from 'lucide-react';
 import { toast } from 'sonner';
@@ -27,6 +29,33 @@ export const RetakesPage: React.FC = () => {
   useEffect(() => {
     async function loadData() {
       try {
+        if (isSupabaseConfigured()) {
+          const data = await retakeService.getRetakePermissions();
+          if (data && data.length > 0) {
+            const mapped: RetakeDocket[] = data.map((d) => ({
+              id: d.id,
+              originalResultId: d.original_attempt_id || 'res-001',
+              cadetId: d.student_id,
+              cadetName: 'Cadet ' + d.student_id.slice(0, 8),
+              rollNumber: 'PMA-2601',
+              branch: 'PAKISTAN_ARMY',
+              testTitle: 'Commissioning Screening Exam',
+              failedSubject: 'Academic Mathematics',
+              previousScorePercent: 54,
+              scheduledDate: d.expires_at ? d.expires_at.split('T')[0] : '2026-03-15',
+              reason: d.notes || 'Official Retake Grant',
+              authorizedOfficer: 'Col. Farooq',
+              status: d.status === 'AVAILABLE' ? 'SCHEDULED' : 'RESOLVED',
+            }));
+            setRetakes(mapped);
+            setLoading(false);
+            return;
+          }
+        }
+        const data = await mockService.getRetakes();
+        setRetakes(data);
+      } catch (e) {
+        console.warn('Failed to fetch from retakeService:', e);
         const data = await mockService.getRetakes();
         setRetakes(data);
       } finally {

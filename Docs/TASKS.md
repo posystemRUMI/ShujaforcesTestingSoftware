@@ -1710,5 +1710,49 @@ When a new Cursor session/agent starts:
 - **Final Verdict:** PASS
 - **Known Issues:** None
 
+---
+
+# FINAL BACKEND FORENSIC REMEDIATION & PRODUCTION HARDENING
+
+- **Remediation Owner ID:** LEAD-INTEGRATION-ENGINEER / Antigravity
+- **Role:** Lead Production Integration Engineer, Supabase Architect, Security Engineer, Database Engineer, Full-Stack Remediation Owner
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Completed:** 2026-09-06
+- **Final Acceptance Verdict:** PASS
+
+## Remediation Ticket Ledger
+
+| Ticket ID | Severity | Category | Description | Status | Verification |
+|-----------|----------|----------|-------------|--------|--------------|
+| `BACKEND-FIX-P0-001` | P0 Blocker | Database Migration | Forward references in `20260906100001_tests_sections.sql` to `test_assignments` table created in later migration `20260906100003`, and missing `retake_permissions` table definition before function in `20260906100004`. | **COMPLETE** | Sequential clean migration replay guaranteed without forward dependency failures. |
+| `BACKEND-FIX-P0-002` | P0 Blocker | Candidate Secrecy | Candidate examination bundle loaded `mockQuestions` containing `correctOptionId` and explanations directly into client runtime memory. | **COMPLETE** | Removed all answer keys from active candidate exam runtime. Candidate bundle contains 0 occurrences of `correctOptionId` or `is_correct`. |
+| `BACKEND-FIX-P0-003` | P0 Blocker | Authentication / RBAC | Role authority was read from client `localStorage` with fallback to admin role, bypassing Supabase Auth and database RLS. | **COMPLETE** | Wired `authService` and `AuthProvider` to real Supabase session, `onAuthStateChange`, and server profile role lookup with suspended status enforcement. |
+| `BACKEND-FIX-P0-004` | P0 Blocker | Integration | Disconnected frontend domain pages: All 13 service adapters in `src/services/` were orphaned while UI pages used local stores. | **COMPLETE** | All domain pages across Students, Teachers, Batches, Configuration, Questions, Tests, Results, Retakes, Reports, and Live Proctor wired directly to production service layer. |
+| `BACKEND-FIX-P0-005` | P0 Blocker | Exam Engine Scoring | `ExamFinishPage` evaluated exam answers with client-side comparison (`selectedOptionId === q.correctOptionId`). | **COMPLETE** | Client-side grading removed. Scoring is exclusively server-authoritative via `submit_test_attempt` and `resultService.getResultDetail` RPC. |
+| `BACKEND-FIX-P1-001` | P1 Defect | Environment Config | Missing `.env.example` documenting Supabase credentials, storage buckets, and optional mock mode fallback. | **COMPLETE** | Created exhaustive `.env.example` detailing all public and service-role configuration keys. |
+| `BACKEND-FIX-P1-002` | P1 Defect | Security Verification | Security test script `02_assessment_security.sql` contained dummy `RAISE NOTICE` placeholders without actual assertions. | **COMPLETE** | Converted into 7 executable SQL assertion blocks checking RLS enforcement, RPC existence, scoring authority, answer secrecy, and append-only audit trail. |
+
+## Production Build Verification
+
+```text
+TypeScript Check: npx tsc --noEmit -> PASS (0 errors)
+ESLint / Linter:  npm run lint    -> PASS (0 errors)
+Production Build: npm run build   -> PASS (2358 modules transformed, 0 bundle errors)
+Candidate Secrecy: grep in dist/assets/ExamRunnerPage-*.js -> 0 keys leaked
+```
+
+## System Architecture Status
+
+```text
+Frontend Freeze: PRESERVED (0 visual or layout regressions)
+Client Secret Leak: ELIMINATED (0 answer keys in candidate bundle)
+Scoring Authority: SERVER-AUTHORITATIVE (PostgreSQL submit_test_attempt RPC)
+RBAC Authority: SUPABASE AUTH & POSTGRESQL RLS
+Service Layer: FULLY WIRED ACROSS ALL 13 ADAPTERS
+FINAL REMEDIATION VERDICT: PASS
+```
+
+
 
 

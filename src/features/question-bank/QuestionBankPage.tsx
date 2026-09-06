@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { mockService } from '@/lib/mock-service';
+import { questionService } from '@/services/questionService';
 import { Question, QuestionApprovalStatus } from '@/types';
 import { Plus, Search, Eye, Edit3, Image as ImageIcon, X, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -24,8 +24,10 @@ export const QuestionBankPage: React.FC = () => {
   useEffect(() => {
     async function loadData() {
       try {
-        const data = await mockService.getQuestions();
+        const data = await questionService.getQuestions();
         setQuestions(data);
+      } catch (e) {
+        console.warn('Failed to load questions from questionService:', e);
       } finally {
         setLoading(false);
       }

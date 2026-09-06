@@ -99,4 +99,44 @@ export const studentService = {
     if (error) throw new Error(error.message);
     return data;
   },
+
+  async getStudentById(id: string): Promise<StudentRecord | null> {
+    if (!isSupabaseConfigured()) {
+      return studentStore.getById(id) || null;
+    }
+    const students = await this.getStudents();
+    return students.find((s) => s.id === id) || null;
+  },
+
+  async deleteStudent(id: string): Promise<void> {
+    if (!isSupabaseConfigured()) {
+      studentStore.delete(id);
+      return;
+    }
+    const { error } = await (supabase as any).from('students').delete().eq('id', id);
+    if (error) {
+      console.warn('Failed to delete student from Supabase:', error);
+    }
+    studentStore.delete(id);
+  },
+
+  async updateStudent(id: string, updates: Partial<StudentRecord>): Promise<void> {
+    if (!isSupabaseConfigured()) {
+      studentStore.update(id, updates as any);
+      return;
+    }
+    const { error } = await (supabase as any)
+      .from('students')
+      .update({
+        father_name: updates.fatherName,
+        cnic: updates.cnic,
+        status: updates.status,
+      })
+      .eq('id', id);
+    if (error) {
+      console.warn('Failed to update student in Supabase:', error);
+    }
+    studentStore.update(id, updates as any);
+  },
 };
+

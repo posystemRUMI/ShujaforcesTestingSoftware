@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { questionService } from '@/services/questionService';
 import { mockService } from '@/lib/mock-service';
 import { Question, SubjectCategory, MilitaryBranch, QuestionApprovalStatus, DifficultyLevel } from '@/types';
 import { Save, Eye, ArrowLeft, Image as ImageIcon, Trash2 } from 'lucide-react';
@@ -34,21 +35,26 @@ export const QuestionAuthorPage: React.FC = () => {
   useEffect(() => {
     if (editId) {
       async function loadEditQuestion() {
-        const q = (await mockService.getQuestions()).find((item) => item.id === editId);
-        if (q) {
-          setCode(q.code);
-          setStem(q.stem);
-          setSubject(q.subject);
-          setBranch(q.branch);
-          setDifficulty(q.difficulty);
-          setTimeLimitSeconds(q.timeLimitSeconds);
-          setStatus(q.status);
-          setExplanation(q.explanation);
-          setImageUrl(q.imageUrl);
-          if (q.options && q.options.length === 4) {
-            setOptions(q.options as typeof options);
+        try {
+          const qs = await questionService.getQuestions();
+          const q = qs.find((item) => item.id === editId);
+          if (q) {
+            setCode(q.code);
+            setStem(q.stem);
+            setSubject(q.subject);
+            setBranch(q.branch);
+            setDifficulty(q.difficulty);
+            setTimeLimitSeconds(q.timeLimitSeconds);
+            setStatus(q.status);
+            setExplanation(q.explanation);
+            setImageUrl(q.imageUrl);
+            if (q.options && q.options.length === 4) {
+              setOptions(q.options as typeof options);
+            }
+            setCorrectOptionId(q.correctOptionId);
           }
-          setCorrectOptionId(q.correctOptionId);
+        } catch (e) {
+          console.warn('Failed to load edit question:', e);
         }
       }
       loadEditQuestion();

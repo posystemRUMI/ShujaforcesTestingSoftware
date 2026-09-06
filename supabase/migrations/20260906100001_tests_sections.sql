@@ -82,21 +82,7 @@ ALTER TABLE public.test_sections ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "tests_staff_select"
   ON public.tests FOR SELECT
   TO authenticated
-  USING (
-    public.is_admin()
-    OR public.is_teacher()
-    OR (
-      status IN ('PUBLISHED', 'ACTIVE', 'COMPLETED')
-      AND EXISTS (
-        SELECT 1 FROM public.test_assignments ta
-        JOIN public.batch_enrollments be ON be.batch_id = ta.batch_id
-        JOIN public.students s ON s.id = be.student_id
-        WHERE ta.test_id = tests.id
-          AND s.profile_id = auth.uid()
-          AND ta.status = 'ACTIVE'
-      )
-    )
-  );
+  USING (public.is_admin() OR public.is_teacher());
 
 CREATE POLICY "tests_staff_insert"
   ON public.tests FOR INSERT
@@ -114,24 +100,11 @@ CREATE POLICY "tests_staff_delete"
   TO authenticated
   USING (public.is_admin());
 
--- Test Sections: admin/teacher full, student read via test access
+-- Test Sections: admin/teacher full access
 CREATE POLICY "test_sections_staff_select"
   ON public.test_sections FOR SELECT
   TO authenticated
-  USING (
-    public.is_admin()
-    OR public.is_teacher()
-    OR EXISTS (
-      SELECT 1 FROM public.tests t
-      JOIN public.test_assignments ta ON ta.test_id = t.id
-      JOIN public.batch_enrollments be ON be.batch_id = ta.batch_id
-      JOIN public.students s ON s.id = be.student_id
-      WHERE t.id = test_sections.test_id
-        AND s.profile_id = auth.uid()
-        AND ta.status = 'ACTIVE'
-        AND t.status IN ('PUBLISHED', 'ACTIVE', 'COMPLETED')
-    )
-  );
+  USING (public.is_admin() OR public.is_teacher());
 
 CREATE POLICY "test_sections_staff_write"
   ON public.test_sections FOR ALL

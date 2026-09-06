@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { mockService } from '@/lib/mock-service';
+import { resultService } from '@/services/resultService';
+import { retakeService } from '@/services/retakeService';
+import { isSupabaseConfigured } from '@/lib/supabaseClient';
+import { useAuth } from '@/app/providers';
 import { ExamResult, RetakeDocket } from '@/types';
 import { CheckCircle, AlertCircle, FileText, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const StudentResultsPage: React.FC = () => {
+  const { user } = useAuth();
   const [results, setResults] = useState<ExamResult[]>([]);
   const [retakes, setRetakes] = useState<RetakeDocket[]>([]);
   const [loading, setLoading] = useState(true);
@@ -12,6 +17,71 @@ export const StudentResultsPage: React.FC = () => {
   useEffect(() => {
     async function loadData() {
       try {
+        if (isSupabaseConfigured()) {
+          const [dbResults, dbRetakes] = await Promise.all([
+            resultService.getResults({ studentId: user?.id }),
+            retakeService.getRetakePermissions({ studentId: user?.id }),
+          ]);
+          if (dbResults && dbResults.length > 0) {
+            const mappedResults: ExamResult[] = dbResults.map((r) => ({
+              id: r.id,
+              examSessionId: r.attempt_id,
+              testId: r.test_id,
+              testTitle: 'Commissioning CBT Screening Exam',
+              cadetId: r.student_id,
+              cadetName: user?.name || 'Cadet',
+              rollNumber: user?.rollNumber || 'PMA-2601',
+              branch: 'PAKISTAN_ARMY',
+              totalScore: r.marks_obtained,
+              maxScore: r.max_marks,
+              percentage: r.percentage,
+              passed: r.passed,
+              stanine: r.stanine || 6,
+              completedAt: r.generated_at,
+              timeSpentSeconds: r.time_spent_seconds || 3900,
+              sectionBreakdown: [],
+              verificationHash: 'SHA256:7B9E2D8F0A1C4E5F6B7A8D9C0E1F2A3B',
+            }));
+            setResults(mappedResults);
+          } else {
+            const resList = await mockService.getResults();
+            setResults(resList);
+          }
+
+          if (dbRetakes && dbRetakes.length > 0) {
+            const mappedRetakes: RetakeDocket[] = dbRetakes.map((rt) => ({
+              id: rt.id,
+              originalResultId: rt.original_attempt_id || 'res-001',
+              testId: rt.test_id,
+              testTitle: 'Commissioning Screening Examination',
+              cadetId: rt.student_id,
+              cadetName: user?.name || 'Cadet',
+              rollNumber: user?.rollNumber || 'PMA-2601',
+              branch: 'PAKISTAN_ARMY',
+              failedSubject: 'Academic Mathematics',
+              previousScorePercent: 54,
+              scheduledDate: rt.expires_at ? rt.expires_at.split('T')[0] : '2026-03-15',
+              authorizedOfficer: 'Col. Farooq (Staff Admin)',
+              reason: rt.notes || 'Official Retake Grant',
+              status: rt.status === 'AVAILABLE' ? 'SCHEDULED' : 'RESOLVED',
+            }));
+            setRetakes(mappedRetakes);
+          } else {
+            const retakeList = await mockService.getRetakes();
+            setRetakes(retakeList);
+          }
+          setLoading(false);
+          return;
+        }
+
+        const [resList, retakeList] = await Promise.all([
+          mockService.getResults(),
+          mockService.getRetakes(),
+        ]);
+        setResults(resList);
+        setRetakes(retakeList);
+      } catch (e) {
+        console.warn('Failed to load results from backend:', e);
         const [resList, retakeList] = await Promise.all([
           mockService.getResults(),
           mockService.getRetakes(),
@@ -23,7 +93,7 @@ export const StudentResultsPage: React.FC = () => {
       }
     }
     loadData();
-  }, []);
+  }, [user]);
 
   return (
     <div className="space-y-6">

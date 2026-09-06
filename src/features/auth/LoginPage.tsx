@@ -31,7 +31,7 @@ export const LoginPage: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
 
@@ -47,18 +47,28 @@ export const LoginPage: React.FC = () => {
 
     setIsLoading(true);
 
-    // Simulate authentic authentication handshake
-    setTimeout(() => {
+    try {
+      const res = await login(identifier, password);
       setIsLoading(false);
-      login(role);
-      toast.success(`Access Granted: Welcome, ${role === 'STUDENT' ? 'Cadet Hamza Tariq' : 'Col. Farhan Asif'}`);
+
+      if (!res.success) {
+        setErrorMessage(res.error || 'Invalid credentials or unauthorized terminal.');
+        toast.error(res.error || 'Authentication failed.');
+        return;
+      }
+
+      toast.success('Access Granted: Identity verified.');
 
       if (role === 'STUDENT') {
         navigate('/student');
       } else {
         navigate('/admin/dashboard');
       }
-    }, 600);
+    } catch (err: any) {
+      setIsLoading(false);
+      setErrorMessage(err?.message || 'Authentication error.');
+      toast.error('Authentication failed.');
+    }
   };
 
   return (

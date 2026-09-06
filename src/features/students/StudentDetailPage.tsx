@@ -71,10 +71,28 @@ export const StudentDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
+  const [student, setStudent] = useState<any>(() => (id ? studentStore.getById(id) : undefined));
+  const [loading, setLoading] = useState(!student);
 
-  const student = id ? studentStore.getById(id) : undefined;
+  React.useEffect(() => {
+    let isMounted = true;
+    async function load() {
+      if (!id) return;
+      try {
+        const { studentService } = await import('@/services/studentService');
+        const s = await studentService.getStudentById(id);
+        if (isMounted && s) setStudent(s);
+      } catch (e) {
+        console.warn('Failed to load student detail from service:', e);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+    load();
+    return () => { isMounted = false; };
+  }, [id]);
 
-  if (!student) {
+  if (!student && !loading) {
     return (
       <div className="p-8 text-center bg-white border border-[#D4D9DF] rounded space-y-3">
         <h3 className="text-sm font-bold text-[#0E1B2A] uppercase">Cadet Record Not Located</h3>

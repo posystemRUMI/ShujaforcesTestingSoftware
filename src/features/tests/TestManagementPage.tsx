@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { mockService } from '@/lib/mock-service';
+import { testService } from '@/services/testService';
+import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { TestBlueprint } from '@/types';
 import { Plus, Search, Play, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -20,6 +22,33 @@ export const TestManagementPage: React.FC = () => {
   useEffect(() => {
     async function fetchTests() {
       try {
+        if (isSupabaseConfigured()) {
+          const dbTests = await testService.getTests();
+          if (dbTests && dbTests.length > 0) {
+            const mapped: TestBlueprint[] = dbTests.map((t) => ({
+              id: t.id,
+              code: t.name.slice(0, 8),
+              title: t.name,
+              branch: 'TRI_SERVICE',
+              courseTarget: 'Armed Forces Induction',
+              totalQuestions: t.total_marks || 100,
+              durationMinutes: t.duration_minutes || 65,
+              passingScorePercent: t.passing_threshold || 60,
+              negativeMarking: t.negative_marking ?? false,
+              shuffleQuestions: t.shuffle_questions ?? true,
+              shuffleOptions: t.shuffle_options ?? true,
+              status: t.status === 'PUBLISHED' || t.status === 'ACTIVE' ? 'ACTIVE' : t.status === 'ARCHIVED' ? 'ARCHIVED' : 'DRAFT',
+              sections: [],
+            }));
+            setTests(mapped);
+            setLoading(false);
+            return;
+          }
+        }
+        const data = await mockService.getTests();
+        setTests(data);
+      } catch (e) {
+        console.warn('Failed to load from testService, using fallback:', e);
         const data = await mockService.getTests();
         setTests(data);
       } finally {

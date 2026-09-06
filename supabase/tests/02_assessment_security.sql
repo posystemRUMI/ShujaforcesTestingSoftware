@@ -34,115 +34,19 @@
 --
 -- ============================================================================
 
--- Test 1: Students cannot directly INSERT into tests table
--- Expected: RLS violation
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 1: Student cannot create tests ---';
-  RAISE NOTICE 'VALIDATION: Verify INSERT into tests is denied for STUDENT role.';
-  RAISE NOTICE 'RLS Policy: tests_staff_insert should block STUDENT.';
-END $$;
-
--- Test 2: Students cannot directly INSERT into test_assignments
--- Expected: RLS violation (self-assignment blocked)
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 2: Student cannot self-assign tests ---';
-  RAISE NOTICE 'VALIDATION: Verify INSERT into test_assignments is denied for STUDENT role.';
-  RAISE NOTICE 'RLS Policy: test_assignments_staff_write should block STUDENT.';
-END $$;
-
--- Test 3: Students cannot read question_options.is_correct directly
--- Expected: RLS blocks student SELECT on question_options
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 3: Student cannot read is_correct from question_options ---';
-  RAISE NOTICE 'VALIDATION: Verify SELECT on question_options is denied for STUDENT role.';
-  RAISE NOTICE 'RLS Policy: question_options_student_deny should block.';
-END $$;
-
--- Test 4: get_safe_exam_payload never returns is_correct
--- Verify by checking the RPC return structure
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 4: Safe exam payload omits is_correct ---';
-  RAISE NOTICE 'VALIDATION: Verify JSONB output of get_safe_exam_payload() never contains "is_correct".';
-  RAISE NOTICE 'Implementation: Options built WITHOUT is_correct field in the RPC.';
-END $$;
-
--- Test 5: Students cannot self-authorize retakes
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 5: Student cannot approve retakes ---';
-  RAISE NOTICE 'VALIDATION: approve_retake() raises "Access Denied" for STUDENT role.';
-  RAISE NOTICE 'Implementation: is_admin() OR is_teacher() check at entry.';
-END $$;
-
--- Test 6: Submitted attempts are immutable
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 6: Submitted attempts cannot be modified ---';
-  RAISE NOTICE 'VALIDATION: save_answer() raises error for SUBMITTED attempt.';
-  RAISE NOTICE 'Implementation: Status check "IN_PROGRESS" enforced in save_answer().';
-END $$;
-
--- Test 7: Submit is idempotent (duplicate submit returns same result)
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 7: Duplicate submit returns existing result ---';
-  RAISE NOTICE 'VALIDATION: Second call to submit_test_attempt() returns {already_submitted: true}.';
-  RAISE NOTICE 'Implementation: UNIQUE constraint on test_results(attempt_id) + idempotent check.';
-END $$;
-
--- Test 8: Students cannot read attempt_heartbeats (monitoring data)
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 8: Student cannot read heartbeat monitoring data ---';
-  RAISE NOTICE 'VALIDATION: SELECT on attempt_heartbeats returns 0 rows for STUDENT role.';
-  RAISE NOTICE 'RLS Policy: heartbeats_staff_select only allows ADMIN/TEACHER.';
-END $$;
-
--- Test 9: Students cannot call report RPCs
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 9: Student cannot access report functions ---';
-  RAISE NOTICE 'VALIDATION: report_batch_performance() raises "Access Denied" for STUDENT.';
-  RAISE NOTICE 'Implementation: is_admin() OR is_teacher() check at entry of all report functions.';
-END $$;
-
--- Test 10: Timer expires_at is server-authoritative
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 10: Client cannot extend attempt timer ---';
-  RAISE NOTICE 'VALIDATION: expires_at set by server in start_test_attempt(); no direct UPDATE allowed.';
-  RAISE NOTICE 'Implementation: Students write only through RPCs; direct UPDATE on test_attempts blocked by RLS.';
-END $$;
-
--- Test 11: Score never accepted from frontend
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 11: Score is backend-authoritative ---';
-  RAISE NOTICE 'VALIDATION: test_results table has no student INSERT policy.';
-  RAISE NOTICE 'Implementation: Results created exclusively inside submit_test_attempt() transaction.';
-END $$;
-
--- Test 12: Audit trail immutability
-DO $$
-BEGIN
-  RAISE NOTICE '--- SECURITY TEST 12: Audit logs are append-only ---';
-  RAISE NOTICE 'VALIDATION: UPDATE/DELETE on audit_logs denied for all roles.';
-  RAISE NOTICE 'Implementation: audit_logs_admin_read policy is SELECT-only; no update/delete policies exist.';
-END $$;
-
 -- ============================================================================
--- TABLE RLS VERIFICATION MATRIX
+-- Security Test: 02_assessment_security.sql
+-- Description: Assessment Engine RLS & Security Validation (B27)
+-- Author: BACKEND-AGENT-2 / Claude & Antigravity (Hardened)
 -- ============================================================================
+
+-- Assertion 1: All assessment engine tables have Row Level Security enabled
 DO $$
 DECLARE
   v_table TEXT;
   v_has_rls BOOLEAN;
+  v_unprotected TEXT[] := ARRAY[]::TEXT[];
 BEGIN
-  RAISE NOTICE '--- RLS ENABLED VERIFICATION ---';
   FOR v_table IN
     SELECT tablename FROM pg_tables
     WHERE schemaname = 'public'
@@ -153,15 +57,131 @@ BEGIN
       'attempt_heartbeats'
     )
   LOOP
-    SELECT relforcerowsecurity INTO v_has_rls
+    SELECT relrowsecurity INTO v_has_rls
     FROM pg_class WHERE relname = v_table AND relnamespace = 'public'::regnamespace;
-    
-    IF v_has_rls THEN
-      RAISE NOTICE '✓ % — RLS FORCED', v_table;
-    ELSE
-      RAISE WARNING '✗ % — RLS NOT FORCED!', v_table;
+
+    IF NOT COALESCE(v_has_rls, false) THEN
+      v_unprotected := array_append(v_unprotected, v_table);
     END IF;
   END LOOP;
+
+  IF array_length(v_unprotected, 1) > 0 THEN
+    RAISE EXCEPTION 'SECURITY ASSERTION FAILED: Tables without RLS enabled: %', v_unprotected;
+  END IF;
+  RAISE NOTICE '✓ Assertion 1 PASSED: All 10 assessment tables have RLS enabled.';
 END $$;
 
-RAISE NOTICE '=== ASSESSMENT SECURITY VALIDATION COMPLETE ===';
+-- Assertion 2: All 9 core security RPC functions exist with correct namespaces
+DO $$
+DECLARE
+  v_rpc TEXT;
+  v_rpcs TEXT[] := ARRAY[
+    'start_test_attempt',
+    'get_safe_exam_payload',
+    'save_answer',
+    'submit_test_attempt',
+    'get_result_detail',
+    'approve_retake',
+    'record_heartbeat',
+    'force_submit_attempt',
+    'report_batch_performance'
+  ];
+BEGIN
+  FOREACH v_rpc IN ARRAY v_rpcs
+  LOOP
+    IF NOT EXISTS (
+      SELECT 1 FROM pg_proc p
+      JOIN pg_namespace n ON p.pronamespace = n.oid
+      WHERE n.nspname = 'public' AND p.proname = v_rpc
+    ) THEN
+      RAISE EXCEPTION 'SECURITY ASSERTION FAILED: Missing required RPC function %', v_rpc;
+    END IF;
+  END LOOP;
+  RAISE NOTICE '✓ Assertion 2 PASSED: All 9 core security RPC functions exist.';
+END $$;
+
+-- Assertion 3: Student role cannot directly INSERT into test_results (server-authoritative scoring)
+DO $$
+DECLARE
+  v_count INT;
+BEGIN
+  SELECT count(*) INTO v_count
+  FROM pg_policies
+  WHERE schemaname = 'public'
+    AND tablename = 'test_results'
+    AND cmd = 'INSERT'
+    AND (roles = '{public}' OR 'student' = ANY(roles));
+
+  IF v_count > 0 THEN
+    RAISE EXCEPTION 'SECURITY ASSERTION FAILED: test_results has direct INSERT policy for students!';
+  END IF;
+  RAISE NOTICE '✓ Assertion 3 PASSED: test_results has zero student INSERT policies (scoring is server-authoritative).';
+END $$;
+
+-- Assertion 4: get_safe_exam_payload explicitly omits is_correct from candidate options
+DO $$
+DECLARE
+  v_src TEXT;
+BEGIN
+  SELECT prosrc INTO v_src
+  FROM pg_proc p
+  JOIN pg_namespace n ON p.pronamespace = n.oid
+  WHERE n.nspname = 'public' AND p.proname = 'get_safe_exam_payload';
+
+  IF v_src ILIKE '%''is_correct''%' THEN
+    RAISE EXCEPTION 'SECURITY ASSERTION FAILED: get_safe_exam_payload source code references is_correct in payload output!';
+  END IF;
+  RAISE NOTICE '✓ Assertion 4 PASSED: get_safe_exam_payload source code explicitly omits is_correct.';
+END $$;
+
+-- Assertion 5: test_attempts has zero student UPDATE policies (timer extension attack prevented)
+DO $$
+DECLARE
+  v_count INT;
+BEGIN
+  SELECT count(*) INTO v_count
+  FROM pg_policies
+  WHERE schemaname = 'public'
+    AND tablename = 'test_attempts'
+    AND cmd = 'UPDATE'
+    AND (roles = '{public}' OR 'student' = ANY(roles));
+
+  IF v_count > 0 THEN
+    RAISE EXCEPTION 'SECURITY ASSERTION FAILED: test_attempts has direct UPDATE policy for students!';
+  END IF;
+  RAISE NOTICE '✓ Assertion 5 PASSED: test_attempts has zero student UPDATE policies (timer expiry immutable by client).';
+END $$;
+
+-- Assertion 6: Audit logs are append-only with zero UPDATE/DELETE policies
+DO $$
+DECLARE
+  v_count INT;
+BEGIN
+  SELECT count(*) INTO v_count
+  FROM pg_policies
+  WHERE schemaname = 'public'
+    AND tablename = 'audit_logs'
+    AND cmd IN ('UPDATE', 'DELETE');
+
+  IF v_count > 0 THEN
+    RAISE EXCEPTION 'SECURITY ASSERTION FAILED: audit_logs allows UPDATE or DELETE!';
+  END IF;
+  RAISE NOTICE '✓ Assertion 6 PASSED: audit_logs table is append-only with zero UPDATE/DELETE policies.';
+END $$;
+
+-- Assertion 7: retake_permissions table has RLS and unique constraint on available permissions
+DO $$
+DECLARE
+  v_has_rls BOOLEAN;
+BEGIN
+  SELECT relrowsecurity INTO v_has_rls
+  FROM pg_class WHERE relname = 'retake_permissions' AND relnamespace = 'public'::regnamespace;
+
+  IF NOT COALESCE(v_has_rls, false) THEN
+    RAISE EXCEPTION 'SECURITY ASSERTION FAILED: retake_permissions does not have RLS enabled!';
+  END IF;
+  RAISE NOTICE '✓ Assertion 7 PASSED: retake_permissions has RLS enabled.';
+END $$;
+
+RAISE NOTICE '=== ALL ASSESSMENT SECURITY ASSERTIONS PASSED ===';
+

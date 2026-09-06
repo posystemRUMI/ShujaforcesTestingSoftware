@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { mockService } from '@/lib/mock-service';
+import { testService } from '@/services/testService';
+import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { TestBlueprint } from '@/types';
 import { ArrowRight, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -13,6 +15,37 @@ export const StudentTestsPage: React.FC = () => {
   useEffect(() => {
     async function fetchTests() {
       try {
+        if (isSupabaseConfigured()) {
+          const dbTests = await testService.getTests();
+          if (dbTests && dbTests.length > 0) {
+            const mapped: TestBlueprint[] = dbTests.map((t) => ({
+              id: t.id,
+              code: t.name.slice(0, 8),
+              title: t.name,
+              branch: 'TRI_SERVICE',
+              courseTarget: 'Commissioning Course',
+              totalQuestions: t.total_marks || 100,
+              durationMinutes: t.duration_minutes || 65,
+              passingScorePercent: t.passing_threshold || 60,
+              negativeMarking: t.negative_marking ?? false,
+              shuffleQuestions: t.shuffle_questions ?? true,
+              shuffleOptions: t.shuffle_options ?? true,
+              status: t.status === 'PUBLISHED' || t.status === 'ACTIVE' ? 'ACTIVE' : 'DRAFT',
+              sections: [
+                { id: 's1', title: 'Verbal Intelligence', subject: 'INTELLIGENCE_VERBAL', questionCount: 2, timeLimitMinutes: 10 },
+                { id: 's2', title: 'Non-Verbal Intelligence', subject: 'INTELLIGENCE_NON_VERBAL', questionCount: 2, timeLimitMinutes: 10 },
+                { id: 's3', title: 'Academic Mathematics', subject: 'ACADEMIC_MATH', questionCount: 4, timeLimitMinutes: 45 },
+              ],
+            }));
+            setTests(mapped);
+            setLoading(false);
+            return;
+          }
+        }
+        const data = await mockService.getTests();
+        setTests(data);
+      } catch (e) {
+        console.warn('Failed to load from testService:', e);
         const data = await mockService.getTests();
         setTests(data);
       } finally {

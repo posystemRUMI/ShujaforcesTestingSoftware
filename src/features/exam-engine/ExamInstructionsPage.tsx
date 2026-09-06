@@ -1,16 +1,64 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Play, Lock } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Play, Lock, Loader2 } from 'lucide-react';
 import { useAuth } from '@/app/providers';
+import { attemptService } from '@/services/attemptService';
+import { testService, TestRecord } from '@/services/testService';
+import { isSupabaseConfigured } from '@/lib/supabaseClient';
+import { toast } from 'sonner';
 
 export const ExamInstructionsPage: React.FC = () => {
   const navigate = useNavigate();
+  const { id } = useParams<{ id?: string }>();
+  const [searchParams] = useSearchParams();
+  const testIdParam = id || searchParams.get('testId');
+
   const { user } = useAuth();
   const [agreed, setAgreed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [testData, setTestData] = useState<TestRecord | null>(null);
 
-  const handleStartExam = () => {
-    if (!agreed) return;
-    navigate('/exam/runner');
+  useEffect(() => {
+    let isMounted = true;
+    async function loadTest() {
+      if (testIdParam && isSupabaseConfigured()) {
+        try {
+          const t = await testService.getTestById(testIdParam);
+          if (isMounted && t) setTestData(t);
+        } catch (e) {
+          console.warn('Failed to load test details:', e);
+        }
+      }
+    }
+    loadTest();
+    return () => { isMounted = false; };
+  }, [testIdParam]);
+
+  const handleStartExam = async () => {
+    if (!agreed || loading) return;
+    setLoading(true);
+
+    try {
+      if (isSupabaseConfigured()) {
+        let targetTestId = testIdParam;
+        if (!targetTestId) {
+          const tests = await testService.getTests();
+          if (tests && tests.length > 0) {
+            targetTestId = tests[0].id;
+          } else {
+            targetTestId = 'tst-01';
+          }
+        }
+        const res = await attemptService.startAttempt(targetTestId);
+        navigate(`/exam/runner?attemptId=${res.attempt_id}`);
+      } else {
+        navigate('/exam/runner');
+      }
+    } catch (err: any) {
+      console.error('Failed to start test attempt:', err);
+      toast.error(err.message || 'Failed to start examination. Please contact your proctor.');
+      setLoading(false);
+    }
   };
 
   return (
@@ -23,7 +71,7 @@ export const ExamInstructionsPage: React.FC = () => {
               Pakistan Armed Forces Induction Command
             </span>
             <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
-              Preliminary Computerized Screening Examination
+              {testData?.name || 'Preliminary Computerized Screening Examination'}
             </h1>
             <p className="text-xs text-[#64748B]">Instructions & Mandatory Code of Conduct</p>
           </div>
@@ -53,14 +101,14 @@ export const ExamInstructionsPage: React.FC = () => {
           <div className="flex items-start space-x-2">
             <span className="font-bold text-[#0E1B2A] font-mono">01.</span>
             <p>
-              <strong>Timed Execution:</strong> You have <strong>65 minutes</strong> to complete all 100 questions.
+              <strong>Timed Execution:</strong> You have <strong>{testData?.duration_minutes || 65} minutes</strong> to complete all questions.
               The countdown timer at the top cannot be paused once initiated.
             </p>
           </div>
           <div className="flex items-start space-x-2">
             <span className="font-bold text-[#0E1B2A] font-mono">02.</span>
             <p>
-              <strong>Autosave & Synchronization:</strong> Every selected answer is instantly recorded and cryptographically sealed on the local terminal cache.
+              <strong>Autosave & Synchronization:</strong> Every selected answer is instantly recorded and cryptographically sealed on the central test engine.
             </p>
           </div>
           <div className="flex items-start space-x-2">
@@ -72,7 +120,7 @@ export const ExamInstructionsPage: React.FC = () => {
           <div className="flex items-start space-x-2">
             <span className="font-bold text-[#0E1B2A] font-mono">04.</span>
             <p>
-              <strong>Navigation:</strong> Use the Question Matrix on the right to navigate or review flagged items. Unanswered questions will receive 0 marks (no negative marking applies).
+              <strong>Navigation:</strong> Use the Question Matrix on the right to navigate or review flagged items. Unanswered questions will receive 0 marks.
             </p>
           </div>
         </div>
@@ -103,16 +151,16 @@ export const ExamInstructionsPage: React.FC = () => {
           </button>
           <button
             type="button"
-            disabled={!agreed}
+            disabled={!agreed || loading}
             onClick={handleStartExam}
             className={`inline-flex items-center space-x-2 px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-colors ${
-              agreed
+              agreed && !loading
                 ? 'bg-[#0E1B2A] hover:bg-[#1A2C42] text-white shadow'
                 : 'bg-[#EDF1F5] text-[#94A3B8] cursor-not-allowed'
             }`}
           >
-            <Play className="w-4 h-4 fill-current" />
-            <span>Begin Examination</span>
+            {loading ? <Loader2 className="w-4 h-4 animate-spin text-white" /> : <Play className="w-4 h-4 fill-current" />}
+            <span>{loading ? 'Initializing Session...' : 'Begin Examination'}</span>
           </button>
         </div>
       </div>

@@ -13,13 +13,30 @@ import {
 
 export const ForcesPage: React.FC = () => {
   const navigate = useNavigate();
-  const [forces, setForces] = useState<ForceConfig[]>(configStore.getForces());
+  const [forces, setForces] = useState<ForceConfig[]>(() => configStore.getForces());
 
   useEffect(() => {
+    let isMounted = true;
+    async function fetchForces() {
+      try {
+        const { configurationService } = await import('@/services/configurationService');
+        const data = await configurationService.getForces();
+        if (isMounted && data && data.length > 0) {
+          setForces(data);
+        }
+      } catch (e) {
+        console.warn('Failed to fetch forces:', e);
+      }
+    }
+    fetchForces();
+
     const unsub = configStore.subscribe(() => {
       setForces(configStore.getForces());
     });
-    return unsub;
+    return () => {
+      isMounted = false;
+      unsub();
+    };
   }, []);
 
   const totalCourses = forces.reduce((sum, f) => sum + f.coursesCount, 0);

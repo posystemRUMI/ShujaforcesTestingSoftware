@@ -38,7 +38,7 @@ const ROLE_LABELS: Record<TeacherRole, string> = {
 
 export const TeachersListPage: React.FC = () => {
   const navigate = useNavigate();
-  const [teachers, setTeachers] = useState<Teacher[]>(teacherStore.getTeachers());
+  const [teachers, setTeachers] = useState<Teacher[]>(() => teacherStore.getTeachers());
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRole, setSelectedRole] = useState<string>('ALL');
   const [selectedBranch, setSelectedBranch] = useState<string>('ALL');
@@ -59,10 +59,27 @@ export const TeachersListPage: React.FC = () => {
   });
 
   useEffect(() => {
+    let isMounted = true;
+    async function fetchTeachers() {
+      try {
+        const { teacherService } = await import('@/services/teacherService');
+        const data = await teacherService.getTeachers();
+        if (isMounted && data && data.length > 0) {
+          setTeachers(data);
+        }
+      } catch (e) {
+        console.warn('Failed to fetch teachers:', e);
+      }
+    }
+    fetchTeachers();
+
     const unsubscribe = teacherStore.subscribe(() => {
       setTeachers(teacherStore.getTeachers());
     });
-    return unsubscribe;
+    return () => {
+      isMounted = false;
+      unsubscribe();
+    };
   }, []);
 
   // Metrics computation

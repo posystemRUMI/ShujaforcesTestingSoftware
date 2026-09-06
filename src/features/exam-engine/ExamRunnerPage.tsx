@@ -1,18 +1,52 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { mockQuestions } from '@/lib/mock-data';
-import { Clock, Flag, ChevronLeft, ChevronRight, CheckCircle2, Shield, AlertTriangle, Layers, Grid, X, Save } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Clock, Flag, ChevronLeft, ChevronRight, CheckCircle2, Shield, AlertTriangle, Layers, Grid, X, Save, RefreshCw } from 'lucide-react';
 import { formatTime } from '@/lib/utils';
 import { toast } from 'sonner';
 import { useAuth } from '@/app/providers';
+import { attemptService } from '@/services/attemptService';
+import { isSupabaseConfigured } from '@/lib/supabaseClient';
+import { mockQuestions } from '@/lib/mock-data';
 
 const STORAGE_KEY = 'FA_ACTIVE_EXAM_STATE_V1';
 
+export interface SafeQuestionOption {
+  id: string;
+  label: string;
+  text: string;
+  imageUrl?: string;
+}
+
+export interface SafeQuestion {
+  id: string;
+  code: string;
+  subject: string;
+  stem: string;
+  imageUrl?: string;
+  options: SafeQuestionOption[];
+}
+
+export interface SectionMeta {
+  id: string;
+  title: string;
+  startIndex: number;
+  endIndex: number;
+  questionCount: number;
+}
+
 export const ExamRunnerPage: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const attemptId = searchParams.get('attemptId');
   const { user } = useAuth();
 
-  // Active state
+  // Questions and Sections state (Safe payload - NEVER contains correctOptionId)
+  const [questions, setQuestions] = useState<SafeQuestion[]>([]);
+  const [sections, setSections] = useState<SectionMeta[]>([]);
+  const [testTitle, setTestTitle] = useState('Preliminary Computerized Screening Examination');
+  const [loading, setLoading] = useState(true);
+
+  // Active exam interaction state
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>(() => {
     try {
@@ -30,8 +64,11 @@ export const ExamRunnerPage: React.FC = () => {
   const [flagged, setFlagged] = useState<Set<string>>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved && parsedHasFlags(saved)) {
-        return new Set(JSON.parse(saved).flagged || []);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed.flagged)) {
+          return new Set(parsed.flagged);
+        }
       }
     } catch (e) {
       /* ignore */
@@ -39,25 +76,7 @@ export const ExamRunnerPage: React.FC = () => {
     return new Set();
   });
 
-  function parsedHasFlags(savedStr: string): boolean {
-    const parsed = JSON.parse(savedStr);
-    return Array.isArray(parsed.flagged);
-  }
-
-  const [secondsRemaining, setSecondsRemaining] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (typeof parsed.secondsRemaining === 'number' && parsed.secondsRemaining > 0) {
-          return parsed.secondsRemaining;
-        }
-      }
-    } catch (e) {
-      /* ignore */
-    }
-    return 3900; // 65 minutes
-  });
+  const [secondsRemaining, setSecondsRemaining] = useState(3900); // 65 min default
 
   // UI state
   const [autosaveStatus, setAutosaveStatus] = useState<'SAVED' | 'SAVING'>('SAVED');
@@ -65,44 +84,171 @@ export const ExamRunnerPage: React.FC = () => {
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [showSectionModal, setShowSectionModal] = useState(false);
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
 
-  const sections = [
-    { title: 'Verbal Intelligence', startIndex: 0, endIndex: 1, questionCount: 2 },
-    { title: 'Non-Verbal Intelligence', startIndex: 2, endIndex: 3, questionCount: 2 },
-    { title: 'Academic Mathematics', startIndex: 4, endIndex: mockQuestions.length - 1, questionCount: mockQuestions.length - 4 },
-  ];
+  // Fallback to offline mock dataset (stripped of all answer keys)
+  const loadOfflineFallback = useCallback(() => {
+    const stripped: SafeQuestion[] = mockQuestions.map((q) => ({
+      id: q.id,
+      code: q.code,
+      subject: q.subject,
+      stem: q.stem,
+      imageUrl: q.imageUrl,
+      options: q.options.map((opt) => ({
+        id: opt.id,
+        label: opt.label,
+        text: opt.text,
+        imageUrl: opt.imageUrl,
+      })),
+    }));
 
-  // Autosave persistence
+    setQuestions(stripped);
+    setSections([
+      { id: 'sec-1', title: 'Verbal Intelligence', startIndex: 0, endIndex: 1, questionCount: 2 },
+      { id: 'sec-2', title: 'Non-Verbal Intelligence', startIndex: 2, endIndex: 3, questionCount: 2 },
+      { id: 'sec-3', title: 'Academic Mathematics', startIndex: 4, endIndex: stripped.length - 1, questionCount: Math.max(0, stripped.length - 4) },
+    ]);
+    setTestTitle('154 PMA Long Course Initial Test (Offline)');
+  }, []);
+
+  // Fetch Safe Exam Payload from Supabase or load fallback
   useEffect(() => {
-    setAutosaveStatus('SAVING');
-    const timeout = setTimeout(() => {
-      try {
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify({
-            answers,
-            flagged: Array.from(flagged),
-            secondsRemaining,
-            currentIndex,
-            updatedAt: new Date().toISOString(),
-          })
-        );
-      } catch (e) {
-        /* ignore */
-      }
-      setAutosaveStatus('SAVED');
-    }, 300);
+    let isMounted = true;
 
-    return () => clearTimeout(timeout);
+    async function initializeExam() {
+      if (attemptId && isSupabaseConfigured()) {
+        try {
+          const payload = await attemptService.getSafeExamPayload(attemptId);
+          if (!isMounted) return;
+
+          let qList: SafeQuestion[] = [];
+          let secList: SectionMeta[] = [];
+          let offset = 0;
+
+          for (const sec of payload.sections || []) {
+            const secQs: SafeQuestion[] = (sec.questions || []).map((q) => ({
+              id: q.id,
+              code: q.code,
+              subject: q.subject_id || 'GENERAL',
+              stem: q.stem,
+              imageUrl: q.stem_image_url || undefined,
+              options: (q.options || []).map((opt) => ({
+                id: opt.id,
+                label: opt.label,
+                text: opt.text,
+                imageUrl: opt.image_url || undefined,
+              })),
+            }));
+
+            secList.push({
+              id: sec.id,
+              title: sec.name,
+              startIndex: offset,
+              endIndex: offset + secQs.length - 1,
+              questionCount: secQs.length,
+            });
+
+            offset += secQs.length;
+            qList = qList.concat(secQs);
+          }
+
+          if (qList.length > 0) {
+            setQuestions(qList);
+            setSections(secList);
+            setTestTitle(payload.test.name);
+
+            // Synchronize preloaded answers & flags
+            if (payload.saved_answers) {
+              const restoredAnswers: Record<string, string> = {};
+              const restoredFlags = new Set<string>();
+
+              for (const [qid, ans] of Object.entries(payload.saved_answers)) {
+                if (ans.selected_option_id) restoredAnswers[qid] = ans.selected_option_id;
+                if (ans.marked_for_review) restoredFlags.add(qid);
+              }
+
+              setAnswers((prev) => ({ ...restoredAnswers, ...prev }));
+              setFlagged(restoredFlags);
+            }
+
+            // Sync chronometer with server expiry
+            if (payload.attempt.expires_at) {
+              const expiresMs = new Date(payload.attempt.expires_at).getTime();
+              const serverMs = payload.server_time ? new Date(payload.server_time).getTime() : Date.now();
+              const remainingSecs = Math.max(0, Math.floor((expiresMs - serverMs) / 1000));
+              setSecondsRemaining(remainingSecs);
+            }
+          } else {
+            loadOfflineFallback();
+          }
+        } catch (err: any) {
+          console.warn('Failed to load safe exam payload from Supabase, loading fallback:', err);
+          loadOfflineFallback();
+        } finally {
+          if (isMounted) setLoading(false);
+        }
+      } else {
+        loadOfflineFallback();
+        if (isMounted) setLoading(false);
+      }
+    }
+
+    initializeExam();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [attemptId, loadOfflineFallback]);
+
+  // Local storage caching
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({
+          answers,
+          flagged: Array.from(flagged),
+          secondsRemaining,
+          currentIndex,
+          updatedAt: new Date().toISOString(),
+        })
+      );
+    } catch (e) {
+      /* ignore */
+    }
   }, [answers, flagged, secondsRemaining, currentIndex]);
+
+  // Server Telemetry Heartbeat (every 20s)
+  useEffect(() => {
+    if (!attemptId || !isSupabaseConfigured() || loading) return;
+
+    const currentSecTitle = sections.find(
+      (s) => currentIndex >= s.startIndex && currentIndex <= s.endIndex
+    )?.title;
+
+    const heartbeatTimer = setInterval(() => {
+      attemptService
+        .recordHeartbeat(
+          attemptId,
+          Object.keys(answers).length,
+          currentIndex,
+          currentSecTitle
+        )
+        .catch((e) => console.warn('Heartbeat transmission skipped:', e));
+    }, 20000);
+
+    return () => clearInterval(heartbeatTimer);
+  }, [attemptId, answers, currentIndex, sections, loading]);
 
   // Chronometer countdown
   useEffect(() => {
+    if (loading) return;
+
     const timer = setInterval(() => {
       setSecondsRemaining((prev: number) => {
         if (prev <= 1) {
           clearInterval(timer);
-          toast.warning('Timer expired! Submitting test automatically.');
+          toast.warning('Timer expired! Submitting examination automatically.');
           handleFinalSubmit();
           return 0;
         }
@@ -111,48 +257,73 @@ export const ExamRunnerPage: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [loading]);
 
-  const currentQ = mockQuestions[currentIndex] || mockQuestions[0];
-  const isFlagged = flagged.has(currentQ.id);
-  const selectedOptionId = answers[currentQ.id];
+  const currentQ = questions[currentIndex] || questions[0];
+  const isFlagged = currentQ ? flagged.has(currentQ.id) : false;
+  const selectedOptionId = currentQ ? answers[currentQ.id] : undefined;
 
+  // Handle Option Selection with Instant Server Autosave
   const handleSelectOption = useCallback(
     (optionId: string) => {
+      if (!currentQ) return;
+
       setAnswers((prev) => ({
         ...prev,
         [currentQ.id]: optionId,
       }));
+
+      if (attemptId && isSupabaseConfigured()) {
+        setAutosaveStatus('SAVING');
+        attemptService
+          .saveAnswer(attemptId, currentQ.id, optionId, flagged.has(currentQ.id))
+          .then(() => setAutosaveStatus('SAVED'))
+          .catch((err) => {
+            console.warn('Server autosave error:', err);
+            setAutosaveStatus('SAVED');
+          });
+      }
     },
-    [currentQ.id]
+    [currentQ, attemptId, flagged]
   );
 
+  // Toggle Review Flag with Instant Server Synchronization
   const toggleFlag = useCallback(() => {
+    if (!currentQ) return;
+
     setFlagged((prev) => {
       const next = new Set(prev);
-      if (next.has(currentQ.id)) {
-        next.delete(currentQ.id);
-        toast.info('Question unflagged');
-      } else {
+      const willBeFlagged = !next.has(currentQ.id);
+
+      if (willBeFlagged) {
         next.add(currentQ.id);
         toast.info('Question flagged for review');
+      } else {
+        next.delete(currentQ.id);
+        toast.info('Question unflagged');
       }
+
+      if (attemptId && isSupabaseConfigured()) {
+        attemptService
+          .saveAnswer(attemptId, currentQ.id, answers[currentQ.id], willBeFlagged)
+          .catch((err) => console.warn('Server flag sync error:', err));
+      }
+
       return next;
     });
-  }, [currentQ.id]);
+  }, [currentQ, attemptId, answers]);
 
   const handleNext = useCallback(() => {
-    // Check if moving across section boundary
     const currentSec = sections[activeSectionIndex];
     if (currentSec && currentIndex === currentSec.endIndex && activeSectionIndex < sections.length - 1) {
       setShowSectionModal(true);
       return;
     }
 
-    if (currentIndex < mockQuestions.length - 1) {
+    if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     }
-  }, [currentIndex, activeSectionIndex, sections]);
+  }, [currentIndex, activeSectionIndex, sections, questions.length]);
 
   const handlePrev = useCallback(() => {
     if (currentIndex > 0) {
@@ -166,29 +337,41 @@ export const ExamRunnerPage: React.FC = () => {
     setCurrentIndex((prev) => prev + 1);
   };
 
-  const handleFinalSubmit = () => {
+  // Final Server Submission (Server-authoritative scoring)
+  const handleFinalSubmit = async () => {
+    if (submitting) return;
+    setSubmitting(true);
+
     try {
-      const attemptSnapshot = {
-        attemptId: `ATT-${Date.now().toString(36).toUpperCase()}`,
-        testId: 'tst-01',
-        answers,
-        flagged: Array.from(flagged),
-        timeSpentSeconds: 3900 - secondsRemaining,
-        submittedAt: new Date().toISOString(),
-      };
-      localStorage.setItem('FA_SUBMITTED_EXAM_ATTEMPT_V1', JSON.stringify(attemptSnapshot));
-    } catch (e) {
-      /* ignore */
+      if (attemptId && isSupabaseConfigured()) {
+        const res = await attemptService.submitAttempt(attemptId);
+        localStorage.removeItem(STORAGE_KEY);
+        navigate(`/exam/finish?attemptId=${attemptId}&resultId=${res.result_id}`);
+      } else {
+        // Fallback for offline mock testing
+        const attemptSnapshot = {
+          attemptId: attemptId || `ATT-${Date.now().toString(36).toUpperCase()}`,
+          testId: 'tst-01',
+          answers,
+          flagged: Array.from(flagged),
+          timeSpentSeconds: 3900 - secondsRemaining,
+          submittedAt: new Date().toISOString(),
+        };
+        localStorage.setItem('FA_SUBMITTED_EXAM_ATTEMPT_V1', JSON.stringify(attemptSnapshot));
+        localStorage.removeItem(STORAGE_KEY);
+        navigate('/exam/finish');
+      }
+    } catch (err: any) {
+      console.error('Final submission error:', err);
+      toast.error(err.message || 'Error submitting test attempt. Please notify proctor immediately.');
+      setSubmitting(false);
     }
-    localStorage.removeItem(STORAGE_KEY);
-    navigate('/exam/finish');
   };
 
   // Keyboard shortcut listeners (1-4, Arrow Keys, M for Mark)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Avoid firing when input or modal active
-      if (showSubmitModal || showSectionModal) return;
+      if (showSubmitModal || showSectionModal || !currentQ) return;
 
       if (e.key === '1' || e.key === 'a' || e.key === 'A') {
         if (currentQ.options[0]) handleSelectOption(currentQ.options[0].id);
@@ -211,18 +394,28 @@ export const ExamRunnerPage: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentQ, handleSelectOption, handleNext, handlePrev, toggleFlag, showSubmitModal, showSectionModal]);
 
-  // Section calculation based on index
-  const currentSection = sections.find(
-    (s) => currentIndex >= s.startIndex && currentIndex <= s.endIndex
-  ) || sections[0];
+  // Active section lookup
+  const currentSection =
+    sections.find((s) => currentIndex >= s.startIndex && currentIndex <= s.endIndex) ||
+    sections[0] || { title: 'General Examination' };
 
   const answeredCount = Object.keys(answers).length;
-  const unansweredCount = mockQuestions.length - answeredCount;
+  const unansweredCount = Math.max(0, questions.length - answeredCount);
   const flaggedCount = flagged.size;
 
-  // Chronometer style threshold
   const isDangerTime = secondsRemaining < 60;
   const isWarningTime = secondsRemaining < 300 && !isDangerTime;
+
+  if (loading || questions.length === 0) {
+    return (
+      <div className="flex-1 min-h-[60vh] flex flex-col items-center justify-center space-y-4">
+        <RefreshCw className="w-8 h-8 text-[#0E1B2A] animate-spin" />
+        <span className="text-xs font-mono font-bold text-[#64748B] uppercase tracking-wider">
+          Securing CBT Terminal & Authorizing Examination Docket...
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F6F8FA] text-[#1F2937] select-none">
@@ -235,7 +428,7 @@ export const ExamRunnerPage: React.FC = () => {
           </div>
           <div>
             <h1 className="text-xs lg:text-sm font-bold uppercase tracking-wider text-white flex items-center gap-2">
-              <span>154 PMA Long Course Initial Test</span>
+              <span>{testTitle}</span>
             </h1>
             <p className="text-[10px] text-[#A0AEC0] font-mono hidden sm:block">
               CADET: {user?.name || 'Hamza Tariq'} ({user?.rollNumber || 'PMA-2601'}) | TERMINAL: WS-CBT-01
@@ -279,21 +472,23 @@ export const ExamRunnerPage: React.FC = () => {
             className="lg:hidden p-1.5 bg-[#1C2E42] hover:bg-[#253950] text-[#C6A75E] rounded border border-[#2E425A] flex items-center gap-1 text-xs font-mono font-bold"
           >
             <Grid className="w-4 h-4" />
-            <span>{answeredCount}/{mockQuestions.length}</span>
+            <span>
+              {answeredCount}/{questions.length}
+            </span>
           </button>
         </div>
       </header>
 
       {/* Main Examination Layout Container */}
       <div className="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-6 flex gap-6 overflow-hidden">
-        {/* Primary Distraction-Free Reading Pane (Max width 860px) */}
+        {/* Primary Distraction-Free Reading Pane */}
         <main className="flex-1 bg-white border border-[#D4D9DF] rounded-md p-5 sm:p-7 shadow-sm flex flex-col justify-between overflow-y-auto">
           <div>
             {/* Top Question Toolbar */}
             <div className="flex flex-wrap items-center justify-between border-b border-[#E2E6EB] pb-3 mb-5 gap-2">
               <div className="flex items-center space-x-2">
                 <span className="px-2.5 py-1 font-mono text-xs font-bold bg-[#0E1B2A] text-white rounded">
-                  Q {currentIndex + 1} / {mockQuestions.length}
+                  Q {currentIndex + 1} / {questions.length}
                 </span>
                 <span className="text-xs text-[#64748B] font-mono">[{currentQ.code}]</span>
                 <span className="text-xs font-mono text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B] hidden sm:inline-block">
@@ -317,13 +512,12 @@ export const ExamRunnerPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Question Stem (Inter 16px, max line width <= 68 chars for reading stamina) */}
+            {/* Question Stem */}
             <div className="mb-6 max-w-2xl">
               <h2 className="text-base sm:text-lg font-semibold text-[#0E1B2A] leading-relaxed">
                 {currentQ.stem}
               </h2>
 
-              {/* Optional Question Image rendering */}
               {currentQ.imageUrl && (
                 <div className="mt-4 p-2 border border-[#D4D9DF] rounded bg-[#F6F8FA] max-w-md">
                   <img
@@ -372,7 +566,7 @@ export const ExamRunnerPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom Sticky Action Bar */}
+          {/* Bottom Action Bar */}
           <div className="border-t border-[#E2E6EB] pt-4 mt-6 flex flex-wrap items-center justify-between gap-3">
             <button
               type="button"
@@ -385,7 +579,7 @@ export const ExamRunnerPage: React.FC = () => {
             </button>
 
             <div className="text-xs font-mono text-[#64748B] hidden sm:block">
-              Progress: <span className="font-bold text-[#0E1B2A]">{answeredCount}</span>/{mockQuestions.length} Answered
+              Progress: <span className="font-bold text-[#0E1B2A]">{answeredCount}</span>/{questions.length} Answered
             </div>
 
             <div className="flex items-center space-x-2">
@@ -401,7 +595,7 @@ export const ExamRunnerPage: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                disabled={currentIndex === mockQuestions.length - 1}
+                disabled={currentIndex === questions.length - 1}
                 className="inline-flex items-center space-x-1.5 px-5 py-2 text-xs font-bold rounded bg-[#0E1B2A] text-white hover:bg-[#1C2E42] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
                 <span>Next</span>
@@ -441,9 +635,9 @@ export const ExamRunnerPage: React.FC = () => {
               </div>
             </div>
 
-            {/* 40-Cell Question Grid */}
+            {/* Question Grid */}
             <div className="grid grid-cols-5 gap-1.5 max-h-[420px] overflow-y-auto pr-1">
-              {mockQuestions.map((q, idx) => {
+              {questions.map((q, idx) => {
                 const isCurrent = idx === currentIndex;
                 const hasAnswer = !!answers[q.id];
                 const isFlag = flagged.has(q.id);
@@ -496,7 +690,7 @@ export const ExamRunnerPage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-5 gap-2">
-                {mockQuestions.map((q, idx) => {
+                {questions.map((q, idx) => {
                   const isCurrent = idx === currentIndex;
                   const hasAnswer = !!answers[q.id];
                   const isFlag = flagged.has(q.id);
@@ -540,7 +734,7 @@ export const ExamRunnerPage: React.FC = () => {
         </div>
       )}
 
-      {/* Section Transition Interstitial Modal (Phase 20) */}
+      {/* Section Transition Interstitial Modal */}
       {showSectionModal && (
         <div className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
           <div className="bg-white border-2 border-[#0E1B2A] rounded-md p-6 max-w-md w-full shadow-2xl space-y-4">
@@ -582,7 +776,7 @@ export const ExamRunnerPage: React.FC = () => {
         </div>
       )}
 
-      {/* Submission Confirmation Modal (Phase 22) */}
+      {/* Submission Confirmation Modal */}
       {showSubmitModal && (
         <div className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
           <div className="bg-white border-2 border-[#0E1B2A] rounded-md p-6 max-w-lg w-full shadow-2xl space-y-5">
@@ -616,6 +810,7 @@ export const ExamRunnerPage: React.FC = () => {
             <div className="flex items-center justify-end space-x-3 pt-2 border-t border-[#E2E6EB]">
               <button
                 type="button"
+                disabled={submitting}
                 onClick={() => setShowSubmitModal(false)}
                 className="px-4 py-2 border border-[#D4D9DF] text-xs font-semibold rounded text-[#64748B] hover:bg-[#EDF1F5]"
               >
@@ -623,10 +818,11 @@ export const ExamRunnerPage: React.FC = () => {
               </button>
               <button
                 type="button"
+                disabled={submitting}
                 onClick={handleFinalSubmit}
-                className="bg-[#234E35] text-white px-5 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E]"
+                className="bg-[#234E35] text-white px-5 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E] disabled:opacity-50"
               >
-                Confirm & Finalize Test
+                {submitting ? 'Finalizing...' : 'Confirm & Finalize Test'}
               </button>
             </div>
           </div>

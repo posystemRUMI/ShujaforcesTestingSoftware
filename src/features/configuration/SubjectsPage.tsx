@@ -29,7 +29,7 @@ const CATEGORY_ICONS: Record<string, React.ComponentType<{ className?: string }>
 };
 
 export const SubjectsPage: React.FC = () => {
-  const [subjects, setSubjects] = useState<SubjectConfig[]>(configStore.getSubjects());
+  const [subjects, setSubjects] = useState<SubjectConfig[]>(() => configStore.getSubjects());
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [selectedStatus, setSelectedStatus] = useState<string>('ALL');
@@ -52,10 +52,27 @@ export const SubjectsPage: React.FC = () => {
   });
 
   useEffect(() => {
+    let isMounted = true;
+    async function fetchSubjects() {
+      try {
+        const { configurationService } = await import('@/services/configurationService');
+        const data = await configurationService.getSubjects();
+        if (isMounted && data && data.length > 0) {
+          setSubjects(data);
+        }
+      } catch (e) {
+        console.warn('Failed to fetch subjects:', e);
+      }
+    }
+    fetchSubjects();
+
     const unsub = configStore.subscribe(() => {
       setSubjects(configStore.getSubjects());
     });
-    return unsub;
+    return () => {
+      isMounted = false;
+      unsub();
+    };
   }, []);
 
   const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);

@@ -147,6 +147,56 @@ CREATE POLICY "attempt_answers_staff_write"
   WITH CHECK (public.is_admin() OR public.is_teacher());
 
 -- ----------------------------------------------------------------------------
+-- 4b. RETAKE PERMISSIONS TABLE
+-- ----------------------------------------------------------------------------
+DO $$ BEGIN
+  CREATE TYPE public.retake_status AS ENUM ('AVAILABLE', 'USED', 'EXPIRED', 'REVOKED');
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+CREATE TABLE IF NOT EXISTS public.retake_permissions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  student_id UUID NOT NULL REFERENCES public.students(id) ON DELETE RESTRICT,
+  test_id UUID NOT NULL REFERENCES public.tests(id) ON DELETE RESTRICT,
+  original_attempt_id UUID REFERENCES public.test_attempts(id) ON DELETE SET NULL,
+  approved_by UUID NOT NULL REFERENCES public.profiles(id) ON DELETE RESTRICT,
+  approved_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now()),
+  expires_at TIMESTAMPTZ,
+  status public.retake_status NOT NULL DEFAULT 'AVAILABLE',
+  notes TEXT,
+  consumed_attempt_id UUID REFERENCES public.test_attempts(id) ON DELETE SET NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now()),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now())
+);
+
+CREATE INDEX IF NOT EXISTS idx_retake_perms_student ON public.retake_permissions(student_id);
+CREATE INDEX IF NOT EXISTS idx_retake_perms_test ON public.retake_permissions(test_id);
+CREATE INDEX IF NOT EXISTS idx_retake_perms_status ON public.retake_permissions(status);
+
+CREATE TRIGGER trg_retake_permissions_updated_at
+  BEFORE UPDATE ON public.retake_permissions
+  FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+
+ALTER TABLE public.retake_permissions ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "retake_perms_student_select"
+  ON public.retake_permissions FOR SELECT
+  TO authenticated
+  USING (
+    public.is_admin()
+    OR public.is_teacher()
+    OR EXISTS (
+      SELECT 1 FROM public.students s
+      WHERE s.id = retake_permissions.student_id AND s.profile_id = auth.uid()
+    )
+  );
+
+CREATE POLICY "retake_perms_staff_write"
+  ON public.retake_permissions FOR ALL
+  TO authenticated
+  USING (public.is_admin() OR public.is_teacher())
+  WITH CHECK (public.is_admin() OR public.is_teacher());
+
+-- ----------------------------------------------------------------------------
 -- 5. SERVER TIME HELPER
 -- ----------------------------------------------------------------------------
 CREATE OR REPLACE FUNCTION public.get_server_time()

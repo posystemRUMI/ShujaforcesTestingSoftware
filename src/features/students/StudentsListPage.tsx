@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Plus,
@@ -22,16 +22,35 @@ import {
 } from '@/components/ui';
 import { studentStore } from './studentStore';
 import { StudentRecord } from './types';
+import { studentService } from '@/services/studentService';
 import { toast } from 'sonner';
 
 export const StudentsListPage: React.FC = () => {
   const navigate = useNavigate();
-  const [students, setStudents] = useState<StudentRecord[]>(studentStore.getAll());
+  const [students, setStudents] = useState<StudentRecord[]>(() => studentStore.getAll());
   const [search, setSearch] = useState('');
   const [branchFilter, setBranchFilter] = useState<string>('ALL');
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
   const [selectedStudentIds, setSelectedStudentIds] = useState<Set<string>>(new Set());
   const [deleteTarget, setDeleteTarget] = useState<StudentRecord | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function fetchStudents() {
+      try {
+        const data = await studentService.getStudents();
+        if (isMounted && data) {
+          setStudents(data);
+        }
+      } catch (err) {
+        console.warn('Error fetching students:', err);
+      }
+    }
+    fetchStudents();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,12 +75,17 @@ export const StudentsListPage: React.FC = () => {
     currentPage * pageSize,
   );
 
-  const handleDeleteConfirm = () => {
+  const handleDeleteConfirm = async () => {
     if (!deleteTarget) return;
-    studentStore.delete(deleteTarget.id);
-    setStudents(studentStore.getAll());
-    toast.success(`Cadet record ${deleteTarget.rollNumber} successfully archived`);
-    setDeleteTarget(null);
+    try {
+      await studentService.deleteStudent(deleteTarget.id);
+      setStudents((prev) => prev.filter((s) => s.id !== deleteTarget.id));
+      toast.success(`Cadet record ${deleteTarget.rollNumber} successfully archived`);
+    } catch (err) {
+      toast.error('Failed to archive cadet record');
+    } finally {
+      setDeleteTarget(null);
+    }
   };
 
   const toggleSelectOne = (id: string) => {

@@ -59,6 +59,41 @@ CREATE POLICY "test_assignments_staff_write"
   USING (public.is_admin() OR public.is_teacher())
   WITH CHECK (public.is_admin() OR public.is_teacher());
 
+-- Student read access to published tests once assigned to candidate's batch
+CREATE POLICY "tests_student_assigned_select"
+  ON public.tests FOR SELECT
+  TO authenticated
+  USING (
+    public.is_student()
+    AND status IN ('PUBLISHED', 'ACTIVE', 'COMPLETED')
+    AND EXISTS (
+      SELECT 1 FROM public.test_assignments ta
+      JOIN public.batch_enrollments be ON be.batch_id = ta.batch_id
+      JOIN public.students s ON s.id = be.student_id
+      WHERE ta.test_id = tests.id
+        AND s.profile_id = auth.uid()
+        AND ta.status = 'ACTIVE'
+    )
+  );
+
+-- Student read access to sections of assigned tests
+CREATE POLICY "test_sections_student_assigned_select"
+  ON public.test_sections FOR SELECT
+  TO authenticated
+  USING (
+    public.is_student()
+    AND EXISTS (
+      SELECT 1 FROM public.tests t
+      JOIN public.test_assignments ta ON ta.test_id = t.id
+      JOIN public.batch_enrollments be ON be.batch_id = ta.batch_id
+      JOIN public.students s ON s.id = be.student_id
+      WHERE t.id = test_sections.test_id
+        AND s.profile_id = auth.uid()
+        AND ta.status = 'ACTIVE'
+        AND t.status IN ('PUBLISHED', 'ACTIVE', 'COMPLETED')
+    )
+  );
+
 -- ----------------------------------------------------------------------------
 -- 2. PUBLISH TEST RPC (Trusted Validation)
 -- ----------------------------------------------------------------------------

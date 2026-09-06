@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { mockService } from '@/lib/mock-service';
+import { monitoringService } from '@/services/monitoringService';
+import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { TerminalWorkstation, TerminalWorkstationStatus } from '@/types';
 import { ShieldAlert, Play, Pause, AlertTriangle, Eye, Radio, Search, Monitor, Activity, X } from 'lucide-react';
 import { toast } from 'sonner';
@@ -17,10 +19,60 @@ export const LiveProctorPage: React.FC = () => {
     terminal?: TerminalWorkstation;
   } | null>(null);
 
-  // Realtime simulation tick
+  // Realtime monitoring & simulation tick
   useEffect(() => {
+    let realtimeChannel: any = null;
+
     async function loadData() {
       try {
+        if (isSupabaseConfigured()) {
+          const active = await monitoringService.getActiveAttempts();
+          if (active && active.length > 0) {
+            const mapped: TerminalWorkstation[] = active.map((m, idx) => ({
+              id: m.attempt_id,
+              terminalCode: `WS-${(idx + 1).toString().padStart(2, '0')}`,
+              ipAddress: `192.168.10.${100 + idx}`,
+              status: (m.attempt_status === 'IN_PROGRESS' ? 'ACTIVE_EXAM' : 'ONLINE') as TerminalWorkstationStatus,
+              currentCadet: {
+                name: m.student_name,
+                rollNumber: m.roll_number,
+                branch: (m.force_code || 'PAKISTAN_ARMY') as any,
+              },
+              testTitle: m.test_name,
+              currentQuestion: (m.current_question_index || 0) + 1,
+              answeredCount: m.answered_count,
+              totalQuestions: m.total_questions || 100,
+              timeRemainingSeconds: m.remaining_seconds || 3600,
+              networkLatencyMs: 14,
+              anomalyDetected: m.liveness === 'OFFLINE' || m.liveness === 'STALE',
+              lockStatus: false,
+            }));
+            setTerminals(mapped);
+            setLoading(false);
+
+            realtimeChannel = monitoringService.subscribeToHeartbeats((payload) => {
+              const hb = payload.new;
+              if (!hb) return;
+              setTerminals((prev) =>
+                prev.map((t) => {
+                  if (t.id === hb.attempt_id) {
+                    return {
+                      ...t,
+                      answeredCount: hb.answered_count ?? t.answeredCount,
+                      networkLatencyMs: Math.floor(10 + Math.random() * 15),
+                    };
+                  }
+                  return t;
+                })
+              );
+            });
+            return;
+          }
+        }
+        const data = await mockService.getTerminals();
+        setTerminals(data);
+      } catch (e) {
+        console.warn('Failed to load active proctor attempts:', e);
         const data = await mockService.getTerminals();
         setTerminals(data);
       } finally {
@@ -29,18 +81,15 @@ export const LiveProctorPage: React.FC = () => {
     }
     loadData();
 
-    // Simulated realtime progress tick
+    // Local tick for chronometer pings
     const interval = setInterval(() => {
       setTerminals((prev) =>
         prev.map((term) => {
           if (term.status === 'ACTIVE_EXAM' && term.timeRemainingSeconds > 0) {
             const nextTime = term.timeRemainingSeconds - 1;
-            const newAnswered = nextTime % 30 === 0 ? Math.min(term.answeredCount + 1, term.totalQuestions) : term.answeredCount;
             return {
               ...term,
               timeRemainingSeconds: nextTime,
-              answeredCount: newAnswered,
-              networkLatencyMs: Math.floor(12 + Math.random() * 20),
             };
           }
           return term;
@@ -48,7 +97,12 @@ export const LiveProctorPage: React.FC = () => {
       );
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (realtimeChannel) {
+        monitoringService.unsubscribe(realtimeChannel);
+      }
+    };
   }, []);
 
   const filteredTerminals = terminals.filter((t) => {
@@ -77,6 +131,11 @@ export const LiveProctorPage: React.FC = () => {
       );
       toast.success(`Session resumed for workstation ${confirmAction.terminal.terminalCode}`);
     } else if (confirmAction.type === 'FORCE_SUBMIT' && confirmAction.terminal) {
+      if (isSupabaseConfigured()) {
+        monitoringService.forceSubmitAttempt(confirmAction.terminal.id).catch((err) => {
+          console.warn('Failed to force submit in Supabase:', err);
+        });
+      }
       setTerminals((prev) =>
         prev.map((t) => (t.id === confirmAction.terminal!.id ? { ...t, status: 'ONLINE' as TerminalWorkstationStatus, currentCadet: null } : t))
       );

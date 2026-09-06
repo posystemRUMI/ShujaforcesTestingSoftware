@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 export const CoursesPage: React.FC = () => {
-  const [courses, setCourses] = useState<CourseConfig[]>(configStore.getCourses());
+  const [courses, setCourses] = useState<CourseConfig[]>(() => configStore.getCourses());
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBranch, setSelectedBranch] = useState<string>('ALL');
   const [selectedStatus, setSelectedStatus] = useState<string>('ALL');
@@ -54,10 +54,27 @@ export const CoursesPage: React.FC = () => {
   });
 
   useEffect(() => {
+    let isMounted = true;
+    async function fetchCourses() {
+      try {
+        const { configurationService } = await import('@/services/configurationService');
+        const data = await configurationService.getCourses();
+        if (isMounted && data && data.length > 0) {
+          setCourses(data);
+        }
+      } catch (e) {
+        console.warn('Failed to fetch courses:', e);
+      }
+    }
+    fetchCourses();
+
     const unsub = configStore.subscribe(() => {
       setCourses(configStore.getCourses());
     });
-    return unsub;
+    return () => {
+      isMounted = false;
+      unsub();
+    };
   }, []);
 
   // Filtered courses

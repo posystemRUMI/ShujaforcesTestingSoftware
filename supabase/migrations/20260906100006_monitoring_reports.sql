@@ -41,7 +41,10 @@ CREATE POLICY "heartbeats_staff_write"
   WITH CHECK (public.is_admin() OR public.is_teacher());
 
 -- Enable Supabase Realtime on heartbeats for live monitoring
-ALTER PUBLICATION supabase_realtime ADD TABLE public.attempt_heartbeats;
+DO $$ BEGIN
+  ALTER PUBLICATION supabase_realtime ADD TABLE public.attempt_heartbeats;
+EXCEPTION WHEN undefined_object THEN NULL;
+END $$;
 
 -- ----------------------------------------------------------------------------
 -- 2. RECORD HEARTBEAT RPC
