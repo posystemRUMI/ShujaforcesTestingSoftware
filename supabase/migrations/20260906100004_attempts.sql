@@ -223,7 +223,7 @@ DECLARE
   v_test RECORD;
   v_assignment RECORD;
   v_attempt_count INT;
-  v_retake RECORD;
+  v_retake_id UUID := NULL;
   v_attempt_id UUID;
   v_attempt_number INT;
   v_expires_at TIMESTAMPTZ;
@@ -305,7 +305,7 @@ BEGIN
   -- First attempt is free; additional attempts require retake permission
   IF v_attempt_count >= v_assignment.max_attempts THEN
     -- Check for available retake permission
-    SELECT * INTO v_retake
+    SELECT id INTO v_retake_id
     FROM public.retake_permissions
     WHERE student_id = v_student.id
       AND test_id = p_test_id
@@ -314,7 +314,7 @@ BEGIN
     ORDER BY approved_at ASC
     LIMIT 1;
 
-    IF v_retake IS NULL THEN
+    IF v_retake_id IS NULL THEN
       RAISE EXCEPTION 'Attempt limit reached. No retake permission available.';
     END IF;
   END IF;
@@ -385,6 +385,13 @@ BEGIN
     timezone('utc', now()),
     timezone('utc', now()) + (v_first_section.duration_minutes * interval '1 minute')
   );
+
+  -- Consume retake permission if this was authorized via retake
+  IF v_retake_id IS NOT NULL THEN
+    UPDATE public.retake_permissions
+    SET status = 'USED', consumed_attempt_id = v_attempt_id, updated_at = timezone('utc', now())
+    WHERE id = v_retake_id;
+  END IF;
 
   -- Audit
   PERFORM public.log_audit_event(
