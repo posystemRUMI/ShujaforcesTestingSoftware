@@ -1294,4 +1294,421 @@ When a new Cursor session/agent starts:
 - **Regression Check:** N/A
 - **Notes:** Exam hall protocol requirement.
 
+---
+
+# PRODUCTION BACKEND IMPLEMENTATION
+
+## Backend Agent Assignments
+
+| Agent | Responsibility | Assigned Phases | Status |
+| :--- | :--- | :--- | :--- |
+| **BACKEND-AGENT-1** (Antigravity) | Platform / Identity / Roles / Core Schema / Storage / RLS / Base CRUD / Audit / Seed / Types | `B0–B12` | **COMPLETE** |
+| **BACKEND-AGENT-2** (Claude) | Assessment Runtime / Timing / Scoring / Results / Retakes / Realtime / E2E Integration | `B13–B28` | READY FOR EXECUTION |
+
+---
+
+## Backend Implementation Ledger
+
+### B0 — Backend Foundation & Project Structure
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** None
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/
+- **Tables:** N/A (Infrastructure)
+- **Functions/RPC:** N/A
+- **RLS Policies:** N/A
+- **Storage:** Directory setup (supabase/migrations, supabase/functions, supabase/tests)
+- **Files Changed:** supabase/config.toml, docs/BACKEND_ARCHITECTURE.md, docs/DATABASE_SCHEMA.md, docs/AUTH_RLS.md
+- **Validation:** Structure verified; @supabase/supabase-js installed; local configuration validated
+- **Security Tests:** Air-gap and env safety check passed
+- **Known Issues:** None
+- **Handoff Notes:** Lay foundation for Auth & Core Schema
+
+### B1 — Supabase Auth, Profiles & Roles
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B0
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000001_core_schema.sql
+- **Tables:** profiles
+- **Functions/RPC:** current_app_role(), is_admin(), is_teacher(), is_student(), handle_new_user() trigger
+- **RLS Policies:** profiles_read_all, profiles_update_own, profiles_admin_all
+- **Storage:** profile-images
+- **Files Changed:** supabase/migrations/20260906000001_core_schema.sql, supabase/migrations/20260906000002_rls_policies.sql
+- **Validation:** Profiles auto-provisioning trigger verified; RLS role-checking security definer functions verified
+- **Security Tests:** Non-admin cannot elevate own role to ADMIN
+- **Known Issues:** None
+- **Handoff Notes:** Foundation RBAC ready for downstream access controls
+
+### B2 — Forces / Courses / Subjects
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B1
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000001_core_schema.sql
+- **Tables:** forces, courses, subjects, course_subjects
+- **Functions/RPC:** None (Schema & triggers)
+- **RLS Policies:** forces_read_all, courses_read_all, subjects_read_all, course_subjects_read_all, write policies restricted to ADMIN
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906000001_core_schema.sql, supabase/migrations/20260906000002_rls_policies.sql
+- **Validation:** Unique constraints on force/course/subject codes; cascade deletions protected; foreign key integrity verified
+- **Security Tests:** Write actions blocked for TEACHER and STUDENT roles
+- **Known Issues:** None
+- **Handoff Notes:** Multi-branch hierarchy ready for batch and candidate linking
+
+### B3 — Students / Teachers / Batches / Enrollments
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B2
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000001_core_schema.sql
+- **Tables:** students, teachers, teacher_subjects, batches, batch_enrollments
+- **Functions/RPC:** Enforced through standard triggers and FK cascades
+- **RLS Policies:** students_read_self_or_faculty, teachers_read_all, batches_read_all, batch_enrollments_read_self_or_faculty, admin full access
+- **Storage:** profile-images
+- **Files Changed:** supabase/migrations/20260906000001_core_schema.sql, supabase/migrations/20260906000002_rls_policies.sql
+- **Validation:** One-to-one link with profiles ensured; roll_number, service_number, and batch codes unique; composite enrollment constraint verified
+- **Security Tests:** Student cannot read other students' CNIC or sensitive enrollment details
+- **Known Issues:** None
+- **Handoff Notes:** Entities fully prepared for candidate testing enrollment and teacher assignment
+
+### B4 — Question Bank Core & Options
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B2, B3
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000001_core_schema.sql
+- **Tables:** questions, question_options, question_courses
+- **Functions/RPC:** enforce_single_correct_option() trigger
+- **RLS Policies:** questions_read_faculty, question_options_student_deny, question_options_faculty_read, faculty write restricted
+- **Storage:** question-media
+- **Files Changed:** supabase/migrations/20260906000001_core_schema.sql, supabase/migrations/20260906000002_rls_policies.sql
+- **Validation:** Single correct option constraint trigger enforced on question_options; question code uniqueness enforced; course mapping verified
+- **Security Tests:** Verified students cannot query question_options directly to prevent DevTools inspection of is_correct
+- **Known Issues:** None
+- **Handoff Notes:** Question schema ready for Claude's Assessment Engine
+
+### B5 — Supabase Storage Architecture
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B4
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000003_storage_setup.sql
+- **Tables:** storage.buckets, storage.objects
+- **Functions/RPC:** Storage RLS policies
+- **RLS Policies:** Public read on public buckets; authenticated upload for faculty/admin on question-media; user-scoped avatar upload on profile-images; admin-only on import-files
+- **Storage:** question-media, profile-images, academy-assets, import-files
+- **Files Changed:** supabase/migrations/20260906000003_storage_setup.sql
+- **Validation:** 4 buckets created with file size limits (2MB-20MB) and allowed MIME types (PNG, JPEG, WebP, SVG, PDF, CSV, XLSX)
+- **Security Tests:** Students cannot upload to question-media or read import-files
+- **Known Issues:** None
+- **Handoff Notes:** Media buckets ready for Question Authoring and Profile management
+
+### B6 — RLS Helper Functions & Base Policies
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B1-B5
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000002_rls_policies.sql
+- **Tables:** All 12 tables (strict deny-by-default with FORCE ROW LEVEL SECURITY)
+- **Functions/RPC:** current_app_role(), is_admin(), is_teacher(), is_student()
+- **RLS Policies:** 28 granular policies across core tables
+- **Storage:** Storage policies on storage.objects
+- **Files Changed:** supabase/migrations/20260906000002_rls_policies.sql
+- **Validation:** Every table has RLS enabled and forced; non-admin cannot access unpermitted rows; candidate option secrecy strictly preserved
+- **Security Tests:** Security validation script supabase/tests/01_security_validation.sql confirms policy enforcement
+- **Known Issues:** None
+- **Handoff Notes:** Comprehensive RBAC isolation established
+
+### B7 — Secure Admin & Teacher CRUD
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B6
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000004_crud_rpc_audit.sql
+- **Tables:** Atomic multi-table updates across students, teachers, questions, question_options, question_courses
+- **Functions/RPC:** admin_create_student, admin_create_teacher, admin_upsert_question, get_safe_exam_questions
+- **RLS Policies:** Security Definer with internal role authorization check
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906000004_crud_rpc_audit.sql
+- **Validation:** Compound transactions atomic; rollback on failure; audit log emitted upon execution
+- **Security Tests:** Unauthorized callers rejected with 'Unauthorized' error
+- **Known Issues:** None
+- **Handoff Notes:** Ready for admin forms and candidate safe question retrieval
+
+### B8 — Audit Logging Foundation
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B7
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906000004_crud_rpc_audit.sql
+- **Tables:** audit_logs
+- **Functions/RPC:** log_audit_event(text, text, uuid, jsonb)
+- **RLS Policies:** audit_logs_admin_read (SELECT only for admin; UPDATE and DELETE completely denied)
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906000004_crud_rpc_audit.sql
+- **Validation:** Read-only append-only architecture verified; automatic capturing of actor_id, actor_role, ip_address, and timestamp
+- **Security Tests:** Admin cannot mutate or purge audit logs
+- **Known Issues:** None
+- **Handoff Notes:** Available for logging assessment start, completion, retakes, and grading
+
+### B9 — Seed Data
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B1-B8
+- **Blocked By:** None
+- **Migrations:** supabase/seed.sql
+- **Tables:** forces, courses, subjects, course_subjects, batches, questions, question_options, question_courses
+- **Functions/RPC:** N/A
+- **RLS Policies:** N/A
+- **Storage:** N/A
+- **Files Changed:** supabase/seed.sql
+- **Validation:** Stable deterministic UUIDs seeded for 3 military branches, 3 flagship courses, 5 subjects, 3 batches, and 6 validated sample questions
+- **Security Tests:** Foreign key referential integrity verified
+- **Known Issues:** None
+- **Handoff Notes:** Stable IDs cataloged in BACKEND-HANDOFF-001 for Claude
+
+### B10 — Generated Types & Frontend Service Foundation
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B9
+- **Blocked By:** None
+- **Migrations:** N/A
+- **Tables:** All tables mapped to TypeScript interfaces
+- **Functions/RPC:** All RPCs typed
+- **RLS Policies:** N/A
+- **Storage:** N/A
+- **Files Changed:** src/types/database.types.ts, src/lib/supabaseClient.ts, src/services/authService.ts, src/services/studentService.ts, src/services/teacherService.ts, src/services/batchService.ts, src/services/configurationService.ts, src/services/questionService.ts, src/services/index.ts
+- **Validation:** npx tsc --noEmit PASS (0 errors); npm run build PASS (0 errors)
+- **Security Tests:** Graceful fallback preserves offline mock functionality when Supabase env keys are absent
+- **Known Issues:** None
+- **Handoff Notes:** Frontend service layer complete and fully typed
+
+### B11 — Environment / Backup / Recovery Documentation
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B10
+- **Blocked By:** None
+- **Migrations:** N/A
+- **Tables:** N/A
+- **Functions/RPC:** N/A
+- **RLS Policies:** N/A
+- **Storage:** N/A
+- **Files Changed:** Docs/ENVIRONMENT_BACKUP_RECOVERY.md
+- **Validation:** Complete deployment, local dev, Docker air-gap, automated pg_dump, WAL archiving, and point-in-time recovery runbooks documented
+- **Security Tests:** Secret rotation procedures verified
+- **Known Issues:** None
+- **Handoff Notes:** Operations manual complete
+
+### B12 — Platform Security Validation & Claude Handoff
+- **Owner ID:** BACKEND-AGENT-1
+- **Owner:** Antigravity
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B0-B11
+- **Blocked By:** None
+- **Migrations:** N/A
+- **Tables:** N/A
+- **Functions/RPC:** N/A
+- **RLS Policies:** Complete policy suite validated
+- **Storage:** Storage buckets validated
+- **Files Changed:** supabase/tests/01_security_validation.sql, Docs/BACKEND-HANDOFF-001.md, Docs/TASKS.md
+- **Validation:** Security test queries verify student answer secrecy, append-only audit trail, and role elevation blocks
+- **Security Tests:** Full test suite in supabase/tests/01_security_validation.sql passed
+- **Known Issues:** None
+- **Handoff Notes:** Claude handoff document Docs/BACKEND-HANDOFF-001.md delivered to Claude
+
+### B13 — Test & Section Schema
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B0-B12
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906100001_tests_sections.sql
+- **Tables:** tests, test_sections
+- **Functions/RPC:** Validation & update triggers
+- **RLS Policies:** tests_read_faculty_student, tests_write_faculty, test_sections_read_all, test_sections_write_faculty
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906100001_tests_sections.sql
+- **Validation:** Normalized tables for tests & sections created with status lifecycle and section order checks
+- **Security Tests:** Student write attempts blocked
+- **Known Issues:** None
+- **Handoff Notes:** Schema established for test builder and assessment engine
+
+### B14 — Test Question Composition
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B13
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906100002_test_questions.sql
+- **Tables:** test_section_questions
+- **Functions/RPC:** generate_test_section_questions, add_question_to_section, remove_question_from_section
+- **RLS Policies:** test_section_questions_read_faculty_student, test_section_questions_write_faculty
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906100002_test_questions.sql
+- **Validation:** Relational composition with manual/automatic section question assignment and duplicate prevention
+- **Security Tests:** Denied unauthorized question assignment
+- **Known Issues:** None
+- **Handoff Notes:** Question selection engine ready for publishing
+
+### B15 — Test Publishing & Assignment
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B14
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906100003_publish_assign.sql
+- **Tables:** test_assignments
+- **Functions/RPC:** publish_test, assign_test
+- **RLS Policies:** test_assignments_read_self_or_faculty, test_assignments_write_faculty
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906100003_publish_assign.sql
+- **Validation:** Server-authoritative test publishing validation & batch assignment RPC with availability window checking
+- **Security Tests:** Students cannot self-assign tests or publish drafts
+- **Known Issues:** None
+- **Handoff Notes:** Publishing flow complete
+
+### B16–B19 — Attempt Creation, Safe Payload, Timing & Autosave
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B15
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906100004_attempts.sql
+- **Tables:** test_attempts, attempt_section_progress, attempt_answers
+- **Functions/RPC:** start_test_attempt, get_safe_exam_payload, advance_section, save_answer, get_server_time
+- **RLS Policies:** test_attempts_student_own, attempt_answers_student_own, attempt_section_progress_own
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906100004_attempts.sql
+- **Validation:** P0 Answer Secrecy enforced: get_safe_exam_payload omits is_correct and correct_option_id; server-authoritative timestamps enforce attempt expiry and autosave persistence
+- **Security Tests:** Direct query on correct answer keys during active exam fails
+- **Known Issues:** None
+- **Handoff Notes:** Secure exam runtime engine complete
+
+### B20–B23 — Submission, Scoring, Results & Retakes
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B16–B19
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906100005_submission_scoring_results.sql
+- **Tables:** test_results, retake_permissions
+- **Functions/RPC:** submit_test_attempt, get_result_detail, approve_retake, calculate_stanine
+- **RLS Policies:** test_results_read_self_or_faculty, retake_permissions_read_self_or_faculty
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906100005_submission_scoring_results.sql
+- **Validation:** Transactional idempotent submission with backend-authoritative scoring engine, unique attempt result constraint, staff-only retake approval RPC, and post-submission answer review RPC
+- **Security Tests:** Duplicate submission idempotency verified; non-staff retake approval blocked
+- **Known Issues:** None
+- **Handoff Notes:** Trusted scoring and results subsystem operational
+
+### B24–B25 — Live Monitoring & Analytics Backend
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B20–B23
+- **Blocked By:** None
+- **Migrations:** supabase/migrations/20260906100006_monitoring_reports.sql
+- **Tables:** attempt_heartbeats, v_active_monitoring (View)
+- **Functions/RPC:** record_heartbeat, force_submit_attempt, report_batch_performance, report_student_performance, report_test_performance, report_pass_fail_summary, report_force_performance
+- **RLS Policies:** attempt_heartbeats_read_faculty_student, attempt_heartbeats_write_own
+- **Storage:** N/A
+- **Files Changed:** supabase/migrations/20260906100006_monitoring_reports.sql
+- **Validation:** Realtime attempt heartbeats, live proctor active view, force submit RPC, and 5 aggregate SQL report RPCs with filtering
+- **Security Tests:** Student access to proctor monitoring view denied
+- **Known Issues:** None
+- **Handoff Notes:** Monitoring & reports ready
+
+### B26 — Frontend Service Adapters
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B24–B25
+- **Blocked By:** None
+- **Files Changed:** src/types/database.types.ts, src/services/testService.ts, src/services/attemptService.ts, src/services/resultService.ts, src/services/retakeService.ts, src/services/monitoringService.ts, src/services/reportService.ts, src/services/index.ts
+- **Validation:** All 6 service adapters created and exported via barrel index; typed against Supabase Database schema
+- **Security Tests:** Offline mock fallback preserved if VITE_SUPABASE_URL unconfigured
+- **Known Issues:** None
+- **Handoff Notes:** Frontend connected to backend adapters
+
+### B27 — Assessment Security & Functional Validation
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B26
+- **Blocked By:** None
+- **Files Changed:** supabase/tests/02_assessment_security.sql
+- **Validation:** Automated test script validating P0 answer secrecy, self-assignment prevention, backend scoring authority, append-only audit trail, and RLS enforcement across all assessment tables
+- **Security Tests:** All security queries in 02_assessment_security.sql pass
+- **Known Issues:** None
+- **Handoff Notes:** End-to-end security verified
+
+### B28 — Final Production Backend Acceptance
+- **Owner ID:** BACKEND-AGENT-2
+- **Owner:** Claude
+- **Status:** COMPLETE
+- **Started:** 2026-09-06
+- **Last Updated:** 2026-09-06
+- **Dependencies:** B27
+- **Blocked By:** None
+- **Validation:** Clean TypeScript check (`npx tsc --noEmit` exit 0), full Vite production build (`npm run build` exit 0), 10 database migrations created, 2 security test suites created, 0 P0 defects
+- **Final Verdict:** PASS
+- **Known Issues:** None
+
+
 
