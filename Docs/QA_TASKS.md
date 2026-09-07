@@ -802,6 +802,47 @@ Validation Notes: `dist/index.html` and assets built without external runtime de
 - [x] **AUTH-026 Zero Orphan Profiles** — PASS: Verified 0 orphan profiles without corresponding `auth.users` entries.
 - [x] **AUTH-027 Zero Ghost / Dummy Users** — PASS: All legacy `admin@gmail.com`, `teacher@gmail.com`, `student@gmail.com`, and `rank_ghost_*` records eradicated.
 
+---
+
+## 13. STUDENT REGISTRATION MODULE QA
+
+> **Purpose:** Authoritative verification of the comprehensive Student Registration Module across Admin & Teacher roles, frontend validation, dynamic dependent dropdown hierarchy, secure atomic Supabase RPC (`register_student`), server-authoritative role binding, photo upload, and audit logging.
+> **Status:** PASS
+
+### QA1-26 — Student Registration Module Test Matrix (REG-001 to REG-030)
+
+- [x] **REG-001 Admin route access** — PASS: Admin can access `/admin/students/register` directly and from navigation.
+- [x] **REG-002 Teacher route access** — PASS: Teacher can access `/admin/students/register` with complete form functionality.
+- [x] **REG-003 Student route access denied** — PASS: Student attempting to navigate to `/admin/students/register` is redirected to `/student/dashboard`.
+- [x] **REG-004 Unauthenticated route access denied** — PASS: Unauthenticated user navigating to registration route is redirected to `/login`.
+- [x] **REG-005 Navigation action in Admin view** — PASS: `+ Register Student` button is prominently visible in Admin Students Roster and navigates to `/admin/students/register`.
+- [x] **REG-006 Navigation action in Teacher view** — PASS: `+ Register Student` button is accessible in Teacher view.
+- [x] **REG-007 Candidate Full Name validation** — PASS: Zod schema and backend RPC reject empty/too-short full names (minimum 3 characters required).
+- [x] **REG-008 Father Name validation** — PASS: Zod schema and backend RPC enforce candidate father's name (minimum 3 characters).
+- [x] **REG-009 CNIC format validation** — PASS: Automatic formatting mask and regex enforce Pakistani CNIC standard (`XXXXX-XXXXXXX-X`).
+- [x] **REG-010 Duplicate CNIC prevention** — PASS: Unique constraint in `public.students` and pre-check validation reject existing candidate CNICs with an explicit error.
+- [x] **REG-011 Phone number format validation** — PASS: Validates Pakistani mobile format (`03XX-XXXXXXX` or `923XXXXXXXXX`).
+- [x] **REG-012 Roll Number validation** — PASS: Roll number format validated and mandatory for induction record creation.
+- [x] **REG-013 Duplicate Roll Number prevention** — PASS: `public.students.roll_number` uniqueness enforced via database constraint and real-time availability indicator.
+- [x] **REG-014 Login Email validation** — PASS: Email format validated; auto-suggestion feature produces institutional email based on candidate Roll ID.
+- [x] **REG-015 Duplicate Login Email prevention** — PASS: Pre-check RPC and `auth.users` uniqueness reject existing email addresses.
+- [x] **REG-016 Password validation & generator** — PASS: Password generator creates secure passcodes; show/hide toggle works; minimum 4-character length enforced.
+- [x] **REG-017 Dependent dropdown: Force to Course** — PASS: Selecting a Force branch (e.g. Pakistan Army) populates only corresponding active induction courses (e.g. 154 PMA Long Course).
+- [x] **REG-018 Dependent dropdown: Course to Batch** — PASS: Selecting a Course populates only active cohort batches linked to that course.
+- [x] **REG-019 Reset downstream dropdown selections** — PASS: Changing the selected Force automatically clears and refreshes downstream Course and Batch selections.
+- [x] **REG-020 Admin register student RPC execution** — PASS: Admin invoking `public.register_student` successfully creates `auth.users`, `public.profiles`, `public.students`, and `public.batch_enrollments`.
+- [x] **REG-021 Teacher register student RPC execution** — PASS: Teacher invoking `public.register_student` successfully registers the student.
+- [x] **REG-022 Student direct RPC call denied** — PASS: Student attempting to invoke `public.register_student` directly is rejected with `UNAUTHORIZED: Only administrators and teachers can register students`.
+- [x] **REG-023 Anonymous direct RPC call denied** — PASS: Anonymous / unauthenticated callers are rejected immediately by security definer gate.
+- [x] **REG-024 Forced STUDENT role enforcement** — PASS: Regardless of caller (Admin or Teacher), the created profile is strictly bound to `role = 'STUDENT'`; privilege elevation is impossible.
+- [x] **REG-025 Atomic transactional creation** — PASS: Single transaction creates auth user, profile, student docket, and batch enrollment simultaneously.
+- [x] **REG-026 Zero orphan auth records on failure** — PASS: PostgreSQL transactional rollback ensures no orphan auth or profile records are left if a constraint fails.
+- [x] **REG-027 Photo upload to storage bucket** — PASS: `student-photos` storage bucket accepts candidate portrait uploads from authenticated staff with public preview access.
+- [x] **REG-028 Audit logging trail** — PASS: Registration automatically writes a structured `STUDENT_REGISTERED` entry to `public.audit_logs` capturing actor ID, roll number, email, and target allocation.
+- [x] **REG-029 Registered cadet credential authentication** — PASS: Newly registered student account can authenticate against Supabase Auth with assigned credentials.
+- [x] **REG-030 Real-time UI feedback & navigation** — PASS: Registration UI provides live field validation, availability status icons, progress spinners, toast notification, and navigates back to Cadets Roster upon completion.
+
+
 
 
 

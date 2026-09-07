@@ -228,11 +228,11 @@ export const StudentsListPage: React.FC = () => {
             </button>
             <button
               type="button"
-              onClick={() => navigate('/admin/students/new')}
+              onClick={() => navigate('/admin/students/register')}
               className="inline-flex items-center space-x-1.5 px-3.5 py-2 bg-[#0E1B2A] hover:bg-[#1A2C42] text-white rounded text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
             >
               <Plus className="w-3.5 h-3.5" />
-              <span>Enrol New Cadet</span>
+              <span>+ Register Student</span>
             </button>
           </div>
         }

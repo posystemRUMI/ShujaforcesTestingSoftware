@@ -12,6 +12,7 @@ const BatchesPage = lazy(() => import('@/features/batches/BatchesPage'));
 const BatchDetailPage = lazy(() => import('@/features/batches/BatchDetailPage'));
 const StudentsListPage = lazy(() => import('@/features/students/StudentsListPage'));
 const StudentFormPage = lazy(() => import('@/features/students/StudentFormPage'));
+const StudentRegistrationPage = lazy(() => import('@/features/students/StudentRegistrationPage'));
 const StudentDetailPage = lazy(() => import('@/features/students/StudentDetailPage'));
 const StudentImportPage = lazy(() => import('@/features/students/StudentImportPage'));
 const TeachersListPage = lazy(() => import('@/features/teachers/TeachersListPage'));
@@ -149,11 +150,23 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: 'students/register',
+        element: (
+          <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
+            <Suspense fallback={<PageLoadingFallback />}>
+              <StudentRegistrationPage />
+            </Suspense>
+          </RequireRole>
+        ),
+      },
+      {
         path: 'students/new',
         element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <StudentFormPage />
-          </Suspense>
+          <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
+            <Suspense fallback={<PageLoadingFallback />}>
+              <StudentRegistrationPage />
+            </Suspense>
+          </RequireRole>
         ),
       },
       {
