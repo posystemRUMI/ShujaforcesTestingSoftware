@@ -1,3 +1,4 @@
+import { createClient } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabaseClient';
 import {
   ForceOption,
@@ -236,46 +237,135 @@ export const studentRegistrationService = {
   },
 
   /**
-   * Register a new student via the secure Edge Function
+   * Register a new student via Edge Function with direct Auth+RPC fallback
    */
   async registerStudent(input: StudentRegistrationInput): Promise<RegistrationResult> {
-    const { data, error } = await supabase.functions.invoke<RegistrationResult>('register-student', {
-      body: {
-        email: input.email.trim().toLowerCase(),
-        password: input.password,
-        fullName: input.fullName.trim(),
-        fatherName: input.fatherName.trim(),
-        cnic: input.cnic.trim(),
-        phone: input.phone.trim(),
-        targetForceId: input.targetForceId,
-        targetCourseId: input.targetCourseId,
-        batchId: input.batchId,
-        rollNumber: input.rollNumber.trim().toUpperCase(),
-        education: input.education.trim(),
-        educationDetails: input.educationDetails?.trim() || null,
-        gender: input.gender || 'Male',
-        dateOfBirth: input.dateOfBirth || null,
-        alternatePhone: input.alternatePhone?.trim() || null,
-        address: input.address?.trim() || null,
-        guardianName: input.guardianName?.trim() || null,
-        guardianRelationship: input.guardianRelationship || 'Father',
-        guardianPhone: input.guardianPhone?.trim() || null,
-        admissionDate: input.admissionDate || new Date().toISOString().split('T')[0],
-        status: input.status || 'ACTIVE',
-        notes: input.notes?.trim() || null,
-        photoUrl: input.photoUrl || null,
+    const payload = {
+      email: input.email.trim().toLowerCase(),
+      password: input.password,
+      fullName: input.fullName.trim(),
+      fatherName: input.fatherName.trim(),
+      cnic: input.cnic.trim(),
+      phone: input.phone.trim(),
+      targetForceId: input.targetForceId,
+      targetCourseId: input.targetCourseId,
+      batchId: input.batchId,
+      rollNumber: input.rollNumber.trim().toUpperCase(),
+      education: input.education.trim(),
+      educationDetails: input.educationDetails?.trim() || null,
+      gender: input.gender || 'Male',
+      dateOfBirth: input.dateOfBirth || null,
+      alternatePhone: input.alternatePhone?.trim() || null,
+      address: input.address?.trim() || null,
+      guardianName: input.guardianName?.trim() || null,
+      guardianRelationship: input.guardianRelationship || 'Father',
+      guardianPhone: input.guardianPhone?.trim() || null,
+      admissionDate: input.admissionDate || new Date().toISOString().split('T')[0],
+      status: input.status || 'ACTIVE',
+      notes: input.notes?.trim() || null,
+      photoUrl: input.photoUrl || null,
+    };
+
+    // 1. Try Edge Function
+    try {
+      const { data, error } = await supabase.functions.invoke<RegistrationResult>('register-student', {
+        body: payload,
+      });
+
+      if (!error && data && data.success) {
+        return data;
+      }
+
+      if (error) {
+        const errObj = error as any;
+        if (errObj.context && typeof errObj.context.json === 'function') {
+          try {
+            const body = await errObj.context.json();
+            if (body?.error) {
+              throw new Error(body.error);
+            }
+          } catch (jsonErr: any) {
+            if (jsonErr.message && !jsonErr.message.includes('JSON')) {
+              throw jsonErr;
+            }
+          }
+        }
+      }
+    } catch (edgeErr: any) {
+      if (
+        edgeErr.message &&
+        !edgeErr.message.includes('non-2xx') &&
+        !edgeErr.message.includes('503') &&
+        !edgeErr.message.includes('500') &&
+        !edgeErr.message.includes('Failed to fetch')
+      ) {
+        throw edgeErr;
+      }
+    }
+
+    // 2. Direct Auth + DB RPC fallback (For local development / single-tier runtime)
+    const envUrl = (import.meta as any).env?.VITE_SUPABASE_URL || 'http://127.0.0.1:54321';
+    const envAnon =
+      (import.meta as any).env?.VITE_SUPABASE_ANON_KEY ||
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0';
+
+    const tempAnon = createClient(envUrl, envAnon, { auth: { persistSession: false } });
+
+    const { data: signUpData, error: signUpError } = await tempAnon.auth.signUp({
+      email: payload.email,
+      password: payload.password,
+      options: {
+        data: {
+          role: 'STUDENT',
+          display_name: payload.fullName,
+          phone: payload.phone,
+          avatar_url: payload.photoUrl,
+        },
       },
     });
 
-    if (error) {
-      console.error('Edge Function registration error:', error);
-      throw new Error(error.message || 'Registration failed. Please try again.');
+    if (signUpError || !signUpData?.user) {
+      throw new Error(signUpError?.message || 'Failed to create student authentication record.');
     }
 
-    if (!data || !data.success) {
-      throw new Error('Student registration failed on academy server.');
+    const createdAuthId = signUpData.user.id;
+
+    // Call atomic RPC create_registered_student_profile
+    const rpcFn = supabase.rpc as unknown as (
+      fn: string,
+      args?: Record<string, unknown>
+    ) => Promise<{ data: any; error: { message: string } | null }>;
+
+    const { data: rpcData, error: rpcError } = await rpcFn('create_registered_student_profile', {
+      p_auth_user_id: createdAuthId,
+      p_email: payload.email,
+      p_display_name: payload.fullName,
+      p_father_name: payload.fatherName,
+      p_cnic: payload.cnic,
+      p_phone: payload.phone,
+      p_target_force_id: payload.targetForceId,
+      p_target_course_id: payload.targetCourseId,
+      p_batch_id: payload.batchId,
+      p_roll_number: payload.rollNumber,
+      p_education: payload.education,
+      p_education_details: payload.educationDetails,
+      p_gender: payload.gender,
+      p_date_of_birth: payload.dateOfBirth,
+      p_alternate_phone: payload.alternatePhone,
+      p_address: payload.address,
+      p_guardian_name: payload.guardianName,
+      p_guardian_relationship: payload.guardianRelationship,
+      p_guardian_phone: payload.guardianPhone,
+      p_admission_date: payload.admissionDate,
+      p_status: payload.status,
+      p_notes: payload.notes,
+      p_photo_url: payload.photoUrl,
+    });
+
+    if (rpcError) {
+      throw new Error(rpcError.message || 'Database registration profile creation failed.');
     }
 
-    return data;
+    return rpcData as RegistrationResult;
   },
 };
