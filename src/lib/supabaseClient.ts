@@ -13,10 +13,19 @@ export const isSupabaseConfigured = (): boolean => {
   );
 };
 
-// Singleton Supabase Client (falls back gracefully to dummy credentials if unconfigured during mock runs)
+// Singleton Supabase Client with Per-Tab Session Isolation via sessionStorage
 export const supabase: SupabaseClient<Database> = createClient<Database>(
   supabaseUrl || 'https://placeholder-forces-cbt.supabase.co',
-  supabaseAnonKey || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.placeholder'
+  supabaseAnonKey || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.placeholder',
+  {
+    auth: {
+      persistSession: true,
+      storage: typeof window !== 'undefined' ? window.sessionStorage : undefined,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
+      storageKey: 'sfa_auth_session_token',
+    },
+  }
 );
 
 export default supabase;

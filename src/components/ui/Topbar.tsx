@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Search, Bell, ChevronDown, LogOut, Menu } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Search, Bell, ChevronDown, LogOut, Menu, User } from 'lucide-react';
 import { useAuth } from '@/app/providers';
-import { UserRole } from '@/types';
 import { Avatar } from './Avatar';
 import { NotificationPanel } from './NotificationPanel';
 import { CommandSearch } from './CommandSearch';
@@ -11,15 +11,28 @@ export interface TopbarProps {
 }
 
 export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
-  const { user, role, switchRole, logout } = useAuth();
-  const [roleMenuOpen, setRoleMenuOpen] = useState(false);
+  const { user, role, logout } = useAuth();
+  const navigate = useNavigate();
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [commandSearchOpen, setCommandSearchOpen] = useState(false);
 
-  const handleRoleChange = (newRole: UserRole) => {
-    switchRole(newRole);
-    setRoleMenuOpen(false);
+  const handleLogout = async () => {
+    setProfileMenuOpen(false);
+    await logout();
+    navigate('/login', { replace: true });
   };
+
+  const handleProfileClick = () => {
+    setProfileMenuOpen(false);
+    if (role === 'STUDENT') {
+      navigate('/student/profile');
+    } else {
+      navigate('/admin/settings');
+    }
+  };
+
+  const roleBadgeLabel = role === 'ADMIN' ? 'Admin' : role === 'TEACHER' ? 'Instructor' : 'Cadet';
 
   return (
     <>
@@ -51,7 +64,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
           </div>
         </div>
 
-        {/* Right: Cycle, Notifications, User */}
+        {/* Right: Intake Status, Notifications, User Profile */}
         <div className="flex items-center space-x-3 ml-5">
           <div className="hidden lg:flex items-center space-x-2 px-3 py-1.5 bg-[#F4F6F9] rounded-lg text-[12.5px] font-medium text-[#374151] border border-[#E2E6EB]">
             <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
@@ -77,65 +90,50 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
 
           <div className="h-6 w-[1px] bg-[#E2E6EB]" />
 
-          {/* User & Role Switcher */}
+          {/* User Profile & Logout Menu */}
           <div className="flex items-center space-x-3">
-            <Avatar size="sm" fallbackText={user?.name || 'CP'} />
+            <Avatar size="sm" fallbackText={user?.name ? user.name.substring(0, 2).toUpperCase() : 'CP'} />
             <div className="hidden sm:block">
               <div className="text-[13.5px] font-semibold text-[#0E1B2A] truncate max-w-[160px] leading-tight">
                 {user?.name || 'Administrator'}
               </div>
               <div className="text-[12px] text-[#64748B] truncate max-w-[160px] leading-tight">
-                {user?.rankTitle || user?.email}
+                {user?.rankTitle || user?.rollNumber || user?.email}
               </div>
             </div>
 
             <div className="relative">
               <button
                 type="button"
-                onClick={() => setRoleMenuOpen(!roleMenuOpen)}
+                onClick={() => setProfileMenuOpen(!profileMenuOpen)}
                 className="flex items-center space-x-1.5 px-2.5 py-1.5 bg-[#F4F6F9] border border-[#E2E6EB] rounded-lg text-[12.5px] font-medium text-[#374151] hover:bg-[#EAECF0] transition-colors focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                aria-label="User profile actions"
               >
-                <span className="font-semibold text-[#0E1B2A] capitalize">{role?.toLowerCase()}</span>
+                <span className="font-semibold text-[#0E1B2A]">{roleBadgeLabel}</span>
                 <ChevronDown className="w-3.5 h-3.5 text-[#64748B]" />
               </button>
 
-              {roleMenuOpen && (
-                <div className="absolute right-0 mt-2 w-52 bg-white border border-[#E2E6EB] rounded-xl shadow-xl py-1.5 z-50 animate-in fade-in zoom-in-95 duration-100">
-                  <div className="px-3 py-2 text-[11px] font-semibold text-[#94A3B8] uppercase tracking-wider border-b border-[#F1F5F9]">
-                    Switch View
+              {profileMenuOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white border border-[#E2E6EB] rounded-xl shadow-xl py-1.5 z-50 animate-in fade-in zoom-in-95 duration-100">
+                  <div className="px-3.5 py-2 border-b border-[#F1F5F9]">
+                    <div className="text-xs font-semibold text-[#0E1B2A] truncate">{user?.name || 'User'}</div>
+                    <div className="text-[11px] text-[#64748B] truncate">{user?.email}</div>
                   </div>
+
                   <button
                     type="button"
-                    onClick={() => handleRoleChange('ADMIN')}
-                    className={`w-full text-left px-3 py-2.5 text-[13px] hover:bg-[#F8FAFC] transition-colors ${
-                      role === 'ADMIN' ? 'font-semibold text-[#0E1B2A] bg-[#F4F6F9]' : 'text-[#374151]'
-                    }`}
+                    onClick={handleProfileClick}
+                    className="w-full text-left px-3.5 py-2.5 text-[13px] text-[#374151] hover:bg-[#F8FAFC] flex items-center space-x-2 transition-colors"
                   >
-                    Administrator
+                    <User className="w-4 h-4 text-[#64748B]" />
+                    <span>View Profile</span>
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => handleRoleChange('TEACHER')}
-                    className={`w-full text-left px-3 py-2.5 text-[13px] hover:bg-[#F8FAFC] transition-colors ${
-                      role === 'TEACHER' ? 'font-semibold text-[#0E1B2A] bg-[#F4F6F9]' : 'text-[#374151]'
-                    }`}
-                  >
-                    Instructor
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleRoleChange('STUDENT')}
-                    className={`w-full text-left px-3 py-2.5 text-[13px] hover:bg-[#F8FAFC] transition-colors ${
-                      role === 'STUDENT' ? 'font-semibold text-[#0E1B2A] bg-[#F4F6F9]' : 'text-[#374151]'
-                    }`}
-                  >
-                    Candidate
-                  </button>
+
                   <div className="border-t border-[#F1F5F9] mt-1 pt-1">
                     <button
                       type="button"
-                      onClick={logout}
-                      className="w-full text-left px-3 py-2.5 text-[13px] text-red-600 hover:bg-red-50 flex items-center space-x-2 transition-colors"
+                      onClick={handleLogout}
+                      className="w-full text-left px-3.5 py-2.5 text-[13px] text-red-600 hover:bg-red-50 flex items-center space-x-2 transition-colors cursor-pointer"
                     >
                       <LogOut className="w-4 h-4" />
                       <span>Log Out</span>
@@ -156,3 +154,5 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
     </>
   );
 };
+
+export default Topbar;

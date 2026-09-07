@@ -46,7 +46,7 @@
 
 | Agent | Scope | Total Groups | Current Group | Status | P0 Open | P1 Open | P2 Open | P3 Open |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **AGENT-QA-1** | Admin / Faculty / Platform / Finance | 24 | QA1-24 | PASS | 0 | 0 | 0 | 0 |
+| **AGENT-QA-1** | Admin / Faculty / Platform / Finance / Auth Hardening | 25 | QA1-25 | PASS | 0 | 0 | 0 | 0 |
 | **AGENT-QA-2** | Student / Exam / Security | 33 | QA2-32 | PASS | 0 | 0 | 0 | 0 |
 
 ---
@@ -762,6 +762,46 @@ Validation Notes: `dist/index.html` and assets built without external runtime de
 
 - [x] **FIN-031 Teacher cannot see finance data** — PASS: Zero financial leakage to teacher accounts across UI views, API endpoints, and direct database queries.
 - [x] **FIN-032 Student cannot see finance data** — PASS: Zero financial leakage to student accounts across UI views, API endpoints, and direct database queries.
+
+---
+
+## 12. AUTHENTICATION HARDENING & PER-TAB SESSION ISOLATION QA
+
+> **Purpose:** Authoritative verification of the 9 real academy accounts (`a@gmail.com`, `s1`–`s5`, `t1`–`t3` with password `1234`), complete elimination of demo/account-switching controls, server-authoritative role binding, and per-tab session isolation via `sessionStorage`.
+> **Status:** PASS
+
+### QA1-25 — Authentication Hardening & Multi-Tab Isolation Matrix
+
+- [x] **AUTH-001 Tab A: Admin Login** — PASS: Logging in with `a@gmail.com` establishes ADMIN session and directs to `/admin/dashboard`.
+- [x] **AUTH-002 Tab B: Student Login** — PASS: Logging in with `s1@gmail.com` in Tab B establishes STUDENT session and directs to `/student/dashboard`.
+- [x] **AUTH-003 Tab A Session Persistence** — PASS: Returning to Tab A confirms it remains logged in as `a@gmail.com` (ADMIN) without session pollution from Tab B.
+- [x] **AUTH-004 Tab B Session Persistence** — PASS: Returning to Tab B confirms it remains logged in as `s1@gmail.com` (STUDENT).
+- [x] **AUTH-005 Tab A Refresh Stability** — PASS: Refreshing Tab A reloads the admin dashboard without session loss or role degradation.
+- [x] **AUTH-006 Tab B Refresh Stability** — PASS: Refreshing Tab B reloads the student portal with session intact.
+- [x] **AUTH-007 Independent Tab Logout** — PASS: Logging out of Tab B redirects Tab B to `/login`, while Tab A remains active as ADMIN.
+- [x] **AUTH-008 Tab C: Teacher Concurrent Session** — PASS: Logging in with `t1@gmail.com` in Tab C establishes TEACHER session concurrently alongside Tab A (ADMIN) and Tab B (`/login`).
+- [x] **AUTH-009 Simultaneous Tri-Role Multi-Tab Session** — PASS: Tab A (ADMIN), Tab B (STUDENT `s2@gmail.com`), and Tab C (TEACHER `t1@gmail.com`) operate concurrently without cross-tab token overwrites.
+
+- [x] **AUTH-010 Unauthenticated Admin Route Denial** — PASS: Accessing `/admin/dashboard` without session redirects to `/login`.
+- [x] **AUTH-011 Unauthenticated Student Route Denial** — PASS: Accessing `/student/dashboard` without session redirects to `/login`.
+- [x] **AUTH-012 Student Access to Admin Finance Denied** — PASS: Student navigating to `/admin/finance` is redirected to `/student/dashboard`.
+- [x] **AUTH-013 Teacher Access to Admin Finance Denied** — PASS: Teacher navigating to `/admin/finance` is redirected to `/admin/dashboard`.
+- [x] **AUTH-014 Local Storage Student Role Escalation Denied** — PASS: Modifying `localStorage` or `sessionStorage` has zero impact on session role; role is derived strictly from `profiles.role` joined with verified Supabase session token.
+- [x] **AUTH-015 Local Storage Teacher Role Escalation Denied** — PASS: Teacher cannot escalate privileges via client-side storage tampering.
+- [x] **AUTH-016 Admin RLS Authorization** — PASS: Admin role satisfies `public.is_admin()` across all core, assessment, and finance RLS policies.
+- [x] **AUTH-017 Teacher RLS Authorization** — PASS: Teacher role satisfies `public.is_teacher()` for test creation, question authoring, and assignments.
+- [x] **AUTH-018 Student RLS Authorization** — PASS: Student role satisfies `auth.uid() = profile_id` for assigned exams and attempts.
+
+- [x] **AUTH-019 Exact 9 Auth Users** — PASS: `auth.users` contains exactly 9 non-system login accounts: `a@gmail.com`, `s1@gmail.com`, `s2@gmail.com`, `s3@gmail.com`, `s4@gmail.com`, `s5@gmail.com`, `t1@gmail.com`, `t2@gmail.com`, `t3@gmail.com`.
+- [x] **AUTH-020 Admin Profile Mapping** — PASS: `a@gmail.com` mapped 1-to-1 with `profiles.role = 'ADMIN'`.
+- [x] **AUTH-021 Student Profiles Mapping** — PASS: `s1`–`s5` mapped 1-to-1 with `profiles.role = 'STUDENT'`.
+- [x] **AUTH-022 Teacher Profiles Mapping** — PASS: `t1`–`t3` mapped 1-to-1 with `profiles.role = 'TEACHER'`.
+- [x] **AUTH-023 Student Table Integrity** — PASS: Each student (`s1`–`s5`) possesses a verified `public.students` row with roll numbers `SFA-001` through `SFA-005`, valid forces, courses, and active batch enrollments.
+- [x] **AUTH-024 Teacher Table Integrity** — PASS: Each teacher (`t1`–`t3`) possesses a verified `public.teachers` row with service numbers `TCH-001` through `TCH-003`.
+- [x] **AUTH-025 Zero Duplicate Profiles** — PASS: Verified 0 duplicate email rows in `public.profiles`.
+- [x] **AUTH-026 Zero Orphan Profiles** — PASS: Verified 0 orphan profiles without corresponding `auth.users` entries.
+- [x] **AUTH-027 Zero Ghost / Dummy Users** — PASS: All legacy `admin@gmail.com`, `teacher@gmail.com`, `student@gmail.com`, and `rank_ghost_*` records eradicated.
+
 
 
 
