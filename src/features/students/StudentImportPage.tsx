@@ -111,7 +111,7 @@ export const StudentImportPage: React.FC = () => {
     {
       header: 'Service Branch',
       cell: (row) => (
-        <span className="px-2 py-0.5 rounded-xs font-mono text-[10px] font-bold bg-[#0E1B2A] text-white">
+        <span className="px-2 py-0.5 rounded-xs font-sans text-[10px] font-bold uppercase tracking-wider bg-[#0E1B2A] text-white">
           {row.branch.replace('PAKISTAN_', '')}
         </span>
       ),
@@ -156,7 +156,7 @@ export const StudentImportPage: React.FC = () => {
       />
 
       {/* Step Indicator */}
-      <div className="grid grid-cols-3 gap-3 p-1 bg-[#EDF1F5] rounded border border-[#D4D9DF] text-xs font-mono">
+      <div className="grid grid-cols-3 gap-3 p-1 bg-[#EDF1F5] rounded border border-[#D4D9DF] text-xs font-sans">
         <div
           className={`py-2 px-3 text-center rounded font-semibold ${
             currentStep === 'upload' ? 'bg-[#0E1B2A] text-white' : 'text-[#64748B]'
@@ -209,7 +209,7 @@ export const StudentImportPage: React.FC = () => {
       {currentStep === 'preview' && (
         <div className="space-y-4">
           <div className="p-3 bg-[#EDF6F0] border border-[#88BE9B] rounded flex items-center justify-between text-xs text-[#234E35]">
-            <div className="flex items-center space-x-2 font-mono">
+            <div className="flex items-center space-x-2 font-sans">
               <CheckCircle2 className="w-4 h-4 text-[#234E35]" />
               <span>
                 2 Valid Candidates Ready • 1 Record Excluded (CNIC Format Anomaly)

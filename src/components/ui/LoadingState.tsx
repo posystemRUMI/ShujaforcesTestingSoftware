@@ -20,7 +20,7 @@ export const LoadingState: React.FC<LoadingStateProps> = ({
       {...props}
     >
       <RefreshCw className="w-6 h-6 text-[#0E1B2A] animate-spin stroke-[2]" />
-      <span className="text-xs font-mono font-medium text-[#64748B] uppercase tracking-wider">
+      <span className="text-xs font-sans font-medium text-[#64748B] uppercase tracking-wider">
         {message}
       </span>
     </div>

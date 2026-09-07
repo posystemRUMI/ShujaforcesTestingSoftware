@@ -69,7 +69,7 @@ CREATE POLICY "profiles_delete_policy"
 -- ----------------------------------------------------------------------------
 CREATE POLICY "forces_select_policy"
   ON public.forces FOR SELECT
-  TO authenticated
+  TO authenticated, anon
   USING (true);
 
 CREATE POLICY "forces_admin_write"
@@ -80,7 +80,7 @@ CREATE POLICY "forces_admin_write"
 
 CREATE POLICY "courses_select_policy"
   ON public.courses FOR SELECT
-  TO authenticated
+  TO authenticated, anon
   USING (true);
 
 CREATE POLICY "courses_admin_write"
@@ -91,7 +91,7 @@ CREATE POLICY "courses_admin_write"
 
 CREATE POLICY "subjects_select_policy"
   ON public.subjects FOR SELECT
-  TO authenticated
+  TO authenticated, anon
   USING (true);
 
 CREATE POLICY "subjects_admin_write"
@@ -102,7 +102,7 @@ CREATE POLICY "subjects_admin_write"
 
 CREATE POLICY "course_subjects_select_policy"
   ON public.course_subjects FOR SELECT
-  TO authenticated
+  TO authenticated, anon
   USING (true);
 
 CREATE POLICY "course_subjects_admin_write"
@@ -116,16 +116,8 @@ CREATE POLICY "course_subjects_admin_write"
 -- ----------------------------------------------------------------------------
 CREATE POLICY "batches_select_policy"
   ON public.batches FOR SELECT
-  TO authenticated
-  USING (
-    public.is_admin()
-    OR public.is_teacher()
-    OR EXISTS (
-      SELECT 1 FROM public.batch_enrollments be
-      JOIN public.students s ON s.id = be.student_id
-      WHERE be.batch_id = batches.id AND s.profile_id = auth.uid()
-    )
-  );
+  TO authenticated, anon
+  USING (true);
 
 CREATE POLICY "batches_write_policy"
   ON public.batches FOR ALL

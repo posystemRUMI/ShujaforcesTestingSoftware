@@ -32,7 +32,7 @@ export const Pagination: React.FC<PaginationProps> = ({
       )}
       {...props}
     >
-      <div className="flex items-center space-x-2 font-mono">
+      <div className="flex items-center space-x-2 font-sans tabular-nums">
         {effectiveTotalRecords !== undefined ? (
           <span>
             Showing <strong className="text-[#0E1B2A]">{Math.min((currentPage - 1) * pageSize + 1, effectiveTotalRecords)}</strong> to{' '}
@@ -85,7 +85,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                 type="button"
                 onClick={() => onPageChange(pageNum)}
                 className={cn(
-                  'w-7 h-7 rounded text-xs font-mono font-semibold transition-colors',
+                  'w-7 h-7 rounded text-xs font-sans tabular-nums font-semibold transition-colors',
                   isCurrent
                     ? 'bg-[#0E1B2A] text-white'
                     : 'text-[#0E1B2A] hover:bg-[#EDF1F5] border border-transparent hover:border-[#D4D9DF]',

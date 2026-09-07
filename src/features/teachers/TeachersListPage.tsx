@@ -149,8 +149,8 @@ export const TeachersListPage: React.FC = () => {
               <span className="text-[#C6A75E]">{teacher.titleRank}</span>
               <span>{teacher.fullName}</span>
             </div>
-            <div className="text-[11px] font-mono text-[#64748B] tracking-tight">
-              {teacher.employeeId} · {teacher.email}
+            <div className="text-[11px] text-[#64748B] tracking-tight">
+              <span className="font-mono font-medium">{teacher.employeeId}</span> · <span className="font-sans">{teacher.email}</span>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@ export const TeachersListPage: React.FC = () => {
       id: 'questions',
       header: 'Authored Questions',
       cell: (teacher) => (
-        <div className="font-mono text-xs">
+        <div className="font-sans tabular-nums text-xs">
           <span className="font-bold text-[#0E1B2A]">{teacher.questionsCreatedCount}</span>
           <span className="text-[10px] text-[#64748B] ml-1">items</span>
         </div>

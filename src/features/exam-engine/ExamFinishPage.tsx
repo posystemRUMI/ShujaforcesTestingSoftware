@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
-import { CheckCircle2, ArrowRight, FileText, Printer, Shield, AlertCircle, Check, X, RefreshCw } from 'lucide-react';
+import { CheckCircle2, ArrowRight, FileText, Printer, Shield, AlertCircle, Check, X, RefreshCw, Trophy } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { resultService, ResultDetailResponse } from '@/services/resultService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
-import { mockQuestions } from '@/lib/mock-data';
+
+import { ShujaForcesLogo } from '@/components/brand/ShujaForcesLogo';
 
 export const ExamFinishPage: React.FC = () => {
   const navigate = useNavigate();
@@ -29,9 +30,14 @@ export const ExamFinishPage: React.FC = () => {
         try {
           let rId = resultIdParam;
           if (!rId && attemptIdParam) {
-            const resRecord = await resultService.getResultByAttemptId(attemptIdParam);
-            if (resRecord) {
-              rId = resRecord.id;
+            const resById = await resultService.getResultById(attemptIdParam).catch(() => null);
+            if (resById) {
+              rId = resById.id;
+            } else {
+              const resRecord = await resultService.getResultByAttemptId(attemptIdParam).catch(() => null);
+              if (resRecord) {
+                rId = resRecord.id;
+              }
             }
           }
 
@@ -42,7 +48,7 @@ export const ExamFinishPage: React.FC = () => {
             }
           }
         } catch (err) {
-          console.warn('Failed to load server result detail, using fallback:', err);
+          console.warn('Failed to load server result detail:', err);
         }
       }
 
@@ -58,68 +64,16 @@ export const ExamFinishPage: React.FC = () => {
     };
   }, [resultIdParam, attemptIdParam]);
 
-  // Offline fallback attempt snapshot if database not configured
-  const fallbackAttempt = useMemo(() => {
-    try {
-      const saved = localStorage.getItem('FA_SUBMITTED_EXAM_ATTEMPT_V1');
-      if (saved) return JSON.parse(saved);
-    } catch (e) {
-      /* ignore */
-    }
-    return null;
-  }, []);
-
-  const fallbackData = useMemo(() => {
-    const rawAnswers: Record<string, string> = fallbackAttempt?.answers || {};
-    let correct = 0;
-    const items = mockQuestions.map((q) => {
-      const userSel = rawAnswers[q.id];
-      const isCorr = userSel === q.correctOptionId;
-      if (isCorr) correct++;
-      return {
-        id: q.id,
-        code: q.code,
-        stem: q.stem,
-        explanation: q.explanation,
-        status: !userSel ? ('skipped' as const) : isCorr ? ('correct' as const) : ('incorrect' as const),
-        selectedOptionId: userSel || null,
-        options: q.options.map((opt) => ({
-          id: opt.id,
-          label: opt.label,
-          text: opt.text,
-          imageUrl: opt.imageUrl,
-          is_correct: opt.id === q.correctOptionId,
-        })),
-      };
-    });
-
-    const total = mockQuestions.length;
-    const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
-    const pass = pct >= 60;
-    const st = pct >= 96 ? 9 : pct >= 90 ? 8 : pct >= 78 ? 7 : pct >= 60 ? 6 : pct >= 41 ? 5 : pct >= 23 ? 4 : pct >= 11 ? 3 : pct >= 4 ? 2 : 1;
-
-    return {
-      testName: '154 PMA Long Course Initial Test',
-      totalCount: total,
-      correctCount: correct,
-      percentage: pct,
-      isPassed: pass,
-      stanine: st,
-      items,
-    };
-  }, [fallbackAttempt]);
-
-  // Derive final values (Server authoritative preferred, Fallback second)
-  const testName = resultDetail?.test.name || fallbackData.testName;
-  const percentage = resultDetail ? resultDetail.result.percentage : fallbackData.percentage;
-  const isPassed = resultDetail ? resultDetail.result.passed : fallbackData.isPassed;
-  const stanine = resultDetail?.result.stanine || fallbackData.stanine;
-  const correctCount = resultDetail ? resultDetail.result.correct_count : fallbackData.correctCount;
-  const totalCount = resultDetail ? resultDetail.result.total_questions : fallbackData.totalCount;
+  // Derive final values from Server result
+  const testName = resultDetail?.test.name || 'Computerized Examination';
+  const percentage = resultDetail?.result.percentage ?? 0;
+  const isPassed = resultDetail?.result.passed ?? false;
+  const correctCount = resultDetail?.result.correct_count ?? 0;
+  const totalCount = resultDetail?.result.total_questions ?? 0;
 
   const cohortLabel = isPassed
-    ? `STANINE ${stanine} (QUALIFIED CANDIDATE)`
-    : `STANINE ${stanine} (ACADEMIC RETAKE RECOMMENDED)`;
+    ? 'ACADEMY MERIT QUALIFIED CANDIDATE'
+    : 'ACADEMIC RETAKE RECOMMENDED';
 
   // Flatten review questions
   const reviewQuestions = useMemo(() => {
@@ -136,8 +90,8 @@ export const ExamFinishPage: React.FC = () => {
         }))
       );
     }
-    return fallbackData.items;
-  }, [resultDetail, fallbackData]);
+    return [];
+  }, [resultDetail]);
 
   const filteredQuestions = useMemo(() => {
     return reviewQuestions.filter((q) => {
@@ -175,13 +129,8 @@ export const ExamFinishPage: React.FC = () => {
       });
     }
 
-    // Default mock breakdown
-    return [
-      { title: 'Verbal Intelligence', pct: 100, correct: 2, total: 2, cleared: true },
-      { title: 'Non-Verbal Intelligence', pct: 100, correct: 2, total: 2, cleared: true },
-      { title: 'Academic Mathematics', pct: Math.max(0, percentage - 10), correct: Math.max(0, correctCount - 4), total: Math.max(1, totalCount - 4), cleared: percentage >= 60 },
-    ];
-  }, [resultDetail, percentage, correctCount, totalCount]);
+    return [];
+  }, [resultDetail]);
 
   const handlePrint = () => {
     window.print();
@@ -191,7 +140,7 @@ export const ExamFinishPage: React.FC = () => {
     return (
       <div className="flex-1 min-h-[50vh] flex flex-col items-center justify-center space-y-4">
         <RefreshCw className="w-8 h-8 text-[#0E1B2A] animate-spin" />
-        <span className="text-xs font-mono font-bold text-[#64748B] uppercase tracking-wider">
+        <span className="text-xs font-sans font-bold text-[#64748B] uppercase tracking-wider">
           Retrieving Certified Examination Docket & Cryptographic Seal...
         </span>
       </div>
@@ -202,42 +151,51 @@ export const ExamFinishPage: React.FC = () => {
     <div className="max-w-4xl mx-auto w-full py-6 space-y-6 select-none">
       {/* Result Hero Banner */}
       <div className="bg-white border-2 border-[#0E1B2A] rounded-md p-6 shadow-md text-center space-y-5">
-        <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold text-[#234E35] bg-[#EDF6F0] px-3 py-1 rounded border border-[#88BE9B] uppercase">
-          <Shield className="w-4 h-4" />
-          <span>OFFICIAL EXAMINATION EVALUATION DOCKET</span>
+        <div className="flex flex-col items-center justify-center space-y-2 border-b border-[#E2E6EB] pb-4">
+          <ShujaForcesLogo
+            variant="dark"
+            size="lg"
+            showLocation={true}
+            showSubtitle={true}
+            subtitle="Computerized Testing & Examination System"
+          />
+          <div className="inline-flex items-center space-x-2 text-xs font-sans font-bold text-[#234E35] bg-[#EDF6F0] px-3 py-1 rounded border border-[#88BE9B] uppercase tracking-wider mt-2">
+            <Shield className="w-4 h-4" />
+            <span>OFFICIAL EXAMINATION EVALUATION DOCKET</span>
+          </div>
         </div>
 
         <div>
           <h1 className="text-2xl font-bold uppercase tracking-wider text-[#0E1B2A]">
             {testName}
           </h1>
-          <p className="text-xs text-[#64748B] mt-1 font-mono">
-            CADET: <span className="font-bold text-[#0E1B2A]">{user?.name || 'Hamza Tariq'}</span> ({user?.rollNumber || 'PMA-2601'})
+          <p className="text-xs text-[#64748B] mt-1 font-sans">
+            CADET: <span className="font-bold text-[#0E1B2A]">{user?.name || 'Hamza Tariq'}</span> (<span className="font-mono text-[#C6A75E]">{user?.rollNumber || 'PMA-2601'}</span>)
           </p>
         </div>
 
         {/* Hero Score Box */}
         <div className="bg-[#F6F8FA] border border-[#D4D9DF] rounded-md p-6 max-w-lg mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
           <div className="text-center sm:text-left border-b sm:border-b-0 sm:border-r border-[#E2E6EB] pb-3 sm:pb-0 sm:pr-4">
-            <span className="text-[10px] font-mono text-[#64748B] uppercase font-bold block">FINAL SCORE</span>
-            <div className="text-4xl font-bold font-mono text-[#0E1B2A] mt-1">{percentage}%</div>
-            <span className="text-xs text-[#64748B] font-mono">{correctCount} of {totalCount} Correct</span>
+            <span className="text-[10px] font-sans text-[#64748B] uppercase font-bold tracking-wider block">FINAL SCORE</span>
+            <div className="text-4xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{percentage}%</div>
+            <span className="text-xs text-[#64748B] font-sans tabular-nums">{correctCount} of {totalCount} Correct</span>
           </div>
 
           <div className="text-center sm:text-left">
-            <span className="text-[10px] font-mono text-[#64748B] uppercase font-bold block">STATUS & RATING</span>
+            <span className="text-[10px] font-sans text-[#64748B] uppercase font-bold tracking-wider block">STATUS & RATING</span>
             <div className="mt-1">
               {isPassed ? (
-                <span className="inline-flex items-center gap-1 font-mono text-sm font-bold text-[#234E35] bg-[#EDF6F0] px-3 py-1 rounded border border-[#88BE9B]">
+                <span className="inline-flex items-center gap-1 font-sans text-sm font-bold text-[#234E35] bg-[#EDF6F0] px-3 py-1 rounded border border-[#88BE9B]">
                   <CheckCircle2 className="w-4 h-4" /> QUALIFIED (PASS)
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1 font-mono text-sm font-bold text-[#782525] bg-[#FDF2F2] px-3 py-1 rounded border border-[#E29A9A]">
+                <span className="inline-flex items-center gap-1 font-sans text-sm font-bold text-[#782525] bg-[#FDF2F2] px-3 py-1 rounded border border-[#E29A9A]">
                   <AlertCircle className="w-4 h-4" /> UNQUALIFIED (FAIL)
                 </span>
               )}
             </div>
-            <div className="text-xs font-mono font-bold text-[#0E1B2A] mt-2">
+            <div className="text-xs font-sans font-bold text-[#0E1B2A] mt-2">
               {cohortLabel}
             </div>
           </div>
@@ -271,6 +229,15 @@ export const ExamFinishPage: React.FC = () => {
 
           <button
             type="button"
+            onClick={() => navigate('/student/leaderboard')}
+            className="inline-flex items-center space-x-1.5 px-4 py-2 border border-[#C6A75E] text-[#7A5312] bg-[#FAF8F5] rounded text-xs font-bold uppercase tracking-wider hover:bg-[#F3EDE2]"
+          >
+            <Trophy className="w-4 h-4 text-[#C6A75E]" />
+            <span>View Merit Leaderboard</span>
+          </button>
+
+          <button
+            type="button"
             onClick={() => navigate('/student')}
             className="inline-flex items-center space-x-1 px-4 py-2 bg-[#234E35] text-white rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E]"
           >
@@ -284,9 +251,9 @@ export const ExamFinishPage: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {sectionBreakdown.map((sec, idx) => (
           <div key={idx} className="bg-white border border-[#D4D9DF] rounded-md p-4 shadow-sm text-center">
-            <span className="text-[10px] font-mono uppercase text-[#64748B] font-bold block">{sec.title}</span>
-            <div className="text-xl font-bold font-mono text-[#0E1B2A] mt-1">{sec.pct}%</div>
-            <span className={`text-[11px] font-semibold ${sec.cleared ? 'text-[#234E35]' : 'text-[#782525]'}`}>
+            <span className="text-[10px] font-sans uppercase text-[#64748B] font-bold tracking-wider block">{sec.title}</span>
+            <div className="text-xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{sec.pct}%</div>
+            <span className={`text-[11px] font-sans font-semibold tabular-nums ${sec.cleared ? 'text-[#234E35]' : 'text-[#782525]'}`}>
               {sec.cleared ? 'Cleared' : 'Review Recommended'} ({sec.correct}/{sec.total})
             </span>
           </div>
@@ -298,14 +265,14 @@ export const ExamFinishPage: React.FC = () => {
         <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-[#E2E6EB] pb-4 gap-3">
             <div>
-              <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+              <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
                 POST-EXAMINATION SOLUTION DOSSIER
               </span>
               <h2 className="text-lg font-bold text-[#0E1B2A]">Detailed Answer Key & Derivations</h2>
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex items-center space-x-1 font-mono text-xs bg-[#F6F8FA] p-1 rounded border border-[#E2E6EB]">
+            <div className="flex items-center space-x-1 font-sans text-xs bg-[#F6F8FA] p-1 rounded border border-[#E2E6EB]">
               {(['ALL', 'CORRECT', 'INCORRECT', 'SKIPPED'] as const).map((tab) => (
                 <button
                   key={tab}
@@ -334,24 +301,24 @@ export const ExamFinishPage: React.FC = () => {
                 <div key={q.id} className="border border-[#D4D9DF] rounded-md p-5 bg-white space-y-4 shadow-xs">
                   <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-2">
                     <div className="flex items-center space-x-2">
-                      <span className="px-2 py-0.5 font-mono text-xs font-bold bg-[#0E1B2A] text-white rounded">
+                      <span className="px-2 py-0.5 font-sans tabular-nums text-xs font-bold bg-[#0E1B2A] text-white rounded">
                         QUESTION #{idx + 1}
                       </span>
                       <span className="text-xs font-mono text-[#64748B]">[{q.code}]</span>
                     </div>
 
                     {isCorrect && (
-                      <span className="inline-flex items-center gap-1 font-mono text-xs font-bold text-[#234E35] bg-[#EDF6F0] px-2.5 py-0.5 rounded border border-[#88BE9B]">
+                      <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#234E35] bg-[#EDF6F0] px-2.5 py-0.5 rounded border border-[#88BE9B]">
                         <Check className="w-3.5 h-3.5" /> CORRECT
                       </span>
                     )}
                     {isIncorrect && (
-                      <span className="inline-flex items-center gap-1 font-mono text-xs font-bold text-[#782525] bg-[#FDF2F2] px-2.5 py-0.5 rounded border border-[#E29A9A]">
+                      <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#782525] bg-[#FDF2F2] px-2.5 py-0.5 rounded border border-[#E29A9A]">
                         <X className="w-3.5 h-3.5" /> INCORRECT
                       </span>
                     )}
                     {isSkipped && (
-                      <span className="inline-flex items-center gap-1 font-mono text-xs font-bold text-[#64748B] bg-[#F1F5F9] px-2.5 py-0.5 rounded border border-[#CBD5E1]">
+                      <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#64748B] bg-[#F1F5F9] px-2.5 py-0.5 rounded border border-[#CBD5E1]">
                         SKIPPED
                       </span>
                     )}
@@ -378,7 +345,7 @@ export const ExamFinishPage: React.FC = () => {
                           }`}
                         >
                           <span
-                            className={`w-6 h-6 rounded flex items-center justify-center font-bold text-xs font-mono border ${
+                            className={`w-6 h-6 rounded flex items-center justify-center font-bold text-xs font-sans border ${
                               isCorrectOpt
                                 ? 'bg-[#234E35] text-white border-[#234E35]'
                                 : isUserSelected
@@ -390,12 +357,12 @@ export const ExamFinishPage: React.FC = () => {
                           </span>
                           <span className="flex-1">{opt.text}</span>
                           {isCorrectOpt && (
-                            <span className="text-[10px] font-mono uppercase bg-[#234E35] text-white px-1.5 py-0.5 rounded">
+                            <span className="text-[10px] font-sans uppercase font-bold bg-[#234E35] text-white px-1.5 py-0.5 rounded">
                               Official Key
                             </span>
                           )}
                           {isUserSelected && !isCorrectOpt && (
-                            <span className="text-[10px] font-mono uppercase bg-[#782525] text-white px-1.5 py-0.5 rounded">
+                            <span className="text-[10px] font-sans uppercase font-bold bg-[#782525] text-white px-1.5 py-0.5 rounded">
                               Your Choice
                             </span>
                           )}
@@ -407,7 +374,7 @@ export const ExamFinishPage: React.FC = () => {
                   {/* Derivation Explanation */}
                   {q.explanation && (
                     <div className="mt-3 p-3 bg-[#F6F8FA] rounded border border-[#E2E6EB] text-xs text-[#64748B]">
-                      <span className="font-bold text-[#0E1B2A] font-mono block mb-1 uppercase text-[10px]">
+                      <span className="font-bold text-[#0E1B2A] font-sans block mb-1 uppercase text-[10px] tracking-wider">
                         Military Evaluation Key & Derivation:
                       </span>
                       {q.explanation}

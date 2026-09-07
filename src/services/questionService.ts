@@ -1,11 +1,10 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 import { Question } from '@/types';
-import { mockQuestions } from '@/lib/mock-data';
 
 export const questionService = {
   async getQuestions(): Promise<Question[]> {
     if (!isSupabaseConfigured()) {
-      return mockQuestions;
+      return [];
     }
 
     const { data, error } = await (supabase as any)
@@ -13,7 +12,9 @@ export const questionService = {
       .select(`
         *,
         subjects (
-          code
+          id,
+          code,
+          name
         ),
         profiles (
           display_name
@@ -29,8 +30,8 @@ export const questionService = {
       .order('created_at', { ascending: false });
 
     if (error || !data) {
-      console.warn('Falling back to local mock questions:', error);
-      return mockQuestions;
+      console.warn('Failed to load questions from database:', error);
+      return [];
     }
 
     return data.map((q: any) => {
@@ -42,6 +43,8 @@ export const questionService = {
       return {
         id: q.id,
         code: q.code,
+        subject_id: q.subject_id,
+        subjectName: subject?.name || subject?.code || 'General',
         subject: (subject?.code || 'INTELLIGENCE_VERBAL') as any,
         branch: 'TRI_SERVICE',
         stem: q.stem,

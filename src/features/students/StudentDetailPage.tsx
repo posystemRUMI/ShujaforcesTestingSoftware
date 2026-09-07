@@ -29,7 +29,7 @@ interface AttemptRecord {
   attemptNumber: number;
   date: string;
   scorePercent: number;
-  stanine: number;
+  meritRank?: number;
   passed: boolean;
   timeSpentMinutes: number;
 }
@@ -41,7 +41,7 @@ const MOCK_ATTEMPTS: AttemptRecord[] = [
     attemptNumber: 1,
     date: '2026-03-01',
     scorePercent: 92,
-    stanine: 8,
+    meritRank: 2,
     passed: true,
     timeSpentMinutes: 52,
   },
@@ -51,7 +51,7 @@ const MOCK_ATTEMPTS: AttemptRecord[] = [
     attemptNumber: 2,
     date: '2026-02-25',
     scorePercent: 88,
-    stanine: 7,
+    meritRank: 3,
     passed: true,
     timeSpentMinutes: 28,
   },
@@ -61,7 +61,7 @@ const MOCK_ATTEMPTS: AttemptRecord[] = [
     attemptNumber: 1,
     date: '2026-02-20',
     scorePercent: 94,
-    stanine: 9,
+    meritRank: 1,
     passed: true,
     timeSpentMinutes: 30,
   },
@@ -114,34 +114,34 @@ export const StudentDetailPage: React.FC = () => {
       cell: (row) => (
         <div>
           <span className="font-bold text-[#0E1B2A]">{row.testTitle}</span>
-          <span className="block text-[10px] text-[#64748B] font-mono">Attempt #{row.attemptNumber}</span>
+          <span className="block text-[10px] text-[#64748B] font-sans tabular-nums">Attempt #{row.attemptNumber}</span>
         </div>
       ),
     },
     {
       header: 'Date Attempted',
       accessorKey: 'date',
-      className: 'font-mono text-[#64748B]',
+      className: 'font-sans tabular-nums text-[#64748B]',
     },
     {
       header: 'Time Spent',
       cell: (row) => (
-        <span className="font-mono text-xs text-[#0E1B2A]">{row.timeSpentMinutes} mins</span>
+        <span className="font-sans tabular-nums text-xs text-[#0E1B2A]">{row.timeSpentMinutes} mins</span>
       ),
     },
     {
       header: 'Score %',
       cell: (row) => (
-        <span className={`font-mono font-bold text-xs ${row.passed ? 'text-[#234E35]' : 'text-[#782525]'}`}>
+        <span className={`font-sans tabular-nums font-bold text-xs ${row.passed ? 'text-[#234E35]' : 'text-[#782525]'}`}>
           {row.scorePercent}%
         </span>
       ),
     },
     {
-      header: 'Stanine',
+      header: 'Merit Rank',
       cell: (row) => (
-        <span className="px-1.5 py-0.5 rounded-xs font-mono text-[10px] font-bold bg-[#0E1B2A] text-[#C6A75E]">
-          ST-{row.stanine}
+        <span className="px-1.5 py-0.5 rounded-xs font-sans tabular-nums text-[10px] font-bold bg-[#0E1B2A] text-[#C6A75E]">
+          Rank #{row.meritRank ?? 1}
         </span>
       ),
     },
@@ -217,13 +217,13 @@ export const StudentDetailPage: React.FC = () => {
             <p className="text-xs text-[#64748B]">Son of {student.fatherName}</p>
             <div className="flex items-center space-x-3 pt-1 text-xs">
               <ForceBadge branch={student.branch} />
-              <span className="font-mono text-[#0E1B2A] font-semibold">{student.targetCourse}</span>
-              <span className="text-[#64748B] font-mono">Cohort: {student.batchCode}</span>
+              <span className="font-sans text-[#0E1B2A] font-semibold">{student.targetCourse}</span>
+              <span className="text-[#64748B] font-sans">Cohort: <span className="font-mono font-medium">{student.batchCode}</span></span>
             </div>
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 border-t md:border-t-0 md:border-l border-[#EDF1F5] pt-4 md:pt-0 md:pl-6 text-xs text-[#64748B] font-mono">
+        <div className="flex items-center space-x-4 border-t md:border-t-0 md:border-l border-[#EDF1F5] pt-4 md:pt-0 md:pl-6 text-xs text-[#64748B] font-sans tabular-nums">
           <div className="space-y-1">
             <div className="flex items-center space-x-1.5">
               <Calendar className="w-3.5 h-3.5 text-[#0E1B2A]" />
@@ -313,14 +313,14 @@ export const StudentDetailPage: React.FC = () => {
             <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded flex items-center justify-between">
               <div>
                 <span className="font-bold text-[#0E1B2A] block">154 PMA Long Course Comprehensive Mock 07</span>
-                <span className="text-[#64748B] font-mono text-[11px]">100 Items • 65 Minutes • Scheduled 2026-03-10</span>
+                <span className="text-[#64748B] font-sans tabular-nums text-[11px]">100 Items • 65 Minutes • Scheduled 2026-03-10</span>
               </div>
               <span className="px-2 py-0.5 rounded-xs text-[10px] font-bold bg-[#EDF1F5] text-[#0E1B2A]">SCHEDULED</span>
             </div>
             <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded flex items-center justify-between">
               <div>
                 <span className="font-bold text-[#0E1B2A] block">Aviation Aptitude & Spatial Matrix Battery</span>
-                <span className="text-[#64748B] font-mono text-[11px]">60 Items • 40 Minutes • Unlocked Practice</span>
+                <span className="text-[#64748B] font-sans tabular-nums text-[11px]">60 Items • 40 Minutes • Unlocked Practice</span>
               </div>
               <span className="px-2 py-0.5 rounded-xs text-[10px] font-bold bg-[#EDF6F0] text-[#234E35]">ACTIVE</span>
             </div>

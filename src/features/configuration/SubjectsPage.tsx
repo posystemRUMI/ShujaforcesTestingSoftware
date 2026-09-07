@@ -269,10 +269,10 @@ export const SubjectsPage: React.FC = () => {
                     <td className="py-3 px-4 text-[#475569] max-w-sm">
                       {sub.description}
                     </td>
-                    <td className="py-3 px-4 font-mono font-bold text-[#0E1B2A]">
+                    <td className="py-3 px-4 font-sans tabular-nums font-bold text-[#0E1B2A]">
                       {sub.questionCount} Items
                     </td>
-                    <td className="py-3 px-4 font-mono font-semibold text-emerald-700">
+                    <td className="py-3 px-4 font-sans tabular-nums font-semibold text-emerald-700">
                       {sub.activeTestsCount} Tests
                     </td>
                     <td className="py-3 px-4">

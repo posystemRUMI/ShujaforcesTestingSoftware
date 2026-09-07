@@ -155,10 +155,10 @@ export const ForceDetailPage: React.FC = () => {
                     <div className="font-bold text-[#0E1B2A]">{course.name}</div>
                     <div className="text-[11px] font-mono text-[#64748B]">{course.code}</div>
                   </td>
-                  <td className="py-3 px-4 font-mono">{course.durationMonths} Months</td>
-                  <td className="py-3 px-4 font-mono">{course.minAge}–{course.maxAge} Years</td>
+                  <td className="py-3 px-4 font-sans tabular-nums font-medium text-[#0E1B2A]">{course.durationMonths} Months</td>
+                  <td className="py-3 px-4 font-sans tabular-nums text-[#64748B]">{course.minAge}–{course.maxAge} Years</td>
                   <td className="py-3 px-4 max-w-xs text-[#475569]">{course.educationRequirement}</td>
-                  <td className="py-3 px-4 font-mono font-bold text-emerald-700">{course.passingMarksPercent}%</td>
+                  <td className="py-3 px-4 font-sans tabular-nums font-bold text-emerald-700">{course.passingMarksPercent}%</td>
                   <td className="py-3 px-4">
                     <StatusBadge status={course.status === 'ACTIVE' ? 'active' : 'inactive'} />
                   </td>

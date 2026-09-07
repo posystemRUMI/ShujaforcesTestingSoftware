@@ -21,7 +21,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border border-[#D4D9DF] rounded p-6 shadow-sm space-y-4 select-none',
+        'bg-white border border-[#E2E6EB] rounded-lg p-6 shadow-[0_1px_4px_rgba(0,0,0,0.06)] space-y-4 select-none',
         className,
       )}
       {...props}
@@ -29,16 +29,16 @@ export const FormSection: React.FC<FormSectionProps> = ({
       <div className="border-b border-[#EDF1F5] pb-3">
         <div className="flex items-center space-x-2.5">
           {stepNumber !== undefined && (
-            <span className="w-5 h-5 rounded-xs bg-[#0E1B2A] text-white flex items-center justify-center font-mono text-[11px] font-bold">
+            <span className="w-5 h-5 rounded bg-[#0E1B2A] text-white flex items-center justify-center font-sans tabular-nums text-[11px] font-bold">
               {stepNumber}
             </span>
           )}
-          <h3 className="text-xs font-bold uppercase tracking-wider text-[#0E1B2A] font-display">
+          <h3 className="text-[15px] font-semibold text-[#0E1B2A] font-display">
             {title}
           </h3>
         </div>
         {sub && (
-          <p className="text-xs text-[#64748B] mt-0.5 font-sans leading-normal">
+          <p className="text-[13.5px] text-[#64748B] mt-1 font-sans leading-normal">
             {sub}
           </p>
         )}

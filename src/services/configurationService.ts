@@ -13,7 +13,7 @@ export const configurationService = {
       .select('*')
       .order('sort_order', { ascending: true });
 
-    if (error || !data) {
+    if (error || !data || data.length === 0) {
       console.warn('Falling back to local config store for forces:', error);
       return configStore.getForces();
     }
@@ -34,24 +34,31 @@ export const configurationService = {
     }));
   },
 
-  async getCourses(): Promise<CourseConfig[]> {
+  async getCourses(forceId?: string): Promise<CourseConfig[]> {
     if (!isSupabaseConfigured()) {
-      return configStore.getCourses();
+      return configStore.getCourses(forceId);
     }
 
-    const { data, error } = await (supabase as any)
+    let query = (supabase as any)
       .from('courses')
       .select(`
         *,
         forces (
+          id,
           code
         )
       `)
       .order('sort_order', { ascending: true });
 
-    if (error || !data) {
+    if (forceId) {
+      query = query.eq('force_id', forceId);
+    }
+
+    const { data, error } = await query;
+
+    if (error || !data || data.length === 0) {
       console.warn('Falling back to local config store for courses:', error);
-      return configStore.getCourses();
+      return configStore.getCourses(forceId);
     }
 
     return data.map((c: any) => {
@@ -60,8 +67,9 @@ export const configurationService = {
         id: c.id,
         code: c.code,
         name: c.name,
+        forceId: c.force_id,
         branch: (force?.code || 'PAKISTAN_ARMY') as any,
-        durationMonths: Math.round(c.duration_weeks / 4),
+        durationMonths: Math.round((c.duration_weeks || 24) / 4),
         minAge: 17,
         maxAge: 22,
         educationRequirement: 'F.Sc / A-Level (Minimum 60%)',
@@ -83,7 +91,7 @@ export const configurationService = {
       .select('*')
       .order('sort_order', { ascending: true });
 
-    if (error || !data) {
+    if (error || !data || data.length === 0) {
       console.warn('Falling back to local config store for subjects:', error);
       return configStore.getSubjects();
     }

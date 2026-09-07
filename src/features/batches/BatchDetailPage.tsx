@@ -82,7 +82,7 @@ export const BatchDetailPage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-2">
               <ForceBadge branch={batch.branch} />
               <StatusBadge status={batch.status === 'ACTIVE' ? 'active' : batch.status === 'COMPLETED' ? 'completed' : 'upcoming'} />
-              <span className="font-mono text-xs text-[#0E1B2A] bg-[#F1F5F9] px-2 py-0.5 rounded border border-[#CBD5E1]">
+              <span className="font-sans font-semibold text-xs text-[#0E1B2A] bg-[#F1F5F9] px-2 py-0.5 rounded border border-[#CBD5E1]">
                 {batch.targetCourse}
               </span>
             </div>
@@ -150,7 +150,7 @@ export const BatchDetailPage: React.FC = () => {
           tabs={[
             { id: 'students', label: `Cadet Roster (${students.length})` },
             { id: 'tests', label: `Assigned Tests & Drills (${tests.length})` },
-            { id: 'performance', label: 'Cohort Performance & Stanine' },
+            { id: 'performance', label: 'Cohort Performance & Merit Ranking' },
           ]}
           activeTab={activeTab}
           onChange={setActiveTab}
@@ -177,7 +177,7 @@ export const BatchDetailPage: React.FC = () => {
                       <th className="py-3 px-4">Mocks Completed</th>
                       <th className="py-3 px-4">Latest Score</th>
                       <th className="py-3 px-4">Domain Breakdown (V / NV / Acad)</th>
-                      <th className="py-3 px-4">Stanine</th>
+                      <th className="py-3 px-4">Merit Rank</th>
                       <th className="py-3 px-4">ISSB Readiness</th>
                       <th className="py-3 px-4 text-right">Actions</th>
                     </tr>
@@ -190,26 +190,26 @@ export const BatchDetailPage: React.FC = () => {
                             <Avatar name={cdt.fullName} size="sm" />
                             <div>
                               <div className="font-bold text-[#0E1B2A]">{cdt.fullName}</div>
-                              <div className="text-[11px] font-mono text-[#64748B]">
-                                {cdt.rollNumber} · S/O {cdt.fatherName}
+                              <div className="text-[11px] text-[#64748B]">
+                                <span className="font-mono font-semibold">{cdt.rollNumber}</span> · <span>S/O {cdt.fatherName}</span>
                               </div>
                             </div>
                           </div>
                         </td>
-                        <td className="py-3 px-4 font-mono font-semibold text-[#0E1B2A]">
+                        <td className="py-3 px-4 font-sans tabular-nums font-semibold text-[#0E1B2A]">
                           {cdt.mocksCompleted} Mocks
                         </td>
                         <td className="py-3 px-4">
                           <ScoreBadge score={cdt.latestScore} />
                         </td>
-                        <td className="py-3 px-4 font-mono text-[11px] text-[#475569]">
+                        <td className="py-3 px-4 font-sans tabular-nums text-[11px] text-[#475569]">
                           <span className="font-semibold text-emerald-700">{cdt.verbalScore}%</span> /{' '}
                           <span className="font-semibold text-[#0E1B2A]">{cdt.nonVerbalScore}%</span> /{' '}
                           <span className="font-semibold text-amber-700">{cdt.academicScore}%</span>
                         </td>
                         <td className="py-3 px-4">
-                          <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-[#0E1B2A] text-white">
-                            Stanine {cdt.stanine}
+                          <span className="px-2 py-0.5 rounded text-[11px] font-sans tabular-nums font-bold bg-[#0E1B2A] text-white">
+                            Rank #{cdt.meritRank ?? 1}
                           </span>
                         </td>
                         <td className="py-3 px-4">
@@ -304,14 +304,14 @@ export const BatchDetailPage: React.FC = () => {
                     {test.status === 'COMPLETED' && (
                       <div className="flex items-center justify-between text-xs pt-1">
                         <span className="text-[#64748B]">Batch Average:</span>
-                        <span className="font-mono font-bold text-emerald-700">
+                        <span className="font-sans tabular-nums font-bold text-emerald-700">
                           {test.averageScorePercent}%
                         </span>
                       </div>
                     )}
 
                     <div className="pt-2 border-t border-[#E2E8F0] flex items-center justify-between text-[11px]">
-                      <span className="font-mono text-[#64748B]">{test.date}</span>
+                      <span className="font-sans tabular-nums text-[#64748B]">{test.date}</span>
                       <Link
                         to="/admin/results"
                         className="text-xs font-semibold text-[#0E1B2A] hover:underline flex items-center space-x-1"
@@ -338,7 +338,7 @@ export const BatchDetailPage: React.FC = () => {
                   <div className="p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded space-y-2">
                     <div className="flex justify-between text-xs font-semibold">
                       <span>Verbal Reasoning</span>
-                      <span className="font-mono text-emerald-700 font-bold">
+                      <span className="font-sans tabular-nums text-emerald-700 font-bold">
                         {batch.verbalMastery}%
                       </span>
                     </div>
@@ -351,7 +351,7 @@ export const BatchDetailPage: React.FC = () => {
                   <div className="p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded space-y-2">
                     <div className="flex justify-between text-xs font-semibold">
                       <span>Non-Verbal Spatial</span>
-                      <span className="font-mono text-[#0E1B2A] font-bold">
+                      <span className="font-sans tabular-nums text-[#0E1B2A] font-bold">
                         {batch.nonVerbalMastery}%
                       </span>
                     </div>
@@ -364,7 +364,7 @@ export const BatchDetailPage: React.FC = () => {
                   <div className="p-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded space-y-2">
                     <div className="flex justify-between text-xs font-semibold">
                       <span>Academic Core</span>
-                      <span className="font-mono text-amber-700 font-bold">
+                      <span className="font-sans tabular-nums text-amber-700 font-bold">
                         {batch.academicMastery}%
                       </span>
                     </div>
@@ -376,36 +376,36 @@ export const BatchDetailPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Stanine Distribution */}
+              {/* Performance Decile Distribution */}
               <div className="pt-4 border-t border-[#E2E8F0]">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#0E1B2A] mb-3">
-                  Stanine Distribution Curve (Standard Nine Metric)
+                  Score Decile Performance Distribution
                 </h3>
                 <div className="bg-[#F8FAFC] border border-[#CBD5E1] rounded p-5 space-y-3">
                   <div className="grid grid-cols-9 gap-2 text-center text-xs">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((stanine) => {
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((decile) => {
                       const count =
-                        stanine === 8 ? 14 : stanine === 7 ? 12 : stanine === 6 ? 8 : stanine === 9 ? 4 : 2;
-                      const isHigh = stanine >= 7;
+                        decile === 8 ? 14 : decile === 7 ? 12 : decile === 6 ? 8 : decile === 9 ? 4 : 2;
+                      const isHigh = decile >= 7;
                       return (
-                        <div key={stanine} className="space-y-1">
+                        <div key={decile} className="space-y-1">
                           <div
                             className={`w-full rounded-t transition-all ${
-                              isHigh ? 'bg-emerald-600' : stanine >= 5 ? 'bg-[#0E1B2A]' : 'bg-amber-500'
+                              isHigh ? 'bg-emerald-600' : decile >= 5 ? 'bg-[#0E1B2A]' : 'bg-amber-500'
                             }`}
                             style={{ height: `${Math.max(20, count * 8)}px` }}
                           />
-                          <div className="font-bold text-[#0E1B2A]">S-{stanine}</div>
-                          <div className="text-[10px] text-[#64748B] font-mono">{count} Cdt</div>
+                          <div className="font-bold text-[#0E1B2A]">D-{decile}</div>
+                          <div className="text-[10px] text-[#64748B] font-sans tabular-nums">{count} Cdt</div>
                         </div>
                       );
                     })}
                   </div>
                   <div className="flex justify-between text-[11px] text-[#64748B] pt-2 border-t border-[#E2E8F0]">
-                    <span>Below Average (Stanine 1-3)</span>
-                    <span>Average Standard (Stanine 4-6)</span>
+                    <span>Remediation Band (Deciles 1-3)</span>
+                    <span>Standard Performance (Deciles 4-6)</span>
                     <span className="font-semibold text-emerald-700">
-                      Officer Selection Range (Stanine 7-9: 71.4%)
+                      Top Merit Band (Deciles 7-9: 71.4%)
                     </span>
                   </div>
                 </div>

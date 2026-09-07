@@ -27,7 +27,7 @@ export interface StudentAttemptHistory {
   attemptNumber: number;
   date: string;
   scorePercent: number;
-  stanine: number;
+  meritRank?: number;
   passed: boolean;
   timeSpentMinutes: number;
 }

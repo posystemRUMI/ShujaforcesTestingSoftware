@@ -86,7 +86,7 @@ export const QuestionBankPage: React.FC = () => {
       {/* View Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-[#D4D9DF] shadow-sm">
         <div>
-          <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+          <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
             ASSESSMENT CONTENT MANAGEMENT
           </span>
           <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
@@ -108,28 +108,28 @@ export const QuestionBankPage: React.FC = () => {
       {/* Summary KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
         <div className="bg-white border border-[#D4D9DF] p-3.5 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Total Items</span>
-          <div className="text-xl font-bold font-mono text-[#0E1B2A] mt-1">{totalCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Total Items</span>
+          <div className="text-xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{totalCount}</div>
           <span className="text-[10px] text-[#234E35] font-semibold">{approvedCount} Approved</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-3.5 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Verbal Intel</span>
-          <div className="text-xl font-bold font-mono text-[#0E1B2A] mt-1">{verbalCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Verbal Intel</span>
+          <div className="text-xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{verbalCount}</div>
           <span className="text-[10px] text-[#64748B]">Item Pool</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-3.5 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Non-Verbal Intel</span>
-          <div className="text-xl font-bold font-mono text-[#0E1B2A] mt-1">{nonVerbalCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Non-Verbal Intel</span>
+          <div className="text-xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{nonVerbalCount}</div>
           <span className="text-[10px] text-[#64748B]">Diagram Based</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-3.5 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Academic Pool</span>
-          <div className="text-xl font-bold font-mono text-[#0E1B2A] mt-1">{academicCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Academic Pool</span>
+          <div className="text-xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{academicCount}</div>
           <span className="text-[10px] text-[#64748B]">Math & Physics</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-3.5 rounded-md shadow-xs col-span-2 sm:col-span-1">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Tri-Service Ready</span>
-          <div className="text-xl font-bold font-mono text-[#234E35] mt-1">100%</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Tri-Service Ready</span>
+          <div className="text-xl font-bold font-sans tabular-nums text-[#234E35] mt-1">100%</div>
           <span className="text-[10px] text-[#234E35]">CBT Standard</span>
         </div>
       </div>
@@ -150,7 +150,7 @@ export const QuestionBankPage: React.FC = () => {
           </div>
 
           {/* Filter Dropdowns */}
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto text-xs font-mono">
+          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto text-xs font-sans">
             {/* Subject Select */}
             <select
               value={selectedSubject}
@@ -215,7 +215,7 @@ export const QuestionBankPage: React.FC = () => {
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[900px] text-xs">
               <thead>
-                <tr className="border-b border-[#D4D9DF] bg-[#F6F8FA] text-[#64748B] uppercase font-mono text-[10px]">
+                <tr className="border-b border-[#D4D9DF] bg-[#F6F8FA] text-[#64748B] uppercase font-sans font-semibold text-[10px] tracking-wider">
                   <th className="py-3 px-3 w-10 text-center">
                     <input
                       type="checkbox"
@@ -258,7 +258,7 @@ export const QuestionBankPage: React.FC = () => {
                             </span>
                           )}
                         </div>
-                        <div className="text-[10px] font-mono text-[#64748B] mt-0.5">
+                        <div className="text-[10px] font-sans text-[#64748B] mt-0.5">
                           {q.subject.replace('INTELLIGENCE_', '').replace('ACADEMIC_', '')}
                         </div>
                       </td>
@@ -267,32 +267,32 @@ export const QuestionBankPage: React.FC = () => {
                         <p className="font-medium text-[#0E1B2A] truncate" title={q.stem}>
                           {q.stem}
                         </p>
-                        <span className="text-[10px] text-[#64748B] font-mono">
+                        <span className="text-[10px] text-[#64748B] font-sans">
                           Author: {q.authorName} • {q.options.length} Alternatives
                         </span>
                       </td>
 
-                      <td className="py-3 px-3 font-mono text-[10px]">
-                        <span className="px-2 py-0.5 rounded bg-[#EDF6F0] text-[#234E35] font-bold border border-[#88BE9B]">
+                      <td className="py-3 px-3 font-sans text-[10px]">
+                        <span className="px-2 py-0.5 rounded bg-[#EDF6F0] text-[#234E35] font-bold border border-[#88BE9B] uppercase">
                           {q.branch.replace('_', ' ')}
                         </span>
                       </td>
 
-                      <td className="py-3 px-3 font-mono text-[#64748B]">
+                      <td className="py-3 px-3 font-sans tabular-nums text-[#64748B]">
                         {q.timeLimitSeconds} Seconds
                       </td>
 
                       <td className="py-3 px-3">
                         {q.status === 'APPROVED' ? (
-                          <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
+                          <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
                             <Check className="w-3 h-3" /> APPROVED
                           </span>
                         ) : q.status === 'PENDING_REVIEW' ? (
-                          <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#7A5312] bg-[#FDF7EC] px-2 py-0.5 rounded border border-[#DEC088]">
+                          <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#7A5312] bg-[#FDF7EC] px-2 py-0.5 rounded border border-[#DEC088]">
                             PENDING
                           </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#64748B] bg-[#EDF1F5] px-2 py-0.5 rounded border border-[#D4D9DF]">
+                          <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#64748B] bg-[#EDF1F5] px-2 py-0.5 rounded border border-[#D4D9DF]">
                             {q.status}
                           </span>
                         )}
@@ -332,11 +332,11 @@ export const QuestionBankPage: React.FC = () => {
           <div className="bg-white border-2 border-[#0E1B2A] rounded-md p-6 max-w-2xl w-full shadow-2xl space-y-5">
             <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3">
               <div>
-                <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+                <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
                   CANDIDATE EXAM PREVIEW MODE
                 </span>
                 <h3 className="text-base font-bold text-[#0E1B2A]">
-                  Question Ref: {previewQuestion.code}
+                  Question Ref: <span className="font-mono">{previewQuestion.code}</span>
                 </h3>
               </div>
               <button
@@ -350,8 +350,8 @@ export const QuestionBankPage: React.FC = () => {
 
             {/* Question Stem & Diagram */}
             <div className="space-y-3">
-              <span className="text-xs font-mono text-[#64748B] uppercase font-bold">
-                SUBJECT: {previewQuestion.subject} | TIME: {previewQuestion.timeLimitSeconds}s
+              <span className="text-xs font-sans text-[#64748B] uppercase font-bold tracking-wider">
+                SUBJECT: {previewQuestion.subject} | TIME: <span className="font-mono">{previewQuestion.timeLimitSeconds}s</span>
               </span>
               <h4 className="text-base font-semibold text-[#0E1B2A] leading-relaxed">
                 {previewQuestion.stem}
@@ -370,7 +370,7 @@ export const QuestionBankPage: React.FC = () => {
 
             {/* 4 Options Grid */}
             <div className="space-y-2">
-              <span className="text-[10px] font-mono uppercase text-[#64748B] font-bold">Options (Official Key Highlighted):</span>
+              <span className="text-[10px] font-sans uppercase text-[#64748B] font-bold tracking-wider">Options (Official Key Highlighted):</span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {previewQuestion.options.map((opt) => {
                   const isCorrect = opt.id === previewQuestion.correctOptionId;
@@ -385,11 +385,11 @@ export const QuestionBankPage: React.FC = () => {
                       }`}
                     >
                       <div className="flex items-center space-x-2">
-                        <span className="font-mono font-bold">{opt.label}.</span>
+                        <span className="font-sans font-bold text-[#0E1B2A]">{opt.label}.</span>
                         <span>{opt.text}</span>
                       </div>
                       {isCorrect && (
-                        <span className="text-[10px] font-mono bg-[#234E35] text-white px-1.5 py-0.5 rounded">
+                        <span className="text-[10px] font-sans uppercase font-bold bg-[#234E35] text-white px-1.5 py-0.5 rounded">
                           CORRECT KEY
                         </span>
                       )}
@@ -401,18 +401,18 @@ export const QuestionBankPage: React.FC = () => {
 
             {/* Explanation Rationale */}
             <div className="bg-[#FDF7EC] border border-[#DEC088] p-3.5 rounded text-xs space-y-1">
-              <span className="text-[10px] font-mono font-bold text-[#7A5312] uppercase tracking-wider block">
+              <span className="text-[10px] font-sans font-bold text-[#7A5312] uppercase tracking-wider block">
                 OFFICIAL REASONING & DERIVATION:
               </span>
               <p className="text-[#1F2937] leading-relaxed">{previewQuestion.explanation}</p>
             </div>
 
-            <div className="flex items-center justify-between border-t border-[#E2E6EB] pt-3 text-xs font-mono text-[#64748B]">
+            <div className="flex items-center justify-between border-t border-[#E2E6EB] pt-3 text-xs font-sans text-[#64748B]">
               <span>Author: {previewQuestion.authorName}</span>
               <button
                 type="button"
                 onClick={() => setPreviewQuestion(null)}
-                className="px-4 py-2 bg-[#0E1B2A] text-white rounded font-bold uppercase"
+                className="px-4 py-2 bg-[#0E1B2A] text-white rounded font-bold uppercase tracking-wider"
               >
                 Close Preview
               </button>

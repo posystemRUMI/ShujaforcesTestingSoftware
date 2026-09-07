@@ -67,6 +67,8 @@ export interface Question {
   id: string;
   code: string;
   subject: SubjectCategory;
+  subject_id?: string;
+  subjectName?: string;
   branch: MilitaryBranch | 'TRI_SERVICE';
   stem: string;
   options: QuestionOption[];
@@ -103,6 +105,9 @@ export interface TestBlueprint {
   shuffleOptions: boolean;
   status: 'DRAFT' | 'ACTIVE' | 'ARCHIVED';
   sections: TestSection[];
+  familiarizationEnabled?: boolean;
+  familiarizationDurationSeconds?: number;
+  familiarizationQuestionCount?: number;
 }
 
 export type ExamStatus = 'NOT_STARTED' | 'IN_PROGRESS' | 'SUBMITTED' | 'PAUSED' | 'AUTO_SUBMITTED';
@@ -169,7 +174,6 @@ export interface ExamResult {
   totalScore: number;
   maxScore: number;
   percentage: number;
-  stanine: number; // 1 to 9
   passed: boolean;
   completedAt: string;
   timeSpentSeconds: number;

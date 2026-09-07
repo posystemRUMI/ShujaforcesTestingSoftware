@@ -45,6 +45,6 @@ export interface BatchCadetPerformance {
   verbalScore: number;
   nonVerbalScore: number;
   academicScore: number;
-  stanine: number;
+  meritRank?: number;
   readiness: 'RECOMMENDED' | 'ON_TRACK' | 'REMEDIATION_REQUIRED';
 }

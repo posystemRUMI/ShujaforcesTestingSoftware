@@ -45,7 +45,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   return (
     <div className={cn('w-full space-y-1', className)} {...props}>
       {showLabel && (
-        <div className="flex justify-between items-center text-[11px] font-mono font-medium text-[#64748B]">
+        <div className="flex justify-between items-center text-[11px] font-sans font-medium text-[#64748B]">
           <span>Progress</span>
           <span className="tabular-nums text-[#0E1B2A] font-bold">{percentage}%</span>
         </div>

@@ -226,7 +226,7 @@ export const TeacherFormPage: React.FC = () => {
                 type="text"
                 {...register('phone')}
                 placeholder="+92 300 0000000"
-                className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
               />
               {errors.phone && (
                 <p className="text-[11px] text-red-500 mt-1">{errors.phone.message}</p>

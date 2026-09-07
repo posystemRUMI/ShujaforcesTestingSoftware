@@ -43,7 +43,7 @@ export const Avatar: React.FC<AvatarProps> = ({
     // STRICT RULE: Soft-squared with 4px radius (rounded). Never rounded-full (circular prohibited).
     <div
       className={cn(
-        'relative rounded bg-[#EDF1F5] border border-[#D4D9DF] flex items-center justify-center overflow-hidden flex-shrink-0 text-[#0E1B2A] font-bold font-mono select-none',
+        'relative rounded bg-[#EDF1F5] border border-[#D4D9DF] flex items-center justify-center overflow-hidden flex-shrink-0 text-[#0E1B2A] font-bold font-sans select-none',
         sizeClasses[size],
         className,
       )}

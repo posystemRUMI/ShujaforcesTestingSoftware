@@ -14,7 +14,10 @@ import {
   ShieldCheck,
   BookOpen,
   RefreshCw,
+  Trophy,
+  ArrowRight,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 import {
   ResponsiveContainer,
@@ -46,11 +49,11 @@ import { MilitaryBranch } from '@/types';
 
 // Mock Analytical Datasets
 const MOCK_BATCH_PERFORMANCE = [
-  { batch: 'PMA-154 Long Course', branch: 'PAKISTAN_ARMY', totalTested: 420, passCount: 345, failCount: 75, passRate: 82.1, avgScore: 78.4, avgStanine: 6.8 },
-  { batch: 'NAVY CADET 2026-A', branch: 'PAKISTAN_NAVY', totalTested: 280, passCount: 218, failCount: 62, passRate: 77.8, avgScore: 74.2, avgStanine: 6.3 },
-  { batch: 'PAF 158 GDP Officer', branch: 'PAKISTAN_AIR_FORCE', totalTested: 310, passCount: 268, failCount: 42, passRate: 86.4, avgScore: 82.9, avgStanine: 7.4 },
-  { batch: 'Army Short Course 74', branch: 'PAKISTAN_ARMY', totalTested: 190, passCount: 142, failCount: 48, passRate: 74.7, avgScore: 71.5, avgStanine: 5.9 },
-  { batch: 'PAF 109 Air Defence', branch: 'PAKISTAN_AIR_FORCE', totalTested: 165, passCount: 138, failCount: 27, passRate: 83.6, avgScore: 80.1, avgStanine: 7.0 },
+  { batch: 'PMA-154 Long Course', branch: 'PAKISTAN_ARMY', totalTested: 420, passCount: 345, failCount: 75, passRate: 82.1, avgScore: 78.4 },
+  { batch: 'NAVY CADET 2026-A', branch: 'PAKISTAN_NAVY', totalTested: 280, passCount: 218, failCount: 62, passRate: 77.8, avgScore: 74.2 },
+  { batch: 'PAF 158 GDP Officer', branch: 'PAKISTAN_AIR_FORCE', totalTested: 310, passCount: 268, failCount: 42, passRate: 86.4, avgScore: 82.9 },
+  { batch: 'Army Short Course 74', branch: 'PAKISTAN_ARMY', totalTested: 190, passCount: 142, failCount: 48, passRate: 74.7, avgScore: 71.5 },
+  { batch: 'PAF 109 Air Defence', branch: 'PAKISTAN_AIR_FORCE', totalTested: 165, passCount: 138, failCount: 27, passRate: 83.6, avgScore: 80.1 },
 ];
 
 const MOCK_PASS_FAIL_DISTRIBUTION = [
@@ -67,41 +70,37 @@ const MOCK_MONTHLY_TREND = [
   { month: 'Mar 2026', armyAvg: 80, navyAvg: 76, pafAvg: 86, overallAvg: 80.6 },
 ];
 
-const MOCK_STANINE_DISTRIBUTION = [
-  { stanine: 'Stanine 1 (Very Poor)', count: 18, label: 'S1' },
-  { stanine: 'Stanine 2 (Poor)', count: 42, label: 'S2' },
-  { stanine: 'Stanine 3 (Below Avg)', count: 98, label: 'S3' },
-  { stanine: 'Stanine 4 (Slightly Below)', count: 180, label: 'S4' },
-  { stanine: 'Stanine 5 (Average)', count: 320, label: 'S5' },
-  { stanine: 'Stanine 6 (Slightly Above)', count: 290, label: 'S6' },
-  { stanine: 'Stanine 7 (Above Avg)', count: 210, label: 'S7' },
-  { stanine: 'Stanine 8 (Superior)', count: 145, label: 'S8' },
-  { stanine: 'Stanine 9 (Very Superior)', count: 62, label: 'S9' },
+const MOCK_SCORE_DISTRIBUTION = [
+  { bracket: '< 50% (Remedial)', count: 60, label: '< 50%' },
+  { bracket: '50-59% (Satisfactory)', count: 180, label: '50-59%' },
+  { bracket: '60-69% (Average)', count: 320, label: '60-69%' },
+  { bracket: '70-79% (Good Standard)', count: 430, label: '70-79%' },
+  { bracket: '80-89% (High Merit)', count: 290, label: '80-89%' },
+  { bracket: '90-100% (Top Distinction)', count: 85, label: '90-100%' },
 ];
 
 const MOCK_SUBJECT_RADAR = [
   { subject: 'Verbal Reasoning', Army: 82, Navy: 78, PAF: 88, fullMark: 100 },
   { subject: 'Non-Verbal Pattern', Army: 79, Navy: 81, PAF: 85, fullMark: 100 },
   { subject: 'Academic Physics', Army: 74, Navy: 85, PAF: 91, fullMark: 100 },
-  { subject: 'Academic Mathematics', Army: 76, Navy: 83, PAF: 89, fullMark: 100 },
-  { subject: 'English Comprehension', Army: 80, Navy: 79, PAF: 86, fullMark: 100 },
-  { subject: 'General Knowledge', Army: 85, Navy: 72, PAF: 76, fullMark: 100 },
+  { subject: 'Academic English', Army: 78, Navy: 76, PAF: 82, fullMark: 100 },
+  { subject: 'General Knowledge', Army: 85, Navy: 79, PAF: 77, fullMark: 100 },
 ];
 
 const MOCK_TEST_ITEM_ANALYTICS = [
-  { id: 't-01', code: 'PMA-VERBAL-101', title: 'PMA Long Course Verbal Intelligence', subject: 'Verbal Intelligence', totalAttempts: 420, avgScore: 81.2, passRate: 84.5, timeSpentMin: 22, difficulty: 'MEDIUM' },
-  { id: 't-02', code: 'GDP-PHYS-204', title: 'GDP Flight Aerodynamics & Physics', subject: 'Academic Physics', totalAttempts: 310, avgScore: 68.4, passRate: 72.1, timeSpentMin: 38, difficulty: 'HARD' },
-  { id: 't-03', code: 'NAVY-MATH-302', title: 'Navy Sub-Lieutenant Calculus & Algebra', subject: 'Academic Math', totalAttempts: 280, avgScore: 71.9, passRate: 76.4, timeSpentMin: 34, difficulty: 'HARD' },
+  { id: 't-01', code: 'PMA-VERB-101', title: 'PMA Verbal Reasoning Battery 01', subject: 'Verbal Reasoning', totalAttempts: 1240, avgScore: 78.2, passRate: 83.4, timeSpentMin: 22, difficulty: 'MEDIUM' },
+  { id: 't-02', code: 'NAV-PHYS-204', title: 'Naval Engineering Dynamics & Mechanics', subject: 'Academic Physics', totalAttempts: 560, avgScore: 71.3, passRate: 74.5, timeSpentMin: 32, difficulty: 'HARD' },
+  { id: 't-03', code: 'PAF-AVIA-301', title: 'PAF Pilot Aptitude & Flight Logic', subject: 'Aptitude', totalAttempts: 620, avgScore: 81.6, passRate: 86.8, timeSpentMin: 28, difficulty: 'MEDIUM' },
   { id: 't-04', code: 'TRI-NONVERB-05', title: 'Tri-Services Spatial Matrix Recognition', subject: 'Non-Verbal', totalAttempts: 890, avgScore: 84.8, passRate: 89.0, timeSpentMin: 18, difficulty: 'EASY' },
   { id: 't-05', code: 'PAF-ENGL-108', title: 'PAF Officer Candidate Technical English', subject: 'Academic English', totalAttempts: 475, avgScore: 79.5, passRate: 81.6, timeSpentMin: 25, difficulty: 'MEDIUM' },
 ];
 
 const MOCK_TOP_PERFORMERS = [
-  { rollNumber: 'PAF-8902', name: 'Cadet Flight Lt. Hamza Tariq', branch: 'PAKISTAN_AIR_FORCE' as MilitaryBranch, batch: 'PAF 158 GDP Officer', scorePercent: 96.8, stanine: 9, status: 'DISTINCTION' },
-  { rollNumber: 'PMA-2601', name: 'Cadet Muhammad Ahmed', branch: 'PAKISTAN_ARMY' as MilitaryBranch, batch: 'PMA-154 Long Course', scorePercent: 94.5, stanine: 9, status: 'DISTINCTION' },
-  { rollNumber: 'NAVY-5510', name: 'Cadet Midshipman Bilal Raza', branch: 'PAKISTAN_NAVY' as MilitaryBranch, batch: 'NAVY CADET 2026-A', scorePercent: 93.2, stanine: 9, status: 'DISTINCTION' },
-  { rollNumber: 'PMA-2602', name: 'Cadet Saad Khan', branch: 'PAKISTAN_ARMY' as MilitaryBranch, batch: 'PMA-154 Long Course', scorePercent: 91.0, stanine: 8, status: 'HONORS' },
-  { rollNumber: 'PAF-8904', name: 'Cadet Zainab Fatima', branch: 'PAKISTAN_AIR_FORCE' as MilitaryBranch, batch: 'PAF 109 Air Defence', scorePercent: 90.4, stanine: 8, status: 'HONORS' },
+  { rollNumber: 'PAF-8902', name: 'Cadet Flight Lt. Hamza Tariq', branch: 'PAKISTAN_AIR_FORCE' as MilitaryBranch, batch: 'PAF 158 GDP Officer', scorePercent: 96.8, rank: 1, status: 'DISTINCTION' },
+  { rollNumber: 'PMA-2601', name: 'Cadet Muhammad Ahmed', branch: 'PAKISTAN_ARMY' as MilitaryBranch, batch: 'PMA-154 Long Course', scorePercent: 94.5, rank: 2, status: 'DISTINCTION' },
+  { rollNumber: 'NAVY-5510', name: 'Cadet Midshipman Bilal Raza', branch: 'PAKISTAN_NAVY' as MilitaryBranch, batch: 'NAVY CADET 2026-A', scorePercent: 93.2, rank: 3, status: 'DISTINCTION' },
+  { rollNumber: 'PMA-2602', name: 'Cadet Saad Khan', branch: 'PAKISTAN_ARMY' as MilitaryBranch, batch: 'PMA-154 Long Course', scorePercent: 91.0, rank: 4, status: 'HONORS' },
+  { rollNumber: 'PAF-8904', name: 'Cadet Zainab Fatima', branch: 'PAKISTAN_AIR_FORCE' as MilitaryBranch, batch: 'PAF 109 Air Defence', scorePercent: 90.4, rank: 5, status: 'HONORS' },
 ];
 
 // Custom Recharts Dark Tooltip Component
@@ -130,7 +129,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
               <span className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color || entry.fill }} />
               <span>{entry.name}:</span>
             </span>
-            <span className="font-mono font-bold text-white">
+            <span className="font-sans tabular-nums font-bold text-white">
               {typeof entry.value === 'number' ? (entry.value % 1 !== 0 ? entry.value.toFixed(1) : entry.value) : entry.value}
               {entry.unit || (entry.name.toLowerCase().includes('rate') || entry.name.toLowerCase().includes('score') || entry.name.toLowerCase().includes('avg') ? '%' : '')}
             </span>
@@ -143,7 +142,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
 };
 
 export const ReportsPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'OVERVIEW' | 'BRANCH' | 'TESTS' | 'STANINE'>('OVERVIEW');
+  const [activeTab, setActiveTab] = useState<'OVERVIEW' | 'BRANCH' | 'TESTS' | 'MERIT'>('OVERVIEW');
   const [timeframe, setTimeframe] = useState<'ALL' | '7D' | '30D' | 'QUARTER'>('ALL');
   const [selectedBranch, setSelectedBranch] = useState<'ALL' | MilitaryBranch>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
@@ -209,9 +208,9 @@ export const ReportsPage: React.FC = () => {
     return (sum / filteredBatches.length).toFixed(1);
   }, [filteredBatches]);
 
-  const avgStanineGlobal = useMemo(() => {
+  const avgScoreGlobal = useMemo(() => {
     if (filteredBatches.length === 0) return 0;
-    const sum = filteredBatches.reduce((acc, curr) => acc + curr.avgStanine, 0);
+    const sum = filteredBatches.reduce((acc, curr) => acc + curr.avgScore, 0);
     return (sum / filteredBatches.length).toFixed(1);
   }, [filteredBatches]);
 
@@ -229,7 +228,7 @@ export const ReportsPage: React.FC = () => {
       {/* Page Header */}
       <PageHeader
         title="Performance Reports & Analytics Dossier"
-        subtitle="Cross-Wing Assessment Analytics, Stanine Score Distributions & Force Branch Benchmarks"
+        subtitle="Cross-Wing Assessment Analytics, Score Distributions & Force Branch Benchmarks"
         actions={
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -317,17 +316,17 @@ export const ReportsPage: React.FC = () => {
           subtext="Threshold score >= 60.0%"
         />
         <MetricCard
-          title="Average Stanine Score"
-          value={`${avgStanineGlobal} / 9.0`}
+          title="Average Score"
+          value={`${avgScoreGlobal}%`}
           icon={<Award className="w-4 h-4 text-[#C6A75E]" />}
-          trend={{ value: '+0.4', direction: 'up' }}
-          subtext="Normalized Stanine distribution"
+          trend={{ value: '+0.4%', direction: 'up' }}
+          subtext="Cohort average mean score"
         />
         <MetricCard
           title="Top Performing Wing"
           value="PAF 158 GDP"
           icon={<TrendingUp className="w-4 h-4 text-[#0E1B2A]" />}
-          subtext="86.4% Pass Rate (Stanine 7.4 avg)"
+          subtext="86.4% Pass Rate (Top Merit Cohort)"
         />
       </div>
 
@@ -338,7 +337,7 @@ export const ReportsPage: React.FC = () => {
             { id: 'OVERVIEW', label: 'Batch & Pass/Fail Analysis', icon: BarChart3 },
             { id: 'BRANCH', label: 'Force Branch Benchmarks', icon: ShieldCheck },
             { id: 'TESTS', label: 'Test Difficulty & Item Analytics', icon: BookOpen },
-            { id: 'STANINE', label: 'Stanine Roster & Leaderboard', icon: Award },
+            { id: 'MERIT', label: 'Merit Roster & Leaderboard', icon: Trophy },
           ].map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -376,7 +375,7 @@ export const ReportsPage: React.FC = () => {
                       <h3 className="text-sm font-bold text-[#0E1B2A]">Batch Course Pass Rate & Score Comparison</h3>
                       <p className="text-xs text-[#64748B]">Average percentage scores and qualification rates per wing cohort</p>
                     </div>
-                    <span className="text-[11px] font-mono text-[#234E35] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    <span className="text-[11px] font-sans font-semibold text-[#234E35] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                       Standardized Evaluation
                     </span>
                   </div>
@@ -544,7 +543,7 @@ export const ReportsPage: React.FC = () => {
                           <th className="py-2.5 px-3">Service Branch</th>
                           <th className="py-2.5 px-3 text-right">Cadets Evaluated</th>
                           <th className="py-2.5 px-3 text-right">Pass Rate</th>
-                          <th className="py-2.5 px-3 text-right">Avg Stanine</th>
+                          <th className="py-2.5 px-3 text-right">Avg Score</th>
                           <th className="py-2.5 px-3 text-center">Status</th>
                         </tr>
                       </thead>
@@ -553,9 +552,9 @@ export const ReportsPage: React.FC = () => {
                           <td className="py-3 px-3">
                             <ForceBadge branch="PAKISTAN_AIR_FORCE" />
                           </td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">475</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">475</td>
                           <td className="py-3 px-3 text-right font-bold text-[#234E35]">85.4%</td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">7.3 / 9.0</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">82.9%</td>
                           <td className="py-3 px-3 text-center">
                             <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
                               SUPERIOR
@@ -566,9 +565,9 @@ export const ReportsPage: React.FC = () => {
                           <td className="py-3 px-3">
                             <ForceBadge branch="PAKISTAN_ARMY" />
                           </td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">610</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">610</td>
                           <td className="py-3 px-3 text-right font-bold text-[#234E35]">79.8%</td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">6.5 / 9.0</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">75.8%</td>
                           <td className="py-3 px-3 text-center">
                             <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
                               EXCELLENT
@@ -579,9 +578,9 @@ export const ReportsPage: React.FC = () => {
                           <td className="py-3 px-3">
                             <ForceBadge branch="PAKISTAN_NAVY" />
                           </td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">280</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">280</td>
                           <td className="py-3 px-3 text-right font-bold text-[#234E35]">77.8%</td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">6.3 / 9.0</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">74.2%</td>
                           <td className="py-3 px-3 text-center">
                             <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
                               SATISFACTORY
@@ -660,10 +659,10 @@ export const ReportsPage: React.FC = () => {
                               {item.difficulty}
                             </span>
                           </td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">{item.totalAttempts}</td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#0E1B2A]">{item.avgScore}%</td>
-                          <td className="py-3 px-3 text-right font-mono font-bold text-[#234E35]">{item.passRate}%</td>
-                          <td className="py-3 px-3 text-right font-mono text-[#64748B]">{item.timeSpentMin} mins</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{item.totalAttempts}</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{item.avgScore}%</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#234E35]">{item.passRate}%</td>
+                          <td className="py-3 px-3 text-right font-sans tabular-nums text-[#64748B]">{item.timeSpentMin} mins</td>
                         </tr>
                       ))}
                     </tbody>
@@ -673,30 +672,30 @@ export const ReportsPage: React.FC = () => {
             </div>
           )}
 
-          {/* TAB 4: STANINE ROSTER & LEADERBOARD */}
-          {activeTab === 'STANINE' && (
+          {/* TAB 4: MERIT ROSTER & LEADERBOARD */}
+          {activeTab === 'MERIT' && (
             <div className="space-y-6">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Stanine Normal Curve Distribution Chart */}
+                {/* Score Distribution Chart */}
                 <div className="lg:col-span-2 bg-white border border-[#E6E8EC] rounded-xl p-5 shadow-sm space-y-4">
                   <div className="border-b border-[#E6E8EC] pb-3">
-                    <h3 className="text-sm font-bold text-[#0E1B2A]">Stanine Standard Normal Curve Distribution</h3>
-                    <p className="text-xs text-[#64748B]">Count of candidates mapped across Stanine 1 through Stanine 9 standard scores</p>
+                    <h3 className="text-sm font-bold text-[#0E1B2A]">Candidate Score Bracket Distribution</h3>
+                    <p className="text-xs text-[#64748B]">Count of candidates mapped across performance score brackets</p>
                   </div>
 
                   <div className="h-72 w-full pt-2">
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={MOCK_STANINE_DISTRIBUTION} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                      <BarChart data={MOCK_SCORE_DISTRIBUTION} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#E6E8EC" />
                         <XAxis dataKey="label" tick={{ fill: '#0E1B2A', fontSize: 11, fontWeight: 700 }} />
                         <YAxis tick={{ fill: '#64748B', fontSize: 11 }} />
                         <Tooltip content={<CustomTooltip />} />
                         <Bar dataKey="count" name="Cadet Count" fill="#0E1B2A" radius={[4, 4, 0, 0]}>
-                          {MOCK_STANINE_DISTRIBUTION.map((_, index) => (
+                          {MOCK_SCORE_DISTRIBUTION.map((_, index) => (
                             <Cell
                               key={`cell-${index}`}
                               fill={
-                                index >= 7 ? '#C6A75E' : index >= 4 ? '#0E1B2A' : '#64748B'
+                                index >= 4 ? '#C6A75E' : index >= 2 ? '#0E1B2A' : '#64748B'
                               }
                             />
                           ))}
@@ -708,15 +707,15 @@ export const ReportsPage: React.FC = () => {
                   <div className="flex items-center justify-between text-xs text-[#64748B] pt-2 border-t border-[#E6E8EC]">
                     <span className="flex items-center space-x-1">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#64748B]" />
-                      <span>Stanine 1-4 (Below Normal)</span>
+                      <span>Remedial (&lt; 50%)</span>
                     </span>
                     <span className="flex items-center space-x-1">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#0E1B2A]" />
-                      <span>Stanine 5-6 (Normal Range)</span>
+                      <span>Standard Pass (50-79%)</span>
                     </span>
                     <span className="flex items-center space-x-1">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#C6A75E]" />
-                      <span>Stanine 7-9 (Superior Distinction)</span>
+                      <span>Distinction Merit (80%+)</span>
                     </span>
                   </div>
                 </div>
@@ -732,12 +731,12 @@ export const ReportsPage: React.FC = () => {
                   </div>
 
                   <div className="space-y-3">
-                    {MOCK_TOP_PERFORMERS.map((cadet, idx) => (
+                    {MOCK_TOP_PERFORMERS.map((cadet) => (
                       <div key={cadet.rollNumber} className="flex items-center justify-between p-3 bg-[#F6F8FA] border border-[#E6E8EC] rounded-lg">
                         <div className="space-y-1">
                           <div className="flex items-center space-x-2">
-                            <span className="w-5 h-5 rounded-full bg-[#0E1B2A] text-white font-mono font-bold text-[10px] flex items-center justify-center shrink-0">
-                              #{idx + 1}
+                            <span className="w-5 h-5 rounded-full bg-[#0E1B2A] text-white font-sans tabular-nums font-bold text-[10px] flex items-center justify-center shrink-0">
+                              #{cadet.rank}
                             </span>
                             <span className="font-bold text-xs text-[#0E1B2A]">{cadet.name}</span>
                           </div>
@@ -748,13 +747,23 @@ export const ReportsPage: React.FC = () => {
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="font-mono font-extrabold text-xs text-[#234E35]">{cadet.scorePercent}%</div>
+                          <div className="font-sans tabular-nums font-extrabold text-xs text-[#234E35]">{cadet.scorePercent}%</div>
                           <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#C6A75E]/20 text-[#0E1B2A]">
-                            Stanine {cadet.stanine}
+                            Rank #{cadet.rank}
                           </span>
                         </div>
                       </div>
                     ))}
+                  </div>
+
+                  <div className="pt-2">
+                    <Link
+                      to="/admin/leaderboard"
+                      className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#0E1B2A] text-[#FAF8F5] text-xs font-semibold rounded hover:bg-[#1A2C42] transition-colors"
+                    >
+                      <span>Explore Live Academy Leaderboards</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C6A75E]" />
+                    </Link>
                   </div>
                 </div>
               </div>

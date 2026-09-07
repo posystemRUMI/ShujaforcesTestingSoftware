@@ -204,7 +204,7 @@ export const BatchesPage: React.FC = () => {
 
               <h2 className="text-xl font-bold text-[#0E1B2A] flex items-center space-x-2">
                 <span>Batch: {flagshipBatch.name}</span>
-                <span className="text-xs font-mono font-normal text-[#64748B]">
+                <span className="text-xs font-sans font-normal text-[#64748B]">
                   ({flagshipBatch.wing})
                 </span>
               </h2>
@@ -212,17 +212,17 @@ export const BatchesPage: React.FC = () => {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#64748B] pt-0.5">
                 <span className="flex items-center space-x-1 text-[#0E1B2A] font-semibold">
                   <School className="w-3.5 h-3.5 text-[#C6A75E]" />
-                  <span>{flagshipBatch.cadetCount} Cadets Enrolled</span>
+                  <span className="tabular-nums">{flagshipBatch.cadetCount} Cadets Enrolled</span>
                 </span>
                 <span>•</span>
                 <span className="flex items-center space-x-1">
                   <FileCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>6 Full Mocks Administered</span>
+                  <span className="tabular-nums">6 Full Mocks Administered</span>
                 </span>
                 <span>•</span>
                 <span>
                   Mean Aggregate:{' '}
-                  <strong className="text-[#0E1B2A] font-mono">{flagshipBatch.meanAggregate}%</strong>
+                  <strong className="text-[#0E1B2A] font-sans tabular-nums font-bold">{flagshipBatch.meanAggregate}%</strong>
                 </span>
                 <span>•</span>
                 <span className="text-amber-700 font-medium">
@@ -249,7 +249,7 @@ export const BatchesPage: React.FC = () => {
             <div className="p-3.5 bg-[#F8FAFC] rounded border border-[#E2E8F0] space-y-2">
               <div className="flex items-center justify-between text-xs font-semibold">
                 <span className="text-[#0E1B2A]">Verbal Intelligence & Speed</span>
-                <span className="font-mono text-emerald-700 font-bold">
+                <span className="font-sans tabular-nums text-emerald-700 font-bold">
                   {flagshipBatch.verbalMastery}%
                 </span>
               </div>
@@ -264,7 +264,7 @@ export const BatchesPage: React.FC = () => {
             <div className="p-3.5 bg-[#F8FAFC] rounded border border-[#E2E8F0] space-y-2">
               <div className="flex items-center justify-between text-xs font-semibold">
                 <span className="text-[#0E1B2A]">Non-Verbal & Matrix Reasoning</span>
-                <span className="font-mono text-[#0E1B2A] font-bold">
+                <span className="font-sans tabular-nums text-[#0E1B2A] font-bold">
                   {flagshipBatch.nonVerbalMastery}%
                 </span>
               </div>
@@ -279,7 +279,7 @@ export const BatchesPage: React.FC = () => {
             <div className="p-3.5 bg-[#F8FAFC] rounded border border-[#E2E8F0] space-y-2">
               <div className="flex items-center justify-between text-xs font-semibold">
                 <span className="text-[#0E1B2A]">Academic Core (Phy / Math / Eng)</span>
-                <span className="font-mono text-amber-700 font-bold">
+                <span className="font-sans tabular-nums text-amber-700 font-bold">
                   {flagshipBatch.academicMastery}%
                 </span>
               </div>
@@ -408,7 +408,7 @@ export const BatchesPage: React.FC = () => {
                       <School className="w-3.5 h-3.5 text-[#C6A75E]" />
                       <span>Cadet Strength:</span>
                     </span>
-                    <strong className="font-mono text-[#0E1B2A]">{batch.cadetCount} Candidates</strong>
+                    <strong className="font-sans tabular-nums text-[#0E1B2A]">{batch.cadetCount} Candidates</strong>
                   </div>
 
                   <div className="flex items-center justify-between text-[#475569]">
@@ -416,13 +416,13 @@ export const BatchesPage: React.FC = () => {
                       <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
                       <span>Mean Aggregate:</span>
                     </span>
-                    <strong className="font-mono text-emerald-700">{batch.meanAggregate}%</strong>
+                    <strong className="font-sans tabular-nums text-emerald-700">{batch.meanAggregate}%</strong>
                   </div>
 
                   <div className="pt-1.5 border-t border-[#E2E8F0] space-y-1">
                     <div className="flex justify-between text-[11px] text-[#64748B]">
                       <span>Benchmark Mastery</span>
-                      <span className="font-mono font-semibold text-[#0E1B2A]">
+                      <span className="font-sans tabular-nums font-semibold text-[#0E1B2A]">
                         {batch.benchmarkPassRate}%
                       </span>
                     </div>
@@ -430,7 +430,7 @@ export const BatchesPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center text-[11px] text-[#64748B] space-x-1 font-mono">
+                <div className="flex items-center text-[11px] text-[#64748B] space-x-1 font-sans tabular-nums">
                   <Calendar className="w-3 h-3 text-[#94A3B8]" />
                   <span>
                     {batch.startDate} to {batch.endDate}
@@ -478,15 +478,17 @@ export const BatchesPage: React.FC = () => {
                 <tr key={batch.id} className="hover:bg-[#F8FAFC] transition-colors">
                   <td className="py-3 px-4">
                     <div className="font-bold text-[#0E1B2A]">{batch.name}</div>
-                    <div className="text-[11px] font-mono text-[#64748B]">{batch.code} · {batch.wing}</div>
+                    <div className="text-[11px] text-[#64748B]">
+                      <span className="font-mono">{batch.code}</span> · <span>{batch.wing}</span>
+                    </div>
                   </td>
                   <td className="py-3 px-4">
                     <ForceBadge branch={batch.branch} />
                   </td>
                   <td className="py-3 px-4 font-medium text-[#334155]">{batch.targetCourse}</td>
-                  <td className="py-3 px-4 font-mono font-bold text-[#0E1B2A]">{batch.cadetCount}</td>
-                  <td className="py-3 px-4 font-mono font-semibold text-emerald-700">{batch.meanAggregate}%</td>
-                  <td className="py-3 px-4 font-mono font-semibold text-[#0E1B2A]">{batch.benchmarkPassRate}%</td>
+                  <td className="py-3 px-4 font-sans tabular-nums font-bold text-[#0E1B2A]">{batch.cadetCount}</td>
+                  <td className="py-3 px-4 font-sans tabular-nums font-semibold text-emerald-700">{batch.meanAggregate}%</td>
+                  <td className="py-3 px-4 font-sans tabular-nums font-semibold text-[#0E1B2A]">{batch.benchmarkPassRate}%</td>
                   <td className="py-3 px-4">
                     <StatusBadge status={batch.status === 'ACTIVE' ? 'active' : batch.status === 'COMPLETED' ? 'completed' : 'upcoming'} />
                   </td>
@@ -612,7 +614,7 @@ export const BatchesPage: React.FC = () => {
                     onChange={(e) =>
                       setNewBatch({ ...newBatch, cadetCount: parseInt(e.target.value) || 30 })
                     }
-                    className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                    className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                   />
                 </div>
               </div>

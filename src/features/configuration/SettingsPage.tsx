@@ -123,7 +123,7 @@ export const SettingsPage: React.FC = () => {
             <div className="space-y-6">
               <FormSection
                 title="Institutional Identity"
-                description="Official credentials of the examination center printed on cadet dockets and stanine certificates"
+                description="Official credentials of the examination center printed on cadet dockets and merit certificates"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="sm:col-span-2">
@@ -242,7 +242,7 @@ export const SettingsPage: React.FC = () => {
                           },
                         })
                       }
-                      className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                      className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                     />
                   </div>
                 </div>
@@ -276,7 +276,7 @@ export const SettingsPage: React.FC = () => {
                           },
                         })
                       }
-                      className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                      className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                     />
                   </div>
 
@@ -298,7 +298,7 @@ export const SettingsPage: React.FC = () => {
                           },
                         })
                       }
-                      className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                      className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                     />
                   </div>
 
@@ -343,7 +343,7 @@ export const SettingsPage: React.FC = () => {
                           },
                         })
                       }
-                      className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                      className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                     />
                   </div>
                 </div>
@@ -523,36 +523,36 @@ export const SettingsPage: React.FC = () => {
           {/* TAB 4: SYSTEM INFORMATION */}
           {activeTab === 'system' && (
             <div className="space-y-6">
-              <div className="bg-[#0E1B2A] text-white p-5 rounded-md space-y-4 font-mono">
+              <div className="bg-[#0E1B2A] text-white p-5 rounded-md space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-[#1C2E42]">
                   <div className="flex items-center space-x-2">
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-xs font-bold text-emerald-400">
+                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-wide">
                       AIR-GAP DEFENSE ENVIRONMENT : SECURE
                     </span>
                   </div>
-                  <span className="text-[11px] text-slate-400">
+                  <span className="text-[11px] font-mono tabular-nums text-slate-400">
                     {settings.systemInfo.softwareVersion}
                   </span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                   <div>
-                    <span className="text-[#64748B] block text-[10px]">BUILD IDENTIFIER</span>
-                    <span className="text-slate-200">{settings.systemInfo.buildIdentifier}</span>
+                    <span className="text-[#64748B] block text-[10px] font-semibold uppercase tracking-wider">BUILD IDENTIFIER</span>
+                    <span className="font-mono text-slate-200">{settings.systemInfo.buildIdentifier}</span>
                   </div>
                   <div>
-                    <span className="text-[#64748B] block text-[10px]">SECURITY SHA-256 CHECK</span>
-                    <span className="text-slate-200">{settings.systemInfo.lastSecurityChecksum}</span>
+                    <span className="text-[#64748B] block text-[10px] font-semibold uppercase tracking-wider">SECURITY SHA-256 CHECK</span>
+                    <span className="font-mono text-slate-200 break-all">{settings.systemInfo.lastSecurityChecksum}</span>
                   </div>
                   <div>
-                    <span className="text-[#64748B] block text-[10px]">LAN AIR-GAP MODE</span>
+                    <span className="text-[#64748B] block text-[10px] font-semibold uppercase tracking-wider">LAN AIR-GAP MODE</span>
                     <span className="text-emerald-400 font-bold">STRICT OFFLINE (NO REMOTE CDN)</span>
                   </div>
                   <div>
-                    <span className="text-[#64748B] block text-[10px]">ACTIVE CBT TERMINALS</span>
+                    <span className="text-[#64748B] block text-[10px] font-semibold uppercase tracking-wider">ACTIVE CBT TERMINALS</span>
                     <span className="text-slate-200">
-                      {settings.systemInfo.terminalWorkstationsOnline} Certified Workstations
+                      <span className="tabular-nums font-semibold">{settings.systemInfo.terminalWorkstationsOnline}</span> Certified Workstations
                     </span>
                   </div>
                 </div>

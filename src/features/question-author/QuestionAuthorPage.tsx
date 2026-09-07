@@ -131,7 +131,7 @@ export const QuestionAuthorPage: React.FC = () => {
             <ArrowLeft className="w-4 h-4" />
           </button>
           <div>
-            <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+            <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
               AUTHORING & CONTENT STUDIO
             </span>
             <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
@@ -167,14 +167,14 @@ export const QuestionAuthorPage: React.FC = () => {
             1. Item Metadata & Classification
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-sans">
             <div>
               <label className="block font-semibold text-[#0E1B2A] mb-1 uppercase">Item Ref Code</label>
               <input
                 type="text"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
-                className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-bold focus:outline-none focus:border-[#0E1B2A]"
+                className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-mono font-bold focus:outline-none focus:border-[#0E1B2A]"
               />
             </div>
             <div>
@@ -206,7 +206,7 @@ export const QuestionAuthorPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 text-xs font-mono">
+          <div className="grid grid-cols-3 gap-4 text-xs font-sans">
             <div>
               <label className="block font-semibold text-[#0E1B2A] mb-1 uppercase">Difficulty</label>
               <select
@@ -225,7 +225,7 @@ export const QuestionAuthorPage: React.FC = () => {
                 type="number"
                 value={timeLimitSeconds}
                 onChange={(e) => setTimeLimitSeconds(Number(e.target.value))}
-                className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-bold focus:outline-none"
+                className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-sans tabular-nums font-bold focus:outline-none"
               />
             </div>
             <div>
@@ -268,7 +268,7 @@ export const QuestionAuthorPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setImageUrl(undefined)}
-                  className="text-xs text-red-600 hover:underline flex items-center gap-1 font-mono"
+                  className="text-xs text-red-600 hover:underline flex items-center gap-1 font-sans font-medium"
                 >
                   <Trash2 className="w-3.5 h-3.5" /> Remove Diagram
                 </button>
@@ -307,7 +307,7 @@ export const QuestionAuthorPage: React.FC = () => {
                     onChange={() => setCorrectOptionId(opt.id)}
                     className="w-4 h-4 text-[#234E35] focus:ring-[#234E35]"
                   />
-                  <span className="w-6 font-bold text-xs text-[#0E1B2A] font-mono">{opt.label}.</span>
+                  <span className="w-6 font-bold text-xs text-[#0E1B2A] font-sans">{opt.label}.</span>
                   <input
                     type="text"
                     value={opt.text}
@@ -316,7 +316,7 @@ export const QuestionAuthorPage: React.FC = () => {
                     className="flex-1 text-xs bg-white border border-[#D4D9DF] rounded px-3 py-2 text-[#1F2937] focus:outline-none focus:border-[#0E1B2A]"
                   />
                   {correctOptionId === opt.id && (
-                    <span className="text-[10px] font-mono font-bold bg-[#234E35] text-white px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-sans font-bold bg-[#234E35] text-white px-2 py-0.5 rounded">
                       CORRECT KEY
                     </span>
                   )}
@@ -338,7 +338,7 @@ export const QuestionAuthorPage: React.FC = () => {
                       </button>
                     </div>
                   ) : (
-                    <label className="cursor-pointer text-[#64748B] hover:text-[#0E1B2A] font-mono underline">
+                    <label className="cursor-pointer text-[#64748B] hover:text-[#0E1B2A] font-sans underline">
                       + Add Option Image (Optional)
                       <input
                         type="file"
@@ -376,18 +376,18 @@ export const QuestionAuthorPage: React.FC = () => {
           <div className="bg-[#0E1B2A] text-white p-4 rounded-t-md flex items-center justify-between border-b border-[#1C2E42]">
             <div className="flex items-center space-x-2">
               <Eye className="w-4 h-4 text-[#C6A75E]" />
-              <span className="text-xs font-bold uppercase tracking-wider font-mono">Live Candidate Exam Preview</span>
+              <span className="text-xs font-bold uppercase tracking-wider font-sans">Live Candidate Exam Preview</span>
             </div>
-            <span className="text-[10px] font-mono text-[#A0AEC0]">SIMULATED CBT RUNNER</span>
+            <span className="text-[10px] font-sans font-semibold uppercase tracking-wider text-[#A0AEC0]">SIMULATED CBT RUNNER</span>
           </div>
 
           {/* Exam Runner Simulated Card */}
           <div className="bg-white border-2 border-[#0E1B2A] rounded-b-md p-6 shadow-md space-y-5">
-            <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3 text-xs font-mono">
-              <span className="font-bold text-[#0E1B2A] bg-[#EDF1F5] px-2 py-0.5 rounded border">
+            <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3 text-xs font-sans">
+              <span className="font-bold text-[#0E1B2A] bg-[#EDF1F5] px-2 py-0.5 rounded border tabular-nums">
                 QUESTION 01 OF 45
               </span>
-              <span className="text-[#64748B]">TIME: {timeLimitSeconds}s</span>
+              <span className="text-[#64748B] font-mono tabular-nums">TIME: {timeLimitSeconds}s</span>
             </div>
 
             {/* Stem */}
@@ -417,7 +417,7 @@ export const QuestionAuthorPage: React.FC = () => {
                     }`}
                   >
                     <span
-                      className={`w-6 h-6 rounded flex items-center justify-center font-bold font-mono text-[11px] border ${
+                      className={`w-6 h-6 rounded flex items-center justify-center font-bold font-sans text-[11px] border ${
                         isCorrect ? 'bg-[#234E35] text-white border-[#234E35]' : 'bg-white text-[#0E1B2A]'
                       }`}
                     >
@@ -425,7 +425,7 @@ export const QuestionAuthorPage: React.FC = () => {
                     </span>
                     <span className="flex-1">{opt.text || `Option ${opt.label} text...`}</span>
                     {isCorrect && (
-                      <span className="text-[10px] font-mono bg-[#234E35] text-white px-1.5 py-0.5 rounded">
+                      <span className="text-[10px] font-sans font-bold bg-[#234E35] text-white px-1.5 py-0.5 rounded">
                         KEY
                       </span>
                     )}
@@ -437,7 +437,7 @@ export const QuestionAuthorPage: React.FC = () => {
             {/* Explanation Preview */}
             {explanation && (
               <div className="bg-[#FDF7EC] border border-[#DEC088] p-3 rounded text-[11px] text-[#7A5312] space-y-1">
-                <span className="font-mono font-bold block uppercase">Rationale Preview:</span>
+                <span className="font-sans font-bold block uppercase">Rationale Preview:</span>
                 <p>{explanation}</p>
               </div>
             )}

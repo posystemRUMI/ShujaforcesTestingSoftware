@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Play, Lock, Loader2 } from 'lucide-react';
+import { Play, Lock, Loader2, CheckCircle2, RotateCcw } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { attemptService } from '@/services/attemptService';
 import { testService, TestRecord } from '@/services/testService';
+import { familiarizationService } from '@/services/familiarizationService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { toast } from 'sonner';
+
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export const ExamInstructionsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -21,18 +24,44 @@ export const ExamInstructionsPage: React.FC = () => {
   useEffect(() => {
     let isMounted = true;
     async function loadTest() {
-      if (testIdParam && isSupabaseConfigured()) {
-        try {
-          const t = await testService.getTestById(testIdParam);
-          if (isMounted && t) setTestData(t);
-        } catch (e) {
-          console.warn('Failed to load test details:', e);
+      if (!isSupabaseConfigured()) return;
+      try {
+        let t: TestRecord | null = null;
+        if (testIdParam && UUID_REGEX.test(testIdParam)) {
+          t = await testService.getTestById(testIdParam);
         }
+        if (!t) {
+          const tests = await testService.getTests();
+          if (tests && tests.length > 0) {
+            t = tests[0];
+          }
+        }
+        if (isMounted && t) {
+          setTestData(t);
+        }
+      } catch (e) {
+        console.warn('Failed to load test details:', e);
       }
     }
     loadTest();
     return () => { isMounted = false; };
   }, [testIdParam]);
+
+  // Mandatory Pre-Test Familiarization Guard
+  useEffect(() => {
+    if (!testData && !testIdParam) return;
+    // Bypass for preview or explicit instructor override
+    if (user && user.role !== 'STUDENT') return;
+    if (searchParams.get('skipFamiliarization') === 'true') return;
+
+    const targetId = testData?.id || testIdParam;
+    if (targetId) {
+      const completed = familiarizationService.isFamiliarizationCompleted(targetId);
+      if (!completed) {
+        navigate(`/exam/familiarization?testId=${targetId}`, { replace: true });
+      }
+    }
+  }, [testData, testIdParam, user, searchParams, navigate]);
 
   const handleStartExam = async () => {
     if (!agreed || loading) return;
@@ -40,15 +69,29 @@ export const ExamInstructionsPage: React.FC = () => {
 
     try {
       if (isSupabaseConfigured()) {
-        let targetTestId = testIdParam;
-        if (!targetTestId) {
+        // Staff/Admin preview mode (non-student users previewing exam)
+        if (user && user.role !== 'STUDENT') {
+          navigate('/exam/runner?preview=true');
+          return;
+        }
+
+        // Resolve authoritative test UUID
+        let targetTestId: string | null = null;
+        if (testIdParam && UUID_REGEX.test(testIdParam)) {
+          targetTestId = testIdParam;
+        } else if (testData?.id && UUID_REGEX.test(testData.id)) {
+          targetTestId = testData.id;
+        } else {
           const tests = await testService.getTests();
-          if (tests && tests.length > 0) {
+          if (tests && tests.length > 0 && UUID_REGEX.test(tests[0].id)) {
             targetTestId = tests[0].id;
-          } else {
-            targetTestId = 'tst-01';
           }
         }
+
+        if (!targetTestId) {
+          throw new Error('No published computerized examination is currently assigned to your batch. Please contact your examination controller or proctor.');
+        }
+
         const res = await attemptService.startAttempt(targetTestId);
         navigate(`/exam/runner?attemptId=${res.attempt_id}`);
       } else {
@@ -67,8 +110,8 @@ export const ExamInstructionsPage: React.FC = () => {
         {/* Header */}
         <div className="border-b border-[#D4D9DF] pb-4 flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#C6A75E] font-bold">
-              Pakistan Armed Forces Induction Command
+            <span className="text-[11px] font-sans uppercase tracking-widest text-[#C6A75E] font-bold">
+              Shuja Forces Academy Pindsultani
             </span>
             <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
               {testData?.name || 'Preliminary Computerized Screening Examination'}
@@ -81,44 +124,65 @@ export const ExamInstructionsPage: React.FC = () => {
         </div>
 
         {/* Cadet Dossier Summary */}
-        <div className="p-3.5 bg-[#EDF1F5] rounded border border-[#D4D9DF] flex items-center justify-between text-xs font-mono">
+        <div className="p-3.5 bg-[#EDF1F5] rounded border border-[#D4D9DF] flex items-center justify-between text-xs font-sans">
           <div>
             <span className="text-[#64748B]">CADET: </span>
             <span className="font-bold text-[#0E1B2A]">{user?.name || 'Cadet Hamza Tariq'}</span>
           </div>
           <div>
             <span className="text-[#64748B]">DOCKET: </span>
-            <span className="font-bold text-[#0E1B2A]">{user?.rollNumber || 'PMA-2601'}</span>
+            <span className="font-bold text-[#0E1B2A] font-mono">{user?.rollNumber || 'PMA-2601'}</span>
           </div>
           <div>
             <span className="text-[#64748B]">TERMINAL: </span>
-            <span className="font-bold text-[#234E35]">WS-CBT-01 (LOCKED)</span>
+            <span className="font-bold text-[#234E35] font-mono">WS-CBT-01 (LOCKED)</span>
           </div>
         </div>
 
+        {/* Familiarization Verification Badge */}
+        <div className="p-3 bg-[#EDF6F0] rounded border border-[#88BE9B] flex items-center justify-between text-xs text-[#234E35] font-sans">
+          <div className="flex items-center space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-[#234E35] shrink-0" />
+            <span className="font-semibold">
+              Mandatory Orientation Completed (5 Practice MCQs / 1-Minute Calibration Verified)
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              const tid = testData?.id || testIdParam;
+              navigate(tid ? `/exam/familiarization?testId=${tid}` : '/exam/familiarization');
+            }}
+            className="inline-flex items-center space-x-1 font-bold text-[#234E35] hover:underline shrink-0 ml-2"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span>Re-run Practice (1 Min)</span>
+          </button>
+        </div>
+
         {/* Strict Exam Rules */}
-        <div className="space-y-3 text-xs text-[#1F2937] leading-relaxed">
+        <div className="space-y-3 text-xs text-[#1F2937] leading-relaxed font-sans">
           <div className="flex items-start space-x-2">
-            <span className="font-bold text-[#0E1B2A] font-mono">01.</span>
+            <span className="font-bold text-[#0E1B2A] font-sans tabular-nums">01.</span>
             <p>
               <strong>Timed Execution:</strong> You have <strong>{testData?.duration_minutes || 65} minutes</strong> to complete all questions.
               The countdown timer at the top cannot be paused once initiated.
             </p>
           </div>
           <div className="flex items-start space-x-2">
-            <span className="font-bold text-[#0E1B2A] font-mono">02.</span>
+            <span className="font-bold text-[#0E1B2A] font-sans tabular-nums">02.</span>
             <p>
               <strong>Autosave & Synchronization:</strong> Every selected answer is instantly recorded and cryptographically sealed on the central test engine.
             </p>
           </div>
           <div className="flex items-start space-x-2">
-            <span className="font-bold text-[#0E1B2A] font-mono">03.</span>
+            <span className="font-bold text-[#0E1B2A] font-sans tabular-nums">03.</span>
             <p>
               <strong>Zero-Tolerance Anomaly Detection:</strong> Window defocus, multiple screen events, or unauthorized key presses will trigger immediate proctor station alerts and terminal lockout.
             </p>
           </div>
           <div className="flex items-start space-x-2">
-            <span className="font-bold text-[#0E1B2A] font-mono">04.</span>
+            <span className="font-bold text-[#0E1B2A] font-sans tabular-nums">04.</span>
             <p>
               <strong>Navigation:</strong> Use the Question Matrix on the right to navigate or review flagged items. Unanswered questions will receive 0 marks.
             </p>

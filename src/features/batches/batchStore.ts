@@ -129,7 +129,7 @@ const INITIAL_BATCH_STUDENTS: Record<string, BatchCadetPerformance[]> = {
       verbalScore: 88,
       nonVerbalScore: 86,
       academicScore: 78,
-      stanine: 8,
+      meritRank: 2,
       readiness: 'RECOMMENDED',
     },
     {
@@ -143,7 +143,7 @@ const INITIAL_BATCH_STUDENTS: Record<string, BatchCadetPerformance[]> = {
       verbalScore: 82,
       nonVerbalScore: 80,
       academicScore: 75,
-      stanine: 7,
+      meritRank: 3,
       readiness: 'RECOMMENDED',
     },
     {
@@ -157,7 +157,7 @@ const INITIAL_BATCH_STUDENTS: Record<string, BatchCadetPerformance[]> = {
       verbalScore: 80,
       nonVerbalScore: 76,
       academicScore: 66,
-      stanine: 6,
+      meritRank: 4,
       readiness: 'ON_TRACK',
     },
     {
@@ -171,7 +171,7 @@ const INITIAL_BATCH_STUDENTS: Record<string, BatchCadetPerformance[]> = {
       verbalScore: 72,
       nonVerbalScore: 70,
       academicScore: 62,
-      stanine: 5,
+      meritRank: 5,
       readiness: 'REMEDIATION_REQUIRED',
     },
     {
@@ -185,7 +185,7 @@ const INITIAL_BATCH_STUDENTS: Record<string, BatchCadetPerformance[]> = {
       verbalScore: 92,
       nonVerbalScore: 90,
       academicScore: 85,
-      stanine: 9,
+      meritRank: 1,
       readiness: 'RECOMMENDED',
     },
   ],
@@ -292,7 +292,7 @@ class BatchStore {
           verbalScore: 82,
           nonVerbalScore: 76,
           academicScore: 72,
-          stanine: 7,
+          meritRank: 2,
           readiness: 'ON_TRACK',
         },
         {
@@ -306,7 +306,7 @@ class BatchStore {
           verbalScore: 88,
           nonVerbalScore: 84,
           academicScore: 81,
-          stanine: 8,
+          meritRank: 1,
           readiness: 'RECOMMENDED',
         },
       ]

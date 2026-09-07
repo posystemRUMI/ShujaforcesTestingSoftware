@@ -31,23 +31,23 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <div
       className={cn(
-        'border-b border-[#D4D9DF] pb-4 mb-6 select-none space-y-2',
+        'border-b border-[#E8ECF0] pb-5 mb-8 select-none space-y-2',
         className,
       )}
       {...props}
     >
       {breadcrumbs && <Breadcrumbs items={breadcrumbs} className="mb-1" />}
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center space-x-3">
-            <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] font-display">
+            <h1 className="text-[28px] font-bold tracking-tight text-[#0E1B2A] font-display leading-none">
               {title}
             </h1>
             {badge && <div>{badge}</div>}
           </div>
           {subtitle && (
-            <p className="text-xs text-[#64748B] mt-0.5 max-w-2xl font-sans leading-normal">
+            <p className="text-sm text-[#64748B] mt-1.5 max-w-2xl font-sans leading-normal">
               {subtitle}
             </p>
           )}
@@ -60,13 +60,13 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
               <button
                 type="button"
                 onClick={action.onClick}
-                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xs text-xs font-semibold uppercase tracking-wider bg-[#0E1B2A] text-white hover:bg-[#1E293B] transition-colors"
+                className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-[#0E1B2A] text-white hover:bg-[#1E293B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0E1B2A] focus:ring-offset-1"
               >
                 {action.icon && (
                   React.isValidElement(action.icon) ? (
                     action.icon
                   ) : typeof action.icon === 'function' || (typeof action.icon === 'object' && action.icon !== null) ? (
-                    React.createElement(action.icon as React.ComponentType<{ className?: string }>, { className: 'w-3.5 h-3.5' })
+                    React.createElement(action.icon as React.ComponentType<{ className?: string }>, { className: 'w-4 h-4' })
                   ) : null
                 )}
                 <span>{action.label}</span>

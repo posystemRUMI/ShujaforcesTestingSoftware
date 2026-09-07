@@ -7,7 +7,7 @@ import {
 
 const INITIAL_FORCES: ForceConfig[] = [
   {
-    id: 'force-army',
+    id: '10000000-0000-0000-0000-000000000001',
     name: 'Pakistan Army',
     branch: 'PAKISTAN_ARMY',
     motto: 'Iman, Taqwa, Jihad fi Sabilillah',
@@ -22,7 +22,7 @@ const INITIAL_FORCES: ForceConfig[] = [
     inductionCenter: 'Army Selection & Recruitment Center (AS&RC)',
   },
   {
-    id: 'force-air-force',
+    id: '10000000-0000-0000-0000-000000000002',
     name: 'Pakistan Air Force',
     branch: 'PAKISTAN_AIR_FORCE',
     motto: 'Sehra ast ke Darya ast, Tah-o-Bala-o-Par-i-Mast',
@@ -37,7 +37,7 @@ const INITIAL_FORCES: ForceConfig[] = [
     inductionCenter: 'PAF Information & Selection Center (I&SC)',
   },
   {
-    id: 'force-navy',
+    id: '10000000-0000-0000-0000-000000000003',
     name: 'Pakistan Navy',
     branch: 'PAKISTAN_NAVY',
     motto: 'Himmat Ka Nishan, Samundar Ki Jaan',
@@ -48,16 +48,17 @@ const INITIAL_FORCES: ForceConfig[] = [
     totalQuestionsCount: 720,
     activeTestsCount: 4,
     description:
-      'The naval warfare service branch. Primary officer inductees undergo rigorous seamanship, navigation, and engineering at Pakistan Naval Academy (PNA) PNS Rahbar, Manora.',
+      'The naval warfare service branch. Primary officer inductees undergo rigorous seamanship, navigation, and engineering at Pakistan Naval Academy (PNA) PNS Rahbar,标志 Manora.',
     inductionCenter: 'PN Recruitment & Selection Center (PNS Manora)',
   },
 ];
 
 const INITIAL_COURSES: CourseConfig[] = [
   {
-    id: 'crs-01',
+    id: '20000000-0000-0000-0000-000000000001',
     code: '154-PMA-LC',
     name: '154 PMA Long Course',
+    forceId: '10000000-0000-0000-0000-000000000001',
     branch: 'PAKISTAN_ARMY',
     durationMonths: 24,
     minAge: 17,
@@ -69,9 +70,10 @@ const INITIAL_COURSES: CourseConfig[] = [
     description: 'Regular Commission in the Pakistan Army Combat Arms and Services.',
   },
   {
-    id: 'crs-02',
+    id: '20000000-0000-0000-0000-000000000002',
     code: '158-PAF-GDP',
     name: '158 General Duty Pilot (GDP)',
+    forceId: '10000000-0000-0000-0000-000000000002',
     branch: 'PAKISTAN_AIR_FORCE',
     durationMonths: 36,
     minAge: 16,
@@ -83,9 +85,10 @@ const INITIAL_COURSES: CourseConfig[] = [
     description: 'Permanent Commission in PAF Flying Branch as Fighter / Transport Pilot.',
   },
   {
-    id: 'crs-03',
+    id: '20000000-0000-0000-0000-000000000003',
     code: 'PN-CADET-26A',
     name: 'PN Cadet 2026-A Term',
+    forceId: '10000000-0000-0000-0000-000000000003',
     branch: 'PAKISTAN_NAVY',
     durationMonths: 18,
     minAge: 17,
@@ -97,9 +100,10 @@ const INITIAL_COURSES: CourseConfig[] = [
     description: 'Permanent Commission in Operations, Weapon Engineering, and Marine Engineering.',
   },
   {
-    id: 'crs-04',
+    id: '20000000-0000-0000-0000-000000000004',
     code: '36-TCC',
     name: '36 Technical Cadet Course (TCC)',
+    forceId: '10000000-0000-0000-0000-000000000001',
     branch: 'PAKISTAN_ARMY',
     durationMonths: 48,
     minAge: 17,
@@ -111,9 +115,10 @@ const INITIAL_COURSES: CourseConfig[] = [
     description: 'Military Engineering Degree at NUST followed by 1 Year Military Training at PMA.',
   },
   {
-    id: 'crs-05',
+    id: '20000000-0000-0000-0000-000000000005',
     code: '104-PAF-CAE',
     name: '104 College of Aeronautical Engineering (CAE)',
+    forceId: '10000000-0000-0000-0000-000000000002',
     branch: 'PAKISTAN_AIR_FORCE',
     durationMonths: 48,
     minAge: 16,
@@ -125,9 +130,10 @@ const INITIAL_COURSES: CourseConfig[] = [
     description: 'Aeronautical and Avionics Engineering Officer Commission at PAF Academy Risalpur.',
   },
   {
-    id: 'crs-06',
+    id: '20000000-0000-0000-0000-000000000006',
     code: 'LCC-24',
     name: 'Lady Cadet Course (LCC-24)',
+    forceId: '10000000-0000-0000-0000-000000000001',
     branch: 'PAKISTAN_ARMY',
     durationMonths: 6,
     minAge: 20,
@@ -245,12 +251,12 @@ const INITIAL_SUBJECTS: SubjectConfig[] = [
 
 const INITIAL_SETTINGS: AcademySettings = {
   academyProfile: {
-    name: 'Forces Academy Computerized Testing System',
-    campusLocation: 'Joint Armed Forces Assessment Complex, Sector H-9, Islamabad',
+    name: 'Shuja Forces Academy Pindsultani',
+    campusLocation: 'Shuja Forces Academy Campus, Pindsultani, Attock',
     commandOfficer: 'Brigadier Muhammad Ahsan (Retd.), Chief Academic Director',
-    contactEmail: 'director.examinations@forcesacademy.edu.pk',
+    contactEmail: 'director.examinations@shujaforces.edu.pk',
     contactPhone: '+92 51 9260114',
-    centerCode: 'CBT-ISB-CTR-01',
+    centerCode: 'CBT-SFA-PINDSULTANI-01',
   },
   examDefaults: {
     defaultDurationMinutes: 45,
@@ -271,7 +277,7 @@ const INITIAL_SETTINGS: AcademySettings = {
   interfacePreferences: {
     cadetHighContrastMode: false,
     compactAdminTables: false,
-    stanineDistributionNorm: 'NORMALIZED_BELL',
+    meritDistributionNorm: 'DENSE_RANK',
   },
   systemInfo: {
     softwareVersion: 'v2.4.0-AIRGAP-LOCKED',
@@ -340,8 +346,11 @@ class ConfigStore {
   }
 
   // Courses
-  getCourses(): CourseConfig[] {
-    return [...this.courses];
+  getCourses(forceId?: string): CourseConfig[] {
+    if (!forceId) return [...this.courses];
+    return this.courses.filter(
+      (c) => c.forceId === forceId || c.branch === forceId || c.id === forceId
+    );
   }
 
   getCoursesByForce(branch: string): CourseConfig[] {

@@ -28,6 +28,9 @@ export interface TestRecord {
   status: 'DRAFT' | 'PUBLISHED' | 'ACTIVE' | 'COMPLETED' | 'ARCHIVED';
   created_by: string | null;
   published_at: string | null;
+  template_id?: string | null;
+  template_version?: number | null;
+  test_type?: string;
   created_at: string;
   updated_at: string;
 }
@@ -207,6 +210,151 @@ export const testService = {
     const { data, error } = await query;
     if (error) throw error;
     return (data || []) as TestAssignmentRecord[];
+  },
+
+  async compileTestFromPattern(payload: {
+    test: Partial<TestRecord>;
+    sections: Array<{
+      name: string;
+      section_code?: string;
+      source_template_section_id?: string;
+      position: number;
+      question_count: number;
+      duration_minutes: number;
+      subject_id?: string | null;
+      subject_ids?: string[];
+      is_mandatory?: boolean;
+      passing_percentage?: number;
+      question_ids?: string[];
+    }>;
+    batchId?: string;
+    autoGenerateQuestions?: boolean;
+  }): Promise<TestRecord> {
+    if (!isSupabaseConfigured()) {
+      const mockTest: TestRecord = {
+        id: `test-${Date.now()}`,
+        name: payload.test.name || 'Sample Test',
+        description: payload.test.description || null,
+        force_id: payload.test.force_id || '',
+        course_id: payload.test.course_id || '',
+        batch_id: payload.batchId || payload.test.batch_id || null,
+        passing_threshold: payload.test.passing_threshold || 50,
+        total_marks: payload.sections.reduce((acc, s) => acc + s.question_count, 0),
+        duration_minutes: payload.sections.reduce((acc, s) => acc + s.duration_minutes, 0),
+        shuffle_questions: payload.test.shuffle_questions ?? true,
+        shuffle_options: payload.test.shuffle_options ?? true,
+        allow_section_navigation: payload.test.allow_section_navigation ?? false,
+        show_result_immediately: payload.test.show_result_immediately ?? true,
+        show_answer_review: payload.test.show_answer_review ?? true,
+        negative_marking: payload.test.negative_marking ?? false,
+        negative_mark_value: payload.test.negative_mark_value ?? 0,
+        status: 'PUBLISHED',
+        created_by: null,
+        published_at: new Date().toISOString(),
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      };
+      return mockTest;
+    }
+
+    // 1. Insert Test with sanitized UUIDs
+    const testData: Record<string, any> = {
+      ...payload.test,
+      force_id: payload.test.force_id || null,
+      course_id: payload.test.course_id || null,
+      batch_id: payload.batchId || payload.test.batch_id || null,
+      template_id: payload.test.template_id || null,
+      total_marks: payload.sections.reduce((acc, s) => acc + s.question_count, 0),
+      duration_minutes: payload.sections.reduce((acc, s) => acc + s.duration_minutes, 0),
+      status: 'DRAFT',
+    };
+
+    const { data: createdTest, error: testError } = await (supabase as any)
+      .from('tests')
+      .insert(testData)
+      .select()
+      .single();
+
+    if (testError || !createdTest) throw testError || new Error('Failed to create test docket');
+
+    // 2. Insert Sections
+    for (const sec of payload.sections) {
+      const { data: createdSec, error: secError } = await (supabase as any)
+        .from('test_sections')
+        .insert({
+          test_id: createdTest.id,
+          name: sec.name,
+          position: sec.position,
+          question_count: sec.question_count,
+          duration_minutes: sec.duration_minutes,
+          subject_id: sec.subject_id || null,
+          section_code: sec.section_code || null,
+          source_template_section_id: sec.source_template_section_id || null,
+          passing_percentage: sec.passing_percentage || 50,
+          is_mandatory: sec.is_mandatory ?? false,
+        })
+        .select()
+        .single();
+
+      if (secError || !createdSec) throw secError || new Error(`Failed to create section ${sec.name}`);
+
+      // Optional subject mappings
+      if (sec.subject_ids && sec.subject_ids.length > 0) {
+        const uniqueSubjectIds = Array.from(new Set(sec.subject_ids.filter(Boolean)));
+        for (const subId of uniqueSubjectIds) {
+          try {
+            await (supabase as any)
+              .from('test_section_subjects')
+              .insert({ test_section_id: createdSec.id, subject_id: subId });
+          } catch (subErr) {
+            console.warn('Notice attaching section subject:', subErr);
+          }
+        }
+      }
+
+      // Manual questions assignment if provided
+      if (sec.question_ids && sec.question_ids.length > 0) {
+        const rows = sec.question_ids.map((qId, qIdx) => ({
+          test_section_id: createdSec.id,
+          question_id: qId,
+          position: qIdx + 1,
+        }));
+        try {
+          await (supabase as any).from('test_section_questions').insert(rows);
+        } catch (mErr) {
+          console.warn('Notice attaching manual questions:', mErr);
+        }
+      }
+
+      // Auto-generate questions if requested and subject is defined
+      const targetSubjectId = sec.subject_id || (sec.subject_ids && sec.subject_ids[0]);
+      if (payload.autoGenerateQuestions && targetSubjectId && (!sec.question_ids || sec.question_ids.length === 0)) {
+        try {
+          const { data: genCount } = await (supabase as any).rpc('generate_test_section_questions', {
+            p_section_id: createdSec.id,
+            p_subject_id: targetSubjectId,
+            p_count: sec.question_count,
+            p_force_id: payload.test.force_id || null,
+            p_course_id: payload.test.course_id || null,
+          });
+
+          // Fallback if course filter was too restrictive
+          if ((!genCount || genCount === 0) && (payload.test.course_id || payload.test.force_id)) {
+            await (supabase as any).rpc('generate_test_section_questions', {
+              p_section_id: createdSec.id,
+              p_subject_id: targetSubjectId,
+              p_count: sec.question_count,
+              p_force_id: null,
+              p_course_id: null,
+            });
+          }
+        } catch (genErr) {
+          console.warn('Auto-generation notice for section:', sec.name, genErr);
+        }
+      }
+    }
+
+    return createdTest as TestRecord;
   },
 };
 

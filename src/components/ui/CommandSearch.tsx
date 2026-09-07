@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, X, Users, IdCard, FileQuestion, Wrench, Shield, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { mockCadets, mockBatches, mockQuestions } from '@/lib/mock-data';
+import { mockCadets, mockBatches } from '@/lib/mock-data';
 
 export interface CommandSearchProps {
   isOpen: boolean;
@@ -40,11 +40,7 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
       b.code.toLowerCase().includes(query.toLowerCase()),
   );
 
-  const filteredQuestions = mockQuestions.filter(
-    (q) =>
-      q.stem.toLowerCase().includes(query.toLowerCase()) ||
-      q.code.toLowerCase().includes(query.toLowerCase()),
-  );
+  const filteredQuestions: any[] = [];
 
   const handleSelect = (path: string) => {
     navigate(path);
@@ -84,7 +80,7 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
         <div className="max-h-80 overflow-y-auto p-2 divide-y divide-[#EDF1F5] text-xs">
           {/* Quick Actions / Navigation */}
           <div className="py-2">
-            <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-mono">
+            <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-sans tracking-wider">
               Quick Navigation
             </span>
             <div className="mt-1 space-y-0.5">
@@ -115,7 +111,7 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
           {/* Cadets Match */}
           {filteredCadets.length > 0 && (
             <div className="py-2">
-              <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-mono">
+              <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-sans tracking-wider">
                 Cadet Dockets ({filteredCadets.length})
               </span>
               <div className="mt-1 space-y-0.5">
@@ -143,7 +139,7 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
           {/* Batches Match */}
           {filteredBatches.length > 0 && (
             <div className="py-2">
-              <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-mono">
+              <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-sans tracking-wider">
                 Batches ({filteredBatches.length})
               </span>
               <div className="mt-1 space-y-0.5">
@@ -168,7 +164,7 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
           {/* Questions Match */}
           {filteredQuestions.length > 0 && (
             <div className="py-2">
-              <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-mono">
+              <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-sans tracking-wider">
                 Questions ({filteredQuestions.length})
               </span>
               <div className="mt-1 space-y-0.5">
@@ -191,9 +187,9 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
         </div>
 
         {/* Footer */}
-        <div className="px-4 py-2 bg-[#EDF1F5] border-t border-[#D4D9DF] flex items-center justify-between text-[11px] font-mono text-[#64748B]">
+        <div className="px-4 py-2 bg-[#EDF1F5] border-t border-[#D4D9DF] flex items-center justify-between text-[11px] font-sans text-[#64748B]">
           <span>Use ARROW KEYS to navigate, ENTER to select</span>
-          <span>[CTRL+K] / [ESC]</span>
+          <span className="font-mono">[CTRL+K] / [ESC]</span>
         </div>
       </div>
     </div>

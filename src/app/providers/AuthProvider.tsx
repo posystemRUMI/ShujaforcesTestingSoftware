@@ -44,8 +44,8 @@ const DEFAULT_PROFILES: Record<UserRole, UserProfile> = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [role, setRole] = useState<UserRole>('ADMIN');
-  const [user, setUser] = useState<UserProfile | null>(DEFAULT_PROFILES.ADMIN);
+  const [role, setRole] = useState<UserRole>('STUDENT');
+  const [user, setUser] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
   // Initialize session and listen for auth state changes
@@ -56,19 +56,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (isSupabaseConfigured()) {
         try {
           const currentUser = await authService.getCurrentUser();
-          if (mounted && currentUser) {
-            setUser(currentUser);
-            setRole(currentUser.role);
-          } else if (mounted) {
-            // No active session in production
-            setUser(null);
+          if (mounted) {
+            if (currentUser) {
+              setUser(currentUser);
+              setRole(currentUser.role);
+            } else {
+              setUser(null);
+            }
           }
         } catch (err) {
           console.warn('Failed to restore Supabase session:', err);
           if (mounted) setUser(null);
         }
-      } else {
-        // Fallback for offline development preview
+      } else if ((import.meta as any).env?.DEV) {
+        // Fallback only for offline local dev preview when Supabase is not configured
         const savedRole = localStorage.getItem('fa_cbt_role') as UserRole | null;
         if (savedRole && DEFAULT_PROFILES[savedRole]) {
           setRole(savedRole);
@@ -86,9 +87,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       try {
         const { data } = (supabase as any).auth.onAuthStateChange(async (event: string, session: any) => {
           if (!mounted) return;
-          if (event === 'SIGNED_IN' && session?.user) {
+          if ((event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && session?.user) {
             const freshUser = await authService.getCurrentUser();
-            if (freshUser) {
+            if (freshUser && mounted) {
               setUser(freshUser);
               setRole(freshUser.role);
             }
@@ -111,32 +112,39 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = async (roleOrIdentifier: UserRole | string, password?: string): Promise<{ success: boolean; error?: string }> => {
-    // If Supabase is configured and password is provided, perform authentic login
-    if (isSupabaseConfigured() && password) {
+    const chosenRole: UserRole = (['ADMIN', 'TEACHER', 'STUDENT'].includes(roleOrIdentifier as UserRole))
+      ? (roleOrIdentifier as UserRole)
+      : roleOrIdentifier.startsWith('HQ') ? 'ADMIN' : roleOrIdentifier.startsWith('FAC') ? 'TEACHER' : 'STUDENT';
+
+    // If Supabase is configured, attempt authentic login strictly
+    if (isSupabaseConfigured()) {
       setLoading(true);
-      const { user: authenticatedUser, error } = await authService.login(roleOrIdentifier, password);
-      setLoading(false);
+      try {
+        const { user: authenticatedUser, error } = await authService.login(roleOrIdentifier, password || '');
+        setLoading(false);
 
-      if (error || !authenticatedUser) {
-        return { success: false, error: error?.message || 'Authentication failed' };
+        if (!error && authenticatedUser) {
+          setUser(authenticatedUser);
+          setRole(authenticatedUser.role);
+          return { success: true };
+        } else {
+          return { success: false, error: error?.message || 'Invalid email or password.' };
+        }
+      } catch (err: any) {
+        setLoading(false);
+        return { success: false, error: err?.message || 'Authentication server unreachable.' };
       }
+    }
 
-      setUser(authenticatedUser);
-      setRole(authenticatedUser.role);
+    // Dev mode fallback only when Supabase is not configured
+    if ((import.meta as any).env?.DEV) {
+      setRole(chosenRole);
+      setUser(DEFAULT_PROFILES[chosenRole]);
+      localStorage.setItem('fa_cbt_role', chosenRole);
       return { success: true };
     }
 
-    // Otherwise fallback for demo/development preview
-    const chosenRole: UserRole = (['ADMIN', 'TEACHER', 'STUDENT'].includes(roleOrIdentifier as UserRole))
-      ? (roleOrIdentifier as UserRole)
-      : 'STUDENT';
-
-    setRole(chosenRole);
-    setUser(DEFAULT_PROFILES[chosenRole]);
-    if (!isSupabaseConfigured()) {
-      localStorage.setItem('fa_cbt_role', chosenRole);
-    }
-    return { success: true };
+    return { success: false, error: 'Authentication service not available.' };
   };
 
   const logout = async () => {
@@ -148,9 +156,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const switchRole = (newRole: UserRole) => {
-    setRole(newRole);
-    setUser(DEFAULT_PROFILES[newRole]);
-    if (!isSupabaseConfigured()) {
+    if ((import.meta as any).env?.DEV && !isSupabaseConfigured()) {
+      setRole(newRole);
+      setUser(DEFAULT_PROFILES[newRole]);
       localStorage.setItem('fa_cbt_role', newRole);
     }
   };
@@ -159,7 +167,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     <AuthContext.Provider
       value={{
         user,
-        role,
+        role: user ? user.role : role,
         isAuthenticated: !!user,
         loading,
         login,

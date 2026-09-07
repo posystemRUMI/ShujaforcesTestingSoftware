@@ -153,7 +153,7 @@ export const TeacherDetailPage: React.FC = () => {
                 </div>
                 <div className="flex items-center space-x-1.5">
                   <Phone className="w-3.5 h-3.5 text-[#94A3B8]" />
-                  <span className="font-mono">{teacher.phone}</span>
+                  <span className="font-sans tabular-nums">{teacher.phone}</span>
                 </div>
                 <div className="flex items-center space-x-1.5">
                   <Calendar className="w-3.5 h-3.5 text-[#94A3B8]" />
@@ -171,7 +171,7 @@ export const TeacherDetailPage: React.FC = () => {
             ) : (
               <ForceBadge branch={teacher.branchAffiliation} />
             )}
-            <span className="text-[11px] font-mono text-[#64748B]">
+            <span className="text-[11px] font-sans tabular-nums text-[#64748B]">
               Last Active: {new Date(teacher.lastActiveAt).toLocaleString()}
             </span>
           </div>
@@ -297,7 +297,7 @@ export const TeacherDetailPage: React.FC = () => {
                           <SubjectBadge subject={q.subject} />
                         </td>
                         <td className="py-2.5 px-3 text-[#334155] max-w-md truncate">{q.stem}</td>
-                        <td className="py-2.5 px-3 font-mono text-[11px] font-semibold text-slate-700">
+                        <td className="py-2.5 px-3 font-sans text-[11px] font-semibold text-slate-700">
                           {q.difficulty}
                         </td>
                         <td className="py-2.5 px-3">
@@ -305,7 +305,7 @@ export const TeacherDetailPage: React.FC = () => {
                             {q.status}
                           </span>
                         </td>
-                        <td className="py-2.5 px-3 text-right font-mono text-[11px] text-[#64748B]">
+                        <td className="py-2.5 px-3 text-right font-sans tabular-nums text-[11px] text-[#64748B]">
                           {q.date}
                         </td>
                       </tr>
@@ -365,7 +365,7 @@ export const TeacherDetailPage: React.FC = () => {
                     <div className="font-bold text-[#0E1B2A]">{log.action}</div>
                     <div className="text-[#475569]">{log.detail}</div>
                   </div>
-                  <div className="flex items-center space-x-1 font-mono text-[11px] text-[#64748B]">
+                  <div className="flex items-center space-x-1 font-mono tabular-nums text-[11px] text-[#64748B]">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{log.timestamp}</span>
                   </div>

@@ -146,9 +146,9 @@ export const StudentsListPage: React.FC = () => {
     {
       header: 'Contact / CNIC',
       cell: (row) => (
-        <div className="font-mono text-[11px] text-[#64748B]">
-          <div>{row.cnic}</div>
-          <div className="flex items-center space-x-1 text-[10px]">
+        <div className="text-[11px] text-[#64748B]">
+          <div className="font-mono tabular-nums font-medium text-[#0E1B2A]">{row.cnic}</div>
+          <div className="flex items-center space-x-1 text-[10px] font-sans tabular-nums">
             <Phone className="w-2.5 h-2.5" />
             <span>{row.phone}</span>
           </div>
@@ -252,7 +252,7 @@ export const StudentsListPage: React.FC = () => {
             <select
               value={branchFilter}
               onChange={(e) => setBranchFilter(e.target.value)}
-              className="h-10 px-3 bg-white border border-[#D4D9DF] rounded text-xs text-[#0E1B2A] font-mono focus:outline-none focus:border-[#0E1B2A]"
+              className="h-10 px-3 bg-white border border-[#D4D9DF] rounded text-xs text-[#0E1B2A] font-sans font-medium focus:outline-none focus:border-[#0E1B2A]"
             >
               <option value="ALL">All Branches</option>
               <option value="PAKISTAN_ARMY">Pakistan Army</option>
@@ -263,7 +263,7 @@ export const StudentsListPage: React.FC = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="h-10 px-3 bg-white border border-[#D4D9DF] rounded text-xs text-[#0E1B2A] font-mono focus:outline-none focus:border-[#0E1B2A]"
+              className="h-10 px-3 bg-white border border-[#D4D9DF] rounded text-xs text-[#0E1B2A] font-sans font-medium focus:outline-none focus:border-[#0E1B2A]"
             >
               <option value="ALL">All Statuses</option>
               <option value="ACTIVE">Active</option>

@@ -13,7 +13,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
             color: '#FFFFFF',
             border: '1px solid #D4D9DF',
             borderRadius: '4px',
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'var(--font-sans, "Geist Sans", sans-serif)',
             fontSize: '13px',
           },
           className: 'forces-toast',

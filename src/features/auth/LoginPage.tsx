@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/app/providers';
 import { UserRole } from '@/types';
-import { Eye, EyeOff, Lock, User, AlertTriangle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Eye, EyeOff, Lock, User, AlertCircle, ArrowRight, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 
 export const LoginPage: React.FC = () => {
@@ -10,9 +10,10 @@ export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   const [role, setRole] = useState<UserRole>('ADMIN');
-  const [identifier, setIdentifier] = useState('HQ-CHIEF-01');
-  const [password, setPassword] = useState('AcademyPass2026!');
+  const [identifier, setIdentifier] = useState('admin@gmail.com');
+  const [password, setPassword] = useState('12345678');
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -20,14 +21,14 @@ export const LoginPage: React.FC = () => {
     setRole(selectedRole);
     setErrorMessage(null);
     if (selectedRole === 'ADMIN') {
-      setIdentifier('HQ-CHIEF-01');
-      setPassword('AdminPass2026!');
+      setIdentifier('admin@gmail.com');
+      setPassword('12345678');
     } else if (selectedRole === 'TEACHER') {
-      setIdentifier('FAC-PAF-102');
-      setPassword('FacultyPass2026!');
+      setIdentifier('teacher@gmail.com');
+      setPassword('12345678');
     } else {
-      setIdentifier('PMA-2601');
-      setPassword('CadetPass2026!');
+      setIdentifier('student@gmail.com');
+      setPassword('12345678');
     }
   };
 
@@ -36,12 +37,12 @@ export const LoginPage: React.FC = () => {
     setErrorMessage(null);
 
     if (!identifier.trim()) {
-      setErrorMessage('Please enter your Cadet Roll Number or Officer Docket ID.');
+      setErrorMessage('Please enter your login ID or Roll Number.');
       return;
     }
 
     if (!password.trim()) {
-      setErrorMessage('Security passcode is required to establish terminal clearance.');
+      setErrorMessage('Password is required.');
       return;
     }
 
@@ -52,12 +53,11 @@ export const LoginPage: React.FC = () => {
       setIsLoading(false);
 
       if (!res.success) {
-        setErrorMessage(res.error || 'Invalid credentials or unauthorized terminal.');
-        toast.error(res.error || 'Authentication failed.');
+        setErrorMessage(res.error || 'Invalid ID or password. Please try again.');
         return;
       }
 
-      toast.success('Access Granted: Identity verified.');
+      toast.success('Signed in successfully.');
 
       if (role === 'STUDENT') {
         navigate('/student');
@@ -66,84 +66,94 @@ export const LoginPage: React.FC = () => {
       }
     } catch (err: any) {
       setIsLoading(false);
-      setErrorMessage(err?.message || 'Authentication error.');
-      toast.error('Authentication failed.');
+      setErrorMessage(err?.message || 'Invalid ID or password. Please try again.');
     }
   };
 
   return (
-    <div className="space-y-6 select-none">
-      {/* Role Selection Tabs */}
+    <div className="w-full max-w-md mx-auto space-y-6 select-none font-sans">
+      {/* Top Welcome Heading */}
       <div>
-        <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-2 font-display">
-          Terminal Clearance Role
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#0E1B2A] tracking-tight">
+          Welcome back
+        </h1>
+        <p className="text-xs sm:text-sm text-[#667085] mt-1.5 leading-relaxed font-normal">
+          Sign in to access your examination portal.
+        </p>
+      </div>
+
+      {/* Segmented Control Role Selector */}
+      <div className="space-y-1.5">
+        <label className="block text-xs font-semibold text-[#17202A] tracking-wide">
+          Account Type
         </label>
-        <div className="grid grid-cols-3 gap-1.5 p-1 bg-[#EDF1F5] rounded border border-[#D4D9DF]">
-          {(['ADMIN', 'TEACHER', 'STUDENT'] as UserRole[]).map((r) => (
-            <button
-              key={r}
-              type="button"
-              onClick={() => handleRoleSelect(r)}
-              className={`py-1.5 px-2 text-xs font-semibold rounded font-mono transition-colors focus:outline-none focus:ring-1 focus:ring-[#0E1B2A] ${
-                role === r
-                  ? 'bg-[#0E1B2A] text-white shadow-xs'
-                  : 'text-[#64748B] hover:text-[#0E1B2A] hover:bg-white/60'
-              }`}
-            >
-              {r === 'ADMIN' ? 'Chief Proctor' : r === 'TEACHER' ? 'Instructor' : 'Candidate'}
-            </button>
-          ))}
+        <div className="grid grid-cols-3 gap-1 p-1 bg-[#F8FAFC] rounded-lg border border-[#E6E8EC]">
+          {(['ADMIN', 'TEACHER', 'STUDENT'] as UserRole[]).map((r) => {
+            const isSelected = role === r;
+            const label = r === 'ADMIN' ? 'Admin' : r === 'TEACHER' ? 'Teacher' : 'Student';
+            return (
+              <button
+                key={r}
+                type="button"
+                onClick={() => handleRoleSelect(r)}
+                className={`py-2 px-3 text-xs font-medium rounded-md transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#0E1B2A]/20 ${
+                  isSelected
+                    ? 'bg-[#0E1B2A] text-white shadow-xs font-semibold'
+                    : 'text-[#667085] hover:text-[#0E1B2A] hover:bg-white/80'
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Error Alert Display */}
+      {/* Compact Inline Error Alert */}
       {errorMessage && (
-        <div className="p-3 bg-[#FDF2F2] border border-[#E29A9A] rounded text-xs text-[#782525] flex items-start space-x-2 animate-in fade-in">
-          <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5" />
-          <span className="leading-tight">{errorMessage}</span>
+        <div className="p-3 bg-[#FDF2F2] border border-[#FCA5A5] rounded-lg text-xs text-[#991B1B] flex items-start space-x-2.5 animate-in fade-in duration-150">
+          <AlertCircle className="w-4 h-4 text-[#DC2626] flex-shrink-0 mt-0.5" />
+          <span className="leading-snug font-medium">{errorMessage}</span>
         </div>
       )}
 
       {/* Credentials Form */}
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Identifier Input */}
+        {/* Identifier Field */}
         <div>
-          <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1.5 font-display">
-            {role === 'STUDENT' ? 'Cadet Roll Number / CNIC' : 'Officer Docket / Staff ID'}
+          <label className="block text-xs font-semibold text-[#17202A] mb-1.5">
+            {role === 'STUDENT' ? 'Roll Number / Student ID' : 'Email or Staff ID'}
           </label>
           <div className="relative">
-            <User className="w-4 h-4 text-[#64748B] absolute left-3 top-1/2 -translate-y-1/2 stroke-[2]" />
+            <User className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
-              placeholder={role === 'STUDENT' ? 'e.g., PMA-2601 or 37405-...' : 'e.g., HQ-CHIEF-01'}
-              className="w-full pl-9 pr-3 h-10 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded font-mono text-[#0E1B2A] placeholder-[#94A3B8] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E] transition-colors"
+              placeholder={role === 'STUDENT' ? 'e.g. PMA-2601' : 'e.g. chief.proctor@forcesacademy.edu.pk'}
+              className="w-full pl-10 pr-4 h-12 text-xs sm:text-sm bg-[#F8FAFC] border border-[#E6E8EC] rounded-lg text-[#17202A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#0E1B2A] focus:ring-2 focus:ring-[#0E1B2A]/10 transition-colors"
             />
           </div>
         </div>
 
-        {/* Password Input with Visibility Toggle */}
+        {/* Password Field */}
         <div>
-          <div className="flex items-center justify-between mb-1.5">
-            <label className="text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider font-display">
-              Security Passcode / Biometric Key
-            </label>
-            <span className="text-[10px] text-[#64748B] font-mono">Air-Gap Local Auth</span>
-          </div>
+          <label className="block text-xs font-semibold text-[#17202A] mb-1.5">
+            Password
+          </label>
           <div className="relative">
-            <Lock className="w-4 h-4 text-[#64748B] absolute left-3 top-1/2 -translate-y-1/2 stroke-[2]" />
+            <Lock className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type={showPassword ? 'text' : 'password'}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter passcode"
-              className="w-full pl-9 pr-10 h-10 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded font-mono text-[#0E1B2A] placeholder-[#94A3B8] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E] transition-colors"
+              placeholder="Enter password"
+              className="w-full pl-10 pr-10 h-12 text-xs sm:text-sm bg-[#F8FAFC] border border-[#E6E8EC] rounded-lg text-[#17202A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#0E1B2A] focus:ring-2 focus:ring-[#0E1B2A]/10 transition-colors"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B] hover:text-[#0E1B2A] p-0.5 rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#0E1B2A] p-1 rounded focus:outline-none"
               aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -151,52 +161,77 @@ export const LoginPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Terminal Security Dossier Badge */}
-        <div className="p-2.5 bg-[#EDF6F0] border border-[#88BE9B] rounded text-[11px] font-mono text-[#234E35] flex items-center justify-between">
-          <div className="flex items-center space-x-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 flex-shrink-0" />
-            <span>STATION: WS-CBT-01</span>
-          </div>
-          <span className="font-semibold">DEFCON SECURE</span>
+        {/* Secondary Actions Row */}
+        <div className="flex items-center justify-between text-xs pt-0.5">
+          <label className="flex items-center space-x-2 text-[#667085] cursor-pointer">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              className="w-4 h-4 rounded border-[#E6E8EC] text-[#0E1B2A] focus:ring-[#0E1B2A]/20 cursor-pointer"
+            />
+            <span>Remember me</span>
+          </label>
+
+          <button
+            type="button"
+            onClick={() => toast.info('Please contact administrator to reset password.')}
+            className="text-[#0E1B2A] font-semibold hover:underline focus:outline-none"
+          >
+            Forgot password?
+          </button>
         </div>
 
-        {/* Submit Action */}
+        {/* Primary CTA Button */}
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full h-10 flex items-center justify-center space-x-2 bg-[#0E1B2A] hover:bg-[#1A2C42] text-white rounded text-xs font-bold uppercase tracking-wider transition-colors disabled:opacity-50 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C6A75E]"
+          className="w-full h-12 flex items-center justify-center space-x-2 bg-[#0E1B2A] hover:bg-[#1C2E42] text-white rounded-lg text-sm font-semibold transition-all duration-150 disabled:opacity-60 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0E1B2A]/20 cursor-pointer"
         >
           {isLoading ? (
-            <span className="font-mono">Authorizing Session...</span>
+            <>
+              <Loader2 className="w-4 h-4 animate-spin text-white" />
+              <span>Signing in...</span>
+            </>
           ) : (
             <>
-              <span>Establish Workstation Session</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span>Sign In</span>
+              <ArrowRight className="w-4 h-4 text-[#C6A75E]" />
             </>
           )}
         </button>
       </form>
 
-      {/* Quick Testing Helper */}
-      <div className="pt-4 border-t border-[#EDF1F5] text-center space-y-1">
-        <p className="text-[11px] text-[#64748B]">
-          Armed forces induction preparation portal. All login sessions are locally verified.
+      {/* Footer Support Notice & Quick Presets */}
+      <div className="pt-5 border-t border-[#E6E8EC] text-center space-y-2">
+        <p className="text-xs text-[#667085]">
+          Need help accessing your account? <span className="text-[#0E1B2A] font-medium cursor-pointer hover:underline" onClick={() => toast.info('Contact system command at support@forcesacademy.edu.pk')}>Contact administrator</span>
         </p>
-        <div className="flex justify-center space-x-3 text-[11px] font-mono text-[#0E1B2A]">
+
+        {/* Development Quick Role Switcher */}
+        <div className="flex justify-center items-center space-x-3 text-[11px] text-[#94A3B8]">
           <button
             type="button"
             onClick={() => handleRoleSelect('STUDENT')}
-            className="hover:underline text-[#455D4A]"
+            className="hover:text-[#0E1B2A] transition-colors"
           >
-            Switch to Candidate View
+            Student Preset
+          </button>
+          <span>•</span>
+          <button
+            type="button"
+            onClick={() => handleRoleSelect('TEACHER')}
+            className="hover:text-[#0E1B2A] transition-colors"
+          >
+            Teacher Preset
           </button>
           <span>•</span>
           <button
             type="button"
             onClick={() => handleRoleSelect('ADMIN')}
-            className="hover:underline text-[#0E1B2A]"
+            className="hover:text-[#0E1B2A] transition-colors"
           >
-            Switch to Proctor Console
+            Admin Preset
           </button>
         </div>
       </div>

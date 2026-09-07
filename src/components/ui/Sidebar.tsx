@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppLogo } from './AppLogo';
-import { Wifi, BookOpen } from 'lucide-react';
+import { BookOpen, Wifi } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface SidebarNavItem {
@@ -26,18 +26,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside
       className={cn(
-        'w-60 bg-[#0E1B2A] text-white flex flex-col flex-shrink-0 border-r border-[#0E1B2A] select-none z-20',
+        'w-[250px] bg-[#0E1B2A] text-white flex flex-col flex-shrink-0 border-r border-[#0E1B2A] select-none z-20',
         className,
       )}
       {...props}
     >
       {/* Masthead Branding */}
-      <div className="h-16 px-4 flex items-center border-b border-[#1C2E42]">
+      <div className="h-[76px] px-5 flex items-center border-b border-[#1C2E42]">
         <AppLogo size="md" theme="dark" />
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1 px-2.5 py-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-3 py-5 space-y-0.5 overflow-y-auto">
         {items.map((item) => {
           const Icon = item.icon;
           return (
@@ -47,45 +47,59 @@ export const Sidebar: React.FC<SidebarProps> = ({
               onClick={onNavigate}
               className={({ isActive }) =>
                 cn(
-                  'flex items-center justify-between px-3 py-2.5 rounded text-xs font-medium transition-colors focus:outline-none focus:ring-1 focus:ring-[#C6A75E]',
+                  'flex items-center justify-between px-3 py-[11px] rounded-lg text-[13.5px] font-medium transition-colors focus:outline-none focus:ring-1 focus:ring-[#C6A75E] group',
                   isActive
-                    ? 'bg-[#1C2E42] text-white font-semibold border-l-2 border-[#C6A75E]'
-                    : 'text-[#A0AEC0] hover:bg-[#152335] hover:text-white',
+                    ? 'bg-[#1A2E42] text-white font-semibold'
+                    : 'text-[#94A3B8] hover:bg-[#152335] hover:text-[#E2E8F0]',
                 )
               }
             >
-              <div className="flex items-center space-x-3 truncate">
-                <Icon className="w-[18px] h-[18px] flex-shrink-0 stroke-[1.75]" />
-                <span className="truncate">{item.label}</span>
-              </div>
-              {item.badge !== undefined && (
-                <span className="px-1.5 py-0.5 rounded-xs text-[10px] font-mono bg-[#1C2E42] text-[#C6A75E] border border-[#2E425A]">
-                  {item.badge}
-                </span>
+              {({ isActive }) => (
+                <>
+                  <div className="flex items-center space-x-3 truncate">
+                    <div className="relative flex-shrink-0">
+                      {isActive && (
+                        <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-[#C6A75E] rounded-r-full" />
+                      )}
+                      <Icon
+                        className={cn(
+                          'w-[18px] h-[18px] stroke-[1.75]',
+                          isActive ? 'text-white' : 'text-[#64748B] group-hover:text-[#94A3B8]',
+                        )}
+                      />
+                    </div>
+                    <span className="truncate">{item.label}</span>
+                  </div>
+                  {item.badge !== undefined && (
+                    <span className="px-1.5 py-0.5 rounded text-[11px] font-sans tabular-nums bg-[#1C2E42] text-[#C6A75E] border border-[#2E425A] flex-shrink-0">
+                      {item.badge}
+                    </span>
+                  )}
+                </>
               )}
             </NavLink>
           );
         })}
 
-        <div className="pt-3 border-t border-[#1C2E42] mt-3">
+        <div className="pt-4 border-t border-[#1C2E42] mt-4">
           <NavLink
             to="/exam/instructions"
             onClick={onNavigate}
-            className="flex items-center space-x-3 px-3 py-2.5 rounded text-xs font-medium text-[#C6A75E] bg-[#C6A75E]/10 hover:bg-[#C6A75E]/20 transition-colors"
+            className="flex items-center space-x-3 px-3 py-[11px] rounded-lg text-[13.5px] font-medium text-[#C6A75E] bg-[#C6A75E]/10 hover:bg-[#C6A75E]/20 transition-colors"
           >
             <BookOpen className="w-[18px] h-[18px] flex-shrink-0 stroke-[2]" />
-            <span className="truncate font-semibold">Candidate Exam Room</span>
+            <span className="truncate font-semibold">Exam Portal</span>
           </NavLink>
         </div>
       </nav>
 
-      {/* Air-Gapped Local LAN Heartbeat Status */}
-      <div className="p-3 bg-[#09121D] border-t border-[#1C2E42] flex items-center justify-between text-[11px] text-[#A0AEC0]">
-        <div className="flex items-center space-x-2 font-mono">
-          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span>LAN AIR-GAP : SECURE</span>
+      {/* System Status */}
+      <div className="px-4 py-3 bg-[#09121D] border-t border-[#1C2E42] flex items-center justify-between text-[12px] text-[#64748B]">
+        <div className="flex items-center space-x-2">
+          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+          <span>System Online</span>
         </div>
-        <Wifi className="w-3.5 h-3.5 text-emerald-500" />
+        <Wifi className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
       </div>
     </aside>
   );

@@ -117,7 +117,7 @@ export const RetakesPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-[#D4D9DF] shadow-sm">
         <div>
-          <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+          <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
             REMEDIATION & RE-TEST AUTHORIZATION CHAMBER
           </span>
           <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
@@ -144,23 +144,23 @@ export const RetakesPage: React.FC = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Total Dockets</span>
-          <div className="text-2xl font-bold font-mono text-[#0E1B2A] mt-1">{totalCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Total Dockets</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{totalCount}</div>
           <span className="text-[10px] text-[#64748B]">Historical Log</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Scheduled Retakes</span>
-          <div className="text-2xl font-bold font-mono text-[#7A5312] mt-1">{scheduledCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Scheduled Retakes</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#7A5312] mt-1">{scheduledCount}</div>
           <span className="text-[10px] text-[#7A5312] font-semibold">Active Tickets</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Pending Approvals</span>
-          <div className="text-2xl font-bold font-mono text-[#0E1B2A] mt-1">{pendingCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Pending Approvals</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{pendingCount}</div>
           <span className="text-[10px] text-[#64748B]">Awaiting Officer Sign-off</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Resolved Retakes</span>
-          <div className="text-2xl font-bold font-mono text-[#234E35] mt-1">{resolvedCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Resolved Retakes</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#234E35] mt-1">{resolvedCount}</div>
           <span className="text-[10px] text-[#234E35] font-semibold">Re-tested & Passed</span>
         </div>
       </div>
@@ -178,7 +178,7 @@ export const RetakesPage: React.FC = () => {
           />
         </div>
 
-        <div className="flex items-center space-x-2 text-xs font-mono w-full md:w-auto">
+        <div className="flex items-center space-x-2 text-xs font-sans w-full md:w-auto">
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
@@ -203,7 +203,7 @@ export const RetakesPage: React.FC = () => {
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[900px] text-xs">
               <thead>
-                <tr className="border-b border-[#D4D9DF] bg-[#F6F8FA] text-[#64748B] uppercase font-mono text-[10px]">
+                <tr className="border-b border-[#D4D9DF] bg-[#F6F8FA] text-[#64748B] uppercase font-sans font-bold text-[10px] tracking-wider">
                   <th className="py-3 px-3">Cadet Name & Roll No</th>
                   <th className="py-3 px-3">Branch</th>
                   <th className="py-3 px-3">Examination Title</th>
@@ -223,8 +223,8 @@ export const RetakesPage: React.FC = () => {
                       <div className="text-[10px] font-mono text-[#64748B]">{r.rollNumber}</div>
                     </td>
 
-                    <td className="py-3 px-3 font-mono text-[11px]">
-                      <span className="bg-[#EDF6F0] text-[#234E35] px-2 py-0.5 rounded border border-[#88BE9B] font-bold">
+                    <td className="py-3 px-3">
+                      <span className="bg-[#EDF6F0] text-[#234E35] px-2 py-0.5 rounded border border-[#88BE9B] font-sans font-bold text-[10px] uppercase">
                         {r.branch.replace('PAKISTAN_', '')}
                       </span>
                     </td>
@@ -237,29 +237,29 @@ export const RetakesPage: React.FC = () => {
                       {r.failedSubject}
                     </td>
 
-                    <td className="py-3 px-3 font-mono font-bold text-[#782525]">
+                    <td className="py-3 px-3 font-sans tabular-nums font-bold text-[#782525]">
                       {r.previousScorePercent}%
                     </td>
 
-                    <td className="py-3 px-3 font-mono text-[#64748B]">
+                    <td className="py-3 px-3 font-sans tabular-nums text-[#64748B]">
                       {r.scheduledDate}
                     </td>
 
-                    <td className="py-3 px-3 text-[11px] font-mono text-[#0E1B2A]">
+                    <td className="py-3 px-3 text-[11px] font-sans text-[#0E1B2A]">
                       {r.authorizedOfficer}
                     </td>
 
                     <td className="py-3 px-3">
                       {r.status === 'SCHEDULED' ? (
-                        <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#7A5312] bg-[#FDF7EC] px-2 py-0.5 rounded border border-[#DEC088]">
+                        <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#7A5312] bg-[#FDF7EC] px-2 py-0.5 rounded border border-[#DEC088]">
                           <Calendar className="w-3 h-3" /> SCHEDULED
                         </span>
                       ) : r.status === 'RESOLVED' ? (
-                        <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
+                        <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
                           <CheckCircle2 className="w-3 h-3" /> RESOLVED
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#64748B] bg-[#EDF1F5] px-2 py-0.5 rounded border border-[#D4D9DF]">
+                        <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#64748B] bg-[#EDF1F5] px-2 py-0.5 rounded border border-[#D4D9DF]">
                           {r.status}
                         </span>
                       )}
@@ -280,7 +280,7 @@ export const RetakesPage: React.FC = () => {
                           setAuthorizedOfficer(r.authorizedOfficer);
                           setShowAuthModal(true);
                         }}
-                        className="px-2.5 py-1 bg-[#0E1B2A] text-white text-xs font-bold font-mono rounded uppercase hover:bg-[#1A2C42]"
+                        className="px-2.5 py-1 bg-[#0E1B2A] text-white text-xs font-bold font-sans rounded uppercase tracking-wider hover:bg-[#1A2C42]"
                       >
                         Manage Docket
                       </button>
@@ -316,7 +316,7 @@ export const RetakesPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-3 text-xs font-mono">
+            <div className="space-y-3 text-xs font-sans">
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block font-semibold text-[#0E1B2A] mb-1">Cadet Full Name</label>
@@ -333,7 +333,7 @@ export const RetakesPage: React.FC = () => {
                     type="text"
                     value={rollNumber}
                     onChange={(e) => setRollNumber(e.target.value)}
-                    className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-bold"
+                    className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-mono font-bold"
                   />
                 </div>
               </div>
@@ -400,7 +400,7 @@ export const RetakesPage: React.FC = () => {
               </button>
               <button
                 type="submit"
-                className="px-5 py-2 bg-[#0E1B2A] text-white text-xs font-bold font-mono uppercase rounded hover:bg-[#1A2C42]"
+                className="px-5 py-2 bg-[#0E1B2A] text-white text-xs font-bold font-sans uppercase tracking-wider rounded hover:bg-[#1A2C42]"
               >
                 Authorize Retake Docket
               </button>

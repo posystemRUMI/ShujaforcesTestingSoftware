@@ -35,17 +35,17 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border rounded p-4 shadow-sm select-none transition-colors',
-        highlight ? 'border-[#0E1B2A] ring-1 ring-[#0E1B2A]/10' : 'border-[#D4D9DF]',
+        'bg-white border rounded-lg p-5 sm:p-6 shadow-[0_1px_4px_rgba(0,0,0,0.06)] select-none transition-colors',
+        highlight ? 'border-[#0E1B2A] ring-1 ring-[#0E1B2A]/10' : 'border-[#E2E6EB]',
         className,
       )}
       {...props}
     >
-      <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#64748B]">
+      <div className="flex items-center justify-between text-[13px] font-semibold text-[#64748B]">
         <span>{title}</span>
         <div className="flex items-center space-x-1.5">
           {badge && (
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#EDF1F5] text-[#0E1B2A] font-semibold">
+            <span className="text-[11px] font-sans tabular-nums px-2 py-0.5 rounded-md bg-[#EDF1F5] text-[#0E1B2A] font-semibold">
               {badge.text}
             </span>
           )}
@@ -54,23 +54,23 @@ export const MetricCard: React.FC<MetricCardProps> = ({
               {React.isValidElement(icon)
                 ? icon
                 : typeof icon === 'function' || (typeof icon === 'object' && icon !== null)
-                ? React.createElement(icon as React.ComponentType<{ className?: string }>, { className: 'w-4 h-4' })
+                ? React.createElement(icon as React.ComponentType<{ className?: string }>, { className: 'w-5 h-5' })
                 : null}
             </div>
           )}
         </div>
       </div>
 
-      <div className="mt-2 text-2xl font-bold font-display tabular-nums text-[#0E1B2A]">
+      <div className="mt-3 text-[34px] font-bold font-display tabular-nums text-[#0E1B2A] leading-none">
         {value}
       </div>
 
       {(displaySubtext || trend) && (
-        <div className="mt-2 text-[11px] flex items-center space-x-1.5 leading-tight">
+        <div className="mt-2.5 text-[13px] flex items-center space-x-1.5 leading-tight">
           {trend && (
             <span
               className={cn(
-                'inline-flex items-center space-x-0.5 font-semibold font-mono',
+                'inline-flex items-center space-x-0.5 font-semibold font-sans tabular-nums',
                 trend.direction === 'up'
                   ? 'text-[#234E35]'
                   : trend.direction === 'down'
@@ -79,11 +79,11 @@ export const MetricCard: React.FC<MetricCardProps> = ({
               )}
             >
               {trend.direction === 'up' ? (
-                <TrendingUp className="w-3 h-3" />
+                <TrendingUp className="w-3.5 h-3.5" />
               ) : trend.direction === 'down' ? (
-                <TrendingDown className="w-3 h-3" />
+                <TrendingDown className="w-3.5 h-3.5" />
               ) : (
-                <Minus className="w-3 h-3" />
+                <Minus className="w-3.5 h-3.5" />
               )}
               <span>{trend.value}</span>
             </span>

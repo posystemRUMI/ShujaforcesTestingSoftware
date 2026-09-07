@@ -108,9 +108,9 @@ const config: Config = {
         xl: '8px',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
+        sans: ['Geist Sans', 'Geist', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Geist Sans', 'Geist', 'system-ui', 'sans-serif'],
+        mono: ['Geist Mono', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
         'military-card': '0 1px 3px 0 rgba(14, 27, 42, 0.05)',

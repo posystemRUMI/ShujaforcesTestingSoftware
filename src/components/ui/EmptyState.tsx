@@ -20,12 +20,12 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border border-[#D4D9DF] rounded p-12 text-center flex flex-col items-center justify-center select-none shadow-sm',
+        'bg-white border border-[#E2E6EB] rounded-lg p-12 text-center flex flex-col items-center justify-center select-none shadow-[0_1px_4px_rgba(0,0,0,0.06)]',
         className,
       )}
       {...props}
     >
-      <div className="w-12 h-12 rounded bg-[#EDF1F5] flex items-center justify-center text-[#0E1B2A] mb-3">
+      <div className="w-14 h-14 rounded-xl bg-[#F4F6F9] flex items-center justify-center text-[#374151] mb-4">
         {icon ? (
           React.isValidElement(icon)
             ? icon
@@ -36,10 +36,10 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
           <FileQuestion className="w-6 h-6 stroke-[1.75]" />
         )}
       </div>
-      <h3 className="text-sm font-bold uppercase tracking-wider text-[#0E1B2A] font-display">
+      <h3 className="text-base font-semibold text-[#0E1B2A] font-display">
         {title}
       </h3>
-      <p className="text-xs text-[#64748B] max-w-sm mt-1 mb-5 leading-relaxed font-sans">
+      <p className="text-sm text-[#64748B] max-w-sm mt-1.5 mb-6 leading-relaxed font-sans">
         {description}
       </p>
       {action && (
@@ -50,7 +50,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
             <button
               type="button"
               onClick={(action as { label: string; onClick: () => void }).onClick}
-              className="px-3.5 py-1.5 rounded text-xs font-semibold bg-[#0E1B2A] text-white hover:bg-[#1A2C42] transition-colors"
+              className="px-4 py-2.5 rounded-lg text-sm font-semibold bg-[#0E1B2A] text-white hover:bg-[#1A2C42] transition-colors"
             >
               {(action as { label: string; onClick: () => void }).label}
             </button>

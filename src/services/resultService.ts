@@ -22,7 +22,6 @@ export interface ResultRecord {
   percentage: number;
   passed: boolean;
   section_results: Json;
-  stanine: number | null;
   time_spent_seconds: number | null;
   generated_at: string;
 }
@@ -70,11 +69,59 @@ export interface ResultDetailResponse {
 export const resultService = {
   async getResults(filters?: { studentId?: string; testId?: string }) {
     if (!isSupabaseConfigured()) return [];
-    let query = supabase.from('test_results').select('*').order('generated_at', { ascending: false });
-    if (filters?.studentId) query = query.eq('student_id', filters.studentId);
+    let query = (supabase as any)
+      .from('test_results')
+      .select(`
+        *,
+        students (
+          id,
+          roll_number,
+          profile_id,
+          profiles (
+            display_name
+          )
+        ),
+        tests (
+          id,
+          name,
+          forces (
+            name,
+            code
+          )
+        )
+      `)
+      .order('generated_at', { ascending: false });
+
+    let targetStudentId = filters?.studentId;
+    if (targetStudentId) {
+      try {
+        const { data: std } = await (supabase as any)
+          .from('students')
+          .select('id')
+          .or(`id.eq.${targetStudentId},profile_id.eq.${targetStudentId}`)
+          .maybeSingle();
+        if (std?.id) {
+          targetStudentId = std.id;
+        }
+      } catch {
+        // Fallback: use targetStudentId as-is
+      }
+      query = query.eq('student_id', targetStudentId);
+    }
+
     if (filters?.testId) query = query.eq('test_id', filters.testId);
     const { data, error } = await query;
-    if (error) throw error;
+    if (error) {
+      console.warn('Falling back to basic test_results query:', error);
+      let fallbackQuery = (supabase as any)
+        .from('test_results')
+        .select('*')
+        .order('generated_at', { ascending: false });
+      if (targetStudentId) fallbackQuery = fallbackQuery.eq('student_id', targetStudentId);
+      if (filters?.testId) fallbackQuery = fallbackQuery.eq('test_id', filters.testId);
+      const { data: fallbackData } = await fallbackQuery;
+      return (fallbackData || []) as ResultRecord[];
+    }
     return (data || []) as ResultRecord[];
   },
 

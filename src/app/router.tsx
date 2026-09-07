@@ -1,7 +1,9 @@
 import React, { Suspense, lazy } from 'react';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter, Navigate, useLocation } from 'react-router-dom';
 import { AdminShell, ExamShell, StudentShell, AuthShell } from '@/components/layout';
 import { RefreshCw } from 'lucide-react';
+import { useAuth } from '@/app/providers';
+import { UserRole } from '@/types';
 
 // Lazy-loaded Feature Modules
 const LoginPage = lazy(() => import('@/features/auth/LoginPage'));
@@ -32,20 +34,48 @@ const StudentDashboardPage = lazy(() => import('@/features/student-portal/Studen
 const StudentTestsPage = lazy(() => import('@/features/student-portal/StudentTestsPage'));
 const StudentResultsPage = lazy(() => import('@/features/student-portal/StudentResultsPage'));
 const StudentProfilePage = lazy(() => import('@/features/student-portal/StudentProfilePage'));
+const ExamFamiliarizationPage = lazy(() => import('@/features/exam-engine/ExamFamiliarizationPage'));
 const ExamInstructionsPage = lazy(() => import('@/features/exam-engine/ExamInstructionsPage'));
 const ExamRunnerPage = lazy(() => import('@/features/exam-engine/ExamRunnerPage'));
 const ExamFinishPage = lazy(() => import('@/features/exam-engine/ExamFinishPage'));
+const TestPatternsPage = lazy(() => import('@/features/configuration/TestPatternsPage'));
+const StudentLeaderboardPage = lazy(() => import('@/features/leaderboard/StudentLeaderboardPage'));
+const TeacherLeaderboardPage = lazy(() => import('@/features/leaderboard/TeacherLeaderboardPage'));
+const FinancePage = lazy(() => import('@/features/finance/FinancePage'));
 const NotFoundPage = lazy(() => import('@/features/not-found/NotFoundPage'));
 
 // Sober Institutional Loading Fallback
 const PageLoadingFallback: React.FC = () => (
   <div className="flex-1 min-h-[50vh] flex flex-col items-center justify-center space-y-3">
     <RefreshCw className="w-6 h-6 text-[#0E1B2A] animate-spin" />
-    <span className="text-xs font-mono font-medium text-[#64748B] uppercase tracking-wider">
+    <span className="text-xs font-sans font-medium text-[#64748B] uppercase tracking-wider">
       Initializing Module...
     </span>
   </div>
 );
+
+// Declarative Role & Auth Protection Guard
+const RequireRole: React.FC<{ allowedRoles: UserRole[]; children: React.ReactNode }> = ({ allowedRoles, children }) => {
+  const { user, role, loading } = useAuth();
+  const location = useLocation();
+
+  if (loading) {
+    return <PageLoadingFallback />;
+  }
+
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  if (!allowedRoles.includes(role)) {
+    if (role === 'STUDENT') {
+      return <Navigate to="/student/dashboard" replace />;
+    }
+    return <Navigate to="/admin/dashboard" replace />;
+  }
+
+  return <>{children}</>;
+};
 
 export const router = createBrowserRouter([
   // Root Redirect
@@ -72,7 +102,11 @@ export const router = createBrowserRouter([
   // Admin / Faculty Command Center Routes
   {
     path: '/admin',
-    element: <AdminShell />,
+    element: (
+      <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
+        <AdminShell />
+      </RequireRole>
+    ),
     children: [
       {
         index: true,
@@ -213,17 +247,31 @@ export const router = createBrowserRouter([
       {
         path: 'tests/:id',
         element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <TestBuilderPage />
-          </Suspense>
+          <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
+            <Suspense fallback={<PageLoadingFallback />}>
+              <TestBuilderPage />
+            </Suspense>
+          </RequireRole>
         ),
       },
       {
         path: 'test-builder',
         element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <TestBuilderPage />
-          </Suspense>
+          <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
+            <Suspense fallback={<PageLoadingFallback />}>
+              <TestBuilderPage />
+            </Suspense>
+          </RequireRole>
+        ),
+      },
+      {
+        path: 'test-patterns',
+        element: (
+          <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
+            <Suspense fallback={<PageLoadingFallback />}>
+              <TestPatternsPage />
+            </Suspense>
+          </RequireRole>
         ),
       },
       {
@@ -243,6 +291,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: 'leaderboard',
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <TeacherLeaderboardPage />
+          </Suspense>
+        ),
+      },
+      {
         path: 'retakes',
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
@@ -256,6 +312,16 @@ export const router = createBrowserRouter([
           <Suspense fallback={<PageLoadingFallback />}>
             <ReportsPage />
           </Suspense>
+        ),
+      },
+      {
+        path: 'finance',
+        element: (
+          <RequireRole allowedRoles={['ADMIN']}>
+            <Suspense fallback={<PageLoadingFallback />}>
+              <FinancePage />
+            </Suspense>
+          </RequireRole>
         ),
       },
       {
@@ -304,7 +370,11 @@ export const router = createBrowserRouter([
   // Cadet / Student Practice Portal (Strict Isolation)
   {
     path: '/student',
-    element: <StudentShell />,
+    element: (
+      <RequireRole allowedRoles={['STUDENT']}>
+        <StudentShell />
+      </RequireRole>
+    ),
     children: [
       {
         index: true,
@@ -339,10 +409,26 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: 'leaderboard',
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <StudentLeaderboardPage />
+          </Suspense>
+        ),
+      },
+      {
         path: 'profile',
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <StudentProfilePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'test/:id/familiarization',
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <ExamFamiliarizationPage />
           </Suspense>
         ),
       },
@@ -368,8 +454,20 @@ export const router = createBrowserRouter([
   // Distraction-Free Air-Gapped CBT Examination Room
   {
     path: '/exam',
-    element: <ExamShell />,
+    element: (
+      <RequireRole allowedRoles={['STUDENT']}>
+        <ExamShell />
+      </RequireRole>
+    ),
     children: [
+      {
+        path: 'familiarization',
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <ExamFamiliarizationPage />
+          </Suspense>
+        ),
+      },
       {
         path: 'instructions',
         element: (

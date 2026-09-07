@@ -29,7 +29,7 @@ export const batchService = {
       `)
       .order('start_date', { ascending: false });
 
-    if (error || !data) {
+    if (error || !data || data.length === 0) {
       console.warn('Falling back to local batch store due to Supabase error:', error);
       return batchStore.getBatches();
     }

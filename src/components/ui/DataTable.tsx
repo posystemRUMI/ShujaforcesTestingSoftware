@@ -49,21 +49,21 @@ export function DataTable<T>({
   return (
     <div
       className={cn(
-        'bg-white border border-[#D4D9DF] rounded overflow-hidden shadow-sm select-none',
+        'bg-white border border-[#E2E6EB] rounded-lg overflow-hidden shadow-[0_1px_4px_rgba(0,0,0,0.06)] select-none',
         className,
       )}
       {...props}
     >
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs">
-          <thead className="bg-[#EDF1F5] text-[#0E1B2A] uppercase font-bold tracking-wider text-[11px] border-b border-[#D4D9DF] sticky top-0 z-10">
+        <table className="w-full text-left text-[13px]">
+          <thead className="bg-[#F4F6F9] text-[#374151] font-semibold text-[12px] border-b border-[#E2E6EB] sticky top-0 z-10">
             <tr>
               {columns.map((col, idx) => (
                 <th
                   key={idx}
                   style={{ width: col.width }}
                   className={cn(
-                    'py-3 px-4 font-display',
+                    'py-3.5 px-4 font-display',
                     col.align === 'right'
                       ? 'text-right'
                       : col.align === 'center'
@@ -77,7 +77,7 @@ export function DataTable<T>({
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#E2E6EB] bg-white">
+          <tbody className="divide-y divide-[#F1F5F9] bg-white">
             {data.length > 0 ? (
               data.map((item, rowIdx) => (
                 <tr
@@ -88,7 +88,7 @@ export function DataTable<T>({
                     <td
                       key={colIdx}
                       className={cn(
-                        'py-3 px-4',
+                        'py-3.5 px-4',
                         col.align === 'right'
                           ? 'text-right'
                           : col.align === 'center'
@@ -108,7 +108,7 @@ export function DataTable<T>({
               ))
             ) : (
               <tr>
-                <td colSpan={columns.length} className="p-8">
+                <td colSpan={columns.length} className="p-10">
                   <EmptyState title={emptyTitle} description={emptyDescription} />
                 </td>
               </tr>

@@ -160,7 +160,7 @@ export const LiveProctorPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-[#D4D9DF] shadow-sm">
         <div>
-          <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider flex items-center gap-1.5">
+          <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider flex items-center gap-1.5">
             <Radio className="w-3.5 h-3.5 text-[#234E35] animate-pulse" />
             <span>REALTIME EXAMINATION PROCTORING CONSOLE</span>
           </span>
@@ -187,23 +187,23 @@ export const LiveProctorPage: React.FC = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Total Terminals</span>
-          <div className="text-2xl font-bold font-mono text-[#0E1B2A] mt-1">{totalCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Total Terminals</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{totalCount}</div>
           <span className="text-[10px] text-[#64748B]">LAN Station Nodes</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Active Testing</span>
-          <div className="text-2xl font-bold font-mono text-[#234E35] mt-1">{activeCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Active Testing</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#234E35] mt-1">{activeCount}</div>
           <span className="text-[10px] text-[#234E35] font-semibold">Live Candidates</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Anomalies / Paused</span>
-          <div className="text-2xl font-bold font-mono text-[#782525] mt-1">{anomalyCount}</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Anomalies / Paused</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#782525] mt-1">{anomalyCount}</div>
           <span className="text-[10px] text-[#782525] font-semibold">Attention Required</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Station Latency</span>
-          <div className="text-2xl font-bold font-mono text-[#0E1B2A] mt-1">16 ms</div>
+          <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#64748B]">Station Latency</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">16 ms</div>
           <span className="text-[10px] text-[#234E35]">Optimal Network Sync</span>
         </div>
       </div>
@@ -221,7 +221,7 @@ export const LiveProctorPage: React.FC = () => {
           />
         </div>
 
-        <div className="flex items-center space-x-2 text-xs font-mono w-full md:w-auto">
+        <div className="flex items-center space-x-2 text-xs font-sans w-full md:w-auto">
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
@@ -267,15 +267,15 @@ export const LiveProctorPage: React.FC = () => {
                   </div>
 
                   {isAnomaly ? (
-                    <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#782525] bg-[#FDF2F2] px-2 py-0.5 rounded border border-[#E29A9A] animate-pulse">
+                    <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#782525] bg-[#FDF2F2] px-2 py-0.5 rounded border border-[#E29A9A] animate-pulse">
                       <AlertTriangle className="w-3 h-3" /> ANOMALY
                     </span>
                   ) : isExam ? (
-                    <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
+                    <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
                       <Activity className="w-3 h-3" /> ACTIVE EXAM
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#64748B] bg-[#EDF1F5] px-2 py-0.5 rounded border border-[#D4D9DF]">
+                    <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#64748B] bg-[#EDF1F5] px-2 py-0.5 rounded border border-[#D4D9DF]">
                       ONLINE STANDBY
                     </span>
                   )}
@@ -289,18 +289,18 @@ export const LiveProctorPage: React.FC = () => {
                         <div className="font-bold text-[#0E1B2A]">{term.currentCadet.name}</div>
                         <div className="text-[10px] font-mono text-[#64748B]">{term.currentCadet.rollNumber}</div>
                       </div>
-                      <span className="text-[10px] font-mono font-bold bg-[#F6F8FA] px-2 py-0.5 rounded border text-[#0E1B2A]">
+                      <span className="text-[10px] font-sans font-bold bg-[#F6F8FA] px-2 py-0.5 rounded border text-[#0E1B2A]">
                         {term.currentCadet.branch.replace('_', ' ')}
                       </span>
                     </div>
 
-                    <p className="text-[11px] font-mono text-[#64748B] truncate" title={term.testTitle || ''}>
+                    <p className="text-[11px] font-sans text-[#64748B] truncate" title={term.testTitle || ''}>
                       {term.testTitle}
                     </p>
 
                     {/* Progress Bar */}
                     <div className="space-y-1 bg-[#F6F8FA] p-2 rounded border border-[#E2E6EB]">
-                      <div className="flex justify-between text-[10px] font-mono">
+                      <div className="flex justify-between text-[10px] font-sans tabular-nums">
                         <span>Pacing: Q {term.currentQuestion}/{term.totalQuestions}</span>
                         <span className="font-bold text-[#0E1B2A]">
                           {Math.round((term.answeredCount / term.totalQuestions) * 100)}%
@@ -315,13 +315,13 @@ export const LiveProctorPage: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="py-4 text-center text-xs text-[#64748B] font-mono">
+                  <div className="py-4 text-center text-xs text-[#64748B] font-sans">
                     Station unassigned. Ready for candidate login.
                   </div>
                 )}
 
                 {/* Actions Footer */}
-                <div className="border-t border-[#E2E6EB] pt-3 flex items-center justify-between gap-2 text-xs font-mono">
+                <div className="border-t border-[#E2E6EB] pt-3 flex items-center justify-between gap-2 text-xs font-sans">
                   <button
                     type="button"
                     onClick={() => setSelectedTerminal(term)}
@@ -360,11 +360,11 @@ export const LiveProctorPage: React.FC = () => {
           <div className="bg-white border-2 border-[#0E1B2A] rounded-md p-6 max-w-xl w-full shadow-2xl space-y-5">
             <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3">
               <div>
-                <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+                <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
                   TELEMETRY INSPECTION DRAWER
                 </span>
                 <h3 className="text-lg font-bold text-[#0E1B2A]">
-                  Workstation Ref: {selectedTerminal.terminalCode}
+                  Workstation Ref: <span className="font-mono">{selectedTerminal.terminalCode}</span>
                 </h3>
               </div>
               <button
@@ -376,15 +376,15 @@ export const LiveProctorPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-3 text-xs font-mono bg-[#F6F8FA] p-4 rounded border border-[#E2E6EB]">
+            <div className="space-y-3 text-xs font-sans bg-[#F6F8FA] p-4 rounded border border-[#E2E6EB]">
               <div className="flex justify-between">
                 <span className="text-[#64748B]">Terminal IP Address:</span>
-                <span className="font-bold text-[#0E1B2A]">{selectedTerminal.ipAddress}</span>
+                <span className="font-bold font-mono text-[#0E1B2A]">{selectedTerminal.ipAddress}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-[#64748B]">Active Cadet:</span>
                 <span className="font-bold text-[#0E1B2A]">
-                  {selectedTerminal.currentCadet?.name || 'None'} ({selectedTerminal.currentCadet?.rollNumber || 'N/A'})
+                  {selectedTerminal.currentCadet?.name || 'None'} (<span className="font-mono">{selectedTerminal.currentCadet?.rollNumber || 'N/A'}</span>)
                 </span>
               </div>
               <div className="flex justify-between">
@@ -393,7 +393,7 @@ export const LiveProctorPage: React.FC = () => {
               </div>
               <div className="flex justify-between">
                 <span className="text-[#64748B]">Network Latency:</span>
-                <span className="font-bold text-[#234E35]">{selectedTerminal.networkLatencyMs} ms</span>
+                <span className="font-bold font-sans tabular-nums text-[#234E35]">{selectedTerminal.networkLatencyMs} ms</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-[#64748B]">Lock State:</span>
@@ -407,14 +407,14 @@ export const LiveProctorPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setConfirmAction({ type: 'FORCE_SUBMIT', terminal: selectedTerminal })}
-                className="px-3 py-2 bg-[#782525] text-white rounded text-xs font-bold font-mono uppercase hover:bg-[#8F2E2E]"
+                className="px-3 py-2 bg-[#782525] text-white rounded text-xs font-bold uppercase hover:bg-[#8F2E2E]"
               >
                 Force Final Submit
               </button>
               <button
                 type="button"
                 onClick={() => setSelectedTerminal(null)}
-                className="px-4 py-2 bg-[#0E1B2A] text-white rounded text-xs font-bold font-mono uppercase"
+                className="px-4 py-2 bg-[#0E1B2A] text-white rounded text-xs font-bold uppercase"
               >
                 Close Telemetry
               </button>
@@ -430,7 +430,7 @@ export const LiveProctorPage: React.FC = () => {
             <div className="flex items-center space-x-3 text-[#782525] border-b border-[#E2E6EB] pb-3">
               <AlertTriangle className="w-6 h-6 text-[#C6A75E]" />
               <div>
-                <span className="text-[10px] font-mono uppercase font-bold text-[#C6A75E]">FACULTY COMMAND CONFIRMATION</span>
+                <span className="text-[10px] font-sans uppercase font-bold text-[#C6A75E] tracking-wider">FACULTY COMMAND CONFIRMATION</span>
                 <h3 className="text-base font-bold text-[#0E1B2A]">
                   Execute {confirmAction.type.replace('_', ' ')}?
                 </h3>

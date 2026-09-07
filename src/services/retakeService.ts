@@ -22,7 +22,20 @@ export const retakeService = {
   async getRetakePermissions(filters?: { studentId?: string; testId?: string; status?: string }) {
     if (!isSupabaseConfigured()) return [];
     let query = supabase.from('retake_permissions').select('*').order('approved_at', { ascending: false });
-    if (filters?.studentId) query = query.eq('student_id', filters.studentId);
+    if (filters?.studentId) {
+      let targetStudentId = filters.studentId;
+      try {
+        const { data: std } = await (supabase as any)
+          .from('students')
+          .select('id')
+          .or(`id.eq.${targetStudentId},profile_id.eq.${targetStudentId}`)
+          .maybeSingle();
+        if (std?.id) targetStudentId = std.id;
+      } catch {
+        // use targetStudentId as-is
+      }
+      query = query.eq('student_id', targetStudentId);
+    }
     if (filters?.testId) query = query.eq('test_id', filters.testId);
     if (filters?.status) query = query.eq('status', filters.status);
     const { data, error } = await query;

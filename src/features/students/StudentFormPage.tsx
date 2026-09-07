@@ -193,7 +193,7 @@ export const StudentFormPage: React.FC = () => {
                     type="text"
                     {...register('phone')}
                     placeholder="0300-1234567"
-                    className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded font-mono text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
+                    className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded font-sans tabular-nums text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                   />
                   {errors.phone && (
                     <p className="text-[11px] text-[#782525] mt-1">{errors.phone.message}</p>
@@ -263,7 +263,7 @@ export const StudentFormPage: React.FC = () => {
               </label>
               <select
                 {...register('batchId')}
-                className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-mono focus:outline-none focus:border-[#0E1B2A]"
+                className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-sans font-medium focus:outline-none focus:border-[#0E1B2A]"
               >
                 <option value="batch-001">154-PMA-LC (Army Long Course)</option>
                 <option value="batch-002">158-GDP-PAF (Air Force Flight)</option>

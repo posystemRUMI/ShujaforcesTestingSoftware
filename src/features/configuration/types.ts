@@ -19,6 +19,7 @@ export interface CourseConfig {
   id: string;
   code: string;
   name: string;
+  forceId?: string;
   branch: MilitaryBranch;
   durationMonths: number;
   minAge: number;
@@ -69,7 +70,7 @@ export interface AcademySettings {
   interfacePreferences: {
     cadetHighContrastMode: boolean;
     compactAdminTables: boolean;
-    stanineDistributionNorm: 'NORMALIZED_BELL' | 'RAW_PERCENTILE';
+    meritDistributionNorm: 'DENSE_RANK' | 'STANDARD_PERCENTILE';
   };
   systemInfo: {
     softwareVersion: string;

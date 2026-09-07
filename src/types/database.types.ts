@@ -780,7 +780,6 @@ export type Database = {
           percentage: number;
           passed: boolean;
           section_results: Json;
-          stanine: number | null;
           time_spent_seconds: number | null;
           generated_at: string;
           created_at: string;
@@ -799,7 +798,6 @@ export type Database = {
           percentage?: number;
           passed?: boolean;
           section_results?: Json;
-          stanine?: number | null;
           time_spent_seconds?: number | null;
           generated_at?: string;
           created_at?: string;
@@ -818,7 +816,6 @@ export type Database = {
           percentage?: number;
           passed?: boolean;
           section_results?: Json;
-          stanine?: number | null;
           time_spent_seconds?: number | null;
           generated_at?: string;
           created_at?: string;
@@ -1132,11 +1129,45 @@ export type Database = {
         };
         Returns: Json;
       };
-      calculate_stanine: {
+      get_test_leaderboard: {
         Args: {
-          p_percentage: number;
+          p_test_id: string;
+          p_limit?: number;
         };
-        Returns: number;
+        Returns: Json;
+      };
+      get_course_leaderboard: {
+        Args: {
+          p_course_id: string;
+          p_batch_id?: string;
+          p_limit?: number;
+          p_min_tests?: number;
+        };
+        Returns: Json;
+      };
+      get_academy_leaderboard: {
+        Args: {
+          p_force_id?: string;
+          p_course_id?: string;
+          p_batch_id?: string;
+          p_limit?: number;
+          p_min_tests?: number;
+        };
+        Returns: Json;
+      };
+      get_student_rank_summary: {
+        Args: {
+          p_student_id?: string;
+        };
+        Returns: Json;
+      };
+      get_rank_neighborhood: {
+        Args: {
+          p_scope?: string;
+          p_scope_id?: string;
+          p_range?: number;
+        };
+        Returns: Json;
       };
       report_batch_performance: {
         Args: {

@@ -156,7 +156,7 @@ export const CoursesPage: React.FC = () => {
     <div className="space-y-6 pb-12 max-w-6xl">
       <PageHeader
         title="COMMISSIONING COURSES"
-        subtitle="Accredited officer induction streams, prerequisite criteria, and minimum stanine benchmarks"
+        subtitle="Accredited officer induction streams, prerequisite criteria, and minimum merit benchmarks"
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Configuration' },
@@ -272,16 +272,16 @@ export const CoursesPage: React.FC = () => {
                   <td className="py-3 px-4">
                     <ForceBadge branch={course.branch} />
                   </td>
-                  <td className="py-3 px-4 font-mono font-medium text-[#0E1B2A]">
+                  <td className="py-3 px-4 font-sans tabular-nums font-medium text-[#0E1B2A]">
                     {course.durationMonths} Mos
                   </td>
-                  <td className="py-3 px-4 font-mono text-[#64748B]">
+                  <td className="py-3 px-4 font-sans tabular-nums text-[#64748B]">
                     {course.minAge}–{course.maxAge} Yrs
                   </td>
                   <td className="py-3 px-4 text-[#334155] max-w-xs">
                     {course.educationRequirement}
                   </td>
-                  <td className="py-3 px-4 font-mono font-bold text-emerald-700">
+                  <td className="py-3 px-4 font-sans tabular-nums font-bold text-emerald-700">
                     {course.passingMarksPercent}%
                   </td>
                   <td className="py-3 px-4">
@@ -399,7 +399,7 @@ export const CoursesPage: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, durationMonths: parseInt(e.target.value) || 24 })
                     }
-                    className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                    className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                   />
                 </div>
 
@@ -415,7 +415,7 @@ export const CoursesPage: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, minAge: parseInt(e.target.value) || 17 })
                     }
-                    className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                    className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                   />
                 </div>
 
@@ -431,7 +431,7 @@ export const CoursesPage: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, maxAge: parseInt(e.target.value) || 22 })
                     }
-                    className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                    className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                   />
                 </div>
               </div>
@@ -463,7 +463,7 @@ export const CoursesPage: React.FC = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, passingMarksPercent: parseInt(e.target.value) || 60 })
                     }
-                    className="w-full text-xs font-mono px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
+                    className="w-full text-xs font-sans tabular-nums px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
                   />
                 </div>
 

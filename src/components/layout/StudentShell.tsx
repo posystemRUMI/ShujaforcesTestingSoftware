@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { Shield, LogOut, ArrowRight, BookOpen, Award, UserCheck, LayoutDashboard } from 'lucide-react';
+import { LogOut, ArrowRight, BookOpen, Award, UserCheck, LayoutDashboard, Trophy } from 'lucide-react';
 import { useAuth } from '@/app/providers';
+import { ShujaForcesLogo } from '@/components/brand/ShujaForcesLogo';
 
 export const StudentShell: React.FC = () => {
   const { user, logout } = useAuth();
@@ -9,86 +10,96 @@ export const StudentShell: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F6F8FA] text-[#1F2937]">
-      {/* Top Header */}
-      <header className="h-16 bg-[#0E1B2A] text-white px-4 md:px-6 flex items-center justify-between border-b border-[#1C2E42] sticky top-0 z-30 shadow-md">
-        <div className="flex items-center space-x-3 md:space-x-4">
-          <div className="w-9 h-9 rounded bg-[#C6A75E] flex items-center justify-center text-[#0E1B2A] font-bold shadow-inner">
-            <Shield className="w-5 h-5" />
-          </div>
-          <div>
-            <h1 className="text-xs md:text-sm font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
-              Cadet Examination Portal
-            </h1>
-            <p className="text-[10px] text-[#A0AEC0] font-mono hidden sm:block">Forces Academy Testing System</p>
-          </div>
+      {/* Top Header (68px Desktop Height) */}
+      <header className="h-[68px] bg-[#0E1B2A] text-white px-5 sm:px-6 lg:px-8 flex items-center justify-between border-b border-[#1C2E42] sticky top-0 z-30 shadow-xs">
+        {/* Brand / Logo Area */}
+        <div className="flex items-center">
+          <ShujaForcesLogo
+            variant="light"
+            size="sm"
+            showLocation={true}
+            compact={true}
+          />
         </div>
 
-        {/* Primary Student Navigation */}
-        <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+        {/* Primary Student Navigation (42px height, 16px padding, 8px gap) */}
+        <nav className="hidden md:flex items-center space-x-2">
           <NavLink
             to="/student"
             end
             className={({ isActive }) =>
-              `text-xs font-semibold px-3 py-2 rounded flex items-center gap-1.5 transition-colors ${
-                isActive ? 'bg-[#1C2E42] text-[#C6A75E]' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
+              `h-[42px] px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 transition-colors ${
+                isActive ? 'bg-[#1C2E42] text-white shadow-xs font-semibold' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
               }`
             }
           >
-            <LayoutDashboard className="w-3.5 h-3.5" />
+            <LayoutDashboard className="w-[17px] h-[17px]" />
             <span>Dashboard</span>
           </NavLink>
 
           <NavLink
             to="/student/tests"
             className={({ isActive }) =>
-              `text-xs font-semibold px-3 py-2 rounded flex items-center gap-1.5 transition-colors ${
-                isActive ? 'bg-[#1C2E42] text-[#C6A75E]' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
+              `h-[42px] px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 transition-colors ${
+                isActive ? 'bg-[#1C2E42] text-white shadow-xs font-semibold' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
               }`
             }
           >
-            <BookOpen className="w-3.5 h-3.5" />
+            <BookOpen className="w-[17px] h-[17px]" />
             <span>Assigned Tests</span>
           </NavLink>
 
           <NavLink
             to="/student/results"
             className={({ isActive }) =>
-              `text-xs font-semibold px-3 py-2 rounded flex items-center gap-1.5 transition-colors ${
-                isActive ? 'bg-[#1C2E42] text-[#C6A75E]' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
+              `h-[42px] px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 transition-colors ${
+                isActive ? 'bg-[#1C2E42] text-white shadow-xs font-semibold' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
               }`
             }
           >
-            <Award className="w-3.5 h-3.5" />
+            <Award className="w-[17px] h-[17px]" />
             <span>My Results</span>
+          </NavLink>
+
+          <NavLink
+            to="/student/leaderboard"
+            className={({ isActive }) =>
+              `h-[42px] px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 transition-colors ${
+                isActive ? 'bg-[#1C2E42] text-white shadow-xs font-semibold' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
+              }`
+            }
+          >
+            <Trophy className="w-[17px] h-[17px]" />
+            <span>Leaderboard</span>
           </NavLink>
 
           <NavLink
             to="/student/profile"
             className={({ isActive }) =>
-              `text-xs font-semibold px-3 py-2 rounded flex items-center gap-1.5 transition-colors ${
-                isActive ? 'bg-[#1C2E42] text-[#C6A75E]' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
+              `h-[42px] px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 transition-colors ${
+                isActive ? 'bg-[#1C2E42] text-white shadow-xs font-semibold' : 'text-[#A0AEC0] hover:text-white hover:bg-[#152335]'
               }`
             }
           >
-            <UserCheck className="w-3.5 h-3.5" />
+            <UserCheck className="w-[17px] h-[17px]" />
             <span>My Profile</span>
           </NavLink>
         </nav>
 
-        {/* User Identity Docket & Direct Exam Action */}
-        <div className="flex items-center space-x-3 md:space-x-4">
+        {/* User Identity & Direct Exam Action */}
+        <div className="flex items-center space-x-3 sm:space-x-4">
           <NavLink
-            to="/student/test/test-pma-initial/instructions"
-            className="flex items-center space-x-1.5 bg-[#C6A75E] text-[#0E1B2A] px-3 py-1.5 rounded text-xs font-bold hover:bg-[#D8BA70] transition-colors shadow-sm"
+            to="/exam/familiarization"
+            className="h-[42px] px-4 sm:px-5 rounded-xl text-[13px] font-semibold bg-[#C6A75E] text-[#0E1B2A] hover:bg-[#D8BA70] transition-colors shadow-xs flex items-center gap-2 shrink-0"
           >
             <span className="hidden sm:inline">Launch Exam</span>
             <span className="sm:hidden">Exam</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </NavLink>
 
-          <div className="text-right hidden sm:block border-l border-[#1C2E42] pl-3">
-            <p className="text-xs font-semibold text-white leading-tight">{user?.name || 'Cadet User'}</p>
-            <p className="text-[10px] text-[#C6A75E] font-mono leading-tight">{user?.rollNumber || 'PMA-2601'}</p>
+          <div className="text-right hidden sm:flex flex-col justify-center min-w-[110px] lg:min-w-[130px] border-l border-[#1C2E42] pl-3.5 pr-1">
+            <p className="text-[13px] font-semibold text-white leading-tight truncate">{user?.name || 'Cadet User'}</p>
+            <p className="text-[11px] text-[#C6A75E] font-mono leading-tight mt-0.5">{user?.rollNumber || 'PMA-2601'}</p>
           </div>
 
           <button
@@ -98,16 +109,16 @@ export const StudentShell: React.FC = () => {
               navigate('/login');
             }}
             title="Log Out"
-            className="text-[#A0AEC0] hover:text-red-400 p-1.5 rounded hover:bg-[#1C2E42] transition-colors"
+            className="w-10 h-10 flex items-center justify-center text-[#A0AEC0] hover:text-red-400 rounded-xl hover:bg-[#1C2E42] transition-colors shrink-0"
             aria-label="Log Out"
           >
-            <LogOut className="w-4 h-4" />
+            <LogOut className="w-[18px] h-[18px]" />
           </button>
         </div>
       </header>
 
       {/* Mobile Sub-Navigation Bar */}
-      <div className="md:hidden bg-[#0E1B2A] border-b border-[#1C2E42] px-4 py-2 flex items-center justify-around text-xs">
+      <div className="md:hidden bg-[#0E1B2A] border-b border-[#1C2E42] px-4 py-2.5 flex items-center justify-around text-xs">
         <NavLink
           to="/student"
           end
@@ -128,6 +139,12 @@ export const StudentShell: React.FC = () => {
           Results
         </NavLink>
         <NavLink
+          to="/student/leaderboard"
+          className={({ isActive }) => (isActive ? 'text-[#C6A75E] font-bold' : 'text-[#A0AEC0]')}
+        >
+          Rankings
+        </NavLink>
+        <NavLink
           to="/student/profile"
           className={({ isActive }) => (isActive ? 'text-[#C6A75E] font-bold' : 'text-[#A0AEC0]')}
         >
@@ -141,8 +158,8 @@ export const StudentShell: React.FC = () => {
       </main>
 
       {/* Sober Institutional Footer */}
-      <footer className="bg-[#0E1B2A] border-t border-[#1C2E42] py-4 px-6 text-center text-[11px] text-[#64748B] font-mono">
-        Forces Academy Computerized Testing System (CBT Engine v2.4) • All Cadet Sessions Encrypted & Audited
+      <footer className="bg-[#0E1B2A] border-t border-[#1C2E42] py-4 px-6 text-center text-xs text-[#64748B] font-sans">
+        Shuja Forces Academy Pindsultani • Computerized Testing & Examination System
       </footer>
     </div>
   );

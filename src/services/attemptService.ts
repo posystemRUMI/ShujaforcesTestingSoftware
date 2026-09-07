@@ -88,7 +88,6 @@ export interface SubmitResult {
   skipped_count: number;
   marks_obtained: number;
   max_marks: number;
-  stanine: number;
   section_results?: Json;
   time_spent_seconds?: number;
 }
@@ -100,10 +99,43 @@ export interface SectionAdvanceResult {
   server_time: string;
 }
 
+export interface FamiliarizationQuestion {
+  id: string;
+  code: string;
+  stem: string;
+  stem_image_url: string | null;
+  explanation: string | null;
+  subject_name: string;
+  options: Array<{
+    id: string;
+    label: string;
+    text: string;
+    image_url: string | null;
+    is_correct: boolean;
+  }>;
+}
+
+export interface FamiliarizationPayload {
+  test_id: string;
+  test_name: string;
+  duration_seconds: number;
+  question_count: number;
+  is_practice_mode: boolean;
+  questions: FamiliarizationQuestion[];
+}
+
 // ============================================================================
 // Service
 // ============================================================================
 export const attemptService = {
+  async getFamiliarizationPayload(testId: string): Promise<FamiliarizationPayload> {
+    const { data, error } = await (supabase as any).rpc('get_familiarization_payload', {
+      p_test_id: testId,
+    });
+    if (error) throw error;
+    return data as unknown as FamiliarizationPayload;
+  },
+
   async startAttempt(testId: string): Promise<StartAttemptResult> {
     const { data, error } = await (supabase as any).rpc('start_test_attempt', {
       p_test_id: testId,
@@ -154,10 +186,24 @@ export const attemptService = {
     return data as string;
   },
 
-  async getStudentAttempts(testId?: string) {
+  async getStudentAttempts(filters?: { studentId?: string; testId?: string }) {
     if (!isSupabaseConfigured()) return [];
     let query = supabase.from('test_attempts').select('*').order('started_at', { ascending: false });
-    if (testId) query = query.eq('test_id', testId);
+    if (filters?.studentId) {
+      let targetStudentId = filters.studentId;
+      try {
+        const { data: std } = await (supabase as any)
+          .from('students')
+          .select('id')
+          .or(`id.eq.${targetStudentId},profile_id.eq.${targetStudentId}`)
+          .maybeSingle();
+        if (std?.id) targetStudentId = std.id;
+      } catch {
+        // use targetStudentId as-is
+      }
+      query = query.eq('student_id', targetStudentId);
+    }
+    if (filters?.testId) query = query.eq('test_id', filters.testId);
     const { data, error } = await query;
     if (error) throw error;
     return data || [];
@@ -176,3 +222,4 @@ export const attemptService = {
 };
 
 export default attemptService;
+

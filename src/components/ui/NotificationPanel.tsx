@@ -89,7 +89,7 @@ export const NotificationPanel: React.FC<NotificationPanelProps> = ({
               <div className="flex-1 space-y-0.5">
                 <div className="font-semibold text-[#0E1B2A] flex justify-between items-center">
                   <span className="truncate pr-1">{n.title}</span>
-                  <span className="text-[10px] font-mono text-[#94A3B8] flex-shrink-0">
+                  <span className="text-[10px] font-sans text-[#94A3B8] flex-shrink-0">
                     {n.timestamp}
                   </span>
                 </div>

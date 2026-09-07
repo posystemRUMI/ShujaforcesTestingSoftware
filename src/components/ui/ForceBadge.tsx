@@ -20,7 +20,7 @@ export const ForceBadge: React.FC<ForceBadgeProps> = ({
   return (
     <span
       className={cn(
-        'inline-flex items-center space-x-1 px-2 py-0.5 rounded-xs text-[11px] font-bold font-mono uppercase tracking-wider text-white select-none',
+        'inline-flex items-center space-x-1 px-2 py-0.5 rounded-xs text-[11px] font-bold font-sans uppercase tracking-wider text-white select-none',
         className,
       )}
       style={{ backgroundColor: config.color }}

@@ -43,7 +43,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 <h1 className="text-lg font-bold uppercase tracking-wider text-[#0E1B2A]">
                   Terminal Anomaly / Interface Execution Exception
                 </h1>
-                <p className="text-xs text-[#64748B]">Forces Academy Secure Workstation Recovery Protocol</p>
+                <p className="text-xs text-[#64748B]">Shuja Forces Academy Secure Workstation Recovery Protocol</p>
               </div>
             </div>
 

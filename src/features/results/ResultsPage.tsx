@@ -24,25 +24,29 @@ export const ResultsPage: React.FC = () => {
         if (isSupabaseConfigured()) {
           const dbResults = await resultService.getResults();
           if (dbResults && dbResults.length > 0) {
-            const mapped: ExamResult[] = dbResults.map((r, idx) => ({
-              id: r.id,
-              examSessionId: r.attempt_id,
-              testId: r.test_id,
-              testTitle: '154 PMA Long Course Initial Screening Exam',
-              cadetId: r.student_id,
-              cadetName: 'Cadet Candidate ' + (idx + 1),
-              rollNumber: 'PMA-' + (2600 + idx + 1),
-              branch: 'PAKISTAN_ARMY',
-              totalScore: r.marks_obtained,
-              maxScore: r.max_marks,
-              percentage: r.percentage,
-              passed: r.passed,
-              stanine: r.stanine || 6,
-              completedAt: r.generated_at,
-              timeSpentSeconds: r.time_spent_seconds || 3900,
-              sectionBreakdown: [],
-              verificationHash: 'SHA256:7B9E2D8F0A1C4E5F6B7A8D9C0E1F2A3B',
-            }));
+            const mapped: ExamResult[] = (dbResults as any[]).map((r, idx) => {
+              const student = r.students;
+              const test = r.tests;
+              const force = test?.forces;
+              return {
+                id: r.id,
+                examSessionId: r.attempt_id,
+                testId: r.test_id,
+                testTitle: test?.name || 'Screening Examination',
+                cadetId: r.student_id,
+                cadetName: student?.profiles?.display_name || `Cadet Candidate ${idx + 1}`,
+                rollNumber: student?.roll_number || `PMA-${2600 + idx + 1}`,
+                branch: (force?.code || 'PAKISTAN_ARMY') as any,
+                totalScore: Number(r.marks_obtained),
+                maxScore: Number(r.max_marks),
+                percentage: Number(r.percentage),
+                passed: r.passed,
+                completedAt: r.generated_at,
+                timeSpentSeconds: r.time_spent_seconds || 3600,
+                sectionBreakdown: (r.section_results as any[]) || [],
+                verificationHash: 'SHA256:7B9E2D8F0A1C4E5F6B7A8D9C0E1F2A3B',
+              };
+            });
             setResults(mapped);
             setLoading(false);
             return;
@@ -99,14 +103,14 @@ export const ResultsPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-[#D4D9DF] shadow-sm">
         <div>
-          <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+          <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
             FACULTY ASSESSMENT EVALUATION CONSOLE
           </span>
           <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
             Candidate Results & Transcripts
           </h1>
           <p className="text-xs text-[#64748B]">
-            Institutional score evaluations, Stanine ratings, and cryptographically signed transcripts.
+            Institutional score evaluations, merit rankings, and cryptographically signed transcripts.
           </p>
         </div>
 
@@ -134,24 +138,24 @@ export const ResultsPage: React.FC = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Total Attempts Logged</span>
-          <div className="text-2xl font-bold font-mono text-[#0E1B2A] mt-1">{totalAttempts}</div>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Total Attempts Logged</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{totalAttempts}</div>
           <span className="text-[10px] text-[#64748B]">Evaluated Scripts</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Cohort Average</span>
-          <div className="text-2xl font-bold font-mono text-[#0E1B2A] mt-1">{avgScore}%</div>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Cohort Average</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#0E1B2A] mt-1">{avgScore}%</div>
           <span className="text-[10px] text-[#64748B]">Score Mean</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Qualification Rate</span>
-          <div className="text-2xl font-bold font-mono text-[#234E35] mt-1">{passRate}%</div>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Qualification Rate</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#234E35] mt-1">{passRate}%</div>
           <span className="text-[10px] text-[#234E35] font-semibold">Pass Threshold Cleared</span>
         </div>
         <div className="bg-white border border-[#D4D9DF] p-4 rounded-md shadow-xs">
-          <span className="text-[10px] font-mono font-bold uppercase text-[#64748B]">Highest Score</span>
-          <div className="text-2xl font-bold font-mono text-[#C6A75E] mt-1">{highestScore}%</div>
-          <span className="text-[10px] text-[#64748B]">Stanine 9 Benchmark</span>
+          <span className="text-[10px] font-sans font-bold uppercase text-[#64748B]">Highest Score</span>
+          <div className="text-2xl font-bold font-sans tabular-nums text-[#C6A75E] mt-1">{highestScore}%</div>
+          <span className="text-[10px] text-[#64748B]">Top Academy Benchmark</span>
         </div>
       </div>
 
@@ -168,7 +172,7 @@ export const ResultsPage: React.FC = () => {
           />
         </div>
 
-        <div className="flex items-center space-x-2 text-xs font-mono w-full md:w-auto">
+        <div className="flex items-center space-x-2 text-xs font-sans w-full md:w-auto">
           <select
             value={branchFilter}
             onChange={(e) => setBranchFilter(e.target.value)}
@@ -202,12 +206,12 @@ export const ResultsPage: React.FC = () => {
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[900px] text-xs">
               <thead>
-                <tr className="border-b border-[#D4D9DF] bg-[#F6F8FA] text-[#64748B] uppercase font-mono text-[10px]">
+                <tr className="border-b border-[#D4D9DF] bg-[#F6F8FA] text-[#64748B] uppercase font-sans font-bold text-[10px] tracking-wider">
                   <th className="py-3 px-3">Candidate & Roll No</th>
                   <th className="py-3 px-3">Branch</th>
                   <th className="py-3 px-3">Examination Title</th>
-                  <th className="py-3 px-3">Score & %</th>
-                  <th className="py-3 px-3">Stanine</th>
+                  <th className="py-3 px-3">Score %</th>
+                  <th className="py-3 px-3">Marks</th>
                   <th className="py-3 px-3">Status</th>
                   <th className="py-3 px-3">Submitted</th>
                   <th className="py-3 px-3 text-right">Actions</th>
@@ -221,8 +225,8 @@ export const ResultsPage: React.FC = () => {
                       <div className="text-[10px] font-mono text-[#64748B]">{r.rollNumber}</div>
                     </td>
 
-                    <td className="py-3 px-3 font-mono text-[11px]">
-                      <span className="bg-[#EDF6F0] text-[#234E35] px-2 py-0.5 rounded border border-[#88BE9B] font-bold">
+                    <td className="py-3 px-3">
+                      <span className="bg-[#EDF6F0] text-[#234E35] px-2 py-0.5 rounded border border-[#88BE9B] font-sans font-bold text-[10px] uppercase">
                         {r.branch.replace('PAKISTAN_', '')}
                       </span>
                     </td>
@@ -231,29 +235,27 @@ export const ResultsPage: React.FC = () => {
                       {r.testTitle}
                     </td>
 
-                    <td className="py-3 px-3 font-mono font-bold text-[#0E1B2A]">
-                      {r.totalScore}/{r.maxScore} ({r.percentage}%)
+                    <td className="py-3 px-3 font-sans tabular-nums font-bold text-[#0E1B2A]">
+                      {r.percentage}%
                     </td>
 
-                    <td className="py-3 px-3 font-mono font-bold">
-                      <span className="bg-[#FDF7EC] text-[#7A5312] px-2 py-0.5 rounded border border-[#DEC088]">
-                        Stanine {r.stanine}
-                      </span>
+                    <td className="py-3 px-3 font-sans tabular-nums text-xs text-[#64748B]">
+                      {r.totalScore} / {r.maxScore}
                     </td>
 
                     <td className="py-3 px-3">
                       {r.passed ? (
-                        <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
+                        <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B]">
                           <CheckCircle className="w-3 h-3" /> QUALIFIED
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-[#782525] bg-[#FDF2F2] px-2 py-0.5 rounded border border-[#E29A9A]">
+                        <span className="inline-flex items-center gap-1 font-sans text-[10px] font-bold text-[#782525] bg-[#FDF2F2] px-2 py-0.5 rounded border border-[#E29A9A]">
                           <XCircle className="w-3 h-3 text-red-600" /> UNQUALIFIED
                         </span>
                       )}
                     </td>
 
-                    <td className="py-3 px-3 font-mono text-[#64748B]">
+                    <td className="py-3 px-3 font-sans tabular-nums text-[#64748B]">
                       {new Date(r.completedAt).toLocaleDateString()}
                     </td>
 
@@ -281,11 +283,11 @@ export const ResultsPage: React.FC = () => {
           <div className="bg-white border-2 border-[#0E1B2A] rounded-md p-6 max-w-3xl w-full shadow-2xl space-y-5 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3">
               <div>
-                <span className="text-[10px] font-mono font-bold text-[#C6A75E] uppercase tracking-wider">
+                <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
                   FACULTY SCRIPT & ANSWER KEY INSPECTION
                 </span>
                 <h3 className="text-lg font-bold text-[#0E1B2A]">
-                  Candidate: {selectedResult.cadetName} ({selectedResult.rollNumber})
+                  Candidate: {selectedResult.cadetName} (<span className="font-mono">{selectedResult.rollNumber}</span>)
                 </h3>
               </div>
               <button
@@ -298,23 +300,23 @@ export const ResultsPage: React.FC = () => {
             </div>
 
             {/* Result Metrics Banner */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#F6F8FA] p-4 rounded border font-mono text-xs text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#F6F8FA] p-4 rounded border font-sans tabular-nums text-xs text-center">
               <div>
-                <span className="text-[10px] text-[#64748B] block">FINAL SCORE</span>
+                <span className="text-[10px] text-[#64748B] block font-semibold uppercase">FINAL SCORE</span>
                 <span className="text-lg font-bold text-[#0E1B2A]">{selectedResult.percentage}%</span>
               </div>
               <div>
-                <span className="text-[10px] text-[#64748B] block">STANINE</span>
-                <span className="text-lg font-bold text-[#7A5312]">{selectedResult.stanine}/9</span>
+                <span className="text-[10px] text-[#64748B] block font-semibold uppercase">MARKS OBTAINED</span>
+                <span className="text-lg font-bold text-[#7A5312]">{selectedResult.totalScore}/{selectedResult.maxScore}</span>
               </div>
               <div>
-                <span className="text-[10px] text-[#64748B] block">STATUS</span>
+                <span className="text-[10px] text-[#64748B] block font-semibold uppercase">STATUS</span>
                 <span className={`text-xs font-bold ${selectedResult.passed ? 'text-[#234E35]' : 'text-[#782525]'}`}>
                   {selectedResult.passed ? 'QUALIFIED' : 'UNQUALIFIED'}
                 </span>
               </div>
               <div>
-                <span className="text-[10px] text-[#64748B] block">TIME SPENT</span>
+                <span className="text-[10px] text-[#64748B] block font-semibold uppercase">TIME SPENT</span>
                 <span className="text-xs font-bold text-[#0E1B2A]">
                   {Math.round(selectedResult.timeSpentSeconds / 60)} Mins
                 </span>
@@ -323,8 +325,8 @@ export const ResultsPage: React.FC = () => {
 
             {/* Section Breakdown Cards */}
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold uppercase text-[#0E1B2A] block">Section Performance Breakdown:</span>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+              <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#0E1B2A] block">Section Performance Breakdown:</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-sans tabular-nums">
                 {selectedResult.sectionBreakdown.map((s, idx) => (
                   <div key={idx} className="p-3 bg-[#F8FAFC] border rounded">
                     <span className="font-bold text-[#0E1B2A] block truncate">{s.sectionTitle}</span>

@@ -87,7 +87,7 @@ export const ForcesPage: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex items-center space-x-3">
                   <ForceBadge branch={force.branch} />
-                  <span className="text-xs font-mono text-[#64748B]">{force.inductionCenter}</span>
+                  <span className="text-xs font-sans text-[#64748B]">{force.inductionCenter}</span>
                 </div>
 
                 <h2 className="text-xl font-bold text-[#0E1B2A]">{force.name}</h2>
@@ -119,19 +119,19 @@ export const ForcesPage: React.FC = () => {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-[#E2E8F0]">
               <div className="bg-[#F8FAFC] p-2.5 rounded border border-[#E2E8F0]">
                 <span className="text-[10px] uppercase font-semibold text-[#64748B]">Active Courses</span>
-                <div className="text-base font-bold font-mono text-[#0E1B2A]">{force.coursesCount} Programs</div>
+                <div className="text-base font-bold font-sans tabular-nums text-[#0E1B2A]">{force.coursesCount} Programs</div>
               </div>
               <div className="bg-[#F8FAFC] p-2.5 rounded border border-[#E2E8F0]">
                 <span className="text-[10px] uppercase font-semibold text-[#64748B]">Enrolled Cadets</span>
-                <div className="text-base font-bold font-mono text-emerald-700">{force.enrolledCadetsCount} Candidates</div>
+                <div className="text-base font-bold font-sans tabular-nums text-emerald-700">{force.enrolledCadetsCount} Candidates</div>
               </div>
               <div className="bg-[#F8FAFC] p-2.5 rounded border border-[#E2E8F0]">
                 <span className="text-[10px] uppercase font-semibold text-[#64748B]">Item Bank Items</span>
-                <div className="text-base font-bold font-mono text-[#0E1B2A]">{force.totalQuestionsCount} Items</div>
+                <div className="text-base font-bold font-sans tabular-nums text-[#0E1B2A]">{force.totalQuestionsCount} Items</div>
               </div>
               <div className="bg-[#F8FAFC] p-2.5 rounded border border-[#E2E8F0]">
                 <span className="text-[10px] uppercase font-semibold text-[#64748B]">Active Test Batteries</span>
-                <div className="text-base font-bold font-mono text-[#C6A75E]">{force.activeTestsCount} Live</div>
+                <div className="text-base font-bold font-sans tabular-nums text-[#C6A75E]">{force.activeTestsCount} Live</div>
               </div>
             </div>
           </div>

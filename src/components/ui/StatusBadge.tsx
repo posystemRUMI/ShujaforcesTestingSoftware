@@ -4,7 +4,7 @@ import { CheckCircle2, XCircle, PauseCircle, RotateCcw, Clock, AlertCircle } fro
 import { cn } from '@/lib/utils';
 
 const statusBadgeVariants = cva(
-  'inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-xs text-[11px] font-mono font-semibold uppercase tracking-wider border select-none',
+  'inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-xs text-[11px] font-semibold uppercase tracking-wider border select-none',
   {
     variants: {
       status: {

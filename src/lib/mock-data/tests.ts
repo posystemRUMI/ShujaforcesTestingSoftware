@@ -2,7 +2,7 @@ import { TestBlueprint } from '@/types';
 
 export const mockTests: TestBlueprint[] = [
   {
-    id: 'test-pma-initial',
+    id: '60000000-0000-0000-0000-000000000001',
     code: 'TEST-PMA-154',
     title: '154 PMA Long Course Initial Screening Examination',
     branch: 'PAKISTAN_ARMY',
@@ -39,7 +39,7 @@ export const mockTests: TestBlueprint[] = [
     ],
   },
   {
-    id: 'test-paf-gdp',
+    id: '60000000-0000-0000-0000-000000000002',
     code: 'TEST-PAF-158',
     title: '158 GDP / CAE Aircrew Comprehensive Evaluation',
     branch: 'PAKISTAN_AIR_FORCE',
@@ -76,7 +76,7 @@ export const mockTests: TestBlueprint[] = [
     ],
   },
   {
-    id: 'test-pn-cadet',
+    id: '60000000-0000-0000-0000-000000000003',
     code: 'TEST-PN-2026',
     title: 'Pakistan Navy Officer Cadet Entrance Test 2026-A',
     branch: 'PAKISTAN_NAVY',
