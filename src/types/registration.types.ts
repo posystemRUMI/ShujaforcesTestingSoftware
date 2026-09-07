@@ -41,7 +41,7 @@ export interface BatchOption {
 }
 
 export interface StudentRegistrationInput {
-  // Section 1: Personal Dossier
+  // Section 1: Personal Information
   fullName: string;
   fatherName: string;
   dateOfBirth?: string;
@@ -50,14 +50,14 @@ export interface StudentRegistrationInput {
   phone: string;
   alternatePhone?: string;
 
-  // Section 2: Education & Target Service
-  education?: string;
+  // Section 2: Education & Target
+  education: string;
   educationDetails?: string;
   targetForceId: string;
   targetCourseId: string;
-  batchId?: string;
+  batchId: string;
 
-  // Section 3: Academy Identity & Credentials
+  // Section 3: Login Details
   rollNumber: string;
   email: string;
   password: string;
@@ -69,10 +69,10 @@ export interface StudentRegistrationInput {
   guardianPhone?: string;
   address?: string;
 
-  // Section 5: Biometrics / Photo
+  // Section 5: Student Photo
   photoUrl?: string;
 
-  // Section 6: Admission Info & Notes
+  // Section 6: Admission Details
   admissionDate?: string;
   notes?: string;
 }

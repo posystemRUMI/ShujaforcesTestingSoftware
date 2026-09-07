@@ -1211,6 +1211,53 @@ export type Database = {
         };
         Returns: Json;
       };
+      check_roll_number_exists: {
+        Args: {
+          p_roll_number: string;
+        };
+        Returns: boolean;
+      };
+      check_cnic_exists: {
+        Args: {
+          p_cnic: string;
+        };
+        Returns: boolean;
+      };
+      check_email_exists: {
+        Args: {
+          p_email: string;
+        };
+        Returns: boolean;
+      };
+      create_registered_student_profile: {
+        Args: {
+          p_auth_user_id: string;
+          p_email: string;
+          p_display_name: string;
+          p_father_name: string;
+          p_cnic: string;
+          p_phone: string;
+          p_target_force_id: string;
+          p_target_course_id: string;
+          p_batch_id: string;
+          p_roll_number: string;
+          p_education: string;
+          p_education_details?: string | null;
+          p_gender?: string;
+          p_date_of_birth?: string | null;
+          p_alternate_phone?: string | null;
+          p_address?: string | null;
+          p_guardian_name?: string | null;
+          p_guardian_relationship?: string | null;
+          p_guardian_phone?: string | null;
+          p_admission_date?: string;
+          p_status?: string;
+          p_notes?: string | null;
+          p_photo_url?: string | null;
+          p_creator_id?: string | null;
+        };
+        Returns: Json;
+      };
     };
     Enums: {
       app_role: 'ADMIN' | 'TEACHER' | 'STUDENT';

@@ -26,43 +26,56 @@ import {
   BatchOption,
 } from '@/types/registration.types';
 
-// Strict Zod Validation Schema
-const registrationFormSchema = z.object({
-  fullName: z.string().min(3, 'Candidate full name must be at least 3 characters').max(100),
-  fatherName: z.string().min(3, 'Father name must be at least 3 characters').max(100),
-  dateOfBirth: z.string().optional(),
-  gender: z.enum(['Male', 'Female']),
-  cnic: z
-    .string()
-    .min(13, 'CNIC must be at least 13 digits')
-    .max(15, 'CNIC format invalid')
-    .regex(/^\d{5}-\d{7}-\d{1}$|^\d{13}$/, 'CNIC must be in format XXXXX-XXXXXXX-X'),
-  phone: z
-    .string()
-    .min(10, 'Valid phone number required')
-    .max(16, 'Phone number too long'),
-  alternatePhone: z.string().max(16).optional().or(z.literal('')),
-  education: z.string().optional().or(z.literal('')),
-  educationDetails: z.string().max(250).optional().or(z.literal('')),
-  targetForceId: z.string().min(1, 'Target force branch selection is required'),
-  targetCourseId: z.string().min(1, 'Target course selection is required'),
-  batchId: z.string().optional().or(z.literal('')),
-  rollNumber: z
-    .string()
-    .min(3, 'Roll number must be at least 3 characters')
-    .max(30, 'Roll number too long')
-    .regex(/^[A-Za-z0-9-_]+$/, 'Roll number must contain only letters, numbers, hyphens or underscores'),
-  email: z.string().email('Valid institutional or personal email is required'),
-  password: z.string().min(4, 'Password must be at least 4 characters'),
-  status: z.enum(['ACTIVE', 'INACTIVE', 'SUSPENDED', 'DISQUALIFIED']),
-  guardianName: z.string().max(100).optional().or(z.literal('')),
-  guardianRelationship: z.enum(['Father', 'Mother', 'Brother', 'Uncle', 'Guardian']).optional(),
-  guardianPhone: z.string().max(16).optional().or(z.literal('')),
-  address: z.string().max(250).optional().or(z.literal('')),
-  photoUrl: z.string().optional().or(z.literal('')),
-  admissionDate: z.string().min(1, 'Admission date is required'),
-  notes: z.string().max(500).optional().or(z.literal('')),
-});
+// Strict Zod Validation Schema with Mandatory Education & Batch
+const registrationFormSchema = z
+  .object({
+    fullName: z.string().min(3, 'Full name must be at least 3 characters').max(100),
+    fatherName: z.string().min(3, 'Father name must be at least 3 characters').max(100),
+    dateOfBirth: z.string().optional(),
+    gender: z.enum(['Male', 'Female']),
+    cnic: z
+      .string()
+      .min(13, 'CNIC must be at least 13 digits')
+      .max(15, 'CNIC format invalid')
+      .regex(/^\d{5}-\d{7}-\d{1}$|^\d{13}$/, 'CNIC must be in format XXXXX-XXXXXXX-X'),
+    phone: z
+      .string()
+      .min(10, 'Valid mobile number required')
+      .max(16, 'Phone number too long'),
+    alternatePhone: z.string().max(16).optional().or(z.literal('')),
+    education: z.string().min(1, 'Education qualification is required'),
+    educationDetails: z.string().max(250).optional().or(z.literal('')),
+    targetForceId: z.string().min(1, 'Target force branch selection is required'),
+    targetCourseId: z.string().min(1, 'Target course selection is required'),
+    batchId: z.string().min(1, 'Batch enrollment is required'),
+    rollNumber: z
+      .string()
+      .min(3, 'Roll number must be at least 3 characters')
+      .max(30, 'Roll number too long')
+      .regex(/^[A-Za-z0-9-_]+$/, 'Roll number must contain only letters, numbers, hyphens or underscores'),
+    email: z.string().email('Valid email address is required'),
+    password: z.string().min(4, 'Password must be at least 4 characters'),
+    status: z.enum(['ACTIVE', 'INACTIVE', 'SUSPENDED', 'DISQUALIFIED']),
+    guardianName: z.string().max(100).optional().or(z.literal('')),
+    guardianRelationship: z.enum(['Father', 'Mother', 'Brother', 'Uncle', 'Guardian']).optional(),
+    guardianPhone: z.string().max(16).optional().or(z.literal('')),
+    address: z.string().max(250).optional().or(z.literal('')),
+    photoUrl: z.string().optional().or(z.literal('')),
+    admissionDate: z.string().min(1, 'Admission date is required'),
+    notes: z.string().max(500).optional().or(z.literal('')),
+  })
+  .refine(
+    (data) => {
+      if (data.education === 'Other') {
+        return Boolean(data.educationDetails && data.educationDetails.trim().length > 0);
+      }
+      return true;
+    },
+    {
+      message: 'Education details are required when "Other" is selected',
+      path: ['educationDetails'],
+    }
+  );
 
 type RegistrationFormData = z.infer<typeof registrationFormSchema>;
 
@@ -77,7 +90,7 @@ export const StudentRegistrationPage: React.FC = () => {
   const [loadingCourses, setLoadingCourses] = useState(false);
   const [loadingBatches, setLoadingBatches] = useState(false);
 
-  // Security controls state
+  // Security & preview controls state
   const [showPassword, setShowPassword] = useState(false);
   const [isCheckingRoll, setIsCheckingRoll] = useState(false);
   const [rollAvailable, setRollAvailable] = useState<boolean | null>(null);
@@ -108,7 +121,7 @@ export const StudentRegistrationPage: React.FC = () => {
       batchId: '',
       rollNumber: '',
       email: '',
-      password: '1234',
+      password: '', // HARDENED: Empty by default
       status: 'ACTIVE',
       guardianName: '',
       guardianRelationship: 'Father',
@@ -122,22 +135,26 @@ export const StudentRegistrationPage: React.FC = () => {
 
   const selectedForceId = watch('targetForceId');
   const selectedCourseId = watch('targetCourseId');
+  const selectedEducation = watch('education');
   const watchRollNumber = watch('rollNumber');
 
-  // Load initial forces
+  // Load initial forces directly from DB
   useEffect(() => {
     let isMounted = true;
     async function loadForces() {
       try {
         setLoadingForces(true);
         const data = await studentRegistrationService.getActiveForces();
-        if (isMounted && data.length > 0) {
+        if (isMounted) {
           setForces(data);
-          const army = data.find((f) => f.code === 'PAKISTAN_ARMY') || data[0];
-          setValue('targetForceId', army.id);
+          if (data.length > 0) {
+            setValue('targetForceId', data[0].id);
+          } else {
+            setValue('targetForceId', '');
+          }
         }
-      } catch (err) {
-        console.error('Error loading forces:', err);
+      } catch (err: any) {
+        toast.error(err?.message || 'Failed to load forces.');
       } finally {
         if (isMounted) setLoadingForces(false);
       }
@@ -168,8 +185,8 @@ export const StudentRegistrationPage: React.FC = () => {
             setValue('targetCourseId', '');
           }
         }
-      } catch (err) {
-        console.error('Error loading courses:', err);
+      } catch (err: any) {
+        toast.error(err?.message || 'Failed to load courses.');
       } finally {
         if (isMounted) setLoadingCourses(false);
       }
@@ -200,8 +217,8 @@ export const StudentRegistrationPage: React.FC = () => {
             setValue('batchId', '');
           }
         }
-      } catch (err) {
-        console.error('Error loading batches:', err);
+      } catch (err: any) {
+        toast.error(err?.message || 'Failed to load batches.');
       } finally {
         if (isMounted) setLoadingBatches(false);
       }
@@ -265,14 +282,14 @@ export const StudentRegistrationPage: React.FC = () => {
     try {
       const exists = await studentRegistrationService.checkRollNumberExists(watchRollNumber);
       setRollAvailable(!exists);
-    } catch (err) {
+    } catch {
       setRollAvailable(null);
     } finally {
       setIsCheckingRoll(false);
     }
   };
 
-  // Photo Upload Handler
+  // Private Photo Upload Handler
   const handlePhotoSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -284,10 +301,10 @@ export const StudentRegistrationPage: React.FC = () => {
 
     try {
       setIsUploadingPhoto(true);
-      const url = await studentRegistrationService.uploadStudentPhoto(file);
-      setPhotoPreview(url);
-      setValue('photoUrl', url);
-      toast.success('Passport photo uploaded successfully.');
+      const result = await studentRegistrationService.uploadStudentPhoto(file);
+      setPhotoPreview(result.signedUrl);
+      setValue('photoUrl', result.path);
+      toast.success('Photo uploaded securely.');
     } catch (err: any) {
       toast.error(err.message || 'Failed to upload photo.');
     } finally {
@@ -315,7 +332,7 @@ export const StudentRegistrationPage: React.FC = () => {
         educationDetails: data.educationDetails,
         targetForceId: data.targetForceId,
         targetCourseId: data.targetCourseId,
-        batchId: data.batchId || undefined,
+        batchId: data.batchId,
         rollNumber: data.rollNumber,
         email: data.email,
         password: data.password,
@@ -330,13 +347,13 @@ export const StudentRegistrationPage: React.FC = () => {
       });
 
       toast.success(
-        `Cadet ${result.displayName} (${result.rollNumber}) registered successfully!`
+        `Student ${result.displayName} (${result.rollNumber}) registered successfully!`
       );
 
       navigate('/admin/students');
     } catch (err: any) {
       console.error('Registration failed:', err);
-      toast.error(err.message || 'Cadet registration failed. Please review inputs.');
+      toast.error(err.message || 'Registration failed. Please review inputs.');
     }
   };
 
@@ -344,11 +361,11 @@ export const StudentRegistrationPage: React.FC = () => {
     <div className="max-w-5xl mx-auto space-y-6 select-none pb-12">
       {/* Page Header */}
       <PageHeader
-        title="Cadet Induction & Registration"
-        subtitle="Comprehensive Biometric Dossier, Service Branch Assignment, and Institutional Authentication"
+        title="Register Student"
+        subtitle="Register candidate dossier, assign target branch and batch, and create portal credentials"
         breadcrumbs={[
-          { label: 'Cadets Roster', href: '/admin/students' },
-          { label: 'New Cadet Registration' },
+          { label: 'Students Roster', href: '/admin/students' },
+          { label: 'Register Student' },
         ]}
         actions={
           <button
@@ -363,24 +380,24 @@ export const StudentRegistrationPage: React.FC = () => {
       />
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* Section 1: Candidate Personal Identification */}
+        {/* Section 1: Personal Information */}
         <FormSection
           stepNumber={1}
-          title="Candidate Personal Identification"
-          subtitle="Biometric identity, national registration credentials, and direct communication channels"
+          title="Personal Information"
+          subtitle="Candidate identity, CNIC, and contact details"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Passport Photo Upload Box */}
             <div className="md:col-span-1 flex flex-col items-center">
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-2 self-start">
-                Passport Photo Docket
+                Student Photo
               </label>
               <div className="w-44 h-52 border-2 border-dashed border-[#D4D9DF] rounded-md bg-[#F8FAFC] flex flex-col items-center justify-center p-3 relative overflow-hidden group hover:border-[#0E1B2A] transition-colors">
                 {photoPreview ? (
                   <>
                     <img
                       src={photoPreview}
-                      alt="Cadet Portrait"
+                      alt="Student Portrait"
                       className="w-full h-full object-cover rounded"
                     />
                     <button
@@ -405,7 +422,7 @@ export const StudentRegistrationPage: React.FC = () => {
                           <User className="w-6 h-6" />
                         </div>
                         <span className="text-[11px] font-medium text-[#64748B]">
-                          Formal Cadet Portrait
+                          Student Portrait Photo
                         </span>
                         <label className="cursor-pointer inline-flex items-center space-x-1 px-2.5 py-1.5 bg-white border border-[#D4D9DF] hover:bg-[#EDF1F5] rounded text-[10px] font-bold text-[#0E1B2A] shadow-xs">
                           <Upload className="w-3 h-3" />
@@ -535,16 +552,16 @@ export const StudentRegistrationPage: React.FC = () => {
           </div>
         </FormSection>
 
-        {/* Section 2: Educational Background & Target Cadre */}
+        {/* Section 2: Education & Target */}
         <FormSection
           stepNumber={2}
-          title="Educational Background & Target Cadre"
-          subtitle="Induction service allocation, qualification background, and cohort alignment"
+          title="Education & Target"
+          subtitle="Academic background, target force, course, and batch allocation"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Highest Education Qualification
+                Highest Education Qualification *
               </label>
               <select
                 {...register('education')}
@@ -560,11 +577,14 @@ export const StudentRegistrationPage: React.FC = () => {
                 <option value="Graduation / BS">Graduation / BS (4-Year)</option>
                 <option value="Other">Other / Equivalent</option>
               </select>
+              {errors.education && (
+                <p className="text-[11px] text-[#782525] mt-1">{errors.education.message}</p>
+              )}
             </div>
 
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Academic Details & Institution
+                Academic Details & Institution {selectedEducation === 'Other' ? '*' : '(Optional)'}
               </label>
               <input
                 type="text"
@@ -572,6 +592,9 @@ export const StudentRegistrationPage: React.FC = () => {
                 placeholder="e.g., 85% Marks, Cadet College Hasan Abdal"
                 className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
               />
+              {errors.educationDetails && (
+                <p className="text-[11px] text-[#782525] mt-1">{errors.educationDetails.message}</p>
+              )}
             </div>
           </div>
 
@@ -579,18 +602,22 @@ export const StudentRegistrationPage: React.FC = () => {
             {/* Target Force */}
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Target Force Branch *
+                Target Force *
               </label>
               <select
                 {...register('targetForceId')}
                 disabled={loadingForces}
                 className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-medium focus:outline-none focus:border-[#0E1B2A]"
               >
-                {forces.map((f) => (
-                  <option key={f.id} value={f.id}>
-                    {f.name} ({f.code.replace('PAKISTAN_', '')})
-                  </option>
-                ))}
+                {forces.length === 0 ? (
+                  <option value="">No forces available</option>
+                ) : (
+                  forces.map((f) => (
+                    <option key={f.id} value={f.id}>
+                      {f.name} ({f.code.replace('PAKISTAN_', '')})
+                    </option>
+                  ))
+                )}
               </select>
               {errors.targetForceId && (
                 <p className="text-[11px] text-[#782525] mt-1">{errors.targetForceId.message}</p>
@@ -600,7 +627,7 @@ export const StudentRegistrationPage: React.FC = () => {
             {/* Target Course (Dependent) */}
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Target Induction Course *
+                Target Course *
               </label>
               <select
                 {...register('targetCourseId')}
@@ -608,7 +635,7 @@ export const StudentRegistrationPage: React.FC = () => {
                 className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-medium focus:outline-none focus:border-[#0E1B2A]"
               >
                 {courses.length === 0 ? (
-                  <option value="">No courses available</option>
+                  <option value="">No active courses available for this force.</option>
                 ) : (
                   courses.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -622,10 +649,10 @@ export const StudentRegistrationPage: React.FC = () => {
               )}
             </div>
 
-            {/* Initial Batch Enrollment (Dependent) */}
+            {/* Batch Enrollment (MANDATORY) */}
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Initial Batch Enrollment
+                Batch Allocation *
               </label>
               <select
                 {...register('batchId')}
@@ -633,7 +660,7 @@ export const StudentRegistrationPage: React.FC = () => {
                 className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-medium focus:outline-none focus:border-[#0E1B2A]"
               >
                 {batches.length === 0 ? (
-                  <option value="">No active batches (Unassigned)</option>
+                  <option value="">No active batches for this course.</option>
                 ) : (
                   batches.map((b) => (
                     <option key={b.id} value={b.id}>
@@ -642,22 +669,25 @@ export const StudentRegistrationPage: React.FC = () => {
                   ))
                 )}
               </select>
+              {errors.batchId && (
+                <p className="text-[11px] text-[#782525] mt-1">{errors.batchId.message}</p>
+              )}
             </div>
           </div>
         </FormSection>
 
-        {/* Section 3: Academy Identity & Login Credentials */}
+        {/* Section 3: Login Details */}
         <FormSection
           stepNumber={3}
-          title="Academy Identity & Security Credentials"
-          subtitle="Official institutional roll identification and portal access passcodes"
+          title="Login Details"
+          subtitle="Roll identification, login credentials, and status"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {/* Roll Number with Generator & Availability Check */}
             <div>
               <div className="flex items-center justify-between mb-1">
                 <label className="text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider">
-                  Cadet Roll ID *
+                  Roll Number *
                 </label>
                 <button
                   type="button"
@@ -701,7 +731,7 @@ export const StudentRegistrationPage: React.FC = () => {
             {/* Login Email */}
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Portal Login Email *
+                Login Email *
               </label>
               <input
                 type="email"
@@ -714,11 +744,11 @@ export const StudentRegistrationPage: React.FC = () => {
               )}
             </div>
 
-            {/* Temporary Password */}
+            {/* Password (Empty by default) */}
             <div>
               <div className="flex items-center justify-between mb-1">
                 <label className="text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider">
-                  Initial Passcode *
+                  Password *
                 </label>
                 <button
                   type="button"
@@ -726,14 +756,14 @@ export const StudentRegistrationPage: React.FC = () => {
                   className="text-[10px] text-[#0E1B2A] font-bold hover:underline inline-flex items-center space-x-1"
                 >
                   <KeyRound className="w-2.5 h-2.5 text-[#C6A75E]" />
-                  <span>Generate</span>
+                  <span>Generate Password</span>
                 </button>
               </div>
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   {...register('password')}
-                  placeholder="Secret123!"
+                  placeholder="Enter or generate password"
                   className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded font-mono text-[#0E1B2A] pr-8 focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                 />
                 <button
@@ -753,22 +783,22 @@ export const StudentRegistrationPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Admission Status *
+                Student Status *
               </label>
               <select
                 {...register('status')}
                 className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-medium focus:outline-none focus:border-[#0E1B2A]"
               >
-                <option value="ACTIVE">ACTIVE (Testing & CBT Permitted)</option>
-                <option value="INACTIVE">INACTIVE (Registration Pending)</option>
-                <option value="SUSPENDED">SUSPENDED (Temporary Hold)</option>
+                <option value="ACTIVE">ACTIVE (Testing Permitted)</option>
+                <option value="INACTIVE">INACTIVE</option>
+                <option value="SUSPENDED">SUSPENDED</option>
                 <option value="DISQUALIFIED">DISQUALIFIED</option>
               </select>
             </div>
 
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Official Admission Date *
+                Admission Date *
               </label>
               <input
                 type="date"
@@ -779,11 +809,11 @@ export const StudentRegistrationPage: React.FC = () => {
           </div>
         </FormSection>
 
-        {/* Section 4: Guardian & Contact Details */}
+        {/* Section 4: Guardian & Address */}
         <FormSection
           stepNumber={4}
-          title="Guardian & Residential Dossier"
-          subtitle="Next-of-kin emergency references and residential address for official dispatch"
+          title="Guardian & Address"
+          subtitle="Next-of-kin emergency references and residential address"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
@@ -800,7 +830,7 @@ export const StudentRegistrationPage: React.FC = () => {
 
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Relationship to Cadet
+                Relationship
               </label>
               <select
                 {...register('guardianRelationship')}
@@ -829,7 +859,7 @@ export const StudentRegistrationPage: React.FC = () => {
 
           <div className="pt-2">
             <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-              Permanent Postal Address
+              Residential Address
             </label>
             <textarea
               rows={2}
@@ -841,12 +871,12 @@ export const StudentRegistrationPage: React.FC = () => {
 
           <div className="pt-2">
             <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-              Medical / Preliminary Board Remarks (Optional)
+              Admission Notes / Remarks (Optional)
             </label>
             <textarea
               rows={2}
               {...register('notes')}
-              placeholder="Initial medical standing, ISSB orientation notes, or special faculty instructions..."
+              placeholder="Medical notes, ISSB orientation notes, or special instructions..."
               className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
             />
           </div>
@@ -868,7 +898,7 @@ export const StudentRegistrationPage: React.FC = () => {
               onClick={() => navigate('/admin/students')}
               className="px-4 py-2 border border-[#D4D9DF] hover:bg-[#EDF1F5] text-[#0E1B2A] rounded text-xs font-semibold transition-colors"
             >
-              Cancel & Return
+              Cancel
             </button>
             <button
               type="submit"
@@ -878,12 +908,12 @@ export const StudentRegistrationPage: React.FC = () => {
               {isSubmitting ? (
                 <>
                   <RefreshCw className="w-4 h-4 animate-spin" />
-                  <span>Committing Registration...</span>
+                  <span>Registering...</span>
                 </>
               ) : (
                 <>
                   <UserPlus className="w-4 h-4" />
-                  <span>Register & Induct Cadet</span>
+                  <span>Register Student</span>
                 </>
               )}
             </button>
