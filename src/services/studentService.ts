@@ -17,7 +17,7 @@ export const studentService = {
         cnic,
         status,
         created_at,
-        profiles (
+        profiles!profile_id (
           display_name,
           phone,
           avatar_url

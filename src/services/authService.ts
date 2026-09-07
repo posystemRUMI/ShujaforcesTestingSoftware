@@ -98,7 +98,7 @@ export const authService = {
     }
 
     if (!isSupabaseConfigured()) {
-      return { user: null, error: new Error('Authentication service is not configured.') };
+      return { user: null, error: new Error('Unable to connect to the academy server. Please try again.') };
     }
 
     try {
@@ -110,7 +110,7 @@ export const authService = {
           Promise.resolve(
             (supabase as any)
               .from('students')
-              .select('profiles(email)')
+              .select('profiles!profile_id(email)')
               .eq('roll_number', rawId.toUpperCase())
               .maybeSingle()
           ),
@@ -146,6 +146,19 @@ export const authService = {
       );
 
       if (authError || !data?.user) {
+        console.error('Supabase Auth failure:', authError);
+        const errMsg = (authError?.message || '').toLowerCase();
+        if (
+          errMsg.includes('invalid login credentials') ||
+          errMsg.includes('invalid_grant') ||
+          errMsg.includes('invalid') ||
+          (authError as any)?.status === 400
+        ) {
+          return { user: null, error: new Error('Invalid email or password.') };
+        }
+        if (errMsg.includes('fetch') || errMsg.includes('network') || errMsg.includes('timeout') || errMsg.includes('connection')) {
+          return { user: null, error: new Error('Unable to connect to the academy server. Please try again.') };
+        }
         return { user: null, error: new Error(authError?.message || 'Invalid email or password.') };
       }
 
@@ -156,8 +169,9 @@ export const authService = {
         .single();
 
       if (profileErr || !profile) {
+        console.error('Profile retrieval failure:', profileErr);
         await supabase.auth.signOut();
-        return { user: null, error: new Error('User profile record not found. Contact administrator.') };
+        return { user: null, error: new Error('Your account is not configured correctly. Contact administration.') };
       }
 
       if (profile.status === 'SUSPENDED' || profile.status === 'INACTIVE') {
@@ -209,7 +223,12 @@ export const authService = {
 
       return { user, error: null };
     } catch (err: any) {
-      return { user: null, error: new Error(err?.message || 'Authentication request failed.') };
+      console.error('Auth service exception:', err);
+      const msg = (err?.message || '').toLowerCase();
+      if (msg.includes('fetch') || msg.includes('network') || msg.includes('timeout') || msg.includes('connect')) {
+        return { user: null, error: new Error('Unable to connect to the academy server. Please try again.') };
+      }
+      return { user: null, error: new Error(err?.message || 'Unable to connect to the academy server. Please try again.') };
     }
   },
 

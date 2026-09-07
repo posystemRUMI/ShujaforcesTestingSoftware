@@ -1,4 +1,4 @@
-﻿-- ============================================================================
+-- ============================================================================
 -- Migration: 20260908120000_student_registration_fields.sql
 -- Description: Student Registration Module Extensions:
 --              1. Additional columns on public.students
@@ -47,12 +47,12 @@ ON CONFLICT (id) DO UPDATE SET
   allowed_mime_types = EXCLUDED.allowed_mime_types;
 
 -- Storage Policies for 'student-photos'
-DO  BEGIN
+DO $$ BEGIN
   DROP POLICY IF EXISTS "student_photos_select" ON storage.objects;
   DROP POLICY IF EXISTS "student_photos_staff_insert" ON storage.objects;
   DROP POLICY IF EXISTS "student_photos_staff_update" ON storage.objects;
   DROP POLICY IF EXISTS "student_photos_staff_delete" ON storage.objects;
-EXCEPTION WHEN OTHERS THEN NULL; END ;
+EXCEPTION WHEN OTHERS THEN NULL; END $$;
 
 CREATE POLICY "student_photos_select"
   ON storage.objects FOR SELECT
@@ -91,21 +91,21 @@ RETURNS boolean
 LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = public
-AS 
+AS $$
 BEGIN
   RETURN EXISTS (
     SELECT 1 FROM public.students
     WHERE upper(trim(roll_number)) = upper(trim(p_roll_number))
   );
 END;
-;
+$$;
 
 CREATE OR REPLACE FUNCTION public.check_cnic_exists(p_cnic TEXT)
 RETURNS boolean
 LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = public
-AS 
+AS $$
 BEGIN
   IF p_cnic IS NULL OR trim(p_cnic) = '' THEN
     RETURN false;
@@ -115,21 +115,21 @@ BEGIN
     WHERE trim(cnic) = trim(p_cnic)
   );
 END;
-;
+$$;
 
 CREATE OR REPLACE FUNCTION public.check_email_exists(p_email TEXT)
 RETURNS boolean
 LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = public
-AS 
+AS $$
 BEGIN
   RETURN EXISTS (
     SELECT 1 FROM auth.users
     WHERE lower(trim(email)) = lower(trim(p_email))
   );
 END;
-;
+$$;
 
 -- ----------------------------------------------------------------------------
 -- 4. ATOMIC COMPOUND REGISTRATION RPC: public.register_student
@@ -163,9 +163,8 @@ RETURNS JSONB
 LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = public
-AS 
+AS $$
 DECLARE
-  v_caller_role public.app_role;
   v_user_id UUID;
   v_student_id UUID;
   v_clean_email TEXT;
@@ -420,4 +419,4 @@ BEGIN
     'display_name', trim(p_display_name)
   );
 END;
-;
+$$;

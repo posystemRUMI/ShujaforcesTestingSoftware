@@ -70,7 +70,7 @@ export const financeService = {
         father_name,
         target_course:courses(id, name),
         target_force:forces(name),
-        profile:profiles(display_name, email),
+        profile:profiles!profile_id(display_name, email),
         batch_enrollments(
           status,
           batch:batches(id, name)
@@ -90,7 +90,7 @@ export const financeService = {
           father_name,
           courses(id, name),
           forces(name),
-          profiles(display_name, email)
+          profiles!profile_id(display_name, email)
         `)
         .ilike('roll_number', `%${trimmed}%`)
         .limit(10);
@@ -140,7 +140,7 @@ export const financeService = {
       .from('student_fee_accounts')
       .select(`
         *,
-        students(roll_number, profiles(display_name)),
+        students(roll_number, profiles!profile_id(display_name)),
         courses(name),
         batches(name)
       `)
@@ -182,7 +182,7 @@ export const financeService = {
       .from('student_fee_payments')
       .select(`
         *,
-        students(roll_number, profiles(display_name)),
+        students(roll_number, profiles!profile_id(display_name)),
         student_fee_accounts(fee_type, fee_period),
         profiles:received_by(display_name)
       `)

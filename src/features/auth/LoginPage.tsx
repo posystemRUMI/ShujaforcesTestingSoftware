@@ -42,7 +42,7 @@ export const LoginPage: React.FC = () => {
       setIsLoading(false);
 
       if (!res.success) {
-        setErrorMessage(res.error || 'Invalid credentials. Please verify and try again.');
+        setErrorMessage(res.error || 'Invalid email or password.');
         return;
       }
 
@@ -57,7 +57,13 @@ export const LoginPage: React.FC = () => {
       }
     } catch (err: any) {
       setIsLoading(false);
-      setErrorMessage(err?.message || 'Authentication failed. Please check network connection.');
+      console.error('Login error:', err);
+      const msg = (err?.message || '').toLowerCase();
+      if (msg.includes('fetch') || msg.includes('network') || msg.includes('timeout') || msg.includes('connect')) {
+        setErrorMessage('Unable to connect to the academy server. Please try again.');
+      } else {
+        setErrorMessage('Unable to connect to the academy server. Please try again.');
+      }
     }
   };
 
