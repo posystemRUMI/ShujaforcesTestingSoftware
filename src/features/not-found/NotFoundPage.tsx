@@ -12,19 +12,19 @@ export const NotFoundPage: React.FC = () => {
           <ShieldAlert className="w-6 h-6" />
         </div>
         <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A]">
-          404 — Subsystem Not Found
+          404 — Page Not Found
         </h1>
-        <p className="text-xs text-[#64748B]">
-          The requested computerized testing sector or route does not exist within the system registry.
+        <p className="text-sm text-[#64748B]">
+          The page you're looking for doesn't exist.
         </p>
         <div className="pt-3">
           <button
             type="button"
             onClick={() => navigate('/admin/dashboard')}
-            className="inline-flex items-center space-x-2 bg-[#0E1B2A] text-white px-4 py-2 rounded text-xs font-semibold hover:bg-[#1A2C42]"
+            className="inline-flex items-center space-x-2 bg-[#0E1B2A] text-white px-4 py-2.5 rounded-lg text-xs font-semibold hover:bg-[#1A2C42] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Return to Command Console</span>
+            <span>Back to Dashboard</span>
           </button>
         </div>
       </div>

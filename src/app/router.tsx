@@ -85,6 +85,16 @@ export const router = createBrowserRouter([
     element: <Navigate to="/student" replace />,
   },
 
+  // Compatibility Redirect for /finance (Admin only)
+  {
+    path: '/finance',
+    element: (
+      <RequireRole allowedRoles={['ADMIN']}>
+        <Navigate to="/admin/finance" replace />
+      </RequireRole>
+    ),
+  },
+
   // Auth Routes
   {
     element: <AuthShell />,

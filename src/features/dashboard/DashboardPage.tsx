@@ -214,7 +214,7 @@ export const DashboardPage: React.FC = () => {
               </div>
             </div>
             <Link
-              to="/finance"
+              to="/admin/finance"
               className="inline-flex items-center space-x-1.5 px-3.5 py-2 text-[13px] font-semibold rounded-lg bg-white hover:bg-[#F8FAFC] text-[#0E1B2A] border border-[#E2E6EB] shadow-sm transition-colors group"
             >
               <span>Open Finance Ledger</span>
@@ -268,7 +268,7 @@ export const DashboardPage: React.FC = () => {
                   <p className="text-[12px] text-[#64748B]">Latest fee payments and expense vouchers</p>
                 </div>
                 <Link
-                  to="/finance"
+                  to="/admin/finance"
                   className="text-[12.5px] font-semibold text-[#0E1B2A] hover:underline"
                 >
                   View All &rarr;
@@ -433,13 +433,13 @@ export const DashboardPage: React.FC = () => {
 
               <div className="pt-3 border-t border-[#F1F5F9] grid grid-cols-2 gap-2">
                 <Link
-                  to="/finance"
+                  to="/admin/finance"
                   className="px-3 py-2 text-center text-[12px] font-semibold rounded-lg bg-[#0E1B2A] text-white hover:bg-[#1A2C42] transition-colors"
                 >
                   Fee Collection
                 </Link>
                 <Link
-                  to="/finance"
+                  to="/admin/finance"
                   className="px-3 py-2 text-center text-[12px] font-semibold rounded-lg bg-[#F4F6F9] hover:bg-[#EAECF0] text-[#0E1B2A] border border-[#E2E6EB] transition-colors"
                 >
                   Record Expense
