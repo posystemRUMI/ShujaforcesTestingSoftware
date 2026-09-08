@@ -70,7 +70,7 @@ export const financeService = {
         father_name,
         target_course:courses(id, name),
         target_force:forces(name),
-        profile:profiles!profile_id(display_name, email),
+        profile:profiles!students_profile_id_fkey(display_name, email),
         batch_enrollments(
           status,
           batch:batches(id, name)
@@ -90,7 +90,7 @@ export const financeService = {
           father_name,
           courses(id, name),
           forces(name),
-          profiles!profile_id(display_name, email)
+          profiles:profiles!students_profile_id_fkey(display_name, email)
         `)
         .ilike('roll_number', `%${trimmed}%`)
         .limit(10);
@@ -99,30 +99,34 @@ export const financeService = {
         throw new Error(`Student search failed: ${fbError.message}`);
       }
 
-      return (fallbackData || []).map((row: any) => ({
-        id: row.id,
-        profile_id: row.profile_id,
-        roll_number: row.roll_number,
-        display_name: row.profiles?.display_name || 'Cadet',
-        father_name: row.father_name,
-        email: row.profiles?.email || null,
-        course_id: row.courses?.id || null,
-        course_name: row.courses?.name || null,
-        batch_id: null,
-        batch_name: null,
-        force_name: row.forces?.name || null,
-      }));
+      return (fallbackData || []).map((row: any) => {
+        const prof = (Array.isArray(row.profiles) ? row.profiles[0] : row.profiles) as any;
+        return {
+          id: row.id,
+          profile_id: row.profile_id,
+          roll_number: row.roll_number,
+          display_name: prof?.display_name || 'Cadet',
+          father_name: row.father_name,
+          email: prof?.email || null,
+          course_id: row.courses?.id || null,
+          course_name: row.courses?.name || null,
+          batch_id: null,
+          batch_name: null,
+          force_name: row.forces?.name || null,
+        };
+      });
     }
 
     return (data || []).map((row: any) => {
+      const prof = (Array.isArray(row.profile) ? row.profile[0] : row.profile) as any;
       const activeEnrollment = row.batch_enrollments?.find((e: any) => e.status === 'ACTIVE');
       return {
         id: row.id,
         profile_id: row.profile_id,
         roll_number: row.roll_number,
-        display_name: row.profile?.display_name || 'Cadet',
+        display_name: prof?.display_name || 'Cadet',
         father_name: row.father_name,
-        email: row.profile?.email || null,
+        email: prof?.email || null,
         course_id: row.target_course?.id || null,
         course_name: row.target_course?.name || null,
         batch_id: activeEnrollment?.batch?.id || null,
@@ -140,7 +144,7 @@ export const financeService = {
       .from('student_fee_accounts')
       .select(`
         *,
-        students(roll_number, profiles!profile_id(display_name)),
+        students(roll_number, profiles:profiles!students_profile_id_fkey(display_name)),
         courses(name),
         batches(name)
       `)
@@ -163,9 +167,10 @@ export const financeService = {
     return (data || []).map((row: any) => {
       const netDue = Number(row.amount_due) - Number(row.discount_amount) + Number(row.fine_amount);
       const remaining = Math.max(0, netDue - Number(row.amount_paid));
+      const studentProfile = (Array.isArray(row.students?.profiles) ? row.students?.profiles[0] : row.students?.profiles) as any;
       return {
         ...row,
-        student_name: row.students?.profiles?.display_name || 'Cadet',
+        student_name: studentProfile?.display_name || 'Cadet',
         roll_number: row.students?.roll_number || '',
         course_name: row.courses?.name || '',
         batch_name: row.batches?.name || '',
@@ -182,7 +187,7 @@ export const financeService = {
       .from('student_fee_payments')
       .select(`
         *,
-        students(roll_number, profiles!profile_id(display_name)),
+        students(roll_number, profiles:profiles!students_profile_id_fkey(display_name)),
         student_fee_accounts(fee_type, fee_period),
         profiles:received_by(display_name)
       `)
@@ -200,13 +205,17 @@ export const financeService = {
       throw new Error(`Failed to load payment history: ${error.message}`);
     }
 
-    return (data || []).map((row: any) => ({
-      ...row,
-      student_name: row.students?.profiles?.display_name || 'Cadet',
-      roll_number: row.students?.roll_number || '',
-      fee_type: row.student_fee_accounts?.fee_type || 'FEE',
-      received_by_name: row.profiles?.display_name || 'Admin',
-    }));
+    return (data || []).map((row: any) => {
+      const studentProfile = (Array.isArray(row.students?.profiles) ? row.students?.profiles[0] : row.students?.profiles) as any;
+      const receiverProfile = (Array.isArray(row.profiles) ? row.profiles[0] : row.profiles) as any;
+      return {
+        ...row,
+        student_name: studentProfile?.display_name || 'Cadet',
+        roll_number: row.students?.roll_number || '',
+        fee_type: row.student_fee_accounts?.fee_type || 'FEE',
+        received_by_name: receiverProfile?.display_name || 'Admin',
+      };
+    });
   },
 
   /**
@@ -445,8 +454,11 @@ export const financeService = {
       .from('teacher_salary_payments')
       .select(`
         *,
-        profiles:teacher_profile_id(display_name, email),
-        teachers:teacher_profile_id(service_number, rank)
+        profiles:teacher_profile_id(
+          display_name,
+          email,
+          teachers(service_number, rank)
+        )
       `)
       .order('payment_date', { ascending: false });
 
@@ -462,13 +474,17 @@ export const financeService = {
       throw new Error(`Failed to load salary payments: ${error.message}`);
     }
 
-    return (data || []).map((row: any) => ({
-      ...row,
-      teacher_name: row.profiles?.display_name || 'Faculty Member',
-      teacher_email: row.profiles?.email || null,
-      service_number: row.teachers?.service_number || null,
-      rank: row.teachers?.rank || null,
-    }));
+    return (data || []).map((row: any) => {
+      const prof = (Array.isArray(row.profiles) ? row.profiles[0] : row.profiles) as any;
+      const tch = (Array.isArray(prof?.teachers) ? prof?.teachers[0] : prof?.teachers) as any;
+      return {
+        ...row,
+        teacher_name: prof?.display_name || 'Faculty Member',
+        teacher_email: prof?.email || null,
+        service_number: tch?.service_number || null,
+        rank: tch?.rank || null,
+      };
+    });
   },
 
   /**
@@ -491,13 +507,16 @@ export const financeService = {
       throw new Error(`Failed to load teachers list: ${error.message}`);
     }
 
-    return (data || []).map((row: any) => ({
-      id: row.id,
-      display_name: row.display_name,
-      email: row.email,
-      service_number: row.teachers?.service_number || null,
-      rank: row.teachers?.rank || null,
-    }));
+    return (data || []).map((row: any) => {
+      const tch = (Array.isArray(row.teachers) ? row.teachers[0] : row.teachers) as any;
+      return {
+        id: row.id,
+        display_name: row.display_name,
+        email: row.email,
+        service_number: tch?.service_number || null,
+        rank: tch?.rank || null,
+      };
+    });
   },
 
   /**

@@ -110,15 +110,16 @@ export const authService = {
           Promise.resolve(
             (supabase as any)
               .from('students')
-              .select('profiles!profile_id(email)')
+              .select('profiles!students_profile_id_fkey(email)')
               .eq('roll_number', rawId.toUpperCase())
               .maybeSingle()
           ),
           2000
         ).catch(() => ({ data: null }));
 
-        if ((std as any)?.profiles?.email) {
-          email = (std as any).profiles.email;
+        const studentProfile = (Array.isArray((std as any)?.profiles) ? (std as any).profiles[0] : (std as any)?.profiles) as any;
+        if (studentProfile?.email) {
+          email = studentProfile.email;
         } else {
           const { data: tch } = await withTimeout(
             Promise.resolve(

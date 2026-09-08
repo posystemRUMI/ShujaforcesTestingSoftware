@@ -20,14 +20,14 @@ import {
   ConfirmDialog,
   ColumnDef,
 } from '@/components/ui';
-import { studentStore } from './studentStore';
 import { StudentRecord } from './types';
 import { studentService } from '@/services/studentService';
 import { toast } from 'sonner';
 
 export const StudentsListPage: React.FC = () => {
   const navigate = useNavigate();
-  const [students, setStudents] = useState<StudentRecord[]>(() => studentStore.getAll());
+  const [students, setStudents] = useState<StudentRecord[]>([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [branchFilter, setBranchFilter] = useState<string>('ALL');
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
@@ -38,12 +38,15 @@ export const StudentsListPage: React.FC = () => {
     let isMounted = true;
     async function fetchStudents() {
       try {
+        setLoading(true);
         const data = await studentService.getStudents();
         if (isMounted && data) {
           setStudents(data);
         }
       } catch (err) {
         console.warn('Error fetching students:', err);
+      } finally {
+        if (isMounted) setLoading(false);
       }
     }
     fetchStudents();
@@ -290,6 +293,7 @@ export const StudentsListPage: React.FC = () => {
         columns={columns}
         data={paginatedData}
         keyExtractor={(item) => item.id}
+        isLoading={loading}
         emptyTitle="No Cadet Records Found"
         emptyDescription="No cadet dossiers match your current filter parameters."
         pagination={{

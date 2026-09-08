@@ -13,8 +13,6 @@ export const StudentFormPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const isEditMode = Boolean(id);
 
-  const existingRecord = id ? studentStore.getById(id) : undefined;
-
   const {
     register,
     handleSubmit,
@@ -40,58 +38,78 @@ export const StudentFormPage: React.FC = () => {
   });
 
   useEffect(() => {
-    if (isEditMode && existingRecord) {
-      reset({
-        fullName: existingRecord.fullName,
-        fatherName: existingRecord.fatherName,
-        cnic: existingRecord.cnic,
-        phone: existingRecord.phone,
-        rollNumber: existingRecord.rollNumber,
-        temporaryCredential: '••••••••',
-        branch: existingRecord.branch,
-        batchId: existingRecord.batchId,
-        targetCourse: existingRecord.targetCourse,
-        status: existingRecord.status,
-        avatarUrl: existingRecord.avatarUrl || '',
-      });
+    let isMounted = true;
+    async function loadRecord() {
+      if (!isEditMode || !id) return;
+      try {
+        const { studentService } = await import('@/services/studentService');
+        const existingRecord = await studentService.getStudentById(id);
+        if (isMounted && existingRecord) {
+          reset({
+            fullName: existingRecord.fullName,
+            fatherName: existingRecord.fatherName,
+            cnic: existingRecord.cnic,
+            phone: existingRecord.phone,
+            rollNumber: existingRecord.rollNumber,
+            temporaryCredential: '••••••••',
+            branch: existingRecord.branch,
+            batchId: existingRecord.batchId,
+            targetCourse: existingRecord.targetCourse,
+            status: existingRecord.status,
+            avatarUrl: existingRecord.avatarUrl || '',
+          });
+        }
+      } catch (err) {
+        console.warn('Failed to load student for edit:', err);
+      }
     }
-  }, [isEditMode, existingRecord, reset]);
+    loadRecord();
+    return () => {
+      isMounted = false;
+    };
+  }, [isEditMode, id, reset]);
 
   const avatarUrl = watch('avatarUrl');
+  const currentFullName = watch('fullName');
 
-  const onSubmit = (data: StudentFormValues) => {
-    if (isEditMode && id) {
-      studentStore.update(id, {
-        fullName: data.fullName,
-        fatherName: data.fatherName,
-        cnic: data.cnic,
-        phone: data.phone,
-        rollNumber: data.rollNumber,
-        branch: data.branch,
-        batchId: data.batchId,
-        targetCourse: data.targetCourse,
-        status: data.status,
-        avatarUrl: data.avatarUrl,
-      });
-      toast.success(`Cadet docket ${data.rollNumber} successfully updated.`);
-    } else {
-      studentStore.create({
-        fullName: data.fullName,
-        fatherName: data.fatherName,
-        cnic: data.cnic,
-        phone: data.phone,
-        rollNumber: data.rollNumber,
-        branch: data.branch,
-        batchId: data.batchId,
-        batchCode: data.branch === 'PAKISTAN_ARMY' ? '154-PMA-LC' : data.branch === 'PAKISTAN_AIR_FORCE' ? '158-GDP-PAF' : 'PNC-2026-A',
-        targetCourse: data.targetCourse,
-        status: data.status,
-        avatarUrl: data.avatarUrl,
-      });
-      toast.success(`Cadet ${data.fullName} enrolled with Roll Number ${data.rollNumber}.`);
+  const onSubmit = async (data: StudentFormValues) => {
+    try {
+      const { studentService } = await import('@/services/studentService');
+      if (isEditMode && id) {
+        await studentService.updateStudent(id, {
+          fullName: data.fullName,
+          fatherName: data.fatherName,
+          cnic: data.cnic,
+          phone: data.phone,
+          rollNumber: data.rollNumber,
+          branch: data.branch,
+          batchId: data.batchId,
+          targetCourse: data.targetCourse,
+          status: data.status,
+          avatarUrl: data.avatarUrl,
+        });
+        toast.success(`Cadet docket ${data.rollNumber} successfully updated.`);
+      } else {
+        studentStore.create({
+          fullName: data.fullName,
+          fatherName: data.fatherName,
+          cnic: data.cnic,
+          phone: data.phone,
+          rollNumber: data.rollNumber,
+          branch: data.branch,
+          batchId: data.batchId,
+          batchCode: data.branch === 'PAKISTAN_ARMY' ? '154-PMA-LC' : data.branch === 'PAKISTAN_AIR_FORCE' ? '158-GDP-PAF' : 'PNC-2026-A',
+          targetCourse: data.targetCourse,
+          status: data.status,
+          avatarUrl: data.avatarUrl,
+        });
+        toast.success(`Cadet ${data.fullName} enrolled with Roll Number ${data.rollNumber}.`);
+      }
+
+      navigate('/admin/students');
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to save student record');
     }
-
-    navigate('/admin/students');
   };
 
   return (
@@ -100,7 +118,7 @@ export const StudentFormPage: React.FC = () => {
         title={isEditMode ? 'Modify Cadet Docket' : 'New Cadet Induction Enrollment'}
         subtitle={
           isEditMode
-            ? `Editing military credentials and training cadre for ${existingRecord?.fullName || id}`
+            ? `Editing military credentials and training cadre for ${currentFullName || id}`
             : 'Register candidate personal dossier, service branch, and initial security clearance'
         }
         breadcrumbs={[

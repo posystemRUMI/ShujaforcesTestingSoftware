@@ -71,19 +71,25 @@ export const StudentDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
-  const [student, setStudent] = useState<any>(() => (id ? studentStore.getById(id) : undefined));
-  const [loading, setLoading] = useState(!student);
+  const [student, setStudent] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
     let isMounted = true;
     async function load() {
       if (!id) return;
       try {
+        setLoading(true);
         const { studentService } = await import('@/services/studentService');
         const s = await studentService.getStudentById(id);
-        if (isMounted && s) setStudent(s);
+        if (isMounted && s) {
+          setStudent(s);
+        } else if (isMounted) {
+          setStudent(studentStore.getById(id) || null);
+        }
       } catch (e) {
         console.warn('Failed to load student detail from service:', e);
+        if (isMounted) setStudent(studentStore.getById(id) || null);
       } finally {
         if (isMounted) setLoading(false);
       }
@@ -279,22 +285,76 @@ export const StudentDetailPage: React.FC = () => {
         />
 
         {activeTab === 'overview' && (
-          <div className="bg-white border border-[#D4D9DF] rounded p-6 shadow-sm space-y-4 text-xs">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#0E1B2A] font-display border-b border-[#EDF1F5] pb-2">
-              Academy Performance Profile & Invigilation Standing
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
-                <span className="font-semibold text-[#0E1B2A]">Intelligence Battery Quotient</span>
-                <p className="text-[#64748B]">
-                  Verbal and Non-verbal intelligence scores maintain consistent superiority (&gt;90% accuracy). Cleared for advanced flight and tactical selection battery.
-                </p>
+          <div className="space-y-4">
+            {/* Candidate Registration Particulars */}
+            <div className="bg-white border border-[#D4D9DF] rounded p-6 shadow-sm space-y-4 text-xs">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#0E1B2A] font-display border-b border-[#EDF1F5] pb-2">
+                Candidate Registration Particulars
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">Father's Name</span>
+                  <span className="font-semibold text-sm text-[#0E1B2A] block">{student.fatherName || '—'}</span>
+                </div>
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">Primary Mobile Phone</span>
+                  <span className="font-mono font-semibold text-sm text-[#0E1B2A] block">{student.phone || '—'}</span>
+                </div>
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">National CNIC / B-Form</span>
+                  <span className="font-mono font-semibold text-sm text-[#0E1B2A] block">{student.cnic || '—'}</span>
+                </div>
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">Alternate / Emergency Contact</span>
+                  <span className="font-mono text-xs text-[#0E1B2A] block">{student.alternatePhone || 'None specified'}</span>
+                </div>
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">Guardian & Relationship</span>
+                  <span className="text-xs text-[#0E1B2A] block font-medium">
+                    {student.guardianName ? `${student.guardianName} (${student.guardianRelationship || 'Guardian'})` : '—'}
+                  </span>
+                  {student.guardianPhone && (
+                    <span className="text-[11px] font-mono text-[#64748B] block">Phone: {student.guardianPhone}</span>
+                  )}
+                </div>
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">Education Qualification</span>
+                  <span className="text-xs text-[#0E1B2A] block font-medium">{student.education || '—'}</span>
+                  {student.educationDetails && (
+                    <span className="text-[11px] text-[#64748B] block">{student.educationDetails}</span>
+                  )}
+                </div>
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">Gender / Date of Birth</span>
+                  <span className="text-xs text-[#0E1B2A] block font-medium">
+                    {student.gender || 'Male'} {student.dateOfBirth ? `• ${student.dateOfBirth}` : ''}
+                  </span>
+                </div>
+                <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1 sm:col-span-2">
+                  <span className="text-[10px] uppercase font-bold text-[#64748B] block">Residential Address</span>
+                  <span className="text-xs text-[#0E1B2A] block font-medium">{student.address || '—'}</span>
+                </div>
               </div>
-              <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
-                <span className="font-semibold text-[#0E1B2A]">Academic Foundations Standing</span>
-                <p className="text-[#64748B]">
-                  Proficiency verified across Higher Secondary Physics, Calculus, and English. Zero remedial sessions mandated to date.
-                </p>
+            </div>
+
+            {/* Performance Profile */}
+            <div className="bg-white border border-[#D4D9DF] rounded p-6 shadow-sm space-y-4 text-xs">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#0E1B2A] font-display border-b border-[#EDF1F5] pb-2">
+                Academy Performance Profile & Invigilation Standing
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
+                  <span className="font-semibold text-[#0E1B2A]">Intelligence Battery Quotient</span>
+                  <p className="text-[#64748B]">
+                    Verbal and Non-verbal intelligence scores maintain consistent superiority (&gt;90% accuracy). Cleared for advanced flight and tactical selection battery.
+                  </p>
+                </div>
+                <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
+                  <span className="font-semibold text-[#0E1B2A]">Academic Foundations Standing</span>
+                  <p className="text-[#64748B]">
+                    Proficiency verified across Higher Secondary Physics, Calculus, and English. Zero remedial sessions mandated to date.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

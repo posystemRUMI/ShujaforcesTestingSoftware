@@ -19,6 +19,18 @@ export interface StudentRecord {
   totalAttempts: number;
   highestScore: number;
   passRate: number;
+  dateOfBirth?: string;
+  gender?: string;
+  education?: string;
+  educationDetails?: string;
+  alternatePhone?: string;
+  address?: string;
+  guardianName?: string;
+  guardianRelationship?: string;
+  guardianPhone?: string;
+  admissionDate?: string;
+  notes?: string;
+  email?: string;
 }
 
 export interface StudentAttemptHistory {

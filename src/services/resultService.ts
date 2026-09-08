@@ -77,7 +77,7 @@ export const resultService = {
           id,
           roll_number,
           profile_id,
-          profiles (
+          profiles:profiles!students_profile_id_fkey (
             display_name
           )
         ),

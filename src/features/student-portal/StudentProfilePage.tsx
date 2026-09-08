@@ -100,7 +100,7 @@ export const StudentProfilePage: React.FC = () => {
             father_name,
             cnic,
             status,
-            profiles (
+            profiles:profiles!students_profile_id_fkey (
               display_name,
               phone,
               avatar_url,
@@ -126,9 +126,13 @@ export const StudentProfilePage: React.FC = () => {
           .maybeSingle();
 
         if (isMounted && studentRecord) {
-          setCadetData(studentRecord as CadetDetailedRecord);
-          setEditName(studentRecord.profiles?.display_name || user.name || '');
-          setEditPhone(studentRecord.profiles?.phone || '');
+          const prof = (Array.isArray(studentRecord.profiles) ? studentRecord.profiles[0] : studentRecord.profiles) as any;
+          setCadetData({
+            ...studentRecord,
+            profiles: prof,
+          } as CadetDetailedRecord);
+          setEditName(prof?.display_name || user.name || '');
+          setEditPhone(prof?.phone || '');
         } else if (isMounted) {
           setEditName(user.name || '');
         }
@@ -212,11 +216,11 @@ export const StudentProfilePage: React.FC = () => {
 
   // Normalized Display Values
   const displayName = cadetData?.profiles?.display_name || user?.name || 'Student Cadet';
-  const displayRoll = cadetData?.roll_number || user?.rollNumber || 'PMA-2601';
-  const displayEmail = cadetData?.profiles?.email || user?.email || 'student@gmail.com';
+  const displayRoll = cadetData?.roll_number || user?.rollNumber || '—';
+  const displayEmail = cadetData?.profiles?.email || user?.email || '—';
   const displayPhone = cadetData?.profiles?.phone || 'Not provided';
-  const displayFather = cadetData?.father_name || 'Tariq Mahmood';
-  const displayCnic = cadetData?.cnic || '35202-8941205-1';
+  const displayFather = cadetData?.father_name || 'Not provided';
+  const displayCnic = cadetData?.cnic || 'Not provided';
   const displayForce =
     cadetData?.forces?.name ||
     (user?.branch ? user.branch.replace(/_/g, ' ') : 'Pakistan Army');
