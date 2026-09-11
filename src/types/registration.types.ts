@@ -72,9 +72,14 @@ export interface StudentRegistrationInput {
   // Section 5: Student Photo
   photoUrl?: string;
 
-  // Section 6: Admission Details
+  // Section 6: Admission & Financial Details
   admissionDate?: string;
   notes?: string;
+
+  // Section 7: Course Fee & Initial Payment
+  courseFeeAmount?: number;
+  initialPaymentAmount?: number;
+  paymentMethod?: 'CASH' | 'BANK_TRANSFER' | 'ONLINE' | 'CHEQUE' | 'OTHER';
 }
 
 export interface RegistrationResult {

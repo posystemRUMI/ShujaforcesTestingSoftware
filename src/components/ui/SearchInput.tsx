@@ -38,7 +38,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
-        className="w-full pl-9 pr-8 h-10 text-xs bg-white border border-[#D4D9DF] rounded text-[#1F2937] placeholder-[#94A3B8] transition-colors focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
+        className="w-full pl-10 pr-9 h-11 text-sm font-medium bg-white border border-[#D4D9DF] rounded-lg text-[#1F2937] placeholder-[#94A3B8] transition-colors focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
         {...props}
       />
       {value && (

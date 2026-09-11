@@ -41,13 +41,13 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center space-x-3">
-            <h1 className="text-[28px] font-bold tracking-tight text-[#0E1B2A] font-display leading-none">
+            <h1 className="text-[30px] sm:text-[34px] font-extrabold tracking-tight text-[#0E1B2A] font-display leading-tight">
               {title}
             </h1>
             {badge && <div>{badge}</div>}
           </div>
           {subtitle && (
-            <p className="text-sm text-[#64748B] mt-1.5 max-w-2xl font-sans leading-normal">
+            <p className="text-base text-[#64748B] mt-1.5 max-w-3xl font-sans font-medium leading-relaxed">
               {subtitle}
             </p>
           )}

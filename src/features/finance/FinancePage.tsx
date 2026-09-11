@@ -8,7 +8,6 @@ import {
   Plus,
   Receipt,
   DollarSign,
-  Users,
   Calendar,
   Filter,
   Download,
@@ -48,6 +47,7 @@ import type {
   TeacherSalaryPayment,
   TeacherDropdownItem,
   FinanceTransaction,
+  StudentFeeOverviewItem,
   PaymentMethod,
   SalaryPaymentType,
 } from '@/types/finance.types';
@@ -68,9 +68,10 @@ export const FinancePage: React.FC = () => {
   const [dateRange, setDateRange] = useState<'this-month' | 'last-30' | 'this-year' | 'all'>('this-month');
 
   // Fee Collection Tab Data
+  const [allStudentsOverview, setAllStudentsOverview] = useState<StudentFeeOverviewItem[]>([]);
+  const [loadingAllStudents, setLoadingAllStudents] = useState(false);
+  const [feeStatusFilter, setFeeStatusFilter] = useState<'ALL' | 'PAID' | 'UNPAID' | 'PARTIAL'>('ALL');
   const [searchCadetQuery, setSearchCadetQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<StudentSearchResult[]>([]);
-  const [searchingCadets, setSearchingCadets] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState<StudentSearchResult | null>(null);
   const [studentAccounts, setStudentAccounts] = useState<StudentFeeAccount[]>([]);
   const [studentPayments, setStudentPayments] = useState<StudentFeePayment[]>([]);
@@ -157,8 +158,41 @@ export const FinancePage: React.FC = () => {
     }
   };
 
+  const loadAllStudentsOverview = async () => {
+    setLoadingAllStudents(true);
+    try {
+      const res = await financeService.getAllStudentsFeeOverview();
+      setAllStudentsOverview(res);
+    } catch (e: any) {
+      console.error(e);
+      toast.error('Failed to load student fee overview: ' + (e.message || ''));
+    } finally {
+      setLoadingAllStudents(false);
+    }
+  };
+
+  const filteredStudents = useMemo(() => {
+    return allStudentsOverview.filter((s) => {
+      if (feeStatusFilter !== 'ALL') {
+        if (feeStatusFilter === 'PAID' && s.status !== 'PAID') return false;
+        if (feeStatusFilter === 'UNPAID' && s.status !== 'UNPAID') return false;
+        if (feeStatusFilter === 'PARTIAL' && s.status !== 'PARTIAL') return false;
+      }
+      if (searchCadetQuery.trim()) {
+        const q = searchCadetQuery.toLowerCase().trim();
+        const matchesName = s.display_name.toLowerCase().includes(q);
+        const matchesRoll = s.roll_number.toLowerCase().includes(q);
+        const matchesFather = s.father_name ? s.father_name.toLowerCase().includes(q) : false;
+        const matchesCourse = s.course_name ? s.course_name.toLowerCase().includes(q) : false;
+        if (!matchesName && !matchesRoll && !matchesFather && !matchesCourse) return false;
+      }
+      return true;
+    });
+  }, [allStudentsOverview, feeStatusFilter, searchCadetQuery]);
+
   // Load Tab Specific Data
   useEffect(() => {
+    if (activeTab === 'fee-collection') loadAllStudentsOverview();
     if (activeTab === 'expenses') loadExpenses();
     if (activeTab === 'salaries') loadSalaries();
     if (activeTab === 'ledger') loadLedger();
@@ -206,29 +240,8 @@ export const FinancePage: React.FC = () => {
     }
   };
 
-  // Student Search Handling
-  useEffect(() => {
-    if (!searchCadetQuery.trim()) {
-      setSearchResults([]);
-      return;
-    }
-    const timer = setTimeout(async () => {
-      setSearchingCadets(true);
-      try {
-        const res = await financeService.searchStudents(searchCadetQuery);
-        setSearchResults(res);
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setSearchingCadets(false);
-      }
-    }, 280);
-    return () => clearTimeout(timer);
-  }, [searchCadetQuery]);
-
   const handleSelectStudent = async (student: StudentSearchResult) => {
     setSelectedStudent(student);
-    setSearchResults([]);
     setSearchCadetQuery('');
     setLoadingStudentData(true);
     try {
@@ -661,52 +674,12 @@ export const FinancePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* TAB 2: CADET FEE COLLECTION */}
       {/* ========================================================================= */}
+      {/* ========================================================================= */}
+      {/* TAB 2: CADET FEE COLLECTION & MASTER DIRECTORY */}
+      {/* ========================================================================= */}
       {activeTab === 'fee-collection' && (
         <div className="space-y-6">
-          {/* Cadet Search Bar & Header */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <div className="max-w-xl">
-              <label className="text-xs font-bold text-slate-700 block mb-1.5">
-                Search Cadet by Name or Roll Number:
-              </label>
-              <div className="relative">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                <input
-                  type="text"
-                  value={searchCadetQuery}
-                  onChange={(e) => setSearchCadetQuery(e.target.value)}
-                  placeholder="e.g. PMA-2601, Muhammad, 0300..."
-                  className="w-full pl-9 pr-4 py-2 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all font-medium text-slate-900"
-                />
-                {searchingCadets && (
-                  <RefreshCw className="w-3.5 h-3.5 text-slate-400 animate-spin absolute right-3 top-1/2 -translate-y-1/2" />
-                )}
-              </div>
-
-              {/* Instant Search Dropdown */}
-              {searchResults.length > 0 && (
-                <div className="absolute z-20 mt-1 w-full max-w-xl bg-white rounded-lg shadow-xl border border-slate-200 max-h-60 overflow-y-auto divide-y divide-slate-100">
-                  {searchResults.map((cadet) => (
-                    <button
-                      key={cadet.id}
-                      onClick={() => handleSelectStudent(cadet)}
-                      className="w-full text-left p-3 hover:bg-slate-50 flex items-center justify-between transition-colors"
-                    >
-                      <div>
-                        <div className="text-xs font-bold text-slate-900">{cadet.display_name}</div>
-                        <div className="text-[10px] text-slate-500">
-                          Roll: <span className="font-mono text-blue-700 font-semibold">{cadet.roll_number || 'N/A'}</span> • Father: {cadet.father_name || '—'}
-                        </div>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-slate-400" />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Selected Cadet Profile & Ledger Card */}
+          {/* Selected Cadet Detailed View */}
           {selectedStudent ? (
             <div className="space-y-6 animate-in fade-in duration-200">
               {/* Cadet Banner Card */}
@@ -732,10 +705,11 @@ export const FinancePage: React.FC = () => {
                       setSelectedStudent(null);
                       setStudentAccounts([]);
                       setStudentPayments([]);
+                      loadAllStudentsOverview();
                     }}
-                    className="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold rounded-lg transition-colors"
+                    className="px-3.5 py-2 bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold rounded-lg shadow-sm transition-colors flex items-center space-x-1"
                   >
-                    Clear Cadet
+                    <span>← Back to All Cadets List</span>
                   </button>
                 </div>
               </div>
@@ -751,7 +725,7 @@ export const FinancePage: React.FC = () => {
 
                 {loadingStudentData ? (
                   <div className="p-12 text-center text-slate-400 text-xs flex items-center justify-center space-x-2">
-                    <RefreshCw className="w-4 h-4 animate-spin" />
+                    <RefreshCw className="w-4 h-4 animate-spin text-slate-600" />
                     <span>Loading fee ledger...</span>
                   </div>
                 ) : studentAccounts.length === 0 ? (
@@ -797,14 +771,14 @@ export const FinancePage: React.FC = () => {
                               <td className="py-3 px-3 text-right font-mono text-emerald-700 font-bold">{formatPKR(acc.amount_paid)}</td>
                               <td className="py-3 px-3 text-right font-mono font-bold text-amber-700">{formatPKR(balance)}</td>
                               <td className="py-3 px-3 text-center">
-                                <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wide ${
+                                <span className={`inline-block px-2.5 py-1 rounded text-[11px] font-extrabold uppercase tracking-wide border ${
                                   acc.status === 'PAID'
-                                    ? 'bg-emerald-100 text-emerald-800'
+                                    ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
                                     : acc.status === 'PARTIAL'
-                                    ? 'bg-amber-100 text-amber-800'
+                                    ? 'bg-amber-100 text-amber-800 border-amber-300'
                                     : acc.status === 'WAIVED'
-                                    ? 'bg-purple-100 text-purple-800'
-                                    : 'bg-rose-100 text-rose-800'
+                                    ? 'bg-purple-100 text-purple-800 border-purple-300'
+                                    : 'bg-rose-100 text-rose-800 border-rose-300'
                                 }`}>
                                   {acc.status}
                                 </span>
@@ -932,12 +906,210 @@ export const FinancePage: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl p-12 text-center">
-              <Users className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-              <h3 className="text-sm font-bold text-slate-800">Select a Cadet to View & Collect Fees</h3>
-              <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
-                Use the search box above to search for any registered cadet by full name, roll number, or father's name.
-              </p>
+            <div className="space-y-4">
+              {/* Cadet Directory Search Bar & Status Filter */}
+              <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                {/* Search Cadet Input */}
+                <div className="relative flex-1 max-w-md">
+                  <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={searchCadetQuery}
+                    onChange={(e) => setSearchCadetQuery(e.target.value)}
+                    placeholder="Search by Cadet Name, Roll No, or Father Name..."
+                    className="w-full pl-9 pr-8 py-2 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white font-medium text-slate-900"
+                  />
+                  {searchCadetQuery && (
+                    <button
+                      onClick={() => setSearchCadetQuery('')}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-xs font-bold"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+
+                {/* Paid / Unpaid Status Filter Buttons */}
+                <div className="flex items-center space-x-2 overflow-x-auto">
+                  <button
+                    onClick={() => setFeeStatusFilter('ALL')}
+                    className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all flex items-center space-x-1.5 ${
+                      feeStatusFilter === 'ALL'
+                        ? 'bg-[#0E1B2A] text-white border-[#0E1B2A] shadow-xs'
+                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                    }`}
+                  >
+                    <span>All Cadets</span>
+                    <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-slate-700 text-white font-mono">
+                      {allStudentsOverview.length}
+                    </span>
+                  </button>
+
+                  <button
+                    onClick={() => setFeeStatusFilter('PAID')}
+                    className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all flex items-center space-x-1.5 ${
+                      feeStatusFilter === 'PAID'
+                        ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
+                        : 'bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100'
+                    }`}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                    <span>Paid</span>
+                    <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-emerald-700 text-white font-mono">
+                      {allStudentsOverview.filter((s) => s.status === 'PAID').length}
+                    </span>
+                  </button>
+
+                  <button
+                    onClick={() => setFeeStatusFilter('UNPAID')}
+                    className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all flex items-center space-x-1.5 ${
+                      feeStatusFilter === 'UNPAID'
+                        ? 'bg-rose-600 text-white border-rose-600 shadow-xs'
+                        : 'bg-rose-50 text-rose-800 border-rose-200 hover:bg-rose-100'
+                    }`}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-rose-500 inline-block"></span>
+                    <span>Unpaid</span>
+                    <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-rose-700 text-white font-mono">
+                      {allStudentsOverview.filter((s) => s.status === 'UNPAID').length}
+                    </span>
+                  </button>
+
+                  {allStudentsOverview.some((s) => s.status === 'PARTIAL') && (
+                    <button
+                      onClick={() => setFeeStatusFilter('PARTIAL')}
+                      className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all flex items-center space-x-1.5 ${
+                        feeStatusFilter === 'PARTIAL'
+                          ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                          : 'bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100'
+                      }`}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-amber-500 inline-block"></span>
+                      <span>Partial</span>
+                      <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-amber-700 text-white font-mono">
+                        {allStudentsOverview.filter((s) => s.status === 'PARTIAL').length}
+                      </span>
+                    </button>
+                  )}
+
+                  <button
+                    onClick={loadAllStudentsOverview}
+                    className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors border border-slate-300"
+                    title="Refresh Student Fee List"
+                  >
+                    <RefreshCw className={`w-3.5 h-3.5 ${loadingAllStudents ? 'animate-spin' : ''}`} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Master Cadets Table */}
+              <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                    Cadet Fee Register & Status Directory
+                  </h3>
+                  <span className="text-[11px] text-slate-500">
+                    Showing {filteredStudents.length} of {allStudentsOverview.length} cadets
+                  </span>
+                </div>
+
+                {loadingAllStudents ? (
+                  <div className="p-16 text-center text-slate-400 text-xs flex items-center justify-center space-x-2">
+                    <RefreshCw className="w-4 h-4 animate-spin text-slate-600" />
+                    <span className="font-semibold text-slate-600">Loading cadet fee directory...</span>
+                  </div>
+                ) : filteredStudents.length === 0 ? (
+                  <div className="p-16 text-center text-slate-400 text-xs">
+                    No registered cadets match the selected status or search filter.
+                  </div>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs">
+                      <thead className="bg-slate-50 text-slate-600 border-b border-slate-200 font-bold uppercase text-[10px]">
+                        <tr>
+                          <th className="py-3 px-4">Cadet Roll & Name</th>
+                          <th className="py-3 px-3">Course / Force</th>
+                          <th className="py-3 px-3">Father Name</th>
+                          <th className="py-3 px-3 text-right">Net Fees</th>
+                          <th className="py-3 px-3 text-right">Paid</th>
+                          <th className="py-3 px-3 text-right">Balance Due</th>
+                          <th className="py-3 px-4 text-center">Fee Status</th>
+                          <th className="py-3 px-4 text-right">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 text-slate-800">
+                        {filteredStudents.map((student) => (
+                          <tr key={student.student_id} className="hover:bg-slate-50/80 transition-colors">
+                            <td className="py-3 px-4">
+                              <div className="font-bold text-slate-900">{student.display_name}</div>
+                              <div className="text-[11px] font-mono text-blue-700 font-bold">{student.roll_number}</div>
+                            </td>
+                            <td className="py-3 px-3">
+                              <div className="font-semibold text-slate-800">{student.course_name || 'General'}</div>
+                              {student.force_name && <div className="text-[10px] text-slate-500 font-medium">{student.force_name}</div>}
+                            </td>
+                            <td className="py-3 px-3 text-slate-600 font-medium">
+                              {student.father_name || '—'}
+                            </td>
+                            <td className="py-3 px-3 text-right font-mono font-semibold">
+                              {formatPKR(student.total_due)}
+                            </td>
+                            <td className="py-3 px-3 text-right font-mono font-bold text-emerald-700">
+                              {formatPKR(student.total_paid)}
+                            </td>
+                            <td className="py-3 px-3 text-right font-mono font-bold">
+                              <span className={student.balance > 0 ? 'text-rose-600 font-extrabold' : 'text-slate-500'}>
+                                {formatPKR(student.balance)}
+                              </span>
+                            </td>
+                            <td className="py-3 px-4 text-center">
+                              {student.status === 'PAID' ? (
+                                <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-2xs">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                                  <span>PAID</span>
+                                </span>
+                              ) : student.status === 'PARTIAL' ? (
+                                <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-amber-100 text-amber-800 border border-amber-300 shadow-2xs">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                                  <span>PARTIAL</span>
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-rose-100 text-rose-800 border border-rose-300 shadow-2xs">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                                  <span>UNPAID</span>
+                                </span>
+                              )}
+                            </td>
+                            <td className="py-3 px-4 text-right">
+                              <button
+                                onClick={() => {
+                                  handleSelectStudent({
+                                    id: student.student_id,
+                                    profile_id: '',
+                                    roll_number: student.roll_number,
+                                    display_name: student.display_name,
+                                    father_name: student.father_name || '',
+                                    email: student.email,
+                                    course_id: null,
+                                    course_name: student.course_name,
+                                    batch_id: null,
+                                    batch_name: null,
+                                    force_name: student.force_name,
+                                  });
+                                }}
+                                className="px-3 py-1.5 bg-[#0E1B2A] hover:bg-slate-800 text-white rounded-lg font-bold text-xs shadow-xs transition-colors inline-flex items-center space-x-1"
+                              >
+                                <span>Collect / View</span>
+                                <ChevronRight className="w-3.5 h-3.5" />
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -1293,6 +1465,7 @@ export const FinancePage: React.FC = () => {
       {/* ========================================================================= */}
       {/* MODAL 1: COLLECT CADET PAYMENT */}
       {/* ========================================================================= */}
+      {/* MODAL 1: COLLECT CADET PAYMENT */}
       {activeAccountForPayment && (
         <CollectPaymentModal
           account={activeAccountForPayment}
@@ -1302,6 +1475,7 @@ export const FinancePage: React.FC = () => {
             setActiveAccountForPayment(null);
             if (selectedStudent) handleSelectStudent(selectedStudent);
             loadSummary();
+            loadAllStudentsOverview();
           }}
         />
       )}
@@ -1315,6 +1489,7 @@ export const FinancePage: React.FC = () => {
             setActiveAccountForAdjust(null);
             if (selectedStudent) handleSelectStudent(selectedStudent);
             loadSummary();
+            loadAllStudentsOverview();
           }}
         />
       )}
@@ -1328,6 +1503,7 @@ export const FinancePage: React.FC = () => {
             setActiveAccountForWaive(null);
             if (selectedStudent) handleSelectStudent(selectedStudent);
             loadSummary();
+            loadAllStudentsOverview();
           }}
         />
       )}
@@ -1365,6 +1541,7 @@ export const FinancePage: React.FC = () => {
             setIsGenerateFeesOpen(false);
             loadSummary();
             if (selectedStudent) handleSelectStudent(selectedStudent);
+            loadAllStudentsOverview();
           }}
         />
       )}

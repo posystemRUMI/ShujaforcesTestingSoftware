@@ -9,6 +9,7 @@ import type {
   FinanceSummary,
   FinanceTransaction,
   StudentSearchResult,
+  StudentFeeOverviewItem,
   TeacherDropdownItem,
   PaymentMethod,
   SalaryPaymentType,
@@ -132,6 +133,162 @@ export const financeService = {
         batch_id: activeEnrollment?.batch?.id || null,
         batch_name: activeEnrollment?.batch?.name || null,
         force_name: row.target_force?.name || null,
+      };
+    });
+  },
+
+  /**
+   * Fetch all registered cadets with aggregated fee dues, payments & status summary
+   */
+  async getAllStudentsFeeOverview(): Promise<StudentFeeOverviewItem[]> {
+    const { data, error } = await supabase
+      .from('students')
+      .select(`
+        id,
+        profile_id,
+        roll_number,
+        father_name,
+        target_course:courses(name),
+        target_force:forces(name),
+        profile:profiles!students_profile_id_fkey(display_name, email),
+        student_fee_accounts(
+          id,
+          amount_due,
+          discount_amount,
+          fine_amount,
+          amount_paid,
+          status
+        )
+      `)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.warn('Primary fee overview query error, attempting fallback:', error);
+      const { data: fbData, error: fbError } = await supabase
+        .from('students')
+        .select(`
+          id,
+          profile_id,
+          roll_number,
+          father_name,
+          courses(name),
+          forces(name),
+          profiles:profiles!students_profile_id_fkey(display_name, email),
+          student_fee_accounts(
+            id,
+            amount_due,
+            discount_amount,
+            fine_amount,
+            amount_paid,
+            status
+          )
+        `)
+        .order('created_at', { ascending: false });
+
+      if (fbError) {
+        throw new Error(`Failed to load student fee overview: ${fbError.message}`);
+      }
+
+      return (fbData || []).map((row: any) => {
+        const prof = (Array.isArray(row.profiles) ? row.profiles[0] : row.profiles) as any;
+        const feeAccounts = row.student_fee_accounts || [];
+
+        let totalDue = 0;
+        let totalDiscount = 0;
+        let totalFine = 0;
+        let totalPaid = 0;
+        let unpaidCount = 0;
+
+        feeAccounts.forEach((acc: any) => {
+          totalDue += Number(acc.amount_due || 0);
+          totalDiscount += Number(acc.discount_amount || 0);
+          totalFine += Number(acc.fine_amount || 0);
+          totalPaid += Number(acc.amount_paid || 0);
+          if (acc.status !== 'PAID' && acc.status !== 'WAIVED') {
+            unpaidCount++;
+          }
+        });
+
+        const netPayable = totalDue - totalDiscount + totalFine;
+        const balance = Math.max(0, netPayable - totalPaid);
+
+        let status: 'PAID' | 'UNPAID' | 'PARTIAL' = 'PAID';
+        if (balance <= 0 || (feeAccounts.length > 0 && unpaidCount === 0)) {
+          status = 'PAID';
+        } else if (totalPaid > 0) {
+          status = 'PARTIAL';
+        } else {
+          status = 'UNPAID';
+        }
+
+        return {
+          student_id: row.id,
+          display_name: prof?.display_name || 'Cadet',
+          roll_number: row.roll_number || 'N/A',
+          father_name: row.father_name || null,
+          email: prof?.email || null,
+          course_name: row.courses?.name || null,
+          force_name: row.forces?.name || null,
+          total_due: netPayable,
+          total_paid: totalPaid,
+          total_discount: totalDiscount,
+          total_fine: totalFine,
+          balance: balance,
+          status: status,
+          accounts_count: feeAccounts.length,
+          unpaid_count: unpaidCount,
+        };
+      });
+    }
+
+    return (data || []).map((row: any) => {
+      const prof = (Array.isArray(row.profile) ? row.profile[0] : row.profile) as any;
+      const feeAccounts = row.student_fee_accounts || [];
+
+      let totalDue = 0;
+      let totalDiscount = 0;
+      let totalFine = 0;
+      let totalPaid = 0;
+      let unpaidCount = 0;
+
+      feeAccounts.forEach((acc: any) => {
+        totalDue += Number(acc.amount_due || 0);
+        totalDiscount += Number(acc.discount_amount || 0);
+        totalFine += Number(acc.fine_amount || 0);
+        totalPaid += Number(acc.amount_paid || 0);
+        if (acc.status !== 'PAID' && acc.status !== 'WAIVED') {
+          unpaidCount++;
+        }
+      });
+
+      const netPayable = totalDue - totalDiscount + totalFine;
+      const balance = Math.max(0, netPayable - totalPaid);
+
+      let status: 'PAID' | 'UNPAID' | 'PARTIAL' = 'PAID';
+      if (balance <= 0 || (feeAccounts.length > 0 && unpaidCount === 0)) {
+        status = 'PAID';
+      } else if (totalPaid > 0) {
+        status = 'PARTIAL';
+      } else {
+        status = 'UNPAID';
+      }
+
+      return {
+        student_id: row.id,
+        display_name: prof?.display_name || 'Cadet',
+        roll_number: row.roll_number || 'N/A',
+        father_name: row.father_name || null,
+        email: prof?.email || null,
+        course_name: row.target_course?.name || null,
+        force_name: row.target_force?.name || null,
+        total_due: netPayable,
+        total_paid: totalPaid,
+        total_discount: totalDiscount,
+        total_fine: totalFine,
+        balance: balance,
+        status: status,
+        accounts_count: feeAccounts.length,
+        unpaid_count: unpaidCount,
       };
     });
   },

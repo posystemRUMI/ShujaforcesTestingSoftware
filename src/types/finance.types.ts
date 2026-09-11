@@ -178,3 +178,22 @@ export interface TeacherDropdownItem {
   service_number: string | null;
   rank: string | null;
 }
+
+export interface StudentFeeOverviewItem {
+  student_id: string;
+  display_name: string;
+  roll_number: string;
+  father_name: string | null;
+  email: string | null;
+  course_name: string | null;
+  force_name: string | null;
+  total_due: number;
+  total_paid: number;
+  total_discount: number;
+  total_fine: number;
+  balance: number;
+  status: 'PAID' | 'UNPAID' | 'PARTIAL';
+  accounts_count: number;
+  unpaid_count: number;
+}
+

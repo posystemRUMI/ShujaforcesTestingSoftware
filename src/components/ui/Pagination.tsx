@@ -27,7 +27,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border-t border-[#D4D9DF] px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 select-none text-xs text-[#64748B]',
+        'bg-white border-t border-[#D4D9DF] px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 select-none text-sm font-medium text-[#64748B]',
         className,
       )}
       {...props}

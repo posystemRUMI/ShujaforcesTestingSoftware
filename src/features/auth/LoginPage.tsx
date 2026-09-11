@@ -68,81 +68,81 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-6 select-none font-sans">
+    <div className="w-full mx-auto space-y-8 select-none font-sans">
       {/* Top Welcome Heading */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-[#0E1B2A] tracking-tight">
+        <h1 className="text-3xl sm:text-[38px] font-bold text-[#0E1B2A] tracking-tight">
           Welcome back
         </h1>
-        <p className="text-xs sm:text-sm text-[#667085] mt-1.5 leading-relaxed font-normal">
-          Sign in to access your academy examination & administration portal.
+        <p className="text-[15px] text-[#475569] mt-2 leading-relaxed font-normal">
+          Sign in to access the Shuja Forces Academy examination and administration system.
         </p>
       </div>
 
       {/* Compact Inline Error Alert */}
       {errorMessage && (
-        <div className="p-3.5 bg-[#FDF2F2] border border-[#FCA5A5] rounded-lg text-xs text-[#991B1B] flex items-start space-x-2.5 animate-in fade-in duration-150">
-          <AlertCircle className="w-4 h-4 text-[#DC2626] flex-shrink-0 mt-0.5" />
+        <div className="p-4 bg-[#FDF2F2] border border-[#FCA5A5] rounded-xl text-sm text-[#991B1B] flex items-start space-x-3 animate-in fade-in duration-150">
+          <AlertCircle className="w-5 h-5 text-[#DC2626] flex-shrink-0 mt-0.5" />
           <span className="leading-snug font-medium">{errorMessage}</span>
         </div>
       )}
 
       {/* Credentials Form */}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-5">
         {/* Identifier Field */}
         <div>
-          <label className="block text-xs font-semibold text-[#17202A] mb-1.5">
+          <label className="block text-[14px] font-medium text-[#17202A] mb-1.5">
             Email / Roll Number / Staff ID
           </label>
           <div className="relative">
-            <User className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <User className="w-5 h-5 text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               autoComplete="username"
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
-              placeholder="e.g. a@gmail.com, SFA-001, or t1@gmail.com"
-              className="w-full pl-10 pr-4 h-12 text-xs sm:text-sm bg-[#F8FAFC] border border-[#E6E8EC] rounded-lg text-[#17202A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#0E1B2A] focus:ring-2 focus:ring-[#0E1B2A]/10 transition-colors"
+              placeholder="Enter email, roll number or staff ID"
+              className="w-full pl-11 pr-4 h-[50px] text-[15px] bg-white sm:bg-[#F8FAFC] border border-[#E6E8EC] rounded-xl text-[#17202A] placeholder-[#64748B] focus:bg-white focus:outline-none focus:border-[#0E1B2A] focus:ring-2 focus:ring-[#0E1B2A]/10 transition-colors"
             />
           </div>
         </div>
 
         {/* Password Field */}
         <div>
-          <label className="block text-xs font-semibold text-[#17202A] mb-1.5">
+          <label className="block text-[14px] font-medium text-[#17202A] mb-1.5">
             Password
           </label>
           <div className="relative">
-            <Lock className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Lock className="w-5 h-5 text-[#94A3B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type={showPassword ? 'text' : 'password'}
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              className="w-full pl-10 pr-10 h-12 text-xs sm:text-sm bg-[#F8FAFC] border border-[#E6E8EC] rounded-lg text-[#17202A] placeholder-[#94A3B8] focus:bg-white focus:outline-none focus:border-[#0E1B2A] focus:ring-2 focus:ring-[#0E1B2A]/10 transition-colors"
+              className="w-full pl-11 pr-12 h-[50px] text-[15px] bg-white sm:bg-[#F8FAFC] border border-[#E6E8EC] rounded-xl text-[#17202A] placeholder-[#64748B] focus:bg-white focus:outline-none focus:border-[#0E1B2A] focus:ring-2 focus:ring-[#0E1B2A]/10 transition-colors"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#0E1B2A] p-1 rounded focus:outline-none"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#94A3B8] hover:text-[#0E1B2A] p-1.5 rounded-lg focus:outline-none"
               aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
-              {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
         {/* Secondary Actions Row */}
-        <div className="flex items-center justify-between text-xs pt-0.5">
-          <label className="flex items-center space-x-2 text-[#667085] cursor-pointer">
+        <div className="flex items-center justify-between text-[13px] pt-1">
+          <label className="flex items-center space-x-2.5 text-[#475569] cursor-pointer">
             <input
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
               className="w-4 h-4 rounded border-[#E6E8EC] text-[#0E1B2A] focus:ring-[#0E1B2A]/20 cursor-pointer"
             />
-            <span>Remember me</span>
+            <span className="font-medium">Remember me</span>
           </label>
 
           <button
@@ -158,32 +158,33 @@ export const LoginPage: React.FC = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full h-12 flex items-center justify-center space-x-2 bg-[#0E1B2A] hover:bg-[#1C2E42] text-white rounded-lg text-sm font-semibold transition-all duration-150 disabled:opacity-60 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0E1B2A]/20 cursor-pointer"
+          className="w-full h-[50px] mt-2 flex items-center justify-center space-x-2 bg-[#0E1B2A] hover:bg-[#15283B] text-white rounded-xl text-[15px] font-semibold transition-all duration-150 disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-[#0E1B2A]/20 cursor-pointer"
         >
           {isLoading ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin text-white" />
+              <Loader2 className="w-5 h-5 animate-spin text-white" />
               <span>Authenticating...</span>
             </>
           ) : (
             <>
-              <span>Sign In</span>
-              <ArrowRight className="w-4 h-4 text-[#C6A75E]" />
+              <span>Sign in</span>
+              <ArrowRight className="w-5 h-5 text-[#C6A75E] opacity-90" />
             </>
           )}
         </button>
       </form>
 
       {/* Footer Support Notice */}
-      <div className="pt-5 border-t border-[#E6E8EC] text-center">
-        <p className="text-xs text-[#667085]">
+      <div className="pt-6 text-center">
+        <p className="text-[14px] text-[#475569] font-medium">
           Need help accessing your account?{' '}
-          <span
-            className="text-[#0E1B2A] font-medium cursor-pointer hover:underline"
+          <button
+            type="button"
+            className="text-[#0E1B2A] font-semibold cursor-pointer hover:underline focus:outline-none"
             onClick={() => toast.info('Contact system command at support@forcesacademy.edu.pk')}
           >
-            Contact testing center
-          </span>
+            Contact academy administration
+          </button>
         </p>
       </div>
     </div>

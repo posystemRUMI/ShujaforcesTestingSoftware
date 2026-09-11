@@ -5,85 +5,87 @@ import { ShieldCheck, Lock, Award } from 'lucide-react';
 
 export const AuthShell: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#F6F8FA] flex items-center justify-center p-4 sm:p-6 lg:p-8 select-none font-sans">
-      {/* Desktop Split Layout Container */}
-      <div className="w-full max-w-5xl bg-white border border-[#E6E8EC] rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row min-h-[620px]">
-        {/* Left Branding Panel (Desktop Only) */}
-        <div className="hidden lg:flex w-5/12 bg-[#0E1B2A] text-white p-10 flex-col justify-between relative overflow-hidden border-r border-[#1C2E42]">
-          {/* Subtle Institutional Background Grid Accent */}
-          <div
-            className="absolute inset-0 opacity-[0.03] pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(#C6A75E 1px, transparent 1px)`,
-              backgroundSize: '24px 24px',
-            }}
-          />
-          <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#C6A75E]/5 blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-white flex flex-col lg:flex-row select-none font-sans">
+      {/* Left Media & Branding Panel */}
+      <div className="relative w-full lg:w-[55%] xl:w-[60%] flex flex-col justify-between bg-[#0E1B2A] min-h-[180px] sm:min-h-[230px] lg:min-h-screen overflow-hidden">
+        
+        {/* Background Video with Fallback (z-0) */}
+        <div className="absolute inset-0 w-full h-full z-0 bg-[#0E1B2A] bg-[url('/assets/academy-poster.jpg')] bg-cover bg-center">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/assets/academy-poster.jpg"
+            className="w-full h-full object-cover motion-reduce:hidden absolute inset-0 z-0"
+          >
+            <source src="/videos/Mainpagevid.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Subtle Overlay for Readability (z-10) */}
+          <div className="absolute inset-0 bg-[#0E1B2A]/20 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E1B2A]/30 via-transparent to-transparent z-10 pointer-events-none"></div>
+        </div>
 
-          {/* Top Branding Header */}
-          <div className="relative z-10">
+        {/* Content Over Video (z-20) */}
+        <div className="relative z-20 p-6 sm:p-10 lg:p-12 flex flex-col h-full justify-between">
+          {/* Top Branding */}
+          <div className="flex flex-col">
             <AppLogo
               size="lg"
               theme="dark"
-              subtitle="Computerized Testing & Examination System"
             />
-          </div>
-
-          {/* Middle Copy & Trust Points */}
-          <div className="relative z-10 space-y-6 my-auto py-8">
-            <div>
-              <h2 className="text-xl font-bold text-white tracking-tight leading-snug">
-                Institutional Assessment Portal
-              </h2>
-              <p className="text-xs text-[#A0AEC0] mt-2 leading-relaxed font-normal">
-                Secure assessment and examination management for Pakistan Armed Forces preparation.
-              </p>
-            </div>
-
-            {/* Trust Points List */}
-            <div className="space-y-3.5 pt-2">
-              <div className="flex items-center space-x-3 text-xs text-[#E2E8F0]">
-                <div className="w-7 h-7 rounded-lg bg-[#1C2E42] text-[#C6A75E] flex items-center justify-center flex-shrink-0 border border-[#2E425A]">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <span>Secure role-based access control</span>
-              </div>
-
-              <div className="flex items-center space-x-3 text-xs text-[#E2E8F0]">
-                <div className="w-7 h-7 rounded-lg bg-[#1C2E42] text-[#C6A75E] flex items-center justify-center flex-shrink-0 border border-[#2E425A]">
-                  <Lock className="w-4 h-4" />
-                </div>
-                <span>Server-authoritative examinations</span>
-              </div>
-
-              <div className="flex items-center space-x-3 text-xs text-[#E2E8F0]">
-                <div className="w-7 h-7 rounded-lg bg-[#1C2E42] text-[#C6A75E] flex items-center justify-center flex-shrink-0 border border-[#2E425A]">
-                  <Award className="w-4 h-4" />
-                </div>
-                <span>Protected candidate evaluation results</span>
-              </div>
+            <div className="mt-1.5 lg:pl-[62px]">
+              <span className="text-[13px] lg:text-[14px] font-medium text-white/95 tracking-wide drop-shadow-sm">
+                Computerized Testing & Examination System
+              </span>
             </div>
           </div>
 
-          {/* Bottom Footer */}
-          <div className="relative z-10 pt-4 border-t border-[#1C2E42] text-[11px] text-[#64748B] flex items-center justify-between">
-            <span>Shuja Forces Academy Pindsultani</span>
-            <span>Version 2.4</span>
+          {/* Middle/Bottom Copy (Hidden on Mobile for brevity) */}
+          <div className="hidden lg:flex flex-col mt-auto space-y-4 mb-16 xl:mb-24">
+            <h1 className="text-3xl xl:text-4xl font-bold text-white tracking-tight drop-shadow-md">
+              Discipline. Knowledge. Excellence.
+            </h1>
+            <p className="text-[15px] xl:text-[16px] text-white/95 max-w-lg leading-relaxed font-normal drop-shadow-sm">
+              Secure digital assessment for students, instructors and academy administration.
+            </p>
+
+            <div className="flex items-center space-x-6 pt-6">
+              <div className="flex items-center space-x-2.5 text-[13px] font-medium text-white drop-shadow-sm">
+                <ShieldCheck className="w-[18px] h-[18px] text-[#C6A75E]" />
+                <span>Secure Access</span>
+              </div>
+              <div className="flex items-center space-x-2.5 text-[13px] font-medium text-white drop-shadow-sm">
+                <Lock className="w-[18px] h-[18px] text-[#C6A75E]" />
+                <span>Structured Assessments</span>
+              </div>
+              <div className="flex items-center space-x-2.5 text-[13px] font-medium text-white drop-shadow-sm">
+                <Award className="w-[18px] h-[18px] text-[#C6A75E]" />
+                <span>Verified Results</span>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Right Authentication Panel */}
-        <div className="w-full lg:w-7/12 bg-white p-6 sm:p-10 lg:p-12 flex flex-col justify-center">
-          {/* Mobile Header (Shown on mobile/tablet) */}
+      {/* Right Authentication Panel */}
+      <div className="w-full lg:w-[45%] xl:w-[40%] bg-[#FFFFFF] lg:bg-[#F8FAFC] flex flex-col justify-center items-center p-6 sm:p-10 lg:p-16 flex-grow">
+        <div className="w-full max-w-[440px] bg-white lg:bg-transparent rounded-2xl lg:rounded-none lg:shadow-none p-6 sm:p-8 lg:p-0 border border-[#E6E8EC] lg:border-none shadow-sm">
+          {/* Mobile Header Branding Backup */}
           <div className="lg:hidden mb-8 flex justify-center text-center">
             <AppLogo
               size="md"
               theme="light"
-              subtitle="Computerized Testing & Examination System"
             />
           </div>
-
           <Outlet />
+        </div>
+        
+        {/* Footer info attached to bottom of panel */}
+        <div className="hidden lg:block fixed bottom-6 text-[11px] text-[#667085] text-center w-[45%] xl:w-[40%] right-0">
+          Shuja Forces Academy Pindsultani
         </div>
       </div>
     </div>

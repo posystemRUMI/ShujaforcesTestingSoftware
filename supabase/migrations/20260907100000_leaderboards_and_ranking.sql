@@ -300,7 +300,7 @@ BEGIN
         q.id, q.code, q.stem, q.stem_image_url, q.explanation, q.subject_id,
         ts.marks_per_question,
         aa.selected_option_id,
-        COALESCE(aa.is_flagged, false) AS marked_for_review,
+        COALESCE(aa.marked_for_review, false) AS marked_for_review,
         tsq.position AS q_pos
       FROM public.test_section_questions tsq
       JOIN public.questions q ON q.id = tsq.question_id

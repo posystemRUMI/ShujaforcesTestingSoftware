@@ -268,11 +268,21 @@ export const studentRegistrationService = {
 
     // 1. Try Edge Function
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const headers: Record<string, string> = {};
+      if (session?.access_token) {
+        headers['Authorization'] = `Bearer ${session.access_token}`;
+      }
+
       const { data, error } = await supabase.functions.invoke<RegistrationResult>('register-student', {
         body: payload,
+        headers,
       });
 
       if (!error && data && data.success) {
+        if (data.studentId) {
+          await setupInitialFeeAccountAndPayment(data.studentId, input);
+        }
         return data;
       }
 
@@ -282,10 +292,14 @@ export const studentRegistrationService = {
           try {
             const body = await errObj.context.json();
             if (body?.error) {
-              throw new Error(body.error);
+              const errMsg = String(body.error);
+              if (errMsg.includes('DUPLICATE_ENTRY') || errMsg.includes('BAD_REQUEST') || errMsg.includes('FORBIDDEN')) {
+                throw new Error(errMsg);
+              }
+              console.warn('Edge function error, attempting DB fallback:', errMsg);
             }
           } catch (jsonErr: any) {
-            if (jsonErr.message && !jsonErr.message.includes('JSON')) {
+            if (jsonErr.message && (jsonErr.message.includes('DUPLICATE_ENTRY') || jsonErr.message.includes('BAD_REQUEST') || jsonErr.message.includes('FORBIDDEN'))) {
               throw jsonErr;
             }
           }
@@ -294,20 +308,18 @@ export const studentRegistrationService = {
     } catch (edgeErr: any) {
       if (
         edgeErr.message &&
-        !edgeErr.message.includes('non-2xx') &&
-        !edgeErr.message.includes('503') &&
-        !edgeErr.message.includes('500') &&
-        !edgeErr.message.includes('Failed to fetch')
+        (edgeErr.message.includes('DUPLICATE_ENTRY') ||
+         edgeErr.message.includes('BAD_REQUEST') ||
+         edgeErr.message.includes('FORBIDDEN'))
       ) {
         throw edgeErr;
       }
+      console.warn('Edge Function invocation failed, trying direct Auth/RPC creation:', edgeErr?.message);
     }
 
     // 2. Direct Auth + DB RPC fallback (For local development / single-tier runtime)
-    const envUrl = (import.meta as any).env?.VITE_SUPABASE_URL || 'http://127.0.0.1:54321';
-    const envAnon =
-      (import.meta as any).env?.VITE_SUPABASE_ANON_KEY ||
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0';
+    const envUrl = (import.meta as any).env?.VITE_SUPABASE_URL || '';
+    const envAnon = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY || '';
 
     const tempAnon = createClient(envUrl, envAnon, { auth: { persistSession: false } });
 
@@ -366,6 +378,51 @@ export const studentRegistrationService = {
       throw new Error(rpcError.message || 'Database registration profile creation failed.');
     }
 
-    return rpcData as RegistrationResult;
+    const result = rpcData as RegistrationResult;
+
+    if (result && (result.studentId || (result as any).student_id)) {
+      const sid = result.studentId || (result as any).student_id;
+      await setupInitialFeeAccountAndPayment(sid, input);
+    }
+
+    return result;
   },
 };
+
+async function setupInitialFeeAccountAndPayment(studentId: string, input: StudentRegistrationInput) {
+  if (!studentId || !input.courseFeeAmount || input.courseFeeAmount <= 0) return;
+
+  try {
+    const { data: feeAcc, error: feeErr } = await supabase
+      .from('student_fee_accounts')
+      .insert({
+        student_id: studentId,
+        course_id: input.targetCourseId,
+        batch_id: input.batchId,
+        fee_type: 'ADMISSION & TUITION FEE',
+        fee_year: new Date().getFullYear(),
+        fee_month: new Date().getMonth() + 1,
+        fee_period: `${new Date().getFullYear()} Session`,
+        amount_due: input.courseFeeAmount,
+        discount_amount: 0,
+        fine_amount: 0,
+        amount_paid: 0,
+        status: 'UNPAID',
+      })
+      .select('id')
+      .single();
+
+    if (!feeErr && feeAcc && input.initialPaymentAmount && input.initialPaymentAmount > 0) {
+      const { financeService } = await import('@/services/financeService');
+      await financeService.recordStudentFeePayment({
+        studentId,
+        feeAccountId: feeAcc.id,
+        amount: input.initialPaymentAmount,
+        paymentMethod: input.paymentMethod || 'CASH',
+        notes: 'Initial course fee payment recorded during student registration',
+      });
+    }
+  } catch (err) {
+    console.warn('Initial fee setup error:', err);
+  }
+}

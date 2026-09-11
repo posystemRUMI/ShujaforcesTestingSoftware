@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { mockService } from '@/lib/mock-service';
 import { monitoringService } from '@/services/monitoringService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
-import { TerminalWorkstation, TerminalWorkstationStatus } from '@/types';
+import { TerminalWorkstation, TerminalWorkstationStatus, MilitaryBranch } from '@/types';
 import { ShieldAlert, Play, Pause, AlertTriangle, Eye, Radio, Search, Monitor, Activity, X } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -36,7 +36,7 @@ export const LiveProctorPage: React.FC = () => {
               currentCadet: {
                 name: m.student_name,
                 rollNumber: m.roll_number,
-                branch: (m.force_code || 'PAKISTAN_ARMY') as any,
+                branch: (m.force_code || 'PAKISTAN_ARMY') as MilitaryBranch,
               },
               testTitle: m.test_name,
               currentQuestion: (m.current_question_index || 0) + 1,
@@ -51,7 +51,7 @@ export const LiveProctorPage: React.FC = () => {
             setLoading(false);
 
             realtimeChannel = monitoringService.subscribeToHeartbeats((payload) => {
-              const hb = payload.new;
+              const hb = payload.new as { attempt_id?: string; answered_count?: number } | null;
               if (!hb) return;
               setTerminals((prev) =>
                 prev.map((t) => {

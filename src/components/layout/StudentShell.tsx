@@ -99,7 +99,7 @@ export const StudentShell: React.FC = () => {
 
           <div className="text-right hidden sm:flex flex-col justify-center min-w-[110px] lg:min-w-[130px] border-l border-[#1C2E42] pl-3.5 pr-1">
             <p className="text-[13px] font-semibold text-white leading-tight truncate">{user?.name || 'Cadet User'}</p>
-            <p className="text-[11px] text-[#C6A75E] font-mono leading-tight mt-0.5">{user?.rollNumber || 'PMA-2601'}</p>
+            <p className="text-xs text-[#C6A75E] font-mono font-semibold leading-tight mt-0.5">{user?.rollNumber || 'PMA-2601'}</p>
           </div>
 
           <button
@@ -153,7 +153,7 @@ export const StudentShell: React.FC = () => {
       </div>
 
       {/* Main Student Workspace Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+      <main className="flex-1 max-w-[1520px] w-full mx-auto p-4 sm:p-6 lg:p-8">
         <Outlet />
       </main>
 

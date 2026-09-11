@@ -45,6 +45,7 @@ export interface SectionMeta {
   startIndex: number;
   endIndex: number;
   questionCount: number;
+  durationMinutes: number;
 }
 
 export const ExamRunnerPage: React.FC = () => {
@@ -149,6 +150,7 @@ export const ExamRunnerPage: React.FC = () => {
               startIndex: offset,
               endIndex: offset + secQs.length - 1,
               questionCount: secQs.length,
+              durationMinutes: sec.duration_minutes || 30,
             });
 
             offset += secQs.length;
@@ -158,7 +160,7 @@ export const ExamRunnerPage: React.FC = () => {
           if (qList.length > 0) {
             setQuestions(qList);
             setSections(secList);
-            setTestTitle(payload.test.name);
+            setTestTitle(payload.test?.name || (payload as any).test_name || 'Preliminary Computerized Screening Examination');
 
             // Synchronize preloaded answers & flags
             if (payload.saved_answers) {
@@ -174,12 +176,14 @@ export const ExamRunnerPage: React.FC = () => {
               setFlagged(restoredFlags);
             }
 
-            // Sync chronometer with server expiry
-            if (payload.attempt.expires_at) {
-              const expiresMs = new Date(payload.attempt.expires_at).getTime();
-              const serverMs = payload.server_time ? new Date(payload.server_time).getTime() : Date.now();
-              const remainingSecs = Math.max(0, Math.floor((expiresMs - serverMs) / 1000));
-              setSecondsRemaining(remainingSecs);
+            // Sync chronometer with exact section duration or valid server seconds
+            const serverSecs = (payload as any).time_remaining_seconds;
+            if (typeof serverSecs === 'number' && serverSecs > 0 && serverSecs <= 7200) {
+              setSecondsRemaining(serverSecs);
+            } else if (secList.length > 0 && secList[0].durationMinutes) {
+              setSecondsRemaining(secList[0].durationMinutes * 60);
+            } else {
+              setSecondsRemaining(1800);
             }
           } else {
             setErrorMsg('No questions available in examination payload.');
@@ -244,7 +248,7 @@ export const ExamRunnerPage: React.FC = () => {
     return () => clearInterval(heartbeatTimer);
   }, [attemptId, answers, currentIndex, sections, loading]);
 
-  // Chronometer countdown
+  // Chronometer countdown with per-section timer auto-advancement
   useEffect(() => {
     if (loading) return;
 
@@ -252,8 +256,15 @@ export const ExamRunnerPage: React.FC = () => {
       setSecondsRemaining((prev: number) => {
         if (prev <= 1) {
           clearInterval(timer);
-          toast.warning('Timer expired! Submitting examination automatically.');
-          handleFinalSubmit();
+
+          if (activeSectionIndex < sections.length - 1) {
+            const currentTitle = sections[activeSectionIndex]?.title || 'Current Section';
+            toast.warning(`Timer expired for section "${currentTitle}". Advancing to next section...`);
+            handleProceedNextSection();
+          } else {
+            toast.warning('Final section timer expired! Submitting examination automatically.');
+            handleFinalSubmit();
+          }
           return 0;
         }
         return prev - 1;
@@ -261,7 +272,7 @@ export const ExamRunnerPage: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [loading]);
+  }, [loading, activeSectionIndex, sections]);
 
   const currentQ = questions[currentIndex] || questions[0];
   const isFlagged = currentQ ? flagged.has(currentQ.id) : false;
@@ -383,10 +394,24 @@ export const ExamRunnerPage: React.FC = () => {
     toast.info(`Selection cleared for Question ${currentIndex + 1}`);
   }, [currentQ, answers, attemptId, flagged, currentIndex]);
 
-  const handleProceedNextSection = () => {
+  const handleProceedNextSection = async () => {
     setShowSectionModal(false);
-    setActiveSectionIndex((prev) => prev + 1);
-    setCurrentIndex((prev) => prev + 1);
+    const nextSecIndex = activeSectionIndex + 1;
+    if (nextSecIndex < sections.length) {
+      const nextSection = sections[nextSecIndex];
+      setActiveSectionIndex(nextSecIndex);
+      setCurrentIndex(nextSection.startIndex);
+      setSecondsRemaining(nextSection.durationMinutes * 60);
+
+      if (attemptId && isSupabaseConfigured()) {
+        attemptService.advanceSection(attemptId, nextSection.id).catch((e) => {
+          console.warn('Section advance RPC error:', e);
+        });
+      }
+      toast.success(`Started ${nextSection.title} (${nextSection.durationMinutes} mins allocated)`);
+    } else {
+      handleFinalSubmit();
+    }
   };
 
   // Final Server Submission (Server-authoritative scoring)

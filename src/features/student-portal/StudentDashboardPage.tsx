@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/app/providers';
-import { BookOpen, CheckCircle, Clock, ArrowRight, AlertCircle, RefreshCw, BarChart2, Shield, Trophy } from 'lucide-react';
+import { BookOpen, CheckCircle, Clock, ArrowRight, AlertCircle, RefreshCw, BarChart2, Shield, Trophy, Receipt } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { testService, TestRecord } from '@/services/testService';
 import { resultService, ResultRecord } from '@/services/resultService';
 import { leaderboardService, StudentRankSummary } from '@/services/leaderboardService';
+import { financeService } from '@/services/financeService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { TestBlueprint, ExamResult } from '@/types';
 
@@ -13,18 +14,56 @@ export const StudentDashboardPage: React.FC = () => {
   const [tests, setTests] = useState<TestBlueprint[]>([]);
   const [results, setResults] = useState<ExamResult[]>([]);
   const [rankSummary, setRankSummary] = useState<StudentRankSummary | null>(null);
+  const [feeInfo, setFeeInfo] = useState<{
+    totalDue: number;
+    totalPaid: number;
+    balance: number;
+    status: 'PAID' | 'UNPAID' | 'PARTIAL';
+    paymentsCount: number;
+  }>({
+    totalDue: 0,
+    totalPaid: 0,
+    balance: 0,
+    status: 'PAID',
+    paymentsCount: 0,
+  });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadData() {
       try {
         if (isSupabaseConfigured()) {
-          const [dbTests, dbResults, rSummary] = await Promise.all([
+          const studentId = user?.cadetId || user?.id;
+          const [dbTests, dbResults, rSummary, feeAccs, feePays] = await Promise.all([
             testService.getTests().catch((_e: unknown) => [] as TestRecord[]),
-            resultService.getResults({ studentId: user?.cadetId || user?.id }).catch((_e: unknown) => [] as ResultRecord[]),
+            resultService.getResults({ studentId: studentId }).catch((_e: unknown) => [] as ResultRecord[]),
             leaderboardService.getStudentRankSummary().catch((_e: unknown) => null),
+            studentId ? financeService.getStudentFeeAccounts(studentId).catch(() => []) : Promise.resolve([]),
+            studentId ? financeService.getStudentFeePayments(studentId).catch(() => []) : Promise.resolve([]),
           ]);
           setRankSummary(rSummary);
+
+          // Calculate Cadet Fee Summary
+          let due = 0;
+          let paid = 0;
+          feeAccs.forEach((a) => {
+            due += (a.amount_due || 0) - (a.discount_amount || 0) + (a.fine_amount || 0);
+            paid += (a.amount_paid || 0);
+          });
+          const bal = Math.max(0, due - paid);
+          let st: 'PAID' | 'UNPAID' | 'PARTIAL' = 'PAID';
+          if (feeAccs.length > 0) {
+            if (bal <= 0) st = 'PAID';
+            else if (paid > 0) st = 'PARTIAL';
+            else st = 'UNPAID';
+          }
+          setFeeInfo({
+            totalDue: due,
+            totalPaid: paid,
+            balance: bal,
+            status: st,
+            paymentsCount: feePays.length,
+          });
 
           if (dbTests && dbTests.length > 0) {
             const mappedTests: TestBlueprint[] = dbTests
@@ -222,6 +261,72 @@ export const StudentDashboardPage: React.FC = () => {
           <span>View Leaderboard</span>
           <ArrowRight className="w-3.5 h-3.5 text-[#C6A75E]" />
         </Link>
+      </div>
+
+      {/* Cadet Financial Standing & Fee Ledger Widget */}
+      <div className="bg-white border border-[#D4D9DF] rounded-md p-5 shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E2E6EB] pb-3 gap-2">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-md bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] flex items-center justify-center font-bold">
+              <Receipt className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-[#0E1B2A]">Cadet Financial Standing & Fee Ledger</h3>
+              <p className="text-xs text-[#64748B]">Official tuition fee balance & verified payment receipts</p>
+            </div>
+          </div>
+
+          <div>
+            {feeInfo.status === 'PAID' ? (
+              <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B]">
+                <span className="w-2 h-2 rounded-full bg-[#234E35] animate-pulse"></span>
+                <span>FEES CLEAR • FULLY PAID</span>
+              </span>
+            ) : feeInfo.status === 'PARTIAL' ? (
+              <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-amber-100 text-amber-900 border border-amber-300">
+                <span className="w-2 h-2 rounded-full bg-amber-600"></span>
+                <span>PARTIAL PAYMENT RECORDED</span>
+              </span>
+            ) : (
+              <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-[#FDF2F2] text-[#782525] border border-[#E29A9A]">
+                <span className="w-2 h-2 rounded-full bg-[#782525]"></span>
+                <span>OUTSTANDING DUES PENDING</span>
+              </span>
+            )}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="bg-[#F8FAFC] border border-[#E2E6EB] rounded-md p-3.5">
+            <span className="text-[10px] font-sans font-bold text-[#64748B] uppercase tracking-wider block">Total Course Fee</span>
+            <div className="text-xl font-bold font-mono text-[#0E1B2A] mt-1">
+              Rs. {feeInfo.totalDue.toLocaleString('en-PK')}
+            </div>
+            <div className="text-[11px] text-[#64748B] mt-0.5">Assigned Course Tuition</div>
+          </div>
+
+          <div className="bg-[#EDF6F0] border border-[#88BE9B] rounded-md p-3.5">
+            <span className="text-[10px] font-sans font-bold text-[#234E35] uppercase tracking-wider block">Fee Amount Paid</span>
+            <div className="text-xl font-bold font-mono text-[#234E35] mt-1">
+              Rs. {feeInfo.totalPaid.toLocaleString('en-PK')}
+            </div>
+            <div className="text-[11px] text-[#234E35] font-semibold mt-0.5">{feeInfo.paymentsCount} Verified Receipts</div>
+          </div>
+
+          <div className={`p-3.5 rounded-md border ${
+            feeInfo.balance > 0 ? 'bg-[#FDF2F2] border-[#E29A9A]' : 'bg-[#F8FAFC] border-[#E2E6EB]'
+          }`}>
+            <span className="text-[10px] font-sans font-bold text-[#64748B] uppercase tracking-wider block">Remaining Balance Due</span>
+            <div className={`text-xl font-bold font-mono mt-1 ${
+              feeInfo.balance > 0 ? 'text-[#782525]' : 'text-[#64748B]'
+            }`}>
+              Rs. {feeInfo.balance.toLocaleString('en-PK')}
+            </div>
+            <div className="text-[11px] text-[#64748B] mt-0.5">
+              {feeInfo.balance > 0 ? 'Please clear remaining balance' : 'Zero outstanding balance'}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Active Screening Test Banner */}

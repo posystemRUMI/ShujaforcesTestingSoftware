@@ -1,3 +1,4 @@
+import { TablesInsert, TablesUpdate } from '@/types/database.types';
 /**
  * Test Service — Production backend adapter for test management
  * Bridges frozen frontend UI → Supabase RPCs
@@ -65,6 +66,23 @@ export interface TestAssignmentRecord {
 
 export const testService = {
   // --- Tests CRUD ---
+  async getStudentAssignedTests(studentId: string) {
+    if (!isSupabaseConfigured()) return [];
+    const { data, error } = await supabase.rpc('get_student_assigned_tests', { p_student_id: studentId });
+    if (error) { console.warn('Failed to get student assigned tests', error); return []; }
+    return data || [];
+  },
+
+  async getTestEligibilities(testId: string) {
+    if (!isSupabaseConfigured()) return [];
+    const { data, error } = await supabase
+      .from('test_eligible_courses')
+      .select('force_id, course_id')
+      .eq('test_id', testId);
+    if (error) throw error;
+    return data || [];
+  },
+
   async getTests() {
     if (!isSupabaseConfigured()) return [];
     const { data, error } = await supabase
@@ -83,30 +101,32 @@ export const testService = {
       .eq('id', id)
       .single();
     if (error) throw error;
-    return data as TestRecord;
+    return data;
   },
 
-  async createTest(test: Partial<TestRecord>) {
+  async createTest(test: Partial<TestRecord>, eligibilities: Array<{force_id: string, course_id: string}> = []) {
     if (!isSupabaseConfigured()) throw new Error('Supabase not configured');
-    const { data, error } = await (supabase as any)
-      .from('tests')
-      .insert(test)
-      .select()
-      .single();
+    
+    // Call the RPC
+    const { data, error } = await supabase.rpc('create_test_with_eligibilities', {
+      p_test: test,
+      p_eligibilities: eligibilities
+    });
+    
     if (error) throw error;
-    return data as TestRecord;
+    return data;
   },
 
   async updateTest(id: string, updates: Partial<TestRecord>) {
     if (!isSupabaseConfigured()) throw new Error('Supabase not configured');
-    const { data, error } = await (supabase as any)
+    const { data, error } = await supabase
       .from('tests')
-      .update(updates)
+      .update(updates as TablesUpdate<'tests'>)
       .eq('id', id)
       .select()
       .single();
     if (error) throw error;
-    return data as TestRecord;
+    return data;
   },
 
   // --- Sections ---
@@ -123,9 +143,9 @@ export const testService = {
 
   async createSection(section: Partial<TestSectionRecord>) {
     if (!isSupabaseConfigured()) throw new Error('Supabase not configured');
-    const { data, error } = await (supabase as any)
+    const { data, error } = await supabase
       .from('test_sections')
-      .insert(section)
+      .insert(section as TablesInsert<'test_sections'>)
       .select()
       .single();
     if (error) throw error;
@@ -134,9 +154,9 @@ export const testService = {
 
   async updateSection(id: string, updates: Partial<TestSectionRecord>) {
     if (!isSupabaseConfigured()) throw new Error('Supabase not configured');
-    const { data, error } = await (supabase as any)
+    const { data, error } = await supabase
       .from('test_sections')
-      .update(updates)
+      .update(updates as TablesUpdate<'test_sections'>)
       .eq('id', id)
       .select()
       .single();
@@ -152,7 +172,7 @@ export const testService = {
 
   // --- Question Composition ---
   async generateSectionQuestions(sectionId: string, subjectId: string, count: number, forceId?: string, courseId?: string) {
-    const { data, error } = await (supabase as any).rpc('generate_test_section_questions', {
+    const { data, error } = await supabase.rpc('generate_test_section_questions', {
       p_section_id: sectionId,
       p_subject_id: subjectId,
       p_count: count,
@@ -164,7 +184,7 @@ export const testService = {
   },
 
   async addQuestionToSection(sectionId: string, questionId: string, position?: number, marks?: number) {
-    const { data, error } = await (supabase as any).rpc('add_question_to_section', {
+    const { data, error } = await supabase.rpc('add_question_to_section', {
       p_section_id: sectionId,
       p_question_id: questionId,
       p_position: position,
@@ -175,7 +195,7 @@ export const testService = {
   },
 
   async removeQuestionFromSection(sectionId: string, questionId: string) {
-    const { data, error } = await (supabase as any).rpc('remove_question_from_section', {
+    const { data, error } = await supabase.rpc('remove_question_from_section', {
       p_section_id: sectionId,
       p_question_id: questionId,
     });
@@ -185,13 +205,13 @@ export const testService = {
 
   // --- Publishing & Assignment ---
   async publishTest(testId: string) {
-    const { data, error } = await (supabase as any).rpc('publish_test', { p_test_id: testId });
+    const { data, error } = await supabase.rpc('publish_test', { p_test_id: testId });
     if (error) throw error;
     return data as boolean;
   },
 
   async assignTest(testId: string, batchId: string, availableFrom?: string, availableUntil?: string, maxAttempts?: number, notes?: string) {
-    const { data, error } = await (supabase as any).rpc('assign_test', {
+    const { data, error } = await supabase.rpc('assign_test', {
       p_test_id: testId,
       p_batch_id: batchId,
       p_available_from: availableFrom,
@@ -212,7 +232,7 @@ export const testService = {
     return (data || []) as TestAssignmentRecord[];
   },
 
-  async compileTestFromPattern(payload: {
+  async compileTestFromPattern(payload: { eligibilities?: Array<{force_id: string, course_id: string}>; 
     test: Partial<TestRecord>;
     sections: Array<{
       name: string;
@@ -258,28 +278,25 @@ export const testService = {
     }
 
     // 1. Insert Test with sanitized UUIDs
-    const testData: Record<string, any> = {
+    const testData = {
       ...payload.test,
-      force_id: payload.test.force_id || null,
-      course_id: payload.test.course_id || null,
       batch_id: payload.batchId || payload.test.batch_id || null,
-      template_id: payload.test.template_id || null,
+      template_id: payload.test.template_id || undefined,
       total_marks: payload.sections.reduce((acc, s) => acc + s.question_count, 0),
       duration_minutes: payload.sections.reduce((acc, s) => acc + s.duration_minutes, 0),
       status: 'DRAFT',
     };
 
-    const { data: createdTest, error: testError } = await (supabase as any)
-      .from('tests')
-      .insert(testData)
-      .select()
-      .single();
+    const { data: createdTest, error: testError } = await supabase.rpc('create_test_with_eligibilities', {
+      p_test: testData,
+      p_eligibilities: payload.eligibilities || []
+    });
 
     if (testError || !createdTest) throw testError || new Error('Failed to create test docket');
 
     // 2. Insert Sections
     for (const sec of payload.sections) {
-      const { data: createdSec, error: secError } = await (supabase as any)
+      const { data: createdSec, error: secError } = await supabase
         .from('test_sections')
         .insert({
           test_id: createdTest.id,
@@ -303,7 +320,7 @@ export const testService = {
         const uniqueSubjectIds = Array.from(new Set(sec.subject_ids.filter(Boolean)));
         for (const subId of uniqueSubjectIds) {
           try {
-            await (supabase as any)
+            await supabase
               .from('test_section_subjects')
               .insert({ test_section_id: createdSec.id, subject_id: subId });
           } catch (subErr) {
@@ -320,7 +337,7 @@ export const testService = {
           position: qIdx + 1,
         }));
         try {
-          await (supabase as any).from('test_section_questions').insert(rows);
+          await supabase.from('test_section_questions').insert(rows);
         } catch (mErr) {
           console.warn('Notice attaching manual questions:', mErr);
         }
@@ -330,22 +347,22 @@ export const testService = {
       const targetSubjectId = sec.subject_id || (sec.subject_ids && sec.subject_ids[0]);
       if (payload.autoGenerateQuestions && targetSubjectId && (!sec.question_ids || sec.question_ids.length === 0)) {
         try {
-          const { data: genCount } = await (supabase as any).rpc('generate_test_section_questions', {
+          const { data: genCount } = await supabase.rpc('generate_test_section_questions', {
             p_section_id: createdSec.id,
             p_subject_id: targetSubjectId,
             p_count: sec.question_count,
-            p_force_id: payload.test.force_id || null,
-            p_course_id: payload.test.course_id || null,
+            p_force_id: payload.test.force_id,
+            p_course_id: payload.test.course_id,
           });
 
           // Fallback if course filter was too restrictive
           if ((!genCount || genCount === 0) && (payload.test.course_id || payload.test.force_id)) {
-            await (supabase as any).rpc('generate_test_section_questions', {
+            await supabase.rpc('generate_test_section_questions', {
               p_section_id: createdSec.id,
               p_subject_id: targetSubjectId,
               p_count: sec.question_count,
-              p_force_id: null,
-              p_course_id: null,
+              p_force_id: undefined,
+              p_course_id: undefined,
             });
           }
         } catch (genErr) {
@@ -354,7 +371,7 @@ export const testService = {
       }
     }
 
-    return createdTest as TestRecord;
+    return createdTest;
   },
 };
 

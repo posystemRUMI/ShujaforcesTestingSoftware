@@ -4,13 +4,15 @@ import { Database } from '@/types/database.types';
 const envUrl = (import.meta as any).env?.VITE_SUPABASE_URL as string | undefined;
 const envAnonKey = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY as string | undefined;
 
-// Fallback to local Supabase defaults for robust local development
-const defaultUrl = 'http://127.0.0.1:54321';
-const defaultAnonKey =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0';
+const supabaseUrl = envUrl || '';
+const supabaseAnonKey = envAnonKey || '';
 
-const supabaseUrl = envUrl || defaultUrl;
-const supabaseAnonKey = envAnonKey || defaultAnonKey;
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error(
+    'CRITICAL: Missing VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY environment variables. ' +
+    'The application requires valid Supabase environment variables to connect.'
+  );
+}
 
 export const isSupabaseConfigured = (): boolean => {
   return Boolean(supabaseUrl && supabaseAnonKey);

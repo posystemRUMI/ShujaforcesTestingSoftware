@@ -55,8 +55,8 @@ export function DataTable<T>({
       {...props}
     >
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-[13px]">
-          <thead className="bg-[#F4F6F9] text-[#374151] font-semibold text-[12px] border-b border-[#E2E6EB] sticky top-0 z-10">
+        <table className="w-full text-left text-sm font-medium">
+          <thead className="bg-[#F4F6F9] text-[#475569] font-bold text-xs uppercase tracking-wider border-b border-[#E2E6EB] sticky top-0 z-10">
             <tr>
               {columns.map((col, idx) => (
                 <th

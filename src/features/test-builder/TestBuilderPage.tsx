@@ -23,6 +23,7 @@ import {
   Trash2,
   AlertTriangle,
   Layers,
+  Info,
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -48,6 +49,16 @@ interface ConfiguredSectionState {
   defaultDuration: number;
 }
 
+const STEP_LABELS = [
+  { step: 1, label: '1. Test Details' },
+  { step: 2, label: '2. Eligibility' },
+  { step: 3, label: '3. Pattern' },
+  { step: 4, label: '4. Questions' },
+  { step: 5, label: '5. Rules' },
+  { step: 6, label: '6. Review' },
+  { step: 7, label: '7. Publish' },
+];
+
 export const TestBuilderPage: React.FC = () => {
   const navigate = useNavigate();
   const { role } = useAuth();
@@ -63,21 +74,21 @@ export const TestBuilderPage: React.FC = () => {
   const [templates, setTemplates] = useState<TestPatternTemplate[]>([]);
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
 
-  // Step 1: Basic Details
+  // Stage 1: Test Identity & Scope Only
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [selectedBatchId, setSelectedBatchId] = useState<string>('ALL');
   const [testType, setTestType] = useState<'PRACTICE' | 'MOCK' | 'FULL' | 'SECTIONAL'>('FULL');
 
-  // Step 2: Force & Entry Course & Pattern Template
-  const [selectedForceId, setSelectedForceId] = useState<string>('');
-  const [selectedCourseId, setSelectedCourseId] = useState<string>('');
+  // Stage 2: Force & Entry Eligibility + Master Pattern Template
+  const [, setLoadingCourses] = useState(false);
+  const [selectedEligibilities, setSelectedEligibilities] = useState<Array<{force_id: string, course_id: string}>>([]);
   const [selectedTemplateId, setSelectedTemplateId] = useState<string>('');
 
-  // Step 3: Configured Sections (Snapshot from Master Template)
+  // Stage 3: Configured Sections (Snapshot from Master Template)
   const [configuredSections, setConfiguredSections] = useState<ConfiguredSectionState[]>([]);
 
-  // Step 4: Questions & Subject Allocation
+  // Stage 4: Questions & Subject Allocation
   const [assemblyMode, setAssemblyMode] = useState<'AUTO' | 'MANUAL'>('AUTO');
   const [sectionQuestionMap, setSectionQuestionMap] = useState<Record<string, string[]>>({});
   const [activeSectionTab, setActiveSectionTab] = useState<string>('');
@@ -85,7 +96,7 @@ export const TestBuilderPage: React.FC = () => {
   const [difficultyFilter, setDifficultyFilter] = useState<string>('ALL');
   const [subjectFilter, setSubjectFilter] = useState<string>('ALL');
 
-  // Step 5: Timing & Rules
+  // Stage 5: Timing & Rules
   const [passingScorePercent, setPassingScorePercent] = useState<number>(50);
   const [shuffleQuestions, setShuffleQuestions] = useState(true);
   const [shuffleOptions, setShuffleOptions] = useState(true);
@@ -95,7 +106,7 @@ export const TestBuilderPage: React.FC = () => {
   const [showResultImmediately, setShowResultImmediately] = useState(true);
   const showAnswerReview = true;
 
-  // Step 7: Publishing State
+  // Stage 7: Publishing State
   const [publishing, setPublishing] = useState(false);
 
   // 1. Initial Load: Forces, Batches, Questions
@@ -110,11 +121,6 @@ export const TestBuilderPage: React.FC = () => {
         setForces(fList);
         setBatches(bList);
         setAllQuestions(qList);
-
-        if (fList.length > 0) {
-          const firstForceId = fList[0].id;
-          setSelectedForceId(firstForceId);
-        }
       } catch (e) {
         console.warn('Initial load warning:', e);
       }
@@ -122,33 +128,25 @@ export const TestBuilderPage: React.FC = () => {
     loadInitial();
   }, []);
 
-  // 2. Dynamic Course Dependency: When Force Changes, load its Entry Courses
+  // 2. Dynamic Dependency: Fetch All Courses
   useEffect(() => {
-    if (!selectedForceId) {
-      setCourses([]);
-      setSelectedCourseId('');
-      return;
-    }
-
-    async function loadCoursesForForce() {
+    async function loadAllCourses() {
       try {
-        const cList = await configurationService.getCourses(selectedForceId);
+        setLoadingCourses(true);
+        const cList = await configurationService.getCourses();
         setCourses(cList);
-        if (cList.length > 0) {
-          setSelectedCourseId(cList[0].id);
-        } else {
-          setSelectedCourseId('');
-        }
       } catch (e) {
-        console.warn('Failed to load courses for force:', e);
+        console.warn('Failed to load courses:', e);
+      } finally {
+        setLoadingCourses(false);
       }
     }
-    loadCoursesForForce();
-  }, [selectedForceId]);
+    loadAllCourses();
+  }, []);
 
-  // 3. Dynamic Template Dependency: When Course Changes, load its Pattern Templates
+  // 3. Dynamic Template Dependency: Load templates for first selected course
   useEffect(() => {
-    if (!selectedCourseId) {
+    if (selectedEligibilities.length === 0) {
       setTemplates([]);
       setSelectedTemplateId('');
       return;
@@ -156,21 +154,21 @@ export const TestBuilderPage: React.FC = () => {
 
     async function loadTemplatesForCourse() {
       try {
-        const tList = await testPatternService.getTemplates(selectedForceId, selectedCourseId);
+        const firstElig = selectedEligibilities[0];
+        const tList = await testPatternService.getTemplates(firstElig.force_id, firstElig.course_id);
         setTemplates(tList);
         if (tList.length > 0) {
           const defaultTpl = tList.find((t) => t.isDefault) || tList[0];
           setSelectedTemplateId(defaultTpl.id);
         } else {
           setSelectedTemplateId('');
-          setConfiguredSections([]);
         }
       } catch (e) {
-        console.warn('Failed to load templates for course:', e);
+        console.warn('Failed to load templates:', e);
       }
     }
     loadTemplatesForCourse();
-  }, [selectedForceId, selectedCourseId]);
+  }, [selectedEligibilities]);
 
   // 4. Load Master Template Sections into Snapshot State
   useEffect(() => {
@@ -206,7 +204,7 @@ export const TestBuilderPage: React.FC = () => {
         setConfiguredSections(mapped);
 
         // Auto-populate Title if empty
-        const course = courses.find((c) => c.id === selectedCourseId);
+        const course = courses.find((c) => selectedEligibilities.map(e => e.course_id).includes(c.id));
         if (!title && course) {
           setTitle(`${course.name} Computerized Screening Examination`);
         }
@@ -221,7 +219,7 @@ export const TestBuilderPage: React.FC = () => {
       prev.map((s) => {
         if (s.id === secId) {
           if (s.isMandatory || !s.canDisable) {
-            toast.error(`Section "${s.sectionName}" is mandatory in academy master template.`);
+            toast.error(`Section "${s.sectionName}" is mandatory.`);
             return s;
           }
           return { ...s, enabled: !s.enabled };
@@ -286,7 +284,6 @@ export const TestBuilderPage: React.FC = () => {
       const secSubjectIds = sec.subjects?.map((s) => s.id) || [];
       const secSubjectCodes = sec.subjects?.map((s) => s.code) || [];
 
-      // 1. First find approved questions matching this section's subjects
       let matching = allQuestions.filter(
         (q) =>
           q.status === 'APPROVED' &&
@@ -294,7 +291,6 @@ export const TestBuilderPage: React.FC = () => {
           (secSubjectIds.includes(q.subject_id || '') || secSubjectCodes.includes(q.subject as string))
       );
 
-      // 2. If not enough matching subject questions, supplement with any approved questions
       if (matching.length < needed) {
         const extra = allQuestions.filter(
           (q) => q.status === 'APPROVED' && !usedIds.has(q.id) && !matching.some((m) => m.id === q.id)
@@ -309,7 +305,7 @@ export const TestBuilderPage: React.FC = () => {
 
     setSectionQuestionMap(newMap);
     const totalAssigned = Object.values(newMap).reduce((acc, arr) => acc + arr.length, 0);
-    toast.success(`Allocated ${totalAssigned} approved items across ${activeSections.length} examination sections.`);
+    toast.success(`Allocated ${totalAssigned} items across ${activeSections.length} examination sections.`);
   };
 
   const handleAutoGenerateForSection = (secId: string) => {
@@ -361,7 +357,7 @@ export const TestBuilderPage: React.FC = () => {
       }));
     } else {
       if (currentList.length >= sec.questionCount) {
-        toast.error(`Section quota reached (${sec.questionCount} questions). Remove an item before adding another.`);
+        toast.error(`Section quota reached (${sec.questionCount} questions). Remove an item first.`);
         return;
       }
       setSectionQuestionMap((prev) => ({
@@ -378,7 +374,6 @@ export const TestBuilderPage: React.FC = () => {
     }));
   };
 
-  // Pre-allocate in AUTO mode when entering Step 4 if empty
   useEffect(() => {
     if (currentStep === 4 && assemblyMode === 'AUTO' && totalAllocatedQuestions === 0 && allQuestions.length > 0) {
       handleAutoGenerate();
@@ -389,12 +384,16 @@ export const TestBuilderPage: React.FC = () => {
   const handleNextStep = () => {
     if (currentStep === 1) {
       if (!title.trim()) {
-        toast.error('Please enter a test title.');
+        toast.error('Please enter an examination title.');
         return;
       }
     } else if (currentStep === 2) {
-      if (!selectedForceId || !selectedCourseId || !selectedTemplateId) {
-        toast.error('Please select Force, Entry Course, and Master Pattern Template.');
+      if (selectedEligibilities.length === 0) {
+        toast.error('Please select at least one eligible course.');
+        return;
+      }
+      if (!selectedTemplateId && templates.length > 0) {
+        toast.error('Please select a Master Pattern Template.');
         return;
       }
     } else if (currentStep === 3) {
@@ -416,7 +415,7 @@ export const TestBuilderPage: React.FC = () => {
       } else {
         const emptySec = activeSections.find((s) => (sectionQuestionMap[s.id] || []).length === 0);
         if (emptySec) {
-          toast.error(`Section "${emptySec.sectionName}" has no questions allocated. Please select questions or click "Auto-Fill".`);
+          toast.error(`Section "${emptySec.sectionName}" has no questions allocated. Click "Auto-Fill" or choose manually.`);
           return;
         }
       }
@@ -428,7 +427,7 @@ export const TestBuilderPage: React.FC = () => {
   // Step 7: Final Compilation & Publish
   const handlePublish = async () => {
     if (role === 'STUDENT') {
-      toast.error('Access Denied: Candidate cadets cannot author or publish tests.');
+      toast.error('Access Denied: Cadets cannot author or publish tests.');
       return;
     }
 
@@ -451,11 +450,10 @@ export const TestBuilderPage: React.FC = () => {
       const selectedTemplate = templates.find((t) => t.id === selectedTemplateId);
 
       const compiledTest = await testService.compileTestFromPattern({
+        eligibilities: selectedEligibilities,
         test: {
           name: title,
           description: description || null,
-          force_id: selectedForceId,
-          course_id: selectedCourseId,
           batch_id: selectedBatchId === 'ALL' || selectedBatchId === 'NONE' ? null : selectedBatchId || null,
           passing_threshold: passingScorePercent,
           duration_minutes: totalDurationMinutes,
@@ -487,7 +485,6 @@ export const TestBuilderPage: React.FC = () => {
         autoGenerateQuestions: assemblyMode === 'AUTO',
       });
 
-      // Attempt publishing RPC
       try {
         await testService.publishTest(compiledTest.id);
 
@@ -502,28 +499,43 @@ export const TestBuilderPage: React.FC = () => {
         } else if (selectedBatchId && selectedBatchId !== 'NONE') {
           await testService.assignTest(compiledTest.id, selectedBatchId);
         }
-      } catch (pubErr: any) {
+      } catch (pubErr) {
         console.error('Publish RPC error:', pubErr);
-        throw new Error(`Test created, but publishing failed: ${pubErr?.message || 'Check section question assignments.'}`);
+        const pubMsg = pubErr && typeof pubErr === 'object' && 'message' in pubErr ? String((pubErr as { message: unknown }).message) : 'Check section question assignments.';
+        throw new Error(`Test created, but publishing failed: ${pubMsg}`);
       }
 
       setPublishing(false);
       toast.success(
         selectedBatchId === 'ALL'
-          ? 'Examination successfully compiled, published & delivered to all cadet batches!'
-          : 'Universal Examination Blueprint successfully compiled & published!'
+          ? 'Test published & assigned to all active batches!'
+          : 'Test blueprint successfully created & published!'
       );
       navigate('/admin/tests');
-    } catch (err: any) {
+    } catch (err) {
       setPublishing(false);
-      toast.error(err?.message || 'Failed to compile test.');
+      const errMsg = err && typeof err === 'object' && 'message' in err ? String((err as { message: unknown }).message) : 'Failed to compile test.';
+      toast.error(errMsg);
     }
   };
 
-  const selectedForce = forces.find((f) => f.id === selectedForceId);
-  const selectedCourse = courses.find((c) => c.id === selectedCourseId);
   const selectedTemplate = templates.find((t) => t.id === selectedTemplateId);
   const selectedBatch = batches.find((b) => b.id === selectedBatchId);
+
+  // Grouped Eligibility Summary Helper
+  const getEligibilitySummary = () => {
+    if (selectedEligibilities.length === 0) return null;
+    const map: Record<string, string[]> = {};
+    selectedEligibilities.forEach((item) => {
+      const fName = forces.find((f) => f.id === item.force_id)?.name || 'Armed Force';
+      const cName = courses.find((c) => c.id === item.course_id)?.name || 'Course';
+      if (!map[fName]) map[fName] = [];
+      if (!map[fName].includes(cName)) map[fName].push(cName);
+    });
+    return map;
+  };
+
+  const eligibilitySummaryMap = getEligibilitySummary();
 
   const currentActiveSec = activeSections.find((s) => s.id === activeSectionTab) || activeSections[0];
   const currentActiveSecCount = (sectionQuestionMap[currentActiveSec?.id || ''] || []).length;
@@ -567,151 +579,139 @@ export const TestBuilderPage: React.FC = () => {
   });
 
   return (
-    <div className="space-y-6 max-w-5xl mx-auto font-sans pb-12">
-      {/* Wizard Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-[#D4D9DF] shadow-sm">
+    <div className="space-y-6 max-w-[1500px] mx-auto font-sans pb-12">
+      {/* Wizard Page Header */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-lg border border-[#E2E6EB] shadow-xs">
         <div>
-          <div className="flex items-center space-x-2">
-            <span className="text-[10px] font-bold text-[#C6A75E] uppercase tracking-wider">
-              ARMED FORCES UNIVERSAL EXAMINATION ENGINE
-            </span>
-            <span className="text-[10px] bg-[#0E1B2A]/5 text-[#0E1B2A] px-2 py-0.5 rounded font-mono font-semibold">
-              TRI-SERVICE SPEC
-            </span>
-          </div>
-          <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
-            Institutional Test Blueprint Builder
+          <h1 className="text-[30px] sm:text-[32px] font-extrabold tracking-tight text-[#0E1B2A] font-display">
+            Test Builder
           </h1>
-          <p className="text-xs text-[#64748B] mt-0.5">
-            Configurable, data-driven test pattern compiler for Pakistan Army, PAF, and Pakistan Navy.
+          <p className="text-base font-medium text-[#64748B] mt-1">
+            Create, configure, and publish computerized examinations across forces and courses.
           </p>
         </div>
 
-        <div className="flex items-center space-x-2 text-xs">
-          <span className="bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] px-3 py-1 rounded font-bold tabular-nums">
-            STAGE {currentStep} OF 7
+        <div className="flex items-center space-x-2 shrink-0">
+          <span className="bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] px-3.5 py-1.5 rounded-lg text-sm font-bold tabular-nums">
+            Step {currentStep} of 7
           </span>
         </div>
       </div>
 
       {/* 7-Step Stepper Bar */}
-      <div className="bg-white border border-[#D4D9DF] rounded-md p-3 shadow-xs">
-        <div className="grid grid-cols-7 gap-1.5 text-center text-[11px]">
-          {[
-            { step: 1, label: '1. Identity' },
-            { step: 2, label: '2. Force & Entry' },
-            { step: 3, label: '3. Pattern' },
-            { step: 4, label: '4. Questions' },
-            { step: 5, label: '5. Rules' },
-            { step: 6, label: '6. Review' },
-            { step: 7, label: '7. Publish' },
-          ].map((item) => (
+      <div className="bg-white border border-[#E2E6EB] rounded-lg p-3 shadow-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 text-center">
+          {STEP_LABELS.map((item) => (
             <button
               key={item.step}
               type="button"
               onClick={() => setCurrentStep(item.step)}
-              className={`py-2 px-1 rounded font-bold transition-colors truncate ${
+              className={`py-2.5 px-2 rounded-lg text-xs font-bold transition-all truncate flex items-center justify-center space-x-1.5 ${
                 currentStep === item.step
                   ? 'bg-[#0E1B2A] text-white shadow-xs'
                   : currentStep > item.step
                   ? 'bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B]'
-                  : 'bg-[#F6F8FA] text-[#64748B] border border-[#E2E6EB]'
+                  : 'bg-[#F6F8FA] text-[#64748B] border border-[#E2E6EB] hover:bg-[#EDF1F5]'
               }`}
             >
-              {item.label}
+              {currentStep > item.step ? (
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#234E35] shrink-0 inline" />
+              ) : null}
+              <span>{item.label}</span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Wizard Workspace */}
+      {/* Main Wizard Workspace (72% Main / 28% Summary) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left Form Area (8 Cols) */}
+        {/* Left Stage Workspace (8 Cols on 12-grid = ~67-72%) */}
         <div className="lg:col-span-8 space-y-6">
-          {/* STEP 1: Basic Details */}
+          {/* STAGE 1: Test Details */}
           {currentStep === 1 && (
-            <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-5">
-              <h2 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wider border-b border-[#E2E6EB] pb-2 flex items-center justify-between">
-                <span>Stage 1 — Test Identity & Target Cadre</span>
-                <span className="text-[11px] font-normal text-[#64748B] normal-case">Step 1 of 7</span>
-              </h2>
+            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="border-b border-[#EDF1F5] pb-4">
+                <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
+                  Test Details
+                </h2>
+                <p className="text-sm font-medium text-[#64748B] mt-1">
+                  Define the examination identity, deployment scope, and evaluation type.
+                </p>
+              </div>
 
-              <div className="space-y-4 text-xs">
+              <div className="space-y-5 text-sm">
                 <div>
-                  <label className="block font-semibold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
+                  <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
                     Examination Title <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder="e.g. 154 PMA Long Course Computerized Screening Exam"
-                    className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:bg-white"
+                    placeholder="e.g. PMA Long Course Computerized Screening Exam"
+                    className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
-                    Description / Directives
+                  <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
+                    Description / Instructions
                   </label>
                   <textarea
-                    rows={3}
+                    rows={4}
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Provide exam administration directives, syllabus coverage, or session instructions..."
-                    className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:bg-white"
+                    placeholder="Provide exam administration directives, syllabus coverage, or session instructions for candidates..."
+                    className="w-full bg-white border border-[#D4D9DF] rounded-lg p-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
                   <div>
-                    <label className="block font-semibold text-[#0E1B2A] mb-1.5 uppercase tracking-wide flex items-center justify-between">
-                      <span>Candidate Batch Deployment</span>
-                      <span className="text-[10px] text-[#166534] font-bold bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#86EFAC]">
-                        Live Student Delivery
-                      </span>
+                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
+                      Candidate Batch Deployment
                     </label>
                     <select
                       value={selectedBatchId}
                       onChange={(e) => setSelectedBatchId(e.target.value)}
-                      className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:bg-white font-medium"
+                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                     >
-                      <option value="ALL">All Active Batches (Deliver to all enrolled cadets immediately)</option>
+                      <option value="ALL">All Active Batches (Deliver to all enrolled candidates)</option>
                       {batches.map((b) => (
                         <option key={b.id} value={b.id}>
                           {b.name} ({b.code})
                         </option>
                       ))}
-                      <option value="NONE">-- Unassigned / Master Repository Only (Cadets cannot view until assigned) --</option>
+                      <option value="NONE">Unassigned / Master Repository Only</option>
                     </select>
-                    <p className="text-[11px] text-[#64748B] mt-1.5 leading-relaxed">
+                    <p className="text-xs font-medium text-[#64748B] mt-2 leading-relaxed">
                       {selectedBatchId === 'ALL' ? (
-                        <span className="text-[#166534] font-medium flex items-center space-x-1">
-                          <Check className="w-3.5 h-3.5 inline text-[#16A34A] mr-1 shrink-0" />
-                          <span>Delivered to all active batches. All registered student cadets will see this test immediately in their candidate dashboard.</span>
+                        <span className="text-[#166534] flex items-center gap-1.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0" />
+                          <span>Assigned to all active batches. Candidates can view and attempt this test immediately.</span>
                         </span>
                       ) : selectedBatchId && selectedBatchId !== 'NONE' ? (
-                        <span className="text-[#0E1B2A] font-medium flex items-center space-x-1">
-                          <Check className="w-3.5 h-3.5 inline text-[#16A34A] mr-1 shrink-0" />
+                        <span className="text-[#0E1B2A] flex items-center gap-1.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0" />
                           <span>Assigned specifically to {batches.find((b) => b.id === selectedBatchId)?.name || 'the selected batch'}.</span>
                         </span>
                       ) : (
-                        <span className="text-[#B45309] font-medium flex items-center space-x-1">
-                          <AlertTriangle className="w-3.5 h-3.5 inline text-[#D97706] mr-1 shrink-0" />
-                          <span>Unassigned: Saved in master catalog only. Cadets cannot see or attempt this examination until assigned to their batch.</span>
+                        <span className="text-[#B45309] flex items-center gap-1.5">
+                          <AlertTriangle className="w-4 h-4 text-[#D97706] shrink-0" />
+                          <span>Saved in repository only. Candidates cannot view this test until assigned to a batch.</span>
                         </span>
                       )}
                     </p>
                   </div>
 
                   <div>
-                    <label className="block font-semibold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
+                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
                       Test Evaluation Type
                     </label>
                     <select
                       value={testType}
-                      onChange={(e) => setTestType(e.target.value as any)}
-                      className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:bg-white font-medium"
+                      onChange={(e) => setTestType(e.target.value as 'PRACTICE' | 'MOCK' | 'FULL' | 'SECTIONAL')}
+                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                     >
                       <option value="FULL">Full Formal Examination</option>
                       <option value="MOCK">Full Mock Screening</option>
@@ -724,109 +724,153 @@ export const TestBuilderPage: React.FC = () => {
             </div>
           )}
 
-          {/* STEP 2: Force & Entry Course Selection */}
+          {/* STAGE 2: Test Eligibility & Pattern (Single Source of Truth) */}
           {currentStep === 2 && (
-            <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-5">
-              <h2 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wider border-b border-[#E2E6EB] pb-2 flex items-center justify-between">
-                <span>Stage 2 — Armed Force & Induction Course</span>
-                <span className="text-[11px] font-normal text-[#64748B] normal-case">Step 2 of 7</span>
-              </h2>
+            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="border-b border-[#EDF1F5] pb-4">
+                <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
+                  Test Eligibility & Pattern
+                </h2>
+                <p className="text-sm font-medium text-[#64748B] mt-1">
+                  Select the forces and courses eligible for this test, then choose the pattern template.
+                </p>
+              </div>
 
-              <p className="text-xs text-[#64748B]">
-                Select the Armed Force branch and entry course. All courses and pattern templates load dynamically from verified institutional database dockets.
-              </p>
+              {/* Grouped Selection Cards Per Force */}
+              <div className="space-y-4">
+                <label className="block text-sm font-bold text-[#0E1B2A]">
+                  Select Eligible Forces & Courses <span className="text-red-500">*</span>
+                </label>
 
-              <div className="space-y-4 text-xs">
-                {/* Field 1: Force */}
-                <div>
-                  <label className="block font-semibold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
-                    1. Armed Force Branch <span className="text-red-500">*</span>
-                  </label>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {forces.map((f) => {
+                    const forceCourses = courses.filter((c) => c.forceId === f.id);
+                    return (
+                      <div key={f.id} className="bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl p-5 space-y-4">
+                        <div className="border-b border-[#E2E6EB] pb-3 flex items-center justify-between">
+                          <h4 className="text-base font-bold text-[#0E1B2A] font-display">
+                            {f.name}
+                          </h4>
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded bg-[#EDF1F5] text-[#64748B]">
+                            {forceCourses.length} Courses
+                          </span>
+                        </div>
+
+                        <div className="space-y-3">
+                          {forceCourses.map((c) => {
+                            const isSelected = selectedEligibilities.some((e) => e.course_id === c.id);
+                            return (
+                              <label
+                                key={c.id}
+                                className={`flex items-center space-x-3 p-3 rounded-lg border transition-all cursor-pointer select-none ${
+                                  isSelected
+                                    ? 'bg-white border-[#0E1B2A] ring-1 ring-[#0E1B2A]/10 shadow-xs'
+                                    : 'bg-white border-[#E2E6EB] hover:border-[#CBD5E1]'
+                                }`}
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={isSelected}
+                                  onChange={(e) => {
+                                    if (e.target.checked) {
+                                      setSelectedEligibilities([...selectedEligibilities, { force_id: f.id, course_id: c.id }]);
+                                    } else {
+                                      setSelectedEligibilities(selectedEligibilities.filter((x) => x.course_id !== c.id));
+                                    }
+                                  }}
+                                  className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] focus:ring-[#0E1B2A] cursor-pointer"
+                                />
+                                <span className="text-sm font-medium text-[#1E293B]">{c.name}</span>
+                              </label>
+                            );
+                          })}
+                          {forceCourses.length === 0 && (
+                            <span className="text-xs font-medium text-[#64748B] italic">No active courses registered</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Selected Eligibility Summary Box */}
+              <div className="bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl p-5 space-y-3">
+                <h4 className="text-sm font-bold text-[#0E1B2A]">
+                  Selected Eligibility
+                </h4>
+                {eligibilitySummaryMap ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-medium">
+                    {Object.entries(eligibilitySummaryMap).map(([forceName, courseNames]) => (
+                      <div key={forceName} className="bg-white border border-[#E2E6EB] rounded-lg p-3">
+                        <span className="text-xs font-bold text-[#0E1B2A] uppercase tracking-wider block mb-1.5">
+                          {forceName}
+                        </span>
+                        <ul className="space-y-1 text-sm text-[#334155]">
+                          {courseNames.map((cn) => (
+                            <li key={cn} className="flex items-center space-x-1.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#C6A75E] shrink-0" />
+                              <span>{cn}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm font-medium text-[#64748B] italic">
+                    No eligible courses selected yet. Select at least one course above to proceed.
+                  </p>
+                )}
+              </div>
+
+              {/* Master Pattern Template Selector Box */}
+              <div className="bg-white border border-[#E2E6EB] rounded-xl p-5 space-y-3">
+                <label className="block text-sm font-bold text-[#0E1B2A]">
+                  Pattern Template <span className="text-red-500">*</span>
+                </label>
+                {templates.length === 0 ? (
+                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-lg text-sm font-medium text-[#64748B] flex items-center space-x-2">
+                    <Info className="w-4 h-4 text-[#64748B] shrink-0" />
+                    <span>No active pattern template is available for the selected course combination. The default academy structure will be used.</span>
+                  </div>
+                ) : (
                   <select
-                    value={selectedForceId}
-                    onChange={(e) => setSelectedForceId(e.target.value)}
-                    className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:bg-white font-semibold"
+                    value={selectedTemplateId}
+                    onChange={(e) => setSelectedTemplateId(e.target.value)}
+                    className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                   >
-                    {forces.length === 0 && <option value="">Loading Armed Forces...</option>}
-                    {forces.map((f) => (
-                      <option key={f.id} value={f.id}>
-                        {f.name} ({f.headquarters})
+                    {templates.map((t) => (
+                      <option key={t.id} value={t.id}>
+                        {t.name} (v{t.version}) {t.isDefault ? '— [Default Spec]' : ''}
                       </option>
                     ))}
                   </select>
-                </div>
-
-                {/* Field 2: Entry Course (Filtered dynamically) */}
-                <div>
-                  <label className="block font-semibold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
-                    2. Entry / Induction Course <span className="text-red-500">*</span>
-                  </label>
-                  {courses.length === 0 ? (
-                    <div className="p-3 bg-[#F8FAFC] border border-[#D4D9DF] rounded text-xs text-[#64748B]">
-                      Loading courses for selected force...
-                    </div>
-                  ) : (
-                    <select
-                      value={selectedCourseId}
-                      onChange={(e) => setSelectedCourseId(e.target.value)}
-                      className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:bg-white font-medium"
-                    >
-                      {courses.map((c) => (
-                        <option key={c.id} value={c.id}>
-                          {c.name} — ({c.code})
-                        </option>
-                      ))}
-                    </select>
-                  )}
-                </div>
-
-                {/* Field 3: Master Pattern Template */}
-                <div>
-                  <label className="block font-semibold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
-                    3. Master Pattern Template <span className="text-red-500">*</span>
-                  </label>
-                  {templates.length === 0 ? (
-                    <div className="p-3 bg-[#FEF3C7] border border-[#F59E0B] rounded text-xs text-[#92400E]">
-                      No active master pattern template found for this course. Default academy structure will be loaded.
-                    </div>
-                  ) : (
-                    <select
-                      value={selectedTemplateId}
-                      onChange={(e) => setSelectedTemplateId(e.target.value)}
-                      className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:bg-white font-medium"
-                    >
-                      {templates.map((t) => (
-                        <option key={t.id} value={t.id}>
-                          {t.name} (v{t.version}) {t.isDefault ? '— [Default Academy Spec]' : ''}
-                        </option>
-                      ))}
-                    </select>
-                  )}
-                </div>
+                )}
               </div>
             </div>
           )}
 
-          {/* STEP 3: Test Pattern Configuration */}
+          {/* STAGE 3: Test Pattern Section Configuration */}
           {currentStep === 3 && (
-            <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-5">
-              <div className="border-b border-[#E2E6EB] pb-2 flex items-center justify-between">
+            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="border-b border-[#EDF1F5] pb-4 flex items-center justify-between">
                 <div>
-                  <h2 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wider">
-                    Stage 3 — Section Configuration & Academy Defaults
+                  <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
+                    Stage 3 — Section Configuration
                   </h2>
-                  <p className="text-[11px] text-[#64748B] mt-0.5">
+                  <p className="text-sm font-medium text-[#64748B] mt-1">
                     Customize sections, item counts, and durations according to academy policies.
                   </p>
                 </div>
-                <span className="text-xs bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] px-2.5 py-0.5 rounded font-bold">
+                <span className="text-xs bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] px-3 py-1 rounded-lg font-bold">
                   {activeSections.length} Sections Active
                 </span>
               </div>
 
               {configuredSections.length === 0 ? (
-                <div className="p-6 text-center text-xs text-[#64748B] bg-[#F8FAFC] rounded border border-dashed border-[#D4D9DF]">
-                  No sections loaded. Please verify Master Pattern Template in Step 2.
+                <div className="p-8 text-center text-sm font-medium text-[#64748B] bg-[#F8FAFC] rounded-lg border border-dashed border-[#D4D9DF]">
+                  No sections loaded. Please select a Master Pattern Template in Step 2.
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -837,31 +881,31 @@ export const TestBuilderPage: React.FC = () => {
                     return (
                       <div
                         key={sec.id}
-                        className={`p-4 rounded-md border transition-all ${
+                        className={`p-5 rounded-xl border transition-all ${
                           sec.enabled
-                            ? 'bg-white border-[#D4D9DF] shadow-xs'
+                            ? 'bg-white border-[#E2E6EB] shadow-xs'
                             : 'bg-[#F8FAFC] border-[#E2E6EB] opacity-60'
                         }`}
                       >
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-[#F1F3F5] pb-3 mb-3">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-[#EDF1F5] pb-4 mb-4">
                           <div className="flex items-center space-x-3">
                             <input
                               type="checkbox"
                               checked={sec.enabled}
                               disabled={sec.isMandatory || !sec.canDisable}
                               onChange={() => toggleSectionEnabled(sec.id)}
-                              className="w-4 h-4 rounded border-[#D4D9DF] text-[#0E1B2A] focus:ring-[#0E1B2A]/20 cursor-pointer disabled:cursor-not-allowed"
+                              className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] focus:ring-[#0E1B2A] cursor-pointer disabled:cursor-not-allowed"
                             />
                             <div>
-                              <span className="text-xs font-bold text-[#0E1B2A]">
+                              <span className="text-base font-bold text-[#0E1B2A]">
                                 {idx + 1}. {sec.sectionName}
                               </span>
-                              <div className="flex items-center space-x-2 mt-0.5 text-[10px] text-[#64748B]">
+                              <div className="flex items-center space-x-2 mt-1 text-xs font-medium text-[#64748B]">
                                 <span className="font-mono">Code: {sec.sectionCode}</span>
                                 <span>•</span>
                                 <span>
                                   {sec.isMandatory ? (
-                                    <span className="text-[#991B1B] font-semibold">Mandatory</span>
+                                    <span className="text-[#991B1B] font-bold">Mandatory</span>
                                   ) : (
                                     'Optional Section'
                                   )}
@@ -872,11 +916,11 @@ export const TestBuilderPage: React.FC = () => {
 
                           <div className="flex items-center space-x-2">
                             {isCustomCount || isCustomDuration ? (
-                              <span className="text-[10px] bg-[#FEF3C7] text-[#92400E] border border-[#F59E0B] px-2 py-0.5 rounded font-semibold">
-                                Teacher Override
+                              <span className="text-xs bg-[#FEF3C7] text-[#92400E] border border-[#F59E0B] px-2.5 py-1 rounded-md font-bold">
+                                Custom Override
                               </span>
                             ) : (
-                              <span className="text-[10px] bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1] px-2 py-0.5 rounded font-medium">
+                              <span className="text-xs bg-[#EDF1F5] text-[#475569] border border-[#CBD5E1] px-2.5 py-1 rounded-md font-semibold">
                                 Academy Default
                               </span>
                             )}
@@ -884,53 +928,53 @@ export const TestBuilderPage: React.FC = () => {
                         </div>
 
                         {sec.enabled && (
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-1">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-sm pt-1">
                             <div>
-                              <label className="block font-semibold text-[#0E1B2A] mb-1">
+                              <label className="block text-xs font-bold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
                                 Question Count (Default: {sec.defaultQuestions})
                               </label>
-                              <div className="flex items-center space-x-2">
+                              <div className="flex items-center space-x-3">
                                 <input
                                   type="number"
                                   disabled={!sec.canOverrideCount}
                                   value={sec.questionCount}
                                   onChange={(e) => updateSectionQuestionCount(sec.id, Number(e.target.value))}
-                                  className="w-28 bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-1.5 text-xs text-[#0E1B2A] font-bold focus:outline-none focus:border-[#0E1B2A] disabled:bg-[#E2E6EB] disabled:cursor-not-allowed"
+                                  className="w-32 h-10 bg-white border border-[#D4D9DF] rounded-lg px-3 text-sm font-bold text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] disabled:bg-[#EDF1F5] disabled:cursor-not-allowed"
                                 />
-                                <span className="text-[11px] text-[#64748B]">
-                                  Allowed: {sec.minQuestions} – {sec.maxQuestions}
+                                <span className="text-xs font-medium text-[#64748B]">
+                                  Range: {sec.minQuestions} – {sec.maxQuestions}
                                 </span>
                               </div>
                             </div>
 
                             <div>
-                              <label className="block font-semibold text-[#0E1B2A] mb-1">
+                              <label className="block text-xs font-bold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
                                 Duration Minutes (Default: {sec.defaultDuration} min)
                               </label>
-                              <div className="flex items-center space-x-2">
+                              <div className="flex items-center space-x-3">
                                 <input
                                   type="number"
                                   disabled={!sec.canOverrideDuration}
                                   value={sec.durationMinutes}
                                   onChange={(e) => updateSectionDuration(sec.id, Number(e.target.value))}
-                                  className="w-28 bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-1.5 text-xs text-[#0E1B2A] font-bold focus:outline-none focus:border-[#0E1B2A] disabled:bg-[#E2E6EB] disabled:cursor-not-allowed"
+                                  className="w-32 h-10 bg-white border border-[#D4D9DF] rounded-lg px-3 text-sm font-bold text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] disabled:bg-[#EDF1F5] disabled:cursor-not-allowed"
                                 />
-                                <span className="text-[11px] text-[#64748B]">
-                                  Allowed: {sec.minDuration} – {sec.maxDuration} min
+                                <span className="text-xs font-medium text-[#64748B]">
+                                  Range: {sec.minDuration} – {sec.maxDuration} min
                                 </span>
                               </div>
                             </div>
 
                             {sec.subjects && sec.subjects.length > 0 && (
-                              <div className="sm:col-span-2 pt-1 border-t border-[#F1F3F5]">
-                                <span className="text-[10px] font-bold uppercase text-[#64748B]">
+                              <div className="sm:col-span-2 pt-2 border-t border-[#EDF1F5]">
+                                <span className="text-xs font-bold uppercase text-[#64748B] block mb-1.5">
                                   Integrated Syllabus Subjects:
                                 </span>
-                                <div className="flex flex-wrap gap-1.5 mt-1">
+                                <div className="flex flex-wrap gap-2">
                                   {sec.subjects.map((sub) => (
                                     <span
                                       key={sub.id}
-                                      className="text-[10px] bg-[#F1F5F9] text-[#334155] px-2 py-0.5 rounded border border-[#E2E8F0]"
+                                      className="text-xs font-semibold bg-[#EDF1F5] text-[#334155] px-2.5 py-1 rounded-md border border-[#E2E8F0]"
                                     >
                                       {sub.name}
                                     </span>
@@ -948,37 +992,37 @@ export const TestBuilderPage: React.FC = () => {
             </div>
           )}
 
-          {/* STEP 4: Questions & Subject Allocation */}
+          {/* STAGE 4: Questions Composition */}
           {currentStep === 4 && (
-            <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-6">
-              <div className="border-b border-[#E2E6EB] pb-3 flex items-center justify-between">
+            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="border-b border-[#EDF1F5] pb-4 flex items-center justify-between">
                 <div>
-                  <h2 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wider">
-                    Stage 4 — Question Bank Composition
+                  <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
+                    Stage 4 — Question Composition
                   </h2>
-                  <p className="text-xs text-[#64748B] mt-0.5">
-                    Select or automatically allocate verified question bank items across your examination sections.
+                  <p className="text-sm font-medium text-[#64748B] mt-1">
+                    Select or automatically allocate question bank items across your examination sections.
                   </p>
                 </div>
-                <span className="text-[11px] font-normal text-[#64748B]">Step 4 of 7</span>
+                <span className="text-xs font-semibold text-[#64748B]">Step 4 of 7</span>
               </div>
 
               {/* Assembly Mode Selector */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <button
                   type="button"
                   onClick={() => setAssemblyMode('AUTO')}
-                  className={`p-4 rounded-md border text-left transition-all ${
+                  className={`p-5 rounded-xl border text-left transition-all ${
                     assemblyMode === 'AUTO'
                       ? 'bg-[#F0FDF4] border-[#86EFAC] text-[#166534] ring-1 ring-[#86EFAC] shadow-xs'
-                      : 'bg-white border-[#D4D9DF] text-[#64748B] hover:bg-[#F8FAFC]'
+                      : 'bg-white border-[#E2E6EB] text-[#64748B] hover:bg-[#F8FAFC]'
                   }`}
                 >
-                  <div className="flex items-center space-x-2 font-bold mb-1">
-                    <Sparkles className="w-4 h-4 text-[#16A34A]" />
+                  <div className="flex items-center space-x-2 font-bold mb-1 text-base">
+                    <Sparkles className="w-5 h-5 text-[#16A34A]" />
                     <span>Automatic Balanced Allocation</span>
                   </div>
-                  <p className="text-[11px] leading-relaxed">
+                  <p className="text-xs font-medium leading-relaxed">
                     System automatically selects verified questions matching each section's syllabus subjects from the question repository.
                   </p>
                 </button>
@@ -991,30 +1035,30 @@ export const TestBuilderPage: React.FC = () => {
                       setActiveSectionTab(activeSections[0].id);
                     }
                   }}
-                  className={`p-4 rounded-md border text-left transition-all ${
+                  className={`p-5 rounded-xl border text-left transition-all ${
                     assemblyMode === 'MANUAL'
                       ? 'bg-[#F0FDF4] border-[#86EFAC] text-[#166534] ring-1 ring-[#86EFAC] shadow-xs'
-                      : 'bg-white border-[#D4D9DF] text-[#64748B] hover:bg-[#F8FAFC]'
+                      : 'bg-white border-[#E2E6EB] text-[#64748B] hover:bg-[#F8FAFC]'
                   }`}
                 >
-                  <div className="flex items-center space-x-2 font-bold mb-1">
-                    <BookOpen className="w-4 h-4 text-[#0E1B2A]" />
+                  <div className="flex items-center space-x-2 font-bold mb-1 text-base">
+                    <BookOpen className="w-5 h-5 text-[#0E1B2A]" />
                     <span>Manual Item Selection</span>
                   </div>
-                  <p className="text-[11px] leading-relaxed">
+                  <p className="text-xs font-medium leading-relaxed">
                     Inspect, search, and manually hand-pick individual items from the active question bank catalog for each section.
                   </p>
                 </button>
               </div>
 
               {/* Allocation Summary Card */}
-              <div className="bg-[#F8FAFC] border border-[#D4D9DF] rounded-md p-4 space-y-3">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-[#0E1B2A] flex items-center space-x-1.5">
-                    <Layers className="w-4 h-4 text-[#C6A75E]" />
+              <div className="bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl p-5 space-y-4">
+                <div className="flex items-center justify-between text-sm font-semibold">
+                  <span className="font-bold text-[#0E1B2A] flex items-center space-x-2">
+                    <Layers className="w-5 h-5 text-[#C6A75E]" />
                     <span>Overall Examination Composition</span>
                   </span>
-                  <span className="text-xs">
+                  <span>
                     Required: <strong className="text-[#0E1B2A]">{totalQuestions}</strong> items • Allocated:{' '}
                     <strong
                       className={
@@ -1027,33 +1071,33 @@ export const TestBuilderPage: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                   {activeSections.map((sec) => {
                     const count = (sectionQuestionMap[sec.id] || []).length;
                     const isMet = count >= sec.questionCount;
                     return (
                       <div
                         key={sec.id}
-                        className={`p-2.5 rounded border text-xs flex items-center justify-between ${
+                        className={`p-3 rounded-lg border text-xs flex items-center justify-between ${
                           isMet
                             ? 'bg-white border-[#86EFAC] text-[#166534]'
                             : 'bg-white border-[#E2E6EB] text-[#334155]'
                         }`}
                       >
                         <div className="truncate pr-2">
-                          <p className="font-semibold truncate">{sec.sectionName}</p>
-                          <p className="text-[10px] text-[#64748B]">
+                          <p className="font-bold truncate">{sec.sectionName}</p>
+                          <p className="text-xs text-[#64748B] font-medium">
                             {sec.subjects?.map((s) => s.name).join(', ') || 'General Syllabus'}
                           </p>
                         </div>
                         <div className="text-right whitespace-nowrap">
                           <span
-                            className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-mono font-bold ${
+                            className={`inline-block px-2 py-0.5 rounded text-xs font-mono font-bold ${
                               isMet
                                 ? 'bg-[#EDF6F0] text-[#166534]'
                                 : count > 0
                                 ? 'bg-[#FEF3C7] text-[#92400E]'
-                                : 'bg-[#F1F5F9] text-[#64748B]'
+                                : 'bg-[#EDF1F5] text-[#64748B]'
                             }`}
                           >
                             {count} / {sec.questionCount}
@@ -1064,13 +1108,13 @@ export const TestBuilderPage: React.FC = () => {
                   })}
                 </div>
 
-                <div className="flex items-center justify-between pt-1">
+                <div className="flex items-center justify-between pt-2">
                   <button
                     type="button"
                     onClick={handleAutoGenerate}
-                    className="inline-flex items-center space-x-1.5 bg-[#0E1B2A] text-white px-3 py-1.5 rounded text-xs font-semibold hover:bg-[#1A2C42] transition-colors"
+                    className="inline-flex items-center space-x-2 bg-[#0E1B2A] text-white px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-[#1E293B] transition-colors"
                   >
-                    <Sparkles className="w-3.5 h-3.5 text-[#C6A75E]" />
+                    <Sparkles className="w-4 h-4 text-[#C6A75E]" />
                     <span>Auto-Allocate All Sections</span>
                   </button>
 
@@ -1081,7 +1125,7 @@ export const TestBuilderPage: React.FC = () => {
                         setAssemblyMode('MANUAL');
                         if (activeSections.length > 0) setActiveSectionTab(activeSections[0].id);
                       }}
-                      className="text-xs text-[#0E1B2A] font-semibold underline hover:text-[#1A2C42]"
+                      className="text-sm font-semibold text-[#0E1B2A] hover:underline"
                     >
                       Switch to Manual View to Inspect & Customize
                     </button>
@@ -1091,11 +1135,10 @@ export const TestBuilderPage: React.FC = () => {
 
               {/* MANUAL SELECTION WORKSPACE */}
               {assemblyMode === 'MANUAL' && (
-                <div className="space-y-4 pt-2 border-t border-[#E2E6EB]">
-                  {/* Section Tabs */}
+                <div className="space-y-4 pt-3 border-t border-[#EDF1F5]">
                   <div>
-                    <label className="block font-semibold text-[#0E1B2A] mb-2 uppercase tracking-wide text-xs">
-                      Select Section to Author / Pick Questions:
+                    <label className="block text-sm font-bold text-[#0E1B2A] mb-3">
+                      Select Section to Pick Questions:
                     </label>
                     <div className="flex flex-wrap gap-2">
                       {activeSections.map((sec) => {
@@ -1110,15 +1153,15 @@ export const TestBuilderPage: React.FC = () => {
                               setActiveSectionTab(sec.id);
                               setSubjectFilter('ALL');
                             }}
-                            className={`px-3 py-2 rounded-md text-xs font-semibold flex items-center space-x-2 transition-all ${
+                            className={`px-4 py-2.5 rounded-lg text-sm font-bold flex items-center space-x-2 transition-all ${
                               isSelected
-                                ? 'bg-[#0E1B2A] text-white shadow-xs ring-1 ring-[#0E1B2A]'
-                                : 'bg-[#F8FAFC] border border-[#D4D9DF] text-[#334155] hover:bg-[#F1F5F9]'
+                                ? 'bg-[#0E1B2A] text-white shadow-xs'
+                                : 'bg-[#F8FAFC] border border-[#D4D9DF] text-[#334155] hover:bg-[#EDF1F5]'
                             }`}
                           >
                             <span>{sec.sectionName}</span>
                             <span
-                              className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold ${
+                              className={`px-2 py-0.5 rounded text-xs font-mono font-bold ${
                                 isSelected
                                   ? isMet
                                     ? 'bg-[#16A34A] text-white'
@@ -1136,21 +1179,18 @@ export const TestBuilderPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Active Section Workstation */}
                   {currentActiveSec && (
-                    <div className="bg-white border border-[#D4D9DF] rounded-md p-4 space-y-4">
-                      {/* Header with quota & quick actions */}
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#E2E6EB]">
+                    <div className="bg-white border border-[#E2E6EB] rounded-xl p-5 space-y-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#EDF1F5]">
                         <div>
-                          <h3 className="text-xs font-bold text-[#0E1B2A] flex items-center space-x-2">
+                          <h3 className="text-base font-bold text-[#0E1B2A] flex items-center space-x-2">
                             <span>Questions for: {currentActiveSec.sectionName}</span>
-                            <span className="text-[#64748B] font-normal">
-                              (Section Code: {currentActiveSec.sectionCode})
+                            <span className="text-sm font-medium text-[#64748B]">
+                              (Code: {currentActiveSec.sectionCode})
                             </span>
                           </h3>
-                          <p className="text-[11px] text-[#64748B] mt-0.5">
-                            Target Quota: <strong>{currentActiveSec.questionCount}</strong> questions • Currently
-                            Selected:{' '}
+                          <p className="text-xs font-medium text-[#64748B] mt-1">
+                            Target Quota: <strong>{currentActiveSec.questionCount}</strong> questions • Currently Selected:{' '}
                             <strong
                               className={
                                 currentActiveSecCount >= currentActiveSec.questionCount
@@ -1168,32 +1208,32 @@ export const TestBuilderPage: React.FC = () => {
                           <button
                             type="button"
                             onClick={() => handleAutoGenerateForSection(currentActiveSec.id)}
-                            className="inline-flex items-center space-x-1 bg-[#F0FDF4] border border-[#86EFAC] text-[#166534] px-2.5 py-1.5 rounded text-xs font-semibold hover:bg-[#DCFCE7]"
+                            className="inline-flex items-center space-x-1.5 bg-[#F0FDF4] border border-[#86EFAC] text-[#166534] px-3 py-2 rounded-lg text-xs font-bold hover:bg-[#DCFCE7]"
                           >
-                            <Sparkles className="w-3.5 h-3.5 text-[#16A34A]" />
+                            <Sparkles className="w-4 h-4 text-[#16A34A]" />
                             <span>Auto-Fill Section</span>
                           </button>
                           <button
                             type="button"
                             onClick={() => clearSectionQuestions(currentActiveSec.id)}
-                            className="inline-flex items-center space-x-1 bg-[#FFF1F2] border border-[#FECDD3] text-[#BE123C] px-2.5 py-1.5 rounded text-xs font-semibold hover:bg-[#FFE4E6]"
+                            className="inline-flex items-center space-x-1.5 bg-[#FFF1F2] border border-[#FECDD3] text-[#BE123C] px-3 py-2 rounded-lg text-xs font-bold hover:bg-[#FFE4E6]"
                           >
-                            <Trash2 className="w-3.5 h-3.5" />
+                            <Trash2 className="w-4 h-4" />
                             <span>Clear</span>
                           </button>
                         </div>
                       </div>
 
-                      {/* Filters Bar */}
-                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 text-xs">
+                      {/* Filters */}
+                      <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 text-sm">
                         <div className="sm:col-span-6 relative">
-                          <Search className="w-3.5 h-3.5 absolute left-2.5 top-2.5 text-[#64748B]" />
+                          <Search className="w-4 h-4 absolute left-3 top-3.5 text-[#64748B]" />
                           <input
                             type="text"
                             value={questionSearch}
                             onChange={(e) => setQuestionSearch(e.target.value)}
                             placeholder="Search question stem or code..."
-                            className="w-full pl-8 pr-3 py-1.5 bg-[#F8FAFC] border border-[#D4D9DF] rounded text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
+                            className="w-full h-11 pl-10 pr-4 bg-white border border-[#D4D9DF] rounded-lg text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
                           />
                         </div>
 
@@ -1201,7 +1241,7 @@ export const TestBuilderPage: React.FC = () => {
                           <select
                             value={subjectFilter}
                             onChange={(e) => setSubjectFilter(e.target.value)}
-                            className="w-full py-1.5 px-2 bg-[#F8FAFC] border border-[#D4D9DF] rounded text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
+                            className="w-full h-11 px-3 bg-white border border-[#D4D9DF] rounded-lg text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
                           >
                             <option value="ALL">All Subjects</option>
                             {currentActiveSec.subjects?.map((s) => (
@@ -1209,17 +1249,6 @@ export const TestBuilderPage: React.FC = () => {
                                 {s.name} (Syllabus)
                               </option>
                             ))}
-                            {Array.from(new Set(allQuestions.map((q) => q.subject_id).filter(Boolean))).map(
-                              (subId) => {
-                                const qObj = allQuestions.find((q) => q.subject_id === subId);
-                                if (currentActiveSec.subjects?.some((s) => s.id === subId)) return null;
-                                return (
-                                  <option key={subId} value={subId}>
-                                    {qObj?.subjectName || qObj?.subject || subId}
-                                  </option>
-                                );
-                              }
-                            )}
                           </select>
                         </div>
 
@@ -1227,7 +1256,7 @@ export const TestBuilderPage: React.FC = () => {
                           <select
                             value={difficultyFilter}
                             onChange={(e) => setDifficultyFilter(e.target.value)}
-                            className="w-full py-1.5 px-2 bg-[#F8FAFC] border border-[#D4D9DF] rounded text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
+                            className="w-full h-11 px-3 bg-white border border-[#D4D9DF] rounded-lg text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
                           >
                             <option value="ALL">All Difficulties</option>
                             <option value="EASY">Easy</option>
@@ -1237,14 +1266,14 @@ export const TestBuilderPage: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Questions Table / List */}
-                      <div className="space-y-2 max-h-96 overflow-y-auto pr-1">
+                      {/* Questions List */}
+                      <div className="space-y-3 max-h-96 overflow-y-auto pr-1">
                         {filteredQuestionsForActiveSec.length === 0 ? (
-                          <div className="text-center py-8 bg-[#F8FAFC] rounded border border-dashed border-[#D4D9DF]">
+                          <div className="text-center py-10 bg-[#F8FAFC] rounded-lg border border-dashed border-[#D4D9DF]">
                             <BookOpen className="w-8 h-8 text-[#94A3B8] mx-auto mb-2" />
-                            <p className="text-xs font-semibold text-[#0E1B2A]">No Matching Questions Found</p>
-                            <p className="text-[11px] text-[#64748B] mt-1">
-                              Try adjusting search filters or use "Auto-Fill Section" to draw from the general approved bank.
+                            <p className="text-sm font-bold text-[#0E1B2A]">No Matching Questions Found</p>
+                            <p className="text-xs font-medium text-[#64748B] mt-1">
+                              Try adjusting search filters or use "Auto-Fill Section" to draw from approved bank.
                             </p>
                           </div>
                         ) : (
@@ -1259,25 +1288,25 @@ export const TestBuilderPage: React.FC = () => {
                             return (
                               <div
                                 key={q.id}
-                                className={`p-3 rounded-md border text-xs transition-all ${
+                                className={`p-4 rounded-lg border text-sm transition-all ${
                                   isSelectedInThisSec
                                     ? 'bg-[#F0FDF4] border-[#86EFAC]'
                                     : isUsedInOtherSec
                                     ? 'bg-[#F8FAFC] border-[#E2E6EB] opacity-60'
-                                    : 'bg-white border-[#D4D9DF] hover:border-[#94A3B8]'
+                                    : 'bg-white border-[#E2E6EB] hover:border-[#CBD5E1]'
                                 }`}
                               >
-                                <div className="flex items-start justify-between gap-3">
-                                  <div className="flex-1 space-y-1.5">
+                                <div className="flex items-start justify-between gap-4">
+                                  <div className="flex-1 space-y-2">
                                     <div className="flex items-center space-x-2">
-                                      <span className="font-mono text-[10px] font-bold text-[#0E1B2A] bg-[#F1F5F9] px-1.5 py-0.5 rounded border border-[#E2E8F0]">
+                                      <span className="font-mono text-xs font-bold text-[#0E1B2A] bg-[#EDF1F5] px-2 py-0.5 rounded border border-[#E2E8F0]">
                                         {q.code || q.id.slice(0, 8)}
                                       </span>
-                                      <span className="text-[10px] bg-[#EEF2FF] text-[#3730A3] px-2 py-0.5 rounded font-medium">
+                                      <span className="text-xs font-semibold bg-[#EEF2FF] text-[#3730A3] px-2 py-0.5 rounded">
                                         {q.subjectName || q.subject}
                                       </span>
                                       <span
-                                        className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                                        className={`text-xs px-2 py-0.5 rounded font-bold ${
                                           q.difficulty === 'EASY'
                                             ? 'bg-[#ECFDF5] text-[#065F46]'
                                             : q.difficulty === 'HARD'
@@ -1288,58 +1317,56 @@ export const TestBuilderPage: React.FC = () => {
                                         {q.difficulty}
                                       </span>
                                       {isUsedInOtherSec && (
-                                        <span className="text-[10px] text-[#64748B] italic">
+                                        <span className="text-xs font-medium text-[#64748B] italic">
                                           (Assigned to another section)
                                         </span>
                                       )}
                                     </div>
 
-                                    <p className="font-semibold text-[#0E1B2A] text-xs leading-relaxed">
+                                    <p className="font-bold text-[#0E1B2A] text-sm leading-relaxed">
                                       {q.stem}
                                     </p>
 
-                                    {/* Options preview */}
-                                    <div className="grid grid-cols-2 gap-1.5 pt-1 text-[11px]">
+                                    <div className="grid grid-cols-2 gap-2 pt-1 text-xs">
                                       {q.options.map((opt) => (
                                         <div
                                           key={opt.id}
-                                          className={`px-2 py-1 rounded border flex items-center space-x-1.5 ${
+                                          className={`px-3 py-1.5 rounded-md border flex items-center space-x-2 ${
                                             opt.id === q.correctOptionId
-                                              ? 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46] font-medium'
+                                              ? 'bg-[#ECFDF5] border-[#A7F3D0] text-[#065F46] font-semibold'
                                               : 'bg-white border-[#E2E6EB] text-[#475569]'
                                           }`}
                                         >
-                                          <span className="font-bold text-[10px]">{opt.label}.</span>
+                                          <span className="font-bold text-xs">{opt.label}.</span>
                                           <span className="truncate">{opt.text}</span>
                                           {opt.id === q.correctOptionId && (
-                                            <Check className="w-3 h-3 text-[#059669] ml-auto shrink-0" />
+                                            <Check className="w-3.5 h-3.5 text-[#059669] ml-auto shrink-0" />
                                           )}
                                         </div>
                                       ))}
                                     </div>
                                   </div>
 
-                                  {/* Toggle Checkbox / Button */}
                                   <button
                                     type="button"
                                     disabled={isUsedInOtherSec}
                                     onClick={() => toggleQuestionForSection(currentActiveSec.id, q.id)}
-                                    className={`px-3 py-1.5 rounded text-xs font-bold shrink-0 transition-all ${
+                                    className={`px-4 py-2 rounded-lg text-xs font-bold shrink-0 transition-all ${
                                       isSelectedInThisSec
                                         ? 'bg-[#16A34A] hover:bg-[#15803D] text-white'
                                         : isUsedInOtherSec
-                                        ? 'bg-[#E2E6EB] text-[#94A3B8] cursor-not-allowed'
-                                        : 'bg-[#0E1B2A] hover:bg-[#1A2C42] text-white'
+                                        ? 'bg-[#EDF1F5] text-[#94A3B8] cursor-not-allowed'
+                                        : 'bg-[#0E1B2A] hover:bg-[#1E293B] text-white'
                                     }`}
                                   >
                                     {isSelectedInThisSec ? (
                                       <span className="flex items-center space-x-1">
-                                        <Check className="w-3.5 h-3.5" />
+                                        <Check className="w-4 h-4" />
                                         <span>Selected</span>
                                       </span>
                                     ) : (
                                       <span className="flex items-center space-x-1">
-                                        <Plus className="w-3.5 h-3.5" />
+                                        <Plus className="w-4 h-4" />
                                         <span>Select</span>
                                       </span>
                                     )}
@@ -1355,53 +1382,53 @@ export const TestBuilderPage: React.FC = () => {
                 </div>
               )}
 
-              {/* AUTO SELECTION PREVIEW WORKSPACE */}
+              {/* AUTO SELECTION PREVIEW */}
               {assemblyMode === 'AUTO' && (
-                <div className="space-y-3 pt-2 border-t border-[#E2E6EB]">
+                <div className="space-y-3 pt-3 border-t border-[#EDF1F5]">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xs font-bold text-[#0E1B2A] uppercase tracking-wide">
+                    <h3 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wide">
                       Automated Question Allocation Preview
                     </h3>
-                    <span className="text-[11px] text-[#64748B]">
+                    <span className="text-xs font-medium text-[#64748B]">
                       Dynamic balance: Approved questions selected per section syllabus
                     </span>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {activeSections.map((sec) => {
                       const secQuestions = (sectionQuestionMap[sec.id] || [])
                         .map((id) => allQuestions.find((q) => q.id === id))
                         .filter(Boolean) as Question[];
 
                       return (
-                        <div key={sec.id} className="border border-[#D4D9DF] rounded p-3 bg-[#F8FAFC] space-y-2">
-                          <div className="flex items-center justify-between text-xs">
+                        <div key={sec.id} className="border border-[#E2E6EB] rounded-xl p-4 bg-[#F8FAFC] space-y-2">
+                          <div className="flex items-center justify-between text-sm">
                             <span className="font-bold text-[#0E1B2A] flex items-center space-x-2">
                               <span>{sec.sectionName}</span>
-                              <span className="text-[10px] text-[#64748B] font-normal">({sec.sectionCode})</span>
+                              <span className="text-xs font-normal text-[#64748B]">({sec.sectionCode})</span>
                             </span>
-                            <span className="font-mono text-xs font-bold text-[#166534]">
+                            <span className="font-mono text-sm font-bold text-[#166534]">
                               {secQuestions.length} / {sec.questionCount} Questions Allocated
                             </span>
                           </div>
 
                           {secQuestions.length > 0 ? (
-                            <div className="space-y-1 pt-1">
+                            <div className="space-y-1.5 pt-1">
                               {secQuestions.slice(0, 3).map((q, idx) => (
-                                <div key={q.id} className="text-[11px] text-[#334155] flex items-center space-x-2 truncate">
-                                  <span className="text-[#64748B] font-mono w-4">{idx + 1}.</span>
+                                <div key={q.id} className="text-xs font-medium text-[#334155] flex items-center space-x-2 truncate">
+                                  <span className="text-[#64748B] font-mono w-5">{idx + 1}.</span>
                                   <span className="truncate">{q.stem}</span>
                                 </div>
                               ))}
                               {secQuestions.length > 3 && (
-                                <p className="text-[10px] text-[#64748B] italic pl-6">
+                                <p className="text-xs font-medium text-[#64748B] italic pl-7">
                                   + {secQuestions.length - 3} more questions allocated for this section
                                 </p>
                               )}
                             </div>
                           ) : (
-                            <p className="text-[11px] text-[#94A3B8] italic">
-                              Will be generated dynamically on compile using institutional subject pool.
+                            <p className="text-xs font-medium text-[#94A3B8] italic">
+                              Will be generated dynamically on compile using subject repository pool.
                             </p>
                           )}
                         </div>
@@ -1413,80 +1440,87 @@ export const TestBuilderPage: React.FC = () => {
             </div>
           )}
 
-          {/* STEP 5: Exam Rules */}
+          {/* STAGE 5: Rules */}
           {currentStep === 5 && (
-            <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-5">
-              <h2 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wider border-b border-[#E2E6EB] pb-2 flex items-center justify-between">
-                <span>Stage 5 — CBT Administration & Proctoring Rules</span>
-                <span className="text-[11px] font-normal text-[#64748B] normal-case">Step 5 of 7</span>
-              </h2>
+            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="border-b border-[#EDF1F5] pb-4 flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
+                    Stage 5 — Administration & Rules
+                  </h2>
+                  <p className="text-sm font-medium text-[#64748B] mt-1">
+                    Configure examination delivery policies, timing controls, and scoring rules.
+                  </p>
+                </div>
+                <span className="text-xs font-semibold text-[#64748B]">Step 5 of 7</span>
+              </div>
 
-              <div className="space-y-4 text-xs">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-3 bg-[#F8FAFC] border border-[#D4D9DF] rounded space-y-2">
-                    <label className="flex items-center space-x-2 cursor-pointer">
+              <div className="space-y-5 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
+                    <label className="flex items-center space-x-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
                         checked={shuffleQuestions}
                         onChange={(e) => setShuffleQuestions(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#D4D9DF] text-[#0E1B2A]"
+                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
                       />
-                      <span className="font-semibold text-[#0E1B2A]">Randomize Question Order</span>
+                      <span className="font-bold text-[#0E1B2A]">Randomize Question Order</span>
                     </label>
-                    <p className="text-[11px] text-[#64748B] pl-6">
-                      Presents questions in randomized sequence for each terminal to prevent peer copying.
+                    <p className="text-xs font-medium text-[#64748B] pl-7">
+                      Presents questions in randomized sequence for each candidate terminal.
                     </p>
                   </div>
 
-                  <div className="p-3 bg-[#F8FAFC] border border-[#D4D9DF] rounded space-y-2">
-                    <label className="flex items-center space-x-2 cursor-pointer">
+                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
+                    <label className="flex items-center space-x-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
                         checked={shuffleOptions}
                         onChange={(e) => setShuffleOptions(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#D4D9DF] text-[#0E1B2A]"
+                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
                       />
-                      <span className="font-semibold text-[#0E1B2A]">Randomize Options Order</span>
+                      <span className="font-bold text-[#0E1B2A]">Randomize Options Order</span>
                     </label>
-                    <p className="text-[11px] text-[#64748B] pl-6">
+                    <p className="text-xs font-medium text-[#64748B] pl-7">
                       Shuffles options (A, B, C, D) per question on the candidate client interface.
                     </p>
                   </div>
 
-                  <div className="p-3 bg-[#F8FAFC] border border-[#D4D9DF] rounded space-y-2">
-                    <label className="flex items-center space-x-2 cursor-pointer">
+                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
+                    <label className="flex items-center space-x-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
                         checked={allowSectionNavigation}
                         onChange={(e) => setAllowSectionNavigation(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#D4D9DF] text-[#0E1B2A]"
+                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
                       />
-                      <span className="font-semibold text-[#0E1B2A]">Allow Section Free Navigation</span>
+                      <span className="font-bold text-[#0E1B2A]">Allow Free Section Navigation</span>
                     </label>
-                    <p className="text-[11px] text-[#64748B] pl-6">
+                    <p className="text-xs font-medium text-[#64748B] pl-7">
                       If disabled, candidates must complete sections strictly in sequential lockstep.
                     </p>
                   </div>
 
-                  <div className="p-3 bg-[#F8FAFC] border border-[#D4D9DF] rounded space-y-2">
-                    <label className="flex items-center space-x-2 cursor-pointer">
+                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
+                    <label className="flex items-center space-x-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
                         checked={negativeMarking}
                         onChange={(e) => setNegativeMarking(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#D4D9DF] text-[#0E1B2A]"
+                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
                       />
-                      <span className="font-semibold text-[#0E1B2A]">Enforce Negative Marking</span>
+                      <span className="font-bold text-[#0E1B2A]">Enforce Negative Marking</span>
                     </label>
-                    <p className="text-[11px] text-[#64748B] pl-6">
+                    <p className="text-xs font-medium text-[#64748B] pl-7">
                       Deduct {negativeMarkValue} mark for each incorrect response.
                     </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
                   <div>
-                    <label className="block font-semibold text-[#0E1B2A] mb-1 uppercase">
+                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
                       Minimum Passing Score (%)
                     </label>
                     <input
@@ -1495,20 +1529,20 @@ export const TestBuilderPage: React.FC = () => {
                       max={90}
                       value={passingScorePercent}
                       onChange={(e) => setPassingScorePercent(Number(e.target.value))}
-                      className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] font-bold"
+                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-bold text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-semibold text-[#0E1B2A] mb-1 uppercase">
+                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
                       Post-Exam Result Display
                     </label>
                     <select
                       value={showResultImmediately ? 'YES' : 'NO'}
                       onChange={(e) => setShowResultImmediately(e.target.value === 'YES')}
-                      className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] font-medium"
+                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
                     >
-                      <option value="YES">Display Score & Merit Ranking Immediately</option>
+                      <option value="YES">Display Score & Ranking Immediately</option>
                       <option value="NO">Proctor Reserved Release</option>
                     </select>
                   </div>
@@ -1517,101 +1551,102 @@ export const TestBuilderPage: React.FC = () => {
             </div>
           )}
 
-          {/* STEP 6: Review & Audit */}
+          {/* STAGE 6: Review */}
           {currentStep === 6 && (
-            <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-5">
-              <h2 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wider border-b border-[#E2E6EB] pb-2 flex items-center justify-between">
-                <span>Stage 6 — Blueprint Specification Audit</span>
-                <span className="text-[11px] font-normal text-[#64748B] normal-case">Step 6 of 7</span>
-              </h2>
+            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="border-b border-[#EDF1F5] pb-4 flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
+                    Stage 6 — Specification Review
+                  </h2>
+                  <p className="text-sm font-medium text-[#64748B] mt-1">
+                    Review examination details and structure before compilation.
+                  </p>
+                </div>
+                <span className="text-xs font-semibold text-[#64748B]">Step 6 of 7</span>
+              </div>
 
-              <div className="space-y-4 text-xs font-sans">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#F8FAFC] p-4 rounded-md border border-[#E2E6EB]">
+              <div className="space-y-5 text-sm font-sans">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#F8FAFC] p-5 rounded-xl border border-[#E2E6EB]">
                   <div>
-                    <span className="text-[10px] font-bold uppercase text-[#64748B] block">Force</span>
-                    <span className="font-bold text-[#0E1B2A]">{selectedForce?.name || 'Pakistan Armed Forces'}</span>
+                    <span className="text-xs font-bold uppercase text-[#64748B] block mb-1">Forces</span>
+                    <span className="font-bold text-[#0E1B2A]">{Object.keys(eligibilitySummaryMap || {}).join(', ') || 'Armed Forces'}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase text-[#64748B] block">Course</span>
-                    <span className="font-bold text-[#0E1B2A]">{selectedCourse?.name || 'Screening'}</span>
+                    <span className="text-xs font-bold uppercase text-[#64748B] block mb-1">Courses</span>
+                    <span className="font-bold text-[#0E1B2A]">{Object.values(eligibilitySummaryMap || {}).flat().join(', ') || 'Screening'}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase text-[#64748B] block">Total Questions</span>
+                    <span className="text-xs font-bold uppercase text-[#64748B] block mb-1">Total Questions</span>
                     <span className="font-bold text-[#0E1B2A]">{totalQuestions} Items</span>
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase text-[#64748B] block">Duration</span>
+                    <span className="text-xs font-bold uppercase text-[#64748B] block mb-1">Duration</span>
                     <span className="font-bold text-[#0E1B2A]">{totalDurationMinutes} Minutes</span>
                   </div>
                 </div>
 
-                <div className="border border-[#D4D9DF] rounded-md overflow-hidden">
-                  <div className="bg-[#0E1B2A] text-white px-4 py-2 font-bold text-[11px] uppercase tracking-wide">
+                <div className="border border-[#E2E6EB] rounded-xl overflow-hidden">
+                  <div className="bg-[#0E1B2A] text-white px-5 py-3 font-bold text-xs uppercase tracking-wider">
                     Enabled Examination Sections
                   </div>
-                  <div className="divide-y divide-[#E2E6EB]">
+                  <div className="divide-y divide-[#EDF1F5]">
                     {activeSections.map((sec, i) => (
-                      <div key={sec.id} className="p-3 flex items-center justify-between bg-white">
+                      <div key={sec.id} className="p-4 flex items-center justify-between bg-white">
                         <div>
-                          <span className="font-bold text-[#0E1B2A]">
+                          <span className="font-bold text-[#0E1B2A] text-sm">
                             {i + 1}. {sec.sectionName}
                           </span>
-                          <div className="text-[10px] text-[#64748B] mt-0.5">
+                          <div className="text-xs font-medium text-[#64748B] mt-0.5">
                             Code: {sec.sectionCode} • Pass: 50%
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="font-bold text-[#0E1B2A] block">{sec.questionCount} Questions</span>
-                          <span className="text-[10px] text-[#64748B]">{sec.durationMinutes} Minutes</span>
+                          <span className="font-bold text-[#0E1B2A] text-sm block">{sec.questionCount} Questions</span>
+                          <span className="text-xs font-medium text-[#64748B]">{sec.durationMinutes} Minutes</span>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="p-4 bg-[#EDF6F0] border border-[#88BE9B] rounded-md text-xs text-[#234E35] flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#234E35]" />
-                    <span>Specification conforms to Academy CBT Standards. Ready for compilation.</span>
-                  </div>
+                <div className="p-4 bg-[#EDF6F0] border border-[#88BE9B] rounded-xl text-sm font-medium text-[#234E35] flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#234E35] shrink-0" />
+                  <span>Specification conforms to academy standards. Ready for compilation.</span>
                 </div>
               </div>
             </div>
           )}
 
-          {/* STEP 7: Publish & Assign */}
+          {/* STAGE 7: Publish & Assign */}
           {currentStep === 7 && (
-            <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-5 text-center">
-              <div className="w-12 h-12 bg-[#EDF6F0] border border-[#88BE9B] rounded-full flex items-center justify-center mx-auto text-[#234E35]">
-                <FileCheck className="w-6 h-6" />
+            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6 text-center">
+              <div className="w-14 h-14 bg-[#EDF6F0] border border-[#88BE9B] rounded-full flex items-center justify-center mx-auto text-[#234E35]">
+                <FileCheck className="w-7 h-7" />
               </div>
 
               <div>
-                <h2 className="text-lg font-bold text-[#0E1B2A] uppercase tracking-wide">
-                  Publish to Examination Network
+                <h2 className="text-2xl font-bold text-[#0E1B2A] font-display">
+                  Publish Examination
                 </h2>
-                <p className="text-xs text-[#64748B] mt-1 max-w-md mx-auto">
-                  Compiles snapshot blueprint into database tables, locks section configuration, and prepares test delivery terminals.
+                <p className="text-sm font-medium text-[#64748B] mt-1 max-w-lg mx-auto">
+                  Compile section rules, allocate question pool, and publish this examination for candidate delivery.
                 </p>
               </div>
 
-              <div className="p-4 bg-[#F8FAFC] border border-[#D4D9DF] rounded-md max-w-md mx-auto text-left text-xs space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-[#64748B]">Blueprint:</span>
-                  <strong className="text-[#0E1B2A]">{title}</strong>
+              <div className="bg-[#F8FAFC] border border-[#E2E6EB] p-5 rounded-xl max-w-md mx-auto text-sm text-left space-y-3">
+                <div className="flex justify-between border-b border-[#E2E6EB] pb-2">
+                  <span className="text-[#64748B]">Title:</span>
+                  <span className="font-bold text-[#0E1B2A]">{title}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-[#64748B]">Target Cadre:</span>
-                  <span className="text-[#0E1B2A]">{selectedCourse?.name}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#64748B]">Cadet Deployment:</span>
+                <div className="flex justify-between border-b border-[#E2E6EB] pb-2">
+                  <span className="text-[#64748B]">Deployment Scope:</span>
                   <span className="text-[#166534] font-bold">
                     {selectedBatchId === 'ALL'
-                      ? 'All Active Batches (Immediate Access)'
+                      ? 'All Active Batches'
                       : selectedBatch
                       ? selectedBatch.name
-                      : 'Unassigned (Archive Only)'}
+                      : 'Unassigned Repository'}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -1625,16 +1660,16 @@ export const TestBuilderPage: React.FC = () => {
                   type="button"
                   onClick={handlePublish}
                   disabled={publishing || !isStaff}
-                  className="inline-flex items-center space-x-2 bg-[#0E1B2A] hover:bg-[#1A2C42] text-white px-8 py-3 rounded-md text-xs font-bold uppercase tracking-wider transition-colors shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center space-x-2 bg-[#0E1B2A] hover:bg-[#1E293B] text-white px-8 py-3.5 rounded-lg text-sm font-bold transition-colors shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {publishing ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin text-[#C6A75E]" />
+                      <Loader2 className="w-5 h-5 animate-spin text-[#C6A75E]" />
                       <span>Compiling Blueprint...</span>
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4 text-[#C6A75E]" />
+                      <Send className="w-5 h-5 text-[#C6A75E]" />
                       <span>Compile & Publish Test</span>
                     </>
                   )}
@@ -1644,12 +1679,12 @@ export const TestBuilderPage: React.FC = () => {
           )}
 
           {/* Navigation Control Buttons */}
-          <div className="flex items-center justify-between pt-4 border-t border-[#D4D9DF]">
+          <div className="flex items-center justify-between pt-4 border-t border-[#E2E6EB]">
             <button
               type="button"
               onClick={() => setCurrentStep((prev) => Math.max(1, prev - 1))}
               disabled={currentStep === 1}
-              className="px-4 py-2 bg-white border border-[#D4D9DF] text-[#0E1B2A] rounded text-xs font-bold uppercase tracking-wider hover:bg-[#F8FAFC] disabled:opacity-40"
+              className="h-11 px-6 bg-white border border-[#D4D9DF] text-[#0E1B2A] rounded-lg text-sm font-bold hover:bg-[#F8FAFC] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               Previous
             </button>
@@ -1658,7 +1693,7 @@ export const TestBuilderPage: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNextStep}
-                className="inline-flex items-center space-x-1 px-5 py-2 bg-[#0E1B2A] text-white rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1A2C42]"
+                className="inline-flex items-center space-x-2 h-11 px-6 bg-[#0E1B2A] text-white rounded-lg text-sm font-bold hover:bg-[#1E293B] transition-colors"
               >
                 <span>Continue</span>
                 <ChevronRight className="w-4 h-4 text-[#C6A75E]" />
@@ -1667,7 +1702,7 @@ export const TestBuilderPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => navigate('/admin/tests')}
-                className="px-4 py-2 bg-white border border-[#D4D9DF] text-[#64748B] rounded text-xs font-bold uppercase tracking-wider hover:bg-[#F8FAFC]"
+                className="h-11 px-6 bg-white border border-[#D4D9DF] text-[#64748B] rounded-lg text-sm font-bold hover:bg-[#F8FAFC] transition-colors"
               >
                 Back to Tests
               </button>
@@ -1675,45 +1710,57 @@ export const TestBuilderPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Audit Sidebar (4 Cols) */}
+        {/* Right Test Summary Audit Sidebar (4 Cols on 12-grid = ~28-33%) */}
         <div className="lg:col-span-4 space-y-4">
-          <div className="bg-white border border-[#D4D9DF] rounded-md p-4 shadow-xs space-y-4 text-xs font-sans">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#0E1B2A] border-b border-[#E2E6EB] pb-2 flex items-center justify-between">
-              <span>Blueprint Audit Docket</span>
-              <Shield className="w-3.5 h-3.5 text-[#C6A75E]" />
+          <div className="bg-white border border-[#E2E6EB] rounded-lg p-5 shadow-xs space-y-4 text-sm font-sans sticky top-24">
+            <h3 className="text-base font-bold text-[#0E1B2A] border-b border-[#EDF1F5] pb-3 flex items-center justify-between font-display">
+              <span>Test Summary</span>
+              <Shield className="w-4 h-4 text-[#C6A75E]" />
             </h3>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div>
-                <span className="text-[10px] font-bold uppercase text-[#64748B] block">Force Branch</span>
-                <span className="font-bold text-[#0E1B2A]">{selectedForce?.name || '—'}</span>
+                <span className="text-xs font-bold uppercase text-[#64748B] block mb-1">
+                  Eligible Forces
+                </span>
+                <span className="font-bold text-[#0E1B2A]">
+                  {eligibilitySummaryMap ? Object.keys(eligibilitySummaryMap).join(', ') : 'None Selected'}
+                </span>
               </div>
 
               <div>
-                <span className="text-[10px] font-bold uppercase text-[#64748B] block">Entry / Course</span>
-                <span className="font-bold text-[#0E1B2A]">{selectedCourse?.name || '—'}</span>
+                <span className="text-xs font-bold uppercase text-[#64748B] block mb-1">
+                  Eligible Courses
+                </span>
+                <span className="font-bold text-[#0E1B2A]">
+                  {eligibilitySummaryMap ? Object.values(eligibilitySummaryMap).flat().join(', ') : 'None Selected'}
+                </span>
               </div>
 
               <div>
-                <span className="text-[10px] font-bold uppercase text-[#64748B] block">Pattern Template</span>
-                <span className="font-medium text-[#0E1B2A]">{selectedTemplate?.name || 'Default Pattern'}</span>
+                <span className="text-xs font-bold uppercase text-[#64748B] block mb-1">
+                  Pattern Template
+                </span>
+                <span className="font-medium text-[#0E1B2A]">
+                  {selectedTemplate?.name || 'Default Academy Spec'}
+                </span>
               </div>
 
-              <div className="pt-2 border-t border-[#E2E6EB] space-y-1.5">
+              <div className="pt-3 border-t border-[#EDF1F5] space-y-2 text-sm font-medium">
                 <div className="flex justify-between">
                   <span className="text-[#64748B]">Active Sections:</span>
                   <strong className="text-[#0E1B2A]">{activeSections.length}</strong>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#64748B]">Total Question Items:</span>
+                  <span className="text-[#64748B]">Total Questions:</span>
                   <strong className="text-[#0E1B2A]">{totalQuestions}</strong>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#64748B]">Total Allocated Time:</span>
+                  <span className="text-[#64748B]">Total Duration:</span>
                   <strong className="text-[#0E1B2A]">{totalDurationMinutes} min</strong>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#64748B]">Passing Threshold:</span>
+                  <span className="text-[#64748B]">Passing Score:</span>
                   <strong className="text-[#0E1B2A]">{passingScorePercent}%</strong>
                 </div>
                 <div className="flex justify-between">
@@ -1723,8 +1770,8 @@ export const TestBuilderPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-[#F8FAFC] border border-[#E2E6EB] p-3 rounded text-[11px] text-[#64748B] leading-relaxed">
-              <strong>Immutability Guarantee:</strong> Once published, changes to master pattern templates will not alter this test or candidate results.
+            <div className="bg-[#F8FAFC] border border-[#E2E6EB] p-4 rounded-lg text-xs text-[#64748B] font-medium leading-relaxed">
+              <strong>Audit Record:</strong> Template pattern specifications are locked upon publication to preserve historical candidate test integrity.
             </div>
           </div>
         </div>

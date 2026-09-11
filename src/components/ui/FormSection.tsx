@@ -29,16 +29,16 @@ export const FormSection: React.FC<FormSectionProps> = ({
       <div className="border-b border-[#EDF1F5] pb-3">
         <div className="flex items-center space-x-2.5">
           {stepNumber !== undefined && (
-            <span className="w-5 h-5 rounded bg-[#0E1B2A] text-white flex items-center justify-center font-sans tabular-nums text-[11px] font-bold">
+            <span className="w-6 h-6 rounded bg-[#0E1B2A] text-white flex items-center justify-center font-sans tabular-nums text-xs font-bold shrink-0">
               {stepNumber}
             </span>
           )}
-          <h3 className="text-[15px] font-semibold text-[#0E1B2A] font-display">
+          <h3 className="text-lg font-bold text-[#0E1B2A] font-display">
             {title}
           </h3>
         </div>
         {sub && (
-          <p className="text-[13.5px] text-[#64748B] mt-1 font-sans leading-normal">
+          <p className="text-sm font-medium text-[#64748B] mt-1 font-sans leading-normal">
             {sub}
           </p>
         )}

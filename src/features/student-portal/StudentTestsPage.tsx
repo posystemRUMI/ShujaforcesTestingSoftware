@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { testService, TestRecord } from '@/services/testService';
+import { testService } from '@/services/testService';
 import { resultService, ResultRecord } from '@/services/resultService';
 import { retakeService, RetakePermissionRecord } from '@/services/retakeService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
@@ -21,20 +21,28 @@ export const StudentTestsPage: React.FC = () => {
     async function fetchTestsAndResults() {
       try {
         if (isSupabaseConfigured()) {
-          const [dbTests, dbResults, dbRetakes] = await Promise.all([
-            testService.getTests().catch(() => [] as TestRecord[]),
+          const [assignedTests, dbResults, dbRetakes] = await Promise.all([
+            testService.getStudentAssignedTests(user?.cadetId || user?.id || '').catch(() => []),
             resultService.getResults({ studentId: user?.cadetId || user?.id }).catch(() => [] as ResultRecord[]),
             retakeService.getRetakePermissions({ studentId: user?.cadetId || user?.id }).catch(() => [] as RetakePermissionRecord[]),
           ]);
 
-          if (dbTests && dbTests.length > 0) {
-            const mapped: TestBlueprint[] = dbTests
-              .filter((t) => t.status === 'PUBLISHED' || t.status === 'ACTIVE')
-              .map((t) => ({
+          let rawTests = assignedTests;
+          
+          // Fallback to platform published tests if assigned tests list is empty
+          if (!rawTests || rawTests.length === 0) {
+            const allTests = await testService.getTests().catch(() => []);
+            rawTests = allTests.filter((t) => t.status === 'PUBLISHED' || t.status === 'ACTIVE');
+          }
+
+          if (rawTests && rawTests.length > 0) {
+            const mapped: TestBlueprint[] = rawTests.map((t: any) => {
+              const testBranch = t.forces?.code || t.force_code || user?.branch || 'PAKISTAN_ARMY';
+              return {
                 id: t.id,
                 code: t.name.slice(0, 8),
                 title: t.name,
-                branch: 'TRI_SERVICE',
+                branch: testBranch,
                 courseTarget: 'Commissioning Course',
                 totalQuestions: t.total_marks || 100,
                 durationMinutes: t.duration_minutes || 65,
@@ -44,7 +52,8 @@ export const StudentTestsPage: React.FC = () => {
                 shuffleOptions: t.shuffle_options ?? true,
                 status: 'ACTIVE',
                 sections: [],
-              }));
+              };
+            });
             setTests(mapped);
           } else {
             setTests([]);
@@ -70,7 +79,7 @@ export const StudentTestsPage: React.FC = () => {
 
   const filteredTests = tests.filter((t) => {
     const matchesSearch = t.title.toLowerCase().includes(searchTerm.toLowerCase()) || t.code.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesBranch = branchFilter === 'ALL' || t.branch === branchFilter;
+    const matchesBranch = branchFilter === 'ALL' || t.branch === branchFilter || t.branch === 'TRI_SERVICE';
     return matchesSearch && matchesBranch;
   });
 

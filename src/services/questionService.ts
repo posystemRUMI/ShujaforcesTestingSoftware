@@ -16,7 +16,7 @@ export const questionService = {
           code,
           name
         ),
-        profiles (
+        profiles:profiles!questions_author_id_fkey (
           display_name
         ),
         question_options (

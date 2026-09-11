@@ -41,11 +41,11 @@ export const MetricCard: React.FC<MetricCardProps> = ({
       )}
       {...props}
     >
-      <div className="flex items-center justify-between text-[13px] font-semibold text-[#64748B]">
+      <div className="flex items-center justify-between text-sm font-semibold text-[#475569]">
         <span>{title}</span>
         <div className="flex items-center space-x-1.5">
           {badge && (
-            <span className="text-[11px] font-sans tabular-nums px-2 py-0.5 rounded-md bg-[#EDF1F5] text-[#0E1B2A] font-semibold">
+            <span className="text-xs font-sans tabular-nums px-2 py-0.5 rounded-md bg-[#EDF1F5] text-[#0E1B2A] font-bold">
               {badge.text}
             </span>
           )}
@@ -66,7 +66,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
       </div>
 
       {(displaySubtext || trend) && (
-        <div className="mt-2.5 text-[13px] flex items-center space-x-1.5 leading-tight">
+        <div className="mt-2.5 text-xs sm:text-sm font-medium flex items-center space-x-1.5 leading-tight">
           {trend && (
             <span
               className={cn(

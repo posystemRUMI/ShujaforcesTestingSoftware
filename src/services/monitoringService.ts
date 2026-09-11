@@ -33,21 +33,21 @@ export const monitoringService = {
   async getActiveAttempts(): Promise<ActiveAttemptMonitor[]> {
     if (!isSupabaseConfigured()) return [];
     const { data, error } = await supabase
-      .from('v_active_monitoring' as any)
+      .from('v_active_monitoring')
       .select('*');
     if (error) throw error;
     return (data || []) as ActiveAttemptMonitor[];
   },
 
   async forceSubmitAttempt(attemptId: string) {
-    const { data, error } = await (supabase as any).rpc('force_submit_attempt', {
+    const { data, error } = await supabase.rpc('force_submit_attempt', {
       p_attempt_id: attemptId,
     });
     if (error) throw error;
     return data;
   },
 
-  subscribeToHeartbeats(callback: (payload: any) => void): RealtimeChannel {
+  subscribeToHeartbeats(callback: (payload: Record<string, unknown>) => void): RealtimeChannel {
     return supabase
       .channel('heartbeat-monitor')
       .on(

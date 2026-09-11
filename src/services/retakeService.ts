@@ -25,7 +25,7 @@ export const retakeService = {
     if (filters?.studentId) {
       let targetStudentId = filters.studentId;
       try {
-        const { data: std } = await (supabase as any)
+        const { data: std } = await supabase
           .from('students')
           .select('id')
           .or(`id.eq.${targetStudentId},profile_id.eq.${targetStudentId}`)
@@ -37,14 +37,14 @@ export const retakeService = {
       query = query.eq('student_id', targetStudentId);
     }
     if (filters?.testId) query = query.eq('test_id', filters.testId);
-    if (filters?.status) query = query.eq('status', filters.status);
+    if (filters?.status) query = query.eq('status', filters.status as 'AVAILABLE');
     const { data, error } = await query;
     if (error) throw error;
     return (data || []) as RetakePermissionRecord[];
   },
 
   async approveRetake(studentId: string, testId: string, originalAttemptId?: string, expiresAt?: string, notes?: string): Promise<string> {
-    const { data, error } = await (supabase as any).rpc('approve_retake', {
+    const { data, error } = await supabase.rpc('approve_retake', {
       p_student_id: studentId,
       p_test_id: testId,
       p_original_attempt_id: originalAttemptId,
@@ -57,7 +57,7 @@ export const retakeService = {
 
   async revokeRetake(retakeId: string) {
     if (!isSupabaseConfigured()) throw new Error('Supabase not configured');
-    const { error } = await (supabase as any)
+    const { error } = await supabase
       .from('retake_permissions')
       .update({ status: 'REVOKED' })
       .eq('id', retakeId);

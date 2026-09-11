@@ -16,6 +16,7 @@ import {
   Trash2,
   User,
   Sparkles,
+  Receipt,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { PageHeader, FormSection } from '@/components/ui';
@@ -26,7 +27,7 @@ import {
   BatchOption,
 } from '@/types/registration.types';
 
-// Strict Zod Validation Schema with Mandatory Education & Batch
+// Strict Zod Validation Schema with Mandatory Education & Batch & Fee Details
 const registrationFormSchema = z
   .object({
     fullName: z.string().min(3, 'Full name must be at least 3 characters').max(100),
@@ -63,6 +64,9 @@ const registrationFormSchema = z
     photoUrl: z.string().optional().or(z.literal('')),
     admissionDate: z.string().min(1, 'Admission date is required'),
     notes: z.string().max(500).optional().or(z.literal('')),
+    courseFeeAmount: z.coerce.number().min(0, 'Fee cannot be negative').optional(),
+    initialPaymentAmount: z.coerce.number().min(0, 'Payment cannot be negative').optional(),
+    paymentMethod: z.enum(['CASH', 'BANK_TRANSFER', 'ONLINE', 'CHEQUE', 'OTHER']).optional(),
   })
   .refine(
     (data) => {
@@ -94,6 +98,8 @@ export const StudentRegistrationPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isCheckingRoll, setIsCheckingRoll] = useState(false);
   const [rollAvailable, setRollAvailable] = useState<boolean | null>(null);
+  const [isCheckingEmail, setIsCheckingEmail] = useState(false);
+  const [emailAvailable, setEmailAvailable] = useState<boolean | null>(null);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
@@ -130,6 +136,9 @@ export const StudentRegistrationPage: React.FC = () => {
       photoUrl: '',
       admissionDate: new Date().toISOString().split('T')[0],
       notes: '',
+      courseFeeAmount: 25000,
+      initialPaymentAmount: 25000,
+      paymentMethod: 'CASH',
     },
   });
 
@@ -137,6 +146,10 @@ export const StudentRegistrationPage: React.FC = () => {
   const selectedCourseId = watch('targetCourseId');
   const selectedEducation = watch('education');
   const watchRollNumber = watch('rollNumber');
+  const watchEmail = watch('email');
+  const watchCourseFee = watch('courseFeeAmount') || 0;
+  const watchInitialPayment = watch('initialPaymentAmount') || 0;
+  const selectedCourseObj = courses.find((c) => c.id === selectedCourseId);
 
   // Load initial forces directly from DB
   useEffect(() => {
@@ -242,22 +255,41 @@ export const StudentRegistrationPage: React.FC = () => {
     setValue('cnic', formatted, { shouldValidate: true });
   };
 
-  // Auto-suggest Roll Number & Email
-  const generateRollNumber = () => {
+  // Auto-suggest guaranteed unique Roll Number & Email
+  const generateRollNumber = async () => {
     const selectedForce = forces.find((f) => f.id === selectedForceId);
     let prefix = 'SFA';
     if (selectedForce?.code === 'PAKISTAN_ARMY') prefix = 'SFA-PMA';
     else if (selectedForce?.code === 'PAKISTAN_AIR_FORCE') prefix = 'SFA-PAF';
     else if (selectedForce?.code === 'PAKISTAN_NAVY') prefix = 'SFA-NAVY';
 
-    const randNum = Math.floor(1000 + Math.random() * 9000);
     const year = new Date().getFullYear().toString().slice(-2);
-    const newRoll = `${prefix}-${year}${randNum.toString().slice(-2)}`;
-    setValue('rollNumber', newRoll, { shouldValidate: true });
+    let newRoll = '';
+    let newEmail = '';
+    let isAvailable = false;
+    let attempts = 0;
 
-    // Suggest institutional email
-    const cleanRoll = newRoll.toLowerCase().replace(/[^a-z0-9]/g, '.');
-    setValue('email', `${cleanRoll}@shujaforces.com`, { shouldValidate: true });
+    while (!isAvailable && attempts < 10) {
+      attempts++;
+      const randNum = Math.floor(100000 + Math.random() * 900000); // 6-digit unique randomizer
+      newRoll = `${prefix}-${year}${randNum}`;
+      const cleanRoll = newRoll.toLowerCase().replace(/[^a-z0-9]/g, '.');
+      newEmail = `${cleanRoll}@shujaforces.com`;
+
+      const [rollExists, emailExists] = await Promise.all([
+        studentRegistrationService.checkRollNumberExists(newRoll),
+        studentRegistrationService.checkEmailExists(newEmail),
+      ]);
+
+      if (!rollExists && !emailExists) {
+        isAvailable = true;
+      }
+    }
+
+    setValue('rollNumber', newRoll, { shouldValidate: true });
+    setValue('email', newEmail, { shouldValidate: true });
+    setRollAvailable(true);
+    setEmailAvailable(true);
   };
 
   // Generate Strong Password
@@ -286,6 +318,23 @@ export const StudentRegistrationPage: React.FC = () => {
       setRollAvailable(null);
     } finally {
       setIsCheckingRoll(false);
+    }
+  };
+
+  // Verify Email Availability on blur
+  const checkEmailAvailability = async () => {
+    if (!watchEmail || !watchEmail.includes('@') || watchEmail.trim().length < 5) {
+      setEmailAvailable(null);
+      return;
+    }
+    setIsCheckingEmail(true);
+    try {
+      const exists = await studentRegistrationService.checkEmailExists(watchEmail);
+      setEmailAvailable(!exists);
+    } catch {
+      setEmailAvailable(null);
+    } finally {
+      setIsCheckingEmail(false);
     }
   };
 
@@ -344,6 +393,9 @@ export const StudentRegistrationPage: React.FC = () => {
         photoUrl: data.photoUrl,
         admissionDate: data.admissionDate,
         notes: data.notes,
+        courseFeeAmount: data.courseFeeAmount,
+        initialPaymentAmount: data.initialPaymentAmount,
+        paymentMethod: data.paymentMethod,
       });
 
       toast.success(
@@ -353,7 +405,20 @@ export const StudentRegistrationPage: React.FC = () => {
       navigate('/admin/students');
     } catch (err: any) {
       console.error('Registration failed:', err);
-      toast.error(err.message || 'Registration failed. Please review inputs.');
+      let userMsg = err.message || 'Registration failed. Please review inputs.';
+
+      // Strip technical RPC / Edge Function prefixes
+      userMsg = userMsg
+        .replace(/^DUPLICATE_ENTRY:\s*/i, '')
+        .replace(/^VALIDATION_ERROR:\s*/i, '')
+        .replace(/^UNAUTHORIZED:\s*/i, '')
+        .replace(/^FORBIDDEN:\s*/i, '');
+
+      if (userMsg.includes('User already registered') || userMsg.includes('User already exists')) {
+        userMsg = `An account with email "${data.email}" is already registered in the authentication system. Please click "Suggest Roll Number & Email" or enter a unique email.`;
+      }
+
+      toast.error(userMsg);
     }
   };
 
@@ -674,6 +739,107 @@ export const StudentRegistrationPage: React.FC = () => {
               )}
             </div>
           </div>
+
+          {/* Course Fee, Duration & Initial Fee Payment Setup */}
+          <div className="mt-4 p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 pb-3 gap-2">
+              <div>
+                <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center space-x-1.5">
+                  <Receipt className="w-4 h-4 text-emerald-600" />
+                  <span>Course Fee, Duration & Admission Payment</span>
+                </h4>
+                <p className="text-[11px] text-slate-500">
+                  Set total course fee, view course duration, and record initial fee payment during candidate registration.
+                </p>
+              </div>
+              <div className="bg-white px-3 py-1.5 rounded border border-slate-200 text-left sm:text-right shrink-0">
+                <span className="text-[10px] text-slate-500 font-bold block uppercase">Course Duration</span>
+                <span className="text-xs font-bold font-mono text-blue-800">
+                  {selectedCourseObj?.durationWeeks ? `${selectedCourseObj.durationWeeks} Weeks (${Math.round(selectedCourseObj.durationWeeks / 4)} Months)` : '12 Weeks (3 Months)'}
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                  Total Course Fee (PKR) *
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  {...register('courseFeeAmount')}
+                  placeholder="25000"
+                  className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded font-mono font-bold text-slate-900 focus:outline-none focus:border-slate-900"
+                />
+                {errors.courseFeeAmount && (
+                  <p className="text-[11px] text-rose-600 mt-1">{errors.courseFeeAmount.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                  Initial Fee Paid Now (PKR)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  {...register('initialPaymentAmount')}
+                  placeholder="e.g. 25000 for Paid, 10000 for Partial"
+                  className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded font-mono font-bold text-emerald-700 focus:outline-none focus:border-slate-900"
+                />
+                {errors.initialPaymentAmount && (
+                  <p className="text-[11px] text-rose-600 mt-1">{errors.initialPaymentAmount.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                  Payment Method
+                </label>
+                <select
+                  {...register('paymentMethod')}
+                  className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded font-medium text-slate-900 focus:outline-none focus:border-slate-900"
+                >
+                  <option value="CASH">Cash Payment</option>
+                  <option value="BANK_TRANSFER">Bank Transfer</option>
+                  <option value="ONLINE">Online Portal</option>
+                  <option value="CHEQUE">Cheque</option>
+                  <option value="OTHER">Other</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Calculated Live Fee Status */}
+            <div className="p-3 bg-white border border-slate-200 rounded-md flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-xs font-bold text-slate-600">Initial Fee Status:</span>
+                {Number(watchInitialPayment) >= Number(watchCourseFee) && Number(watchCourseFee) > 0 ? (
+                  <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                    <span>FULLY PAID (CLEAR)</span>
+                  </span>
+                ) : Number(watchInitialPayment) > 0 ? (
+                  <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-amber-100 text-amber-800 border border-amber-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                    <span>PARTIALLY PAID</span>
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-rose-100 text-rose-800 border border-rose-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                    <span>UNPAID (DUES PENDING)</span>
+                  </span>
+                )}
+              </div>
+
+              <div className="text-xs font-mono font-bold text-slate-800">
+                <span>Remaining Dues Balance: </span>
+                <span className={Math.max(0, Number(watchCourseFee) - Number(watchInitialPayment)) > 0 ? 'text-rose-600 font-extrabold' : 'text-emerald-600 font-extrabold'}>
+                  Rs. {Math.max(0, Number(watchCourseFee) - Number(watchInitialPayment)).toLocaleString('en-PK')}
+                </span>
+              </div>
+            </div>
+          </div>
         </FormSection>
 
         {/* Section 3: Login Details */}
@@ -733,14 +899,33 @@ export const StudentRegistrationPage: React.FC = () => {
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
                 Login Email *
               </label>
-              <input
-                type="email"
-                {...register('email')}
-                placeholder="cadet.roll@shujaforces.com"
-                className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-mono focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
-              />
+              <div className="relative">
+                <input
+                  type="email"
+                  {...register('email')}
+                  onBlur={checkEmailAvailability}
+                  placeholder="cadet.roll@shujaforces.com"
+                  className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-mono focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E] pr-8"
+                />
+                <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center">
+                  {isCheckingEmail ? (
+                    <RefreshCw className="w-3 h-3 text-slate-400 animate-spin" />
+                  ) : emailAvailable === true ? (
+                    <span title="Email Available">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#1F4D2B]" />
+                    </span>
+                  ) : emailAvailable === false ? (
+                    <span title="Email Already Exists">
+                      <AlertCircle className="w-3.5 h-3.5 text-[#782525]" />
+                    </span>
+                  ) : null}
+                </div>
+              </div>
               {errors.email && (
                 <p className="text-[11px] text-[#782525] mt-1">{errors.email.message}</p>
+              )}
+              {emailAvailable === false && (
+                <p className="text-[11px] text-[#782525] mt-1">This email address is already registered.</p>
               )}
             </div>
 
