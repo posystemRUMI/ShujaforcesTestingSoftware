@@ -42,6 +42,9 @@ export const AdminShell: React.FC = () => {
   const { role } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Initialize Supabase Realtime auto-refresh query invalidation
+  useRealtimeSync('admin');
+
   const filteredNavItems = React.useMemo(() => {
     return NAV_ITEMS.filter((item) => {
       if (item.to === '/admin/finance') {

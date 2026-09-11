@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { mockService } from '@/lib/mock-service';
 import { testService } from '@/services/testService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { TestBlueprint } from '@/types';
@@ -24,7 +23,7 @@ export const TestManagementPage: React.FC = () => {
       try {
         if (isSupabaseConfigured()) {
           const dbTests = await testService.getTests();
-          if (dbTests && dbTests.length > 0) {
+          if (dbTests) {
             const mapped: TestBlueprint[] = dbTests.map((t) => ({
               id: t.id,
               code: t.name.slice(0, 8),
@@ -41,16 +40,10 @@ export const TestManagementPage: React.FC = () => {
               sections: [],
             }));
             setTests(mapped);
-            setLoading(false);
-            return;
           }
         }
-        const data = await mockService.getTests();
-        setTests(data);
       } catch (e) {
-        console.warn('Failed to load from testService, using fallback:', e);
-        const data = await mockService.getTests();
-        setTests(data);
+        console.warn('Failed to load from testService:', e);
       } finally {
         setLoading(false);
       }

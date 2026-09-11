@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { mockService } from '@/lib/mock-service';
 import { retakeService } from '@/services/retakeService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { RetakeDocket } from '@/types';
@@ -31,7 +30,7 @@ export const RetakesPage: React.FC = () => {
       try {
         if (isSupabaseConfigured()) {
           const data = await retakeService.getRetakePermissions();
-          if (data && data.length > 0) {
+          if (data) {
             const mapped: RetakeDocket[] = data.map((d) => ({
               id: d.id,
               originalResultId: d.original_attempt_id || 'res-001',
@@ -48,16 +47,11 @@ export const RetakesPage: React.FC = () => {
               status: d.status === 'AVAILABLE' ? 'SCHEDULED' : 'RESOLVED',
             }));
             setRetakes(mapped);
-            setLoading(false);
-            return;
           }
         }
-        const data = await mockService.getRetakes();
-        setRetakes(data);
       } catch (e) {
         console.warn('Failed to fetch from retakeService:', e);
-        const data = await mockService.getRetakes();
-        setRetakes(data);
+        toast.error('Failed to fetch retake permissions from database.');
       } finally {
         setLoading(false);
       }

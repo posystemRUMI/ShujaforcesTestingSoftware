@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, X, Users, IdCard, FileQuestion, Wrench, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { mockCadets, mockBatches } from '@/lib/mock-data';
+import { useStudentsQuery, useBatchesQuery } from '@/hooks/useAppQueries';
 
 export interface CommandSearchProps {
   isOpen: boolean;
@@ -12,14 +12,14 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
+  const { data: students = [] } = useStudentsQuery();
+  const { data: batches = [] } = useBatchesQuery();
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         if (isOpen) onClose();
-      }
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -28,16 +28,20 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
 
   if (!isOpen) return null;
 
-  const filteredCadets = mockCadets.filter(
-    (c) =>
-      c.fullName.toLowerCase().includes(query.toLowerCase()) ||
-      c.rollNumber.toLowerCase().includes(query.toLowerCase()),
+  const searchLower = query.toLowerCase().trim();
+
+  const filteredCadets = students.filter(
+    (c: any) =>
+      searchLower &&
+      ((c.full_name || c.name || '').toLowerCase().includes(searchLower) ||
+        (c.roll_number || c.rollNumber || '').toLowerCase().includes(searchLower))
   );
 
-  const filteredBatches = mockBatches.filter(
-    (b) =>
-      b.name.toLowerCase().includes(query.toLowerCase()) ||
-      b.code.toLowerCase().includes(query.toLowerCase()),
+  const filteredBatches = batches.filter(
+    (b: any) =>
+      searchLower &&
+      ((b.name || '').toLowerCase().includes(searchLower) ||
+        (b.code || '').toLowerCase().includes(searchLower))
   );
 
   const filteredQuestions: any[] = [];

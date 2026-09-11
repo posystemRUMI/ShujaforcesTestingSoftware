@@ -3,10 +3,14 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { LogOut, ArrowRight, BookOpen, Award, UserCheck, LayoutDashboard, Trophy } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { ShujaForcesLogo } from '@/components/brand/ShujaForcesLogo';
+import { useRealtimeSync } from '@/hooks/useRealtimeSync';
 
 export const StudentShell: React.FC = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+
+  // Initialize Supabase Realtime auto-refresh query invalidation for student portal
+  useRealtimeSync('student');
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F6F8FA] text-[#1F2937]">

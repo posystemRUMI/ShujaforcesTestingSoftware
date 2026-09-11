@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { UserProfile, UserRole } from '@/types';
 import { authService } from '@/services/authService';
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
+import { clearAppCache } from '@/lib/queryClient';
 
 interface AuthContextType {
   user: UserProfile | null;
@@ -99,6 +100,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 
   const logout = useCallback(async () => {
+    clearAppCache();
     if (isSupabaseConfigured()) {
       await authService.logout();
     }

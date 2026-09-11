@@ -35,3 +35,12 @@ dist-ssr
 supabase/.branches/
 supabase/.temp/
 
+# Temp scripts & scratch
+.vite/
+qa-artifacts/
+scratch/
+scratch_*.json
+*.py
+update_*.js
+append_*.py
+

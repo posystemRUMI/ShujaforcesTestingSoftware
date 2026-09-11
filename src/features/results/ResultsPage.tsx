@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { mockService } from '@/lib/mock-service';
 import { resultService } from '@/services/resultService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { ExamResult } from '@/types';
@@ -23,7 +22,7 @@ export const ResultsPage: React.FC = () => {
       try {
         if (isSupabaseConfigured()) {
           const dbResults = await resultService.getResults();
-          if (dbResults && dbResults.length > 0) {
+          if (dbResults) {
             const mapped: ExamResult[] = (dbResults as any[]).map((r, idx) => {
               const student = r.students;
               const test = r.tests;
@@ -48,16 +47,11 @@ export const ResultsPage: React.FC = () => {
               };
             });
             setResults(mapped);
-            setLoading(false);
-            return;
           }
         }
-        const data = await mockService.getResults();
-        setResults(data);
       } catch (e) {
         console.warn('Failed to load from resultService:', e);
-        const data = await mockService.getResults();
-        setResults(data);
+        toast.error('Failed to load exam results from database.');
       } finally {
         setLoading(false);
       }
