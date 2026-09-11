@@ -306,6 +306,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: 'live-monitoring',
+        element: <Navigate to="/admin/live-proctor" replace />,
+      },
+      {
         path: 'results',
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
