@@ -5,44 +5,61 @@ import { RefreshCw } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { UserRole } from '@/types';
 
+// Resilient Lazy Import Helper (Auto-reloads on deployment bundle hash changes)
+function safeLazy<T extends React.ComponentType<any>>(factory: () => Promise<{ default: T }>) {
+  return lazy(async () => {
+    try {
+      return await factory();
+    } catch (err: any) {
+      console.warn('Dynamic import failed (fresh build deployment detected). Auto-reloading...', err);
+      const reloaded = sessionStorage.getItem('chunk_load_auto_reload');
+      if (!reloaded) {
+        sessionStorage.setItem('chunk_load_auto_reload', 'true');
+        window.location.reload();
+      }
+      throw err;
+    }
+  });
+}
+
 // Lazy-loaded Feature Modules
-const LoginPage = lazy(() => import('@/features/auth/LoginPage'));
-const DashboardPage = lazy(() => import('@/features/dashboard/DashboardPage'));
-const BatchesPage = lazy(() => import('@/features/batches/BatchesPage'));
-const BatchDetailPage = lazy(() => import('@/features/batches/BatchDetailPage'));
-const StudentsListPage = lazy(() => import('@/features/students/StudentsListPage'));
-const StudentFormPage = lazy(() => import('@/features/students/StudentFormPage'));
-const StudentRegistrationPage = lazy(() => import('@/features/students/StudentRegistrationPage'));
-const StudentDetailPage = lazy(() => import('@/features/students/StudentDetailPage'));
-const StudentImportPage = lazy(() => import('@/features/students/StudentImportPage'));
-const TeachersListPage = lazy(() => import('@/features/teachers/TeachersListPage'));
-const TeacherFormPage = lazy(() => import('@/features/teachers/TeacherFormPage'));
-const TeacherDetailPage = lazy(() => import('@/features/teachers/TeacherDetailPage'));
-const QuestionBankPage = lazy(() => import('@/features/question-bank/QuestionBankPage'));
-const QuestionAuthorPage = lazy(() => import('@/features/question-author/QuestionAuthorPage'));
-const TestBuilderPage = lazy(() => import('@/features/test-builder/TestBuilderPage'));
-const TestManagementPage = lazy(() => import('@/features/tests/TestManagementPage'));
-const ResultsPage = lazy(() => import('@/features/results/ResultsPage'));
-const RetakesPage = lazy(() => import('@/features/retakes/RetakesPage'));
-const ReportsPage = lazy(() => import('@/features/reports/ReportsPage'));
-const ForcesPage = lazy(() => import('@/features/configuration/ForcesPage'));
-const ForceDetailPage = lazy(() => import('@/features/configuration/ForceDetailPage'));
-const CoursesPage = lazy(() => import('@/features/configuration/CoursesPage'));
-const SubjectsPage = lazy(() => import('@/features/configuration/SubjectsPage'));
-const SettingsPage = lazy(() => import('@/features/configuration/SettingsPage'));
-const StudentDashboardPage = lazy(() => import('@/features/student-portal/StudentDashboardPage'));
-const StudentTestsPage = lazy(() => import('@/features/student-portal/StudentTestsPage'));
-const StudentResultsPage = lazy(() => import('@/features/student-portal/StudentResultsPage'));
-const StudentProfilePage = lazy(() => import('@/features/student-portal/StudentProfilePage'));
-const ExamFamiliarizationPage = lazy(() => import('@/features/exam-engine/ExamFamiliarizationPage'));
-const ExamInstructionsPage = lazy(() => import('@/features/exam-engine/ExamInstructionsPage'));
-const ExamRunnerPage = lazy(() => import('@/features/exam-engine/ExamRunnerPage'));
-const ExamFinishPage = lazy(() => import('@/features/exam-engine/ExamFinishPage'));
-const TestPatternsPage = lazy(() => import('@/features/configuration/TestPatternsPage'));
-const StudentLeaderboardPage = lazy(() => import('@/features/leaderboard/StudentLeaderboardPage'));
-const TeacherLeaderboardPage = lazy(() => import('@/features/leaderboard/TeacherLeaderboardPage'));
-const FinancePage = lazy(() => import('@/features/finance/FinancePage'));
-const NotFoundPage = lazy(() => import('@/features/not-found/NotFoundPage'));
+const LoginPage = safeLazy(() => import('@/features/auth/LoginPage'));
+const DashboardPage = safeLazy(() => import('@/features/dashboard/DashboardPage'));
+const BatchesPage = safeLazy(() => import('@/features/batches/BatchesPage'));
+const BatchDetailPage = safeLazy(() => import('@/features/batches/BatchDetailPage'));
+const StudentsListPage = safeLazy(() => import('@/features/students/StudentsListPage'));
+const StudentFormPage = safeLazy(() => import('@/features/students/StudentFormPage'));
+const StudentRegistrationPage = safeLazy(() => import('@/features/students/StudentRegistrationPage'));
+const StudentDetailPage = safeLazy(() => import('@/features/students/StudentDetailPage'));
+const StudentImportPage = safeLazy(() => import('@/features/students/StudentImportPage'));
+const TeachersListPage = safeLazy(() => import('@/features/teachers/TeachersListPage'));
+const TeacherFormPage = safeLazy(() => import('@/features/teachers/TeacherFormPage'));
+const TeacherDetailPage = safeLazy(() => import('@/features/teachers/TeacherDetailPage'));
+const QuestionBankPage = safeLazy(() => import('@/features/question-bank/QuestionBankPage'));
+const QuestionAuthorPage = safeLazy(() => import('@/features/question-author/QuestionAuthorPage'));
+const TestBuilderPage = safeLazy(() => import('@/features/test-builder/TestBuilderPage'));
+const TestManagementPage = safeLazy(() => import('@/features/tests/TestManagementPage'));
+const ResultsPage = safeLazy(() => import('@/features/results/ResultsPage'));
+const RetakesPage = safeLazy(() => import('@/features/retakes/RetakesPage'));
+const ReportsPage = safeLazy(() => import('@/features/reports/ReportsPage'));
+const ForcesPage = safeLazy(() => import('@/features/configuration/ForcesPage'));
+const ForceDetailPage = safeLazy(() => import('@/features/configuration/ForceDetailPage'));
+const CoursesPage = safeLazy(() => import('@/features/configuration/CoursesPage'));
+const SubjectsPage = safeLazy(() => import('@/features/configuration/SubjectsPage'));
+const SettingsPage = safeLazy(() => import('@/features/configuration/SettingsPage'));
+const StudentDashboardPage = safeLazy(() => import('@/features/student-portal/StudentDashboardPage'));
+const StudentTestsPage = safeLazy(() => import('@/features/student-portal/StudentTestsPage'));
+const StudentResultsPage = safeLazy(() => import('@/features/student-portal/StudentResultsPage'));
+const StudentProfilePage = safeLazy(() => import('@/features/student-portal/StudentProfilePage'));
+const ExamFamiliarizationPage = safeLazy(() => import('@/features/exam-engine/ExamFamiliarizationPage'));
+const ExamInstructionsPage = safeLazy(() => import('@/features/exam-engine/ExamInstructionsPage'));
+const ExamRunnerPage = safeLazy(() => import('@/features/exam-engine/ExamRunnerPage'));
+const ExamFinishPage = safeLazy(() => import('@/features/exam-engine/ExamFinishPage'));
+const TestPatternsPage = safeLazy(() => import('@/features/configuration/TestPatternsPage'));
+const StudentLeaderboardPage = safeLazy(() => import('@/features/leaderboard/StudentLeaderboardPage'));
+const TeacherLeaderboardPage = safeLazy(() => import('@/features/leaderboard/TeacherLeaderboardPage'));
+const FinancePage = safeLazy(() => import('@/features/finance/FinancePage'));
+const NotFoundPage = safeLazy(() => import('@/features/not-found/NotFoundPage'));
 
 // Sober Institutional Loading Fallback
 const PageLoadingFallback: React.FC = () => (

@@ -25,6 +25,19 @@ export class ErrorBoundary extends Component<Props, State> {
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('CRITICAL UNCAUGHT UI FAULT:', error, errorInfo);
     this.setState({ errorInfo });
+
+    // Auto-recover dynamic chunk import failure on fresh deployment updates
+    if (
+      error?.message?.includes('Failed to fetch dynamically imported module') ||
+      error?.message?.includes('Importing a module script failed') ||
+      error?.name === 'ChunkLoadError'
+    ) {
+      const reloaded = sessionStorage.getItem('chunk_load_auto_reload');
+      if (!reloaded) {
+        sessionStorage.setItem('chunk_load_auto_reload', 'true');
+        window.location.reload();
+      }
+    }
   }
 
   private handleReset = () => {
