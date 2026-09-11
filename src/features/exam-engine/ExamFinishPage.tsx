@@ -95,9 +95,7 @@ export const ExamFinishPage: React.FC = () => {
   // Exact Pass/Fail Condition:
   // percentage > passingThreshold -> PASS
   // percentage <= passingThreshold -> FAILED
-  const isPassed = resultDetail?.result.passed !== undefined 
-    ? resultDetail.result.passed 
-    : percentage > passingThreshold;
+  const isPassed = percentage > passingThreshold;
 
   const correctCount = resultDetail?.result.correct_count ?? 0;
   const incorrectCount = resultDetail?.result.incorrect_count ?? 0;

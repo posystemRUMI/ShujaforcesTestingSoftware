@@ -146,10 +146,10 @@ export const ResultMetricGrid: React.FC<ResultMetricGridProps> = ({
         </div>
         <div>
           <div className="text-xl font-extrabold font-sans uppercase tracking-wider">
-            {isPassed ? 'PASSED' : 'UNQUALIFIED'}
+            {isPassed ? 'PASSED' : 'NOT PASSED'}
           </div>
           <span className="text-[11px] font-sans font-bold block mt-0.5 opacity-90">
-            {isPassed ? 'Qualified for Merit' : 'Retake Recommended'}
+            {isPassed ? 'Qualified for Merit' : 'Below Passing Score'}
           </span>
         </div>
       </div>
