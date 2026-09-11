@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { Sidebar, Topbar, ResponsiveDrawer } from '@/components/ui';
 import { useAuth } from '@/app/providers';
+import { useRealtimeSync } from '@/hooks/useRealtimeSync';
 
 const NAV_ITEMS = [
   { label: 'Dashboard', to: '/admin/dashboard', icon: LayoutDashboard },
