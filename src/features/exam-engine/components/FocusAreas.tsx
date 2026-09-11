@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, AlertCircle, ArrowUpRight } from 'lucide-react';
+import { Target, AlertCircle } from 'lucide-react';
 import { SectionBreakdownItem } from './SectionPerformance';
 
 interface FocusAreasProps {
