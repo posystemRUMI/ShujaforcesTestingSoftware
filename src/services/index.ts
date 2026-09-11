@@ -9,6 +9,4 @@ export * from './testService';
 export * from './attemptService';
 export * from './resultService';
 export * from './retakeService';
-export * from './monitoringService';
 export * from './reportService';
-

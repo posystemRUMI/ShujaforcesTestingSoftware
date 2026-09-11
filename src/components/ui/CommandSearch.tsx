@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, X, Users, IdCard, FileQuestion, Wrench, Shield, ArrowRight } from 'lucide-react';
+import { Search, X, Users, IdCard, FileQuestion, Wrench, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { mockCadets, mockBatches } from '@/lib/mock-data';
 
@@ -85,7 +85,6 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
             </span>
             <div className="mt-1 space-y-0.5">
               {[
-                { label: 'Live Proctor Radar Matrix', path: '/admin/live-proctor', icon: Shield },
                 { label: 'Question Authoring Studio', path: '/admin/authoring', icon: FileQuestion },
                 { label: 'Test Blueprint Builder', path: '/admin/test-builder', icon: Wrench },
               ].map((item) => {

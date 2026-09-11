@@ -22,7 +22,6 @@ const QuestionBankPage = lazy(() => import('@/features/question-bank/QuestionBan
 const QuestionAuthorPage = lazy(() => import('@/features/question-author/QuestionAuthorPage'));
 const TestBuilderPage = lazy(() => import('@/features/test-builder/TestBuilderPage'));
 const TestManagementPage = lazy(() => import('@/features/tests/TestManagementPage'));
-const LiveProctorPage = lazy(() => import('@/features/live-proctor/LiveProctorPage'));
 const ResultsPage = lazy(() => import('@/features/results/ResultsPage'));
 const RetakesPage = lazy(() => import('@/features/retakes/RetakesPage'));
 const ReportsPage = lazy(() => import('@/features/reports/ReportsPage'));
@@ -296,18 +295,6 @@ export const router = createBrowserRouter([
             </Suspense>
           </RequireRole>
         ),
-      },
-      {
-        path: 'live-proctor',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <LiveProctorPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: 'live-monitoring',
-        element: <Navigate to="/admin/live-proctor" replace />,
       },
       {
         path: 'results',
