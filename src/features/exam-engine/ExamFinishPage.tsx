@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
 import { FileText, Shield, Check, X, RefreshCw, Trophy, ArrowRight, Printer } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { resultService, ResultDetailResponse } from '@/services/resultService';
+import { retakeService } from '@/services/retakeService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 
 import { ShujaForcesLogo } from '@/components/brand/ShujaForcesLogo';
@@ -10,6 +11,7 @@ import { ResultHero } from './components/ResultHero';
 import { ResultMetricGrid } from './components/ResultMetricGrid';
 import { SectionPerformance } from './components/SectionPerformance';
 import { ScoreComparison } from './components/ScoreComparison';
+import { FocusAreas } from './components/FocusAreas';
 
 export const ExamFinishPage: React.FC = () => {
   const navigate = useNavigate();
@@ -24,10 +26,11 @@ export const ExamFinishPage: React.FC = () => {
 
   const [loading, setLoading] = useState(true);
   const [resultDetail, setResultDetail] = useState<ResultDetailResponse | null>(null);
+  const [hasRetakePermission, setHasRetakePermission] = useState(false);
 
   const answerReviewRef = useRef<HTMLDivElement>(null);
 
-  // Load server-authoritative result detail
+  // Load server-authoritative result detail & retake permission
   useEffect(() => {
     let isMounted = true;
 
@@ -51,6 +54,20 @@ export const ExamFinishPage: React.FC = () => {
             const data = await resultService.getResultDetail(rId);
             if (isMounted) {
               setResultDetail(data);
+
+              // Check if authorized retake permission exists for this test
+              if (data.test?.id && user?.id) {
+                const retakes = await retakeService
+                  .getRetakePermissions({
+                    studentId: user.cadetId || user.id,
+                    testId: data.test.id,
+                    status: 'AVAILABLE',
+                  })
+                  .catch(() => []);
+                if (isMounted && retakes && retakes.length > 0) {
+                  setHasRetakePermission(true);
+                }
+              }
             }
           }
         } catch (err) {
@@ -68,14 +85,20 @@ export const ExamFinishPage: React.FC = () => {
     return () => {
       isMounted = false;
     };
-  }, [resultIdParam, attemptIdParam]);
+  }, [resultIdParam, attemptIdParam, user]);
 
   // Derive final values from Server result
   const testName = resultDetail?.test.name || 'Computerized Examination';
   const passingThreshold = resultDetail?.test.passing_threshold || 50;
   const percentage = resultDetail?.result.percentage ?? 0;
-  const isPassed = resultDetail?.result.passed ?? percentage >= passingThreshold;
   
+  // Exact Pass/Fail Condition:
+  // percentage > passingThreshold -> PASS
+  // percentage <= passingThreshold -> FAILED
+  const isPassed = resultDetail?.result.passed !== undefined 
+    ? resultDetail.result.passed 
+    : percentage > passingThreshold;
+
   const correctCount = resultDetail?.result.correct_count ?? 0;
   const incorrectCount = resultDetail?.result.incorrect_count ?? 0;
   const skippedCount = resultDetail?.result.skipped_count ?? 0;
@@ -96,6 +119,10 @@ export const ExamFinishPage: React.FC = () => {
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleRequestRetake = () => {
+    navigate('/exam/instructions');
   };
 
   // Flatten review questions
@@ -133,7 +160,7 @@ export const ExamFinishPage: React.FC = () => {
         pct: sr.percentage || 0,
         correct: sr.correct_count || 0,
         total: sr.total_questions || 0,
-        cleared: (sr.percentage || 0) >= passingThreshold,
+        cleared: (sr.percentage || 0) > passingThreshold,
       }));
     }
 
@@ -147,7 +174,7 @@ export const ExamFinishPage: React.FC = () => {
           pct,
           correct: corr,
           total: secQs.length,
-          cleared: pct >= passingThreshold,
+          cleared: pct > passingThreshold,
         };
       });
     }
@@ -183,7 +210,7 @@ export const ExamFinishPage: React.FC = () => {
         </div>
       </div>
 
-      {/* 1. PREMIUM RESULT HERO (PASS CELEBRATION OR FAIL HERO) */}
+      {/* 1. RESULT HERO (PASS CELEBRATION OR FAILED HERO BASED ON % > THRESHOLD VS % <= THRESHOLD) */}
       <ResultHero
         testName={testName}
         cadetName={cadetName}
@@ -191,8 +218,10 @@ export const ExamFinishPage: React.FC = () => {
         percentage={percentage}
         passingThreshold={passingThreshold}
         isPassed={isPassed}
+        hasRetakePermission={hasRetakePermission}
         onViewDetails={handleScrollToDetails}
         onDownloadResult={handlePrint}
+        onRequestRetake={handleRequestRetake}
       />
 
       {/* 2. RESULT METRICS GRID */}
@@ -207,20 +236,19 @@ export const ExamFinishPage: React.FC = () => {
         isPassed={isPassed}
       />
 
-      {/* 3. SECTION PERFORMANCE & SCORE COMPARISON */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className={sectionBreakdown.length > 0 ? 'lg:col-span-7' : 'lg:col-span-12'}>
-          <ScoreComparison
-            userPercentage={percentage}
-            passingThreshold={passingThreshold}
-          />
+      {/* 3. SECTION PERFORMANCE & FOCUS AREAS */}
+      {sectionBreakdown.length > 0 && (
+        <div className="space-y-6">
+          <SectionPerformance sections={sectionBreakdown} />
+          {!isPassed && <FocusAreas sections={sectionBreakdown} />}
         </div>
-        {sectionBreakdown.length > 0 && (
-          <div className="lg:col-span-5">
-            <SectionPerformance sections={sectionBreakdown} />
-          </div>
-        )}
-      </div>
+      )}
+
+      {/* 4. SCORE COMPARISON BENCHMARK */}
+      <ScoreComparison
+        userPercentage={percentage}
+        passingThreshold={passingThreshold}
+      />
 
       {/* Cryptographic Verification Hash & Utility Controls */}
       <div className="p-4 bg-white rounded-xl border border-[#D4D9DF] shadow-xs text-xs font-mono text-[#64748B] flex flex-col sm:flex-row items-center justify-between gap-3">
@@ -250,7 +278,7 @@ export const ExamFinishPage: React.FC = () => {
         </div>
       </div>
 
-      {/* 4. EXISTING CURRENT DETAILED ANSWER REVIEW (100% PRESERVED DATA BEHAVIOR) */}
+      {/* 5. EXISTING CURRENT DETAILED ANSWER REVIEW (100% PRESERVED DATA BEHAVIOR) */}
       <div ref={answerReviewRef} className="bg-white border border-[#D4D9DF] rounded-xl p-6 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-[#E2E6EB] pb-4 gap-3">
           <div>
