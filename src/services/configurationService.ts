@@ -1,11 +1,10 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 import { ForceConfig, CourseConfig, SubjectConfig } from '@/features/configuration/types';
-import { configStore } from '@/features/configuration/configStore';
 
 export const configurationService = {
   async getForces(): Promise<ForceConfig[]> {
     if (!isSupabaseConfigured()) {
-      return configStore.getForces();
+      return [];
     }
 
     const { data, error } = await (supabase as any)
@@ -14,8 +13,8 @@ export const configurationService = {
       .order('sort_order', { ascending: true });
 
     if (error || !data || data.length === 0) {
-      console.warn('Falling back to local config store for forces:', error);
-      return configStore.getForces();
+      if (error) console.warn('Error fetching forces:', error);
+      return [];
     }
 
     return data.map((f: any) => ({
@@ -25,10 +24,10 @@ export const configurationService = {
       motto: f.motto || '',
       mottoTranslation: '',
       headquarters: f.headquarters || '',
-      coursesCount: 3,
-      enrolledCadetsCount: 120,
-      totalQuestionsCount: 450,
-      activeTestsCount: 8,
+      coursesCount: 0,
+      enrolledCadetsCount: 0,
+      totalQuestionsCount: 0,
+      activeTestsCount: 0,
       description: f.description || '',
       inductionCenter: 'Armed Forces Selection & Recruitment Centre',
     }));
@@ -36,7 +35,7 @@ export const configurationService = {
 
   async getCourses(forceId?: string): Promise<CourseConfig[]> {
     if (!isSupabaseConfigured()) {
-      return configStore.getCourses(forceId);
+      return [];
     }
 
     let query = (supabase as any)
@@ -57,8 +56,8 @@ export const configurationService = {
     const { data, error } = await query;
 
     if (error || !data || data.length === 0) {
-      console.warn('Falling back to local config store for courses:', error);
-      return configStore.getCourses(forceId);
+      if (error) console.warn('Error fetching courses:', error);
+      return [];
     }
 
     return data.map((c: any) => {
@@ -68,13 +67,13 @@ export const configurationService = {
         code: c.code,
         name: c.name,
         forceId: c.force_id,
-        branch: (force?.code || 'PAKISTAN_ARMY') as any,
+        branch: (force?.code || 'TRI_SERVICE') as any,
         durationMonths: Math.round((c.duration_weeks || 24) / 4),
         minAge: 17,
         maxAge: 22,
-        educationRequirement: 'F.Sc / A-Level (Minimum 60%)',
-        passingMarksPercent: 60,
-        batchesCount: 2,
+        educationRequirement: 'F.Sc / A-Level',
+        passingMarksPercent: 50,
+        batchesCount: 0,
         status: (c.status || 'ACTIVE') as any,
         description: c.description || undefined,
       };
@@ -83,7 +82,7 @@ export const configurationService = {
 
   async getSubjects(): Promise<SubjectConfig[]> {
     if (!isSupabaseConfigured()) {
-      return configStore.getSubjects();
+      return [];
     }
 
     const { data, error } = await (supabase as any)
@@ -92,8 +91,8 @@ export const configurationService = {
       .order('sort_order', { ascending: true });
 
     if (error || !data || data.length === 0) {
-      console.warn('Falling back to local config store for subjects:', error);
-      return configStore.getSubjects();
+      if (error) console.warn('Error fetching subjects:', error);
+      return [];
     }
 
     return data.map((s: any) => ({
@@ -101,8 +100,8 @@ export const configurationService = {
       code: s.code,
       name: s.name,
       category: s.category as any,
-      questionCount: 45,
-      activeTestsCount: 4,
+      questionCount: 0,
+      activeTestsCount: 0,
       status: (s.status || 'ACTIVE') as any,
       description: s.description || '',
     }));

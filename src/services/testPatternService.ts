@@ -51,345 +51,10 @@ export interface TestPatternSection {
   }[];
 }
 
-// Fallback seed patterns in case of offline preview
-const FALLBACK_TEMPLATES: TestPatternTemplate[] = [
-  {
-    id: '50000000-0000-0000-0000-000000000001',
-    forceId: '10000000-0000-0000-0000-000000000001',
-    entryCourseId: '20000000-0000-0000-0000-000000000001',
-    name: 'PMA Long Course Screening Pattern',
-    stage: 'INITIAL',
-    description: 'Academy Default Pattern for PMA Regular Commission Initial CBT.',
-    version: 1,
-    isDefault: true,
-    isActive: true,
-    sections: [
-      {
-        id: '60000000-0000-0000-0000-000000000001',
-        templateId: '50000000-0000-0000-0000-000000000001',
-        sectionCode: 'VERBAL',
-        sectionName: 'Verbal Intelligence',
-        displayOrder: 1,
-        defaultEnabled: true,
-        defaultQuestionCount: 84,
-        minQuestionCount: 20,
-        maxQuestionCount: 100,
-        defaultDurationMinutes: 30,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 45,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-        subjects: [{ id: '30000000-0000-0000-0000-000000000001', code: 'INTELLIGENCE_VERBAL', name: 'Verbal Intelligence', isDefault: true }],
-      },
-      {
-        id: '60000000-0000-0000-0000-000000000002',
-        templateId: '50000000-0000-0000-0000-000000000001',
-        sectionCode: 'NON_VERBAL',
-        sectionName: 'Non-Verbal Intelligence',
-        displayOrder: 2,
-        defaultEnabled: true,
-        defaultQuestionCount: 64,
-        minQuestionCount: 20,
-        maxQuestionCount: 90,
-        defaultDurationMinutes: 30,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 45,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-        subjects: [{ id: '30000000-0000-0000-0000-000000000002', code: 'INTELLIGENCE_NON_VERBAL', name: 'Non-Verbal Intelligence', isDefault: true }],
-      },
-      {
-        id: '60000000-0000-0000-0000-000000000003',
-        templateId: '50000000-0000-0000-0000-000000000001',
-        sectionCode: 'ACADEMIC',
-        sectionName: 'Academic Evaluation',
-        displayOrder: 3,
-        defaultEnabled: true,
-        defaultQuestionCount: 50,
-        minQuestionCount: 15,
-        maxQuestionCount: 60,
-        defaultDurationMinutes: 30,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 45,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-        subjects: [
-          { id: '30000000-0000-0000-0000-000000000005', code: 'ACADEMIC_ENGLISH', name: 'English', isDefault: true },
-          { id: '30000000-0000-0000-0000-000000000004', code: 'ACADEMIC_MATH', name: 'Mathematics', isDefault: true },
-          { id: '30000000-0000-0000-0000-000000000008', code: 'GENERAL_KNOWLEDGE', name: 'General Knowledge', isDefault: true },
-          { id: '30000000-0000-0000-0000-000000000009', code: 'PAKISTAN_STUDIES', name: 'Pakistan Studies', isDefault: true },
-          { id: '30000000-0000-0000-0000-000000000010', code: 'ISLAMIAT', name: 'Islamiat & Ethics', isDefault: true },
-        ],
-      },
-    ],
-  },
-  {
-    id: '50000000-0000-0000-0000-000000000005',
-    forceId: '10000000-0000-0000-0000-000000000002',
-    entryCourseId: '20000000-0000-0000-0000-000000000002',
-    name: 'GD Pilot Screening Pattern',
-    stage: 'INITIAL',
-    description: 'Academy Default Pattern for PAF General Duty Pilot Screening.',
-    version: 1,
-    isDefault: true,
-    isActive: true,
-    sections: [
-      {
-        id: '60000000-0000-0000-0000-000000000013',
-        templateId: '50000000-0000-0000-0000-000000000005',
-        sectionCode: 'VERBAL',
-        sectionName: 'Verbal Intelligence',
-        displayOrder: 1,
-        defaultEnabled: true,
-        defaultQuestionCount: 84,
-        minQuestionCount: 20,
-        maxQuestionCount: 100,
-        defaultDurationMinutes: 30,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 45,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-      },
-      {
-        id: '60000000-0000-0000-0000-000000000014',
-        templateId: '50000000-0000-0000-0000-000000000005',
-        sectionCode: 'NON_VERBAL',
-        sectionName: 'Non-Verbal Intelligence',
-        displayOrder: 2,
-        defaultEnabled: true,
-        defaultQuestionCount: 64,
-        minQuestionCount: 20,
-        maxQuestionCount: 90,
-        defaultDurationMinutes: 30,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 45,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-      },
-      {
-        id: '60000000-0000-0000-0000-000000000015',
-        templateId: '50000000-0000-0000-0000-000000000005',
-        sectionCode: 'PHYSICS',
-        sectionName: 'Physics',
-        displayOrder: 3,
-        defaultEnabled: true,
-        defaultQuestionCount: 40,
-        minQuestionCount: 10,
-        maxQuestionCount: 50,
-        defaultDurationMinutes: 25,
-        minDurationMinutes: 10,
-        maxDurationMinutes: 40,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-      },
-      {
-        id: '60000000-0000-0000-0000-000000000016',
-        templateId: '50000000-0000-0000-0000-000000000005',
-        sectionCode: 'ENGLISH',
-        sectionName: 'English',
-        displayOrder: 4,
-        defaultEnabled: true,
-        defaultQuestionCount: 40,
-        minQuestionCount: 10,
-        maxQuestionCount: 50,
-        defaultDurationMinutes: 25,
-        minDurationMinutes: 10,
-        maxDurationMinutes: 40,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-      },
-    ],
-  },
-  {
-    id: '50000000-0000-0000-0000-000000000007',
-    forceId: '10000000-0000-0000-0000-000000000003',
-    entryCourseId: '20000000-0000-0000-0000-000000000003',
-    name: 'PN Cadet Entrance Pattern',
-    stage: 'INITIAL',
-    description: 'Academy Default Pattern for PN Cadet Officer Induction.',
-    version: 1,
-    isDefault: true,
-    isActive: true,
-    sections: [
-      {
-        id: '60000000-0000-0000-0000-000000000022',
-        templateId: '50000000-0000-0000-0000-000000000007',
-        sectionCode: 'VERBAL',
-        sectionName: 'Verbal Intelligence',
-        displayOrder: 1,
-        defaultEnabled: true,
-        defaultQuestionCount: 84,
-        minQuestionCount: 20,
-        maxQuestionCount: 100,
-        defaultDurationMinutes: 30,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 45,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-      },
-      {
-        id: '60000000-0000-0000-0000-000000000023',
-        templateId: '50000000-0000-0000-0000-000000000007',
-        sectionCode: 'NON_VERBAL',
-        sectionName: 'Non-Verbal Intelligence',
-        displayOrder: 2,
-        defaultEnabled: true,
-        defaultQuestionCount: 64,
-        minQuestionCount: 20,
-        maxQuestionCount: 90,
-        defaultDurationMinutes: 30,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 45,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-      },
-      {
-        id: '60000000-0000-0000-0000-000000000024',
-        templateId: '50000000-0000-0000-0000-000000000007',
-        sectionCode: 'ACADEMIC',
-        sectionName: 'Academic Evaluation',
-        displayOrder: 3,
-        defaultEnabled: true,
-        defaultQuestionCount: 50,
-        minQuestionCount: 15,
-        maxQuestionCount: 60,
-        defaultDurationMinutes: 35,
-        minDurationMinutes: 15,
-        maxDurationMinutes: 50,
-        isMandatory: false,
-        teacherCanDisable: true,
-        teacherCanOverrideQuestionCount: true,
-        teacherCanOverrideDuration: true,
-        teacherCanReorder: true,
-        questionType: 'MCQ_SINGLE',
-        sectionType: 'STANDARD',
-        passingPercentage: 50,
-        negativeMarking: false,
-        subjects: [
-          { id: '30000000-0000-0000-0000-000000000003', code: 'ACADEMIC_PHYSICS', name: 'Physics', isDefault: true },
-          { id: '30000000-0000-0000-0000-000000000004', code: 'ACADEMIC_MATH', name: 'Mathematics', isDefault: true },
-          { id: '30000000-0000-0000-0000-000000000005', code: 'ACADEMIC_ENGLISH', name: 'English', isDefault: true },
-          { id: '30000000-0000-0000-0000-000000000008', code: 'GENERAL_KNOWLEDGE', name: 'General Knowledge', isDefault: true },
-        ],
-      },
-    ],
-  },
-];
-
-const FORCE_ID_MAP: Record<string, string> = {
-  'force-army': '10000000-0000-0000-0000-000000000001',
-  'PAKISTAN_ARMY': '10000000-0000-0000-0000-000000000001',
-  '10000000-0000-0000-0000-000000000001': '10000000-0000-0000-0000-000000000001',
-
-  'force-air-force': '10000000-0000-0000-0000-000000000002',
-  'PAKISTAN_AIR_FORCE': '10000000-0000-0000-0000-000000000002',
-  '10000000-0000-0000-0000-000000000002': '10000000-0000-0000-0000-000000000002',
-
-  'force-navy': '10000000-0000-0000-0000-000000000003',
-  'PAKISTAN_NAVY': '10000000-0000-0000-0000-000000000003',
-  '10000000-0000-0000-0000-000000000003': '10000000-0000-0000-0000-000000000003',
-};
-
-const COURSE_ID_MAP: Record<string, string> = {
-  'crs-01': '20000000-0000-0000-0000-000000000001',
-  '154-PMA-LC': '20000000-0000-0000-0000-000000000001',
-  '20000000-0000-0000-0000-000000000001': '20000000-0000-0000-0000-000000000001',
-
-  'crs-02': '20000000-0000-0000-0000-000000000002',
-  '158-PAF-GDP': '20000000-0000-0000-0000-000000000002',
-  '20000000-0000-0000-0000-000000000002': '20000000-0000-0000-0000-000000000002',
-
-  'crs-03': '20000000-0000-0000-0000-000000000003',
-  'PN-CADET-26A': '20000000-0000-0000-0000-000000000003',
-  '20000000-0000-0000-0000-000000000003': '20000000-0000-0000-0000-000000000003',
-};
-
-function filterFallbackTemplates(forceId?: string, courseId?: string): TestPatternTemplate[] {
-  const normForceId = forceId ? (FORCE_ID_MAP[forceId] || forceId) : undefined;
-  const normCourseId = courseId ? (COURSE_ID_MAP[courseId] || courseId) : undefined;
-
-  const filtered = FALLBACK_TEMPLATES.filter((t) => {
-    if (normForceId && t.forceId !== normForceId) return false;
-    if (normCourseId && t.entryCourseId !== normCourseId) return false;
-    return true;
-  });
-
-  if (filtered.length === 0 && (!normCourseId || FALLBACK_TEMPLATES.length > 0)) {
-    // If no exact match for course, fallback to force match or all
-    const forceMatch = FALLBACK_TEMPLATES.filter((t) => !normForceId || t.forceId === normForceId);
-    return forceMatch.length > 0 ? forceMatch : FALLBACK_TEMPLATES;
-  }
-
-  return filtered;
-}
-
 export const testPatternService = {
   async getTemplates(forceId?: string, courseId?: string): Promise<TestPatternTemplate[]> {
     if (!isSupabaseConfigured()) {
-      return filterFallbackTemplates(forceId, courseId);
+      return [];
     }
 
     try {
@@ -404,7 +69,8 @@ export const testPatternService = {
 
       const { data, error } = await query;
       if (error || !data || data.length === 0) {
-        return filterFallbackTemplates(forceId, courseId);
+        if (error) console.warn('Error fetching test pattern templates:', error);
+        return [];
       }
 
       return data.map((t: any) => ({
@@ -420,15 +86,13 @@ export const testPatternService = {
       }));
     } catch (e) {
       console.warn('Error fetching test patterns:', e);
-      return FALLBACK_TEMPLATES;
+      return [];
     }
   },
 
   async getTemplateDetails(templateId: string): Promise<TestPatternTemplate | null> {
-    const fallback = FALLBACK_TEMPLATES.find((t) => t.id === templateId);
-
     if (!isSupabaseConfigured()) {
-      return fallback || null;
+      return null;
     }
 
     try {
@@ -438,7 +102,7 @@ export const testPatternService = {
         .eq('id', templateId)
         .maybeSingle();
 
-      if (tplError || !tpl) return fallback || null;
+      if (tplError || !tpl) return null;
 
       const { data: sections, error: secError } = await (supabase as any)
         .from('test_pattern_sections')
@@ -467,7 +131,7 @@ export const testPatternService = {
           version: tpl.version,
           isDefault: tpl.is_default,
           isActive: tpl.is_active,
-          sections: fallback?.sections || [],
+          sections: [],
         };
       }
 
@@ -522,18 +186,12 @@ export const testPatternService = {
       };
     } catch (err) {
       console.warn('Error loading template details:', err);
-      return fallback || null;
+      return null;
     }
   },
 
   async saveTemplate(template: TestPatternTemplate): Promise<void> {
     if (!isSupabaseConfigured()) {
-      const idx = FALLBACK_TEMPLATES.findIndex((t) => t.id === template.id);
-      if (idx !== -1) {
-        FALLBACK_TEMPLATES[idx] = { ...template };
-      } else {
-        FALLBACK_TEMPLATES.push({ ...template });
-      }
       return;
     }
 
@@ -600,91 +258,7 @@ export const testPatternService = {
     const isDef = payload.isDefault !== undefined ? payload.isDefault : false;
 
     if (!isSupabaseConfigured()) {
-      const newId = `50000000-0000-0000-0000-${String(Date.now()).slice(-12)}`;
-      const newTpl: TestPatternTemplate = {
-        id: newId,
-        forceId: payload.forceId,
-        entryCourseId: payload.entryCourseId,
-        name: payload.name,
-        stage: defaultStage,
-        description: payload.description || null,
-        version: 1,
-        isDefault: isDef,
-        isActive: true,
-        sections: [
-          {
-            id: `60000000-0000-0000-0000-${String(Date.now()).slice(-12)}1`,
-            templateId: newId,
-            sectionCode: 'VERBAL',
-            sectionName: 'Verbal Intelligence',
-            displayOrder: 1,
-            defaultEnabled: true,
-            defaultQuestionCount: 84,
-            minQuestionCount: 20,
-            maxQuestionCount: 100,
-            defaultDurationMinutes: 30,
-            minDurationMinutes: 15,
-            maxDurationMinutes: 45,
-            isMandatory: false,
-            teacherCanDisable: true,
-            teacherCanOverrideQuestionCount: true,
-            teacherCanOverrideDuration: true,
-            teacherCanReorder: true,
-            questionType: 'MCQ_SINGLE',
-            sectionType: 'STANDARD',
-            passingPercentage: 50,
-            negativeMarking: false,
-          },
-          {
-            id: `60000000-0000-0000-0000-${String(Date.now()).slice(-12)}2`,
-            templateId: newId,
-            sectionCode: 'NON_VERBAL',
-            sectionName: 'Non-Verbal Intelligence',
-            displayOrder: 2,
-            defaultEnabled: true,
-            defaultQuestionCount: 64,
-            minQuestionCount: 20,
-            maxQuestionCount: 90,
-            defaultDurationMinutes: 30,
-            minDurationMinutes: 15,
-            maxDurationMinutes: 45,
-            isMandatory: false,
-            teacherCanDisable: true,
-            teacherCanOverrideQuestionCount: true,
-            teacherCanOverrideDuration: true,
-            teacherCanReorder: true,
-            questionType: 'MCQ_SINGLE',
-            sectionType: 'STANDARD',
-            passingPercentage: 50,
-            negativeMarking: false,
-          },
-          {
-            id: `60000000-0000-0000-0000-${String(Date.now()).slice(-12)}3`,
-            templateId: newId,
-            sectionCode: 'ACADEMIC',
-            sectionName: 'Academic / General Evaluation',
-            displayOrder: 3,
-            defaultEnabled: true,
-            defaultQuestionCount: 50,
-            minQuestionCount: 15,
-            maxQuestionCount: 60,
-            defaultDurationMinutes: 30,
-            minDurationMinutes: 15,
-            maxDurationMinutes: 45,
-            isMandatory: false,
-            teacherCanDisable: true,
-            teacherCanOverrideQuestionCount: true,
-            teacherCanOverrideDuration: true,
-            teacherCanReorder: true,
-            questionType: 'MCQ_SINGLE',
-            sectionType: 'STANDARD',
-            passingPercentage: 50,
-            negativeMarking: false,
-          },
-        ],
-      };
-      FALLBACK_TEMPLATES.push(newTpl);
-      return newTpl;
+      throw new Error('Supabase not configured');
     }
 
     // 1. Insert Template
@@ -819,8 +393,6 @@ export const testPatternService = {
 
   async deleteTemplate(templateId: string): Promise<void> {
     if (!isSupabaseConfigured()) {
-      const idx = FALLBACK_TEMPLATES.findIndex((t) => t.id === templateId);
-      if (idx !== -1) FALLBACK_TEMPLATES.splice(idx, 1);
       return;
     }
 

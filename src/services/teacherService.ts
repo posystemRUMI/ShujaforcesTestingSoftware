@@ -33,8 +33,8 @@ export const teacherService = {
       .order('created_at', { ascending: false });
 
     if (error || !data) {
-      console.warn('Falling back to local teacher store due to Supabase error:', error);
-      return teacherStore.getTeachers();
+      if (error) console.warn('Error fetching teachers from database:', error);
+      return [];
     }
 
     return data.map((t: any) => {
@@ -46,16 +46,16 @@ export const teacherService = {
         employeeId: t.service_number,
         fullName: profile?.display_name || 'Faculty Officer',
         titleRank: t.rank,
-        email: profile?.email || 'faculty@forces.academy',
+        email: profile?.email || '',
         phone: profile?.phone || 'N/A',
         assignedSubjects: subs,
         branchAffiliation: (t.branch_code || 'TRI_SERVICE') as any,
-        role: (t.role_title || 'SENIOR_INSTRUCTOR') as any,
+        role: (t.role_title || 'INSTRUCTOR') as any,
         status: (t.status || 'ACTIVE') as any,
-        questionsCreatedCount: 15,
-        activeTestsManaged: 3,
+        questionsCreatedCount: 0,
+        activeTestsManaged: 0,
         lastActiveAt: new Date().toISOString(),
-        joinedAt: t.created_at.split('T')[0],
+        joinedAt: t.created_at ? t.created_at.split('T')[0] : new Date().toISOString().split('T')[0],
         avatarUrl: profile?.avatar_url || undefined,
       };
     });

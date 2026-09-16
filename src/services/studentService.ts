@@ -52,8 +52,8 @@ export const studentService = {
       .order('created_at', { ascending: false });
 
     if (error || !data) {
-      console.warn('Falling back to local student store due to Supabase error:', error);
-      return studentStore.getAll();
+      if (error) console.warn('Error fetching students from database:', error);
+      return [];
     }
 
     return data.map((s: any) => {
@@ -71,18 +71,18 @@ export const studentService = {
         fatherName: s.father_name || '—',
         cnic: s.cnic || 'N/A',
         phone: rawPhone,
-        branch: (force?.code || 'PAKISTAN_ARMY') as any,
-        batchId: enrollment?.batch_id || 'batch-001',
-        batchCode: enrollment?.batches?.code || '154-PMA-LC',
-        targetCourse: course?.name || 'PMA Long Course',
+        branch: (force?.code || 'TRI_SERVICE') as any,
+        batchId: enrollment?.batch_id || '',
+        batchCode: enrollment?.batches?.code || '',
+        targetCourse: course?.name || '',
         status: (s.status || 'ACTIVE') as any,
         enrolledAt: s.admission_date || (s.created_at ? s.created_at.split('T')[0] : new Date().toISOString().split('T')[0]),
         avatarUrl: profile?.avatar_url || s.photo_url || undefined,
-        academicScoreAverage: 85,
-        intelligenceScoreAverage: 88,
-        totalAttempts: 4,
-        highestScore: 92,
-        passRate: 95,
+        academicScoreAverage: 0,
+        intelligenceScoreAverage: 0,
+        totalAttempts: 0,
+        highestScore: 0,
+        passRate: 0,
         dateOfBirth: s.date_of_birth,
         gender: s.gender,
         education: s.education,

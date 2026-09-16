@@ -30,31 +30,31 @@ export const batchService = {
       .order('start_date', { ascending: false });
 
     if (error || !data || data.length === 0) {
-      console.warn('Falling back to local batch store due to Supabase error:', error);
-      return batchStore.getBatches();
+      if (error) console.warn('Error fetching batches:', error);
+      return [];
     }
 
     return data.map((b: any) => {
       const course = b.courses as any;
       const force = course?.forces as any;
-      const enrolledCount = (b.batch_enrollments && b.batch_enrollments[0]?.count) || 28;
+      const enrolledCount = (b.batch_enrollments && b.batch_enrollments[0]?.count) || 0;
 
       return {
         id: b.id,
         code: b.code,
         name: b.name,
-        wing: 'Alpha Wing',
-        branch: (force?.code || 'PAKISTAN_ARMY') as any,
+        wing: 'Main Wing',
+        branch: (force?.code || 'TRI_SERVICE') as any,
         cadetCount: Number(enrolledCount),
         startDate: b.start_date,
-        endDate: b.end_date || '2026-06-30',
+        endDate: b.end_date || '',
         status: (b.status === 'ARCHIVED' ? 'COMPLETED' : b.status) as any,
-        targetCourse: course?.name || '154 PMA Long Course',
-        benchmarkPassRate: 85.0,
-        meanAggregate: 78.4,
-        verbalMastery: 84.5,
-        nonVerbalMastery: 79.2,
-        academicMastery: 72.0,
+        targetCourse: course?.name || '',
+        benchmarkPassRate: 0,
+        meanAggregate: 0,
+        verbalMastery: 0,
+        nonVerbalMastery: 0,
+        academicMastery: 0,
         isFlagship: b.code.includes('154'),
       };
     });

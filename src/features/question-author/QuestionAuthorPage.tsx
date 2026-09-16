@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { questionService } from '@/services/questionService';
-import { mockService } from '@/lib/mock-service';
-import { Question, SubjectCategory, MilitaryBranch, QuestionApprovalStatus, DifficultyLevel } from '@/types';
+import { SubjectCategory, MilitaryBranch, QuestionApprovalStatus, DifficultyLevel } from '@/types';
 import { Save, Eye, ArrowLeft, Image as ImageIcon, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -95,27 +94,32 @@ export const QuestionAuthorPage: React.FC = () => {
       return;
     }
 
-    const questionData: Question = {
-      id: editId || `q-${Date.now()}`,
-      code,
-      subject,
-      branch,
-      stem,
-      options,
-      correctOptionId,
-      explanation,
-      difficulty,
-      timeLimitSeconds,
-      status,
-      imageUrl,
-      authorName: 'Instructor Maj. Tariq',
-      tags: [subject, branch, difficulty],
-      updatedAt: new Date().toISOString(),
-    };
-
-    await mockService.addQuestion(questionData);
-    toast.success(editId ? 'Question blueprint updated successfully!' : 'New question authored & published!');
-    navigate('/admin/questions');
+    try {
+      await questionService.upsertQuestion({
+        id: editId || undefined,
+        code,
+        subjectId: subject,
+        difficulty: difficulty as 'EASY' | 'MEDIUM' | 'HARD',
+        stem,
+        stemImageUrl: imageUrl,
+        explanation,
+        timeLimitSeconds,
+        status: status as any,
+        tags: [subject, branch, difficulty],
+        courseIds: [],
+        options: options.map((o) => ({
+          option_key: o.id,
+          label: o.label,
+          text: o.text,
+          image_url: o.imageUrl,
+          is_correct: o.id === correctOptionId,
+        })),
+      });
+      toast.success(editId ? 'Question blueprint updated successfully!' : 'New question authored & published!');
+      navigate('/admin/questions');
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to save question');
+    }
   };
 
   return (

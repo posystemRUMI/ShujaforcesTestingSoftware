@@ -1,23 +1,7 @@
 import { Cadet, Batch, Question, ExamResult, TerminalWorkstation, ExamSession, TestBlueprint, RetakeDocket } from '@/types';
 import { mockCadets, mockBatches, mockQuestions, mockResults, mockTerminals, mockTests } from './mock-data';
 
-export const mockRetakes: RetakeDocket[] = [
-  {
-    id: 'retake-001',
-    originalResultId: 'res-003',
-    cadetId: 'cadet-004',
-    cadetName: 'Usman Ali',
-    rollNumber: 'PMA-2604',
-    branch: 'PAKISTAN_ARMY',
-    testTitle: '154 PMA Long Course Initial Screening Examination',
-    failedSubject: 'ACADEMIC_MATH',
-    previousScorePercent: 58,
-    scheduledDate: '2026-03-10',
-    reason: 'Remediation completed in Non-Verbal Logic & Basic Mathematics.',
-    status: 'SCHEDULED',
-    authorizedOfficer: 'Maj. Tariq Mahmood (Chief Examiner)',
-  },
-];
+export const mockRetakes: RetakeDocket[] = [];
 
 class MockDataService {
   private cadets: Cadet[] = [...mockCadets];
