@@ -324,7 +324,24 @@ export const studentRegistrationService = {
     const envUrl = (import.meta as any).env?.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
     const envAnon = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_ANON_KEY;
 
-    const tempAnon = createClient(envUrl, envAnon, { auth: { persistSession: false } });
+    const memoryStore = new Map<string, string>();
+    const safeStorage: Storage = {
+      getItem: (k: string) => memoryStore.get(k) ?? null,
+      setItem: (k: string, v: string) => { memoryStore.set(k, v); },
+      removeItem: (k: string) => { memoryStore.delete(k); },
+      clear: () => { memoryStore.clear(); },
+      length: memoryStore.size,
+      key: (i: number) => Array.from(memoryStore.keys())[i] ?? null,
+    };
+
+    const tempAnon = createClient(envUrl, envAnon, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+        detectSessionInUrl: false,
+        storage: safeStorage,
+      },
+    });
 
     const { data: signUpData, error: signUpError } = await tempAnon.auth.signUp({
       email: payload.email,
