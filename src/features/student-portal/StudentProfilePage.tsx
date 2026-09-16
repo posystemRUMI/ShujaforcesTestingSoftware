@@ -5,7 +5,6 @@ import {
   User,
   Award,
   CheckCircle2,
-  Calendar,
   GraduationCap,
   Mail,
   Phone,
@@ -113,13 +112,6 @@ export const StudentProfilePage: React.FC = () => {
             courses (
               name,
               code
-            ),
-            batch_enrollments (
-              batch_id,
-              batches (
-                name,
-                code
-              )
             )
           `)
           .or(`profile_id.eq.${user.id},id.eq.${user.cadetId || user.id}`)
@@ -225,10 +217,6 @@ export const StudentProfilePage: React.FC = () => {
     cadetData?.forces?.name ||
     (user?.branch ? user.branch.replace(/_/g, ' ') : 'Pakistan Army');
   const displayCourse = cadetData?.courses?.name || 'PMA Long Course (154 LC)';
-  const displayBatch =
-    cadetData?.batch_enrollments?.[0]?.batches?.name ||
-    cadetData?.batch_enrollments?.[0]?.batches?.code ||
-    '154-PMA-ALPHA';
 
   // Initials for Avatar
   const initials = displayName
@@ -328,11 +316,6 @@ export const StudentProfilePage: React.FC = () => {
                   <GraduationCap className="w-3.5 h-3.5 text-[#64748B]" />
                   <span>{displayCourse}</span>
                 </span>
-
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#FEFCE8] text-[#854D0E] border border-[#FEF08A]">
-                  <Calendar className="w-3.5 h-3.5 text-[#854D0E]" />
-                  <span>{displayBatch}</span>
-                </span>
               </div>
             </div>
           </div>
@@ -413,13 +396,6 @@ export const StudentProfilePage: React.FC = () => {
               <span className="text-xs font-medium text-[#64748B] block">Target Entry Course</span>
               <span className="font-semibold text-[#0E1B2A] mt-0.5 block">
                 {displayCourse}
-              </span>
-            </div>
-
-            <div className="sm:col-span-2">
-              <span className="text-xs font-medium text-[#64748B] block">Enrolled Cadre Wing</span>
-              <span className="font-semibold text-[#0E1B2A] mt-0.5 block">
-                {displayBatch}
               </span>
             </div>
           </div>
@@ -714,7 +690,6 @@ export const StudentProfilePage: React.FC = () => {
                   <div>Roll Number: <span className="font-mono font-semibold text-[#0E1B2A]">{displayRoll}</span></div>
                   <div>Force: <span className="font-semibold text-[#0E1B2A]">{displayForce}</span></div>
                   <div>Course: <span className="font-semibold text-[#0E1B2A]">{displayCourse}</span></div>
-                  <div>Batch: <span className="font-semibold text-[#0E1B2A]">{displayBatch}</span></div>
                 </div>
                 <span className="text-[10px] text-[#94A3B8] block pt-1">
                   Official enrollment details can only be amended by the Academy Command Directorate.

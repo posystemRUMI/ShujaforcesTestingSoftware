@@ -377,7 +377,7 @@ export const StudentDashboardPage: React.FC = () => {
               <span className="font-semibold text-[#234E35] mt-0.5 block tabular-nums">{activeTest.passingScorePercent}% Minimum</span>
             </div>
             <div>
-              <span className="text-[#64748B] block text-[10px] uppercase">Target Cadre</span>
+              <span className="text-[#64748B] block text-[10px] uppercase">Target Course</span>
               <span className="font-semibold text-[#0E1B2A] mt-0.5 block">{activeTest.courseTarget}</span>
             </div>
           </div>

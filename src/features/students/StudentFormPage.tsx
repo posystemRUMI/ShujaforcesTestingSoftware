@@ -118,7 +118,7 @@ export const StudentFormPage: React.FC = () => {
         title={isEditMode ? 'Modify Cadet Docket' : 'New Cadet Induction Enrollment'}
         subtitle={
           isEditMode
-            ? `Editing military credentials and training cadre for ${currentFullName || id}`
+            ? `Editing military credentials and course track for ${currentFullName || id}`
             : 'Register candidate personal dossier, service branch, and initial security clearance'
         }
         breadcrumbs={[
@@ -225,7 +225,7 @@ export const StudentFormPage: React.FC = () => {
         {/* Section 2: Academy Induction & Military Standing */}
         <FormSection
           stepNumber={2}
-          title="Academy Training & Service Cadre"
+          title="Academy Training & Service Details"
           subtitle="Target force allocation, cohort batch assignment, and security clearance"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

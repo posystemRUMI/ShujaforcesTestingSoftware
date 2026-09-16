@@ -41,12 +41,6 @@ export const studentService = {
         ),
         courses (
           name
-        ),
-        batch_enrollments (
-          batch_id,
-          batches (
-            code
-          )
         )
       `)
       .order('created_at', { ascending: false });
@@ -60,7 +54,6 @@ export const studentService = {
       const profile = (Array.isArray(s.profiles) ? s.profiles[0] : s.profiles) as any;
       const force = (Array.isArray(s.forces) ? s.forces[0] : s.forces) as any;
       const course = (Array.isArray(s.courses) ? s.courses[0] : s.courses) as any;
-      const enrollment = (s.batch_enrollments && s.batch_enrollments[0]) as any;
 
       const rawPhone = profile?.phone || s.alternate_phone || s.guardian_phone || 'N/A';
 
@@ -72,8 +65,8 @@ export const studentService = {
         cnic: s.cnic || 'N/A',
         phone: rawPhone,
         branch: (force?.code || 'TRI_SERVICE') as any,
-        batchId: enrollment?.batch_id || '',
-        batchCode: enrollment?.batches?.code || '',
+        batchId: '',
+        batchCode: '',
         targetCourse: course?.name || '',
         status: (s.status || 'ACTIVE') as any,
         enrolledAt: s.admission_date || (s.created_at ? s.created_at.split('T')[0] : new Date().toISOString().split('T')[0]),
@@ -171,12 +164,6 @@ export const studentService = {
           ),
           courses (
             name
-          ),
-          batch_enrollments (
-            batch_id,
-            batches (
-              code
-            )
           )
         `)
         .or(`id.eq.${id},profile_id.eq.${id},roll_number.eq.${id}`)
@@ -189,7 +176,6 @@ export const studentService = {
       const profile = (Array.isArray(data.profiles) ? data.profiles[0] : data.profiles) as any;
       const force = (Array.isArray(data.forces) ? data.forces[0] : data.forces) as any;
       const course = (Array.isArray(data.courses) ? data.courses[0] : data.courses) as any;
-      const enrollment = (data.batch_enrollments && data.batch_enrollments[0]) as any;
 
       return {
         id: data.id,
@@ -199,8 +185,8 @@ export const studentService = {
         cnic: data.cnic || 'N/A',
         phone: profile?.phone || data.alternate_phone || data.guardian_phone || 'N/A',
         branch: (force?.code || 'PAKISTAN_ARMY') as any,
-        batchId: enrollment?.batch_id || 'batch-001',
-        batchCode: enrollment?.batches?.code || '154-PMA-LC',
+        batchId: '',
+        batchCode: '',
         targetCourse: course?.name || 'PMA Long Course',
         status: (data.status || 'ACTIVE') as any,
         enrolledAt: data.admission_date || (data.created_at ? data.created_at.split('T')[0] : new Date().toISOString().split('T')[0]),

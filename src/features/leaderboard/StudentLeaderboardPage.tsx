@@ -162,7 +162,7 @@ export const StudentLeaderboardPage: React.FC = () => {
             </h1>
           </div>
           <p className="text-xs sm:text-sm text-[#64748B] mt-1">
-            Official candidate merit standings across your cadre batch, entry course, and the academy.
+            Official candidate merit standings across your entry course and the academy.
           </p>
         </div>
 
@@ -200,7 +200,7 @@ export const StudentLeaderboardPage: React.FC = () => {
               of {summary?.batch_total || 0}
             </span>
           </div>
-          <p className="text-[11px] text-[#166534] font-medium">Cadre wing standing</p>
+          <p className="text-[11px] text-[#166534] font-medium">Course standing</p>
         </div>
 
         {/* Course Position */}
