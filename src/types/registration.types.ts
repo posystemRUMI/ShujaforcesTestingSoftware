@@ -55,7 +55,7 @@ export interface StudentRegistrationInput {
   educationDetails?: string;
   targetForceId: string;
   targetCourseId: string;
-  batchId: string;
+  batchId?: string;
 
   // Section 3: Login Details
   rollNumber: string;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Search, X, Users, IdCard, FileQuestion, Wrench, ArrowRight } from 'lucide-react';
+import { Search, X, IdCard, FileQuestion, Wrench, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useStudentsQuery, useBatchesQuery } from '@/hooks/useAppQueries';
+import { useStudentsQuery } from '@/hooks/useAppQueries';
 
 export interface CommandSearchProps {
   isOpen: boolean;
@@ -13,7 +13,6 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
   const navigate = useNavigate();
 
   const { data: students = [] } = useStudentsQuery();
-  const { data: batches = [] } = useBatchesQuery();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -35,13 +34,6 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
       searchLower &&
       ((c.full_name || c.name || '').toLowerCase().includes(searchLower) ||
         (c.roll_number || c.rollNumber || '').toLowerCase().includes(searchLower))
-  );
-
-  const filteredBatches = batches.filter(
-    (b: any) =>
-      searchLower &&
-      ((b.name || '').toLowerCase().includes(searchLower) ||
-        (b.code || '').toLowerCase().includes(searchLower))
   );
 
   const filteredQuestions: any[] = [];
@@ -133,31 +125,6 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
                     <span className="text-[10px] font-bold uppercase text-[#455D4A]">
                       {c.branch.replace('PAKISTAN_', '')}
                     </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Batches Match */}
-          {filteredBatches.length > 0 && (
-            <div className="py-2">
-              <span className="px-2 text-[10px] font-bold uppercase text-[#64748B] font-sans tracking-wider">
-                Batches ({filteredBatches.length})
-              </span>
-              <div className="mt-1 space-y-0.5">
-                {filteredBatches.slice(0, 3).map((b) => (
-                  <button
-                    key={b.id}
-                    type="button"
-                    onClick={() => handleSelect('/admin/batches')}
-                    className="w-full flex items-center justify-between px-2.5 py-1.5 rounded hover:bg-[#EDF1F5] transition-colors text-left"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-3.5 h-3.5 text-[#0E1B2A]" />
-                      <span className="font-semibold text-[#0E1B2A]">{b.name}</span>
-                    </div>
-                    <span className="font-mono text-[10px] text-[#64748B]">{b.code}</span>
                   </button>
                 ))}
               </div>

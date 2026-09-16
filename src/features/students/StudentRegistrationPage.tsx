@@ -48,7 +48,7 @@ const registrationFormSchema = z
     educationDetails: z.string().max(250).optional().or(z.literal('')),
     targetForceId: z.string().min(1, 'Target force branch selection is required'),
     targetCourseId: z.string().min(1, 'Target course selection is required'),
-    batchId: z.string().min(1, 'Batch enrollment is required'),
+    batchId: z.string().optional(),
     rollNumber: z
       .string()
       .min(3, 'Roll number must be at least 3 characters')

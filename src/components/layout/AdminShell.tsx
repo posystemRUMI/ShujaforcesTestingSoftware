@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
   LayoutDashboard,
-  Users,
   IdCard,
   GraduationCap,
   FileQuestion,
@@ -23,7 +22,6 @@ import { useRealtimeSync } from '@/hooks/useRealtimeSync';
 
 const NAV_ITEMS = [
   { label: 'Dashboard', to: '/admin/dashboard', icon: LayoutDashboard },
-  { label: 'Batches', to: '/admin/batches', icon: Users },
   { label: 'Students', to: '/admin/students', icon: IdCard },
   { label: 'Faculty', to: '/admin/teachers', icon: GraduationCap },
   { label: 'Question Bank', to: '/admin/questions', icon: FileQuestion },

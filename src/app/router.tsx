@@ -25,8 +25,6 @@ function safeLazy<T extends React.ComponentType<any>>(factory: () => Promise<{ d
 // Lazy-loaded Feature Modules
 const LoginPage = safeLazy(() => import('@/features/auth/LoginPage'));
 const DashboardPage = safeLazy(() => import('@/features/dashboard/DashboardPage'));
-const BatchesPage = safeLazy(() => import('@/features/batches/BatchesPage'));
-const BatchDetailPage = safeLazy(() => import('@/features/batches/BatchDetailPage'));
 const StudentsListPage = safeLazy(() => import('@/features/students/StudentsListPage'));
 const StudentFormPage = safeLazy(() => import('@/features/students/StudentFormPage'));
 const StudentRegistrationPage = safeLazy(() => import('@/features/students/StudentRegistrationPage'));
@@ -144,22 +142,6 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <DashboardPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: 'batches',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <BatchesPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: 'batches/:id',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <BatchDetailPage />
           </Suspense>
         ),
       },
