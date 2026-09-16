@@ -14,19 +14,56 @@ export const isSupabaseConfigured = (): boolean => {
   return Boolean(supabaseUrl && supabaseAnonKey);
 };
 
-// Singleton Supabase Client with Per-Tab Session Isolation via sessionStorage
-export const supabase: SupabaseClient<Database> = createClient<Database>(
-  supabaseUrl,
-  supabaseAnonKey,
-  {
-    auth: {
-      persistSession: true,
-      storage: typeof window !== 'undefined' ? window.sessionStorage : undefined,
-      autoRefreshToken: true,
-      detectSessionInUrl: true,
-      storageKey: 'sfa_auth_session_token',
-    },
+function getSafeStorage(): Storage | undefined {
+  if (typeof window === 'undefined') return undefined;
+  try {
+    const testKey = '__sfa_storage_test__';
+    window.sessionStorage.setItem(testKey, testKey);
+    window.sessionStorage.removeItem(testKey);
+    return window.sessionStorage;
+  } catch (e) {
+    console.warn('sessionStorage restricted or unavailable. Falling back to in-memory auth storage.');
+    const memoryStore = new Map<string, string>();
+    return {
+      getItem: (key: string) => memoryStore.get(key) ?? null,
+      setItem: (key: string, value: string) => { memoryStore.set(key, value); },
+      removeItem: (key: string) => { memoryStore.delete(key); },
+      clear: () => { memoryStore.clear(); },
+      length: memoryStore.size,
+      key: (index: number) => Array.from(memoryStore.keys())[index] ?? null,
+    };
   }
-);
+}
+
+function initSupabaseClient(): SupabaseClient<Database> {
+  const url = (supabaseUrl && supabaseUrl.trim().startsWith('http')) ? supabaseUrl.trim() : DEFAULT_SUPABASE_URL;
+  const key = (supabaseAnonKey && supabaseAnonKey.trim().length > 10) ? supabaseAnonKey.trim() : DEFAULT_SUPABASE_ANON_KEY;
+
+  try {
+    const client = createClient<Database>(url, key, {
+      auth: {
+        persistSession: true,
+        storage: getSafeStorage(),
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        storageKey: 'sfa_auth_session_token',
+      },
+    });
+
+    // Verify rest property and core methods are initialized
+    if (client && (client as any).rest && typeof client.from === 'function') {
+      return client;
+    }
+
+    console.warn('Primary Supabase client missing rest property, creating standard fallback client.');
+    return createClient<Database>(DEFAULT_SUPABASE_URL, DEFAULT_SUPABASE_ANON_KEY);
+  } catch (err) {
+    console.error('Failed to initialize Supabase client:', err);
+    return createClient<Database>(DEFAULT_SUPABASE_URL, DEFAULT_SUPABASE_ANON_KEY);
+  }
+}
+
+// Singleton Supabase Client with Per-Tab Session Isolation via sessionStorage
+export const supabase: SupabaseClient<Database> = initSupabaseClient();
 
 export default supabase;
