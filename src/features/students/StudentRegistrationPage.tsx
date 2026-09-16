@@ -381,6 +381,8 @@ export const StudentRegistrationPage: React.FC = () => {
 
       if (userMsg.includes('User already registered') || userMsg.includes('User already exists')) {
         userMsg = `An account with email "${data.email}" is already registered in the authentication system. Please click "Suggest Roll Number & Email" or enter a unique email.`;
+      } else if (userMsg.toLowerCase().includes('rate limit')) {
+        userMsg = `Email rate limit exceeded on Supabase (default SMTP limit: 3-4 signups/hr). In Supabase Dashboard -> Authentication -> Email, turn OFF "Confirm email" or wait a few minutes.`;
       }
 
       toast.error(userMsg);

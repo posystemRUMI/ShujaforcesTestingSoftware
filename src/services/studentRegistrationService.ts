@@ -337,7 +337,11 @@ export const studentRegistrationService = {
     });
 
     if (signUpError || !signUpData?.user) {
-      throw new Error(signUpError?.message || 'Failed to create student authentication record.');
+      const msg = signUpError?.message || '';
+      if (msg.toLowerCase().includes('rate limit')) {
+        throw new Error('Email rate limit exceeded by Supabase Auth (Default SMTP allows 3-4 signups/hour). Disable "Confirm email" in Supabase Auth settings to bypass this limit.');
+      }
+      throw new Error(msg || 'Failed to create student authentication record.');
     }
 
     const createdAuthId = signUpData.user.id;
