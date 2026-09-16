@@ -239,7 +239,7 @@ export const StudentRegistrationPage: React.FC = () => {
       const randNum = Math.floor(100000 + Math.random() * 900000); // 6-digit unique randomizer
       newRoll = `${prefix}-${year}${randNum}`;
       const cleanRoll = newRoll.toLowerCase().replace(/[^a-z0-9]/g, '.');
-      newEmail = `${cleanRoll}@shujaforces.com`;
+      newEmail = `${cleanRoll}@gmail.com`;
 
       const [rollExists, emailExists] = await Promise.all([
         studentRegistrationService.checkRollNumberExists(newRoll),
@@ -844,7 +844,7 @@ export const StudentRegistrationPage: React.FC = () => {
                   type="email"
                   {...register('email')}
                   onBlur={checkEmailAvailability}
-                  placeholder="cadet.roll@shujaforces.com"
+                  placeholder="cadet.roll@gmail.com"
                   className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-mono focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E] pr-8"
                 />
                 <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center">
