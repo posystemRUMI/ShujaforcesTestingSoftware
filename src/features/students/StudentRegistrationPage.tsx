@@ -24,7 +24,6 @@ import { studentRegistrationService } from '@/services/studentRegistrationServic
 import {
   ForceOption,
   CourseOption,
-  BatchOption,
 } from '@/types/registration.types';
 
 // Strict Zod Validation Schema with Mandatory Education & Batch & Fee Details
@@ -89,10 +88,8 @@ export const StudentRegistrationPage: React.FC = () => {
   // Dynamic dropdown state
   const [forces, setForces] = useState<ForceOption[]>([]);
   const [courses, setCourses] = useState<CourseOption[]>([]);
-  const [batches, setBatches] = useState<BatchOption[]>([]);
   const [loadingForces, setLoadingForces] = useState(true);
   const [loadingCourses, setLoadingCourses] = useState(false);
-  const [loadingBatches, setLoadingBatches] = useState(false);
 
   // Security & preview controls state
   const [showPassword, setShowPassword] = useState(false);
@@ -209,38 +206,6 @@ export const StudentRegistrationPage: React.FC = () => {
       isMounted = false;
     };
   }, [selectedForceId, setValue]);
-
-  // Load batches when course changes
-  useEffect(() => {
-    let isMounted = true;
-    async function loadBatches() {
-      if (!selectedCourseId) {
-        setBatches([]);
-        setValue('batchId', '');
-        return;
-      }
-      try {
-        setLoadingBatches(true);
-        const data = await studentRegistrationService.getBatchesForCourse(selectedCourseId);
-        if (isMounted) {
-          setBatches(data);
-          if (data.length > 0) {
-            setValue('batchId', data[0].id);
-          } else {
-            setValue('batchId', '');
-          }
-        }
-      } catch (err: any) {
-        toast.error(err?.message || 'Failed to load batches.');
-      } finally {
-        if (isMounted) setLoadingBatches(false);
-      }
-    }
-    loadBatches();
-    return () => {
-      isMounted = false;
-    };
-  }, [selectedCourseId, setValue]);
 
   // Auto-format CNIC as user types
   const handleCnicChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -426,8 +391,8 @@ export const StudentRegistrationPage: React.FC = () => {
     <div className="max-w-5xl mx-auto space-y-6 select-none pb-12">
       {/* Page Header */}
       <PageHeader
-        title="Register Student"
-        subtitle="Register candidate dossier, assign target branch and batch, and create portal credentials"
+        title="New Student Registration"
+        subtitle="Register candidate dossier, assign target branch and course, and create portal credentials"
         breadcrumbs={[
           { label: 'Students Roster', href: '/admin/students' },
           { label: 'Register Student' },
@@ -621,7 +586,7 @@ export const StudentRegistrationPage: React.FC = () => {
         <FormSection
           stepNumber={2}
           title="Education & Target"
-          subtitle="Academic background, target force, course, and batch allocation"
+          subtitle="Academic background, target force, and course"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -663,7 +628,7 @@ export const StudentRegistrationPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             {/* Target Force */}
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
@@ -711,31 +676,6 @@ export const StudentRegistrationPage: React.FC = () => {
               </select>
               {errors.targetCourseId && (
                 <p className="text-[11px] text-[#782525] mt-1">{errors.targetCourseId.message}</p>
-              )}
-            </div>
-
-            {/* Batch Enrollment (MANDATORY) */}
-            <div>
-              <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Batch Allocation *
-              </label>
-              <select
-                {...register('batchId')}
-                disabled={loadingBatches || batches.length === 0}
-                className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-medium focus:outline-none focus:border-[#0E1B2A]"
-              >
-                {batches.length === 0 ? (
-                  <option value="">No active batches for this course.</option>
-                ) : (
-                  batches.map((b) => (
-                    <option key={b.id} value={b.id}>
-                      {b.code} ({b.sessionName || b.name})
-                    </option>
-                  ))
-                )}
-              </select>
-              {errors.batchId && (
-                <p className="text-[11px] text-[#782525] mt-1">{errors.batchId.message}</p>
               )}
             </div>
           </div>
