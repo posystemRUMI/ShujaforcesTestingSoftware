@@ -1,18 +1,14 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Database } from '@/types/database.types';
 
+const DEFAULT_SUPABASE_URL = 'https://cxnfxxtlnsypajwqmfni.supabase.co';
+const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN4bmZ4eHRsbnN5cGFqd3FtZm5pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkxNDkyMDIsImV4cCI6MjEwNDcyNTIwMn0.P8OK8zbLqYcObqqIoVnmsmKOnehiJ23a-Txa6R1dqKo';
+
 const envUrl = (import.meta as any).env?.VITE_SUPABASE_URL as string | undefined;
 const envAnonKey = (import.meta as any).env?.VITE_SUPABASE_ANON_KEY as string | undefined;
 
-const supabaseUrl = envUrl || '';
-const supabaseAnonKey = envAnonKey || '';
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error(
-    'CRITICAL: Missing VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY environment variables. ' +
-    'The application requires valid Supabase environment variables to connect.'
-  );
-}
+const supabaseUrl = envUrl || DEFAULT_SUPABASE_URL;
+const supabaseAnonKey = envAnonKey || DEFAULT_SUPABASE_ANON_KEY;
 
 export const isSupabaseConfigured = (): boolean => {
   return Boolean(supabaseUrl && supabaseAnonKey);
