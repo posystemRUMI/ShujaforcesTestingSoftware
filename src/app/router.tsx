@@ -11,11 +11,13 @@ function safeLazy<T extends React.ComponentType<any>>(factory: () => Promise<{ d
     try {
       return await factory();
     } catch (err: any) {
-      console.warn('Dynamic import failed (fresh build deployment detected). Auto-reloading...', err);
-      const reloaded = sessionStorage.getItem('chunk_load_auto_reload');
-      if (!reloaded) {
-        sessionStorage.setItem('chunk_load_auto_reload', 'true');
+      console.warn('Dynamic import failed (fresh build deployment detected). Auto-reloading page...', err);
+      const lastReload = Number(sessionStorage.getItem('chunk_reload_timestamp') || 0);
+      const now = Date.now();
+      if (now - lastReload > 10000) {
+        sessionStorage.setItem('chunk_reload_timestamp', String(now));
         window.location.reload();
+        return new Promise(() => {}) as any;
       }
       throw err;
     }

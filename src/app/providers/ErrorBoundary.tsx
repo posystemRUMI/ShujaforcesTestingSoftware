@@ -32,10 +32,12 @@ export class ErrorBoundary extends Component<Props, State> {
       error?.message?.includes('Importing a module script failed') ||
       error?.name === 'ChunkLoadError'
     ) {
-      const reloaded = sessionStorage.getItem('chunk_load_auto_reload');
-      if (!reloaded) {
-        sessionStorage.setItem('chunk_load_auto_reload', 'true');
+      const lastReload = Number(sessionStorage.getItem('chunk_reload_timestamp') || 0);
+      const now = Date.now();
+      if (now - lastReload > 10000) {
+        sessionStorage.setItem('chunk_reload_timestamp', String(now));
         window.location.reload();
+        return;
       }
     }
   }
