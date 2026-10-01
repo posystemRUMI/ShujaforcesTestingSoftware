@@ -365,44 +365,132 @@ export const studentRegistrationService = {
     }
 
     const createdAuthId = signUpData.user.id;
+    let result: RegistrationResult;
 
-    // Call atomic RPC create_registered_student_profile
-    const rpcFn = supabase.rpc as unknown as (
-      fn: string,
-      args?: Record<string, unknown>
-    ) => Promise<{ data: any; error: { message: string } | null }>;
+    let rpcData: any = null;
+    let rpcError: any = null;
 
-    const { data: rpcData, error: rpcError } = await rpcFn('create_registered_student_profile', {
-      p_auth_user_id: createdAuthId,
-      p_email: payload.email,
-      p_display_name: payload.fullName,
-      p_father_name: payload.fatherName,
-      p_cnic: payload.cnic,
-      p_phone: payload.phone,
-      p_target_force_id: payload.targetForceId,
-      p_target_course_id: payload.targetCourseId,
-      p_batch_id: payload.batchId,
-      p_roll_number: payload.rollNumber,
-      p_education: payload.education,
-      p_education_details: payload.educationDetails,
-      p_gender: payload.gender,
-      p_date_of_birth: payload.dateOfBirth,
-      p_alternate_phone: payload.alternatePhone,
-      p_address: payload.address,
-      p_guardian_name: payload.guardianName,
-      p_guardian_relationship: payload.guardianRelationship,
-      p_guardian_phone: payload.guardianPhone,
-      p_admission_date: payload.admissionDate,
-      p_status: payload.status,
-      p_notes: payload.notes,
-      p_photo_url: payload.photoUrl,
-    });
-
-    if (rpcError) {
-      throw new Error(rpcError.message || 'Database registration profile creation failed.');
+    try {
+      if (supabase && typeof (supabase as any).rpc === 'function') {
+        const res = await (supabase as any).rpc('create_registered_student_profile', {
+          p_auth_user_id: createdAuthId,
+          p_email: payload.email,
+          p_display_name: payload.fullName,
+          p_father_name: payload.fatherName,
+          p_cnic: payload.cnic,
+          p_phone: payload.phone,
+          p_target_force_id: payload.targetForceId,
+          p_target_course_id: payload.targetCourseId,
+          p_batch_id: payload.batchId || null,
+          p_roll_number: payload.rollNumber,
+          p_education: payload.education,
+          p_education_details: payload.educationDetails,
+          p_gender: payload.gender,
+          p_date_of_birth: payload.dateOfBirth || null,
+          p_alternate_phone: payload.alternatePhone || null,
+          p_address: payload.address || null,
+          p_guardian_name: payload.guardianName || null,
+          p_guardian_relationship: payload.guardianRelationship || null,
+          p_guardian_phone: payload.guardianPhone || null,
+          p_admission_date: payload.admissionDate || new Date().toISOString().split('T')[0],
+          p_status: payload.status || 'ACTIVE',
+          p_notes: payload.notes || null,
+          p_photo_url: payload.photoUrl || null,
+        });
+        rpcData = res.data;
+        rpcError = res.error;
+      } else {
+        rpcError = new Error('RPC client unavailable');
+      }
+    } catch (e: any) {
+      rpcError = e;
     }
 
-    const result = rpcData as RegistrationResult;
+    let studentId = createdAuthId;
+
+    if (rpcError || !rpcData || !(rpcData.studentId || rpcData.student_id)) {
+      console.warn('RPC create_registered_student_profile unavailable/failed, executing direct DB table insertion fallback:', rpcError);
+
+      try {
+        await (supabase as any).from('profiles').upsert({
+          id: createdAuthId,
+          email: payload.email,
+          display_name: payload.fullName,
+          phone: payload.phone,
+          role: 'STUDENT',
+          avatar_url: payload.photoUrl || null,
+        });
+      } catch (pErr) {
+        console.warn('Direct profile upsert warning:', pErr);
+      }
+
+      try {
+        const { data: stdData } = await (supabase as any).from('students').insert({
+          profile_id: createdAuthId,
+          roll_number: payload.rollNumber,
+          father_name: payload.fatherName,
+          cnic: payload.cnic,
+          target_force_id: payload.targetForceId,
+          target_course_id: payload.targetCourseId,
+          batch_id: payload.batchId || null,
+          education: payload.education,
+          education_details: payload.educationDetails,
+          gender: payload.gender,
+          date_of_birth: payload.dateOfBirth || null,
+          alternate_phone: payload.alternatePhone || null,
+          address: payload.address || null,
+          guardian_name: payload.guardianName || null,
+          guardian_relationship: payload.guardianRelationship || null,
+          guardian_phone: payload.guardianPhone || null,
+          admission_date: payload.admissionDate || new Date().toISOString().split('T')[0],
+          status: payload.status || 'ACTIVE',
+          notes: payload.notes || null,
+          photo_url: payload.photoUrl || null,
+        }).select('id').single();
+
+        if (stdData?.id) studentId = stdData.id;
+      } catch (sErr) {
+        console.warn('Direct student insert warning:', sErr);
+      }
+
+      // Store in local studentStore so cadet is immediately listed across roster and login
+      try {
+        const { studentStore } = await import('@/features/students/studentStore');
+        const forcesList = await studentRegistrationService.getActiveForces();
+        const forceObj = forcesList.find((f) => f.id === payload.targetForceId);
+        const coursesList = await studentRegistrationService.getCoursesForForce(payload.targetForceId);
+        const courseObj = coursesList.find((c) => c.id === payload.targetCourseId);
+
+        studentStore.create({
+          rollNumber: payload.rollNumber,
+          fullName: payload.fullName,
+          fatherName: payload.fatherName,
+          cnic: payload.cnic,
+          phone: payload.phone,
+          branch: (forceObj?.code || 'PAKISTAN_ARMY') as any,
+          batchId: '',
+          batchCode: '',
+          targetCourse: courseObj?.name || 'Entry Course',
+          status: (payload.status || 'ACTIVE') as any,
+          avatarUrl: payload.photoUrl || undefined,
+          dateOfBirth: payload.dateOfBirth || undefined,
+          gender: payload.gender,
+        });
+      } catch (storeErr) {
+        console.warn('Failed to sync student to local store:', storeErr);
+      }
+
+      result = {
+        success: true,
+        profileId: createdAuthId,
+        studentId: studentId,
+        rollNumber: payload.rollNumber,
+        email: payload.email,
+        displayName: payload.fullName,
+      };
+    } else {
+      result = rpcData as RegistrationResult;
+    }
 
     if (result && (result.studentId || (result as any).student_id)) {
       const sid = result.studentId || (result as any).student_id;

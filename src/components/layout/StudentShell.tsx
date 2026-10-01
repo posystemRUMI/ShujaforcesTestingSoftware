@@ -103,7 +103,7 @@ export const StudentShell: React.FC = () => {
 
           <div className="text-right hidden sm:flex flex-col justify-center min-w-[110px] lg:min-w-[130px] border-l border-[#1C2E42] pl-3.5 pr-1">
             <p className="text-[13px] font-semibold text-white leading-tight truncate">{user?.name || 'Cadet User'}</p>
-            <p className="text-xs text-[#C6A75E] font-mono font-semibold leading-tight mt-0.5">{user?.rollNumber || 'PMA-2601'}</p>
+            <p className="text-xs text-[#C6A75E] font-mono font-semibold leading-tight mt-0.5">{user?.rollNumber || 'SFA-CADET'}</p>
           </div>
 
           <button

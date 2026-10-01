@@ -45,12 +45,14 @@ export const studentService = {
       `)
       .order('created_at', { ascending: false });
 
-    if (error || !data) {
+    const localStudents = studentStore.getAll();
+
+    if (error || !data || data.length === 0) {
       if (error) console.warn('Error fetching students from database:', error);
-      return [];
+      return localStudents;
     }
 
-    return data.map((s: any) => {
+    const dbStudents = data.map((s: any) => {
       const profile = (Array.isArray(s.profiles) ? s.profiles[0] : s.profiles) as any;
       const force = (Array.isArray(s.forces) ? s.forces[0] : s.forces) as any;
       const course = (Array.isArray(s.courses) ? s.courses[0] : s.courses) as any;
@@ -90,6 +92,15 @@ export const studentService = {
         email: profile?.email,
       };
     });
+
+    const dbIds = new Set(dbStudents.map((s: any) => s.id));
+    const dbRolls = new Set(dbStudents.map((s: any) => s.rollNumber.toUpperCase()));
+
+    const extraLocals = localStudents.filter(
+      (ls) => !dbIds.has(ls.id) && !dbRolls.has(ls.rollNumber.toUpperCase())
+    );
+
+    return [...dbStudents, ...extraLocals];
   },
 
   async createStudent(payload: {

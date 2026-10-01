@@ -104,6 +104,7 @@ export const StudentRegistrationPage: React.FC = () => {
     register,
     handleSubmit,
     setValue,
+    getValues,
     watch,
     reset,
     formState: { errors, isSubmitting },
@@ -252,9 +253,13 @@ export const StudentRegistrationPage: React.FC = () => {
     }
 
     setValue('rollNumber', newRoll, { shouldValidate: true });
-    setValue('email', newEmail, { shouldValidate: true });
     setRollAvailable(true);
-    setEmailAvailable(true);
+
+    const existingEmail = getValues('email');
+    if (!existingEmail || existingEmail.trim() === '') {
+      setValue('email', newEmail, { shouldValidate: true });
+      setEmailAvailable(true);
+    }
   };
 
   // Generate Strong Password
@@ -710,7 +715,7 @@ export const StudentRegistrationPage: React.FC = () => {
                 <input
                   type="number"
                   min="0"
-                  {...register('courseFeeAmount')}
+                  {...register('courseFeeAmount', { valueAsNumber: true })}
                   placeholder="25000"
                   className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded font-mono font-bold text-slate-900 focus:outline-none focus:border-slate-900"
                 />
@@ -726,7 +731,7 @@ export const StudentRegistrationPage: React.FC = () => {
                 <input
                   type="number"
                   min="0"
-                  {...register('initialPaymentAmount')}
+                  {...register('initialPaymentAmount', { valueAsNumber: true })}
                   placeholder="e.g. 25000 for Paid, 10000 for Partial"
                   className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded font-mono font-bold text-emerald-700 focus:outline-none focus:border-slate-900"
                 />
