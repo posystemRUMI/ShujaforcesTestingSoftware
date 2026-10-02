@@ -1,6 +1,68 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 import { Question } from '@/types';
 
+const UUID_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+
+async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<string | null> {
+  if (!subjectIdOrCode) return null;
+  if (UUID_REGEX.test(subjectIdOrCode)) {
+    return subjectIdOrCode;
+  }
+
+  if (!isSupabaseConfigured()) return null;
+
+  try {
+    // 1. Try exact code match
+    const { data: codeMatch } = await (supabase as any)
+      .from('subjects')
+      .select('id')
+      .eq('code', subjectIdOrCode)
+      .maybeSingle();
+
+    if (codeMatch?.id) return codeMatch.id;
+
+    // 2. Search by key terms
+    const searchTerms: string[] = [];
+    if (subjectIdOrCode.includes('NON_VERBAL') || subjectIdOrCode.includes('NON-VERBAL')) {
+      searchTerms.push('Non-Verbal', 'INTELLIGENCE_NON_VERBAL');
+    } else if (subjectIdOrCode.includes('VERBAL')) {
+      searchTerms.push('Verbal', 'INTELLIGENCE_VERBAL');
+    } else if (subjectIdOrCode.includes('PHYSICS')) {
+      searchTerms.push('Physics', 'PHYSICS');
+    } else if (subjectIdOrCode.includes('MATH')) {
+      searchTerms.push('Mathematics', 'Math', 'MATHEMATICS');
+    } else if (subjectIdOrCode.includes('ENGLISH')) {
+      searchTerms.push('English', 'ENGLISH');
+    } else if (subjectIdOrCode.includes('ACADEMIC')) {
+      searchTerms.push('Academic', 'ACADEMIC');
+    }
+
+    for (const term of searchTerms) {
+      const { data: termMatch } = await (supabase as any)
+        .from('subjects')
+        .select('id')
+        .or(`code.ilike.%${term}%,name.ilike.%${term}%`)
+        .limit(1)
+        .maybeSingle();
+
+      if (termMatch?.id) return termMatch.id;
+    }
+
+    // 3. Fallback to first available subject
+    const { data: firstSubject } = await (supabase as any)
+      .from('subjects')
+      .select('id')
+      .limit(1)
+      .maybeSingle();
+
+    if (firstSubject?.id) return firstSubject.id;
+  } catch (err) {
+    console.warn('Failed to resolve subject UUID for:', subjectIdOrCode, err);
+  }
+
+  return null;
+}
+
 export const questionService = {
   async getQuestions(): Promise<Question[]> {
     if (!isSupabaseConfigured()) {
@@ -91,12 +153,15 @@ export const questionService = {
       return payload.id || 'mock-qid';
     }
 
+    // Resolve subjectId to a valid UUID if a code like "INTELLIGENCE_VERBAL" was passed
+    const resolvedSubjectUuid = await resolveSubjectUuid(payload.subjectId);
+
     // 1. Try RPC call with explicit null for optional parameters
     try {
       const { data, error } = await (supabase as any).rpc('admin_upsert_question', {
         p_id: payload.id ?? null,
         p_code: payload.code,
-        p_subject_id: payload.subjectId,
+        p_subject_id: resolvedSubjectUuid,
         p_difficulty: payload.difficulty,
         p_stem: payload.stem,
         p_stem_image_url: payload.stemImageUrl ?? null,
@@ -125,7 +190,7 @@ export const questionService = {
         .from('questions')
         .insert({
           code: payload.code,
-          subject_id: payload.subjectId,
+          subject_id: resolvedSubjectUuid,
           difficulty: payload.difficulty,
           stem: payload.stem,
           stem_image_url: payload.stemImageUrl ?? null,
@@ -144,7 +209,7 @@ export const questionService = {
         .from('questions')
         .update({
           code: payload.code,
-          subject_id: payload.subjectId,
+          subject_id: resolvedSubjectUuid,
           difficulty: payload.difficulty,
           stem: payload.stem,
           stem_image_url: payload.stemImageUrl ?? null,

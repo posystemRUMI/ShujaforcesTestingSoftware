@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { questionService } from '@/services/questionService';
-import { SubjectCategory, MilitaryBranch, QuestionApprovalStatus, DifficultyLevel } from '@/types';
+import { configurationService } from '@/services/configurationService';
+import { MilitaryBranch, QuestionApprovalStatus, DifficultyLevel } from '@/types';
 import { Save, Eye, ArrowLeft, Image as ImageIcon, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -13,7 +14,8 @@ export const QuestionAuthorPage: React.FC = () => {
   // Form state
   const [code, setCode] = useState(`Q-${Math.floor(1000 + Math.random() * 9000)}`);
   const [stem, setStem] = useState('');
-  const [subject, setSubject] = useState<SubjectCategory>('INTELLIGENCE_VERBAL');
+  const [subject, setSubject] = useState<string>('INTELLIGENCE_VERBAL');
+  const [dbSubjects, setDbSubjects] = useState<Array<{ id: string; code: string; name: string }>>([]);
   const [branch, setBranch] = useState<MilitaryBranch | 'TRI_SERVICE'>('TRI_SERVICE');
   const [difficulty, setDifficulty] = useState<DifficultyLevel>('MEDIUM');
   const [timeLimitSeconds, setTimeLimitSeconds] = useState<number>(45);
@@ -30,6 +32,26 @@ export const QuestionAuthorPage: React.FC = () => {
   ]);
   const [correctOptionId, setCorrectOptionId] = useState<string>('opt-a');
 
+  // Load available subjects from DB
+  useEffect(() => {
+    let isMounted = true;
+    async function loadSubjects() {
+      try {
+        const subs = await configurationService.getSubjects();
+        if (isMounted && subs && subs.length > 0) {
+          setDbSubjects(subs);
+          if (!editId) {
+            setSubject(subs[0].id);
+          }
+        }
+      } catch (err) {
+        console.warn('Failed to load DB subjects:', err);
+      }
+    }
+    loadSubjects();
+    return () => { isMounted = false; };
+  }, [editId]);
+
   // Load question for edit if editId provided
   useEffect(() => {
     if (editId) {
@@ -40,7 +62,7 @@ export const QuestionAuthorPage: React.FC = () => {
           if (q) {
             setCode(q.code);
             setStem(q.stem);
-            setSubject(q.subject);
+            setSubject(q.subject_id || q.subject || 'INTELLIGENCE_VERBAL');
             setBranch(q.branch);
             setDifficulty(q.difficulty);
             setTimeLimitSeconds(q.timeLimitSeconds);
@@ -185,14 +207,24 @@ export const QuestionAuthorPage: React.FC = () => {
               <label className="block font-semibold text-[#0E1B2A] mb-1 uppercase">Subject Category</label>
               <select
                 value={subject}
-                onChange={(e) => setSubject(e.target.value as SubjectCategory)}
+                onChange={(e) => setSubject(e.target.value)}
                 className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-bold focus:outline-none"
               >
-                <option value="INTELLIGENCE_VERBAL">Intelligence (Verbal)</option>
-                <option value="INTELLIGENCE_NON_VERBAL">Intelligence (Non-Verbal)</option>
-                <option value="ACADEMIC_PHYSICS">Academic Physics</option>
-                <option value="ACADEMIC_MATH">Academic Mathematics</option>
-                <option value="ACADEMIC_ENGLISH">Academic English</option>
+                {dbSubjects.length > 0 ? (
+                  dbSubjects.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.name} ({s.code})
+                    </option>
+                  ))
+                ) : (
+                  <>
+                    <option value="INTELLIGENCE_VERBAL">Intelligence (Verbal)</option>
+                    <option value="INTELLIGENCE_NON_VERBAL">Intelligence (Non-Verbal)</option>
+                    <option value="ACADEMIC_PHYSICS">Academic Physics</option>
+                    <option value="ACADEMIC_MATH">Academic Mathematics</option>
+                    <option value="ACADEMIC_ENGLISH">Academic English</option>
+                  </>
+                )}
               </select>
             </div>
             <div>
