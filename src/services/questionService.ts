@@ -3,37 +3,40 @@ import { Question } from '@/types';
 
 const UUID_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
 
-async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<string | null> {
-  if (!subjectIdOrCode) return null;
-  if (UUID_REGEX.test(subjectIdOrCode)) {
-    return subjectIdOrCode;
+async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<string> {
+  const fallbackCode = subjectIdOrCode || 'INTELLIGENCE_VERBAL';
+
+  if (UUID_REGEX.test(fallbackCode)) {
+    return fallbackCode;
   }
 
-  if (!isSupabaseConfigured()) return null;
+  if (!isSupabaseConfigured()) {
+    return '00000000-0000-0000-0000-000000000001';
+  }
 
   try {
     // 1. Try exact code match
     const { data: codeMatch } = await (supabase as any)
       .from('subjects')
       .select('id')
-      .eq('code', subjectIdOrCode)
+      .eq('code', fallbackCode)
       .maybeSingle();
 
     if (codeMatch?.id) return codeMatch.id;
 
     // 2. Search by key terms
     const searchTerms: string[] = [];
-    if (subjectIdOrCode.includes('NON_VERBAL') || subjectIdOrCode.includes('NON-VERBAL')) {
+    if (fallbackCode.includes('NON_VERBAL') || fallbackCode.includes('NON-VERBAL')) {
       searchTerms.push('Non-Verbal', 'INTELLIGENCE_NON_VERBAL');
-    } else if (subjectIdOrCode.includes('VERBAL')) {
+    } else if (fallbackCode.includes('VERBAL')) {
       searchTerms.push('Verbal', 'INTELLIGENCE_VERBAL');
-    } else if (subjectIdOrCode.includes('PHYSICS')) {
+    } else if (fallbackCode.includes('PHYSICS')) {
       searchTerms.push('Physics', 'PHYSICS');
-    } else if (subjectIdOrCode.includes('MATH')) {
+    } else if (fallbackCode.includes('MATH')) {
       searchTerms.push('Mathematics', 'Math', 'MATHEMATICS');
-    } else if (subjectIdOrCode.includes('ENGLISH')) {
+    } else if (fallbackCode.includes('ENGLISH')) {
       searchTerms.push('English', 'ENGLISH');
-    } else if (subjectIdOrCode.includes('ACADEMIC')) {
+    } else if (fallbackCode.includes('ACADEMIC')) {
       searchTerms.push('Academic', 'ACADEMIC');
     }
 
@@ -56,11 +59,37 @@ async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<stri
       .maybeSingle();
 
     if (firstSubject?.id) return firstSubject.id;
+
+    // 4. Auto-create subject in subjects table if missing
+    const cleanCode = fallbackCode.toUpperCase();
+    const cleanName = cleanCode
+      .replace(/_/g, ' ')
+      .toLowerCase()
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+    const category = cleanCode.includes('INTELLIGENCE')
+      ? 'INTELLIGENCE'
+      : cleanCode.includes('ACADEMIC') || cleanCode.includes('PHYSICS') || cleanCode.includes('MATH') || cleanCode.includes('ENGLISH')
+      ? 'ACADEMIC'
+      : 'GENERAL';
+
+    const { data: created, error: createErr } = await (supabase as any)
+      .from('subjects')
+      .insert({
+        code: cleanCode,
+        name: cleanName,
+        category: category,
+        description: `${cleanName} assessment subject`,
+      })
+      .select('id')
+      .single();
+
+    if (created?.id) return created.id;
+    if (createErr) console.warn('Failed to auto-create subject in DB:', createErr.message);
   } catch (err) {
-    console.warn('Failed to resolve subject UUID for:', subjectIdOrCode, err);
+    console.warn('Failed to resolve subject UUID for:', fallbackCode, err);
   }
 
-  return null;
+  return '00000000-0000-0000-0000-000000000001';
 }
 
 export const questionService = {
