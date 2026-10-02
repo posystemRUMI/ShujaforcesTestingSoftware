@@ -439,20 +439,30 @@ export const studentRegistrationService = {
 
       if (!signUpError && signUpData?.user?.id) {
         createdAuthId = signUpData.user.id;
+        // Sign in tempAnon to get active authenticated session token for newly created user
+        try {
+          await tempAnon.auth.signInWithPassword({
+            email: payload.email,
+            password: payload.password,
+          });
+        } catch {}
       } else if (signUpError) {
-        console.warn('Supabase Auth signup warning (proceeding with local registration):', signUpError.message);
+        console.warn('Supabase Auth signup warning (proceeding with registration):', signUpError.message);
       }
     } catch (authErr: any) {
-      console.warn('Supabase Auth exception (proceeding with local registration):', authErr?.message);
+      console.warn('Supabase Auth exception (proceeding with registration):', authErr?.message);
     }
     let result: RegistrationResult;
 
     let rpcData: any = null;
     let rpcError: any = null;
 
+    // Determine active client (prefer logged-in app client or authenticated tempAnon)
+    const activeClient = (supabase && (supabase as any).auth && (supabase as any).auth.getUser) ? supabase : tempAnon;
+
     try {
-      if (supabase && typeof (supabase as any).rpc === 'function') {
-        const res = await (supabase as any).rpc('create_registered_student_profile', {
+      if (activeClient && typeof (activeClient as any).rpc === 'function') {
+        const res = await (activeClient as any).rpc('create_registered_student_profile', {
           p_auth_user_id: createdAuthId,
           p_email: payload.email,
           p_display_name: payload.fullName,
@@ -488,11 +498,31 @@ export const studentRegistrationService = {
 
     let studentId = createdAuthId;
 
-    if (rpcError || !rpcData || !(rpcData.studentId || rpcData.student_id)) {
-      console.warn('RPC create_registered_student_profile unavailable/failed, executing direct DB table insertion fallback:', rpcError);
-
+    // 1. Primary Attempt: Call admin_create_student RPC (SECURITY DEFINER)
+    if (!rpcData || !(rpcData.studentId || rpcData.student_id)) {
       try {
-        await (supabase as any).from('profiles').upsert({
+        const { data: rpcStudentId, error: rpcErr } = await (activeClient as any).rpc('admin_create_student', {
+          p_user_id: createdAuthId,
+          p_roll_number: payload.rollNumber,
+          p_father_name: payload.fatherName,
+          p_cnic: payload.cnic,
+          p_date_of_birth: payload.dateOfBirth || null,
+          p_target_force_id: targetForceUuid,
+          p_target_course_id: targetCourseUuid,
+          p_batch_id: safeBatchId,
+        });
+
+        if (!rpcErr && rpcStudentId) {
+          studentId = rpcStudentId;
+          rpcData = { studentId: rpcStudentId };
+        }
+      } catch {}
+    }
+
+    // 2. Direct DB Table Insertion Fallback if RPCs were unavailable
+    if (!rpcData || !(rpcData.studentId || rpcData.student_id)) {
+      try {
+        await (activeClient as any).from('profiles').upsert({
           id: createdAuthId,
           email: payload.email,
           display_name: payload.fullName,
@@ -505,14 +535,13 @@ export const studentRegistrationService = {
       }
 
       try {
-        const { data: stdData, error: stdErr } = await (supabase as any).from('students').insert({
+        const { data: stdData, error: stdErr } = await (activeClient as any).from('students').insert({
           profile_id: createdAuthId,
           roll_number: payload.rollNumber,
           father_name: payload.fatherName,
           cnic: payload.cnic,
           target_force_id: targetForceUuid,
           target_course_id: targetCourseUuid,
-          batch_id: safeBatchId,
           education: payload.education,
           education_details: payload.educationDetails,
           gender: payload.gender,
