@@ -1,5 +1,5 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
-import { UserProfile, UserRole } from '@/types';
+import { UserProfile, UserRole, MilitaryBranch } from '@/types';
 
 function withTimeout<T = any>(promise: Promise<T>, timeoutMs: number = 4000): Promise<any> {
   return Promise.race([
@@ -182,20 +182,28 @@ export const authService = {
 
       let cadetId: string | undefined;
       let rollNumber: string | undefined;
-      let branch: any = 'PAKISTAN_ARMY';
+      let forceId: string | undefined;
+      let forceName: string | undefined;
+      let courseId: string | undefined;
+      let courseName: string | undefined;
+      let branch: MilitaryBranch | undefined = 'PAKISTAN_ARMY';
       let rankTitle: string | undefined;
 
       if (profile.role === 'STUDENT') {
         const { data: std } = await (supabase as any)
           .from('students')
-          .select('id, roll_number, forces(code)')
+          .select('id, roll_number, forces(id, code, name), courses(id, code, name)')
           .eq('profile_id', profile.id)
           .maybeSingle();
 
         if (std) {
           cadetId = std.id;
           rollNumber = std.roll_number;
-          branch = (std.forces as any)?.code || 'PAKISTAN_ARMY';
+          branch = ((std.forces as any)?.code || 'PAKISTAN_ARMY') as MilitaryBranch;
+          forceId = (std.forces as any)?.id || (std.forces as any)?.code;
+          forceName = (std.forces as any)?.name || 'Pakistan Air Force';
+          courseId = (std.courses as any)?.id || (std.courses as any)?.code;
+          courseName = (std.courses as any)?.name || 'Airman';
         }
       } else if (profile.role === 'TEACHER') {
         const { data: tch } = await (supabase as any)
@@ -206,7 +214,7 @@ export const authService = {
 
         if (tch) {
           rankTitle = tch.rank;
-          branch = tch.branch_code || 'TRI_SERVICE';
+          branch = (tch.branch_code || 'TRI_SERVICE') as MilitaryBranch;
         }
       }
 
@@ -218,6 +226,11 @@ export const authService = {
         cadetId,
         rollNumber,
         branch,
+        forceId,
+        forceName,
+        courseId,
+        courseName,
+        courseTarget: courseName,
         rankTitle,
         avatarUrl: profile.avatar_url || undefined,
       };

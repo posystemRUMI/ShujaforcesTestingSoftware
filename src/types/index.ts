@@ -10,6 +10,11 @@ export interface UserProfile {
   cadetId?: string;
   rollNumber?: string;
   branch?: MilitaryBranch;
+  forceId?: string;
+  forceName?: string;
+  courseId?: string;
+  courseName?: string;
+  courseTarget?: string;
   rankTitle?: string;
   avatarUrl?: string;
 }

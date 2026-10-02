@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/app/providers';
-import { BookOpen, CheckCircle, Clock, ArrowRight, AlertCircle, RefreshCw, BarChart2, Shield, Trophy, Receipt } from 'lucide-react';
+import { BookOpen, CheckCircle, ArrowRight, AlertCircle, RefreshCw, BarChart2, Shield, Trophy, Receipt } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { testService, TestRecord } from '@/services/testService';
 import { resultService, ResultRecord } from '@/services/resultService';
@@ -8,6 +8,13 @@ import { leaderboardService, StudentRankSummary } from '@/services/leaderboardSe
 import { financeService } from '@/services/financeService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { TestBlueprint, ExamResult } from '@/types';
+import {
+  getOfficialTestsForCourse,
+  normalizeCourseCode,
+  normalizeForceCode,
+  OFFICIAL_FORCES,
+  OFFICIAL_COURSES,
+} from '@/config/officialTestPatterns';
 
 export const StudentDashboardPage: React.FC = () => {
   const { user } = useAuth();
@@ -132,8 +139,14 @@ export const StudentDashboardPage: React.FC = () => {
     );
   }
 
-  const activeTest = tests[0];
-  const activeTestResult = activeTest ? results.find((r) => r.testId === activeTest.id) : undefined;
+  const forceCode = normalizeForceCode(user?.forceName || user?.branch);
+  const courseCode = normalizeCourseCode(user?.courseName || user?.courseTarget);
+
+  const matchedForce = OFFICIAL_FORCES.find((f) => f.code === forceCode) || OFFICIAL_FORCES[0];
+  const matchedCourse = OFFICIAL_COURSES.find((c) => c.code === courseCode) || OFFICIAL_COURSES[0];
+
+  const officialPattern = getOfficialTestsForCourse(courseCode);
+
   const passedCount = results.filter((r) => r.passed).length;
   const avgScore = results.length
     ? Math.round(results.reduce((acc, r) => acc + r.percentage, 0) / results.length)
@@ -148,38 +161,23 @@ export const StudentDashboardPage: React.FC = () => {
             <Shield className="w-9 h-9" />
           </div>
           <div>
-            <div className="inline-flex items-center space-x-2">
+            <div className="inline-flex items-center space-x-2 mb-1">
               <span className="text-[11px] font-sans font-bold text-[#234E35] bg-[#EDF6F0] px-2 py-0.5 rounded border border-[#88BE9B] uppercase tracking-wider">
                 ACTIVE CADET DOCKET
               </span>
-              <span className="text-[11px] font-sans font-semibold text-[#64748B] uppercase">{user?.branch || 'PAKISTAN ARMY'}</span>
+              <span className="text-[11px] font-sans font-bold text-[#0E1B2A] uppercase tracking-wider bg-[#F1F5F9] px-2 py-0.5 rounded border border-[#CBD5E1]">
+                FORCE: {matchedForce.name}
+              </span>
+              <span className="text-[11px] font-sans font-bold text-[#854D0E] bg-[#FEFCE8] px-2 py-0.5 rounded border border-[#FEF08A] uppercase tracking-wider">
+                COURSE: {matchedCourse.name}
+              </span>
             </div>
-            <h1 className="text-2xl font-bold text-[#0E1B2A] mt-1">{user?.name || 'Cadet'}</h1>
+            <h1 className="text-2xl font-bold text-[#0E1B2A]">Welcome, {user?.name || 'Cadet'}</h1>
             <p className="text-xs text-[#64748B] font-sans mt-0.5">
-              ROLL NO: <span className="font-mono font-bold text-[#0E1B2A]">{user?.rollNumber || 'PMA-2601'}</span> | SQUADRON: 154 PMA LONG COURSE ALPHA
+              ROLL NO: <span className="font-mono font-bold text-[#0E1B2A]">{user?.rollNumber || 'SFA-CADET'}</span> | ENROLLED: <span className="font-bold text-[#0E1B2A]">{matchedCourse.name}</span> ({matchedForce.name})
             </p>
           </div>
         </div>
-
-        {activeTest && (
-          activeTestResult ? (
-            <Link
-              to={`/student/result/${activeTestResult.id}`}
-              className="w-full md:w-auto inline-flex items-center justify-center space-x-2 bg-[#234E35] text-white px-5 py-3 rounded-md text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E] transition-colors shadow-sm"
-            >
-              <span>Review Examination Result</span>
-              <ArrowRight className="w-4 h-4 text-[#C6A75E]" />
-            </Link>
-          ) : (
-            <Link
-              to={`/student/test/${activeTest.id}/familiarization`}
-              className="w-full md:w-auto inline-flex items-center justify-center space-x-2 bg-[#0E1B2A] text-white px-5 py-3 rounded-md text-xs font-bold uppercase tracking-wider hover:bg-[#1C2E42] transition-colors shadow-sm"
-            >
-              <span>Launch Computerized Test</span>
-              <ArrowRight className="w-4 h-4 text-[#C6A75E]" />
-            </Link>
-          )
-        )}
       </div>
 
       {/* Primary KPI Metrics */}
@@ -329,80 +327,99 @@ export const StudentDashboardPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Active Screening Test Banner */}
-      {activeTest && (
-        <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-4">
-          <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3">
-            <div>
-              <span className={`text-[10px] font-sans font-bold uppercase tracking-wider ${activeTestResult ? 'text-[#234E35]' : 'text-[#C6A75E]'}`}>
-                {activeTestResult ? 'OFFICIAL EXAMINATION ATTEMPT RECORDED' : 'IMMEDIATE ACTION REQUIRED'}
-              </span>
-              <h2 className="text-lg font-bold text-[#0E1B2A]">{activeTest.title}</h2>
-            </div>
-            {activeTestResult ? (
-              activeTestResult.passed ? (
-                <span className="inline-flex items-center gap-1 text-xs font-sans font-bold px-2.5 py-1 rounded bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] uppercase tracking-wider">
-                  <CheckCircle className="w-3.5 h-3.5" /> QUALIFIED • {activeTestResult.percentage}%
-                </span>
-              ) : (
-                <span className="inline-flex items-center gap-1 text-xs font-sans font-bold px-2.5 py-1 rounded bg-[#FDF2F2] text-[#782525] border border-[#E29A9A] uppercase tracking-wider">
-                  <AlertCircle className="w-3.5 h-3.5" /> UNQUALIFIED • {activeTestResult.percentage}%
-                </span>
-              )
-            ) : (
-              <span className="text-xs font-sans font-semibold px-2.5 py-1 rounded bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] uppercase tracking-wider">
-                READY FOR EXAMINATION
-              </span>
-            )}
+      {/* Official Tests Sequence Section */}
+      <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-4">
+        <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3">
+          <div>
+            <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
+              MANDATORY TEST SEQUENCE
+            </span>
+            <h2 className="text-lg font-bold text-[#0E1B2A]">
+              {matchedForce.name.toUpperCase()} — {matchedCourse.name.toUpperCase()} TESTS
+            </h2>
           </div>
-
-          <p className="text-xs text-[#64748B] leading-relaxed">
-            Official Computerized Entrance & Screening Examination containing Verbal Intelligence, Non-Verbal Logic, and Academic evaluation sections.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#F6F8FA] p-3 rounded border border-[#E2E6EB] text-xs font-sans">
-            <div>
-              <span className="text-[#64748B] block text-[10px] uppercase">Duration</span>
-              <span className="font-semibold text-[#0E1B2A] flex items-center gap-1 mt-0.5 tabular-nums">
-                <Clock className="w-3.5 h-3.5 text-[#64748B]" />
-                {activeTest.durationMinutes} Minutes
-              </span>
-            </div>
-            <div>
-              <span className="text-[#64748B] block text-[10px] uppercase">Total Questions</span>
-              <span className="font-semibold text-[#0E1B2A] mt-0.5 block tabular-nums">{activeTest.totalQuestions} Items</span>
-            </div>
-            <div>
-              <span className="text-[#64748B] block text-[10px] uppercase">Passing Threshold</span>
-              <span className="font-semibold text-[#234E35] mt-0.5 block tabular-nums">{activeTest.passingScorePercent}% Minimum</span>
-            </div>
-            <div>
-              <span className="text-[#64748B] block text-[10px] uppercase">Target Course</span>
-              <span className="font-semibold text-[#0E1B2A] mt-0.5 block">{activeTest.courseTarget}</span>
-            </div>
-          </div>
-
-          <div className="flex justify-end pt-2 space-x-3">
-            {activeTestResult ? (
-              <Link
-                to={`/student/result/${activeTestResult.id}`}
-                className="inline-flex items-center space-x-2 bg-[#234E35] text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E] transition-colors"
-              >
-                <span>Review Answer Key & Result</span>
-                <ArrowRight className="w-4 h-4 text-[#C6A75E]" />
-              </Link>
-            ) : (
-              <Link
-                to={`/student/test/${activeTest.id}/familiarization`}
-                className="inline-flex items-center space-x-2 bg-[#0E1B2A] text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1C2E42] transition-colors"
-              >
-                <span>Start Orientation & Examination</span>
-                <ArrowRight className="w-4 h-4 text-[#C6A75E]" />
-              </Link>
-            )}
-          </div>
+          <span className="text-xs font-sans font-semibold px-3 py-1 rounded bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] uppercase tracking-wider">
+            {officialPattern.length} Official Sequence Batteries
+          </span>
         </div>
-      )}
+
+        <div className="grid grid-cols-1 gap-4">
+          {officialPattern.map((pConfig) => {
+            const matchedDbTest = tests.find(
+              (t) =>
+                t.title.toLowerCase().includes(pConfig.testName.toLowerCase()) ||
+                t.code.toLowerCase().includes(pConfig.code.toLowerCase())
+            ) || tests[0];
+
+            const dbTestId = matchedDbTest?.id || `test-${pConfig.code}`;
+            const testResult = results.find((r) => r.testId === matchedDbTest?.id);
+
+            return (
+              <div
+                key={pConfig.code}
+                className="bg-[#F8FAFC] border border-[#E2E6EB] rounded-md p-4 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+              >
+                <div className="flex items-start space-x-3.5">
+                  <div className="w-10 h-10 rounded bg-[#0E1B2A] text-[#C6A75E] flex items-center justify-center font-bold text-sm shrink-0 border border-[#C6A75E]">
+                    #{pConfig.sequence}
+                  </div>
+                  <div>
+                    <div className="flex items-center space-x-2">
+                      <h3 className="text-base font-bold text-[#0E1B2A]">{pConfig.testName}</h3>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-white text-[#64748B] border border-[#D4D9DF] rounded">
+                        {pConfig.code}
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-4 text-xs text-[#64748B] mt-1 font-sans">
+                      <span>Questions: <strong className="text-[#0E1B2A]">{pConfig.totalQuestions}</strong></span>
+                      <span>•</span>
+                      <span>Duration: <strong className="text-[#0E1B2A]">{pConfig.durationMinutes} min</strong></span>
+                      <span>•</span>
+                      <span>Pass Mark: <strong className="text-[#234E35]">{pConfig.passingMarks} Qs ({pConfig.passingScorePercent}%)</strong></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-3 self-end sm:self-auto shrink-0">
+                  {testResult ? (
+                    testResult.passed ? (
+                      <span className="inline-flex items-center gap-1 text-xs font-sans font-bold px-3 py-1.5 rounded bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] uppercase">
+                        <CheckCircle className="w-3.5 h-3.5" /> QUALIFIED ({testResult.percentage}%)
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 text-xs font-sans font-bold px-3 py-1.5 rounded bg-[#FDF2F2] text-[#782525] border border-[#E29A9A] uppercase">
+                        <AlertCircle className="w-3.5 h-3.5" /> UNQUALIFIED ({testResult.percentage}%)
+                      </span>
+                    )
+                  ) : (
+                    <span className="text-xs font-sans font-semibold px-2.5 py-1 rounded bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] uppercase">
+                      READY
+                    </span>
+                  )}
+
+                  {testResult ? (
+                    <Link
+                      to={`/student/result/${testResult.id}`}
+                      className="inline-flex items-center space-x-1.5 bg-[#234E35] text-white px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E] transition-colors"
+                    >
+                      <span>Result</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C6A75E]" />
+                    </Link>
+                  ) : (
+                    <Link
+                      to={`/student/test/${dbTestId}/familiarization`}
+                      className="inline-flex items-center space-x-1.5 bg-[#0E1B2A] text-white px-4 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1C2E42] transition-colors"
+                    >
+                      <span>Start Test</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C6A75E]" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
       {/* Recent Exam Attempts Section */}
       <div className="bg-white border border-[#D4D9DF] rounded-md p-6 shadow-sm space-y-4">

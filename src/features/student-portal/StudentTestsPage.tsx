@@ -7,6 +7,9 @@ import { useAuth } from '@/app/providers';
 import { TestBlueprint } from '@/types';
 import { ArrowRight, Search, CheckCircle, AlertCircle, FileText, RotateCcw } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  isTestAuthorizedForStudent,
+} from '@/config/officialTestPatterns';
 
 export const StudentTestsPage: React.FC = () => {
   const { user } = useAuth();
@@ -38,12 +41,13 @@ export const StudentTestsPage: React.FC = () => {
           if (rawTests && rawTests.length > 0) {
             const mapped: TestBlueprint[] = rawTests.map((t: any) => {
               const testBranch = t.forces?.code || t.force_code || user?.branch || 'PAKISTAN_ARMY';
+              const courseTarget = t.courses?.name || t.course_name || user?.courseName || user?.courseTarget || 'PMA Long Course';
               return {
                 id: t.id,
                 code: t.name.slice(0, 8),
                 title: t.name,
                 branch: testBranch,
-                courseTarget: 'Commissioning Course',
+                courseTarget: courseTarget,
                 totalQuestions: t.total_marks || 100,
                 durationMinutes: t.duration_minutes || 65,
                 passingScorePercent: t.passing_threshold || 60,
@@ -80,7 +84,8 @@ export const StudentTestsPage: React.FC = () => {
   const filteredTests = tests.filter((t) => {
     const matchesSearch = t.title.toLowerCase().includes(searchTerm.toLowerCase()) || t.code.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesBranch = branchFilter === 'ALL' || t.branch === branchFilter || t.branch === 'TRI_SERVICE';
-    return matchesSearch && matchesBranch;
+    const isAuthorized = isTestAuthorizedForStudent(user?.courseName || user?.courseTarget, t.courseTarget || t.title);
+    return matchesSearch && matchesBranch && isAuthorized;
   });
 
   return (

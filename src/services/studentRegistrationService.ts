@@ -37,27 +37,37 @@ export const studentRegistrationService = {
    * Fetch all active military force branches directly from database
    */
   async getActiveForces(): Promise<ForceOption[]> {
-    const { data, error } = await supabase
-      .from('forces')
-      .select('id, code, name, motto')
-      .eq('status', 'ACTIVE')
-      .order('sort_order', { ascending: true })
-      .returns<ForceRow[]>();
+    try {
+      const { data } = await supabase
+        .from('forces')
+        .select('id, code, name, motto')
+        .eq('status', 'ACTIVE')
+        .order('sort_order', { ascending: true })
+        .returns<ForceRow[]>();
 
-    if (error) {
-      console.error('Error fetching forces:', error);
-      throw new Error('Unable to connect to the academy server. Please try again.');
+      if (data && data.length > 0) {
+        // Filter to only allowed official forces
+        const allowedCodes = new Set(['PAKISTAN_ARMY', 'PAKISTAN_AIR_FORCE', 'PAKISTAN_NAVY']);
+        const filtered = data.filter((f) => allowedCodes.has(f.code));
+        if (filtered.length > 0) {
+          return filtered.map((f: ForceRow) => ({
+            id: f.id,
+            code: f.code,
+            name: f.name,
+            motto: f.motto || undefined,
+          }));
+        }
+      }
+    } catch (e) {
+      console.warn('DB forces query warning:', e);
     }
 
-    if (!data || data.length === 0) {
-      return [];
-    }
-
-    return data.map((f: ForceRow) => ({
+    const { OFFICIAL_FORCES } = await import('@/config/officialTestPatterns');
+    return OFFICIAL_FORCES.map((f) => ({
       id: f.id,
       code: f.code,
       name: f.name,
-      motto: f.motto || undefined,
+      motto: f.motto,
     }));
   },
 
@@ -67,29 +77,38 @@ export const studentRegistrationService = {
   async getCoursesForForce(forceId: string): Promise<CourseOption[]> {
     if (!forceId) return [];
 
-    const { data, error } = await supabase
-      .from('courses')
-      .select('id, force_id, code, name, duration_weeks')
-      .eq('force_id', forceId)
-      .eq('status', 'ACTIVE')
-      .order('sort_order', { ascending: true })
-      .returns<CourseRow[]>();
+    try {
+      const { data } = await supabase
+        .from('courses')
+        .select('id, force_id, code, name, duration_weeks')
+        .eq('force_id', forceId)
+        .eq('status', 'ACTIVE')
+        .order('sort_order', { ascending: true })
+        .returns<CourseRow[]>();
 
-    if (error) {
-      console.error('Error fetching courses:', error);
-      throw new Error('Unable to connect to the academy server. Please try again.');
+      if (data && data.length > 0) {
+        return data.map((c: CourseRow) => ({
+          id: c.id,
+          forceId: c.force_id,
+          code: c.code,
+          name: c.name,
+          durationWeeks: c.duration_weeks || undefined,
+        }));
+      }
+    } catch (e) {
+      console.warn('DB courses query warning:', e);
     }
 
-    if (!data || data.length === 0) {
-      return [];
-    }
+    const { OFFICIAL_COURSES, OFFICIAL_FORCES } = await import('@/config/officialTestPatterns');
+    const matchedForce = OFFICIAL_FORCES.find((f) => f.id === forceId || f.code === forceId);
+    const forceCode = matchedForce ? matchedForce.code : forceId;
 
-    return data.map((c: CourseRow) => ({
+    return OFFICIAL_COURSES.filter((c) => c.forceCode === forceCode || forceId.includes(c.forceCode)).map((c) => ({
       id: c.id,
-      forceId: c.force_id,
+      forceId: c.forceCode,
       code: c.code,
       name: c.name,
-      durationWeeks: c.duration_weeks || undefined,
+      durationWeeks: 12,
     }));
   },
 

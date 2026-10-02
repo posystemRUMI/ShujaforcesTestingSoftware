@@ -19,6 +19,7 @@ import {
   X,
   GraduationCap,
 } from 'lucide-react';
+import { normalizeCourseCode } from '@/config/officialTestPatterns';
 
 export const CoursesPage: React.FC = () => {
   const [courses, setCourses] = useState<CourseConfig[]>(() => configStore.getCourses());
@@ -77,9 +78,13 @@ export const CoursesPage: React.FC = () => {
     };
   }, []);
 
-  // Filtered courses
+  // Filtered courses (strictly only official 5 courses)
   const filteredCourses = useMemo(() => {
+    const OFFICIAL_CODES = ['PMA_LONG_COURSE', 'AFNS', 'GDP_CAE', 'AIRMAN', 'SAILOR'];
     return courses.filter((c) => {
+      const code = normalizeCourseCode(c.code || c.name);
+      if (!OFFICIAL_CODES.includes(code)) return false;
+
       const matchesSearch =
         c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         c.code.toLowerCase().includes(searchQuery.toLowerCase()) ||

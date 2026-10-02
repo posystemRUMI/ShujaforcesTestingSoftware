@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Play, Lock, Loader2, CheckCircle2, RotateCcw } from 'lucide-react';
+import { Play, Lock, Loader2, CheckCircle2, RotateCcw, ShieldAlert } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { attemptService } from '@/services/attemptService';
 import { testService, TestRecord } from '@/services/testService';
 import { familiarizationService } from '@/services/familiarizationService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { toast } from 'sonner';
+import { isTestAuthorizedForStudent } from '@/config/officialTestPatterns';
 
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -62,6 +63,41 @@ export const ExamInstructionsPage: React.FC = () => {
       }
     }
   }, [testData, testIdParam, user, searchParams, navigate]);
+
+  // 403 Forbidden Guard for Course Mismatch
+  const isAuthorized =
+    !user ||
+    user.role !== 'STUDENT' ||
+    isTestAuthorizedForStudent(user.courseName || user.courseTarget, testData?.name);
+
+  if (testData && !isAuthorized) {
+    return (
+      <div className="flex-1 flex flex-col justify-center max-w-xl mx-auto w-full py-12 select-none px-4">
+        <div className="bg-white border-2 border-[#782525] rounded p-8 shadow-md text-center space-y-4">
+          <div className="w-16 h-16 rounded-full bg-[#FDF2F2] border border-[#E29A9A] mx-auto flex items-center justify-center text-[#782525]">
+            <ShieldAlert className="w-8 h-8" />
+          </div>
+          <span className="text-[11px] font-sans font-bold text-[#782525] bg-[#FDF2F2] px-3 py-1 rounded border border-[#E29A9A] uppercase tracking-wider">
+            403 FORBIDDEN • ACCESS DENIED
+          </span>
+          <h1 className="text-xl font-bold text-[#0E1B2A]">Course Target Mismatch</h1>
+          <p className="text-xs text-[#64748B] leading-relaxed">
+            You are enrolled in <strong className="text-[#0E1B2A]">{user?.courseName || user?.courseTarget}</strong>.
+            This test (<span className="font-semibold text-[#0E1B2A]">{testData.name}</span>) is restricted to candidates of a different course pattern.
+          </p>
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => navigate('/student')}
+              className="px-5 py-2.5 bg-[#0E1B2A] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#1C2E42]"
+            >
+              Return to Cadet Dashboard
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const handleStartExam = async () => {
     if (!agreed || loading) return;
