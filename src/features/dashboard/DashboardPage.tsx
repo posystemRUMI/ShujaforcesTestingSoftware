@@ -102,9 +102,13 @@ export const DashboardPage: React.FC = () => {
       setQuestionCount(questions.length);
       setTeacherCount(teachers.length);
 
-      setArmyStudentCount(students.filter((s) => s.branch === 'PAKISTAN_ARMY').length);
-      setPafStudentCount(students.filter((s) => s.branch === 'PAKISTAN_AIR_FORCE').length);
-      setNavyStudentCount(students.filter((s) => s.branch === 'PAKISTAN_NAVY').length);
+      const isArmy = (b?: string) => Boolean(b && (b.toUpperCase().includes('ARMY') || b.toUpperCase().includes('PMA')));
+      const isPaf = (b?: string) => Boolean(b && (b.toUpperCase().includes('AIR') || b.toUpperCase().includes('PAF') || b.toUpperCase().includes('GDP')));
+      const isNavy = (b?: string) => Boolean(b && (b.toUpperCase().includes('NAVY') || b.toUpperCase().includes('SAILOR') || b.toUpperCase().includes('PN')));
+
+      setArmyStudentCount(students.filter((s) => isArmy(s.branch)).length);
+      setPafStudentCount(students.filter((s) => isPaf(s.branch)).length);
+      setNavyStudentCount(students.filter((s) => isNavy(s.branch)).length);
     } catch (err) {
       console.warn('Dashboard metrics load error:', err);
     }

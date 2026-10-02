@@ -307,7 +307,7 @@ export const financeService = {
         );
 
         let totalDue = 25000;
-        let totalPaid = 25000;
+        let totalPaid = 0;
         let totalDiscount = 0;
         let totalFine = 0;
 
