@@ -177,7 +177,7 @@ export const TestBuilderPage: React.FC = () => {
         questionCount: cfg.totalQuestions,
         durationMinutes: cfg.durationMinutes,
         minQuestions: 1,
-        maxQuestions: 200,
+        maxQuestions: cfg.totalQuestions, // STRICT CAP: cannot be greater than official pattern totalQuestions!
         minDuration: 1,
         maxDuration: 180,
         isMandatory: true,
@@ -197,27 +197,33 @@ export const TestBuilderPage: React.FC = () => {
           setSelectedTemplateId(defaultTpl.id);
           const details = await testPatternService.getTemplateDetails(defaultTpl.id);
           if (details && details.sections && details.sections.length > 0) {
-            const mapped: ConfiguredSectionState[] = details.sections.map((s: TestPatternSection) => ({
-              id: s.id,
-              sourceTemplateSectionId: s.id,
-              sectionCode: s.sectionCode,
-              sectionName: s.sectionName,
-              displayOrder: s.displayOrder,
-              enabled: s.defaultEnabled,
-              questionCount: s.defaultQuestionCount,
-              durationMinutes: s.defaultDurationMinutes,
-              minQuestions: s.minQuestionCount,
-              maxQuestions: s.maxQuestionCount,
-              minDuration: s.minDurationMinutes,
-              maxDuration: s.maxDurationMinutes,
-              isMandatory: s.isMandatory,
-              canDisable: s.teacherCanDisable,
-              canOverrideCount: s.teacherCanOverrideQuestionCount,
-              canOverrideDuration: s.teacherCanOverrideDuration,
-              subjects: s.subjects || [],
-              defaultQuestions: s.defaultQuestionCount,
-              defaultDuration: s.defaultDurationMinutes,
-            }));
+            const mapped: ConfiguredSectionState[] = details.sections.map((s: TestPatternSection) => {
+              const cfgMatch = officialConfigs.find(
+                (c) => c.code.toLowerCase() === s.sectionCode.toLowerCase() || c.testName.toLowerCase() === s.sectionName.toLowerCase()
+              );
+              const officialMax = cfgMatch?.totalQuestions || s.defaultQuestionCount;
+              return {
+                id: s.id,
+                sourceTemplateSectionId: s.id,
+                sectionCode: s.sectionCode,
+                sectionName: s.sectionName,
+                displayOrder: s.displayOrder,
+                enabled: s.defaultEnabled,
+                questionCount: Math.min(s.defaultQuestionCount, officialMax),
+                durationMinutes: s.defaultDurationMinutes,
+                minQuestions: s.minQuestionCount,
+                maxQuestions: officialMax, // STRICT CAP: cannot be greater than official pattern limit
+                minDuration: s.minDurationMinutes,
+                maxDuration: s.maxDurationMinutes,
+                isMandatory: s.isMandatory,
+                canDisable: s.teacherCanDisable,
+                canOverrideCount: s.teacherCanOverrideQuestionCount,
+                canOverrideDuration: s.teacherCanOverrideDuration,
+                subjects: s.subjects || [],
+                defaultQuestions: Math.min(s.defaultQuestionCount, officialMax),
+                defaultDuration: s.defaultDurationMinutes,
+              };
+            });
             setConfiguredSections(mapped);
             return;
           }
@@ -256,6 +262,9 @@ export const TestBuilderPage: React.FC = () => {
           if (!s.canOverrideCount) {
             toast.error(`Question count override is locked for "${s.sectionName}".`);
             return s;
+          }
+          if (count > s.maxQuestions) {
+            toast.error(`Question count for "${s.sectionName}" cannot be greater than the official pattern limit of ${s.maxQuestions}.`);
           }
           const valid = Math.max(s.minQuestions, Math.min(s.maxQuestions, count));
           return { ...s, questionCount: valid };
@@ -424,6 +433,10 @@ export const TestBuilderPage: React.FC = () => {
       for (const s of activeSections) {
         if (s.questionCount <= 0 || s.durationMinutes <= 0) {
           toast.error(`Invalid question count or duration in "${s.sectionName}".`);
+          return;
+        }
+        if (s.questionCount > s.maxQuestions) {
+          toast.error(`Question count in "${s.sectionName}" (${s.questionCount}) cannot be greater than the official pattern limit of ${s.maxQuestions}.`);
           return;
         }
       }
