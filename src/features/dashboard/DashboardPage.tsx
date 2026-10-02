@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 import {
   Users,
   FileQuestion,
-  CheckCircle2,
   TrendingUp,
-  RotateCcw,
   RefreshCw,
   Printer,
   BookOpen,
-  Download,
   Wallet,
   Receipt,
   ArrowUpRight,
@@ -17,6 +14,7 @@ import {
   CreditCard,
   Banknote,
   AlertCircle,
+  Award,
 } from 'lucide-react';
 import {
   MetricCard,
@@ -27,6 +25,10 @@ import {
 } from '@/components/ui';
 import { useAuth } from '@/app/providers';
 import { financeService } from '@/services/financeService';
+import { studentService } from '@/services/studentService';
+import { testService } from '@/services/testService';
+import { questionService } from '@/services/questionService';
+import { teacherService } from '@/services/teacherService';
 import type { FinanceSummary, FinanceTransaction } from '@/types/finance.types';
 import { toast } from 'sonner';
 
@@ -58,6 +60,14 @@ export const DashboardPage: React.FC = () => {
   const [financeTransactions, setFinanceTransactions] = useState<FinanceTransaction[]>([]);
   const [loadingFinance, setLoadingFinance] = useState<boolean>(false);
 
+  const [studentCount, setStudentCount] = useState<number>(0);
+  const [testCount, setTestCount] = useState<number>(0);
+  const [questionCount, setQuestionCount] = useState<number>(0);
+  const [teacherCount, setTeacherCount] = useState<number>(0);
+  const [armyStudentCount, setArmyStudentCount] = useState<number>(0);
+  const [pafStudentCount, setPafStudentCount] = useState<number>(0);
+  const [navyStudentCount, setNavyStudentCount] = useState<number>(0);
+
   const loadFinanceData = useCallback(async () => {
     if (!isAdmin) return;
     setLoadingFinance(true);
@@ -75,9 +85,34 @@ export const DashboardPage: React.FC = () => {
     }
   }, [isAdmin]);
 
+  const loadDashboardMetrics = useCallback(async () => {
+    if (isAdmin) {
+      loadFinanceData();
+    }
+    try {
+      const [students, tests, questions, teachers] = await Promise.all([
+        studentService.getStudents().catch(() => []),
+        testService.getTests().catch(() => []),
+        questionService.getQuestions().catch(() => []),
+        teacherService.getTeachers().catch(() => []),
+      ]);
+
+      setStudentCount(students.length);
+      setTestCount(tests.length);
+      setQuestionCount(questions.length);
+      setTeacherCount(teachers.length);
+
+      setArmyStudentCount(students.filter((s) => s.branch === 'PAKISTAN_ARMY').length);
+      setPafStudentCount(students.filter((s) => s.branch === 'PAKISTAN_AIR_FORCE').length);
+      setNavyStudentCount(students.filter((s) => s.branch === 'PAKISTAN_NAVY').length);
+    } catch (err) {
+      console.warn('Dashboard metrics load error:', err);
+    }
+  }, [isAdmin, loadFinanceData]);
+
   useEffect(() => {
-    loadFinanceData();
-  }, [loadFinanceData]);
+    loadDashboardMetrics();
+  }, [loadDashboardMetrics]);
 
   const filteredSubmissions = RECENT_SUBMISSIONS.filter((s) => {
     if (selectedBranch === 'ALL') return true;
@@ -85,7 +120,7 @@ export const DashboardPage: React.FC = () => {
   });
 
   const handleSyncFeed = () => {
-    loadFinanceData();
+    loadDashboardMetrics();
     toast.success('Dashboard feeds refreshed');
   };
 
@@ -377,37 +412,34 @@ export const DashboardPage: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
         <MetricCard
           title="Enrolled Students"
-          value={428}
+          value={studentCount}
           icon={<Users className="w-5 h-5" />}
-          trend={{ value: '+18', direction: 'up' }}
-          subtext="85.6% of capacity"
+          subtext="Active cadet roster"
         />
         <MetricCard
           title="Active Tests"
-          value="06"
+          value={testCount}
           icon={<FileQuestion className="w-5 h-5 text-[#C6A75E]" />}
-          subtext="4 proctored · 2 open"
-          highlight
+          subtext="Published CBT batteries"
+          highlight={testCount > 0}
         />
         <MetricCard
-          title="Completed Today"
-          value={24}
-          icon={<CheckCircle2 className="w-5 h-5 text-[#234E35]" />}
-          trend={{ value: '100%', direction: 'up' }}
-          subtext="auto-graded"
+          title="Item Bank Questions"
+          value={questionCount}
+          icon={<BookOpen className="w-5 h-5 text-[#234E35]" />}
+          subtext="Validated question items"
         />
         <MetricCard
-          title="Average Score"
-          value="71.4%"
-          icon={<TrendingUp className="w-5 h-5 text-[#234E35]" />}
-          trend={{ value: '+2.1%', direction: 'up' }}
-          subtext="vs 60-day baseline"
+          title="Faculty Officers"
+          value={teacherCount}
+          icon={<Award className="w-5 h-5 text-sky-600" />}
+          subtext="Accredited examiners"
         />
         <MetricCard
-          title="Pending Retakes"
-          value="08"
-          icon={<RotateCcw className="w-5 h-5 text-[#7A5312]" />}
-          subtext="5 technical · 3 medical"
+          title="Official Courses"
+          value={5}
+          icon={<Building className="w-5 h-5 text-[#0E1B2A]" />}
+          subtext="Army, PAF & Navy tracks"
         />
       </div>
 
@@ -448,72 +480,49 @@ export const DashboardPage: React.FC = () => {
               <text className="font-sans text-[10px]" fill="#A37E2C" x="10" y="135">
                 Pass threshold (60%)
               </text>
-
-              {/* Shaded Area */}
-              <path
-                d="M 0,135 Q 70,120 130,130 T 260,95 T 390,110 T 520,65 T 650,55 T 760,42 L 760,210 L 0,210 Z"
-                fill="url(#areaGradient)"
-              />
-
-              {/* Spline */}
-              <path
-                d="M 0,135 Q 70,120 130,130 T 260,95 T 390,110 T 520,65 T 650,55 T 760,42"
-                fill="none"
-                stroke="#0E1B2A"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-
-              {/* Data Points */}
-              <circle cx="130" cy="130" r="4" fill="#FFFFFF" stroke="#0E1B2A" strokeWidth="2" />
-              <circle cx="260" cy="95" r="4" fill="#FFFFFF" stroke="#0E1B2A" strokeWidth="2" />
-              <circle cx="390" cy="110" r="4" fill="#FFFFFF" stroke="#0E1B2A" strokeWidth="2" />
-              <circle cx="520" cy="65" r="4" fill="#FFFFFF" stroke="#0E1B2A" strokeWidth="2" />
-              <circle cx="650" cy="55" r="4" fill="#FFFFFF" stroke="#0E1B2A" strokeWidth="2" />
-              <circle cx="760" cy="42" r="5" fill="#455D4A" stroke="#FFFFFF" strokeWidth="2" />
             </svg>
 
             {/* X-Axis Labels */}
             <div className="flex justify-between items-center text-[#94A3B8] font-sans tabular-nums text-[12px] pt-2">
-              <span>Apr 12</span>
-              <span>Apr 19</span>
-              <span>Apr 26</span>
-              <span>May 3</span>
-              <span>May 10</span>
-              <span className="text-[#234E35] font-semibold">Today (71.4%)</span>
+              <span>Cohort Base</span>
+              <span>Intake Stage 1</span>
+              <span>Intake Stage 2</span>
+              <span>Mid Term</span>
+              <span>Final Exam</span>
+              <span className="text-[#234E35] font-semibold">Active Cycle</span>
             </div>
           </div>
 
           {/* Footer Micro-Metrics */}
-          <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#F1F5F9] bg-[#F8FAFC] p-4 rounded-lg">
+          <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#F1F5F9] bg-[#F8FAFC] p-4 rounded-lg text-center">
             <div>
-              <span className="text-[12px] text-[#64748B]">Monthly peak</span>
+              <span className="text-[12px] text-[#64748B]">Enrolled Cadets</span>
               <div className="text-[14px] font-bold text-[#0E1B2A] font-display mt-0.5">
-                76.8% <span className="font-normal text-[12px] text-[#64748B]">(Day 24)</span>
+                {studentCount}
               </div>
             </div>
             <div>
-              <span className="text-[12px] text-[#64748B]">Fail rate</span>
-              <div className="text-[14px] font-bold text-[#782525] font-display mt-0.5">
-                8.2% <span className="font-normal text-[12px] text-[#64748B]">(&lt;40%)</span>
+              <span className="text-[12px] text-[#64748B]">Active Test Batteries</span>
+              <div className="text-[14px] font-bold text-[#0E1B2A] font-display mt-0.5">
+                {testCount}
               </div>
             </div>
             <div>
-              <span className="text-[12px] text-[#64748B]">Score variance</span>
+              <span className="text-[12px] text-[#64748B]">Item Bank Questions</span>
               <div className="text-[14px] font-bold text-[#234E35] font-display mt-0.5">
-                ±3.4% <span className="font-normal text-[12px] text-[#64748B]">(stable)</span>
+                {questionCount}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right: Pass Rates by Branch */}
+        {/* Right: Enrolled Candidates by Branch */}
         <div className="lg:col-span-4 bg-white border border-[#E2E6EB] rounded-lg p-6 shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex flex-col justify-between space-y-4">
           <div className="border-b border-[#F1F5F9] pb-4">
             <h3 className="text-[15px] font-semibold text-[#0E1B2A] font-display">
-              Pass Rates by Branch
+              Enrolled Candidates by Branch
             </h3>
-            <p className="text-[13px] text-[#64748B] mt-0.5">Current intake aggregate</p>
+            <p className="text-[13px] text-[#64748B] mt-0.5">Current active intake breakdown</p>
           </div>
 
           <div className="space-y-4 flex-1 flex flex-col justify-center">
@@ -526,16 +535,21 @@ export const DashboardPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[13.5px] font-semibold text-[#0E1B2A]">Pakistan Army</span>
-                    <span className="text-[12px] text-[#64748B] block tabular-nums">210 students</span>
+                    <span className="text-[12px] text-[#64748B] block tabular-nums">{armyStudentCount} students</span>
                   </div>
                 </div>
                 <div className="text-right tabular-nums">
-                  <span className="text-[18px] font-bold text-[#234E35]">74%</span>
-                  <span className="text-[11px] text-[#64748B] block">pass rate</span>
+                  <span className="text-[14px] font-bold text-[#234E35]">
+                    {studentCount > 0 ? `${Math.round((armyStudentCount / studentCount) * 100)}%` : '0%'}
+                  </span>
+                  <span className="text-[11px] text-[#64748B] block">of intake</span>
                 </div>
               </div>
               <div className="w-full h-2 bg-[#EDF1F5] rounded-full overflow-hidden">
-                <div className="h-full bg-[#455D4A] rounded-full transition-all" style={{ width: '74%' }} />
+                <div
+                  className="h-full bg-[#455D4A] rounded-full transition-all"
+                  style={{ width: `${studentCount > 0 ? (armyStudentCount / studentCount) * 100 : 0}%` }}
+                />
               </div>
             </div>
 
@@ -548,16 +562,21 @@ export const DashboardPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[13.5px] font-semibold text-[#0E1B2A]">Pakistan Air Force</span>
-                    <span className="text-[12px] text-[#64748B] block tabular-nums">142 students</span>
+                    <span className="text-[12px] text-[#64748B] block tabular-nums">{pafStudentCount} students</span>
                   </div>
                 </div>
                 <div className="text-right tabular-nums">
-                  <span className="text-[18px] font-bold text-[#0E1B2A]">69%</span>
-                  <span className="text-[11px] text-[#64748B] block">pass rate</span>
+                  <span className="text-[14px] font-bold text-[#0E1B2A]">
+                    {studentCount > 0 ? `${Math.round((pafStudentCount / studentCount) * 100)}%` : '0%'}
+                  </span>
+                  <span className="text-[11px] text-[#64748B] block">of intake</span>
                 </div>
               </div>
               <div className="w-full h-2 bg-[#EDF1F5] rounded-full overflow-hidden">
-                <div className="h-full bg-[#0E1B2A] rounded-full transition-all" style={{ width: '69%' }} />
+                <div
+                  className="h-full bg-[#0E1B2A] rounded-full transition-all"
+                  style={{ width: `${studentCount > 0 ? (pafStudentCount / studentCount) * 100 : 0}%` }}
+                />
               </div>
             </div>
 
@@ -570,28 +589,32 @@ export const DashboardPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[13.5px] font-semibold text-[#0E1B2A]">Pakistan Navy</span>
-                    <span className="text-[12px] text-[#64748B] block tabular-nums">76 students</span>
+                    <span className="text-[12px] text-[#64748B] block tabular-nums">{navyStudentCount} students</span>
                   </div>
                 </div>
                 <div className="text-right tabular-nums">
-                  <span className="text-[18px] font-bold text-[#234E35]">72%</span>
-                  <span className="text-[11px] text-[#64748B] block">pass rate</span>
+                  <span className="text-[14px] font-bold text-[#234E35]">
+                    {studentCount > 0 ? `${Math.round((navyStudentCount / studentCount) * 100)}%` : '0%'}
+                  </span>
+                  <span className="text-[11px] text-[#64748B] block">of intake</span>
                 </div>
               </div>
               <div className="w-full h-2 bg-[#EDF1F5] rounded-full overflow-hidden">
-                <div className="h-full bg-[#455D4A] rounded-full transition-all" style={{ width: '72%' }} />
+                <div
+                  className="h-full bg-[#455D4A] rounded-full transition-all"
+                  style={{ width: `${studentCount > 0 ? (navyStudentCount / studentCount) * 100 : 0}%` }}
+                />
               </div>
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => toast.info('Exporting branch comparison report')}
+          <Link
+            to="/admin/students"
             className="w-full h-10 bg-[#F4F6F9] hover:bg-[#EAECF0] text-[#0E1B2A] rounded-lg text-[13.5px] font-semibold flex items-center justify-center space-x-2 transition-colors"
           >
-            <Download className="w-4 h-4" />
-            <span>Export Branch Breakdown</span>
-          </button>
+            <Users className="w-4 h-4" />
+            <span>Manage Enrolled Cadets</span>
+          </Link>
         </div>
       </div>
 
