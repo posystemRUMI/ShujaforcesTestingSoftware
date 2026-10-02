@@ -296,15 +296,23 @@ export const testService = {
 
     // 2. Insert Sections
     for (const sec of payload.sections) {
-      const { data: createdSec, error: secError } = await supabase
+      const baseSectionPayload = {
+        test_id: createdTest.id,
+        name: sec.name,
+        position: sec.position,
+        question_count: sec.question_count,
+        duration_minutes: sec.duration_minutes,
+        subject_id: sec.subject_id || null,
+      };
+
+      let createdSec: any = null;
+      let secError: any = null;
+
+      // Primary attempt with full pattern metadata
+      const { data: primaryData, error: primaryErr } = await supabase
         .from('test_sections')
         .insert({
-          test_id: createdTest.id,
-          name: sec.name,
-          position: sec.position,
-          question_count: sec.question_count,
-          duration_minutes: sec.duration_minutes,
-          subject_id: sec.subject_id || null,
+          ...baseSectionPayload,
           section_code: sec.section_code || null,
           source_template_section_id: sec.source_template_section_id || null,
           passing_percentage: sec.passing_percentage || 50,
@@ -312,6 +320,25 @@ export const testService = {
         })
         .select()
         .single();
+
+      if (!primaryErr && primaryData) {
+        createdSec = primaryData;
+      } else if (primaryErr && primaryErr.code === 'PGRST204') {
+        // Fallback if extended columns are not present in Supabase table schema
+        const { data: fallbackData, error: fallbackErr } = await supabase
+          .from('test_sections')
+          .insert(baseSectionPayload)
+          .select()
+          .single();
+
+        if (fallbackErr) {
+          secError = fallbackErr;
+        } else {
+          createdSec = fallbackData;
+        }
+      } else {
+        secError = primaryErr;
+      }
 
       if (secError || !createdSec) throw secError || new Error(`Failed to create section ${sec.name}`);
 
