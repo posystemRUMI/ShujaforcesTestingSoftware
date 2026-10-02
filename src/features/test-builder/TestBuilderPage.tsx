@@ -21,7 +21,6 @@ import {
   Search,
   Plus,
   Trash2,
-  AlertTriangle,
   Layers,
   Info,
 } from 'lucide-react';
@@ -77,8 +76,8 @@ export const TestBuilderPage: React.FC = () => {
   // Stage 1: Test Identity & Scope Only
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [selectedBatchId, setSelectedBatchId] = useState<string>('ALL');
-  const [testType, setTestType] = useState<'PRACTICE' | 'MOCK' | 'FULL' | 'SECTIONAL'>('FULL');
+  const [selectedBatchId] = useState<string>('ALL');
+  const [testType] = useState<'PRACTICE' | 'MOCK' | 'FULL' | 'SECTIONAL'>('FULL');
 
   // Stage 2: Force & Entry Eligibility + Master Pattern Template
   const [, setLoadingCourses] = useState(false);
@@ -664,61 +663,6 @@ export const TestBuilderPage: React.FC = () => {
                     placeholder="Provide exam administration directives, syllabus coverage, or session instructions for candidates..."
                     className="w-full bg-white border border-[#D4D9DF] rounded-lg p-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                   />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-                  <div>
-                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
-                      Candidate Batch Deployment
-                    </label>
-                    <select
-                      value={selectedBatchId}
-                      onChange={(e) => setSelectedBatchId(e.target.value)}
-                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
-                    >
-                      <option value="ALL">All Active Batches (Deliver to all enrolled candidates)</option>
-                      {batches.map((b) => (
-                        <option key={b.id} value={b.id}>
-                          {b.name} ({b.code})
-                        </option>
-                      ))}
-                      <option value="NONE">Unassigned / Master Repository Only</option>
-                    </select>
-                    <p className="text-xs font-medium text-[#64748B] mt-2 leading-relaxed">
-                      {selectedBatchId === 'ALL' ? (
-                        <span className="text-[#166534] flex items-center gap-1.5">
-                          <Check className="w-4 h-4 text-[#16A34A] shrink-0" />
-                          <span>Assigned to all active batches. Candidates can view and attempt this test immediately.</span>
-                        </span>
-                      ) : selectedBatchId && selectedBatchId !== 'NONE' ? (
-                        <span className="text-[#0E1B2A] flex items-center gap-1.5">
-                          <Check className="w-4 h-4 text-[#16A34A] shrink-0" />
-                          <span>Assigned specifically to {batches.find((b) => b.id === selectedBatchId)?.name || 'the selected batch'}.</span>
-                        </span>
-                      ) : (
-                        <span className="text-[#B45309] flex items-center gap-1.5">
-                          <AlertTriangle className="w-4 h-4 text-[#D97706] shrink-0" />
-                          <span>Saved in repository only. Candidates cannot view this test until assigned to a batch.</span>
-                        </span>
-                      )}
-                    </p>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
-                      Test Evaluation Type
-                    </label>
-                    <select
-                      value={testType}
-                      onChange={(e) => setTestType(e.target.value as 'PRACTICE' | 'MOCK' | 'FULL' | 'SECTIONAL')}
-                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
-                    >
-                      <option value="FULL">Full Formal Examination</option>
-                      <option value="MOCK">Full Mock Screening</option>
-                      <option value="PRACTICE">Academy Practice Drill</option>
-                      <option value="SECTIONAL">Single Section Practice</option>
-                    </select>
-                  </div>
                 </div>
               </div>
             </div>

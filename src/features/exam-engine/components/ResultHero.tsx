@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Download, Eye, LayoutDashboard, ShieldCheck, RefreshCw, RotateCcw, AlertTriangle } from 'lucide-react';
+import { Download, Eye, LayoutDashboard, ShieldCheck, RefreshCw, AlertTriangle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Lazy-load 3D WebGL components to keep page loading lightweight
@@ -14,10 +14,8 @@ interface ResultHeroProps {
   percentage: number;
   passingThreshold: number;
   isPassed: boolean;
-  hasRetakePermission?: boolean;
   onViewDetails: () => void;
   onDownloadResult: () => void;
-  onRequestRetake?: () => void;
 }
 
 export const ResultHero: React.FC<ResultHeroProps> = ({
@@ -27,10 +25,8 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
   percentage,
   passingThreshold = 50,
   isPassed,
-  hasRetakePermission = false,
   onViewDetails,
   onDownloadResult,
-  onRequestRetake,
 }) => {
   const navigate = useNavigate();
 
@@ -222,17 +218,6 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
                 <Download className="w-4 h-4 text-[#C6A75E]" />
                 <span>Download Docket</span>
               </button>
-
-              {hasRetakePermission && onRequestRetake && (
-                <button
-                  type="button"
-                  onClick={onRequestRetake}
-                  className="inline-flex items-center space-x-2 bg-[#7A5312] hover:bg-[#60410E] text-white px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Start Authorized Retake</span>
-                </button>
-              )}
 
               <button
                 type="button"

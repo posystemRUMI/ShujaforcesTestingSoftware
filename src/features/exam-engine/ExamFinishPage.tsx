@@ -3,7 +3,6 @@ import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
 import { FileText, Shield, Check, X, RefreshCw, Trophy, ArrowRight, Printer } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { resultService, ResultDetailResponse } from '@/services/resultService';
-import { retakeService } from '@/services/retakeService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 
 import { ShujaForcesLogo } from '@/components/brand/ShujaForcesLogo';
@@ -26,11 +25,10 @@ export const ExamFinishPage: React.FC = () => {
 
   const [loading, setLoading] = useState(true);
   const [resultDetail, setResultDetail] = useState<ResultDetailResponse | null>(null);
-  const [hasRetakePermission, setHasRetakePermission] = useState(false);
 
   const answerReviewRef = useRef<HTMLDivElement>(null);
 
-  // Load server-authoritative result detail & retake permission
+  // Load server-authoritative result detail
   useEffect(() => {
     let isMounted = true;
 
@@ -54,20 +52,6 @@ export const ExamFinishPage: React.FC = () => {
             const data = await resultService.getResultDetail(rId);
             if (isMounted) {
               setResultDetail(data);
-
-              // Check if authorized retake permission exists for this test
-              if (data.test?.id && user?.id) {
-                const retakes = await retakeService
-                  .getRetakePermissions({
-                    studentId: user.cadetId || user.id,
-                    testId: data.test.id,
-                    status: 'AVAILABLE',
-                  })
-                  .catch(() => []);
-                if (isMounted && retakes && retakes.length > 0) {
-                  setHasRetakePermission(true);
-                }
-              }
             }
           }
         } catch (err) {
@@ -117,10 +101,6 @@ export const ExamFinishPage: React.FC = () => {
 
   const handlePrint = () => {
     window.print();
-  };
-
-  const handleRequestRetake = () => {
-    navigate('/exam/instructions');
   };
 
   // Flatten review questions
@@ -216,10 +196,8 @@ export const ExamFinishPage: React.FC = () => {
         percentage={percentage}
         passingThreshold={passingThreshold}
         isPassed={isPassed}
-        hasRetakePermission={hasRetakePermission}
         onViewDetails={handleScrollToDetails}
         onDownloadResult={handlePrint}
-        onRequestRetake={handleRequestRetake}
       />
 
       {/* 2. RESULT METRICS GRID */}

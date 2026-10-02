@@ -40,7 +40,6 @@ const QuestionAuthorPage = safeLazy(() => import('@/features/question-author/Que
 const TestBuilderPage = safeLazy(() => import('@/features/test-builder/TestBuilderPage'));
 const TestManagementPage = safeLazy(() => import('@/features/tests/TestManagementPage'));
 const ResultsPage = safeLazy(() => import('@/features/results/ResultsPage'));
-const RetakesPage = safeLazy(() => import('@/features/retakes/RetakesPage'));
 const ReportsPage = safeLazy(() => import('@/features/reports/ReportsPage'));
 const ForcesPage = safeLazy(() => import('@/features/configuration/ForcesPage'));
 const ForceDetailPage = safeLazy(() => import('@/features/configuration/ForceDetailPage'));
@@ -315,11 +314,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'retakes',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <RetakesPage />
-          </Suspense>
-        ),
+        element: <Navigate to="/admin/dashboard" replace />,
       },
       {
         path: 'reports',

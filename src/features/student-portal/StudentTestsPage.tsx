@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { testService } from '@/services/testService';
 import { resultService, ResultRecord } from '@/services/resultService';
-import { retakeService, RetakePermissionRecord } from '@/services/retakeService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { useAuth } from '@/app/providers';
 import { TestBlueprint } from '@/types';
-import { ArrowRight, Search, CheckCircle, AlertCircle, FileText, RotateCcw } from 'lucide-react';
+import { ArrowRight, Search, CheckCircle, AlertCircle, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   isTestAuthorizedForStudent,
@@ -15,7 +14,6 @@ export const StudentTestsPage: React.FC = () => {
   const { user } = useAuth();
   const [tests, setTests] = useState<TestBlueprint[]>([]);
   const [results, setResults] = useState<ResultRecord[]>([]);
-  const [retakes, setRetakes] = useState<RetakePermissionRecord[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [branchFilter, setBranchFilter] = useState<string>('ALL');
   const [loading, setLoading] = useState(true);
@@ -24,10 +22,9 @@ export const StudentTestsPage: React.FC = () => {
     async function fetchTestsAndResults() {
       try {
         if (isSupabaseConfigured()) {
-          const [assignedTests, dbResults, dbRetakes] = await Promise.all([
+          const [assignedTests, dbResults] = await Promise.all([
             testService.getStudentAssignedTests(user?.cadetId || user?.id || '').catch(() => []),
             resultService.getResults({ studentId: user?.cadetId || user?.id }).catch(() => [] as ResultRecord[]),
-            retakeService.getRetakePermissions({ studentId: user?.cadetId || user?.id }).catch(() => [] as RetakePermissionRecord[]),
           ]);
 
           let rawTests = assignedTests;
@@ -64,11 +61,9 @@ export const StudentTestsPage: React.FC = () => {
           }
 
           setResults(dbResults || []);
-          setRetakes(dbRetakes || []);
         } else {
           setTests([]);
           setResults([]);
-          setRetakes([]);
         }
       } catch (e) {
         console.warn('Failed to load from testService / resultService:', e);
@@ -155,7 +150,6 @@ export const StudentTestsPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {filteredTests.map((test) => {
             const testResult = results.find((r) => r.test_id === test.id);
-            const testRetake = retakes.find((rt) => rt.test_id === test.id && rt.status === 'AVAILABLE');
 
             return (
               <div
@@ -234,24 +228,13 @@ export const StudentTestsPage: React.FC = () => {
                 {/* CTA Action */}
                 <div className="pt-2 space-y-2">
                   {testResult ? (
-                    <div className="flex flex-col sm:flex-row gap-2">
-                      <Link
-                        to={`/student/result/${testResult.id}`}
-                        className="flex-1 inline-flex items-center justify-center space-x-1.5 bg-[#234E35] text-white py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E] transition-colors"
-                      >
-                        <FileText className="w-3.5 h-3.5" />
-                        <span>Review Result & Key</span>
-                      </Link>
-                      {testRetake && (
-                        <Link
-                          to={`/student/test/${test.id}/familiarization`}
-                          className="flex-1 inline-flex items-center justify-center space-x-1.5 bg-[#7A5312] text-white py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#60410E] transition-colors"
-                        >
-                          <RotateCcw className="w-3.5 h-3.5" />
-                          <span>Authorized Retake</span>
-                        </Link>
-                      )}
-                    </div>
+                    <Link
+                      to={`/student/result/${testResult.id}`}
+                      className="w-full inline-flex items-center justify-center space-x-1.5 bg-[#234E35] text-white py-2.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-[#1E432E] transition-colors"
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      <span>Review Result & Key</span>
+                    </Link>
                   ) : (
                     <Link
                       to={`/student/test/${test.id}/familiarization`}
