@@ -15,7 +15,6 @@ import {
 } from '@/services/leaderboardService';
 import { testService, TestRecord } from '@/services/testService';
 import { configurationService } from '@/services/configurationService';
-import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 
 interface ForceOption {
   id: string;
@@ -29,22 +28,14 @@ interface CourseOption {
   force_id: string;
 }
 
-interface BatchOption {
-  id: string;
-  name: string;
-  course_id: string;
-}
-
 export const TeacherLeaderboardPage: React.FC = () => {
   // Filters State
   const [forces, setForces] = useState<ForceOption[]>([]);
   const [courses, setCourses] = useState<CourseOption[]>([]);
-  const [batches, setBatches] = useState<BatchOption[]>([]);
   const [tests, setTests] = useState<TestRecord[]>([]);
 
   const [selectedForceId, setSelectedForceId] = useState<string>('');
   const [selectedCourseId, setSelectedCourseId] = useState<string>('');
-  const [selectedBatchId, setSelectedBatchId] = useState<string>('');
   const [selectedTestId, setSelectedTestId] = useState<string>(''); // '' means aggregate
 
   // Search query (server-side lookup)
@@ -67,19 +58,15 @@ export const TeacherLeaderboardPage: React.FC = () => {
 
     async function loadFilterHierarchy() {
       try {
-        const [fList, cList, bRes, tRes] = await Promise.all([
+        const [fList, cList, tRes] = await Promise.all([
           configurationService.getForces(),
           configurationService.getCourses(),
-          isSupabaseConfigured()
-            ? (supabase as any).from('batches').select('id, name, course_id').order('name')
-            : Promise.resolve({ data: [] }),
           testService.getTests(),
         ]);
 
         if (!isMounted) return;
         setForces(fList.map((f) => ({ id: f.id, name: f.name, code: f.branch })));
         setCourses(cList.map((c) => ({ id: c.id, name: c.name, force_id: c.forceId || '' })));
-        setBatches(bRes.data || []);
         setTests(tRes || []);
       } catch (err) {
         console.warn('Failed to load filter metadata:', err);
@@ -98,11 +85,6 @@ export const TeacherLeaderboardPage: React.FC = () => {
     return courses.filter((c) => c.force_id === selectedForceId);
   }, [courses, selectedForceId]);
 
-  const availableBatches = useMemo(() => {
-    if (!selectedCourseId) return batches;
-    return batches.filter((b) => b.course_id === selectedCourseId);
-  }, [batches, selectedCourseId]);
-
   const availableTests = useMemo(() => {
     let list = tests;
     if (selectedForceId) list = list.filter((t) => t.force_id === selectedForceId);
@@ -114,13 +96,11 @@ export const TeacherLeaderboardPage: React.FC = () => {
   const handleForceChange = (forceId: string) => {
     setSelectedForceId(forceId);
     setSelectedCourseId('');
-    setSelectedBatchId('');
     setSelectedTestId('');
   };
 
   const handleCourseChange = (courseId: string) => {
     setSelectedCourseId(courseId);
-    setSelectedBatchId('');
     setSelectedTestId('');
   };
 
@@ -136,7 +116,6 @@ export const TeacherLeaderboardPage: React.FC = () => {
           const results = await leaderboardService.searchStudentOnLeaderboard(searchQuery, {
             forceId: selectedForceId || null,
             courseId: selectedCourseId || null,
-            batchId: selectedBatchId || null,
             testId: selectedTestId || null,
           });
           if (isMounted) {
@@ -153,14 +132,13 @@ export const TeacherLeaderboardPage: React.FC = () => {
         } else if (selectedCourseId) {
           res = await leaderboardService.getCourseLeaderboard(
             selectedCourseId,
-            selectedBatchId || null,
+            null,
             40
           );
         } else {
           res = await leaderboardService.getAcademyLeaderboard({
             forceId: selectedForceId || null,
             courseId: selectedCourseId || null,
-            batchId: selectedBatchId || null,
             limit: 40,
           });
         }
@@ -179,7 +157,7 @@ export const TeacherLeaderboardPage: React.FC = () => {
     return () => {
       isMounted = false;
     };
-  }, [selectedForceId, selectedCourseId, selectedBatchId, selectedTestId, searchQuery]);
+  }, [selectedForceId, selectedCourseId, selectedTestId, searchQuery]);
 
   // Inspect student detail modal handler
   const handleInspectStudent = async (entry: LeaderboardEntry) => {
@@ -209,7 +187,7 @@ export const TeacherLeaderboardPage: React.FC = () => {
             </h1>
           </div>
           <p className="text-xs sm:text-sm text-[#64748B] mt-1">
-            Standardized merit rankings across Forces, Entry Courses, Cadre Batches, and Official Assessments.
+            Standardized merit rankings across Forces, Entry Courses, and Official Assessments.
           </p>
         </div>
 
@@ -225,7 +203,7 @@ export const TeacherLeaderboardPage: React.FC = () => {
           <span>Hierarchy Filters & Scope</span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {/* 1. Target Force */}
           <div>
             <label className="block text-[11px] font-semibold text-[#64748B] mb-1">
@@ -264,26 +242,7 @@ export const TeacherLeaderboardPage: React.FC = () => {
             </select>
           </div>
 
-          {/* 3. Cadre Batch */}
-          <div>
-            <label className="block text-[11px] font-semibold text-[#64748B] mb-1">
-              Cadre Batch Wing
-            </label>
-            <select
-              value={selectedBatchId}
-              onChange={(e) => setSelectedBatchId(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-[#D4D9DF] bg-[#F8FAFC] text-xs font-semibold text-[#0E1B2A] focus:outline-none focus:ring-2 focus:ring-[#0E1B2A]/20"
-            >
-              <option value="">All Batches</option>
-              {availableBatches.map((b) => (
-                <option key={b.id} value={b.id}>
-                  {b.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* 4. Official Test vs Aggregate */}
+          {/* 3. Official Test vs Aggregate */}
           <div>
             <label className="block text-[11px] font-semibold text-[#64748B] mb-1">
               Performance View
@@ -316,13 +275,12 @@ export const TeacherLeaderboardPage: React.FC = () => {
             />
           </div>
 
-          {(selectedForceId || selectedCourseId || selectedBatchId || selectedTestId || searchQuery) && (
+          {(selectedForceId || selectedCourseId || selectedTestId || searchQuery) && (
             <button
               type="button"
               onClick={() => {
                 setSelectedForceId('');
                 setSelectedCourseId('');
-                setSelectedBatchId('');
                 setSelectedTestId('');
                 setSearchQuery('');
               }}
@@ -372,7 +330,6 @@ export const TeacherLeaderboardPage: React.FC = () => {
                   <th className="py-3 px-4">Cadet Name</th>
                   <th className="py-3 px-4">Roll Number</th>
                   <th className="py-3 px-4">Force & Course</th>
-                  <th className="py-3 px-4">Wing Batch</th>
                   {selectedTestId ? (
                     <>
                       <th className="py-3 px-4 text-center">Score</th>
@@ -434,11 +391,6 @@ export const TeacherLeaderboardPage: React.FC = () => {
                       <td className="py-3.5 px-4">
                         <span className="font-semibold text-[#0E1B2A] block">{entry.force_name}</span>
                         <span className="text-[11px] text-[#94A3B8] block">{entry.course_name}</span>
-                      </td>
-
-                      {/* Batch */}
-                      <td className="py-3.5 px-4 text-[#475569]">
-                        {entry.batch_name}
                       </td>
 
                       {/* Performance Columns */}
@@ -529,16 +481,8 @@ export const TeacherLeaderboardPage: React.FC = () => {
               </div>
             ) : inspectedSummary ? (
               <div className="space-y-4 text-xs">
-                {/* 3 Positions Grid */}
-                <div className="grid grid-cols-3 gap-2.5">
-                  <div className="p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center">
-                    <span className="text-[10px] text-[#64748B] uppercase font-bold block">Batch Rank</span>
-                    <span className="text-lg font-bold text-[#0E1B2A] mt-0.5 block">
-                      {inspectedSummary.batch_rank ? `#${inspectedSummary.batch_rank}` : '—'}
-                    </span>
-                    <span className="text-[10px] text-[#94A3B8]">of {inspectedSummary.batch_total}</span>
-                  </div>
-
+                {/* 2 Positions Grid */}
+                <div className="grid grid-cols-2 gap-2.5">
                   <div className="p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center">
                     <span className="text-[10px] text-[#64748B] uppercase font-bold block">Course Rank</span>
                     <span className="text-lg font-bold text-[#0E1B2A] mt-0.5 block">

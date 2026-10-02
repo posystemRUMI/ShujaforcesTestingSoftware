@@ -8,10 +8,9 @@ import {
   normalizeCourseCode,
 } from '@/config/officialTestPatterns';
 import { testService } from '@/services/testService';
-import { batchService } from '@/services/batchService';
 import { questionService } from '@/services/questionService';
 import { ForceConfig, CourseConfig } from '@/features/configuration/types';
-import { Batch, Question } from '@/types';
+import { Question } from '@/types';
 import {
   ChevronRight,
   Shield,
@@ -73,14 +72,12 @@ export const TestBuilderPage: React.FC = () => {
   // Loaded DB entities
   const [forces, setForces] = useState<ForceConfig[]>([]);
   const [courses, setCourses] = useState<CourseConfig[]>([]);
-  const [batches, setBatches] = useState<Batch[]>([]);
   const [templates, setTemplates] = useState<TestPatternTemplate[]>([]);
   const [allQuestions, setAllQuestions] = useState<Question[]>([]);
 
   // Stage 1: Test Identity & Scope Only
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [selectedBatchId] = useState<string>('ALL');
   const [testType] = useState<'PRACTICE' | 'MOCK' | 'FULL' | 'SECTIONAL'>('FULL');
 
   // Stage 2: Force & Entry Eligibility + Master Pattern Template
@@ -112,17 +109,15 @@ export const TestBuilderPage: React.FC = () => {
   // Stage 7: Publishing State
   const [publishing, setPublishing] = useState(false);
 
-  // 1. Initial Load: Forces, Batches, Questions
+  // 1. Initial Load: Forces & Questions
   useEffect(() => {
     async function loadInitial() {
       try {
-        const [fList, bList, qList] = await Promise.all([
+        const [fList, qList] = await Promise.all([
           configurationService.getForces(),
-          batchService.getBatches(),
           questionService.getQuestions(),
         ]);
         setForces(fList);
-        setBatches(bList);
         setAllQuestions(qList);
       } catch (e) {
         console.warn('Initial load warning:', e);
@@ -495,7 +490,6 @@ export const TestBuilderPage: React.FC = () => {
         test: {
           name: title,
           description: description || null,
-          batch_id: selectedBatchId === 'ALL' || selectedBatchId === 'NONE' ? null : selectedBatchId || null,
           passing_threshold: passingScorePercent,
           duration_minutes: totalDurationMinutes,
           shuffle_questions: shuffleQuestions,
@@ -522,24 +516,11 @@ export const TestBuilderPage: React.FC = () => {
           passing_percentage: 50,
           question_ids: sectionQuestionMap[s.id] || [],
         })),
-        batchId: selectedBatchId === 'ALL' || selectedBatchId === 'NONE' ? undefined : selectedBatchId || undefined,
         autoGenerateQuestions: assemblyMode === 'AUTO',
       });
 
       try {
         await testService.publishTest(compiledTest.id);
-
-        if (selectedBatchId === 'ALL') {
-          for (const b of batches) {
-            try {
-              await testService.assignTest(compiledTest.id, b.id);
-            } catch (assignErr) {
-              console.warn(`Notice assigning to batch ${b.name}:`, assignErr);
-            }
-          }
-        } else if (selectedBatchId && selectedBatchId !== 'NONE') {
-          await testService.assignTest(compiledTest.id, selectedBatchId);
-        }
       } catch (pubErr) {
         console.error('Publish RPC error:', pubErr);
         const pubMsg = pubErr && typeof pubErr === 'object' && 'message' in pubErr ? String((pubErr as { message: unknown }).message) : 'Check section question assignments.';
@@ -547,11 +528,7 @@ export const TestBuilderPage: React.FC = () => {
       }
 
       setPublishing(false);
-      toast.success(
-        selectedBatchId === 'ALL'
-          ? 'Test published & assigned to all active batches!'
-          : 'Test blueprint successfully created & published!'
-      );
+      toast.success('Test blueprint successfully created & published!');
       navigate('/admin/tests');
     } catch (err) {
       setPublishing(false);
@@ -561,7 +538,6 @@ export const TestBuilderPage: React.FC = () => {
   };
 
   const selectedTemplate = templates.find((t) => t.id === selectedTemplateId);
-  const selectedBatch = batches.find((b) => b.id === selectedBatchId);
 
   // Grouped Eligibility Summary Helper
   const getEligibilitySummary = () => {
@@ -1645,13 +1621,7 @@ export const TestBuilderPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between border-b border-[#E2E6EB] pb-2">
                   <span className="text-[#64748B]">Deployment Scope:</span>
-                  <span className="text-[#166534] font-bold">
-                    {selectedBatchId === 'ALL'
-                      ? 'All Active Batches'
-                      : selectedBatch
-                      ? selectedBatch.name
-                      : 'Unassigned Repository'}
-                  </span>
+                  <span className="text-[#166534] font-bold">All Eligible Forces & Courses</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#64748B]">Sections / Items:</span>

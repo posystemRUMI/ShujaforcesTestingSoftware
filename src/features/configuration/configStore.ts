@@ -119,11 +119,10 @@ class ConfigStore {
     return this.courses.filter((c) => c.branch === branch);
   }
 
-  addCourse(course: Omit<CourseConfig, 'id' | 'batchesCount'>): CourseConfig {
+  addCourse(course: Omit<CourseConfig, 'id'>): CourseConfig {
     const newCourse: CourseConfig = {
       ...course,
       id: `crs-${Date.now()}`,
-      batchesCount: 0,
     };
     this.courses = [newCourse, ...this.courses];
     this.persist();

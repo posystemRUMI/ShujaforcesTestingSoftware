@@ -30,7 +30,6 @@ export const StudentFormPage: React.FC = () => {
       rollNumber: '',
       temporaryCredential: '',
       branch: 'PAKISTAN_ARMY',
-      batchId: 'batch-001',
       targetCourse: 'PMA Long Course',
       status: 'ACTIVE',
       avatarUrl: '',
@@ -53,7 +52,6 @@ export const StudentFormPage: React.FC = () => {
             rollNumber: existingRecord.rollNumber,
             temporaryCredential: '••••••••',
             branch: existingRecord.branch,
-            batchId: existingRecord.batchId,
             targetCourse: existingRecord.targetCourse,
             status: existingRecord.status,
             avatarUrl: existingRecord.avatarUrl || '',
@@ -274,31 +272,21 @@ export const StudentFormPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-            <div>
-              <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
-                Assigned Batch Cohort *
-              </label>
-              <select
-                {...register('batchId')}
-                className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-sans font-medium focus:outline-none focus:border-[#0E1B2A]"
-              >
-                <option value="batch-001">PMA Long Course Batch</option>
-                <option value="batch-002">GD(P) & Aeronautical Engineering Batch</option>
-                <option value="batch-003">Sailor Batch</option>
-              </select>
-            </div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             <div>
               <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
                 Target Induction Course *
               </label>
-              <input
-                type="text"
+              <select
                 {...register('targetCourse')}
-                placeholder="e.g., PMA Long Course"
-                className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
-              />
+                className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-medium focus:outline-none focus:border-[#0E1B2A]"
+              >
+                <option value="PMA Long Course">Pakistan Army – PMA Long Course</option>
+                <option value="AFNS">Pakistan Army – AFNS</option>
+                <option value="GD(P) & Aeronautical Engineering">PAF – GD(P) & Aeronautical Engineering</option>
+                <option value="Airman">PAF – Airman</option>
+                <option value="Sailor">Pakistan Navy – Sailor</option>
+              </select>
               {errors.targetCourse && (
                 <p className="text-[11px] text-[#782525] mt-1">{errors.targetCourse.message}</p>
               )}

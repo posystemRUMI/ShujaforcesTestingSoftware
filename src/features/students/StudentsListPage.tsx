@@ -138,11 +138,10 @@ export const StudentsListPage: React.FC = () => {
       cell: (row) => <ForceBadge branch={row.branch} compact />,
     },
     {
-      header: 'Batch / Target',
+      header: 'Target Course',
       cell: (row) => (
         <div>
-          <span className="font-mono text-xs font-semibold text-[#0E1B2A] block">{row.batchCode}</span>
-          <span className="text-[10px] text-[#64748B]">{row.targetCourse}</span>
+          <span className="font-semibold text-xs text-[#0E1B2A] block">{row.targetCourse}</span>
         </div>
       ),
     },

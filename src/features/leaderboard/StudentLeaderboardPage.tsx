@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import {
   Trophy,
-  Users,
   GraduationCap,
   Award,
   Layers,
@@ -20,7 +19,7 @@ import {
 import { testService, TestRecord } from '@/services/testService';
 import { Link } from 'react-router-dom';
 
-type LeaderboardTab = 'OVERALL' | 'BATCH' | 'COURSE' | 'TESTS';
+type LeaderboardTab = 'OVERALL' | 'COURSE' | 'TESTS';
 
 export const StudentLeaderboardPage: React.FC = () => {
   const { user } = useAuth();
@@ -78,21 +77,12 @@ export const StudentLeaderboardPage: React.FC = () => {
     async function fetchLeaderboard() {
       try {
         let res = { leaders: [] as LeaderboardEntry[], current_student: null as LeaderboardEntry | null, total_participants: 0 };
-        let hoodScope: 'ACADEMY' | 'COURSE' | 'BATCH' | 'TEST' = 'ACADEMY';
+        let hoodScope: 'ACADEMY' | 'COURSE' | 'TEST' = 'ACADEMY';
         let hoodScopeId: string | null = null;
 
         if (activeTab === 'OVERALL') {
           res = await leaderboardService.getAcademyLeaderboard({ limit: 40 });
           hoodScope = 'ACADEMY';
-        } else if (activeTab === 'BATCH') {
-          // If student has a batch in summary
-          const batchId = summary?.batch_rank !== null ? (summary as any)?.batch_id : null;
-          res = await leaderboardService.getAcademyLeaderboard({
-            batchId: batchId || null,
-            limit: 40,
-          });
-          hoodScope = 'BATCH';
-          hoodScopeId = batchId || null;
         } else if (activeTab === 'COURSE') {
           const courseId = (summary as any)?.course_id || null;
           if (courseId) {
@@ -141,8 +131,7 @@ export const StudentLeaderboardPage: React.FC = () => {
     return leaders.filter(
       (l) =>
         l.student_name.toLowerCase().includes(q) ||
-        l.roll_number.toLowerCase().includes(q) ||
-        l.batch_name.toLowerCase().includes(q)
+        l.roll_number.toLowerCase().includes(q)
     );
   }, [leaders, searchFilter]);
 
@@ -184,25 +173,8 @@ export const StudentLeaderboardPage: React.FC = () => {
         </div>
       </div>
 
-      {/* 4 Standing KPI Metric Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Batch Position */}
-        <div className="bg-white border border-[#E6E8EC] rounded-2xl p-5 shadow-xs space-y-2">
-          <div className="flex items-center justify-between text-[#64748B]">
-            <span className="text-xs font-semibold uppercase tracking-wider">Batch Position</span>
-            <Users className="w-4 h-4 text-[#C6A75E]" />
-          </div>
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-2xl sm:text-3xl font-bold font-sans tabular-nums text-[#0E1B2A]">
-              {summary?.batch_rank ? `#${summary.batch_rank}` : '—'}
-            </span>
-            <span className="text-xs font-medium text-[#64748B]">
-              of {summary?.batch_total || 0}
-            </span>
-          </div>
-          <p className="text-[11px] text-[#166534] font-medium">Course standing</p>
-        </div>
-
+      {/* Standing KPI Metric Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* Course Position */}
         <div className="bg-white border border-[#E6E8EC] rounded-2xl p-5 shadow-xs space-y-2">
           <div className="flex items-center justify-between text-[#64748B]">
@@ -273,19 +245,6 @@ export const StudentLeaderboardPage: React.FC = () => {
           >
             <Shield className="w-3.5 h-3.5" />
             <span>Overall Academy</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('BATCH')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-colors whitespace-nowrap ${
-              activeTab === 'BATCH'
-                ? 'bg-[#0E1B2A] text-white shadow-xs'
-                : 'text-[#64748B] hover:text-[#0E1B2A] hover:bg-[#F8FAFC]'
-            }`}
-          >
-            <Users className="w-3.5 h-3.5" />
-            <span>My Batch Wing</span>
           </button>
 
           <button
@@ -386,7 +345,6 @@ export const StudentLeaderboardPage: React.FC = () => {
                   <th className="py-3 px-4 w-16 text-center">Rank</th>
                   <th className="py-3 px-4">Cadet Name</th>
                   <th className="py-3 px-4">Roll Number</th>
-                  <th className="py-3 px-4">Wing Batch</th>
                   {activeTab === 'TESTS' ? (
                     <>
                       <th className="py-3 px-4 text-center">Marks</th>
@@ -453,11 +411,6 @@ export const StudentLeaderboardPage: React.FC = () => {
                       {/* Roll Number */}
                       <td className="py-3.5 px-4 font-mono font-semibold text-[#475569]">
                         {entry.roll_number}
-                      </td>
-
-                      {/* Wing Batch */}
-                      <td className="py-3.5 px-4 text-[#475569]">
-                        {entry.batch_name}
                       </td>
 
                       {/* Score Metrics */}

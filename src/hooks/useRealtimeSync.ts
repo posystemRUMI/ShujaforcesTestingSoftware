@@ -20,7 +20,6 @@ export function useRealtimeSync(scope?: 'admin' | 'student' | 'global') {
       .on('postgres_changes', { event: '*', schema: 'public', table: 'students' }, (payload) => {
         console.log('⚡ Realtime Event: students changed', payload.eventType);
         queryClient.invalidateQueries({ queryKey: ['students'] });
-        queryClient.invalidateQueries({ queryKey: ['batches'] });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'profiles' }, (payload) => {
         console.log('⚡ Realtime Event: profiles changed', payload.eventType);
@@ -31,11 +30,6 @@ export function useRealtimeSync(scope?: 'admin' | 'student' | 'global') {
       .on('postgres_changes', { event: '*', schema: 'public', table: 'teachers' }, () => {
         console.log('⚡ Realtime Event: teachers changed');
         queryClient.invalidateQueries({ queryKey: ['teachers'] });
-      })
-      // 3. Batches
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'batches' }, () => {
-        console.log('⚡ Realtime Event: batches changed');
-        queryClient.invalidateQueries({ queryKey: ['batches'] });
       })
       // 4. Forces & Courses
       .on('postgres_changes', { event: '*', schema: 'public', table: 'forces' }, () => {

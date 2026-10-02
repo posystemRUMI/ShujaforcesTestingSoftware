@@ -125,7 +125,7 @@ export const ExamInstructionsPage: React.FC = () => {
         }
 
         if (!targetTestId) {
-          throw new Error('No published computerized examination is currently assigned to your batch. Please contact your examination controller or proctor.');
+          throw new Error('No published computerized examination is currently assigned to your course. Please contact your examination controller or proctor.');
         }
 
         const res = await attemptService.startAttempt(targetTestId);

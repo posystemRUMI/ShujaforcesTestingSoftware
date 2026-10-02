@@ -56,7 +56,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
           >
             <div className="flex items-center space-x-2.5">
               <Search className="w-4 h-4 text-[#94A3B8]" />
-              <span className="truncate text-[13.5px]">Search students, batches, tests...</span>
+              <span className="truncate text-[13.5px]">Search cadets, tests, questions...</span>
             </div>
             <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[11px] font-mono bg-white border border-[#D4D9DF] rounded text-[#64748B]">
               Ctrl+K
@@ -64,11 +64,11 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
           </div>
         </div>
 
-        {/* Right: Intake Status, Notifications, User Profile */}
+        {/* Right: Academy Status, Notifications, User Profile */}
         <div className="flex items-center space-x-3 ml-5">
           <div className="hidden lg:flex items-center space-x-2 px-3 py-1.5 bg-[#F4F6F9] rounded-lg text-[12.5px] font-medium text-[#374151] border border-[#E2E6EB]">
             <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
-            <span>Intake 2026-A</span>
+            <span>Armed Forces Academy</span>
           </div>
 
           {/* Notification Bell */}

@@ -26,7 +26,6 @@ export interface CourseConfig {
   maxAge: number;
   educationRequirement: string;
   passingMarksPercent: number;
-  batchesCount: number;
   status: 'ACTIVE' | 'INACTIVE';
   description?: string;
 }

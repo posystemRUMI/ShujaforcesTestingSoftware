@@ -28,8 +28,8 @@ export interface Cadet {
   fullName: string;
   fatherName: string;
   branch: MilitaryBranch;
-  batchId: string;
-  batchCode: string;
+  batchId?: string;
+  batchCode?: string;
   status: CadetStatus;
   enrolledAt: string;
   avatarUrl?: string;

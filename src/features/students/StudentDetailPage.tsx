@@ -193,7 +193,6 @@ export const StudentDetailPage: React.FC = () => {
             <div className="flex items-center space-x-3 pt-1 text-xs">
               <ForceBadge branch={student.branch} />
               <span className="font-sans text-[#0E1B2A] font-semibold">{student.targetCourse}</span>
-              <span className="text-[#64748B] font-sans">Cohort: <span className="font-mono font-medium">{student.batchCode}</span></span>
             </div>
           </div>
         </div>

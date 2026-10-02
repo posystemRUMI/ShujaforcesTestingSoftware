@@ -13,7 +13,6 @@ interface ParsedCandidate {
   phone: string;
   rollNumber: string;
   branch: 'PAKISTAN_ARMY' | 'PAKISTAN_AIR_FORCE' | 'PAKISTAN_NAVY';
-  batchCode: string;
   isValid: boolean;
   validationError?: string;
 }
@@ -27,7 +26,6 @@ const SAMPLE_CSV_ROWS: ParsedCandidate[] = [
     phone: '0300-9988776',
     rollNumber: 'PMA-2650',
     branch: 'PAKISTAN_ARMY',
-    batchCode: '154-PMA-LC',
     isValid: true,
   },
   {
@@ -38,7 +36,6 @@ const SAMPLE_CSV_ROWS: ParsedCandidate[] = [
     phone: '0321-7766554',
     rollNumber: 'PAF-4490',
     branch: 'PAKISTAN_AIR_FORCE',
-    batchCode: 'PAF-GDP-BATCH',
     isValid: true,
   },
   {
@@ -49,7 +46,6 @@ const SAMPLE_CSV_ROWS: ParsedCandidate[] = [
     phone: '0333-1122334',
     rollNumber: 'SAILOR-1199',
     branch: 'PAKISTAN_NAVY',
-    batchCode: 'NAVY-SAILOR-BATCH',
     isValid: false,
     validationError: 'CNIC format error: missing digits (00000-0000000-0)',
   },
@@ -77,8 +73,6 @@ export const StudentImportPage: React.FC = () => {
         phone: r.phone,
         rollNumber: r.rollNumber,
         branch: r.branch,
-        batchId: 'batch-001',
-        batchCode: r.batchCode,
         targetCourse: r.branch === 'PAKISTAN_ARMY' ? 'PMA Long Course' : r.branch === 'PAKISTAN_AIR_FORCE' ? 'GD(P) & Aeronautical Engineering' : 'Sailor',
         status: 'ACTIVE',
       });
@@ -137,7 +131,7 @@ export const StudentImportPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-6 select-none">
       <PageHeader
-        title="Batch Candidate CSV/Excel Import"
+        title="Candidate CSV/Excel Bulk Import"
         subtitle="4-Stage Onboarding Flow: File Upload → Pre-Parse → Integrity Validation → Docket Commitment"
         breadcrumbs={[
           { label: 'Cadets Roster', href: '/admin/students' },

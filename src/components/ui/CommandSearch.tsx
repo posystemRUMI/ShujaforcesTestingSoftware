@@ -58,7 +58,7 @@ export const CommandSearch: React.FC<CommandSearchProps> = ({ isOpen, onClose })
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search cadets, batches, tests, questions, or command codes (ESC to close)..."
+            placeholder="Search cadets, tests, questions, or command codes (ESC to close)..."
             className="w-full px-3 py-3 text-xs bg-transparent border-none focus:outline-none text-[#1F2937] placeholder-[#94A3B8]"
           />
           {query && (

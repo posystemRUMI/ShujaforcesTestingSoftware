@@ -8,8 +8,8 @@ export interface StudentRecord {
   fatherName: string;
   phone: string;
   branch: MilitaryBranch;
-  batchId: string;
-  batchCode: string;
+  batchId?: string;
+  batchCode?: string;
   targetCourse: string;
   status: CadetStatus;
   enrolledAt: string;

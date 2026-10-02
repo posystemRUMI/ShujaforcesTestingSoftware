@@ -107,7 +107,6 @@ export const configurationService = {
           maxAge: 22,
           educationRequirement: 'F.Sc / A-Level',
           passingMarksPercent: 50,
-          batchesCount: 0,
           status: 'ACTIVE',
           description: (dbMatch as any)?.description || undefined,
         });

@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { configurationService } from '@/services/configurationService';
 import testPatternService from '@/services/testPatternService';
-import { batchService } from '@/services/batchService';
 import { studentService } from '@/services/studentService';
 import { teacherService } from '@/services/teacherService';
 import { testService } from '@/services/testService';
@@ -47,14 +46,6 @@ export function useTestPatternsQuery(forceId?: string, courseId?: string) {
   });
 }
 
-export function useBatchesQuery() {
-  return useQuery({
-    queryKey: ['batches'],
-    queryFn: () => batchService.getBatches(),
-    staleTime: 30 * 1000, // 30s operational cache
-    gcTime: 5 * 60 * 1000,
-  });
-}
 
 export function useStudentsQuery() {
   return useQuery({
