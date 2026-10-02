@@ -535,33 +535,6 @@ export const studentRegistrationService = {
         console.warn('Direct student insert exception:', sErr);
       }
 
-      // Store in local studentStore so cadet is immediately listed across roster and login
-      try {
-        const { studentStore } = await import('@/features/students/studentStore');
-        const forcesList = await studentRegistrationService.getActiveForces();
-        const forceObj = forcesList.find((f) => f.id === payload.targetForceId);
-        const coursesList = await studentRegistrationService.getCoursesForForce(payload.targetForceId);
-        const courseObj = coursesList.find((c) => c.id === payload.targetCourseId);
-
-        studentStore.create({
-          rollNumber: payload.rollNumber,
-          fullName: payload.fullName,
-          fatherName: payload.fatherName,
-          cnic: payload.cnic,
-          phone: payload.phone,
-          branch: (forceObj?.code || 'PAKISTAN_ARMY') as any,
-          batchId: '',
-          batchCode: '',
-          targetCourse: courseObj?.name || 'Entry Course',
-          status: (payload.status || 'ACTIVE') as any,
-          avatarUrl: payload.photoUrl || undefined,
-          dateOfBirth: payload.dateOfBirth || undefined,
-          gender: payload.gender,
-        });
-      } catch (storeErr) {
-        console.warn('Failed to sync student to local store:', storeErr);
-      }
-
       result = {
         success: true,
         profileId: createdAuthId,
@@ -576,6 +549,45 @@ export const studentRegistrationService = {
 
     if (result && (result.studentId || (result as any).student_id)) {
       const sid = result.studentId || (result as any).student_id;
+
+      // Always sync cadet to studentStore so candidate is immediately listed across all pages
+      try {
+        const { studentStore } = await import('@/features/students/studentStore');
+        const forcesList = await studentRegistrationService.getActiveForces();
+        const forceObj = forcesList.find((f) => f.id === payload.targetForceId || f.code === payload.targetForceId);
+        const coursesList = await studentRegistrationService.getCoursesForForce(payload.targetForceId);
+        const courseObj = coursesList.find((c) => c.id === payload.targetCourseId || c.code === payload.targetCourseId);
+
+        studentStore.create({
+          id: sid,
+          rollNumber: payload.rollNumber,
+          fullName: payload.fullName,
+          fatherName: payload.fatherName,
+          cnic: payload.cnic,
+          phone: payload.phone,
+          branch: (forceObj?.name || 'Pakistan Army') as any,
+          batchId: '',
+          batchCode: '',
+          targetCourse: courseObj?.name || 'PMA Long Course',
+          status: (payload.status || 'ACTIVE') as any,
+          avatarUrl: payload.photoUrl || undefined,
+          dateOfBirth: payload.dateOfBirth || undefined,
+          gender: payload.gender,
+          education: payload.education,
+          educationDetails: payload.educationDetails || undefined,
+          alternatePhone: payload.alternatePhone || undefined,
+          address: payload.address || undefined,
+          guardianName: payload.guardianName || undefined,
+          guardianRelationship: payload.guardianRelationship || undefined,
+          guardianPhone: payload.guardianPhone || undefined,
+          admissionDate: payload.admissionDate || undefined,
+          notes: payload.notes || undefined,
+          email: payload.email,
+        });
+      } catch (storeErr) {
+        console.warn('Failed to sync student to local store:', storeErr);
+      }
+
       await setupInitialFeeAccountAndPayment(sid, input);
     }
 
@@ -591,39 +603,78 @@ async function setupInitialFeeAccountAndPayment(studentId: string, input: Studen
     const matchedCourse = OFFICIAL_COURSES.find((c) => c.id === input.targetCourseId || c.code === input.targetCourseId);
     const courseUuid = matchedCourse ? matchedCourse.id : input.targetCourseId;
     const safeBatchId = input.batchId && input.batchId.length === 36 ? input.batchId : null;
+    const localAccId = `acc-${Date.now()}`;
 
-    const { data: feeAcc, error: feeErr } = await supabase
-      .from('student_fee_accounts')
-      .insert({
-        student_id: studentId,
-        course_id: courseUuid,
-        batch_id: safeBatchId,
-        fee_type: 'ADMISSION & TUITION FEE',
-        fee_year: new Date().getFullYear(),
-        fee_month: new Date().getMonth() + 1,
-        fee_period: `${new Date().getFullYear()} Session`,
-        amount_due: input.courseFeeAmount,
-        discount_amount: 0,
-        fine_amount: 0,
-        amount_paid: 0,
-        status: 'UNPAID',
-      })
-      .select('id')
-      .single();
+    // 1. Save local fee account to localStorage
+    const { getLocalFeeAccounts, saveLocalFeeAccounts, financeService } = await import('@/services/financeService');
+    const localAccs = getLocalFeeAccounts();
 
-    if (feeErr) {
-      console.warn('Initial fee account creation warning:', feeErr);
+    const newLocalAcc = {
+      id: localAccId,
+      student_id: studentId,
+      roll_number: input.rollNumber,
+      course_id: courseUuid,
+      course_name: matchedCourse?.name || 'Entry Course',
+      batch_id: safeBatchId,
+      fee_type: 'ADMISSION & TUITION FEE',
+      fee_year: new Date().getFullYear(),
+      fee_month: new Date().getMonth() + 1,
+      fee_period: `${new Date().getFullYear()} Session`,
+      amount_due: input.courseFeeAmount,
+      discount_amount: 0,
+      fine_amount: 0,
+      amount_paid: 0,
+      status: 'UNPAID',
+      created_at: new Date().toISOString(),
+    };
+
+    localAccs.unshift(newLocalAcc);
+    saveLocalFeeAccounts(localAccs);
+
+    // 2. Try Supabase DB insert for fee account
+    let activeFeeAccId = localAccId;
+    try {
+      const { data: feeAcc, error: feeErr } = await supabase
+        .from('student_fee_accounts')
+        .insert({
+          student_id: studentId,
+          course_id: courseUuid,
+          batch_id: safeBatchId,
+          fee_type: 'ADMISSION & TUITION FEE',
+          fee_year: new Date().getFullYear(),
+          fee_month: new Date().getMonth() + 1,
+          fee_period: `${new Date().getFullYear()} Session`,
+          amount_due: input.courseFeeAmount,
+          discount_amount: 0,
+          fine_amount: 0,
+          amount_paid: 0,
+          status: 'UNPAID',
+        })
+        .select('id')
+        .single();
+
+      if (!feeErr && feeAcc?.id) {
+        activeFeeAccId = feeAcc.id;
+      } else if (feeErr) {
+        console.warn('Initial fee account DB insert warning:', feeErr);
+      }
+    } catch (err) {
+      console.warn('Initial fee account DB exception:', err);
     }
 
-    if (!feeErr && feeAcc && input.initialPaymentAmount && input.initialPaymentAmount > 0) {
-      const { financeService } = await import('@/services/financeService');
-      await financeService.recordStudentFeePayment({
-        studentId,
-        feeAccountId: feeAcc.id,
-        amount: input.initialPaymentAmount,
-        paymentMethod: input.paymentMethod || 'CASH',
-        notes: 'Initial course fee payment recorded during student registration',
-      });
+    // 3. Record initial payment if initialPaymentAmount > 0
+    if (input.initialPaymentAmount && input.initialPaymentAmount > 0) {
+      try {
+        await financeService.recordStudentFeePayment({
+          studentId,
+          feeAccountId: activeFeeAccId,
+          amount: input.initialPaymentAmount,
+          paymentMethod: input.paymentMethod || 'CASH',
+          notes: 'Initial course fee payment recorded during student registration',
+        });
+      } catch (pErr) {
+        console.warn('Initial payment recording warning:', pErr);
+      }
     }
   } catch (err) {
     console.warn('Initial fee setup error:', err);
