@@ -21,7 +21,7 @@ const financeMemoryStore = new Map<string, string>();
 
 export function getLocalFeeAccounts(): any[] {
   try {
-    const raw = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+    const raw = typeof localStorage !== 'undefined'
       ? localStorage.getItem(LOCAL_FEE_ACCOUNTS_KEY)
       : financeMemoryStore.get(LOCAL_FEE_ACCOUNTS_KEY);
     return raw ? JSON.parse(raw) : [];
@@ -33,7 +33,7 @@ export function getLocalFeeAccounts(): any[] {
 export function saveLocalFeeAccounts(accs: any[]): void {
   try {
     const serialized = JSON.stringify(accs);
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+    if (typeof localStorage !== 'undefined') {
       localStorage.setItem(LOCAL_FEE_ACCOUNTS_KEY, serialized);
     }
     financeMemoryStore.set(LOCAL_FEE_ACCOUNTS_KEY, serialized);
@@ -42,7 +42,7 @@ export function saveLocalFeeAccounts(accs: any[]): void {
 
 export function getLocalFeePayments(): any[] {
   try {
-    const raw = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+    const raw = typeof localStorage !== 'undefined'
       ? localStorage.getItem(LOCAL_FEE_PAYMENTS_KEY)
       : financeMemoryStore.get(LOCAL_FEE_PAYMENTS_KEY);
     return raw ? JSON.parse(raw) : [];
@@ -54,7 +54,7 @@ export function getLocalFeePayments(): any[] {
 export function saveLocalFeePayments(payments: any[]): void {
   try {
     const serialized = JSON.stringify(payments);
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+    if (typeof localStorage !== 'undefined') {
       localStorage.setItem(LOCAL_FEE_PAYMENTS_KEY, serialized);
     }
     financeMemoryStore.set(LOCAL_FEE_PAYMENTS_KEY, serialized);

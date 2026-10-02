@@ -5,7 +5,7 @@ const memoryStore = new Map<string, string>();
 
 function loadStoredStudents(): StudentRecord[] {
   try {
-    const raw = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+    const raw = typeof localStorage !== 'undefined'
       ? localStorage.getItem(STORAGE_KEY)
       : memoryStore.get(STORAGE_KEY);
     if (raw) {
@@ -21,7 +21,7 @@ function loadStoredStudents(): StudentRecord[] {
 function saveStoredStudents(students: StudentRecord[]): void {
   try {
     const serialized = JSON.stringify(students);
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+    if (typeof localStorage !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, serialized);
     }
     memoryStore.set(STORAGE_KEY, serialized);
