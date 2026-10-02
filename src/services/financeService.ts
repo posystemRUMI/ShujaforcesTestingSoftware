@@ -20,8 +20,11 @@ const LOCAL_FEE_PAYMENTS_KEY = 'shuja_local_fee_payments_v3';
 
 export function getLocalFeeAccounts(): any[] {
   try {
-    const data = localStorage.getItem(LOCAL_FEE_ACCOUNTS_KEY);
-    return data ? JSON.parse(data) : [];
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      const data = localStorage.getItem(LOCAL_FEE_ACCOUNTS_KEY);
+      return data ? JSON.parse(data) : [];
+    }
+    return [];
   } catch {
     return [];
   }
@@ -29,14 +32,19 @@ export function getLocalFeeAccounts(): any[] {
 
 export function saveLocalFeeAccounts(accs: any[]): void {
   try {
-    localStorage.setItem(LOCAL_FEE_ACCOUNTS_KEY, JSON.stringify(accs));
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      localStorage.setItem(LOCAL_FEE_ACCOUNTS_KEY, JSON.stringify(accs));
+    }
   } catch {}
 }
 
 export function getLocalFeePayments(): any[] {
   try {
-    const data = localStorage.getItem(LOCAL_FEE_PAYMENTS_KEY);
-    return data ? JSON.parse(data) : [];
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      const data = localStorage.getItem(LOCAL_FEE_PAYMENTS_KEY);
+      return data ? JSON.parse(data) : [];
+    }
+    return [];
   } catch {
     return [];
   }
@@ -44,7 +52,9 @@ export function getLocalFeePayments(): any[] {
 
 export function saveLocalFeePayments(payments: any[]): void {
   try {
-    localStorage.setItem(LOCAL_FEE_PAYMENTS_KEY, JSON.stringify(payments));
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      localStorage.setItem(LOCAL_FEE_PAYMENTS_KEY, JSON.stringify(payments));
+    }
   } catch {}
 }
 
