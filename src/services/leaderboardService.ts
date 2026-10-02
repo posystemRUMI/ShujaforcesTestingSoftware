@@ -91,14 +91,76 @@ export const leaderboardService = {
         p_limit: limit,
       });
 
-      if (error) throw error;
-      return {
-        leaders: data?.leaders || [],
-        current_student: data?.current_student || null,
-        total_participants: Number(data?.total_participants || 0),
-      };
+      if (!error && data && data.leaders && data.leaders.length > 0) {
+        return {
+          leaders: data.leaders,
+          current_student: data.current_student || null,
+          total_participants: Number(data.total_participants || 0),
+        };
+      }
     } catch (err) {
-      console.warn('Failed to load test leaderboard:', err);
+      console.warn('RPC get_test_leaderboard error, using direct table fallback:', err);
+    }
+
+    // Direct table fallback for test leaderboard
+    try {
+      const { data: results, error: resErr } = await (supabase as any)
+        .from('test_results')
+        .select(`
+          id,
+          percentage,
+          marks_obtained,
+          max_marks,
+          correct_count,
+          total_questions,
+          passed,
+          generated_at,
+          students (
+            id,
+            roll_number,
+            profile_id,
+            forces ( name ),
+            courses ( name ),
+            profiles:profiles!students_profile_id_fkey ( display_name )
+          )
+        `)
+        .eq('test_id', testId)
+        .order('percentage', { ascending: false })
+        .limit(limit);
+
+      if (resErr || !results || results.length === 0) {
+        return { leaders: [], current_student: null, total_participants: 0 };
+      }
+
+      const leadersList: LeaderboardEntry[] = results.map((r: any, idx: number) => {
+        const std = r.students;
+        return {
+          rank: idx + 1,
+          student_id: std?.id || r.student_id,
+          roll_number: std?.roll_number || 'CADET',
+          student_name: std?.profiles?.display_name || std?.roll_number || 'Cadet Officer',
+          batch_id: null,
+          batch_name: 'Active Batch',
+          course_id: null,
+          course_name: std?.courses?.name || 'Official Course',
+          force_id: null,
+          force_name: std?.forces?.name || 'Pakistan Armed Forces',
+          tests_completed: 1,
+          percentage: r.percentage || 0,
+          best_percentage: r.percentage || 0,
+          score: r.marks_obtained || 0,
+          passed: r.passed,
+          is_current_user: false,
+        };
+      });
+
+      return {
+        leaders: leadersList,
+        current_student: leadersList[0] || null,
+        total_participants: results.length,
+      };
+    } catch (e) {
+      console.warn('Direct test leaderboard fallback failed:', e);
       return { leaders: [], current_student: null, total_participants: 0 };
     }
   },
@@ -124,16 +186,18 @@ export const leaderboardService = {
         p_min_tests: minTests,
       });
 
-      if (error) throw error;
-      return {
-        leaders: data?.leaders || [],
-        current_student: data?.current_student || null,
-        total_participants: Number(data?.total_participants || 0),
-      };
+      if (!error && data && data.leaders && data.leaders.length > 0) {
+        return {
+          leaders: data.leaders,
+          current_student: data.current_student || null,
+          total_participants: Number(data.total_participants || 0),
+        };
+      }
     } catch (err) {
-      console.warn('Failed to load course leaderboard:', err);
-      return { leaders: [], current_student: null, total_participants: 0 };
+      console.warn('RPC get_course_leaderboard error, using academy fallback:', err);
     }
+
+    return this.getAcademyLeaderboard({ courseId, batchId, limit });
   },
 
   /**
@@ -153,14 +217,94 @@ export const leaderboardService = {
         p_min_tests: filters?.minTests || 1,
       });
 
-      if (error) throw error;
-      return {
-        leaders: data?.leaders || [],
-        current_student: data?.current_student || null,
-        total_participants: Number(data?.total_participants || 0),
-      };
+      if (!error && data && data.leaders && data.leaders.length > 0) {
+        return {
+          leaders: data.leaders,
+          current_student: data.current_student || null,
+          total_participants: Number(data.total_participants || 0),
+        };
+      }
     } catch (err) {
-      console.warn('Failed to load academy leaderboard:', err);
+      console.warn('RPC get_academy_leaderboard error, using direct table fallback:', err);
+    }
+
+    // Direct table fallback: query test_results
+    try {
+      const { data: results, error: resErr } = await (supabase as any)
+        .from('test_results')
+        .select(`
+          id,
+          percentage,
+          marks_obtained,
+          max_marks,
+          correct_count,
+          total_questions,
+          passed,
+          generated_at,
+          students (
+            id,
+            roll_number,
+            profile_id,
+            forces ( name ),
+            courses ( name ),
+            profiles:profiles!students_profile_id_fkey ( display_name )
+          )
+        `)
+        .order('percentage', { ascending: false });
+
+      if (resErr || !results || results.length === 0) {
+        return { leaders: [], current_student: null, total_participants: 0 };
+      }
+
+      const studentMap = new Map<string, any>();
+      for (const r of results) {
+        const std = r.students;
+        if (!std) continue;
+        const sId = std.id;
+        const sName = std.profiles?.display_name || std.roll_number || 'Cadet';
+        const forceName = std.forces?.name || 'Pakistan Armed Forces';
+        const courseName = std.courses?.name || 'Standard Course';
+
+        if (!studentMap.has(sId)) {
+          studentMap.set(sId, {
+            student_id: sId,
+            roll_number: std.roll_number || 'CADET',
+            student_name: sName,
+            batch_id: null,
+            batch_name: 'Active Batch',
+            course_id: null,
+            course_name: courseName,
+            force_id: null,
+            force_name: forceName,
+            tests_completed: 1,
+            total_marks_obtained: r.marks_obtained || 0,
+            total_marks_possible: r.max_marks || 100,
+            aggregate_percentage: r.percentage || 0,
+            average_percentage: r.percentage || 0,
+            best_percentage: r.percentage || 0,
+            score: r.marks_obtained || 0,
+            percentage: r.percentage || 0,
+            passed: r.passed,
+            is_current_user: false,
+          });
+        }
+      }
+
+      const leadersList: LeaderboardEntry[] = Array.from(studentMap.values())
+        .sort((a, b) => b.best_percentage - a.best_percentage)
+        .slice(0, filters?.limit || 40)
+        .map((entry, idx) => ({
+          ...entry,
+          rank: idx + 1,
+        }));
+
+      return {
+        leaders: leadersList,
+        current_student: leadersList[0] || null,
+        total_participants: studentMap.size,
+      };
+    } catch (fallbackErr) {
+      console.warn('Leaderboard table query fallback error:', fallbackErr);
       return { leaders: [], current_student: null, total_participants: 0 };
     }
   },
