@@ -40,11 +40,6 @@ const QuestionAuthorPage = safeLazy(() => import('@/features/question-author/Que
 const TestBuilderPage = safeLazy(() => import('@/features/test-builder/TestBuilderPage'));
 const ResultsPage = safeLazy(() => import('@/features/results/ResultsPage'));
 const ReportsPage = safeLazy(() => import('@/features/reports/ReportsPage'));
-const ForcesPage = safeLazy(() => import('@/features/configuration/ForcesPage'));
-const ForceDetailPage = safeLazy(() => import('@/features/configuration/ForceDetailPage'));
-const CoursesPage = safeLazy(() => import('@/features/configuration/CoursesPage'));
-const SubjectsPage = safeLazy(() => import('@/features/configuration/SubjectsPage'));
-const SettingsPage = safeLazy(() => import('@/features/configuration/SettingsPage'));
 const StudentDashboardPage = safeLazy(() => import('@/features/student-portal/StudentDashboardPage'));
 const StudentTestsPage = safeLazy(() => import('@/features/student-portal/StudentTestsPage'));
 const StudentResultsPage = safeLazy(() => import('@/features/student-portal/StudentResultsPage'));
@@ -316,43 +311,23 @@ export const router = createBrowserRouter([
       },
       {
         path: 'forces',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <ForcesPage />
-          </Suspense>
-        ),
+        element: <Navigate to="/admin/dashboard" replace />,
       },
       {
         path: 'forces/:id',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <ForceDetailPage />
-          </Suspense>
-        ),
+        element: <Navigate to="/admin/dashboard" replace />,
       },
       {
         path: 'courses',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <CoursesPage />
-          </Suspense>
-        ),
+        element: <Navigate to="/admin/dashboard" replace />,
       },
       {
         path: 'subjects',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <SubjectsPage />
-          </Suspense>
-        ),
+        element: <Navigate to="/admin/dashboard" replace />,
       },
       {
         path: 'settings',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <SettingsPage />
-          </Suspense>
-        ),
+        element: <Navigate to="/admin/dashboard" replace />,
       },
     ],
   },

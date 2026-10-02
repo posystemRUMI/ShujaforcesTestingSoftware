@@ -84,6 +84,11 @@ export const FinancePage: React.FC = () => {
   const [isRecordExpenseOpen, setIsRecordExpenseOpen] = useState(false);
   const [isRecordSalaryOpen, setIsRecordSalaryOpen] = useState(false);
   const [isGenerateFeesOpen, setIsGenerateFeesOpen] = useState(false);
+
+  // Edit Modals State
+  const [editingExpense, setEditingExpense] = useState<FinanceExpense | null>(null);
+  const [editingFeeAccount, setEditingFeeAccount] = useState<StudentFeeAccount | null>(null);
+  const [editingSalary, setEditingSalary] = useState<TeacherSalaryPayment | null>(null);
   const [printableData, setPrintableData] = useState<{
     isOpen: boolean;
     account: StudentFeeAccount | null;
@@ -807,6 +812,12 @@ export const FinancePage: React.FC = () => {
                                   </>
                                 )}
                                 <button
+                                  onClick={() => setEditingFeeAccount(acc)}
+                                  className="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded font-semibold text-[11px] border border-amber-300 transition-colors"
+                                >
+                                  Edit Fee
+                                </button>
+                                <button
                                   onClick={() => {
                                     setPrintableData({
                                       isOpen: true,
@@ -1214,7 +1225,13 @@ export const FinancePage: React.FC = () => {
                             {exp.status}
                           </span>
                         </td>
-                        <td className="py-3 px-4 text-right">
+                        <td className="py-3 px-4 text-right space-x-1">
+                          <button
+                            onClick={() => setEditingExpense(exp)}
+                            className="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded font-semibold text-[11px] border border-slate-300 transition-colors"
+                          >
+                            Edit
+                          </button>
                           {exp.status === 'ACTIVE' && (
                             <button
                               onClick={() => handleVoidExpense(exp)}
@@ -1305,6 +1322,7 @@ export const FinancePage: React.FC = () => {
                       <th className="py-2.5 px-3 text-right">Net Paid</th>
                       <th className="py-2.5 px-3">Date</th>
                       <th className="py-2.5 px-3 text-center">Status</th>
+                      <th className="py-2.5 px-4 text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 text-slate-800">
@@ -1347,6 +1365,14 @@ export const FinancePage: React.FC = () => {
                           }`}>
                             {sal.status}
                           </span>
+                        </td>
+                        <td className="py-3 px-4 text-right">
+                          <button
+                            onClick={() => setEditingSalary(sal)}
+                            className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded font-semibold text-[11px] border border-slate-300 transition-colors"
+                          >
+                            Edit
+                          </button>
                         </td>
                       </tr>
                     ))}
@@ -1542,6 +1568,46 @@ export const FinancePage: React.FC = () => {
             loadSummary();
             if (selectedStudent) handleSelectStudent(selectedStudent);
             loadAllStudentsOverview();
+          }}
+        />
+      )}
+
+      {/* EDIT MODAL 1: EDIT EXPENSE */}
+      {editingExpense && (
+        <EditExpenseModal
+          isOpen={!!editingExpense}
+          expense={editingExpense}
+          onClose={() => setEditingExpense(null)}
+          onSuccess={() => {
+            loadExpenses();
+            loadSummary();
+          }}
+        />
+      )}
+
+      {/* EDIT MODAL 2: EDIT FEE ACCOUNT */}
+      {editingFeeAccount && (
+        <EditFeeAccountModal
+          isOpen={!!editingFeeAccount}
+          account={editingFeeAccount}
+          onClose={() => setEditingFeeAccount(null)}
+          onSuccess={() => {
+            if (selectedStudent) handleSelectStudent(selectedStudent);
+            loadSummary();
+            loadAllStudentsOverview();
+          }}
+        />
+      )}
+
+      {/* EDIT MODAL 3: EDIT SALARY PAYMENT */}
+      {editingSalary && (
+        <EditSalaryModal
+          isOpen={!!editingSalary}
+          salary={editingSalary}
+          onClose={() => setEditingSalary(null)}
+          onSuccess={() => {
+            loadSalaries();
+            loadSummary();
           }}
         />
       )}
@@ -2406,6 +2472,415 @@ const GenerateFeesModal: React.FC<{ onClose: () => void; onSuccess: () => void }
               className="px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-bold disabled:opacity-50"
             >
               {submitting ? 'Generating...' : 'Generate Fees'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// Edit Modals
+// ============================================================================
+
+const EditExpenseModal: React.FC<{
+  isOpen: boolean;
+  expense: FinanceExpense | null;
+  onClose: () => void;
+  onSuccess: () => void;
+}> = ({ isOpen, expense, onClose, onSuccess }) => {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [amount, setAmount] = useState<number>(0);
+  const [payeeName, setPayeeName] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('CASH');
+  const [referenceNumber, setReferenceNumber] = useState('');
+  const [categoryCode, setCategoryCode] = useState('GENERAL');
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (expense) {
+      setTitle(expense.title || '');
+      setDescription(expense.description || '');
+      setAmount(expense.amount || 0);
+      setPayeeName(expense.payee_name || '');
+      setPaymentMethod((expense.payment_method as PaymentMethod) || 'CASH');
+      setReferenceNumber(expense.reference_number || '');
+      setCategoryCode(expense.category_code || 'GENERAL');
+    }
+  }, [expense]);
+
+  if (!isOpen || !expense) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      await financeService.updateExpense(expense.id, {
+        title,
+        description,
+        amount,
+        payeeName,
+        paymentMethod,
+        referenceNumber,
+        categoryCode,
+      });
+      toast.success('Expense record updated successfully.');
+      onSuccess();
+      onClose();
+    } catch (err: any) {
+      toast.error('Failed to update expense: ' + (err?.message || ''));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-xl max-w-lg w-full p-6 shadow-2xl border border-slate-200">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-150">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">Edit Expense Record</h3>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4 pt-4 text-xs font-sans">
+          <div>
+            <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Expense Title *</label>
+            <input
+              type="text"
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-semibold text-slate-900"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Amount (PKR) *</label>
+              <input
+                type="number"
+                min="0"
+                required
+                value={amount}
+                onChange={(e) => setAmount(Number(e.target.value))}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-bold text-rose-700"
+              />
+            </div>
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Payee / Vendor Name</label>
+              <input
+                type="text"
+                value={payeeName}
+                onChange={(e) => setPayeeName(e.target.value)}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-semibold text-slate-900"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Payment Method</label>
+              <select
+                value={paymentMethod}
+                onChange={(e) => setPaymentMethod(e.target.value as PaymentMethod)}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-semibold text-slate-900"
+              >
+                <option value="CASH">Cash</option>
+                <option value="BANK_TRANSFER">Bank Transfer</option>
+                <option value="CHEQUE">Cheque</option>
+                <option value="ONLINE">Online / Easypaisa / JazzCash</option>
+              </select>
+            </div>
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Reference / Cheque #</label>
+              <input
+                type="text"
+                value={referenceNumber}
+                onChange={(e) => setReferenceNumber(e.target.value)}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-semibold text-slate-900"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Particulars / Notes</label>
+            <textarea
+              rows={2}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-medium text-slate-900"
+            />
+          </div>
+          <div className="pt-3 flex justify-end space-x-2 border-t border-slate-150">
+            <button type="button" onClick={onClose} className="px-3.5 py-2 bg-slate-100 text-slate-700 rounded-lg font-bold">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="px-4 py-2 bg-[#0E1B2A] hover:bg-slate-800 text-white rounded-lg font-bold shadow-xs disabled:opacity-50"
+            >
+              {submitting ? 'Saving...' : 'Save Expense Changes'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+const EditFeeAccountModal: React.FC<{
+  isOpen: boolean;
+  account: StudentFeeAccount | null;
+  onClose: () => void;
+  onSuccess: () => void;
+}> = ({ isOpen, account, onClose, onSuccess }) => {
+  const [amountDue, setAmountDue] = useState<number>(0);
+  const [discountAmount, setDiscountAmount] = useState<number>(0);
+  const [fineAmount, setFineAmount] = useState<number>(0);
+  const [dueDate, setDueDate] = useState<string>('');
+  const [status, setStatus] = useState<'UNPAID' | 'PARTIAL' | 'PAID' | 'WAIVED' | 'OVERDUE'>('UNPAID');
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (account) {
+      setAmountDue(account.amount_due || 0);
+      setDiscountAmount(account.discount_amount || 0);
+      setFineAmount(account.fine_amount || 0);
+      setDueDate(account.due_date || '');
+      setStatus(account.status || 'UNPAID');
+    }
+  }, [account]);
+
+  if (!isOpen || !account) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      await financeService.updateFeeAccount(account.id, {
+        amount_due: amountDue,
+        discount_amount: discountAmount,
+        fine_amount: fineAmount,
+        due_date: dueDate,
+        status,
+      });
+      toast.success('Cadet fee account updated successfully.');
+      onSuccess();
+      onClose();
+    } catch (err: any) {
+      toast.error('Failed to update fee account: ' + (err?.message || ''));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-150">
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">Edit Cadet Fee Record</h3>
+            <p className="text-[11px] text-slate-500">{account.fee_type} ({account.fee_month ? `${account.fee_month}/${account.fee_year}` : account.fee_year})</p>
+          </div>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4 pt-4 text-xs font-sans">
+          <div>
+            <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Base Amount Due (PKR) *</label>
+            <input
+              type="number"
+              min="0"
+              required
+              value={amountDue}
+              onChange={(e) => setAmountDue(Number(e.target.value))}
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-bold text-slate-900"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Discount PKR</label>
+              <input
+                type="number"
+                min="0"
+                value={discountAmount}
+                onChange={(e) => setDiscountAmount(Number(e.target.value))}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-bold text-emerald-700"
+              />
+            </div>
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Late Fine PKR</label>
+              <input
+                type="number"
+                min="0"
+                value={fineAmount}
+                onChange={(e) => setFineAmount(Number(e.target.value))}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-bold text-rose-700"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Due Date</label>
+              <input
+                type="date"
+                value={dueDate}
+                onChange={(e) => setDueDate(e.target.value)}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-semibold text-slate-900"
+              />
+            </div>
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Status</label>
+              <select
+                value={status}
+                onChange={(e) => setStatus(e.target.value as any)}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-bold text-slate-900"
+              >
+                <option value="UNPAID">UNPAID</option>
+                <option value="PARTIAL">PARTIAL</option>
+                <option value="PAID">PAID</option>
+                <option value="WAIVED">WAIVED</option>
+                <option value="OVERDUE">OVERDUE</option>
+              </select>
+            </div>
+          </div>
+          <div className="pt-3 flex justify-end space-x-2 border-t border-slate-150">
+            <button type="button" onClick={onClose} className="px-3.5 py-2 bg-slate-100 text-slate-700 rounded-lg font-bold">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="px-4 py-2 bg-[#0E1B2A] hover:bg-slate-800 text-white rounded-lg font-bold shadow-xs disabled:opacity-50"
+            >
+              {submitting ? 'Saving...' : 'Save Fee Changes'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+const EditSalaryModal: React.FC<{
+  isOpen: boolean;
+  salary: TeacherSalaryPayment | null;
+  onClose: () => void;
+  onSuccess: () => void;
+}> = ({ isOpen, salary, onClose, onSuccess }) => {
+  const [baseSalary, setBaseSalary] = useState<number>(0);
+  const [bonus, setBonus] = useState<number>(0);
+  const [deduction, setDeduction] = useState<number>(0);
+  const [paymentType, setPaymentType] = useState<SalaryPaymentType>('REGULAR');
+  const [notes, setNotes] = useState<string>('');
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (salary) {
+      setBaseSalary(salary.base_salary || 0);
+      setBonus(salary.bonus || 0);
+      setDeduction(salary.deduction || 0);
+      setPaymentType((salary.payment_type as SalaryPaymentType) || 'REGULAR');
+      setNotes(salary.notes || '');
+    }
+  }, [salary]);
+
+  if (!isOpen || !salary) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      await financeService.updateSalaryPayment(salary.id, {
+        base_salary: baseSalary,
+        bonus,
+        deduction,
+        payment_type: paymentType,
+        notes,
+      });
+      toast.success('Teacher payroll record updated successfully.');
+      onSuccess();
+      onClose();
+    } catch (err: any) {
+      toast.error('Failed to update salary payment: ' + (err?.message || ''));
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-150">
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">Edit Faculty Payroll Record</h3>
+            <p className="text-[11px] text-slate-500">{salary.teacher_name} ({salary.salary_month}/{salary.salary_year})</p>
+          </div>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4 pt-4 text-xs font-sans">
+          <div>
+            <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Base Salary (PKR) *</label>
+            <input
+              type="number"
+              min="0"
+              required
+              value={baseSalary}
+              onChange={(e) => setBaseSalary(Number(e.target.value))}
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-bold text-slate-900"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Bonus (+PKR)</label>
+              <input
+                type="number"
+                min="0"
+                value={bonus}
+                onChange={(e) => setBonus(Number(e.target.value))}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-bold text-emerald-700"
+              />
+            </div>
+            <div>
+              <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Deduction (-PKR)</label>
+              <input
+                type="number"
+                min="0"
+                value={deduction}
+                onChange={(e) => setDeduction(Number(e.target.value))}
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-mono font-bold text-rose-700"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Payment Type</label>
+            <select
+              value={paymentType}
+              onChange={(e) => setPaymentType(e.target.value as SalaryPaymentType)}
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-bold text-slate-900"
+            >
+              <option value="REGULAR">REGULAR</option>
+              <option value="BONUS">BONUS</option>
+              <option value="ADVANCE">ADVANCE</option>
+            </select>
+          </div>
+          <div>
+            <label className="block font-bold text-slate-700 mb-1 uppercase text-[11px]">Notes / Particulars</label>
+            <textarea
+              rows={2}
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded font-medium text-slate-900"
+            />
+          </div>
+          <div className="pt-3 flex justify-end space-x-2 border-t border-slate-150">
+            <button type="button" onClick={onClose} className="px-3.5 py-2 bg-slate-100 text-slate-700 rounded-lg font-bold">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="px-4 py-2 bg-[#0E1B2A] hover:bg-slate-800 text-white rounded-lg font-bold shadow-xs disabled:opacity-50"
+            >
+              {submitting ? 'Saving...' : 'Save Payroll Changes'}
             </button>
           </div>
         </form>

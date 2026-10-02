@@ -604,6 +604,117 @@ export const financeService = {
   },
 
   /**
+   * Update an existing expense record
+   */
+  async updateExpense(
+    expenseId: string,
+    updates: {
+      title?: string;
+      description?: string;
+      amount?: number;
+      payeeName?: string;
+      paymentMethod?: PaymentMethod;
+      referenceNumber?: string;
+      categoryCode?: string;
+    }
+  ): Promise<void> {
+    const payload: any = {
+      title: updates.title,
+      description: updates.description,
+      amount: updates.amount,
+      payee_name: updates.payeeName,
+      payment_method: updates.paymentMethod,
+      reference_number: updates.referenceNumber,
+      category_code: updates.categoryCode,
+      updated_at: new Date().toISOString(),
+    };
+    Object.keys(payload).forEach((key) => payload[key] === undefined && delete payload[key]);
+
+    const { error } = await supabase
+      .from('finance_expenses')
+      .update(payload)
+      .eq('id', expenseId);
+
+    if (error) {
+      throw new Error(`Failed to update expense: ${error.message}`);
+    }
+  },
+
+  /**
+   * Update an existing cadet fee account
+   */
+  async updateFeeAccount(
+    accountId: string,
+    updates: {
+      amount_due?: number;
+      discount_amount?: number;
+      fine_amount?: number;
+      status?: 'UNPAID' | 'PARTIAL' | 'PAID' | 'WAIVED' | 'OVERDUE';
+      due_date?: string;
+    }
+  ): Promise<void> {
+    const payload: any = {
+      amount_due: updates.amount_due,
+      discount_amount: updates.discount_amount,
+      fine_amount: updates.fine_amount,
+      status: updates.status,
+      due_date: updates.due_date,
+      updated_at: new Date().toISOString(),
+    };
+    Object.keys(payload).forEach((key) => payload[key] === undefined && delete payload[key]);
+
+    const { error } = await supabase
+      .from('student_fee_accounts')
+      .update(payload)
+      .eq('id', accountId);
+
+    if (error) {
+      throw new Error(`Failed to update fee account: ${error.message}`);
+    }
+  },
+
+  /**
+   * Update an existing teacher salary payment record
+   */
+  async updateSalaryPayment(
+    salaryId: string,
+    updates: {
+      base_salary?: number;
+      bonus?: number;
+      deduction?: number;
+      payment_type?: SalaryPaymentType;
+      notes?: string;
+      status?: string;
+    }
+  ): Promise<void> {
+    let net_paid: number | undefined = undefined;
+    if (updates.base_salary !== undefined || updates.bonus !== undefined || updates.deduction !== undefined) {
+      net_paid = Math.max(0, (updates.base_salary || 0) + (updates.bonus || 0) - (updates.deduction || 0));
+    }
+
+    const payload: any = {
+      base_salary: updates.base_salary,
+      bonus: updates.bonus,
+      deduction: updates.deduction,
+      payment_type: updates.payment_type,
+      notes: updates.notes,
+      status: updates.status,
+      updated_at: new Date().toISOString(),
+    };
+    if (net_paid !== undefined) payload.net_paid = net_paid;
+    Object.keys(payload).forEach((key) => payload[key] === undefined && delete payload[key]);
+
+    const { error } = await supabase
+      .from('teacher_salary_payments')
+      .update(payload)
+      .eq('id', salaryId);
+
+    if (error) {
+      throw new Error(`Failed to update salary payment: ${error.message}`);
+    }
+  },
+
+  /**
    * Fetch salary payments
    */
   async getTeacherSalaryPayments(year?: number, month?: number): Promise<TeacherSalaryPayment[]> {

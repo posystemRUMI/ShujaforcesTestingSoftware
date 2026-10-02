@@ -7,7 +7,6 @@ import {
   FileQuestion,
   PenSquare,
   BarChart3,
-  Settings,
   PieChart,
   Sparkles,
   Trophy,
@@ -28,7 +27,6 @@ const NAV_ITEMS = [
   { label: 'Results', to: '/admin/results', icon: BarChart3 },
   { label: 'Reports & Analytics', to: '/admin/reports', icon: PieChart },
   { label: 'Finance', to: '/admin/finance', icon: Wallet },
-  { label: 'Configuration', to: '/admin/settings', icon: Settings },
 ];
 
 export const AdminShell: React.FC = () => {

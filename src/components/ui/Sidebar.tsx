@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppLogo } from './AppLogo';
-import { BookOpen, Wifi } from 'lucide-react';
+import { Wifi } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface SidebarNavItem {
@@ -80,17 +80,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </NavLink>
           );
         })}
-
-        <div className="pt-4 border-t border-[#1C2E42] mt-4">
-          <NavLink
-            to="/exam/instructions"
-            onClick={onNavigate}
-            className="flex items-center space-x-3 px-3 py-[11px] rounded-lg text-[13.5px] font-medium text-[#C6A75E] bg-[#C6A75E]/10 hover:bg-[#C6A75E]/20 transition-colors"
-          >
-            <BookOpen className="w-[18px] h-[18px] flex-shrink-0 stroke-[2]" />
-            <span className="truncate font-semibold">Exam Portal</span>
-          </NavLink>
-        </div>
       </nav>
 
       {/* System Status */}
