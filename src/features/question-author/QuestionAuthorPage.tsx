@@ -213,16 +213,18 @@ export const QuestionAuthorPage: React.FC = () => {
                 {dbSubjects.length > 0 ? (
                   dbSubjects.map((s) => (
                     <option key={s.id} value={s.id}>
-                      {s.name} ({s.code})
+                      {s.name}
                     </option>
                   ))
                 ) : (
                   <>
                     <option value="INTELLIGENCE_VERBAL">Intelligence (Verbal)</option>
                     <option value="INTELLIGENCE_NON_VERBAL">Intelligence (Non-Verbal)</option>
+                    <option value="ACADEMIC">Academic</option>
                     <option value="ACADEMIC_PHYSICS">Academic Physics</option>
                     <option value="ACADEMIC_MATH">Academic Mathematics</option>
                     <option value="ACADEMIC_ENGLISH">Academic English</option>
+                    <option value="GENERAL_KNOWLEDGE">General Knowledge</option>
                   </>
                 )}
               </select>

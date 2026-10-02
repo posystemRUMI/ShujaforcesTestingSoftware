@@ -78,6 +78,39 @@ export const studentRegistrationService = {
     if (!forceId) return [];
     const { OFFICIAL_COURSES, OFFICIAL_FORCES, normalizeCourseCode } = await import('@/config/officialTestPatterns');
 
+    // 1. Resolve target force code
+    let forceCode = forceId;
+    const officialMatched = OFFICIAL_FORCES.find((f) => f.id === forceId || f.code === forceId);
+    if (officialMatched) {
+      forceCode = officialMatched.code;
+    } else {
+      try {
+        const { data: dbForce } = await supabase
+          .from('forces')
+          .select('code')
+          .eq('id', forceId)
+          .maybeSingle();
+        if (dbForce?.code) {
+          forceCode = dbForce.code;
+        }
+      } catch (e) {
+        console.warn('Could not resolve force code from DB:', e);
+      }
+    }
+
+    // 2. Target official course codes by force
+    let targetOfficialCodes: string[] = [];
+    if (forceCode.includes('ARMY')) {
+      targetOfficialCodes = ['PMA_LONG_COURSE', 'AFNS'];
+    } else if (forceCode.includes('AIR') || forceCode.includes('PAF')) {
+      targetOfficialCodes = ['GDP_CAE', 'AIRMAN'];
+    } else if (forceCode.includes('NAVY')) {
+      targetOfficialCodes = ['SAILOR'];
+    }
+
+    const officialSet = new Set(targetOfficialCodes);
+
+    // 3. Query DB courses first if available
     try {
       const { data } = await supabase
         .from('courses')
@@ -88,8 +121,10 @@ export const studentRegistrationService = {
         .returns<CourseRow[]>();
 
       if (data && data.length > 0) {
-        const officialCodes = new Set(OFFICIAL_COURSES.map((c) => c.code));
-        const filtered = data.filter((c: CourseRow) => officialCodes.has(normalizeCourseCode(c.code || c.name)));
+        const filtered = data.filter((c: CourseRow) => {
+          const norm = normalizeCourseCode(c.code || c.name);
+          return officialSet.has(norm);
+        });
         if (filtered.length > 0) {
           return filtered.map((c: CourseRow) => ({
             id: c.id,
@@ -104,10 +139,8 @@ export const studentRegistrationService = {
       console.warn('DB courses query warning:', e);
     }
 
-    const matchedForce = OFFICIAL_FORCES.find((f) => f.id === forceId || f.code === forceId);
-    const forceCode = matchedForce ? matchedForce.code : forceId;
-
-    return OFFICIAL_COURSES.filter((c) => c.forceCode === forceCode || forceId.includes(c.forceCode)).map((c) => ({
+    // 4. Fallback to static OFFICIAL_COURSES
+    return OFFICIAL_COURSES.filter((c) => officialSet.has(c.code)).map((c) => ({
       id: c.id,
       forceId: c.forceCode,
       code: c.code,

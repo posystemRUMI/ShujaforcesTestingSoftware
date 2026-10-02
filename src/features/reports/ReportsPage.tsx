@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
-import { reportService } from '@/services/reportService';
-import { isSupabaseConfigured } from '@/lib/supabaseClient';
+import React, { useState, useMemo, useEffect } from 'react';
+import { reportService, FullReportData } from '@/services/reportService';
+
+// Page Header & UI Components
 import {
   BarChart3,
   Filter,
@@ -47,15 +48,6 @@ import {
 } from '@/components/ui';
 import { MilitaryBranch } from '@/types';
 
-// Analytical Datasets
-const MOCK_BATCH_PERFORMANCE: any[] = [];
-const MOCK_PASS_FAIL_DISTRIBUTION: any[] = [];
-const MOCK_MONTHLY_TREND: any[] = [];
-const MOCK_SCORE_DISTRIBUTION: any[] = [];
-const MOCK_SUBJECT_RADAR: any[] = [];
-const MOCK_TEST_ITEM_ANALYTICS: any[] = [];
-const MOCK_TOP_PERFORMERS: any[] = [];
-
 // Custom Recharts Dark Tooltip Component
 interface CustomTooltipEntry {
   name: string;
@@ -101,38 +93,52 @@ export const ReportsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  React.useEffect(() => {
-    async function loadReports() {
-      if (isSupabaseConfigured()) {
-        try {
-          await Promise.all([
-            reportService.getBatchPerformance(),
-            reportService.getPassFailSummary(),
-          ]);
-        } catch (e) {
-          console.warn('Failed to load reports from reportService:', e);
-        }
-      }
-    }
-    loadReports();
-  }, []);
+  const [reportData, setReportData] = useState<FullReportData>({
+    batchPerformance: [],
+    passFailDistribution: [
+      { name: 'Passed / Recommended', value: 0, color: '#234E35' },
+      { name: 'Remediation Required', value: 0, color: '#EF4444' },
+    ],
+    monthlyTrend: [],
+    scoreDistribution: [
+      { label: '0-20%', count: 0 },
+      { label: '21-40%', count: 0 },
+      { label: '41-60%', count: 0 },
+      { label: '61-80%', count: 0 },
+      { label: '81-100%', count: 0 },
+    ],
+    subjectRadar: [
+      { subject: 'Verbal', Army: 0, Navy: 0, PAF: 0 },
+      { subject: 'Non-Verbal', Army: 0, Navy: 0, PAF: 0 },
+      { subject: 'Academic', Army: 0, Navy: 0, PAF: 0 },
+    ],
+    testItemAnalytics: [],
+    topPerformers: [],
+    totalTested: 0,
+    avgPassRate: 0,
+    avgScoreGlobal: 0,
+    topPerformingWing: '—',
+  });
 
-  // Filter handlers
-  const handleRefresh = async () => {
+  const loadReports = async () => {
     setIsLoading(true);
     try {
-      if (isSupabaseConfigured()) {
-        await Promise.all([
-          reportService.getBatchPerformance(),
-          reportService.getPassFailSummary(),
-        ]);
-      }
-      toast.success('Analytics dataset synchronized with latest CBT examination logs.');
+      const liveData = await reportService.fetchLiveReportData();
+      setReportData(liveData);
     } catch (e) {
-      toast.success('Analytics dataset synchronized.');
+      console.warn('Failed to load live report dataset:', e);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  useEffect(() => {
+    loadReports();
+  }, []);
+
+  const handleRefresh = async () => {
+    await loadReports();
+    toast.success('Analytics dataset synchronized with live CBT database.');
   };
 
   const handleExportCSV = () => {
@@ -146,35 +152,31 @@ export const ReportsPage: React.FC = () => {
 
   // Filtered batch data based on branch selection
   const filteredBatches = useMemo(() => {
-    if (selectedBranch === 'ALL') return MOCK_BATCH_PERFORMANCE;
-    return MOCK_BATCH_PERFORMANCE.filter((b) => b.branch === selectedBranch);
-  }, [selectedBranch]);
+    if (selectedBranch === 'ALL') return reportData.batchPerformance;
+    return reportData.batchPerformance.filter((b) => b.branch === selectedBranch);
+  }, [selectedBranch, reportData.batchPerformance]);
 
   // Aggregated KPI calculations
   const totalTestedSum = useMemo(() => {
-    return filteredBatches.reduce((acc, curr) => acc + curr.totalTested, 0);
-  }, [filteredBatches]);
+    return reportData.totalTested;
+  }, [reportData.totalTested]);
 
   const avgPassRate = useMemo(() => {
-    if (filteredBatches.length === 0) return 0;
-    const sum = filteredBatches.reduce((acc, curr) => acc + curr.passRate, 0);
-    return (sum / filteredBatches.length).toFixed(1);
-  }, [filteredBatches]);
+    return reportData.avgPassRate;
+  }, [reportData.avgPassRate]);
 
   const avgScoreGlobal = useMemo(() => {
-    if (filteredBatches.length === 0) return 0;
-    const sum = filteredBatches.reduce((acc, curr) => acc + curr.avgScore, 0);
-    return (sum / filteredBatches.length).toFixed(1);
-  }, [filteredBatches]);
+    return reportData.avgScoreGlobal;
+  }, [reportData.avgScoreGlobal]);
 
   // Filtered test items for table
   const filteredTestItems = useMemo(() => {
-    return MOCK_TEST_ITEM_ANALYTICS.filter((item) =>
+    return reportData.testItemAnalytics.filter((item) =>
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.subject.toLowerCase().includes(searchQuery.toLowerCase())
     );
-  }, [searchQuery]);
+  }, [searchQuery, reportData.testItemAnalytics]);
 
   return (
     <div className="space-y-6 pb-12">
@@ -277,9 +279,9 @@ export const ReportsPage: React.FC = () => {
         />
         <MetricCard
           title="Top Performing Wing"
-          value="—"
+          value={reportData.topPerformingWing}
           icon={<TrendingUp className="w-4 h-4 text-[#0E1B2A]" />}
-          subtext="No active cohort evaluated"
+          subtext={reportData.topPerformingWing !== '—' ? 'Leading pass rate cohort' : 'No active cohort evaluated'}
         />
       </div>
 
@@ -366,7 +368,7 @@ export const ReportsPage: React.FC = () => {
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
-                          data={MOCK_PASS_FAIL_DISTRIBUTION}
+                          data={reportData.passFailDistribution}
                           cx="50%"
                           cy="50%"
                           innerRadius={55}
@@ -374,7 +376,7 @@ export const ReportsPage: React.FC = () => {
                           paddingAngle={3}
                           dataKey="value"
                         >
-                          {MOCK_PASS_FAIL_DISTRIBUTION.map((entry, index) => (
+                          {reportData.passFailDistribution.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
                           ))}
                         </Pie>
@@ -382,7 +384,7 @@ export const ReportsPage: React.FC = () => {
                       </PieChart>
                     </ResponsiveContainer>
                     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                      <span className="text-2xl font-extrabold text-[#0E1B2A]">81.4%</span>
+                      <span className="text-2xl font-extrabold text-[#0E1B2A]">{avgPassRate}%</span>
                       <span className="text-[10px] uppercase tracking-wider font-semibold text-[#64748B]">Passed</span>
                     </div>
                   </div>
@@ -393,14 +395,14 @@ export const ReportsPage: React.FC = () => {
                         <span className="w-3 h-3 rounded-full bg-[#234E35]" />
                         <span className="font-medium text-[#0E1B2A]">Passed / Recommended</span>
                       </span>
-                      <span className="font-bold text-[#0E1B2A]">1,111 (81.4%)</span>
+                      <span className="font-bold text-[#0E1B2A]">{reportData.passFailDistribution[0]?.value || 0}</span>
                     </div>
                     <div className="flex items-center justify-between text-xs">
                       <span className="flex items-center space-x-2">
                         <span className="w-3 h-3 rounded-full bg-[#EF4444]" />
                         <span className="font-medium text-[#0E1B2A]">Remediation Required</span>
                       </span>
-                      <span className="font-bold text-[#EF4444]">254 (18.6%)</span>
+                      <span className="font-bold text-[#EF4444]">{reportData.passFailDistribution[1]?.value || 0}</span>
                     </div>
                   </div>
                 </div>
@@ -431,7 +433,7 @@ export const ReportsPage: React.FC = () => {
 
                 <div className="h-64 w-full pt-2">
                   <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={MOCK_MONTHLY_TREND} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                    <AreaChart data={reportData.monthlyTrend} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                       <defs>
                         <linearGradient id="colorArmy" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="5%" stopColor="#0E1B2A" stopOpacity={0.4} />
@@ -444,7 +446,7 @@ export const ReportsPage: React.FC = () => {
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" stroke="#E6E8EC" />
                       <XAxis dataKey="month" tick={{ fill: '#64748B', fontSize: 11 }} />
-                      <YAxis tick={{ fill: '#64748B', fontSize: 11 }} domain={[50, 100]} />
+                      <YAxis tick={{ fill: '#64748B', fontSize: 11 }} domain={[0, 100]} />
                       <Tooltip content={<CustomTooltip />} />
                       <Area type="monotone" dataKey="armyAvg" name="Army Avg" stroke="#0E1B2A" fillOpacity={1} fill="url(#colorArmy)" strokeWidth={2} />
                       <Area type="monotone" dataKey="pafAvg" name="PAF Avg" stroke="#C6A75E" fillOpacity={1} fill="url(#colorPaf)" strokeWidth={2} />
@@ -468,7 +470,7 @@ export const ReportsPage: React.FC = () => {
 
                   <div className="h-80 w-full flex items-center justify-center">
                     <ResponsiveContainer width="100%" height="100%">
-                      <RadarChart cx="50%" cy="50%" outerRadius="75%" data={MOCK_SUBJECT_RADAR}>
+                      <RadarChart cx="50%" cy="50%" outerRadius="75%" data={reportData.subjectRadar}>
                         <PolarGrid stroke="#E6E8EC" />
                         <PolarAngleAxis dataKey="subject" tick={{ fill: '#0E1B2A', fontSize: 11, fontWeight: 600 }} />
                         <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#64748B', fontSize: 10 }} />
@@ -501,45 +503,29 @@ export const ReportsPage: React.FC = () => {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-[#E6E8EC] text-xs">
-                        <tr className="hover:bg-gray-50 transition-colors">
-                          <td className="py-3 px-3">
-                            <ForceBadge branch="PAKISTAN_AIR_FORCE" />
-                          </td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">475</td>
-                          <td className="py-3 px-3 text-right font-bold text-[#234E35]">85.4%</td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">82.9%</td>
-                          <td className="py-3 px-3 text-center">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
-                              SUPERIOR
-                            </span>
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-gray-50 transition-colors">
-                          <td className="py-3 px-3">
-                            <ForceBadge branch="PAKISTAN_ARMY" />
-                          </td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">610</td>
-                          <td className="py-3 px-3 text-right font-bold text-[#234E35]">79.8%</td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">75.8%</td>
-                          <td className="py-3 px-3 text-center">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
-                              EXCELLENT
-                            </span>
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-gray-50 transition-colors">
-                          <td className="py-3 px-3">
-                            <ForceBadge branch="PAKISTAN_NAVY" />
-                          </td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">280</td>
-                          <td className="py-3 px-3 text-right font-bold text-[#234E35]">77.8%</td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">74.2%</td>
-                          <td className="py-3 px-3 text-center">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800">
-                              SATISFACTORY
-                            </span>
-                          </td>
-                        </tr>
+                        {reportData.batchPerformance.length > 0 ? (
+                          reportData.batchPerformance.map((bp) => (
+                            <tr key={bp.id} className="hover:bg-gray-50 transition-colors">
+                              <td className="py-3 px-3">
+                                <ForceBadge branch={bp.branch} />
+                              </td>
+                              <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{bp.totalTested}</td>
+                              <td className="py-3 px-3 text-right font-bold text-[#234E35]">{bp.passRate}%</td>
+                              <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{bp.avgScore}%</td>
+                              <td className="py-3 px-3 text-center">
+                                <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                                  {bp.passRate >= 80 ? 'SUPERIOR' : bp.passRate >= 70 ? 'EXCELLENT' : 'SATISFACTORY'}
+                                </span>
+                              </td>
+                            </tr>
+                          ))
+                        ) : (
+                          <tr>
+                            <td colSpan={5} className="py-6 text-center text-[#64748B] text-xs">
+                              No candidate test session records available yet.
+                            </td>
+                          </tr>
+                        )}
                       </tbody>
                     </table>
                   </div>
@@ -547,7 +533,7 @@ export const ReportsPage: React.FC = () => {
                   <div className="bg-[#F6F8FA] border border-[#E6E8EC] rounded-lg p-3 text-xs text-[#64748B] flex items-center space-x-2">
                     <ShieldCheck className="w-4 h-4 text-[#C6A75E] shrink-0" />
                     <span>
-                      PAF leads in Academic Physics (91%), while Pakistan Army demonstrates highest Verbal Reasoning consistency (82%).
+                      Live evaluation summary synchronized with Supabase CBT examination database.
                     </span>
                   </div>
                 </div>
@@ -592,32 +578,40 @@ export const ReportsPage: React.FC = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-[#E6E8EC] text-xs">
-                      {filteredTestItems.map((item) => (
-                        <tr key={item.id} className="hover:bg-gray-50 transition-colors">
-                          <td className="py-3 px-3">
-                            <div className="font-bold text-[#0E1B2A]">{item.title}</div>
-                            <div className="font-mono text-[10px] text-[#64748B]">{item.code}</div>
+                      {filteredTestItems.length > 0 ? (
+                        filteredTestItems.map((item) => (
+                          <tr key={item.id} className="hover:bg-gray-50 transition-colors">
+                            <td className="py-3 px-3">
+                              <div className="font-bold text-[#0E1B2A]">{item.title}</div>
+                              <div className="font-mono text-[10px] text-[#64748B]">{item.code}</div>
+                            </td>
+                            <td className="py-3 px-3 text-[#1F2937] font-medium">{item.subject}</td>
+                            <td className="py-3 px-3 text-center">
+                              <span
+                                className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold ${
+                                  item.difficulty === 'HARD'
+                                    ? 'bg-rose-100 text-rose-800'
+                                    : item.difficulty === 'MEDIUM'
+                                    ? 'bg-amber-100 text-amber-800'
+                                    : 'bg-emerald-100 text-emerald-800'
+                                }`}
+                              >
+                                {item.difficulty}
+                              </span>
+                            </td>
+                            <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{item.totalAttempts}</td>
+                            <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{item.avgScore}%</td>
+                            <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#234E35]">{item.passRate}%</td>
+                            <td className="py-3 px-3 text-right font-sans tabular-nums text-[#64748B]">{item.timeSpentMin} mins</td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan={7} className="py-6 text-center text-[#64748B] text-xs">
+                            No examination blueprint attempts recorded yet.
                           </td>
-                          <td className="py-3 px-3 text-[#1F2937] font-medium">{item.subject}</td>
-                          <td className="py-3 px-3 text-center">
-                            <span
-                              className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold ${
-                                item.difficulty === 'HARD'
-                                  ? 'bg-rose-100 text-rose-800'
-                                  : item.difficulty === 'MEDIUM'
-                                  ? 'bg-amber-100 text-amber-800'
-                                  : 'bg-emerald-100 text-emerald-800'
-                              }`}
-                            >
-                              {item.difficulty}
-                            </span>
-                          </td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{item.totalAttempts}</td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#0E1B2A]">{item.avgScore}%</td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums font-bold text-[#234E35]">{item.passRate}%</td>
-                          <td className="py-3 px-3 text-right font-sans tabular-nums text-[#64748B]">{item.timeSpentMin} mins</td>
                         </tr>
-                      ))}
+                      )}
                     </tbody>
                   </table>
                 </div>
@@ -638,13 +632,13 @@ export const ReportsPage: React.FC = () => {
 
                   <div className="h-72 w-full pt-2">
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={MOCK_SCORE_DISTRIBUTION} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                      <BarChart data={reportData.scoreDistribution} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#E6E8EC" />
                         <XAxis dataKey="label" tick={{ fill: '#0E1B2A', fontSize: 11, fontWeight: 700 }} />
                         <YAxis tick={{ fill: '#64748B', fontSize: 11 }} />
                         <Tooltip content={<CustomTooltip />} />
                         <Bar dataKey="count" name="Cadet Count" fill="#0E1B2A" radius={[4, 4, 0, 0]}>
-                          {MOCK_SCORE_DISTRIBUTION.map((_, index) => (
+                          {reportData.scoreDistribution.map((_, index) => (
                             <Cell
                               key={`cell-${index}`}
                               fill={
@@ -684,29 +678,35 @@ export const ReportsPage: React.FC = () => {
                   </div>
 
                   <div className="space-y-3">
-                    {MOCK_TOP_PERFORMERS.map((cadet) => (
-                      <div key={cadet.rollNumber} className="flex items-center justify-between p-3 bg-[#F6F8FA] border border-[#E6E8EC] rounded-lg">
-                        <div className="space-y-1">
-                          <div className="flex items-center space-x-2">
-                            <span className="w-5 h-5 rounded-full bg-[#0E1B2A] text-white font-sans tabular-nums font-bold text-[10px] flex items-center justify-center shrink-0">
-                              #{cadet.rank}
+                    {reportData.topPerformers.length > 0 ? (
+                      reportData.topPerformers.map((cadet) => (
+                        <div key={cadet.rollNumber} className="flex items-center justify-between p-3 bg-[#F6F8FA] border border-[#E6E8EC] rounded-lg">
+                          <div className="space-y-1">
+                            <div className="flex items-center space-x-2">
+                              <span className="w-5 h-5 rounded-full bg-[#0E1B2A] text-white font-sans tabular-nums font-bold text-[10px] flex items-center justify-center shrink-0">
+                                #{cadet.rank}
+                              </span>
+                              <span className="font-bold text-xs text-[#0E1B2A]">{cadet.name}</span>
+                            </div>
+                            <div className="flex items-center space-x-2 text-[10px] text-[#64748B]">
+                              <span className="font-mono">{cadet.rollNumber}</span>
+                              <span>•</span>
+                              <span>{cadet.batch}</span>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="font-sans tabular-nums font-extrabold text-xs text-[#234E35]">{cadet.scorePercent}%</div>
+                            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#C6A75E]/20 text-[#0E1B2A]">
+                              Rank #{cadet.rank}
                             </span>
-                            <span className="font-bold text-xs text-[#0E1B2A]">{cadet.name}</span>
-                          </div>
-                          <div className="flex items-center space-x-2 text-[10px] text-[#64748B]">
-                            <span className="font-mono">{cadet.rollNumber}</span>
-                            <span>•</span>
-                            <span>{cadet.batch}</span>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <div className="font-sans tabular-nums font-extrabold text-xs text-[#234E35]">{cadet.scorePercent}%</div>
-                          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#C6A75E]/20 text-[#0E1B2A]">
-                            Rank #{cadet.rank}
-                          </span>
-                        </div>
+                      ))
+                    ) : (
+                      <div className="py-8 text-center text-[#64748B] text-xs">
+                        No distinction merit records yet.
                       </div>
-                    ))}
+                    )}
                   </div>
 
                   <div className="pt-2">
