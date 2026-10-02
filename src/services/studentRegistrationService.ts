@@ -78,20 +78,23 @@ export const studentRegistrationService = {
     if (!forceId) return [];
     const { OFFICIAL_COURSES, OFFICIAL_FORCES, normalizeCourseCode } = await import('@/config/officialTestPatterns');
 
-    // 1. Resolve target force code
+    // 1. Resolve target force code and target force UUID
     let forceCode = forceId;
+    let forceUuid = forceId;
     const officialMatched = OFFICIAL_FORCES.find((f) => f.id === forceId || f.code === forceId);
     if (officialMatched) {
       forceCode = officialMatched.code;
+      forceUuid = officialMatched.id;
     } else {
       try {
         const { data: dbForce } = await supabase
           .from('forces')
-          .select('code')
+          .select('id, code')
           .eq('id', forceId)
           .maybeSingle();
         if (dbForce?.code) {
           forceCode = dbForce.code;
+          forceUuid = dbForce.id;
         }
       } catch (e) {
         console.warn('Could not resolve force code from DB:', e);
@@ -114,7 +117,7 @@ export const studentRegistrationService = {
       const { data } = await supabase
         .from('courses')
         .select('id, force_id, code, name, duration_weeks')
-        .eq('force_id', forceId)
+        .eq('force_id', forceUuid)
         .eq('status', 'ACTIVE')
         .order('sort_order', { ascending: true })
         .returns<CourseRow[]>();
@@ -164,7 +167,7 @@ export const studentRegistrationService = {
    * Fetch active batches for a selected course from database
    */
   async getBatchesForCourse(courseId: string): Promise<BatchOption[]> {
-    if (!courseId) return [];
+    if (!courseId || courseId.length !== 36) return [];
 
     const { data, error } = await supabase
       .from('batches')
@@ -176,7 +179,7 @@ export const studentRegistrationService = {
 
     if (error) {
       console.error('Error fetching batches:', error);
-      throw new Error('Unable to connect to the academy server. Please try again.');
+      return [];
     }
 
     if (!data || data.length === 0) {
@@ -307,6 +310,15 @@ export const studentRegistrationService = {
    * Register a new student via Edge Function with direct Auth+RPC fallback
    */
   async registerStudent(input: StudentRegistrationInput): Promise<RegistrationResult> {
+    const { OFFICIAL_FORCES, OFFICIAL_COURSES } = await import('@/config/officialTestPatterns');
+
+    const matchedForce = OFFICIAL_FORCES.find((f) => f.id === input.targetForceId || f.code === input.targetForceId);
+    const targetForceUuid = matchedForce ? matchedForce.id : input.targetForceId;
+
+    const matchedCourse = OFFICIAL_COURSES.find((c) => c.id === input.targetCourseId || c.code === input.targetCourseId);
+    const targetCourseUuid = matchedCourse ? matchedCourse.id : input.targetCourseId;
+    const safeBatchId = input.batchId && input.batchId.length === 36 ? input.batchId : null;
+
     const payload = {
       email: input.email.trim().toLowerCase(),
       password: input.password,
@@ -314,9 +326,9 @@ export const studentRegistrationService = {
       fatherName: input.fatherName.trim(),
       cnic: input.cnic.trim(),
       phone: input.phone.trim(),
-      targetForceId: input.targetForceId,
-      targetCourseId: input.targetCourseId,
-      batchId: input.batchId,
+      targetForceId: targetForceUuid,
+      targetCourseId: targetCourseUuid,
+      batchId: safeBatchId,
       rollNumber: input.rollNumber.trim().toUpperCase(),
       education: input.education.trim(),
       educationDetails: input.educationDetails?.trim() || null,
@@ -446,9 +458,9 @@ export const studentRegistrationService = {
           p_father_name: payload.fatherName,
           p_cnic: payload.cnic,
           p_phone: payload.phone,
-          p_target_force_id: payload.targetForceId,
-          p_target_course_id: payload.targetCourseId,
-          p_batch_id: payload.batchId || null,
+          p_target_force_id: targetForceUuid,
+          p_target_course_id: targetCourseUuid,
+          p_batch_id: safeBatchId,
           p_roll_number: payload.rollNumber,
           p_education: payload.education,
           p_education_details: payload.educationDetails,
@@ -492,14 +504,14 @@ export const studentRegistrationService = {
       }
 
       try {
-        const { data: stdData } = await (supabase as any).from('students').insert({
+        const { data: stdData, error: stdErr } = await (supabase as any).from('students').insert({
           profile_id: createdAuthId,
           roll_number: payload.rollNumber,
           father_name: payload.fatherName,
           cnic: payload.cnic,
-          target_force_id: payload.targetForceId,
-          target_course_id: payload.targetCourseId,
-          batch_id: payload.batchId || null,
+          target_force_id: targetForceUuid,
+          target_course_id: targetCourseUuid,
+          batch_id: safeBatchId,
           education: payload.education,
           education_details: payload.educationDetails,
           gender: payload.gender,
@@ -515,9 +527,12 @@ export const studentRegistrationService = {
           photo_url: payload.photoUrl || null,
         }).select('id').single();
 
+        if (stdErr) {
+          console.warn('Direct student insert warning:', stdErr);
+        }
         if (stdData?.id) studentId = stdData.id;
       } catch (sErr) {
-        console.warn('Direct student insert warning:', sErr);
+        console.warn('Direct student insert exception:', sErr);
       }
 
       // Store in local studentStore so cadet is immediately listed across roster and login
@@ -572,12 +587,17 @@ async function setupInitialFeeAccountAndPayment(studentId: string, input: Studen
   if (!studentId || !input.courseFeeAmount || input.courseFeeAmount <= 0) return;
 
   try {
+    const { OFFICIAL_COURSES } = await import('@/config/officialTestPatterns');
+    const matchedCourse = OFFICIAL_COURSES.find((c) => c.id === input.targetCourseId || c.code === input.targetCourseId);
+    const courseUuid = matchedCourse ? matchedCourse.id : input.targetCourseId;
+    const safeBatchId = input.batchId && input.batchId.length === 36 ? input.batchId : null;
+
     const { data: feeAcc, error: feeErr } = await supabase
       .from('student_fee_accounts')
       .insert({
         student_id: studentId,
-        course_id: input.targetCourseId,
-        batch_id: input.batchId,
+        course_id: courseUuid,
+        batch_id: safeBatchId,
         fee_type: 'ADMISSION & TUITION FEE',
         fee_year: new Date().getFullYear(),
         fee_month: new Date().getMonth() + 1,
@@ -590,6 +610,10 @@ async function setupInitialFeeAccountAndPayment(studentId: string, input: Studen
       })
       .select('id')
       .single();
+
+    if (feeErr) {
+      console.warn('Initial fee account creation warning:', feeErr);
+    }
 
     if (!feeErr && feeAcc && input.initialPaymentAmount && input.initialPaymentAmount > 0) {
       const { financeService } = await import('@/services/financeService');

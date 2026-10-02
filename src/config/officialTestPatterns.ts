@@ -32,19 +32,19 @@ export interface OfficialTestConfig {
 
 export const OFFICIAL_FORCES: OfficialForce[] = [
   {
-    id: 'force-army-001',
+    id: '00000000-0000-0000-0000-000000000001',
     code: 'PAKISTAN_ARMY',
     name: 'Pakistan Army',
     motto: 'Iman, Taqwa, Jihad-fi-Sabilillah',
   },
   {
-    id: 'force-paf-002',
+    id: '00000000-0000-0000-0000-000000000002',
     code: 'PAKISTAN_AIR_FORCE',
     name: 'Pakistan Air Force (PAF)',
     motto: 'Sehraast Ki Daryaast',
   },
   {
-    id: 'force-navy-003',
+    id: '00000000-0000-0000-0000-000000000003',
     code: 'PAKISTAN_NAVY',
     name: 'Pakistan Navy',
     motto: 'Himmat Humaray Sath Hai',
@@ -54,33 +54,33 @@ export const OFFICIAL_FORCES: OfficialForce[] = [
 export const OFFICIAL_COURSES: OfficialCourse[] = [
   // Pakistan Army Courses
   {
-    id: 'course-pma-001',
+    id: '10000000-0000-0000-0000-000000000001',
     forceCode: 'PAKISTAN_ARMY',
     code: 'PMA_LONG_COURSE',
     name: 'PMA Long Course',
   },
   {
-    id: 'course-afns-002',
+    id: '10000000-0000-0000-0000-000000000004',
     forceCode: 'PAKISTAN_ARMY',
     code: 'AFNS',
     name: 'AFNS',
   },
   // PAF Courses
   {
-    id: 'course-gdp-cae-003',
+    id: '20000000-0000-0000-0000-000000000001',
     forceCode: 'PAKISTAN_AIR_FORCE',
     code: 'GDP_CAE',
     name: 'GD(P) & Aeronautical Engineering',
   },
   {
-    id: 'course-airman-004',
+    id: '20000000-0000-0000-0000-000000000006',
     forceCode: 'PAKISTAN_AIR_FORCE',
     code: 'AIRMAN',
     name: 'Airman',
   },
   // Navy Courses
   {
-    id: 'course-sailor-005',
+    id: '30000000-0000-0000-0000-000000000004',
     forceCode: 'PAKISTAN_NAVY',
     code: 'SAILOR',
     name: 'Sailor',
