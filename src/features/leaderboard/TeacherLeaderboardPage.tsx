@@ -14,6 +14,7 @@ import {
   StudentRankSummary,
 } from '@/services/leaderboardService';
 import { testService, TestRecord } from '@/services/testService';
+import { configurationService } from '@/services/configurationService';
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 
 interface ForceOption {
@@ -65,19 +66,19 @@ export const TeacherLeaderboardPage: React.FC = () => {
     let isMounted = true;
 
     async function loadFilterHierarchy() {
-      if (!isSupabaseConfigured()) return;
-
       try {
-        const [fRes, cRes, bRes, tRes] = await Promise.all([
-          (supabase as any).from('forces').select('id, name, code').order('name'),
-          (supabase as any).from('courses').select('id, name, force_id').order('name'),
-          (supabase as any).from('batches').select('id, name, course_id').order('name'),
+        const [fList, cList, bRes, tRes] = await Promise.all([
+          configurationService.getForces(),
+          configurationService.getCourses(),
+          isSupabaseConfigured()
+            ? (supabase as any).from('batches').select('id, name, course_id').order('name')
+            : Promise.resolve({ data: [] }),
           testService.getTests(),
         ]);
 
         if (!isMounted) return;
-        setForces(fRes.data || []);
-        setCourses(cRes.data || []);
+        setForces(fList.map((f) => ({ id: f.id, name: f.name, code: f.branch })));
+        setCourses(cList.map((c) => ({ id: c.id, name: c.name, force_id: c.forceId || '' })));
         setBatches(bRes.data || []);
         setTests(tRes || []);
       } catch (err) {

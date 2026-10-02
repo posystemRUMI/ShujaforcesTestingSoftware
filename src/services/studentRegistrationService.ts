@@ -76,6 +76,7 @@ export const studentRegistrationService = {
    */
   async getCoursesForForce(forceId: string): Promise<CourseOption[]> {
     if (!forceId) return [];
+    const { OFFICIAL_COURSES, OFFICIAL_FORCES, normalizeCourseCode } = await import('@/config/officialTestPatterns');
 
     try {
       const { data } = await supabase
@@ -87,19 +88,22 @@ export const studentRegistrationService = {
         .returns<CourseRow[]>();
 
       if (data && data.length > 0) {
-        return data.map((c: CourseRow) => ({
-          id: c.id,
-          forceId: c.force_id,
-          code: c.code,
-          name: c.name,
-          durationWeeks: c.duration_weeks || undefined,
-        }));
+        const officialCodes = new Set(OFFICIAL_COURSES.map((c) => c.code));
+        const filtered = data.filter((c: CourseRow) => officialCodes.has(normalizeCourseCode(c.code || c.name)));
+        if (filtered.length > 0) {
+          return filtered.map((c: CourseRow) => ({
+            id: c.id,
+            forceId: c.force_id,
+            code: c.code,
+            name: c.name,
+            durationWeeks: c.duration_weeks || undefined,
+          }));
+        }
       }
     } catch (e) {
       console.warn('DB courses query warning:', e);
     }
 
-    const { OFFICIAL_COURSES, OFFICIAL_FORCES } = await import('@/config/officialTestPatterns');
     const matchedForce = OFFICIAL_FORCES.find((f) => f.id === forceId || f.code === forceId);
     const forceCode = matchedForce ? matchedForce.code : forceId;
 

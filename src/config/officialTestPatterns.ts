@@ -194,7 +194,7 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
   ],
 
   // 4. PAF — Airman
-  // Sequence: Intelligence -> English -> Physics -> Mathematics
+  // Sequence: Intelligence -> English
   AIRMAN: [
     {
       sequence: 1,
@@ -213,24 +213,6 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
       passingMarks: 30,
       passingScorePercent: 60,
       durationMinutes: 20,
-    },
-    {
-      sequence: 3,
-      testName: 'Physics',
-      code: 'PHYS_AIRMAN',
-      totalQuestions: 25,
-      passingMarks: 16,
-      passingScorePercent: 64,
-      durationMinutes: 18,
-    },
-    {
-      sequence: 4,
-      testName: 'Mathematics',
-      code: 'MATH_AIRMAN',
-      totalQuestions: 25,
-      passingMarks: 16,
-      passingScorePercent: 64,
-      durationMinutes: 15,
     },
   ],
 
