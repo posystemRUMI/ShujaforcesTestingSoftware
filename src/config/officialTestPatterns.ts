@@ -2,7 +2,7 @@
  * Official Armed Forces Test Patterns & Configuration Engine
  * Strictly enforces ONLY:
  * 1. Pakistan Army (PMA Long Course, AFNS)
- * 2. Pakistan Air Force (GD(P) & CAE, Airman)
+ * 2. Pakistan Air Force (GD(P) & Aeronautical Engineering, Airman)
  * 3. Pakistan Navy (Sailor)
  */
 
@@ -70,7 +70,7 @@ export const OFFICIAL_COURSES: OfficialCourse[] = [
     id: 'course-gdp-cae-003',
     forceCode: 'PAKISTAN_AIR_FORCE',
     code: 'GDP_CAE',
-    name: 'GD(P) & Aeronautical Engineering (CAE)',
+    name: 'GD(P) & Aeronautical Engineering',
   },
   {
     id: 'course-airman-004',
@@ -88,7 +88,7 @@ export const OFFICIAL_COURSES: OfficialCourse[] = [
 ];
 
 export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
-  // 1. PAF — GD(P) & Aeronautical Engineering (CAE)
+  // 1. PAF — GD(P) & Aeronautical Engineering
   // Sequence: Intelligence -> Physics -> English -> Mathematics
   GDP_CAE: [
     {

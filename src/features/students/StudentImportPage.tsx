@@ -38,7 +38,7 @@ const SAMPLE_CSV_ROWS: ParsedCandidate[] = [
     phone: '0321-7766554',
     rollNumber: 'PAF-4490',
     branch: 'PAKISTAN_AIR_FORCE',
-    batchCode: '158-GDP-PAF',
+    batchCode: 'PAF-GDP-BATCH',
     isValid: true,
   },
   {
@@ -47,9 +47,9 @@ const SAMPLE_CSV_ROWS: ParsedCandidate[] = [
     fatherName: 'Ali Asghar',
     cnic: '42101-9988', // Invalid CNIC format
     phone: '0333-1122334',
-    rollNumber: 'PNC-1199',
+    rollNumber: 'SAILOR-1199',
     branch: 'PAKISTAN_NAVY',
-    batchCode: 'PNC-2026-A',
+    batchCode: 'NAVY-SAILOR-BATCH',
     isValid: false,
     validationError: 'CNIC format error: missing digits (00000-0000000-0)',
   },
@@ -79,7 +79,7 @@ export const StudentImportPage: React.FC = () => {
         branch: r.branch,
         batchId: 'batch-001',
         batchCode: r.batchCode,
-        targetCourse: r.branch === 'PAKISTAN_ARMY' ? '154 PMA' : r.branch === 'PAKISTAN_AIR_FORCE' ? '158 GDP' : 'PNC 2026',
+        targetCourse: r.branch === 'PAKISTAN_ARMY' ? 'PMA Long Course' : r.branch === 'PAKISTAN_AIR_FORCE' ? 'GD(P) & Aeronautical Engineering' : 'Sailor',
         status: 'ACTIVE',
       });
     });

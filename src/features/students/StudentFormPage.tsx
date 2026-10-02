@@ -31,7 +31,7 @@ export const StudentFormPage: React.FC = () => {
       temporaryCredential: '',
       branch: 'PAKISTAN_ARMY',
       batchId: 'batch-001',
-      targetCourse: '154 PMA Long Course',
+      targetCourse: 'PMA Long Course',
       status: 'ACTIVE',
       avatarUrl: '',
     },
@@ -283,9 +283,9 @@ export const StudentFormPage: React.FC = () => {
                 {...register('batchId')}
                 className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-sans font-medium focus:outline-none focus:border-[#0E1B2A]"
               >
-                <option value="batch-001">154-PMA-LC (Army Long Course)</option>
-                <option value="batch-002">158-GDP-PAF (Air Force Flight)</option>
-                <option value="batch-003">PNC-2026-A (Navy Cadet Term)</option>
+                <option value="batch-001">PMA Long Course Batch</option>
+                <option value="batch-002">GD(P) & Aeronautical Engineering Batch</option>
+                <option value="batch-003">Sailor Batch</option>
               </select>
             </div>
 
@@ -296,7 +296,7 @@ export const StudentFormPage: React.FC = () => {
               <input
                 type="text"
                 {...register('targetCourse')}
-                placeholder="e.g., 154 PMA Long Course"
+                placeholder="e.g., PMA Long Course"
                 className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
               />
               {errors.targetCourse && (

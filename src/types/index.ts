@@ -46,7 +46,7 @@ export interface Batch {
   startDate: string;
   endDate: string;
   status: 'ACTIVE' | 'COMPLETED' | 'UPCOMING';
-  targetCourse: string; // e.g., "154 PMA Long Course", "158 GDP", "PN Cadet 2026-A"
+  targetCourse: string; // e.g., "PMA Long Course", "AFNS", "GD(P) & Aeronautical Engineering", "Airman", "Sailor"
 }
 
 export type SubjectCategory =

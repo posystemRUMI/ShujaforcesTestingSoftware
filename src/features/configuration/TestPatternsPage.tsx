@@ -885,7 +885,7 @@ export const TestPatternsPage: React.FC = () => {
                   required
                   value={newTplName}
                   onChange={(e) => setNewTplName(e.target.value)}
-                  placeholder="e.g. 154 PMA Long Course Standard Initial Screening"
+                  placeholder="e.g. PMA Long Course Standard Initial Screening"
                   className="w-full bg-[#F8FAFC] border border-[#D4D9DF] rounded px-3 py-2 text-xs text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
                 />
               </div>

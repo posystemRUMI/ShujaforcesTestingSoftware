@@ -11,7 +11,7 @@ export const studentFormSchema = z.object({
   temporaryCredential: z.string().min(6, 'Initial clearance code must be at least 6 characters'),
   branch: z.enum(['PAKISTAN_ARMY', 'PAKISTAN_AIR_FORCE', 'PAKISTAN_NAVY']),
   batchId: z.string().min(1, 'Target batch selection is required'),
-  targetCourse: z.string().min(2, 'Induction target course required (e.g. 154 PMA, 158 GDP)'),
+  targetCourse: z.string().min(2, 'Induction target course required (e.g. PMA Long Course, GD(P) & Aeronautical Engineering)'),
   status: z.enum(['ACTIVE', 'GRADUATED', 'RETAKE_REQUIRED', 'DISQUALIFIED']),
   avatarUrl: z.string().optional(),
 });

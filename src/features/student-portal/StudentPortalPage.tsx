@@ -13,7 +13,7 @@ export const StudentPortalPage: React.FC = () => {
           <span className="text-xs font-sans font-bold text-[#C6A75E] uppercase tracking-wider">Cadet Portal</span>
           <h1 className="text-xl font-bold text-[#0E1B2A] mt-1">{user?.name}</h1>
           <p className="text-xs text-[#64748B] font-sans mt-0.5">
-            DOCKET: <span className="font-mono font-bold text-[#0E1B2A]">{user?.rollNumber || 'PMA-2601'}</span> | SQUADRON: 154 PMA LONG COURSE ALPHA
+            DOCKET: <span className="font-mono font-bold text-[#0E1B2A]">{user?.rollNumber || '—'}</span> | SQUADRON: PMA LONG COURSE ALPHA
           </p>
         </div>
         <Link
@@ -28,7 +28,7 @@ export const StudentPortalPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div className="bg-white border border-[#D4D9DF] rounded p-4 shadow-sm">
           <div className="text-xs font-semibold uppercase text-[#64748B]">Assigned Screening Exam</div>
-          <div className="text-sm font-bold text-[#0E1B2A] mt-2">154 PMA Initial Test (Mock 04)</div>
+          <div className="text-sm font-bold text-[#0E1B2A] mt-2">PMA Initial Test</div>
           <div className="mt-3 flex items-center justify-between text-xs font-sans tabular-nums text-[#64748B]">
             <span className="flex items-center space-x-1">
               <Clock className="w-3.5 h-3.5" />

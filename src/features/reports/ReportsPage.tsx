@@ -277,9 +277,9 @@ export const ReportsPage: React.FC = () => {
         />
         <MetricCard
           title="Top Performing Wing"
-          value="PAF 158 GDP"
+          value="—"
           icon={<TrendingUp className="w-4 h-4 text-[#0E1B2A]" />}
-          subtext="86.4% Pass Rate (Top Merit Cohort)"
+          subtext="No active cohort evaluated"
         />
       </div>
 

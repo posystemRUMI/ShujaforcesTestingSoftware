@@ -81,7 +81,7 @@ export const SettingsPage: React.FC = () => {
               <div className="text-xs font-bold text-[#0E1B2A] group-hover:text-[#C6A75E] transition-colors">
                 Commissioning Courses
               </div>
-              <div className="text-[11px] text-[#64748B]">PMA, GDP, PN Cadet, TCC (6)</div>
+              <div className="text-[11px] text-[#64748B]">PMA Long Course, AFNS, GD(P), Airman, Sailor (5)</div>
             </div>
           </div>
           <ExternalLink className="w-3.5 h-3.5 text-[#94A3B8]" />

@@ -185,19 +185,19 @@ export const CoursesPage: React.FC = () => {
         <MetricCard
           title="Army Programs"
           value={courses.filter((c) => c.branch === 'PAKISTAN_ARMY').length.toString()}
-          subtitle="PMA / TCC / LCC"
+          subtitle="PMA Long Course & AFNS"
           icon={<GraduationCap className="w-5 h-5 text-emerald-600" />}
         />
         <MetricCard
           title="PAF Streams"
           value={courses.filter((c) => c.branch === 'PAKISTAN_AIR_FORCE').length.toString()}
-          subtitle="GDP & Engineering"
+          subtitle="GD(P) & Airman"
           icon={<GraduationCap className="w-5 h-5 text-sky-600" />}
         />
         <MetricCard
           title="Navy Branches"
           value={courses.filter((c) => c.branch === 'PAKISTAN_NAVY').length.toString()}
-          subtitle="PN Cadet Executive"
+          subtitle="Sailor"
           icon={<GraduationCap className="w-5 h-5 text-[#C6A75E]" />}
         />
       </div>
