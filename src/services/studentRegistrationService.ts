@@ -108,9 +108,8 @@ export const studentRegistrationService = {
       targetOfficialCodes = ['SAILOR'];
     }
 
-    const officialSet = new Set(targetOfficialCodes);
-
-    // 3. Query DB courses first if available
+    // 3. Query DB courses first to match DB UUIDs where available
+    let dbRows: CourseRow[] = [];
     try {
       const { data } = await supabase
         .from('courses')
@@ -121,32 +120,44 @@ export const studentRegistrationService = {
         .returns<CourseRow[]>();
 
       if (data && data.length > 0) {
-        const filtered = data.filter((c: CourseRow) => {
-          const norm = normalizeCourseCode(c.code || c.name);
-          return officialSet.has(norm);
-        });
-        if (filtered.length > 0) {
-          return filtered.map((c: CourseRow) => ({
-            id: c.id,
-            forceId: c.force_id,
-            code: c.code,
-            name: c.name,
-            durationWeeks: c.duration_weeks || undefined,
-          }));
-        }
+        dbRows = data;
       }
     } catch (e) {
       console.warn('DB courses query warning:', e);
     }
 
-    // 4. Fallback to static OFFICIAL_COURSES
-    return OFFICIAL_COURSES.filter((c) => officialSet.has(c.code)).map((c) => ({
-      id: c.id,
-      forceId: c.forceCode,
-      code: c.code,
-      name: c.name,
-      durationWeeks: 12,
-    }));
+    // 4. For each target official code, pick exactly 1 matching DB row OR static fallback
+    const result: CourseOption[] = [];
+
+    for (const code of targetOfficialCodes) {
+      const dbMatch = dbRows.find((c) => {
+        const norm = normalizeCourseCode(c.code || c.name);
+        return norm === code;
+      });
+
+      if (dbMatch) {
+        result.push({
+          id: dbMatch.id,
+          forceId: dbMatch.force_id,
+          code: dbMatch.code || code,
+          name: dbMatch.name,
+          durationWeeks: dbMatch.duration_weeks || undefined,
+        });
+      } else {
+        const staticMatch = OFFICIAL_COURSES.find((c) => c.code === code);
+        if (staticMatch) {
+          result.push({
+            id: staticMatch.id,
+            forceId: staticMatch.forceCode,
+            code: staticMatch.code,
+            name: staticMatch.name,
+            durationWeeks: 12,
+          });
+        }
+      }
+    }
+
+    return result;
   },
 
   /**

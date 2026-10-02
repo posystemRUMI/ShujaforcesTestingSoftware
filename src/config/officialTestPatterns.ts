@@ -244,16 +244,16 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
  * Helper: Find course code by ID or Name or Code
  */
 export function normalizeCourseCode(input?: string | null): string {
-  if (!input) return 'PMA_LONG_COURSE';
+  if (!input) return 'UNKNOWN';
   const str = input.toLowerCase().trim();
 
   if (str.includes('gdp') || str.includes('gd(p)') || str.includes('cae') || str.includes('aeronautical')) return 'GDP_CAE';
   if (str.includes('airman')) return 'AIRMAN';
   if (str.includes('sailor')) return 'SAILOR';
-  if (str.includes('afns')) return 'AFNS';
+  if (str.includes('afns') || str.includes('nursing')) return 'AFNS';
   if (str.includes('pma') || str.includes('long course')) return 'PMA_LONG_COURSE';
 
-  return 'PMA_LONG_COURSE';
+  return 'UNKNOWN';
 }
 
 /**
