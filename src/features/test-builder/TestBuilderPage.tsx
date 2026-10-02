@@ -179,7 +179,7 @@ export const TestBuilderPage: React.FC = () => {
         minQuestions: 1,
         maxQuestions: cfg.totalQuestions, // STRICT CAP: cannot be greater than official pattern totalQuestions!
         minDuration: 1,
-        maxDuration: 180,
+        maxDuration: cfg.durationMinutes, // STRICT CAP: cannot be greater than official pattern durationMinutes!
         isMandatory: true,
         canDisable: true,
         canOverrideCount: true,
@@ -201,7 +201,8 @@ export const TestBuilderPage: React.FC = () => {
               const cfgMatch = officialConfigs.find(
                 (c) => c.code.toLowerCase() === s.sectionCode.toLowerCase() || c.testName.toLowerCase() === s.sectionName.toLowerCase()
               );
-              const officialMax = cfgMatch?.totalQuestions || s.defaultQuestionCount;
+              const officialMaxQuestions = cfgMatch?.totalQuestions || s.defaultQuestionCount;
+              const officialMaxDuration = cfgMatch?.durationMinutes || s.defaultDurationMinutes;
               return {
                 id: s.id,
                 sourceTemplateSectionId: s.id,
@@ -209,19 +210,19 @@ export const TestBuilderPage: React.FC = () => {
                 sectionName: s.sectionName,
                 displayOrder: s.displayOrder,
                 enabled: s.defaultEnabled,
-                questionCount: Math.min(s.defaultQuestionCount, officialMax),
-                durationMinutes: s.defaultDurationMinutes,
+                questionCount: Math.min(s.defaultQuestionCount, officialMaxQuestions),
+                durationMinutes: Math.min(s.defaultDurationMinutes, officialMaxDuration),
                 minQuestions: s.minQuestionCount,
-                maxQuestions: officialMax, // STRICT CAP: cannot be greater than official pattern limit
+                maxQuestions: officialMaxQuestions, // STRICT CAP
                 minDuration: s.minDurationMinutes,
-                maxDuration: s.maxDurationMinutes,
+                maxDuration: officialMaxDuration, // STRICT CAP
                 isMandatory: s.isMandatory,
                 canDisable: s.teacherCanDisable,
                 canOverrideCount: s.teacherCanOverrideQuestionCount,
                 canOverrideDuration: s.teacherCanOverrideDuration,
                 subjects: s.subjects || [],
-                defaultQuestions: Math.min(s.defaultQuestionCount, officialMax),
-                defaultDuration: s.defaultDurationMinutes,
+                defaultQuestions: Math.min(s.defaultQuestionCount, officialMaxQuestions),
+                defaultDuration: Math.min(s.defaultDurationMinutes, officialMaxDuration),
               };
             });
             setConfiguredSections(mapped);
@@ -281,6 +282,9 @@ export const TestBuilderPage: React.FC = () => {
           if (!s.canOverrideDuration) {
             toast.error(`Duration override is locked for "${s.sectionName}".`);
             return s;
+          }
+          if (duration > s.maxDuration) {
+            toast.error(`Duration for "${s.sectionName}" cannot be greater than the official pattern limit of ${s.maxDuration} minutes.`);
           }
           const valid = Math.max(s.minDuration, Math.min(s.maxDuration, duration));
           return { ...s, durationMinutes: valid };
@@ -437,6 +441,10 @@ export const TestBuilderPage: React.FC = () => {
         }
         if (s.questionCount > s.maxQuestions) {
           toast.error(`Question count in "${s.sectionName}" (${s.questionCount}) cannot be greater than the official pattern limit of ${s.maxQuestions}.`);
+          return;
+        }
+        if (s.durationMinutes > s.maxDuration) {
+          toast.error(`Duration for "${s.sectionName}" (${s.durationMinutes} min) cannot be greater than the official pattern limit of ${s.maxDuration} minutes.`);
           return;
         }
       }
