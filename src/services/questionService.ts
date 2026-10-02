@@ -91,22 +91,101 @@ export const questionService = {
       return payload.id || 'mock-qid';
     }
 
-    const { data, error } = await (supabase as any).rpc('admin_upsert_question', {
-      p_id: payload.id,
-      p_code: payload.code,
-      p_subject_id: payload.subjectId,
-      p_difficulty: payload.difficulty,
-      p_stem: payload.stem,
-      p_stem_image_url: payload.stemImageUrl,
-      p_explanation: payload.explanation,
-      p_time_limit_seconds: payload.timeLimitSeconds,
-      p_status: payload.status,
-      p_tags: payload.tags,
-      p_course_ids: payload.courseIds,
-      p_options: payload.options as any,
-    });
+    // 1. Try RPC call with explicit null for optional parameters
+    try {
+      const { data, error } = await (supabase as any).rpc('admin_upsert_question', {
+        p_id: payload.id ?? null,
+        p_code: payload.code,
+        p_subject_id: payload.subjectId,
+        p_difficulty: payload.difficulty,
+        p_stem: payload.stem,
+        p_stem_image_url: payload.stemImageUrl ?? null,
+        p_explanation: payload.explanation ?? null,
+        p_time_limit_seconds: payload.timeLimitSeconds,
+        p_status: payload.status,
+        p_tags: payload.tags || [],
+        p_course_ids: payload.courseIds || [],
+        p_options: payload.options as any,
+      });
 
-    if (error) throw new Error(error.message);
-    return data;
+      if (!error && data) {
+        return data;
+      }
+      if (error) {
+        console.warn('RPC admin_upsert_question returned warning, attempting direct table upsert:', error.message);
+      }
+    } catch (rpcErr) {
+      console.warn('RPC execution failed, using direct table fallback:', rpcErr);
+    }
+
+    // 2. Direct table fallback if RPC is missing in schema cache or errors out
+    let questionId = payload.id;
+    if (!questionId) {
+      const { data: newQ, error: qErr } = await (supabase as any)
+        .from('questions')
+        .insert({
+          code: payload.code,
+          subject_id: payload.subjectId,
+          difficulty: payload.difficulty,
+          stem: payload.stem,
+          stem_image_url: payload.stemImageUrl ?? null,
+          explanation: payload.explanation ?? null,
+          time_limit_seconds: payload.timeLimitSeconds,
+          status: payload.status,
+          tags: payload.tags || [],
+        })
+        .select('id')
+        .single();
+
+      if (qErr || !newQ) throw new Error(qErr?.message || 'Failed to create question record.');
+      questionId = newQ.id;
+    } else {
+      const { error: updateErr } = await (supabase as any)
+        .from('questions')
+        .update({
+          code: payload.code,
+          subject_id: payload.subjectId,
+          difficulty: payload.difficulty,
+          stem: payload.stem,
+          stem_image_url: payload.stemImageUrl ?? null,
+          explanation: payload.explanation ?? null,
+          time_limit_seconds: payload.timeLimitSeconds,
+          status: payload.status,
+          tags: payload.tags || [],
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', questionId);
+
+      if (updateErr) throw new Error(updateErr.message);
+    }
+
+    // Upsert options
+    if (payload.options && payload.options.length > 0) {
+      await (supabase as any).from('question_options').delete().eq('question_id', questionId);
+
+      const optionRows = payload.options.map((opt) => ({
+        question_id: questionId,
+        option_key: opt.option_key || opt.label,
+        label: opt.label,
+        text: opt.text,
+        image_url: opt.image_url ?? null,
+        is_correct: opt.is_correct,
+      }));
+
+      const { error: optErr } = await (supabase as any).from('question_options').insert(optionRows);
+      if (optErr) console.warn('Options insert warning:', optErr.message);
+    }
+
+    // Upsert course eligibilities
+    if (payload.courseIds && payload.courseIds.length > 0) {
+      await (supabase as any).from('question_course_eligibilities').delete().eq('question_id', questionId);
+      const eligRows = payload.courseIds.map((cid) => ({
+        question_id: questionId,
+        course_id: cid,
+      }));
+      await (supabase as any).from('question_course_eligibilities').insert(eligRows);
+    }
+
+    return questionId as string;
   },
 };

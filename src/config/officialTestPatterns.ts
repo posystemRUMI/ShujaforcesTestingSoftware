@@ -318,5 +318,13 @@ export function isTestAuthorizedForStudent(
   if (!studentCourse || !testCourse) return true; // If admin or missing context, allow
   const sCode = normalizeCourseCode(studentCourse);
   const tCode = normalizeCourseCode(testCourse);
-  return sCode === tCode;
+  if (sCode === tCode) return true;
+  // PMA Long Course & AFNS share the exact same Army syllabus and test pattern
+  if (
+    (sCode === 'PMA_LONG_COURSE' || sCode === 'AFNS') &&
+    (tCode === 'PMA_LONG_COURSE' || tCode === 'AFNS')
+  ) {
+    return true;
+  }
+  return false;
 }

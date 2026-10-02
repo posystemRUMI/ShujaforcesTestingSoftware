@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/app/providers';
 import { configurationService } from '@/services/configurationService';
 import { testPatternService, TestPatternTemplate, TestPatternSection } from '@/services/testPatternService';
+import {
+  getOfficialTestsForCourse,
+  normalizeCourseCode,
+} from '@/config/officialTestPatterns';
 import { testService } from '@/services/testService';
 import { batchService } from '@/services/batchService';
 import { questionService } from '@/services/questionService';
@@ -143,74 +147,91 @@ export const TestBuilderPage: React.FC = () => {
     loadAllCourses();
   }, []);
 
-  // 3. Dynamic Template Dependency: Load templates for first selected course
+  // 3. Dynamic Template & Official Section Auto-Loader
   useEffect(() => {
     if (selectedEligibilities.length === 0) {
       setTemplates([]);
       setSelectedTemplateId('');
+      setConfiguredSections([]);
       return;
     }
 
-    async function loadTemplatesForCourse() {
+    async function loadSectionsAndTemplates() {
+      const firstElig = selectedEligibilities[0];
+      const courseObj = courses.find((c) => c.id === firstElig.course_id);
+      const courseCode = normalizeCourseCode(courseObj?.code || courseObj?.name);
+
+      // Auto-populate Title if empty
+      if (!title && courseObj) {
+        setTitle(`${courseObj.name} Computerized Screening Examination`);
+      }
+
+      // Always load official test pattern sections automatically
+      const officialConfigs = getOfficialTestsForCourse(courseCode);
+      const autoSections: ConfiguredSectionState[] = officialConfigs.map((cfg) => ({
+        id: `sec-${cfg.code.toLowerCase()}`,
+        sectionCode: cfg.code,
+        sectionName: cfg.testName,
+        displayOrder: cfg.sequence,
+        enabled: true,
+        questionCount: cfg.totalQuestions,
+        durationMinutes: cfg.durationMinutes,
+        minQuestions: 1,
+        maxQuestions: 200,
+        minDuration: 1,
+        maxDuration: 180,
+        isMandatory: true,
+        canDisable: true,
+        canOverrideCount: true,
+        canOverrideDuration: true,
+        subjects: [],
+        defaultQuestions: cfg.totalQuestions,
+        defaultDuration: cfg.durationMinutes,
+      }));
+
       try {
-        const firstElig = selectedEligibilities[0];
         const tList = await testPatternService.getTemplates(firstElig.force_id, firstElig.course_id);
         setTemplates(tList);
         if (tList.length > 0) {
           const defaultTpl = tList.find((t) => t.isDefault) || tList[0];
           setSelectedTemplateId(defaultTpl.id);
-        } else {
-          setSelectedTemplateId('');
+          const details = await testPatternService.getTemplateDetails(defaultTpl.id);
+          if (details && details.sections && details.sections.length > 0) {
+            const mapped: ConfiguredSectionState[] = details.sections.map((s: TestPatternSection) => ({
+              id: s.id,
+              sourceTemplateSectionId: s.id,
+              sectionCode: s.sectionCode,
+              sectionName: s.sectionName,
+              displayOrder: s.displayOrder,
+              enabled: s.defaultEnabled,
+              questionCount: s.defaultQuestionCount,
+              durationMinutes: s.defaultDurationMinutes,
+              minQuestions: s.minQuestionCount,
+              maxQuestions: s.maxQuestionCount,
+              minDuration: s.minDurationMinutes,
+              maxDuration: s.maxDurationMinutes,
+              isMandatory: s.isMandatory,
+              canDisable: s.teacherCanDisable,
+              canOverrideCount: s.teacherCanOverrideQuestionCount,
+              canOverrideDuration: s.teacherCanOverrideDuration,
+              subjects: s.subjects || [],
+              defaultQuestions: s.defaultQuestionCount,
+              defaultDuration: s.defaultDurationMinutes,
+            }));
+            setConfiguredSections(mapped);
+            return;
+          }
         }
       } catch (e) {
-        console.warn('Failed to load templates:', e);
+        console.warn('DB template check warning, using official pattern:', e);
       }
-    }
-    loadTemplatesForCourse();
-  }, [selectedEligibilities]);
 
-  // 4. Load Master Template Sections into Snapshot State
-  useEffect(() => {
-    if (!selectedTemplateId) {
-      setConfiguredSections([]);
-      return;
+      // Fallback/Default to official test pattern sections
+      setConfiguredSections(autoSections);
     }
 
-    async function loadSections() {
-      const details = await testPatternService.getTemplateDetails(selectedTemplateId);
-      if (details && details.sections) {
-        const mapped: ConfiguredSectionState[] = details.sections.map((s: TestPatternSection) => ({
-          id: s.id,
-          sourceTemplateSectionId: s.id,
-          sectionCode: s.sectionCode,
-          sectionName: s.sectionName,
-          displayOrder: s.displayOrder,
-          enabled: s.defaultEnabled,
-          questionCount: s.defaultQuestionCount,
-          durationMinutes: s.defaultDurationMinutes,
-          minQuestions: s.minQuestionCount,
-          maxQuestions: s.maxQuestionCount,
-          minDuration: s.minDurationMinutes,
-          maxDuration: s.maxDurationMinutes,
-          isMandatory: s.isMandatory,
-          canDisable: s.teacherCanDisable,
-          canOverrideCount: s.teacherCanOverrideQuestionCount,
-          canOverrideDuration: s.teacherCanOverrideDuration,
-          subjects: s.subjects || [],
-          defaultQuestions: s.defaultQuestionCount,
-          defaultDuration: s.defaultDurationMinutes,
-        }));
-        setConfiguredSections(mapped);
-
-        // Auto-populate Title if empty
-        const course = courses.find((c) => selectedEligibilities.map(e => e.course_id).includes(c.id));
-        if (!title && course) {
-          setTitle(`${course.name} Computerized Screening Examination`);
-        }
-      }
-    }
-    loadSections();
-  }, [selectedTemplateId]);
+    loadSectionsAndTemplates();
+  }, [selectedEligibilities, courses]);
 
   // Section customizers
   const toggleSectionEnabled = (secId: string) => {
@@ -716,10 +737,28 @@ export const TestBuilderPage: React.FC = () => {
                                   type="checkbox"
                                   checked={isSelected}
                                   onChange={(e) => {
-                                    if (e.target.checked) {
-                                      setSelectedEligibilities([...selectedEligibilities, { force_id: f.id, course_id: c.id }]);
+                                    const isArmyCourse = f.branch === 'PAKISTAN_ARMY' || f.name.includes('Army') || c.code === 'PMA_LONG_COURSE' || c.code === 'AFNS' || c.name.includes('PMA') || c.name.includes('AFNS');
+                                    if (isArmyCourse) {
+                                      const armyCourses = forceCourses;
+                                      if (e.target.checked) {
+                                        const merged = [...selectedEligibilities];
+                                        armyCourses.forEach((ac) => {
+                                          if (!merged.some((x) => x.course_id === ac.id)) {
+                                            merged.push({ force_id: f.id, course_id: ac.id });
+                                          }
+                                        });
+                                        setSelectedEligibilities(merged);
+                                        toast.info('Pakistan Army: PMA Long Course & AFNS selected (Shared Syllabus & Pattern)');
+                                      } else {
+                                        const armyIds = new Set(armyCourses.map((ac) => ac.id));
+                                        setSelectedEligibilities(selectedEligibilities.filter((x) => !armyIds.has(x.course_id)));
+                                      }
                                     } else {
-                                      setSelectedEligibilities(selectedEligibilities.filter((x) => x.course_id !== c.id));
+                                      if (e.target.checked) {
+                                        setSelectedEligibilities([...selectedEligibilities, { force_id: f.id, course_id: c.id }]);
+                                      } else {
+                                        setSelectedEligibilities(selectedEligibilities.filter((x) => x.course_id !== c.id));
+                                      }
                                     }
                                   }}
                                   className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] focus:ring-[#0E1B2A] cursor-pointer"

@@ -54,7 +54,6 @@ const ExamFamiliarizationPage = safeLazy(() => import('@/features/exam-engine/Ex
 const ExamInstructionsPage = safeLazy(() => import('@/features/exam-engine/ExamInstructionsPage'));
 const ExamRunnerPage = safeLazy(() => import('@/features/exam-engine/ExamRunnerPage'));
 const ExamFinishPage = safeLazy(() => import('@/features/exam-engine/ExamFinishPage'));
-const TestPatternsPage = safeLazy(() => import('@/features/configuration/TestPatternsPage'));
 const StudentLeaderboardPage = safeLazy(() => import('@/features/leaderboard/StudentLeaderboardPage'));
 const TeacherLeaderboardPage = safeLazy(() => import('@/features/leaderboard/TeacherLeaderboardPage'));
 const FinancePage = safeLazy(() => import('@/features/finance/FinancePage'));
@@ -282,16 +281,6 @@ export const router = createBrowserRouter([
           <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
             <Suspense fallback={<PageLoadingFallback />}>
               <TestBuilderPage />
-            </Suspense>
-          </RequireRole>
-        ),
-      },
-      {
-        path: 'test-patterns',
-        element: (
-          <RequireRole allowedRoles={['ADMIN', 'TEACHER']}>
-            <Suspense fallback={<PageLoadingFallback />}>
-              <TestPatternsPage />
             </Suspense>
           </RequireRole>
         ),
