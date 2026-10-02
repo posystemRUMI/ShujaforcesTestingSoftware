@@ -529,7 +529,7 @@ export const TestBuilderPage: React.FC = () => {
 
       setPublishing(false);
       toast.success('Test blueprint successfully created & published!');
-      navigate('/admin/tests');
+      navigate('/admin/dashboard');
     } catch (err) {
       setPublishing(false);
       const errMsg = err && typeof err === 'object' && 'message' in err ? String((err as { message: unknown }).message) : 'Failed to compile test.';
@@ -1675,10 +1675,10 @@ export const TestBuilderPage: React.FC = () => {
             ) : (
               <button
                 type="button"
-                onClick={() => navigate('/admin/tests')}
+                onClick={() => navigate('/admin/dashboard')}
                 className="h-11 px-6 bg-white border border-[#D4D9DF] text-[#64748B] rounded-lg text-sm font-bold hover:bg-[#F8FAFC] transition-colors"
               >
-                Back to Tests
+                Back to Dashboard
               </button>
             )}
           </div>

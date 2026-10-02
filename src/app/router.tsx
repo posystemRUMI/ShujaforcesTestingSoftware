@@ -38,7 +38,6 @@ const TeacherDetailPage = safeLazy(() => import('@/features/teachers/TeacherDeta
 const QuestionBankPage = safeLazy(() => import('@/features/question-bank/QuestionBankPage'));
 const QuestionAuthorPage = safeLazy(() => import('@/features/question-author/QuestionAuthorPage'));
 const TestBuilderPage = safeLazy(() => import('@/features/test-builder/TestBuilderPage'));
-const TestManagementPage = safeLazy(() => import('@/features/tests/TestManagementPage'));
 const ResultsPage = safeLazy(() => import('@/features/results/ResultsPage'));
 const ReportsPage = safeLazy(() => import('@/features/reports/ReportsPage'));
 const ForcesPage = safeLazy(() => import('@/features/configuration/ForcesPage'));
@@ -246,14 +245,6 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <QuestionAuthorPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: 'tests',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <TestManagementPage />
           </Suspense>
         ),
       },
