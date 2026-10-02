@@ -1,83 +1,120 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 import { ForceConfig, CourseConfig, SubjectConfig } from '@/features/configuration/types';
+import {
+  OFFICIAL_FORCES,
+  OFFICIAL_COURSES,
+  normalizeCourseCode,
+  normalizeForceCode,
+} from '@/config/officialTestPatterns';
 
 export const configurationService = {
   async getForces(): Promise<ForceConfig[]> {
-    if (!isSupabaseConfigured()) {
-      return [];
+    let dbData: any[] = [];
+    if (isSupabaseConfigured()) {
+      const { data, error } = await (supabase as any)
+        .from('forces')
+        .select('*')
+        .order('sort_order', { ascending: true });
+      if (!error && data) dbData = data;
     }
 
-    const { data, error } = await (supabase as any)
-      .from('forces')
-      .select('*')
-      .order('sort_order', { ascending: true });
+    const seenForces = new Set<string>();
+    const forcesList: ForceConfig[] = [];
 
-    if (error || !data || data.length === 0) {
-      if (error) console.warn('Error fetching forces:', error);
-      return [];
+    // Prioritize official forces in order
+    for (const offForce of OFFICIAL_FORCES) {
+      const dbMatch = dbData.find(
+        (f) => normalizeForceCode(f.code || f.name) === offForce.code
+      );
+
+      forcesList.push({
+        id: dbMatch?.id || offForce.id,
+        name: offForce.name,
+        branch: offForce.code as any,
+        motto: dbMatch?.motto || offForce.motto,
+        mottoTranslation: '',
+        headquarters: dbMatch?.headquarters || 'GHQ / AHQ / NHQ',
+        coursesCount: offForce.code === 'PAKISTAN_NAVY' ? 1 : 2,
+        enrolledCadetsCount: 0,
+        totalQuestionsCount: 0,
+        activeTestsCount: 0,
+        description: dbMatch?.description || '',
+        inductionCenter: 'Armed Forces Selection & Recruitment Centre',
+      });
+      seenForces.add(offForce.code);
     }
 
-    return data.map((f: any) => ({
-      id: f.id,
-      name: f.name,
-      branch: f.code as any,
-      motto: f.motto || '',
-      mottoTranslation: '',
-      headquarters: f.headquarters || '',
-      coursesCount: 0,
-      enrolledCadetsCount: 0,
-      totalQuestionsCount: 0,
-      activeTestsCount: 0,
-      description: f.description || '',
-      inductionCenter: 'Armed Forces Selection & Recruitment Centre',
-    }));
+    return forcesList;
   },
 
   async getCourses(forceId?: string): Promise<CourseConfig[]> {
-    if (!isSupabaseConfigured()) {
-      return [];
+    let dbData: any[] = [];
+    if (isSupabaseConfigured()) {
+      let query = (supabase as any)
+        .from('courses')
+        .select(`
+          *,
+          forces (
+            id,
+            code,
+            name
+          )
+        `)
+        .order('sort_order', { ascending: true });
+
+      if (forceId) {
+        query = query.eq('force_id', forceId);
+      }
+
+      const { data, error } = await query;
+      if (!error && data) dbData = data;
     }
 
-    let query = (supabase as any)
-      .from('courses')
-      .select(`
-        *,
-        forces (
-          id,
-          code
-        )
-      `)
-      .order('sort_order', { ascending: true });
+    const officialCoursesList: CourseConfig[] = [];
+    const seenCourseCodes = new Set<string>();
 
-    if (forceId) {
-      query = query.eq('force_id', forceId);
+    for (const offCourse of OFFICIAL_COURSES) {
+      // Find matching course from DB if available
+      const dbMatch = dbData.find(
+        (c) => normalizeCourseCode(c.code || c.name) === offCourse.code
+      );
+
+      const targetBranch = offCourse.forceCode;
+      const defaultForceId =
+        targetBranch === 'PAKISTAN_ARMY'
+          ? 'force-army-001'
+          : targetBranch === 'PAKISTAN_AIR_FORCE'
+          ? 'force-paf-002'
+          : 'force-navy-003';
+
+      const effectiveForceId = dbMatch?.force_id || defaultForceId;
+
+      // If forceId parameter was passed, filter by forceId
+      if (forceId && forceId !== effectiveForceId && forceId !== targetBranch && dbMatch?.forces?.id !== forceId) {
+        continue;
+      }
+
+      if (!seenCourseCodes.has(offCourse.code)) {
+        seenCourseCodes.add(offCourse.code);
+        officialCoursesList.push({
+          id: dbMatch?.id || offCourse.id,
+          code: offCourse.code,
+          name: offCourse.name,
+          forceId: effectiveForceId,
+          branch: targetBranch as any,
+          durationMonths: Math.round(((dbMatch as any)?.duration_weeks || 24) / 4),
+          minAge: 17,
+          maxAge: 22,
+          educationRequirement: 'F.Sc / A-Level',
+          passingMarksPercent: 50,
+          batchesCount: 0,
+          status: 'ACTIVE',
+          description: (dbMatch as any)?.description || undefined,
+        });
+      }
     }
 
-    const { data, error } = await query;
-
-    if (error || !data || data.length === 0) {
-      if (error) console.warn('Error fetching courses:', error);
-      return [];
-    }
-
-    return data.map((c: any) => {
-      const force = c.forces as any;
-      return {
-        id: c.id,
-        code: c.code,
-        name: c.name,
-        forceId: c.force_id,
-        branch: (force?.code || 'TRI_SERVICE') as any,
-        durationMonths: Math.round((c.duration_weeks || 24) / 4),
-        minAge: 17,
-        maxAge: 22,
-        educationRequirement: 'F.Sc / A-Level',
-        passingMarksPercent: 50,
-        batchesCount: 0,
-        status: (c.status || 'ACTIVE') as any,
-        description: c.description || undefined,
-      };
-    });
+    return officialCoursesList;
   },
 
   async getSubjects(): Promise<SubjectConfig[]> {
