@@ -54,52 +54,8 @@ export const TeacherDetailPage: React.FC = () => {
     );
   }
 
-  // Mock authored questions data
-  const mockAuthoredQuestions = [
-    {
-      code: 'Q-VERB-4091',
-      subject: teacher.assignedSubjects[0] || 'INTELLIGENCE_VERBAL',
-      stem: 'Which word does not belong with the others: Radar, Sonar, Lidar, Compass?',
-      difficulty: 'MEDIUM',
-      status: 'APPROVED',
-      date: '2026-09-02',
-    },
-    {
-      code: 'Q-PAT-8812',
-      subject: teacher.assignedSubjects[1] || 'INTELLIGENCE_NON_VERBAL',
-      stem: 'Select the missing figure that completes the 3x3 geometric rotation matrix.',
-      difficulty: 'HARD',
-      status: 'APPROVED',
-      date: '2026-08-27',
-    },
-    {
-      code: 'Q-MATH-1104',
-      subject: teacher.assignedSubjects[2] || 'ACADEMIC_MATH',
-      stem: 'Find the trajectory velocity equation given initial launch angle theta = 45 degrees.',
-      difficulty: 'MEDIUM',
-      status: 'APPROVED',
-      date: '2026-08-19',
-    },
-  ];
-
-  // Mock audit logs
-  const auditLogs = [
-    {
-      action: 'Test Battery Approved',
-      detail: 'Cleared 154 PMA Long Course Preliminary Battery for publication',
-      timestamp: '2026-09-05 14:30 PKT',
-    },
-    {
-      action: 'Item Bank Contribution',
-      detail: 'Submitted 12 new items to Verbal Intelligence category',
-      timestamp: '2026-09-03 09:15 PKT',
-    },
-    {
-      action: 'Proctor Session Supervised',
-      detail: 'Supervised Hall B CBT Terminal room during 158 GDP Mock Exam',
-      timestamp: '2026-08-29 11:00 PKT',
-    },
-  ];
+  const mockAuthoredQuestions: any[] = [];
+  const auditLogs: any[] = [];
 
   return (
     <div className="space-y-6 max-w-6xl pb-12">
@@ -290,26 +246,34 @@ export const TeacherDetailPage: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#E2E8F0]">
-                    {mockAuthoredQuestions.map((q) => (
-                      <tr key={q.code} className="hover:bg-[#F8FAFC]">
-                        <td className="py-2.5 px-3 font-mono font-bold text-[#0E1B2A]">{q.code}</td>
-                        <td className="py-2.5 px-3">
-                          <SubjectBadge subject={q.subject} />
-                        </td>
-                        <td className="py-2.5 px-3 text-[#334155] max-w-md truncate">{q.stem}</td>
-                        <td className="py-2.5 px-3 font-sans text-[11px] font-semibold text-slate-700">
-                          {q.difficulty}
-                        </td>
-                        <td className="py-2.5 px-3">
-                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                            {q.status}
-                          </span>
-                        </td>
-                        <td className="py-2.5 px-3 text-right font-sans tabular-nums text-[11px] text-[#64748B]">
-                          {q.date}
+                    {mockAuthoredQuestions.length === 0 ? (
+                      <tr>
+                        <td colSpan={6} className="py-8 text-center text-xs text-[#64748B]">
+                          No authored questions on record for this instructor.
                         </td>
                       </tr>
-                    ))}
+                    ) : (
+                      mockAuthoredQuestions.map((q) => (
+                        <tr key={q.code} className="hover:bg-[#F8FAFC]">
+                          <td className="py-2.5 px-3 font-mono font-bold text-[#0E1B2A]">{q.code}</td>
+                          <td className="py-2.5 px-3">
+                            <SubjectBadge subject={q.subject} />
+                          </td>
+                          <td className="py-2.5 px-3 text-[#334155] max-w-md truncate">{q.stem}</td>
+                          <td className="py-2.5 px-3 font-sans text-[11px] font-semibold text-slate-700">
+                            {q.difficulty}
+                          </td>
+                          <td className="py-2.5 px-3">
+                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                              {q.status}
+                            </span>
+                          </td>
+                          <td className="py-2.5 px-3 text-right font-sans tabular-nums text-[11px] text-[#64748B]">
+                            {q.date}
+                          </td>
+                        </tr>
+                      ))
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -318,59 +282,35 @@ export const TeacherDetailPage: React.FC = () => {
 
           {/* Tab 3: Supervised Batteries */}
           {activeTab === 'supervised' && (
-            <div className="space-y-4">
-              <div className="border border-[#CBD5E1] rounded p-4 bg-[#F8FAFC]">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="font-bold text-xs text-[#0E1B2A]">
-                    154 PMA Long Course — Intelligence Battery #01
-                  </div>
-                  <span className="px-2 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-800 rounded">
-                    ACTIVE
-                  </span>
-                </div>
-                <div className="text-[11px] text-[#64748B] flex items-center space-x-4">
-                  <span>Sections: Verbal, Non-Verbal</span>
-                  <span>Candidates: 48 Enrolled</span>
-                  <span>Pass Threshold: 60%</span>
-                </div>
-              </div>
-
-              <div className="border border-[#CBD5E1] rounded p-4 bg-[#F8FAFC]">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="font-bold text-xs text-[#0E1B2A]">
-                    158 GDP Pakistan Air Force — Aerodynamics & Math
-                  </div>
-                  <span className="px-2 py-0.5 text-[10px] font-bold bg-emerald-100 text-emerald-800 rounded">
-                    ACTIVE
-                  </span>
-                </div>
-                <div className="text-[11px] text-[#64748B] flex items-center space-x-4">
-                  <span>Sections: Physics, Mathematics</span>
-                  <span>Candidates: 36 Enrolled</span>
-                  <span>Pass Threshold: 65%</span>
-                </div>
-              </div>
+            <div className="py-8 text-center text-xs text-[#64748B] border border-[#CBD5E1] rounded bg-[#F8FAFC]">
+              No supervised examination batteries assigned.
             </div>
           )}
 
           {/* Tab 4: Logs */}
           {activeTab === 'logs' && (
             <div className="space-y-3">
-              {auditLogs.map((log, i) => (
-                <div
-                  key={i}
-                  className="flex items-start justify-between p-3 rounded bg-[#F8FAFC] border border-[#E2E8F0] text-xs"
-                >
-                  <div className="space-y-0.5">
-                    <div className="font-bold text-[#0E1B2A]">{log.action}</div>
-                    <div className="text-[#475569]">{log.detail}</div>
-                  </div>
-                  <div className="flex items-center space-x-1 font-mono tabular-nums text-[11px] text-[#64748B]">
-                    <Clock className="w-3.5 h-3.5" />
-                    <span>{log.timestamp}</span>
-                  </div>
+              {auditLogs.length === 0 ? (
+                <div className="py-8 text-center text-xs text-[#64748B] border border-[#E2E8F0] rounded bg-[#F8FAFC]">
+                  No security action logs recorded.
                 </div>
-              ))}
+              ) : (
+                auditLogs.map((log, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start justify-between p-3 rounded bg-[#F8FAFC] border border-[#E2E8F0] text-xs"
+                  >
+                    <div className="space-y-0.5">
+                      <div className="font-bold text-[#0E1B2A]">{log.action}</div>
+                      <div className="text-[#475569]">{log.detail}</div>
+                    </div>
+                    <div className="flex items-center space-x-1 font-mono tabular-nums text-[11px] text-[#64748B]">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>{log.timestamp}</span>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           )}
         </div>

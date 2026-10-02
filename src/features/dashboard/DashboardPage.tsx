@@ -47,84 +47,7 @@ interface RecentSubmission {
   critical?: boolean;
 }
 
-const RECENT_SUBMISSIONS: RecentSubmission[] = [
-  {
-    id: 'sub-1',
-    cadetName: 'Ahmed Khan',
-    avatarText: 'AK',
-    center: 'Batch 154 · Islamabad Center',
-    rollNumber: 'PMA-2026-0145',
-    testTitle: 'PMA Long Course Mock 06',
-    subTitle: 'Verbal & Non-Verbal + Academic',
-    branch: 'PAKISTAN_ARMY',
-    scorePercent: 88.5,
-    scoreText: '177 / 200',
-    passed: true,
-    timestamp: '11:42 AM',
-    relativeTime: '8 mins ago',
-  },
-  {
-    id: 'sub-2',
-    cadetName: 'Hassan Ali',
-    avatarText: 'HA',
-    center: 'Batch 154 · Lahore Flight Wing',
-    rollNumber: 'PAF-2026-0089',
-    testTitle: 'GD(P) Academic Practice',
-    subTitle: 'Physics & Advanced Mathematics',
-    branch: 'PAKISTAN_AIR_FORCE',
-    scorePercent: 68.0,
-    scoreText: '102 / 150',
-    passed: true,
-    timestamp: '11:36 AM',
-    relativeTime: '14 mins ago',
-  },
-  {
-    id: 'sub-3',
-    cadetName: 'Bilal Khan',
-    avatarText: 'BK',
-    center: 'Rawalpindi Sector',
-    rollNumber: 'PN-2026-0312',
-    testTitle: 'PN Cadet Intelligence Battery',
-    subTitle: 'Mechanical Comprehension & Matrix',
-    branch: 'PAKISTAN_NAVY',
-    scorePercent: 34.5,
-    scoreText: '69 / 200',
-    passed: false,
-    timestamp: '11:24 AM',
-    relativeTime: 'Flagged',
-    critical: true,
-  },
-  {
-    id: 'sub-4',
-    cadetName: 'Saad Iqbal',
-    avatarText: 'SI',
-    center: 'Batch 153 · Peshawar Base',
-    rollNumber: 'PMA-2026-0298',
-    testTitle: 'PMA Long Course Mock 06',
-    subTitle: 'General Knowledge & Pakistan Studies',
-    branch: 'PAKISTAN_ARMY',
-    scorePercent: 76.0,
-    scoreText: '152 / 200',
-    passed: true,
-    timestamp: '11:15 AM',
-    relativeTime: '35 mins ago',
-  },
-  {
-    id: 'sub-5',
-    cadetName: 'Muhammad Farooq',
-    avatarText: 'MF',
-    center: 'Batch 154 · Multan Satellite',
-    rollNumber: 'PAF-2026-0112',
-    testTitle: 'PAF Aeronautical Eng Initial',
-    subTitle: 'Calculus & Basic Electronics',
-    branch: 'PAKISTAN_AIR_FORCE',
-    scorePercent: 91.5,
-    scoreText: '183 / 200',
-    passed: true,
-    timestamp: '10:58 AM',
-    relativeTime: '45 mins ago',
-  },
-];
+const RECENT_SUBMISSIONS: RecentSubmission[] = [];
 
 export const DashboardPage: React.FC = () => {
   const { role } = useAuth();
@@ -712,72 +635,80 @@ export const DashboardPage: React.FC = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-[#F1F5F9]">
-              {filteredSubmissions.map((row) => (
-                <tr
-                  key={row.id}
-                  className={`hover:bg-[#F8FAFC] transition-colors ${
-                    row.critical ? 'bg-red-50/40' : ''
-                  }`}
-                >
-                  <td className="py-3.5 px-5">
-                    <div className="flex items-center space-x-3">
-                      <Avatar size="sm" fallbackText={row.avatarText} />
-                      <div>
-                        <div className="font-semibold text-[#0E1B2A]">{row.cadetName}</div>
-                        <div className="text-[12px] text-[#64748B]">{row.center}</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="py-3.5 px-4 font-mono font-semibold text-[#374151] text-[12px]">
-                    {row.rollNumber}
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <div className="font-medium text-[#0E1B2A]">{row.testTitle}</div>
-                    <div className="text-[12px] text-[#64748B]">{row.subTitle}</div>
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <ForceBadge branch={row.branch} compact />
-                  </td>
-                  <td className="py-3.5 px-4 text-right tabular-nums">
-                    <span
-                      className={`font-bold text-[14px] ${
-                        row.passed ? 'text-[#234E35]' : 'text-[#782525]'
-                      }`}
-                    >
-                      {row.scorePercent}%
-                    </span>
-                    <span className="block text-[12px] text-[#64748B]">{row.scoreText}</span>
-                  </td>
-                  <td className="py-3.5 px-4 text-center">
-                    <StatusBadge status={row.passed ? 'pass' : 'fail'} />
-                  </td>
-                  <td className="py-3.5 px-4 tabular-nums text-[#64748B]">
-                    <div className="text-[13px]">{row.timestamp}</div>
-                    <span className="text-[12px] text-[#94A3B8]">{row.relativeTime}</span>
-                  </td>
-                  <td className="py-3.5 px-5 text-right">
-                    <div className="flex items-center justify-end space-x-1.5">
-                      <button
-                        type="button"
-                        onClick={() => toast.info(`Viewing result for ${row.cadetName}`)}
-                        className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-[12.5px] font-semibold rounded-lg bg-[#F4F6F9] hover:bg-[#EAECF0] text-[#0E1B2A] border border-[#E2E6EB] transition-colors"
-                        title="View result"
-                      >
-                        <BookOpen className="w-3.5 h-3.5 text-[#234E35]" />
-                        <span>View</span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => toast.info(`Printing transcript: ${row.rollNumber}`)}
-                        className="p-1.5 rounded-lg text-[#64748B] hover:text-[#0E1B2A] hover:bg-[#F4F6F9] transition-colors"
-                        title="Print transcript"
-                      >
-                        <Printer className="w-4 h-4" />
-                      </button>
-                    </div>
+              {filteredSubmissions.length === 0 ? (
+                <tr>
+                  <td colSpan={8} className="py-8 text-center text-xs text-[#64748B]">
+                    No recent examination submissions recorded.
                   </td>
                 </tr>
-              ))}
+              ) : (
+                filteredSubmissions.map((row) => (
+                  <tr
+                    key={row.id}
+                    className={`hover:bg-[#F8FAFC] transition-colors ${
+                      row.critical ? 'bg-red-50/40' : ''
+                    }`}
+                  >
+                    <td className="py-3.5 px-5">
+                      <div className="flex items-center space-x-3">
+                        <Avatar size="sm" fallbackText={row.avatarText} />
+                        <div>
+                          <div className="font-semibold text-[#0E1B2A]">{row.cadetName}</div>
+                          <div className="text-[12px] text-[#64748B]">{row.center}</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 font-mono font-semibold text-[#374151] text-[12px]">
+                      {row.rollNumber}
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="font-medium text-[#0E1B2A]">{row.testTitle}</div>
+                      <div className="text-[12px] text-[#64748B]">{row.subTitle}</div>
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <ForceBadge branch={row.branch} compact />
+                    </td>
+                    <td className="py-3.5 px-4 text-right tabular-nums">
+                      <span
+                        className={`font-bold text-[14px] ${
+                          row.passed ? 'text-[#234E35]' : 'text-[#782525]'
+                        }`}
+                      >
+                        {row.scorePercent}%
+                      </span>
+                      <span className="block text-[12px] text-[#64748B]">{row.scoreText}</span>
+                    </td>
+                    <td className="py-3.5 px-4 text-center">
+                      <StatusBadge status={row.passed ? 'pass' : 'fail'} />
+                    </td>
+                    <td className="py-3.5 px-4 tabular-nums text-[#64748B]">
+                      <div className="text-[13px]">{row.timestamp}</div>
+                      <span className="text-[12px] text-[#94A3B8]">{row.relativeTime}</span>
+                    </td>
+                    <td className="py-3.5 px-5 text-right">
+                      <div className="flex items-center justify-end space-x-1.5">
+                        <button
+                          type="button"
+                          onClick={() => toast.info(`Viewing result for ${row.cadetName}`)}
+                          className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-[12.5px] font-semibold rounded-lg bg-[#F4F6F9] hover:bg-[#EAECF0] text-[#0E1B2A] border border-[#E2E6EB] transition-colors"
+                          title="View result"
+                        >
+                          <BookOpen className="w-3.5 h-3.5 text-[#234E35]" />
+                          <span>View</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => toast.info(`Printing transcript: ${row.rollNumber}`)}
+                          className="p-1.5 rounded-lg text-[#64748B] hover:text-[#0E1B2A] hover:bg-[#F4F6F9] transition-colors"
+                          title="Print transcript"
+                        >
+                          <Printer className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>

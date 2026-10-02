@@ -34,38 +34,7 @@ interface AttemptRecord {
   timeSpentMinutes: number;
 }
 
-const MOCK_ATTEMPTS: AttemptRecord[] = [
-  {
-    id: 'att-1',
-    testTitle: '154 PMA Long Course Initial Mock 04',
-    attemptNumber: 1,
-    date: '2026-03-01',
-    scorePercent: 92,
-    meritRank: 2,
-    passed: true,
-    timeSpentMinutes: 52,
-  },
-  {
-    id: 'att-2',
-    testTitle: 'Verbal Intelligence Diagnostic Battery',
-    attemptNumber: 2,
-    date: '2026-02-25',
-    scorePercent: 88,
-    meritRank: 3,
-    passed: true,
-    timeSpentMinutes: 28,
-  },
-  {
-    id: 'att-3',
-    testTitle: 'Non-Verbal Spatial Relations Assessment',
-    attemptNumber: 1,
-    date: '2026-02-20',
-    scorePercent: 94,
-    meritRank: 1,
-    passed: true,
-    timeSpentMinutes: 30,
-  },
-];
+const MOCK_ATTEMPTS: AttemptRecord[] = [];
 
 export const StudentDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -247,25 +216,25 @@ export const StudentDetailPage: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <MetricCard
           title="Total Attempts"
-          value={student.totalAttempts || 6}
+          value={student.totalAttempts || 0}
           icon={<FileQuestion className="w-4 h-4" />}
-          subtext="across full mock syllabus"
+          subtext="across completed test batteries"
         />
         <MetricCard
           title="Average Score"
-          value={`${student.academicScoreAverage || 88.5}%`}
+          value={`${student.academicScoreAverage || 0}%`}
           icon={<TrendingUp className="w-4 h-4 text-[#234E35]" />}
           subtext="composite battery average"
         />
         <MetricCard
           title="Highest Score"
-          value={`${student.highestScore || 94}%`}
+          value={`${student.highestScore || 0}%`}
           icon={<Award className="w-4 h-4 text-[#C6A75E]" />}
-          subtext="PMA Mock 04 Screening"
+          subtext="highest achieved score"
         />
         <MetricCard
           title="Pass Rate"
-          value={`${student.passRate || 100}%`}
+          value={`${student.passRate || 0}%`}
           icon={<CheckCircle2 className="w-4 h-4 text-[#234E35]" />}
           subtext="qualified attempts ratio"
         />
@@ -278,9 +247,9 @@ export const StudentDetailPage: React.FC = () => {
           onTabChange={setActiveTab}
           tabs={[
             { id: 'overview', label: 'Candidate Overview' },
-            { id: 'results', label: 'Evaluation Results', badge: 3 },
-            { id: 'attempts', label: 'Attempt History', badge: 3 },
-            { id: 'assigned', label: 'Assigned Test Modules', badge: 2 },
+            { id: 'results', label: 'Evaluation Results', badge: MOCK_ATTEMPTS.length },
+            { id: 'attempts', label: 'Attempt History', badge: MOCK_ATTEMPTS.length },
+            { id: 'assigned', label: 'Assigned Test Modules', badge: 0 },
           ]}
         />
 
@@ -346,13 +315,13 @@ export const StudentDetailPage: React.FC = () => {
                 <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
                   <span className="font-semibold text-[#0E1B2A]">Intelligence Battery Quotient</span>
                   <p className="text-[#64748B]">
-                    Verbal and Non-verbal intelligence scores maintain consistent superiority (&gt;90% accuracy). Cleared for advanced flight and tactical selection battery.
+                    Evaluation standing based on completed official CBT examination modules.
                   </p>
                 </div>
                 <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
                   <span className="font-semibold text-[#0E1B2A]">Academic Foundations Standing</span>
                   <p className="text-[#64748B]">
-                    Proficiency verified across Higher Secondary Physics, Calculus, and English. Zero remedial sessions mandated to date.
+                    Academic proficiency verified per official forces syllabus standards.
                   </p>
                 </div>
               </div>
@@ -361,29 +330,22 @@ export const StudentDetailPage: React.FC = () => {
         )}
 
         {(activeTab === 'results' || activeTab === 'attempts') && (
-          <DataTable
-            columns={attemptColumns}
-            data={MOCK_ATTEMPTS}
-            keyExtractor={(item) => item.id}
-          />
+          MOCK_ATTEMPTS.length === 0 ? (
+            <div className="py-8 text-center text-xs text-[#64748B] border border-[#D4D9DF] rounded bg-white">
+              No examination attempt records found for this candidate.
+            </div>
+          ) : (
+            <DataTable
+              columns={attemptColumns}
+              data={MOCK_ATTEMPTS}
+              keyExtractor={(item) => item.id}
+            />
+          )
         )}
 
         {activeTab === 'assigned' && (
-          <div className="bg-white border border-[#D4D9DF] rounded p-6 shadow-sm space-y-3 text-xs">
-            <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded flex items-center justify-between">
-              <div>
-                <span className="font-bold text-[#0E1B2A] block">154 PMA Long Course Comprehensive Mock 07</span>
-                <span className="text-[#64748B] font-sans tabular-nums text-[11px]">100 Items • 65 Minutes • Scheduled 2026-03-10</span>
-              </div>
-              <span className="px-2 py-0.5 rounded-xs text-[10px] font-bold bg-[#EDF1F5] text-[#0E1B2A]">SCHEDULED</span>
-            </div>
-            <div className="p-3 bg-[#F6F8FA] border border-[#E2E6EB] rounded flex items-center justify-between">
-              <div>
-                <span className="font-bold text-[#0E1B2A] block">Aviation Aptitude & Spatial Matrix Battery</span>
-                <span className="text-[#64748B] font-sans tabular-nums text-[11px]">60 Items • 40 Minutes • Unlocked Practice</span>
-              </div>
-              <span className="px-2 py-0.5 rounded-xs text-[10px] font-bold bg-[#EDF6F0] text-[#234E35]">ACTIVE</span>
-            </div>
+          <div className="py-8 text-center text-xs text-[#64748B] border border-[#D4D9DF] rounded bg-white">
+            No assigned test modules found.
           </div>
         )}
       </div>

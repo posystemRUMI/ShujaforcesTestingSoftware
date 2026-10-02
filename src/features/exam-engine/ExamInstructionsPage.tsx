@@ -163,11 +163,11 @@ export const ExamInstructionsPage: React.FC = () => {
         <div className="p-3.5 bg-[#EDF1F5] rounded border border-[#D4D9DF] flex items-center justify-between text-xs font-sans">
           <div>
             <span className="text-[#64748B]">CADET: </span>
-            <span className="font-bold text-[#0E1B2A]">{user?.name || 'Cadet Hamza Tariq'}</span>
+            <span className="font-bold text-[#0E1B2A]">{user?.name || 'Candidate'}</span>
           </div>
           <div>
             <span className="text-[#64748B]">DOCKET: </span>
-            <span className="font-bold text-[#0E1B2A] font-mono">{user?.rollNumber || 'PMA-2601'}</span>
+            <span className="font-bold text-[#0E1B2A] font-mono">{user?.rollNumber || '—'}</span>
           </div>
           <div>
             <span className="text-[#64748B]">TERMINAL: </span>

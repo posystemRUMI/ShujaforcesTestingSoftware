@@ -17,32 +17,7 @@ export interface NotificationPanelProps {
   notifications?: NotificationItem[];
 }
 
-const DEFAULT_NOTIFICATIONS: NotificationItem[] = [
-  {
-    id: 'n-1',
-    title: 'Workstation WS-CBT-03 Alt-Tab Alert',
-    message: 'Candidate Bilal Ahmed exceeded window defocus threshold.',
-    timestamp: '2 mins ago',
-    type: 'anomaly',
-    read: false,
-  },
-  {
-    id: 'n-2',
-    title: '154 PMA Long Course Autosave Cycle',
-    message: 'All 42 test workstations committed cryptographically signed state.',
-    timestamp: '8 mins ago',
-    type: 'info',
-    read: true,
-  },
-  {
-    id: 'n-3',
-    title: 'Retake Cooldown Clearance Required',
-    message: 'Cadet Usman Ali has satisfied mandatory 72-hr remediation protocol.',
-    timestamp: '1 hour ago',
-    type: 'warning',
-    read: true,
-  },
-];
+const DEFAULT_NOTIFICATIONS: NotificationItem[] = [];
 
 export const NotificationPanel: React.FC<NotificationPanelProps> = ({
   isOpen,
@@ -70,34 +45,40 @@ export const NotificationPanel: React.FC<NotificationPanelProps> = ({
       </div>
 
       <div className="divide-y divide-[#EDF1F5] max-h-72 overflow-y-auto">
-        {notifications.map((n) => (
-          <div
-            key={n.id}
-            className={cn(
-              'p-3 text-xs transition-colors hover:bg-[#F8FAFC]',
-              !n.read ? 'bg-[#FDF7EC]/40' : 'bg-white',
-            )}
-          >
-            <div className="flex items-start space-x-2.5">
-              {n.type === 'anomaly' ? (
-                <ShieldAlert className="w-4 h-4 text-[#782525] flex-shrink-0 mt-0.5" />
-              ) : n.type === 'warning' ? (
-                <AlertTriangle className="w-4 h-4 text-[#7A5312] flex-shrink-0 mt-0.5" />
-              ) : (
-                <CheckCircle2 className="w-4 h-4 text-[#234E35] flex-shrink-0 mt-0.5" />
+        {notifications.length === 0 ? (
+          <div className="p-6 text-center text-xs text-[#64748B]">
+            No active operational alerts.
+          </div>
+        ) : (
+          notifications.map((n) => (
+            <div
+              key={n.id}
+              className={cn(
+                'p-3 text-xs transition-colors hover:bg-[#F8FAFC]',
+                !n.read ? 'bg-[#FDF7EC]/40' : 'bg-white',
               )}
-              <div className="flex-1 space-y-0.5">
-                <div className="font-semibold text-[#0E1B2A] flex justify-between items-center">
-                  <span className="truncate pr-1">{n.title}</span>
-                  <span className="text-[10px] font-sans text-[#94A3B8] flex-shrink-0">
-                    {n.timestamp}
-                  </span>
+            >
+              <div className="flex items-start space-x-2.5">
+                {n.type === 'anomaly' ? (
+                  <ShieldAlert className="w-4 h-4 text-[#782525] flex-shrink-0 mt-0.5" />
+                ) : n.type === 'warning' ? (
+                  <AlertTriangle className="w-4 h-4 text-[#7A5312] flex-shrink-0 mt-0.5" />
+                ) : (
+                  <CheckCircle2 className="w-4 h-4 text-[#234E35] flex-shrink-0 mt-0.5" />
+                )}
+                <div className="flex-1 space-y-0.5">
+                  <div className="font-semibold text-[#0E1B2A] flex justify-between items-center">
+                    <span className="truncate pr-1">{n.title}</span>
+                    <span className="text-[10px] font-sans text-[#94A3B8] flex-shrink-0">
+                      {n.timestamp}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-[#64748B] leading-tight">{n.message}</p>
                 </div>
-                <p className="text-[11px] text-[#64748B] leading-tight">{n.message}</p>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
 
       <div className="p-2 bg-[#F6F8FA] border-t border-[#D4D9DF] text-center">

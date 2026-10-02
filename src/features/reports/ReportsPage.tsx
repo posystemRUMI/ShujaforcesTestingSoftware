@@ -47,61 +47,14 @@ import {
 } from '@/components/ui';
 import { MilitaryBranch } from '@/types';
 
-// Mock Analytical Datasets
-const MOCK_BATCH_PERFORMANCE = [
-  { batch: 'PMA-154 Long Course', branch: 'PAKISTAN_ARMY', totalTested: 420, passCount: 345, failCount: 75, passRate: 82.1, avgScore: 78.4 },
-  { batch: 'NAVY CADET 2026-A', branch: 'PAKISTAN_NAVY', totalTested: 280, passCount: 218, failCount: 62, passRate: 77.8, avgScore: 74.2 },
-  { batch: 'PAF 158 GDP Officer', branch: 'PAKISTAN_AIR_FORCE', totalTested: 310, passCount: 268, failCount: 42, passRate: 86.4, avgScore: 82.9 },
-  { batch: 'Army Short Course 74', branch: 'PAKISTAN_ARMY', totalTested: 190, passCount: 142, failCount: 48, passRate: 74.7, avgScore: 71.5 },
-  { batch: 'PAF 109 Air Defence', branch: 'PAKISTAN_AIR_FORCE', totalTested: 165, passCount: 138, failCount: 27, passRate: 83.6, avgScore: 80.1 },
-];
-
-const MOCK_PASS_FAIL_DISTRIBUTION = [
-  { name: 'Passed / Recommended', value: 1111, color: '#234E35' },
-  { name: 'Remediation Required', value: 254, color: '#EF4444' },
-];
-
-const MOCK_MONTHLY_TREND = [
-  { month: 'Oct 2025', armyAvg: 72, navyAvg: 69, pafAvg: 78, overallAvg: 73.0 },
-  { month: 'Nov 2025', armyAvg: 75, navyAvg: 71, pafAvg: 80, overallAvg: 75.3 },
-  { month: 'Dec 2025', armyAvg: 74, navyAvg: 73, pafAvg: 81, overallAvg: 76.0 },
-  { month: 'Jan 2026', armyAvg: 77, navyAvg: 72, pafAvg: 83, overallAvg: 77.3 },
-  { month: 'Feb 2026', armyAvg: 78, navyAvg: 74, pafAvg: 83, overallAvg: 78.4 },
-  { month: 'Mar 2026', armyAvg: 80, navyAvg: 76, pafAvg: 86, overallAvg: 80.6 },
-];
-
-const MOCK_SCORE_DISTRIBUTION = [
-  { bracket: '< 50% (Remedial)', count: 60, label: '< 50%' },
-  { bracket: '50-59% (Satisfactory)', count: 180, label: '50-59%' },
-  { bracket: '60-69% (Average)', count: 320, label: '60-69%' },
-  { bracket: '70-79% (Good Standard)', count: 430, label: '70-79%' },
-  { bracket: '80-89% (High Merit)', count: 290, label: '80-89%' },
-  { bracket: '90-100% (Top Distinction)', count: 85, label: '90-100%' },
-];
-
-const MOCK_SUBJECT_RADAR = [
-  { subject: 'Verbal Reasoning', Army: 82, Navy: 78, PAF: 88, fullMark: 100 },
-  { subject: 'Non-Verbal Pattern', Army: 79, Navy: 81, PAF: 85, fullMark: 100 },
-  { subject: 'Academic Physics', Army: 74, Navy: 85, PAF: 91, fullMark: 100 },
-  { subject: 'Academic English', Army: 78, Navy: 76, PAF: 82, fullMark: 100 },
-  { subject: 'General Knowledge', Army: 85, Navy: 79, PAF: 77, fullMark: 100 },
-];
-
-const MOCK_TEST_ITEM_ANALYTICS = [
-  { id: 't-01', code: 'PMA-VERB-101', title: 'PMA Verbal Reasoning Battery 01', subject: 'Verbal Reasoning', totalAttempts: 1240, avgScore: 78.2, passRate: 83.4, timeSpentMin: 22, difficulty: 'MEDIUM' },
-  { id: 't-02', code: 'NAV-PHYS-204', title: 'Naval Engineering Dynamics & Mechanics', subject: 'Academic Physics', totalAttempts: 560, avgScore: 71.3, passRate: 74.5, timeSpentMin: 32, difficulty: 'HARD' },
-  { id: 't-03', code: 'PAF-AVIA-301', title: 'PAF Pilot Aptitude & Flight Logic', subject: 'Aptitude', totalAttempts: 620, avgScore: 81.6, passRate: 86.8, timeSpentMin: 28, difficulty: 'MEDIUM' },
-  { id: 't-04', code: 'TRI-NONVERB-05', title: 'Tri-Services Spatial Matrix Recognition', subject: 'Non-Verbal', totalAttempts: 890, avgScore: 84.8, passRate: 89.0, timeSpentMin: 18, difficulty: 'EASY' },
-  { id: 't-05', code: 'PAF-ENGL-108', title: 'PAF Officer Candidate Technical English', subject: 'Academic English', totalAttempts: 475, avgScore: 79.5, passRate: 81.6, timeSpentMin: 25, difficulty: 'MEDIUM' },
-];
-
-const MOCK_TOP_PERFORMERS = [
-  { rollNumber: 'PAF-8902', name: 'Cadet Flight Lt. Hamza Tariq', branch: 'PAKISTAN_AIR_FORCE' as MilitaryBranch, batch: 'PAF 158 GDP Officer', scorePercent: 96.8, rank: 1, status: 'DISTINCTION' },
-  { rollNumber: 'PMA-2601', name: 'Cadet Muhammad Ahmed', branch: 'PAKISTAN_ARMY' as MilitaryBranch, batch: 'PMA-154 Long Course', scorePercent: 94.5, rank: 2, status: 'DISTINCTION' },
-  { rollNumber: 'NAVY-5510', name: 'Cadet Midshipman Bilal Raza', branch: 'PAKISTAN_NAVY' as MilitaryBranch, batch: 'NAVY CADET 2026-A', scorePercent: 93.2, rank: 3, status: 'DISTINCTION' },
-  { rollNumber: 'PMA-2602', name: 'Cadet Saad Khan', branch: 'PAKISTAN_ARMY' as MilitaryBranch, batch: 'PMA-154 Long Course', scorePercent: 91.0, rank: 4, status: 'HONORS' },
-  { rollNumber: 'PAF-8904', name: 'Cadet Zainab Fatima', branch: 'PAKISTAN_AIR_FORCE' as MilitaryBranch, batch: 'PAF 109 Air Defence', scorePercent: 90.4, rank: 5, status: 'HONORS' },
-];
+// Analytical Datasets
+const MOCK_BATCH_PERFORMANCE: any[] = [];
+const MOCK_PASS_FAIL_DISTRIBUTION: any[] = [];
+const MOCK_MONTHLY_TREND: any[] = [];
+const MOCK_SCORE_DISTRIBUTION: any[] = [];
+const MOCK_SUBJECT_RADAR: any[] = [];
+const MOCK_TEST_ITEM_ANALYTICS: any[] = [];
+const MOCK_TOP_PERFORMERS: any[] = [];
 
 // Custom Recharts Dark Tooltip Component
 interface CustomTooltipEntry {
