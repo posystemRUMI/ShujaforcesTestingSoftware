@@ -1,29 +1,32 @@
 import { StudentRecord } from './types';
 
 const STORAGE_KEY = 'shuja_registered_students_v3';
+const memoryStore = new Map<string, string>();
 
 function loadStoredStudents(): StudentRecord[] {
   try {
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      const data = localStorage.getItem(STORAGE_KEY);
-      if (data) {
-        const parsed = JSON.parse(data);
-        if (Array.isArray(parsed)) return parsed;
-      }
+    const raw = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+      ? localStorage.getItem(STORAGE_KEY)
+      : memoryStore.get(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) return parsed;
     }
   } catch (e) {
-    console.warn('Failed to load students from localStorage:', e);
+    console.warn('Failed to load students from store:', e);
   }
   return [];
 }
 
 function saveStoredStudents(students: StudentRecord[]): void {
   try {
+    const serialized = JSON.stringify(students);
     if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
+      localStorage.setItem(STORAGE_KEY, serialized);
     }
+    memoryStore.set(STORAGE_KEY, serialized);
   } catch (e) {
-    console.warn('Failed to save students to localStorage:', e);
+    console.warn('Failed to save students to store:', e);
   }
 }
 

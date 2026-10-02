@@ -17,14 +17,14 @@ import type {
 
 const LOCAL_FEE_ACCOUNTS_KEY = 'shuja_local_fee_accounts_v3';
 const LOCAL_FEE_PAYMENTS_KEY = 'shuja_local_fee_payments_v3';
+const financeMemoryStore = new Map<string, string>();
 
 export function getLocalFeeAccounts(): any[] {
   try {
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      const data = localStorage.getItem(LOCAL_FEE_ACCOUNTS_KEY);
-      return data ? JSON.parse(data) : [];
-    }
-    return [];
+    const raw = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+      ? localStorage.getItem(LOCAL_FEE_ACCOUNTS_KEY)
+      : financeMemoryStore.get(LOCAL_FEE_ACCOUNTS_KEY);
+    return raw ? JSON.parse(raw) : [];
   } catch {
     return [];
   }
@@ -32,19 +32,20 @@ export function getLocalFeeAccounts(): any[] {
 
 export function saveLocalFeeAccounts(accs: any[]): void {
   try {
+    const serialized = JSON.stringify(accs);
     if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      localStorage.setItem(LOCAL_FEE_ACCOUNTS_KEY, JSON.stringify(accs));
+      localStorage.setItem(LOCAL_FEE_ACCOUNTS_KEY, serialized);
     }
+    financeMemoryStore.set(LOCAL_FEE_ACCOUNTS_KEY, serialized);
   } catch {}
 }
 
 export function getLocalFeePayments(): any[] {
   try {
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      const data = localStorage.getItem(LOCAL_FEE_PAYMENTS_KEY);
-      return data ? JSON.parse(data) : [];
-    }
-    return [];
+    const raw = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+      ? localStorage.getItem(LOCAL_FEE_PAYMENTS_KEY)
+      : financeMemoryStore.get(LOCAL_FEE_PAYMENTS_KEY);
+    return raw ? JSON.parse(raw) : [];
   } catch {
     return [];
   }
@@ -52,9 +53,11 @@ export function getLocalFeePayments(): any[] {
 
 export function saveLocalFeePayments(payments: any[]): void {
   try {
+    const serialized = JSON.stringify(payments);
     if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      localStorage.setItem(LOCAL_FEE_PAYMENTS_KEY, JSON.stringify(payments));
+      localStorage.setItem(LOCAL_FEE_PAYMENTS_KEY, serialized);
     }
+    financeMemoryStore.set(LOCAL_FEE_PAYMENTS_KEY, serialized);
   } catch {}
 }
 
