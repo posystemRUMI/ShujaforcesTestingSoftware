@@ -35,13 +35,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000002",
@@ -77,13 +79,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000003",
@@ -119,13 +123,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000004",
@@ -161,13 +167,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000005",
@@ -203,13 +211,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000006",
@@ -245,13 +255,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000007",
@@ -287,13 +299,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000008",
@@ -329,13 +343,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000009",
@@ -371,13 +387,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000000a",
@@ -413,13 +431,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000000b",
@@ -455,13 +475,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000000c",
@@ -497,13 +519,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000000d",
@@ -539,13 +563,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000000e",
@@ -581,13 +607,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000000f",
@@ -623,13 +651,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000010",
@@ -665,13 +695,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000011",
@@ -707,13 +739,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000012",
@@ -749,13 +783,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000013",
@@ -791,13 +827,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000014",
@@ -833,13 +871,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000015",
@@ -875,13 +915,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000016",
@@ -917,13 +959,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000017",
@@ -959,13 +1003,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000018",
@@ -1001,13 +1047,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000019",
@@ -1043,13 +1091,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000001a",
@@ -1085,13 +1135,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000001b",
@@ -1127,13 +1179,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000001c",
@@ -1169,13 +1223,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000001d",
@@ -1211,13 +1267,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000001e",
@@ -1253,13 +1311,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000001f",
@@ -1295,13 +1355,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000020",
@@ -1337,13 +1399,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000021",
@@ -1379,13 +1443,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000022",
@@ -1421,13 +1487,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000023",
@@ -1463,13 +1531,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000024",
@@ -1505,13 +1575,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000025",
@@ -1547,13 +1619,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000026",
@@ -1589,13 +1663,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000027",
@@ -1631,13 +1707,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000028",
@@ -1673,13 +1751,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000029",
@@ -1715,13 +1795,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000002a",
@@ -1757,13 +1839,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000002b",
@@ -1799,13 +1883,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000002c",
@@ -1841,13 +1927,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000002d",
@@ -1883,13 +1971,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000002e",
@@ -1925,13 +2015,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000002f",
@@ -1967,13 +2059,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000030",
@@ -2009,13 +2103,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000031",
@@ -2051,13 +2147,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000032",
@@ -2093,13 +2191,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000033",
@@ -2135,13 +2235,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000034",
@@ -2177,13 +2279,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000035",
@@ -2219,13 +2323,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000036",
@@ -2261,13 +2367,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000037",
@@ -2303,13 +2411,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000038",
@@ -2345,13 +2455,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000039",
@@ -2387,13 +2499,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000003a",
@@ -2429,13 +2543,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000003b",
@@ -2471,13 +2587,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000003c",
@@ -2513,13 +2631,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000003d",
@@ -2555,13 +2675,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000003e",
@@ -2597,13 +2719,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000003f",
@@ -2639,13 +2763,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000040",
@@ -2681,13 +2807,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000041",
@@ -2723,13 +2851,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000042",
@@ -2765,13 +2895,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000043",
@@ -2807,13 +2939,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000044",
@@ -2849,13 +2983,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000045",
@@ -2891,13 +3027,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000046",
@@ -2933,13 +3071,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000047",
@@ -2975,13 +3115,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000048",
@@ -3017,13 +3159,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000049",
@@ -3059,13 +3203,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000004a",
@@ -3101,13 +3247,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000004b",
@@ -3143,13 +3291,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000004c",
@@ -3185,13 +3335,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000004d",
@@ -3227,13 +3379,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000004e",
@@ -3269,13 +3423,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000004f",
@@ -3311,13 +3467,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000050",
@@ -3353,13 +3511,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000051",
@@ -3395,13 +3555,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000052",
@@ -3437,13 +3599,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000053",
@@ -3479,13 +3643,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000054",
@@ -3521,13 +3687,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000055",
@@ -3563,13 +3731,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000056",
@@ -3605,13 +3775,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000057",
@@ -3647,13 +3819,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000058",
@@ -3689,13 +3863,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000059",
@@ -3731,13 +3907,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000005a",
@@ -3773,13 +3951,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000005b",
@@ -3815,13 +3995,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000005c",
@@ -3857,13 +4039,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000005d",
@@ -3899,13 +4083,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000005e",
@@ -3941,13 +4127,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000005f",
@@ -3983,13 +4171,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000060",
@@ -4025,13 +4215,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000061",
@@ -4067,13 +4259,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000062",
@@ -4109,13 +4303,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000063",
@@ -4151,13 +4347,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000064",
@@ -4193,13 +4391,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000065",
@@ -4235,13 +4435,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000066",
@@ -4277,13 +4479,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000067",
@@ -4319,13 +4523,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000068",
@@ -4361,13 +4567,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000069",
@@ -4403,13 +4611,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000006a",
@@ -4445,13 +4655,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000006b",
@@ -4487,13 +4699,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000006c",
@@ -4529,13 +4743,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000006d",
@@ -4571,13 +4787,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000006e",
@@ -4613,13 +4831,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000006f",
@@ -4655,13 +4875,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000070",
@@ -4697,13 +4919,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000071",
@@ -4739,13 +4963,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000072",
@@ -4781,13 +5007,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000073",
@@ -4823,13 +5051,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000074",
@@ -4865,13 +5095,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000075",
@@ -4907,13 +5139,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000076",
@@ -4949,13 +5183,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000077",
@@ -4991,13 +5227,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000078",
@@ -5033,13 +5271,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000079",
@@ -5075,13 +5315,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000007a",
@@ -5117,13 +5359,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000007b",
@@ -5159,13 +5403,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000007c",
@@ -5201,13 +5447,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000007d",
@@ -5243,13 +5491,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000007e",
@@ -5285,13 +5535,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000007f",
@@ -5327,13 +5579,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000080",
@@ -5369,13 +5623,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000081",
@@ -5411,13 +5667,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000082",
@@ -5453,13 +5711,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000083",
@@ -5495,13 +5755,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000084",
@@ -5537,13 +5799,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000085",
@@ -5579,13 +5843,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000086",
@@ -5621,13 +5887,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000087",
@@ -5663,13 +5931,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000088",
@@ -5705,13 +5975,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000089",
@@ -5747,13 +6019,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000008a",
@@ -5789,13 +6063,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000008b",
@@ -5831,13 +6107,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000008c",
@@ -5873,13 +6151,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000008d",
@@ -5915,13 +6195,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000008e",
@@ -5957,13 +6239,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000008f",
@@ -5999,13 +6283,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000090",
@@ -6041,13 +6327,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000091",
@@ -6083,13 +6371,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000092",
@@ -6125,13 +6415,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000093",
@@ -6167,13 +6459,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000094",
@@ -6209,13 +6503,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000095",
@@ -6251,13 +6547,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000096",
@@ -6293,13 +6591,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000097",
@@ -6335,13 +6635,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000098",
@@ -6377,13 +6679,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000099",
@@ -6419,13 +6723,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000009a",
@@ -6461,13 +6767,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000009b",
@@ -6503,13 +6811,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000009c",
@@ -6545,13 +6855,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000009d",
@@ -6587,13 +6899,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000009e",
@@ -6629,13 +6943,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000009f",
@@ -6671,13 +6987,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a0",
@@ -6713,13 +7031,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a1",
@@ -6755,13 +7075,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a2",
@@ -6797,13 +7119,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a3",
@@ -6839,13 +7163,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a4",
@@ -6881,13 +7207,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a5",
@@ -6923,13 +7251,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a6",
@@ -6965,13 +7295,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a7",
@@ -7007,13 +7339,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a8",
@@ -7049,13 +7383,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000a9",
@@ -7091,13 +7427,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000aa",
@@ -7133,13 +7471,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ab",
@@ -7175,13 +7515,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ac",
@@ -7217,13 +7559,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ad",
@@ -7259,13 +7603,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ae",
@@ -7301,13 +7647,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000af",
@@ -7343,13 +7691,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b0",
@@ -7385,13 +7735,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b1",
@@ -7427,13 +7779,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b2",
@@ -7469,13 +7823,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b3",
@@ -7511,13 +7867,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b4",
@@ -7553,13 +7911,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b5",
@@ -7595,13 +7955,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b6",
@@ -7637,13 +7999,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b7",
@@ -7679,13 +8043,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b8",
@@ -7721,13 +8087,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000b9",
@@ -7763,13 +8131,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ba",
@@ -7805,13 +8175,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000bb",
@@ -7847,13 +8219,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000bc",
@@ -7889,13 +8263,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000bd",
@@ -7931,13 +8307,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000be",
@@ -7973,13 +8351,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000bf",
@@ -8015,13 +8395,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c0",
@@ -8057,13 +8439,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c1",
@@ -8099,13 +8483,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c2",
@@ -8141,13 +8527,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c3",
@@ -8183,13 +8571,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c4",
@@ -8225,13 +8615,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c5",
@@ -8267,13 +8659,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c6",
@@ -8309,13 +8703,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c7",
@@ -8351,13 +8747,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c8",
@@ -8393,13 +8791,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000c9",
@@ -8435,13 +8835,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ca",
@@ -8477,13 +8879,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000cb",
@@ -8519,13 +8923,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000cc",
@@ -8561,13 +8967,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000cd",
@@ -8603,13 +9011,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ce",
@@ -8645,13 +9055,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000cf",
@@ -8687,13 +9099,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d0",
@@ -8729,13 +9143,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d1",
@@ -8771,13 +9187,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d2",
@@ -8813,13 +9231,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d3",
@@ -8855,13 +9275,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d4",
@@ -8897,13 +9319,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d5",
@@ -8939,13 +9363,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d6",
@@ -8981,13 +9407,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d7",
@@ -9023,13 +9451,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d8",
@@ -9065,13 +9495,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000d9",
@@ -9107,13 +9539,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000da",
@@ -9149,13 +9583,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000db",
@@ -9191,13 +9627,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000dc",
@@ -9233,13 +9671,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000dd",
@@ -9275,13 +9715,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000de",
@@ -9317,13 +9759,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000df",
@@ -9359,13 +9803,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e0",
@@ -9401,13 +9847,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e1",
@@ -9443,13 +9891,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e2",
@@ -9485,13 +9935,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e3",
@@ -9527,13 +9979,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e4",
@@ -9569,13 +10023,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e5",
@@ -9611,13 +10067,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e6",
@@ -9653,13 +10111,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e7",
@@ -9695,13 +10155,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e8",
@@ -9737,13 +10199,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000e9",
@@ -9779,13 +10243,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ea",
@@ -9821,13 +10287,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000eb",
@@ -9863,13 +10331,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ec",
@@ -9905,13 +10375,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ed",
@@ -9947,13 +10419,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ee",
@@ -9989,13 +10463,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ef",
@@ -10031,13 +10507,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f0",
@@ -10073,13 +10551,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f1",
@@ -10115,13 +10595,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f2",
@@ -10157,13 +10639,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f3",
@@ -10199,13 +10683,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f4",
@@ -10241,13 +10727,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f5",
@@ -10283,13 +10771,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f6",
@@ -10325,13 +10815,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f7",
@@ -10367,13 +10859,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f8",
@@ -10409,13 +10903,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000f9",
@@ -10451,13 +10947,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000fa",
@@ -10493,13 +10991,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000fb",
@@ -10535,13 +11035,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000fc",
@@ -10577,13 +11079,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000fd",
@@ -10619,13 +11123,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000fe",
@@ -10661,13 +11167,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000000ff",
@@ -10703,13 +11211,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000100",
@@ -10745,13 +11255,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000101",
@@ -10787,13 +11299,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000102",
@@ -10829,13 +11343,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000103",
@@ -10871,13 +11387,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000104",
@@ -10913,13 +11431,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000105",
@@ -10955,13 +11475,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000106",
@@ -10997,13 +11519,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000107",
@@ -11039,13 +11563,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000108",
@@ -11081,13 +11607,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000109",
@@ -11123,13 +11651,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000010a",
@@ -11165,13 +11695,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000010b",
@@ -11207,13 +11739,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000010c",
@@ -11249,13 +11783,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000010d",
@@ -11291,13 +11827,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000010e",
@@ -11333,13 +11871,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000010f",
@@ -11375,13 +11915,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000110",
@@ -11417,13 +11959,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000111",
@@ -11459,13 +12003,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000112",
@@ -11501,13 +12047,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000113",
@@ -11543,13 +12091,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000114",
@@ -11585,13 +12135,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000115",
@@ -11627,13 +12179,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000116",
@@ -11669,13 +12223,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000117",
@@ -11711,13 +12267,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000118",
@@ -11753,13 +12311,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000119",
@@ -11795,13 +12355,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000011a",
@@ -11837,13 +12399,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000011b",
@@ -11879,13 +12443,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000011c",
@@ -11921,13 +12487,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000011d",
@@ -11963,13 +12531,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000011e",
@@ -12005,13 +12575,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000011f",
@@ -12047,13 +12619,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000120",
@@ -12089,13 +12663,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000121",
@@ -12131,13 +12707,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000122",
@@ -12173,13 +12751,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000123",
@@ -12215,13 +12795,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000124",
@@ -12257,13 +12839,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000125",
@@ -12299,13 +12883,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000126",
@@ -12341,13 +12927,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000127",
@@ -12383,13 +12971,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000128",
@@ -12425,13 +13015,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000129",
@@ -12467,13 +13059,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000012a",
@@ -12509,13 +13103,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000012b",
@@ -12551,13 +13147,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000012c",
@@ -12593,13 +13191,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000012d",
@@ -12635,13 +13235,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000012e",
@@ -12677,13 +13279,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000012f",
@@ -12719,13 +13323,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000130",
@@ -12761,13 +13367,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000131",
@@ -12803,13 +13411,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000132",
@@ -12845,13 +13455,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000133",
@@ -12887,13 +13499,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000134",
@@ -12929,13 +13543,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000135",
@@ -12971,13 +13587,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000136",
@@ -13013,13 +13631,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000137",
@@ -13055,13 +13675,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000138",
@@ -13097,13 +13719,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000139",
@@ -13139,13 +13763,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000013a",
@@ -13181,13 +13807,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000013b",
@@ -13223,13 +13851,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000013c",
@@ -13265,13 +13895,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000013d",
@@ -13307,13 +13939,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000013e",
@@ -13349,13 +13983,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000013f",
@@ -13391,13 +14027,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000140",
@@ -13433,13 +14071,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000141",
@@ -13475,13 +14115,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000142",
@@ -13517,13 +14159,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000143",
@@ -13559,13 +14203,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000144",
@@ -13601,13 +14247,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000145",
@@ -13643,13 +14291,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000146",
@@ -13685,13 +14335,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000147",
@@ -13727,13 +14379,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000148",
@@ -13769,13 +14423,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000149",
@@ -13811,13 +14467,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000014a",
@@ -13853,13 +14511,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000014b",
@@ -13895,13 +14555,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000014c",
@@ -13937,13 +14599,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000014d",
@@ -13979,13 +14643,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000014e",
@@ -14021,13 +14687,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000014f",
@@ -14063,13 +14731,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000150",
@@ -14105,13 +14775,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000151",
@@ -14147,13 +14819,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000152",
@@ -14189,13 +14863,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000153",
@@ -14231,13 +14907,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000154",
@@ -14273,13 +14951,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000155",
@@ -14315,13 +14995,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000156",
@@ -14357,13 +15039,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000157",
@@ -14399,13 +15083,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000158",
@@ -14441,13 +15127,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000159",
@@ -14483,13 +15171,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000015a",
@@ -14525,13 +15215,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000015b",
@@ -14567,13 +15259,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000015c",
@@ -14609,13 +15303,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000015d",
@@ -14651,13 +15347,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000015e",
@@ -14693,13 +15391,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000015f",
@@ -14735,13 +15435,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000160",
@@ -14777,13 +15479,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000161",
@@ -14819,13 +15523,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000162",
@@ -14861,13 +15567,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000163",
@@ -14903,13 +15611,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000164",
@@ -14945,13 +15655,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000165",
@@ -14987,13 +15699,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000166",
@@ -15029,13 +15743,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000167",
@@ -15071,13 +15787,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000168",
@@ -15113,13 +15831,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000169",
@@ -15155,13 +15875,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000016a",
@@ -15197,13 +15919,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000016b",
@@ -15239,13 +15963,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000016c",
@@ -15281,13 +16007,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000016d",
@@ -15323,13 +16051,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000016e",
@@ -15365,13 +16095,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000016f",
@@ -15407,13 +16139,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000170",
@@ -15449,13 +16183,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000171",
@@ -15491,13 +16227,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000172",
@@ -15533,13 +16271,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000173",
@@ -15575,13 +16315,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000174",
@@ -15617,13 +16359,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000175",
@@ -15659,13 +16403,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000176",
@@ -15701,13 +16447,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000177",
@@ -15743,13 +16491,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000178",
@@ -15785,13 +16535,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000179",
@@ -15827,13 +16579,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000017a",
@@ -15869,13 +16623,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000017b",
@@ -15911,13 +16667,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000017c",
@@ -15953,13 +16711,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000017d",
@@ -15995,13 +16755,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000017e",
@@ -16037,13 +16799,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000017f",
@@ -16079,13 +16843,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000180",
@@ -16121,13 +16887,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000181",
@@ -16163,13 +16931,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000182",
@@ -16205,13 +16975,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000183",
@@ -16247,13 +17019,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000184",
@@ -16289,13 +17063,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000185",
@@ -16331,13 +17107,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000186",
@@ -16373,13 +17151,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000187",
@@ -16415,13 +17195,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000188",
@@ -16457,13 +17239,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000189",
@@ -16499,13 +17283,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000018a",
@@ -16541,13 +17327,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000018b",
@@ -16583,13 +17371,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000018c",
@@ -16625,13 +17415,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000018d",
@@ -16667,13 +17459,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000018e",
@@ -16709,13 +17503,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000018f",
@@ -16751,13 +17547,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000190",
@@ -16793,13 +17591,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000191",
@@ -16835,13 +17635,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000192",
@@ -16877,13 +17679,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000193",
@@ -16919,13 +17723,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000194",
@@ -16961,13 +17767,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000195",
@@ -17003,13 +17811,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000196",
@@ -17045,13 +17855,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000197",
@@ -17087,13 +17899,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000198",
@@ -17129,13 +17943,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000199",
@@ -17171,13 +17987,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000019a",
@@ -17213,13 +18031,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000019b",
@@ -17255,13 +18075,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000019c",
@@ -17297,13 +18119,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000019d",
@@ -17339,13 +18163,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000019e",
@@ -17381,13 +18207,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000019f",
@@ -17423,13 +18251,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a0",
@@ -17465,13 +18295,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a1",
@@ -17507,13 +18339,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a2",
@@ -17549,13 +18383,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a3",
@@ -17591,13 +18427,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a4",
@@ -17633,13 +18471,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a5",
@@ -17675,13 +18515,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a6",
@@ -17717,13 +18559,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a7",
@@ -17759,13 +18603,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a8",
@@ -17801,13 +18647,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001a9",
@@ -17843,13 +18691,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001aa",
@@ -17885,13 +18735,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ab",
@@ -17927,13 +18779,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ac",
@@ -17969,13 +18823,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ad",
@@ -18011,13 +18867,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ae",
@@ -18053,13 +18911,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001af",
@@ -18095,13 +18955,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b0",
@@ -18137,13 +18999,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b1",
@@ -18179,13 +19043,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b2",
@@ -18221,13 +19087,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b3",
@@ -18263,13 +19131,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b4",
@@ -18305,13 +19175,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b5",
@@ -18347,13 +19219,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b6",
@@ -18389,13 +19263,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b7",
@@ -18431,13 +19307,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b8",
@@ -18473,13 +19351,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001b9",
@@ -18515,13 +19395,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ba",
@@ -18557,13 +19439,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001bb",
@@ -18599,13 +19483,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001bc",
@@ -18641,13 +19527,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001bd",
@@ -18683,13 +19571,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001be",
@@ -18725,13 +19615,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001bf",
@@ -18767,13 +19659,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c0",
@@ -18809,13 +19703,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c1",
@@ -18851,13 +19747,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c2",
@@ -18893,13 +19791,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c3",
@@ -18935,13 +19835,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c4",
@@ -18977,13 +19879,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c5",
@@ -19019,13 +19923,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c6",
@@ -19061,13 +19967,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c7",
@@ -19103,13 +20011,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c8",
@@ -19145,13 +20055,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001c9",
@@ -19187,13 +20099,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ca",
@@ -19229,13 +20143,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001cb",
@@ -19271,13 +20187,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001cc",
@@ -19313,13 +20231,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001cd",
@@ -19355,13 +20275,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ce",
@@ -19397,13 +20319,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001cf",
@@ -19439,13 +20363,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d0",
@@ -19481,13 +20407,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d1",
@@ -19523,13 +20451,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d2",
@@ -19565,13 +20495,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d3",
@@ -19607,13 +20539,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d4",
@@ -19649,13 +20583,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d5",
@@ -19691,13 +20627,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d6",
@@ -19733,13 +20671,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d7",
@@ -19775,13 +20715,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d8",
@@ -19817,13 +20759,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001d9",
@@ -19859,13 +20803,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001da",
@@ -19901,13 +20847,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001db",
@@ -19943,13 +20891,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001dc",
@@ -19985,13 +20935,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001dd",
@@ -20027,13 +20979,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001de",
@@ -20069,13 +21023,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001df",
@@ -20111,13 +21067,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e0",
@@ -20153,13 +21111,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e1",
@@ -20195,13 +21155,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e2",
@@ -20237,13 +21199,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e3",
@@ -20279,13 +21243,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e4",
@@ -20321,13 +21287,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e5",
@@ -20363,13 +21331,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e6",
@@ -20405,13 +21375,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e7",
@@ -20447,13 +21419,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e8",
@@ -20489,13 +21463,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001e9",
@@ -20531,13 +21507,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ea",
@@ -20573,13 +21551,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001eb",
@@ -20615,13 +21595,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ec",
@@ -20657,13 +21639,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ed",
@@ -20699,13 +21683,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ee",
@@ -20741,13 +21727,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ef",
@@ -20783,13 +21771,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f0",
@@ -20825,13 +21815,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f1",
@@ -20867,13 +21859,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f2",
@@ -20909,13 +21903,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f3",
@@ -20951,13 +21947,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f4",
@@ -20993,13 +21991,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f5",
@@ -21035,13 +22035,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f6",
@@ -21077,13 +22079,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f7",
@@ -21119,13 +22123,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f8",
@@ -21161,13 +22167,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001f9",
@@ -21203,13 +22211,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001fa",
@@ -21245,13 +22255,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001fb",
@@ -21287,13 +22299,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001fc",
@@ -21329,13 +22343,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001fd",
@@ -21371,13 +22387,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001fe",
@@ -21413,13 +22431,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000001ff",
@@ -21455,13 +22475,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000200",
@@ -21497,13 +22519,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000201",
@@ -21539,13 +22563,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000202",
@@ -21581,13 +22607,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000203",
@@ -21623,13 +22651,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000204",
@@ -21665,13 +22695,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000205",
@@ -21707,13 +22739,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000206",
@@ -21749,13 +22783,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000207",
@@ -21791,13 +22827,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000208",
@@ -21833,13 +22871,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000209",
@@ -21875,13 +22915,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000020a",
@@ -21917,13 +22959,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000020b",
@@ -21959,13 +23003,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000020c",
@@ -22001,13 +23047,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000020d",
@@ -22043,13 +23091,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000020e",
@@ -22085,13 +23135,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000020f",
@@ -22127,13 +23179,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000210",
@@ -22169,13 +23223,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000211",
@@ -22211,13 +23267,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000212",
@@ -22253,13 +23311,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000213",
@@ -22295,13 +23355,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000214",
@@ -22337,13 +23399,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000215",
@@ -22379,13 +23443,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000216",
@@ -22421,13 +23487,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000217",
@@ -22463,13 +23531,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000218",
@@ -22505,13 +23575,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000219",
@@ -22547,13 +23619,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000021a",
@@ -22589,13 +23663,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000021b",
@@ -22631,13 +23707,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000021c",
@@ -22673,13 +23751,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000021d",
@@ -22715,13 +23795,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000021e",
@@ -22757,13 +23839,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000021f",
@@ -22799,13 +23883,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000220",
@@ -22841,13 +23927,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000221",
@@ -22883,13 +23971,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000222",
@@ -22925,13 +24015,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000223",
@@ -22967,13 +24059,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000224",
@@ -23009,13 +24103,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000225",
@@ -23051,13 +24147,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000226",
@@ -23093,13 +24191,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000227",
@@ -23135,13 +24235,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000228",
@@ -23177,13 +24279,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000229",
@@ -23219,13 +24323,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000022a",
@@ -23261,13 +24367,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000022b",
@@ -23303,13 +24411,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000022c",
@@ -23345,13 +24455,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000022d",
@@ -23387,13 +24499,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000022e",
@@ -23429,13 +24543,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000022f",
@@ -23471,13 +24587,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000230",
@@ -23513,13 +24631,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000231",
@@ -23555,13 +24675,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000232",
@@ -23597,13 +24719,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000233",
@@ -23639,13 +24763,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000234",
@@ -23681,13 +24807,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000235",
@@ -23723,13 +24851,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000236",
@@ -23765,13 +24895,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000237",
@@ -23807,13 +24939,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000238",
@@ -23849,13 +24983,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000239",
@@ -23891,13 +25027,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000023a",
@@ -23933,13 +25071,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000023b",
@@ -23975,13 +25115,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000023c",
@@ -24017,13 +25159,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000023d",
@@ -24059,13 +25203,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000023e",
@@ -24101,13 +25247,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000023f",
@@ -24143,13 +25291,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000240",
@@ -24185,13 +25335,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000241",
@@ -24227,13 +25379,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000242",
@@ -24269,13 +25423,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000243",
@@ -24311,13 +25467,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000244",
@@ -24353,13 +25511,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000245",
@@ -24395,13 +25555,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000246",
@@ -24437,13 +25599,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000247",
@@ -24479,13 +25643,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000248",
@@ -24521,13 +25687,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000249",
@@ -24563,13 +25731,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000024a",
@@ -24605,13 +25775,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000024b",
@@ -24647,13 +25819,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000024c",
@@ -24689,13 +25863,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000024d",
@@ -24731,13 +25907,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000024e",
@@ -24773,13 +25951,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000024f",
@@ -24815,13 +25995,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000250",
@@ -24857,13 +26039,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000251",
@@ -24899,13 +26083,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000252",
@@ -24941,13 +26127,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000253",
@@ -24983,13 +26171,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000254",
@@ -25025,13 +26215,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000255",
@@ -25067,13 +26259,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000256",
@@ -25109,13 +26303,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000257",
@@ -25151,13 +26347,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000258",
@@ -25193,13 +26391,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000259",
@@ -25235,13 +26435,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000025a",
@@ -25277,13 +26479,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000025b",
@@ -25319,13 +26523,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000025c",
@@ -25361,13 +26567,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000025d",
@@ -25403,13 +26611,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000025e",
@@ -25445,13 +26655,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000025f",
@@ -25487,13 +26699,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000260",
@@ -25529,13 +26743,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000261",
@@ -25571,13 +26787,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000262",
@@ -25613,13 +26831,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000263",
@@ -25655,13 +26875,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000264",
@@ -25697,13 +26919,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000265",
@@ -25739,13 +26963,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000266",
@@ -25781,13 +27007,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000267",
@@ -25823,13 +27051,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000268",
@@ -25865,13 +27095,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000269",
@@ -25907,13 +27139,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000026a",
@@ -25949,13 +27183,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000026b",
@@ -25991,13 +27227,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000026c",
@@ -26033,13 +27271,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000026d",
@@ -26075,13 +27315,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000026e",
@@ -26117,13 +27359,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000026f",
@@ -26159,13 +27403,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000270",
@@ -26201,13 +27447,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000271",
@@ -26243,13 +27491,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000272",
@@ -26285,13 +27535,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000273",
@@ -26327,13 +27579,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000274",
@@ -26369,13 +27623,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000275",
@@ -26411,13 +27667,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000276",
@@ -26453,13 +27711,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000277",
@@ -26495,13 +27755,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000278",
@@ -26537,13 +27799,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000279",
@@ -26579,13 +27843,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000027a",
@@ -26621,13 +27887,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000027b",
@@ -26663,13 +27931,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000027c",
@@ -26705,13 +27975,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000027d",
@@ -26747,13 +28019,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000027e",
@@ -26789,13 +28063,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000027f",
@@ -26831,13 +28107,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000280",
@@ -26873,13 +28151,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000281",
@@ -26915,13 +28195,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000282",
@@ -26957,13 +28239,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000283",
@@ -26999,13 +28283,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000284",
@@ -27041,13 +28327,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000285",
@@ -27083,13 +28371,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000286",
@@ -27125,13 +28415,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000287",
@@ -27167,13 +28459,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000288",
@@ -27209,13 +28503,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000289",
@@ -27251,13 +28547,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000028a",
@@ -27293,13 +28591,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000028b",
@@ -27335,13 +28635,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000028c",
@@ -27377,13 +28679,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000028d",
@@ -27419,13 +28723,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000028e",
@@ -27461,13 +28767,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000028f",
@@ -27503,13 +28811,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000290",
@@ -27545,13 +28855,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000291",
@@ -27587,13 +28899,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000292",
@@ -27629,13 +28943,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000293",
@@ -27671,13 +28987,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000294",
@@ -27713,13 +29031,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000295",
@@ -27755,13 +29075,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000296",
@@ -27797,13 +29119,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000297",
@@ -27839,13 +29163,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000298",
@@ -27881,13 +29207,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-000000000299",
@@ -27923,13 +29251,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000029a",
@@ -27965,13 +29295,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000029b",
@@ -28007,13 +29339,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000029c",
@@ -28049,13 +29383,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000029d",
@@ -28091,13 +29427,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000029e",
@@ -28133,13 +29471,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-00000000029f",
@@ -28175,13 +29515,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a0",
@@ -28217,13 +29559,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a1",
@@ -28259,13 +29603,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a2",
@@ -28301,13 +29647,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a3",
@@ -28343,13 +29691,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a4",
@@ -28385,13 +29735,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a5",
@@ -28427,13 +29779,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a6",
@@ -28469,13 +29823,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a7",
@@ -28511,13 +29867,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a8",
@@ -28553,13 +29911,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002a9",
@@ -28595,13 +29955,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002aa",
@@ -28637,13 +29999,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ab",
@@ -28679,13 +30043,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ac",
@@ -28721,13 +30087,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ad",
@@ -28763,13 +30131,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ae",
@@ -28805,13 +30175,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002af",
@@ -28847,13 +30219,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b0",
@@ -28889,13 +30263,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b1",
@@ -28931,13 +30307,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b2",
@@ -28973,13 +30351,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b3",
@@ -29015,13 +30395,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b4",
@@ -29057,13 +30439,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b5",
@@ -29099,13 +30483,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b6",
@@ -29141,13 +30527,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b7",
@@ -29183,13 +30571,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b8",
@@ -29225,13 +30615,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002b9",
@@ -29267,13 +30659,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ba",
@@ -29309,13 +30703,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002bb",
@@ -29351,13 +30747,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002bc",
@@ -29393,13 +30791,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002bd",
@@ -29435,13 +30835,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002be",
@@ -29477,13 +30879,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002bf",
@@ -29519,13 +30923,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c0",
@@ -29561,13 +30967,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c1",
@@ -29603,13 +31011,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c2",
@@ -29645,13 +31055,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c3",
@@ -29687,13 +31099,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c4",
@@ -29729,13 +31143,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c5",
@@ -29771,13 +31187,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c6",
@@ -29813,13 +31231,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c7",
@@ -29855,13 +31275,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c8",
@@ -29897,13 +31319,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002c9",
@@ -29939,13 +31363,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ca",
@@ -29981,13 +31407,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002cb",
@@ -30023,13 +31451,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002cc",
@@ -30065,13 +31495,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002cd",
@@ -30107,13 +31539,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ce",
@@ -30149,13 +31583,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002cf",
@@ -30191,13 +31627,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d0",
@@ -30233,13 +31671,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d1",
@@ -30275,13 +31715,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d2",
@@ -30317,13 +31759,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d3",
@@ -30359,13 +31803,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d4",
@@ -30401,13 +31847,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d5",
@@ -30443,13 +31891,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d6",
@@ -30485,13 +31935,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d7",
@@ -30527,13 +31979,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d8",
@@ -30569,13 +32023,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002d9",
@@ -30611,13 +32067,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002da",
@@ -30653,13 +32111,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002db",
@@ -30695,13 +32155,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002dc",
@@ -30737,13 +32199,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002dd",
@@ -30779,13 +32243,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002de",
@@ -30821,13 +32287,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002df",
@@ -30863,13 +32331,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e0",
@@ -30905,13 +32375,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e1",
@@ -30947,13 +32419,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e2",
@@ -30989,13 +32463,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e3",
@@ -31031,13 +32507,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e4",
@@ -31073,13 +32551,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e5",
@@ -31115,13 +32595,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e6",
@@ -31157,13 +32639,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e7",
@@ -31199,13 +32683,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e8",
@@ -31241,13 +32727,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002e9",
@@ -31283,13 +32771,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ea",
@@ -31325,13 +32815,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002eb",
@@ -31367,13 +32859,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ec",
@@ -31409,13 +32903,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ed",
@@ -31451,13 +32947,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ee",
@@ -31493,13 +32991,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002ef",
@@ -31535,13 +33035,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f0",
@@ -31577,13 +33079,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f1",
@@ -31619,13 +33123,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f2",
@@ -31661,13 +33167,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f3",
@@ -31703,13 +33211,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f4",
@@ -31745,13 +33255,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f5",
@@ -31787,13 +33299,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f6",
@@ -31829,13 +33343,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f7",
@@ -31871,13 +33387,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f8",
@@ -31913,13 +33431,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002f9",
@@ -31955,13 +33475,15 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
   },
   {
     "id": "70000000-0000-0000-0000-0000000002fa",
@@ -31997,12 +33519,13538 @@ export const mockQuestions: Question[] = [
     "difficulty": "MEDIUM",
     "timeLimitSeconds": 30,
     "status": "APPROVED",
-    "authorName": "AFNS Examination Board",
+    "authorName": "AFNS Board",
     "tags": [
       "AFNS",
-      "AFNS Academic",
-      "Army Nursing"
+      "AFNS Academic"
     ],
-    "updatedAt": "2026-10-06"
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000004"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000001",
+    "code": "PMA-Q-001",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 1. The Lucknow Pact was signed in:",
+    "options": [
+      {
+        "id": "85000000-0000-0001-0000-000000000001",
+        "label": "A",
+        "text": "1906"
+      },
+      {
+        "id": "85000000-0000-0001-0000-000000000002",
+        "label": "B",
+        "text": "1916"
+      },
+      {
+        "id": "85000000-0000-0001-0000-000000000003",
+        "label": "C",
+        "text": "1920"
+      },
+      {
+        "id": "85000000-0000-0001-0000-000000000004",
+        "label": "D",
+        "text": "1928"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0001-0000-000000000002",
+    "explanation": "The Congress and Muslim League agreed on constitutional reforms at Lucknow in 1916.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000002",
+    "code": "PMA-Q-002",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 2. Which of these plateaus lies in the central uplands of Balochistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0002-0000-000000000001",
+        "label": "A",
+        "text": "Potwar Plateau"
+      },
+      {
+        "id": "85000000-0000-0002-0000-000000000002",
+        "label": "B",
+        "text": "Deosai Plateau"
+      },
+      {
+        "id": "85000000-0000-0002-0000-000000000003",
+        "label": "C",
+        "text": "Kalat Plateau"
+      },
+      {
+        "id": "85000000-0000-0002-0000-000000000004",
+        "label": "D",
+        "text": "Pishin Plateau"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0002-0000-000000000003",
+    "explanation": "The Kalat Plateau lies in the upland region of central Balochistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000003",
+    "code": "PMA-Q-003",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 3. As of 6 October 2026, who is the Chief Minister of Sindh?",
+    "options": [
+      {
+        "id": "85000000-0000-0003-0000-000000000001",
+        "label": "A",
+        "text": "Murad Ali Shah"
+      },
+      {
+        "id": "85000000-0000-0003-0000-000000000002",
+        "label": "B",
+        "text": "Qaim Ali Shah"
+      },
+      {
+        "id": "85000000-0000-0003-0000-000000000003",
+        "label": "C",
+        "text": "Syed Nasir Hussain Shah"
+      },
+      {
+        "id": "85000000-0000-0003-0000-000000000004",
+        "label": "D",
+        "text": "Sharjeel Memon"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0003-0000-000000000001",
+    "explanation": "Murad Ali Shah is the Chief Minister of Sindh as of 6 October 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000004",
+    "code": "PMA-Q-004",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 4. Karachi was historically known as:",
+    "options": [
+      {
+        "id": "85000000-0000-0004-0000-000000000001",
+        "label": "A",
+        "text": "Kolachi"
+      },
+      {
+        "id": "85000000-0000-0004-0000-000000000002",
+        "label": "B",
+        "text": "Debal"
+      },
+      {
+        "id": "85000000-0000-0004-0000-000000000003",
+        "label": "C",
+        "text": "Thatta"
+      },
+      {
+        "id": "85000000-0000-0004-0000-000000000004",
+        "label": "D",
+        "text": "Banbhore"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0004-0000-000000000001",
+    "explanation": "Karachi developed from the settlement commonly called Kolachi.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000005",
+    "code": "PMA-Q-005",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 5. Who has taken the most wickets in Test cricket?",
+    "options": [
+      {
+        "id": "85000000-0000-0005-0000-000000000001",
+        "label": "A",
+        "text": "Shane Warne"
+      },
+      {
+        "id": "85000000-0000-0005-0000-000000000002",
+        "label": "B",
+        "text": "James Anderson"
+      },
+      {
+        "id": "85000000-0000-0005-0000-000000000003",
+        "label": "C",
+        "text": "Muttiah Muralitharan"
+      },
+      {
+        "id": "85000000-0000-0005-0000-000000000004",
+        "label": "D",
+        "text": "Anil Kumble"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0005-0000-000000000003",
+    "explanation": "Muttiah Muralitharan holds the men's Test-cricket record with 800 wickets.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000006",
+    "code": "PMA-Q-006",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 6. What is the currency of Sri Lanka?",
+    "options": [
+      {
+        "id": "85000000-0000-0006-0000-000000000001",
+        "label": "A",
+        "text": "Sri Lankan rupee"
+      },
+      {
+        "id": "85000000-0000-0006-0000-000000000002",
+        "label": "B",
+        "text": "Taka"
+      },
+      {
+        "id": "85000000-0000-0006-0000-000000000003",
+        "label": "C",
+        "text": "Ringgit"
+      },
+      {
+        "id": "85000000-0000-0006-0000-000000000004",
+        "label": "D",
+        "text": "Dinar"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0006-0000-000000000001",
+    "explanation": "Sri Lanka uses the Sri Lankan rupee as its national currency.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000007",
+    "code": "PMA-Q-007",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 7. What is the capital of Hungary?",
+    "options": [
+      {
+        "id": "85000000-0000-0007-0000-000000000001",
+        "label": "A",
+        "text": "Bucharest"
+      },
+      {
+        "id": "85000000-0000-0007-0000-000000000002",
+        "label": "B",
+        "text": "Budapest"
+      },
+      {
+        "id": "85000000-0000-0007-0000-000000000003",
+        "label": "C",
+        "text": "Warsaw"
+      },
+      {
+        "id": "85000000-0000-0007-0000-000000000004",
+        "label": "D",
+        "text": "Prague"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0007-0000-000000000002",
+    "explanation": "Budapest is Hungary's capital and lies on the Danube River.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000008",
+    "code": "PMA-Q-008",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 8. What does the word \"Pakistan\" mean?",
+    "options": [
+      {
+        "id": "85000000-0000-0008-0000-000000000001",
+        "label": "A",
+        "text": "Land of Muslims"
+      },
+      {
+        "id": "85000000-0000-0008-0000-000000000002",
+        "label": "B",
+        "text": "Land of the Pure"
+      },
+      {
+        "id": "85000000-0000-0008-0000-000000000003",
+        "label": "C",
+        "text": "Land of Peace"
+      },
+      {
+        "id": "85000000-0000-0008-0000-000000000004",
+        "label": "D",
+        "text": "Holy Land"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0008-0000-000000000002",
+    "explanation": "Pak means pure and -stan means land, giving the conventional meaning Land of the Pure.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000009",
+    "code": "PMA-Q-009",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 9. Dasht River is located mainly in:",
+    "options": [
+      {
+        "id": "85000000-0000-0009-0000-000000000001",
+        "label": "A",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-0009-0000-000000000002",
+        "label": "B",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-0009-0000-000000000003",
+        "label": "C",
+        "text": "Balochistan"
+      },
+      {
+        "id": "85000000-0000-0009-0000-000000000004",
+        "label": "D",
+        "text": "Khyber Pakhtunkhwa"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0009-0000-000000000003",
+    "explanation": "The Dasht River flows through the Makran region of Balochistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000000a",
+    "code": "PMA-Q-010",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 10. Who wrote Jinnah of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-000a-0000-000000000001",
+        "label": "A",
+        "text": "Ayesha Jalal"
+      },
+      {
+        "id": "85000000-0000-000a-0000-000000000002",
+        "label": "B",
+        "text": "Stanley Wolpert"
+      },
+      {
+        "id": "85000000-0000-000a-0000-000000000003",
+        "label": "C",
+        "text": "Ian Talbot"
+      },
+      {
+        "id": "85000000-0000-000a-0000-000000000004",
+        "label": "D",
+        "text": "Lawrence Ziring"
+      }
+    ],
+    "correctOptionId": "85000000-0000-000a-0000-000000000002",
+    "explanation": "Stanley Wolpert authored the biography Jinnah of Pakistan, published in 1984.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000000b",
+    "code": "PMA-Q-011",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 11. Masjid an-Nabawi is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-000b-0000-000000000001",
+        "label": "A",
+        "text": "Makkah"
+      },
+      {
+        "id": "85000000-0000-000b-0000-000000000002",
+        "label": "B",
+        "text": "Madinah"
+      },
+      {
+        "id": "85000000-0000-000b-0000-000000000003",
+        "label": "C",
+        "text": "Jerusalem"
+      },
+      {
+        "id": "85000000-0000-000b-0000-000000000004",
+        "label": "D",
+        "text": "Taif"
+      }
+    ],
+    "correctOptionId": "85000000-0000-000b-0000-000000000002",
+    "explanation": "The Prophet's Mosque, Masjid an-Nabawi, is located in Madinah.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000000c",
+    "code": "PMA-Q-012",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 12. Quaid-e-Azam presented his famous Fourteen Points in:",
+    "options": [
+      {
+        "id": "85000000-0000-000c-0000-000000000001",
+        "label": "A",
+        "text": "1927"
+      },
+      {
+        "id": "85000000-0000-000c-0000-000000000002",
+        "label": "B",
+        "text": "1928"
+      },
+      {
+        "id": "85000000-0000-000c-0000-000000000003",
+        "label": "C",
+        "text": "1929"
+      },
+      {
+        "id": "85000000-0000-000c-0000-000000000004",
+        "label": "D",
+        "text": "1930"
+      }
+    ],
+    "correctOptionId": "85000000-0000-000c-0000-000000000003",
+    "explanation": "Jinnah formulated his Fourteen Points in 1929 in response to constitutional proposals including the Nehru Report.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000000d",
+    "code": "PMA-Q-013",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 13. The Chauri Chaura incident took place in:",
+    "options": [
+      {
+        "id": "85000000-0000-000d-0000-000000000001",
+        "label": "A",
+        "text": "1919"
+      },
+      {
+        "id": "85000000-0000-000d-0000-000000000002",
+        "label": "B",
+        "text": "1920"
+      },
+      {
+        "id": "85000000-0000-000d-0000-000000000003",
+        "label": "C",
+        "text": "1922"
+      },
+      {
+        "id": "85000000-0000-000d-0000-000000000004",
+        "label": "D",
+        "text": "1925"
+      }
+    ],
+    "correctOptionId": "85000000-0000-000d-0000-000000000003",
+    "explanation": "The Chauri Chaura incident occurred in February 1922 and led Gandhi to suspend the Non-Cooperation Movement.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000000e",
+    "code": "PMA-Q-014",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 14. Pakistan's first general elections were held in:",
+    "options": [
+      {
+        "id": "85000000-0000-000e-0000-000000000001",
+        "label": "A",
+        "text": "1956"
+      },
+      {
+        "id": "85000000-0000-000e-0000-000000000002",
+        "label": "B",
+        "text": "1965"
+      },
+      {
+        "id": "85000000-0000-000e-0000-000000000003",
+        "label": "C",
+        "text": "1970"
+      },
+      {
+        "id": "85000000-0000-000e-0000-000000000004",
+        "label": "D",
+        "text": "1973"
+      }
+    ],
+    "correctOptionId": "85000000-0000-000e-0000-000000000003",
+    "explanation": "Pakistan's first nationwide general elections based on adult franchise were held in December 1970.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000000f",
+    "code": "PMA-Q-015",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 15. Which article of the Constitution of Pakistan provides the right to education?",
+    "options": [
+      {
+        "id": "85000000-0000-000f-0000-000000000001",
+        "label": "A",
+        "text": "Article 25"
+      },
+      {
+        "id": "85000000-0000-000f-0000-000000000002",
+        "label": "B",
+        "text": "Article 25-A"
+      },
+      {
+        "id": "85000000-0000-000f-0000-000000000003",
+        "label": "C",
+        "text": "Article 26"
+      },
+      {
+        "id": "85000000-0000-000f-0000-000000000004",
+        "label": "D",
+        "text": "Article 29"
+      }
+    ],
+    "correctOptionId": "85000000-0000-000f-0000-000000000002",
+    "explanation": "Article 25-A requires the state to provide free and compulsory education to children aged five to sixteen.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000010",
+    "code": "PMA-Q-016",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 16. How old was Prophet Muhammad (PBUH) when His grandfather Abdul Muttalib passed away?",
+    "options": [
+      {
+        "id": "85000000-0000-0010-0000-000000000001",
+        "label": "A",
+        "text": "6 years"
+      },
+      {
+        "id": "85000000-0000-0010-0000-000000000002",
+        "label": "B",
+        "text": "7 years"
+      },
+      {
+        "id": "85000000-0000-0010-0000-000000000003",
+        "label": "C",
+        "text": "8 years"
+      },
+      {
+        "id": "85000000-0000-0010-0000-000000000004",
+        "label": "D",
+        "text": "10 years"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0010-0000-000000000003",
+    "explanation": "Standard accounts of the Prophet's life place Abdul Muttalib's death when the Prophet was about eight.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000011",
+    "code": "PMA-Q-017",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 17. At what age did Prophet Muhammad (PBUH) migrate from Makkah to Madinah?",
+    "options": [
+      {
+        "id": "85000000-0000-0011-0000-000000000001",
+        "label": "A",
+        "text": "40 years"
+      },
+      {
+        "id": "85000000-0000-0011-0000-000000000002",
+        "label": "B",
+        "text": "50 years"
+      },
+      {
+        "id": "85000000-0000-0011-0000-000000000003",
+        "label": "C",
+        "text": "53 years"
+      },
+      {
+        "id": "85000000-0000-0011-0000-000000000004",
+        "label": "D",
+        "text": "63 years"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0011-0000-000000000003",
+    "explanation": "The Hijrah took place in 622 CE when the Prophet was approximately 53 years old.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000012",
+    "code": "PMA-Q-018",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 18. Hazrat Abu Bakr (RA) was the father of:",
+    "options": [
+      {
+        "id": "85000000-0000-0012-0000-000000000001",
+        "label": "A",
+        "text": "Hazrat Hafsa (RA)"
+      },
+      {
+        "id": "85000000-0000-0012-0000-000000000002",
+        "label": "B",
+        "text": "Hazrat Ayesha (RA)"
+      },
+      {
+        "id": "85000000-0000-0012-0000-000000000003",
+        "label": "C",
+        "text": "Hazrat Fatima (RA)"
+      },
+      {
+        "id": "85000000-0000-0012-0000-000000000004",
+        "label": "D",
+        "text": "Hazrat Zainab (RA)"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0012-0000-000000000002",
+    "explanation": "Hazrat Ayesha was the daughter of Hazrat Abu Bakr.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000013",
+    "code": "PMA-Q-019",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 19. Who was the first woman to be martyred in Islam?",
+    "options": [
+      {
+        "id": "85000000-0000-0013-0000-000000000001",
+        "label": "A",
+        "text": "Hazrat Khadijah (RA)"
+      },
+      {
+        "id": "85000000-0000-0013-0000-000000000002",
+        "label": "B",
+        "text": "Hazrat Ayesha (RA)"
+      },
+      {
+        "id": "85000000-0000-0013-0000-000000000003",
+        "label": "C",
+        "text": "Hazrat Sumayyah (RA)"
+      },
+      {
+        "id": "85000000-0000-0013-0000-000000000004",
+        "label": "D",
+        "text": "Hazrat Fatimah (RA)"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0013-0000-000000000003",
+    "explanation": "Hazrat Sumayyah bint Khayyat is recognized as the first woman martyr of Islam.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000014",
+    "code": "PMA-Q-020",
+    "subject": "ACADEMIC_MATH",
+    "subjectName": "Mathematics",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 20. A triangular prism has how many faces?",
+    "options": [
+      {
+        "id": "85000000-0000-0014-0000-000000000001",
+        "label": "A",
+        "text": "4"
+      },
+      {
+        "id": "85000000-0000-0014-0000-000000000002",
+        "label": "B",
+        "text": "5"
+      },
+      {
+        "id": "85000000-0000-0014-0000-000000000003",
+        "label": "C",
+        "text": "6"
+      },
+      {
+        "id": "85000000-0000-0014-0000-000000000004",
+        "label": "D",
+        "text": "8"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0014-0000-000000000002",
+    "explanation": "A triangular prism has two triangular bases and three rectangular lateral faces, totaling five faces.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000015",
+    "code": "PMA-Q-021",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 21. CPEC is a project between Pakistan and:",
+    "options": [
+      {
+        "id": "85000000-0000-0015-0000-000000000001",
+        "label": "A",
+        "text": "Turkey"
+      },
+      {
+        "id": "85000000-0000-0015-0000-000000000002",
+        "label": "B",
+        "text": "China"
+      },
+      {
+        "id": "85000000-0000-0015-0000-000000000003",
+        "label": "C",
+        "text": "Iran"
+      },
+      {
+        "id": "85000000-0000-0015-0000-000000000004",
+        "label": "D",
+        "text": "Saudi Arabia"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0015-0000-000000000002",
+    "explanation": "CPEC stands for China-Pakistan Economic Corridor and is a bilateral Pakistan-China initiative.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000016",
+    "code": "PMA-Q-022",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 22. The Karakoram Highway is also known as:",
+    "options": [
+      {
+        "id": "85000000-0000-0016-0000-000000000001",
+        "label": "A",
+        "text": "National Highway N-5"
+      },
+      {
+        "id": "85000000-0000-0016-0000-000000000002",
+        "label": "B",
+        "text": "N-35"
+      },
+      {
+        "id": "85000000-0000-0016-0000-000000000003",
+        "label": "C",
+        "text": "N-25"
+      },
+      {
+        "id": "85000000-0000-0016-0000-000000000004",
+        "label": "D",
+        "text": "N-55"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0016-0000-000000000002",
+    "explanation": "The Karakoram Highway is designated National Highway N-35 in Pakistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000017",
+    "code": "PMA-Q-023",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 23. Khunjerab Pass connects Pakistan with:",
+    "options": [
+      {
+        "id": "85000000-0000-0017-0000-000000000001",
+        "label": "A",
+        "text": "Afghanistan"
+      },
+      {
+        "id": "85000000-0000-0017-0000-000000000002",
+        "label": "B",
+        "text": "India"
+      },
+      {
+        "id": "85000000-0000-0017-0000-000000000003",
+        "label": "C",
+        "text": "China"
+      },
+      {
+        "id": "85000000-0000-0017-0000-000000000004",
+        "label": "D",
+        "text": "Iran"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0017-0000-000000000003",
+    "explanation": "Khunjerab Pass is the high-altitude crossing linking Pakistan with China.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000018",
+    "code": "PMA-Q-024",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 24. How many Pakistani individuals had received Nobel Prizes by the end of 2025?",
+    "options": [
+      {
+        "id": "85000000-0000-0018-0000-000000000001",
+        "label": "A",
+        "text": "1"
+      },
+      {
+        "id": "85000000-0000-0018-0000-000000000002",
+        "label": "B",
+        "text": "2"
+      },
+      {
+        "id": "85000000-0000-0018-0000-000000000003",
+        "label": "C",
+        "text": "3"
+      },
+      {
+        "id": "85000000-0000-0018-0000-000000000004",
+        "label": "D",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0018-0000-000000000002",
+    "explanation": "The two Pakistani Nobel laureates are Abdus Salam in Physics and Malala Yousafzai in Peace.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000019",
+    "code": "PMA-Q-025",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 25. Which country is one of the largest suppliers of crude oil to Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0019-0000-000000000001",
+        "label": "A",
+        "text": "Saudi Arabia"
+      },
+      {
+        "id": "85000000-0000-0019-0000-000000000002",
+        "label": "B",
+        "text": "Japan"
+      },
+      {
+        "id": "85000000-0000-0019-0000-000000000003",
+        "label": "C",
+        "text": "Germany"
+      },
+      {
+        "id": "85000000-0000-0019-0000-000000000004",
+        "label": "D",
+        "text": "Canada"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0019-0000-000000000001",
+    "explanation": "Saudi Arabia is a major oil-producing country that has supplied crude oil to Pakistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000001a",
+    "code": "PMA-Q-026",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 26. Hanif Mohammad was a famous Pakistani player of:",
+    "options": [
+      {
+        "id": "85000000-0000-001a-0000-000000000001",
+        "label": "A",
+        "text": "Hockey"
+      },
+      {
+        "id": "85000000-0000-001a-0000-000000000002",
+        "label": "B",
+        "text": "Cricket"
+      },
+      {
+        "id": "85000000-0000-001a-0000-000000000003",
+        "label": "C",
+        "text": "Squash"
+      },
+      {
+        "id": "85000000-0000-001a-0000-000000000004",
+        "label": "D",
+        "text": "Football"
+      }
+    ],
+    "correctOptionId": "85000000-0000-001a-0000-000000000002",
+    "explanation": "Hanif Mohammad was a renowned Pakistani batsman and Test cricketer.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000001b",
+    "code": "PMA-Q-027",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 27. Hafeez Kardar was a famous Pakistani player of:",
+    "options": [
+      {
+        "id": "85000000-0000-001b-0000-000000000001",
+        "label": "A",
+        "text": "Hockey"
+      },
+      {
+        "id": "85000000-0000-001b-0000-000000000002",
+        "label": "B",
+        "text": "Cricket"
+      },
+      {
+        "id": "85000000-0000-001b-0000-000000000003",
+        "label": "C",
+        "text": "Squash"
+      },
+      {
+        "id": "85000000-0000-001b-0000-000000000004",
+        "label": "D",
+        "text": "Tennis"
+      }
+    ],
+    "correctOptionId": "85000000-0000-001b-0000-000000000002",
+    "explanation": "Abdul Hafeez Kardar captained Pakistan's first Test-cricket team.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000001c",
+    "code": "PMA-Q-028",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 28. Which city is known as the \"City of Lights\" in Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-001c-0000-000000000001",
+        "label": "A",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-001c-0000-000000000002",
+        "label": "B",
+        "text": "Islamabad"
+      },
+      {
+        "id": "85000000-0000-001c-0000-000000000003",
+        "label": "C",
+        "text": "Karachi"
+      },
+      {
+        "id": "85000000-0000-001c-0000-000000000004",
+        "label": "D",
+        "text": "Peshawar"
+      }
+    ],
+    "correctOptionId": "85000000-0000-001c-0000-000000000003",
+    "explanation": "Karachi is commonly nicknamed the City of Lights.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000001d",
+    "code": "PMA-Q-029",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 29. Which is the national language of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-001d-0000-000000000001",
+        "label": "A",
+        "text": "Punjabi"
+      },
+      {
+        "id": "85000000-0000-001d-0000-000000000002",
+        "label": "B",
+        "text": "Urdu"
+      },
+      {
+        "id": "85000000-0000-001d-0000-000000000003",
+        "label": "C",
+        "text": "Sindhi"
+      },
+      {
+        "id": "85000000-0000-001d-0000-000000000004",
+        "label": "D",
+        "text": "English"
+      }
+    ],
+    "correctOptionId": "85000000-0000-001d-0000-000000000002",
+    "explanation": "Urdu is designated Pakistan's national language under Article 251 of the Constitution.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000001e",
+    "code": "PMA-Q-030",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 30. The Pakistan Resolution was passed on:",
+    "options": [
+      {
+        "id": "85000000-0000-001e-0000-000000000001",
+        "label": "A",
+        "text": "14 August 1947"
+      },
+      {
+        "id": "85000000-0000-001e-0000-000000000002",
+        "label": "B",
+        "text": "23 March 1940"
+      },
+      {
+        "id": "85000000-0000-001e-0000-000000000003",
+        "label": "C",
+        "text": "11 September 1948"
+      },
+      {
+        "id": "85000000-0000-001e-0000-000000000004",
+        "label": "D",
+        "text": "14 August 1940"
+      }
+    ],
+    "correctOptionId": "85000000-0000-001e-0000-000000000002",
+    "explanation": "The Lahore session of the Muslim League is commemorated for the Pakistan Resolution of 23 March 1940.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000001f",
+    "code": "PMA-Q-031",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 31. Who is known as the founder of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-001f-0000-000000000001",
+        "label": "A",
+        "text": "Allama Iqbal"
+      },
+      {
+        "id": "85000000-0000-001f-0000-000000000002",
+        "label": "B",
+        "text": "Sir Syed Ahmad Khan"
+      },
+      {
+        "id": "85000000-0000-001f-0000-000000000003",
+        "label": "C",
+        "text": "Quaid-e-Azam Muhammad Ali Jinnah"
+      },
+      {
+        "id": "85000000-0000-001f-0000-000000000004",
+        "label": "D",
+        "text": "Liaquat Ali Khan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-001f-0000-000000000003",
+    "explanation": "Muhammad Ali Jinnah led the movement that resulted in the creation of Pakistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000020",
+    "code": "PMA-Q-032",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 32. Pakistan came into existence on:",
+    "options": [
+      {
+        "id": "85000000-0000-0020-0000-000000000001",
+        "label": "A",
+        "text": "23 March 1940"
+      },
+      {
+        "id": "85000000-0000-0020-0000-000000000002",
+        "label": "B",
+        "text": "14 August 1947"
+      },
+      {
+        "id": "85000000-0000-0020-0000-000000000003",
+        "label": "C",
+        "text": "15 August 1947"
+      },
+      {
+        "id": "85000000-0000-0020-0000-000000000004",
+        "label": "D",
+        "text": "23 March 1947"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0020-0000-000000000002",
+    "explanation": "Pakistan celebrates its independence and establishment on 14 August 1947.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000021",
+    "code": "PMA-Q-033",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 33. The national poet of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0021-0000-000000000001",
+        "label": "A",
+        "text": "Faiz Ahmed Faiz"
+      },
+      {
+        "id": "85000000-0000-0021-0000-000000000002",
+        "label": "B",
+        "text": "Hafeez Jalandhari"
+      },
+      {
+        "id": "85000000-0000-0021-0000-000000000003",
+        "label": "C",
+        "text": "Allama Muhammad Iqbal"
+      },
+      {
+        "id": "85000000-0000-0021-0000-000000000004",
+        "label": "D",
+        "text": "Mir Taqi Mir"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0021-0000-000000000003",
+    "explanation": "Allama Muhammad Iqbal is recognized as Pakistan's national poet.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000022",
+    "code": "PMA-Q-034",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 34. The first Governor-General of Pakistan was:",
+    "options": [
+      {
+        "id": "85000000-0000-0022-0000-000000000001",
+        "label": "A",
+        "text": "Liaquat Ali Khan"
+      },
+      {
+        "id": "85000000-0000-0022-0000-000000000002",
+        "label": "B",
+        "text": "Iskander Mirza"
+      },
+      {
+        "id": "85000000-0000-0022-0000-000000000003",
+        "label": "C",
+        "text": "Muhammad Ali Jinnah"
+      },
+      {
+        "id": "85000000-0000-0022-0000-000000000004",
+        "label": "D",
+        "text": "Ayub Khan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0022-0000-000000000003",
+    "explanation": "Muhammad Ali Jinnah served as Pakistan's first Governor-General from 1947 to 1948.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000023",
+    "code": "PMA-Q-035",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 35. The first Prime Minister of Pakistan was:",
+    "options": [
+      {
+        "id": "85000000-0000-0023-0000-000000000001",
+        "label": "A",
+        "text": "Khawaja Nazimuddin"
+      },
+      {
+        "id": "85000000-0000-0023-0000-000000000002",
+        "label": "B",
+        "text": "Liaquat Ali Khan"
+      },
+      {
+        "id": "85000000-0000-0023-0000-000000000003",
+        "label": "C",
+        "text": "Muhammad Ali Bogra"
+      },
+      {
+        "id": "85000000-0000-0023-0000-000000000004",
+        "label": "D",
+        "text": "Ayub Khan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0023-0000-000000000002",
+    "explanation": "Liaquat Ali Khan became Pakistan's first Prime Minister in August 1947.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000024",
+    "code": "PMA-Q-036",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 36. The national flower of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0024-0000-000000000001",
+        "label": "A",
+        "text": "Rose"
+      },
+      {
+        "id": "85000000-0000-0024-0000-000000000002",
+        "label": "B",
+        "text": "Jasmine"
+      },
+      {
+        "id": "85000000-0000-0024-0000-000000000003",
+        "label": "C",
+        "text": "Sunflower"
+      },
+      {
+        "id": "85000000-0000-0024-0000-000000000004",
+        "label": "D",
+        "text": "Tulip"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0024-0000-000000000002",
+    "explanation": "Jasmine, commonly called chameli, is Pakistan's national flower.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000025",
+    "code": "PMA-Q-037",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 37. The national animal of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0025-0000-000000000001",
+        "label": "A",
+        "text": "Markhor"
+      },
+      {
+        "id": "85000000-0000-0025-0000-000000000002",
+        "label": "B",
+        "text": "Snow Leopard"
+      },
+      {
+        "id": "85000000-0000-0025-0000-000000000003",
+        "label": "C",
+        "text": "Lion"
+      },
+      {
+        "id": "85000000-0000-0025-0000-000000000004",
+        "label": "D",
+        "text": "Ibex"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0025-0000-000000000001",
+    "explanation": "The markhor is Pakistan's national animal and is known for its spiral horns.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000026",
+    "code": "PMA-Q-038",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 38. The national bird of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0026-0000-000000000001",
+        "label": "A",
+        "text": "Eagle"
+      },
+      {
+        "id": "85000000-0000-0026-0000-000000000002",
+        "label": "B",
+        "text": "Chukar"
+      },
+      {
+        "id": "85000000-0000-0026-0000-000000000003",
+        "label": "C",
+        "text": "Peacock"
+      },
+      {
+        "id": "85000000-0000-0026-0000-000000000004",
+        "label": "D",
+        "text": "Falcon"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0026-0000-000000000002",
+    "explanation": "The chukar partridge is Pakistan's national bird.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000027",
+    "code": "PMA-Q-039",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 39. The national sport traditionally associated with Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0027-0000-000000000001",
+        "label": "A",
+        "text": "Cricket"
+      },
+      {
+        "id": "85000000-0000-0027-0000-000000000002",
+        "label": "B",
+        "text": "Hockey"
+      },
+      {
+        "id": "85000000-0000-0027-0000-000000000003",
+        "label": "C",
+        "text": "Squash"
+      },
+      {
+        "id": "85000000-0000-0027-0000-000000000004",
+        "label": "D",
+        "text": "Football"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0027-0000-000000000002",
+    "explanation": "Field hockey is traditionally recognized as Pakistan's national sport.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000028",
+    "code": "PMA-Q-040",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 40. The capital of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0028-0000-000000000001",
+        "label": "A",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-0028-0000-000000000002",
+        "label": "B",
+        "text": "Karachi"
+      },
+      {
+        "id": "85000000-0000-0028-0000-000000000003",
+        "label": "C",
+        "text": "Islamabad"
+      },
+      {
+        "id": "85000000-0000-0028-0000-000000000004",
+        "label": "D",
+        "text": "Rawalpindi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0028-0000-000000000003",
+    "explanation": "Islamabad was developed as Pakistan's planned federal capital.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000029",
+    "code": "PMA-Q-041",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 41. According to Pakistan's 2023 census, its largest city by population is:",
+    "options": [
+      {
+        "id": "85000000-0000-0029-0000-000000000001",
+        "label": "A",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-0029-0000-000000000002",
+        "label": "B",
+        "text": "Karachi"
+      },
+      {
+        "id": "85000000-0000-0029-0000-000000000003",
+        "label": "C",
+        "text": "Faisalabad"
+      },
+      {
+        "id": "85000000-0000-0029-0000-000000000004",
+        "label": "D",
+        "text": "Peshawar"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0029-0000-000000000002",
+    "explanation": "Karachi was Pakistan's largest city by population in the 2023 census.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000002a",
+    "code": "PMA-Q-042",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 42. The largest province of Pakistan by area is:",
+    "options": [
+      {
+        "id": "85000000-0000-002a-0000-000000000001",
+        "label": "A",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-002a-0000-000000000002",
+        "label": "B",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-002a-0000-000000000003",
+        "label": "C",
+        "text": "Khyber Pakhtunkhwa"
+      },
+      {
+        "id": "85000000-0000-002a-0000-000000000004",
+        "label": "D",
+        "text": "Balochistan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-002a-0000-000000000004",
+    "explanation": "Balochistan covers more land area than any other Pakistani province.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000002b",
+    "code": "PMA-Q-043",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 43. According to Pakistan's 2023 census, its most populous province is:",
+    "options": [
+      {
+        "id": "85000000-0000-002b-0000-000000000001",
+        "label": "A",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-002b-0000-000000000002",
+        "label": "B",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-002b-0000-000000000003",
+        "label": "C",
+        "text": "Balochistan"
+      },
+      {
+        "id": "85000000-0000-002b-0000-000000000004",
+        "label": "D",
+        "text": "Khyber Pakhtunkhwa"
+      }
+    ],
+    "correctOptionId": "85000000-0000-002b-0000-000000000002",
+    "explanation": "Punjab had the largest provincial population in Pakistan's 2023 census.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000002c",
+    "code": "PMA-Q-044",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 44. The highest mountain peak of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-002c-0000-000000000001",
+        "label": "A",
+        "text": "Nanga Parbat"
+      },
+      {
+        "id": "85000000-0000-002c-0000-000000000002",
+        "label": "B",
+        "text": "Tirich Mir"
+      },
+      {
+        "id": "85000000-0000-002c-0000-000000000003",
+        "label": "C",
+        "text": "K2"
+      },
+      {
+        "id": "85000000-0000-002c-0000-000000000004",
+        "label": "D",
+        "text": "Broad Peak"
+      }
+    ],
+    "correctOptionId": "85000000-0000-002c-0000-000000000003",
+    "explanation": "K2 rises to 8,611 m, making it Pakistan's highest peak.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000002d",
+    "code": "PMA-Q-045",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 45. K2 is located in the:",
+    "options": [
+      {
+        "id": "85000000-0000-002d-0000-000000000001",
+        "label": "A",
+        "text": "Himalayas"
+      },
+      {
+        "id": "85000000-0000-002d-0000-000000000002",
+        "label": "B",
+        "text": "Hindu Kush"
+      },
+      {
+        "id": "85000000-0000-002d-0000-000000000003",
+        "label": "C",
+        "text": "Karakoram Range"
+      },
+      {
+        "id": "85000000-0000-002d-0000-000000000004",
+        "label": "D",
+        "text": "Suleiman Range"
+      }
+    ],
+    "correctOptionId": "85000000-0000-002d-0000-000000000003",
+    "explanation": "K2 is part of the Karakoram mountain range.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000002e",
+    "code": "PMA-Q-046",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 46. The longest river of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-002e-0000-000000000001",
+        "label": "A",
+        "text": "Jhelum"
+      },
+      {
+        "id": "85000000-0000-002e-0000-000000000002",
+        "label": "B",
+        "text": "Chenab"
+      },
+      {
+        "id": "85000000-0000-002e-0000-000000000003",
+        "label": "C",
+        "text": "Indus"
+      },
+      {
+        "id": "85000000-0000-002e-0000-000000000004",
+        "label": "D",
+        "text": "Ravi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-002e-0000-000000000003",
+    "explanation": "The Indus is Pakistan's principal and longest river.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000002f",
+    "code": "PMA-Q-047",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 47. The Indus River originates from the region of:",
+    "options": [
+      {
+        "id": "85000000-0000-002f-0000-000000000001",
+        "label": "A",
+        "text": "Tibet"
+      },
+      {
+        "id": "85000000-0000-002f-0000-000000000002",
+        "label": "B",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-002f-0000-000000000003",
+        "label": "C",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-002f-0000-000000000004",
+        "label": "D",
+        "text": "Afghanistan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-002f-0000-000000000001",
+    "explanation": "The Indus rises on the Tibetan Plateau near the Lake Manasarovar region.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000030",
+    "code": "PMA-Q-048",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 48. Tarbela Dam is built on the:",
+    "options": [
+      {
+        "id": "85000000-0000-0030-0000-000000000001",
+        "label": "A",
+        "text": "Jhelum River"
+      },
+      {
+        "id": "85000000-0000-0030-0000-000000000002",
+        "label": "B",
+        "text": "Indus River"
+      },
+      {
+        "id": "85000000-0000-0030-0000-000000000003",
+        "label": "C",
+        "text": "Chenab River"
+      },
+      {
+        "id": "85000000-0000-0030-0000-000000000004",
+        "label": "D",
+        "text": "Ravi River"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0030-0000-000000000002",
+    "explanation": "Tarbela Dam impounds the Indus River in Khyber Pakhtunkhwa.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000031",
+    "code": "PMA-Q-049",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 49. Mangla Dam is built on the:",
+    "options": [
+      {
+        "id": "85000000-0000-0031-0000-000000000001",
+        "label": "A",
+        "text": "Indus"
+      },
+      {
+        "id": "85000000-0000-0031-0000-000000000002",
+        "label": "B",
+        "text": "Ravi"
+      },
+      {
+        "id": "85000000-0000-0031-0000-000000000003",
+        "label": "C",
+        "text": "Jhelum"
+      },
+      {
+        "id": "85000000-0000-0031-0000-000000000004",
+        "label": "D",
+        "text": "Sutlej"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0031-0000-000000000003",
+    "explanation": "Mangla Dam was constructed on the Jhelum River.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000032",
+    "code": "PMA-Q-050",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 50. The largest desert of Pakistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0032-0000-000000000001",
+        "label": "A",
+        "text": "Cholistan"
+      },
+      {
+        "id": "85000000-0000-0032-0000-000000000002",
+        "label": "B",
+        "text": "Thar"
+      },
+      {
+        "id": "85000000-0000-0032-0000-000000000003",
+        "label": "C",
+        "text": "Kharan"
+      },
+      {
+        "id": "85000000-0000-0032-0000-000000000004",
+        "label": "D",
+        "text": "Thal"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0032-0000-000000000002",
+    "explanation": "The Thar is the largest desert extending within Pakistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000033",
+    "code": "PMA-Q-051",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 51. The Khyber Pass connects Pakistan with:",
+    "options": [
+      {
+        "id": "85000000-0000-0033-0000-000000000001",
+        "label": "A",
+        "text": "Iran"
+      },
+      {
+        "id": "85000000-0000-0033-0000-000000000002",
+        "label": "B",
+        "text": "China"
+      },
+      {
+        "id": "85000000-0000-0033-0000-000000000003",
+        "label": "C",
+        "text": "Afghanistan"
+      },
+      {
+        "id": "85000000-0000-0033-0000-000000000004",
+        "label": "D",
+        "text": "India"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0033-0000-000000000003",
+    "explanation": "The Khyber Pass provides a historic route between Pakistan and Afghanistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000034",
+    "code": "PMA-Q-052",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 52. The Bolan Pass is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-0034-0000-000000000001",
+        "label": "A",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-0034-0000-000000000002",
+        "label": "B",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-0034-0000-000000000003",
+        "label": "C",
+        "text": "Balochistan"
+      },
+      {
+        "id": "85000000-0000-0034-0000-000000000004",
+        "label": "D",
+        "text": "KPK"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0034-0000-000000000003",
+    "explanation": "The Bolan Pass crosses mountain terrain in Balochistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000035",
+    "code": "PMA-Q-053",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 53. Pakistan shares its longest international border with:",
+    "options": [
+      {
+        "id": "85000000-0000-0035-0000-000000000001",
+        "label": "A",
+        "text": "China"
+      },
+      {
+        "id": "85000000-0000-0035-0000-000000000002",
+        "label": "B",
+        "text": "India"
+      },
+      {
+        "id": "85000000-0000-0035-0000-000000000003",
+        "label": "C",
+        "text": "Iran"
+      },
+      {
+        "id": "85000000-0000-0035-0000-000000000004",
+        "label": "D",
+        "text": "Afghanistan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0035-0000-000000000002",
+    "explanation": "The boundary with India is conventionally listed as Pakistan's longest land boundary, with lengths varying by treatment of disputed sections.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000036",
+    "code": "PMA-Q-054",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 54. The Durand Line separates Pakistan from:",
+    "options": [
+      {
+        "id": "85000000-0000-0036-0000-000000000001",
+        "label": "A",
+        "text": "India"
+      },
+      {
+        "id": "85000000-0000-0036-0000-000000000002",
+        "label": "B",
+        "text": "China"
+      },
+      {
+        "id": "85000000-0000-0036-0000-000000000003",
+        "label": "C",
+        "text": "Afghanistan"
+      },
+      {
+        "id": "85000000-0000-0036-0000-000000000004",
+        "label": "D",
+        "text": "Iran"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0036-0000-000000000003",
+    "explanation": "The Durand Line marks the Pakistan-Afghanistan boundary.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000037",
+    "code": "PMA-Q-055",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 55. The first Constitution of Pakistan was enforced in:",
+    "options": [
+      {
+        "id": "85000000-0000-0037-0000-000000000001",
+        "label": "A",
+        "text": "1954"
+      },
+      {
+        "id": "85000000-0000-0037-0000-000000000002",
+        "label": "B",
+        "text": "1956"
+      },
+      {
+        "id": "85000000-0000-0037-0000-000000000003",
+        "label": "C",
+        "text": "1962"
+      },
+      {
+        "id": "85000000-0000-0037-0000-000000000004",
+        "label": "D",
+        "text": "1973"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0037-0000-000000000002",
+    "explanation": "Pakistan's first Constitution came into force on 23 March 1956.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000038",
+    "code": "PMA-Q-056",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 56. The Constitution of Pakistan currently in force was adopted in:",
+    "options": [
+      {
+        "id": "85000000-0000-0038-0000-000000000001",
+        "label": "A",
+        "text": "1956"
+      },
+      {
+        "id": "85000000-0000-0038-0000-000000000002",
+        "label": "B",
+        "text": "1962"
+      },
+      {
+        "id": "85000000-0000-0038-0000-000000000003",
+        "label": "C",
+        "text": "1973"
+      },
+      {
+        "id": "85000000-0000-0038-0000-000000000004",
+        "label": "D",
+        "text": "1977"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0038-0000-000000000003",
+    "explanation": "The 1973 Constitution forms the basis of Pakistan's present constitutional system, as amended.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000039",
+    "code": "PMA-Q-057",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 57. The Objectives Resolution was passed in:",
+    "options": [
+      {
+        "id": "85000000-0000-0039-0000-000000000001",
+        "label": "A",
+        "text": "1947"
+      },
+      {
+        "id": "85000000-0000-0039-0000-000000000002",
+        "label": "B",
+        "text": "1949"
+      },
+      {
+        "id": "85000000-0000-0039-0000-000000000003",
+        "label": "C",
+        "text": "1951"
+      },
+      {
+        "id": "85000000-0000-0039-0000-000000000004",
+        "label": "D",
+        "text": "1956"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0039-0000-000000000002",
+    "explanation": "The Constituent Assembly adopted the Objectives Resolution on 12 March 1949.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000003a",
+    "code": "PMA-Q-058",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 58. The first martial law in Pakistan was imposed in:",
+    "options": [
+      {
+        "id": "85000000-0000-003a-0000-000000000001",
+        "label": "A",
+        "text": "1956"
+      },
+      {
+        "id": "85000000-0000-003a-0000-000000000002",
+        "label": "B",
+        "text": "1958"
+      },
+      {
+        "id": "85000000-0000-003a-0000-000000000003",
+        "label": "C",
+        "text": "1962"
+      },
+      {
+        "id": "85000000-0000-003a-0000-000000000004",
+        "label": "D",
+        "text": "1969"
+      }
+    ],
+    "correctOptionId": "85000000-0000-003a-0000-000000000002",
+    "explanation": "Pakistan's first nationwide martial law was proclaimed on 7 October 1958.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000003b",
+    "code": "PMA-Q-059",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 59. The Pakistan Resolution was passed at:",
+    "options": [
+      {
+        "id": "85000000-0000-003b-0000-000000000001",
+        "label": "A",
+        "text": "Karachi"
+      },
+      {
+        "id": "85000000-0000-003b-0000-000000000002",
+        "label": "B",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-003b-0000-000000000003",
+        "label": "C",
+        "text": "Delhi"
+      },
+      {
+        "id": "85000000-0000-003b-0000-000000000004",
+        "label": "D",
+        "text": "Dhaka"
+      }
+    ],
+    "correctOptionId": "85000000-0000-003b-0000-000000000002",
+    "explanation": "The Pakistan Resolution was adopted at the Muslim League's Lahore session.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000003c",
+    "code": "PMA-Q-060",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 60. In which city was the All-India Muslim League founded?",
+    "options": [
+      {
+        "id": "85000000-0000-003c-0000-000000000001",
+        "label": "A",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-003c-0000-000000000002",
+        "label": "B",
+        "text": "Dhaka"
+      },
+      {
+        "id": "85000000-0000-003c-0000-000000000003",
+        "label": "C",
+        "text": "Karachi"
+      },
+      {
+        "id": "85000000-0000-003c-0000-000000000004",
+        "label": "D",
+        "text": "Aligarh"
+      }
+    ],
+    "correctOptionId": "85000000-0000-003c-0000-000000000002",
+    "explanation": "The All-India Muslim League was established in Dhaka in December 1906.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000003d",
+    "code": "PMA-Q-061",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 61. In which year was the All-India Muslim League founded?",
+    "options": [
+      {
+        "id": "85000000-0000-003d-0000-000000000001",
+        "label": "A",
+        "text": "1905"
+      },
+      {
+        "id": "85000000-0000-003d-0000-000000000002",
+        "label": "B",
+        "text": "1906"
+      },
+      {
+        "id": "85000000-0000-003d-0000-000000000003",
+        "label": "C",
+        "text": "1907"
+      },
+      {
+        "id": "85000000-0000-003d-0000-000000000004",
+        "label": "D",
+        "text": "1911"
+      }
+    ],
+    "correctOptionId": "85000000-0000-003d-0000-000000000002",
+    "explanation": "The All-India Muslim League was founded on 30 December 1906.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000003e",
+    "code": "PMA-Q-062",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 62. The Simla Deputation took place in:",
+    "options": [
+      {
+        "id": "85000000-0000-003e-0000-000000000001",
+        "label": "A",
+        "text": "1905"
+      },
+      {
+        "id": "85000000-0000-003e-0000-000000000002",
+        "label": "B",
+        "text": "1906"
+      },
+      {
+        "id": "85000000-0000-003e-0000-000000000003",
+        "label": "C",
+        "text": "1909"
+      },
+      {
+        "id": "85000000-0000-003e-0000-000000000004",
+        "label": "D",
+        "text": "1911"
+      }
+    ],
+    "correctOptionId": "85000000-0000-003e-0000-000000000002",
+    "explanation": "The Simla Deputation met Viceroy Minto in October 1906 to present Muslim political demands.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000003f",
+    "code": "PMA-Q-063",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 63. The partition of Bengal took place in:",
+    "options": [
+      {
+        "id": "85000000-0000-003f-0000-000000000001",
+        "label": "A",
+        "text": "1905"
+      },
+      {
+        "id": "85000000-0000-003f-0000-000000000002",
+        "label": "B",
+        "text": "1906"
+      },
+      {
+        "id": "85000000-0000-003f-0000-000000000003",
+        "label": "C",
+        "text": "1911"
+      },
+      {
+        "id": "85000000-0000-003f-0000-000000000004",
+        "label": "D",
+        "text": "1916"
+      }
+    ],
+    "correctOptionId": "85000000-0000-003f-0000-000000000001",
+    "explanation": "The British partition of Bengal took effect in 1905.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000040",
+    "code": "PMA-Q-064",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 64. The Khilafat Movement started mainly after:",
+    "options": [
+      {
+        "id": "85000000-0000-0040-0000-000000000001",
+        "label": "A",
+        "text": "World War I"
+      },
+      {
+        "id": "85000000-0000-0040-0000-000000000002",
+        "label": "B",
+        "text": "World War II"
+      },
+      {
+        "id": "85000000-0000-0040-0000-000000000003",
+        "label": "C",
+        "text": "Partition of Bengal"
+      },
+      {
+        "id": "85000000-0000-0040-0000-000000000004",
+        "label": "D",
+        "text": "Simon Commission"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0040-0000-000000000001",
+    "explanation": "The Khilafat Movement arose after World War I over the future of the Ottoman caliphate.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000041",
+    "code": "PMA-Q-065",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 65. The Nehru Report was presented in:",
+    "options": [
+      {
+        "id": "85000000-0000-0041-0000-000000000001",
+        "label": "A",
+        "text": "1927"
+      },
+      {
+        "id": "85000000-0000-0041-0000-000000000002",
+        "label": "B",
+        "text": "1928"
+      },
+      {
+        "id": "85000000-0000-0041-0000-000000000003",
+        "label": "C",
+        "text": "1929"
+      },
+      {
+        "id": "85000000-0000-0041-0000-000000000004",
+        "label": "D",
+        "text": "1930"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0041-0000-000000000002",
+    "explanation": "The Nehru Report proposed a constitutional framework for India in 1928.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000042",
+    "code": "PMA-Q-066",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 66. The Allama Iqbal Allahabad Address was delivered in:",
+    "options": [
+      {
+        "id": "85000000-0000-0042-0000-000000000001",
+        "label": "A",
+        "text": "1928"
+      },
+      {
+        "id": "85000000-0000-0042-0000-000000000002",
+        "label": "B",
+        "text": "1930"
+      },
+      {
+        "id": "85000000-0000-0042-0000-000000000003",
+        "label": "C",
+        "text": "1932"
+      },
+      {
+        "id": "85000000-0000-0042-0000-000000000004",
+        "label": "D",
+        "text": "1935"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0042-0000-000000000002",
+    "explanation": "Iqbal delivered his presidential address at Allahabad in December 1930.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000043",
+    "code": "PMA-Q-067",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 67. The name \"Pakistan\" was proposed by:",
+    "options": [
+      {
+        "id": "85000000-0000-0043-0000-000000000001",
+        "label": "A",
+        "text": "Allama Iqbal"
+      },
+      {
+        "id": "85000000-0000-0043-0000-000000000002",
+        "label": "B",
+        "text": "Chaudhry Rahmat Ali"
+      },
+      {
+        "id": "85000000-0000-0043-0000-000000000003",
+        "label": "C",
+        "text": "Sir Syed Ahmad Khan"
+      },
+      {
+        "id": "85000000-0000-0043-0000-000000000004",
+        "label": "D",
+        "text": "Liaquat Ali Khan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0043-0000-000000000002",
+    "explanation": "Chaudhry Rahmat Ali promoted the name Pakistan in his 1933 pamphlet Now or Never.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000044",
+    "code": "PMA-Q-068",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 68. The headquarters of the United Nations is in:",
+    "options": [
+      {
+        "id": "85000000-0000-0044-0000-000000000001",
+        "label": "A",
+        "text": "Geneva"
+      },
+      {
+        "id": "85000000-0000-0044-0000-000000000002",
+        "label": "B",
+        "text": "Paris"
+      },
+      {
+        "id": "85000000-0000-0044-0000-000000000003",
+        "label": "C",
+        "text": "New York"
+      },
+      {
+        "id": "85000000-0000-0044-0000-000000000004",
+        "label": "D",
+        "text": "London"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0044-0000-000000000003",
+    "explanation": "The United Nations' principal headquarters is in New York City.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000045",
+    "code": "PMA-Q-069",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 69. The headquarters of the International Court of Justice is in:",
+    "options": [
+      {
+        "id": "85000000-0000-0045-0000-000000000001",
+        "label": "A",
+        "text": "Geneva"
+      },
+      {
+        "id": "85000000-0000-0045-0000-000000000002",
+        "label": "B",
+        "text": "The Hague"
+      },
+      {
+        "id": "85000000-0000-0045-0000-000000000003",
+        "label": "C",
+        "text": "New York"
+      },
+      {
+        "id": "85000000-0000-0045-0000-000000000004",
+        "label": "D",
+        "text": "Brussels"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0045-0000-000000000002",
+    "explanation": "The International Court of Justice sits at the Peace Palace in The Hague.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000046",
+    "code": "PMA-Q-070",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 70. NATO was established in:",
+    "options": [
+      {
+        "id": "85000000-0000-0046-0000-000000000001",
+        "label": "A",
+        "text": "1945"
+      },
+      {
+        "id": "85000000-0000-0046-0000-000000000002",
+        "label": "B",
+        "text": "1947"
+      },
+      {
+        "id": "85000000-0000-0046-0000-000000000003",
+        "label": "C",
+        "text": "1949"
+      },
+      {
+        "id": "85000000-0000-0046-0000-000000000004",
+        "label": "D",
+        "text": "1955"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0046-0000-000000000003",
+    "explanation": "The North Atlantic Treaty was signed in 1949, establishing NATO.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000047",
+    "code": "PMA-Q-071",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 71. The headquarters of NATO is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-0047-0000-000000000001",
+        "label": "A",
+        "text": "London"
+      },
+      {
+        "id": "85000000-0000-0047-0000-000000000002",
+        "label": "B",
+        "text": "Brussels"
+      },
+      {
+        "id": "85000000-0000-0047-0000-000000000003",
+        "label": "C",
+        "text": "Paris"
+      },
+      {
+        "id": "85000000-0000-0047-0000-000000000004",
+        "label": "D",
+        "text": "Berlin"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0047-0000-000000000002",
+    "explanation": "NATO's political headquarters is in Brussels, Belgium.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000048",
+    "code": "PMA-Q-072",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 72. SAARC was established in:",
+    "options": [
+      {
+        "id": "85000000-0000-0048-0000-000000000001",
+        "label": "A",
+        "text": "1980"
+      },
+      {
+        "id": "85000000-0000-0048-0000-000000000002",
+        "label": "B",
+        "text": "1985"
+      },
+      {
+        "id": "85000000-0000-0048-0000-000000000003",
+        "label": "C",
+        "text": "1990"
+      },
+      {
+        "id": "85000000-0000-0048-0000-000000000004",
+        "label": "D",
+        "text": "1995"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0048-0000-000000000002",
+    "explanation": "SAARC was established at its first summit in Dhaka in December 1985.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000049",
+    "code": "PMA-Q-073",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 73. The headquarters of SAARC is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-0049-0000-000000000001",
+        "label": "A",
+        "text": "Islamabad"
+      },
+      {
+        "id": "85000000-0000-0049-0000-000000000002",
+        "label": "B",
+        "text": "New Delhi"
+      },
+      {
+        "id": "85000000-0000-0049-0000-000000000003",
+        "label": "C",
+        "text": "Kathmandu"
+      },
+      {
+        "id": "85000000-0000-0049-0000-000000000004",
+        "label": "D",
+        "text": "Dhaka"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0049-0000-000000000003",
+    "explanation": "The SAARC Secretariat is located in Kathmandu, Nepal.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000004a",
+    "code": "PMA-Q-074",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 74. The headquarters of the Organisation of Islamic Cooperation is in:",
+    "options": [
+      {
+        "id": "85000000-0000-004a-0000-000000000001",
+        "label": "A",
+        "text": "Riyadh"
+      },
+      {
+        "id": "85000000-0000-004a-0000-000000000002",
+        "label": "B",
+        "text": "Jeddah"
+      },
+      {
+        "id": "85000000-0000-004a-0000-000000000003",
+        "label": "C",
+        "text": "Makkah"
+      },
+      {
+        "id": "85000000-0000-004a-0000-000000000004",
+        "label": "D",
+        "text": "Cairo"
+      }
+    ],
+    "correctOptionId": "85000000-0000-004a-0000-000000000002",
+    "explanation": "The OIC's General Secretariat is headquartered in Jeddah, Saudi Arabia.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000004b",
+    "code": "PMA-Q-075",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 75. The headquarters of the World Health Organization is in:",
+    "options": [
+      {
+        "id": "85000000-0000-004b-0000-000000000001",
+        "label": "A",
+        "text": "Geneva"
+      },
+      {
+        "id": "85000000-0000-004b-0000-000000000002",
+        "label": "B",
+        "text": "New York"
+      },
+      {
+        "id": "85000000-0000-004b-0000-000000000003",
+        "label": "C",
+        "text": "Paris"
+      },
+      {
+        "id": "85000000-0000-004b-0000-000000000004",
+        "label": "D",
+        "text": "Rome"
+      }
+    ],
+    "correctOptionId": "85000000-0000-004b-0000-000000000001",
+    "explanation": "The World Health Organization has its headquarters in Geneva, Switzerland.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000004c",
+    "code": "PMA-Q-076",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 76. The headquarters of UNESCO is in:",
+    "options": [
+      {
+        "id": "85000000-0000-004c-0000-000000000001",
+        "label": "A",
+        "text": "Geneva"
+      },
+      {
+        "id": "85000000-0000-004c-0000-000000000002",
+        "label": "B",
+        "text": "Paris"
+      },
+      {
+        "id": "85000000-0000-004c-0000-000000000003",
+        "label": "C",
+        "text": "London"
+      },
+      {
+        "id": "85000000-0000-004c-0000-000000000004",
+        "label": "D",
+        "text": "Rome"
+      }
+    ],
+    "correctOptionId": "85000000-0000-004c-0000-000000000002",
+    "explanation": "UNESCO's headquarters is located in Paris, France.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000004d",
+    "code": "PMA-Q-077",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 77. The capital of China is:",
+    "options": [
+      {
+        "id": "85000000-0000-004d-0000-000000000001",
+        "label": "A",
+        "text": "Shanghai"
+      },
+      {
+        "id": "85000000-0000-004d-0000-000000000002",
+        "label": "B",
+        "text": "Beijing"
+      },
+      {
+        "id": "85000000-0000-004d-0000-000000000003",
+        "label": "C",
+        "text": "Guangzhou"
+      },
+      {
+        "id": "85000000-0000-004d-0000-000000000004",
+        "label": "D",
+        "text": "Hong Kong"
+      }
+    ],
+    "correctOptionId": "85000000-0000-004d-0000-000000000002",
+    "explanation": "Beijing is China's national capital and central seat of government.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000004e",
+    "code": "PMA-Q-078",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 78. The capital of Japan is:",
+    "options": [
+      {
+        "id": "85000000-0000-004e-0000-000000000001",
+        "label": "A",
+        "text": "Kyoto"
+      },
+      {
+        "id": "85000000-0000-004e-0000-000000000002",
+        "label": "B",
+        "text": "Osaka"
+      },
+      {
+        "id": "85000000-0000-004e-0000-000000000003",
+        "label": "C",
+        "text": "Tokyo"
+      },
+      {
+        "id": "85000000-0000-004e-0000-000000000004",
+        "label": "D",
+        "text": "Hiroshima"
+      }
+    ],
+    "correctOptionId": "85000000-0000-004e-0000-000000000003",
+    "explanation": "Tokyo is Japan's capital and principal national administrative centre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000004f",
+    "code": "PMA-Q-079",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 79. The capital of Australia is:",
+    "options": [
+      {
+        "id": "85000000-0000-004f-0000-000000000001",
+        "label": "A",
+        "text": "Sydney"
+      },
+      {
+        "id": "85000000-0000-004f-0000-000000000002",
+        "label": "B",
+        "text": "Melbourne"
+      },
+      {
+        "id": "85000000-0000-004f-0000-000000000003",
+        "label": "C",
+        "text": "Canberra"
+      },
+      {
+        "id": "85000000-0000-004f-0000-000000000004",
+        "label": "D",
+        "text": "Perth"
+      }
+    ],
+    "correctOptionId": "85000000-0000-004f-0000-000000000003",
+    "explanation": "Canberra is Australia's federal capital rather than Sydney or Melbourne.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000050",
+    "code": "PMA-Q-080",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 80. The capital of Canada is:",
+    "options": [
+      {
+        "id": "85000000-0000-0050-0000-000000000001",
+        "label": "A",
+        "text": "Toronto"
+      },
+      {
+        "id": "85000000-0000-0050-0000-000000000002",
+        "label": "B",
+        "text": "Vancouver"
+      },
+      {
+        "id": "85000000-0000-0050-0000-000000000003",
+        "label": "C",
+        "text": "Montreal"
+      },
+      {
+        "id": "85000000-0000-0050-0000-000000000004",
+        "label": "D",
+        "text": "Ottawa"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0050-0000-000000000004",
+    "explanation": "Ottawa is Canada's federal capital.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000051",
+    "code": "PMA-Q-081",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 81. The capital of Turkey is:",
+    "options": [
+      {
+        "id": "85000000-0000-0051-0000-000000000001",
+        "label": "A",
+        "text": "Istanbul"
+      },
+      {
+        "id": "85000000-0000-0051-0000-000000000002",
+        "label": "B",
+        "text": "Ankara"
+      },
+      {
+        "id": "85000000-0000-0051-0000-000000000003",
+        "label": "C",
+        "text": "Izmir"
+      },
+      {
+        "id": "85000000-0000-0051-0000-000000000004",
+        "label": "D",
+        "text": "Bursa"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0051-0000-000000000002",
+    "explanation": "Ankara became the capital of the Republic of Turkey in 1923.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000052",
+    "code": "PMA-Q-082",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 82. The capital of Saudi Arabia is:",
+    "options": [
+      {
+        "id": "85000000-0000-0052-0000-000000000001",
+        "label": "A",
+        "text": "Jeddah"
+      },
+      {
+        "id": "85000000-0000-0052-0000-000000000002",
+        "label": "B",
+        "text": "Riyadh"
+      },
+      {
+        "id": "85000000-0000-0052-0000-000000000003",
+        "label": "C",
+        "text": "Makkah"
+      },
+      {
+        "id": "85000000-0000-0052-0000-000000000004",
+        "label": "D",
+        "text": "Madinah"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0052-0000-000000000002",
+    "explanation": "Riyadh is Saudi Arabia's capital and central seat of government.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000053",
+    "code": "PMA-Q-083",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 83. The currency of Japan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0053-0000-000000000001",
+        "label": "A",
+        "text": "Yuan"
+      },
+      {
+        "id": "85000000-0000-0053-0000-000000000002",
+        "label": "B",
+        "text": "Won"
+      },
+      {
+        "id": "85000000-0000-0053-0000-000000000003",
+        "label": "C",
+        "text": "Yen"
+      },
+      {
+        "id": "85000000-0000-0053-0000-000000000004",
+        "label": "D",
+        "text": "Ringgit"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0053-0000-000000000003",
+    "explanation": "Japan's national currency is the yen.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000054",
+    "code": "PMA-Q-084",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 84. The currency of China is:",
+    "options": [
+      {
+        "id": "85000000-0000-0054-0000-000000000001",
+        "label": "A",
+        "text": "Yen"
+      },
+      {
+        "id": "85000000-0000-0054-0000-000000000002",
+        "label": "B",
+        "text": "Yuan"
+      },
+      {
+        "id": "85000000-0000-0054-0000-000000000003",
+        "label": "C",
+        "text": "Won"
+      },
+      {
+        "id": "85000000-0000-0054-0000-000000000004",
+        "label": "D",
+        "text": "Baht"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0054-0000-000000000002",
+    "explanation": "China's currency is the renminbi, whose basic unit is the yuan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000055",
+    "code": "PMA-Q-085",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 85. The currency of the United Kingdom is:",
+    "options": [
+      {
+        "id": "85000000-0000-0055-0000-000000000001",
+        "label": "A",
+        "text": "Euro"
+      },
+      {
+        "id": "85000000-0000-0055-0000-000000000002",
+        "label": "B",
+        "text": "Dollar"
+      },
+      {
+        "id": "85000000-0000-0055-0000-000000000003",
+        "label": "C",
+        "text": "Pound Sterling"
+      },
+      {
+        "id": "85000000-0000-0055-0000-000000000004",
+        "label": "D",
+        "text": "Franc"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0055-0000-000000000003",
+    "explanation": "The United Kingdom's national currency is the pound sterling.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000056",
+    "code": "PMA-Q-086",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 86. The currency of Afghanistan is:",
+    "options": [
+      {
+        "id": "85000000-0000-0056-0000-000000000001",
+        "label": "A",
+        "text": "Taka"
+      },
+      {
+        "id": "85000000-0000-0056-0000-000000000002",
+        "label": "B",
+        "text": "Afghani"
+      },
+      {
+        "id": "85000000-0000-0056-0000-000000000003",
+        "label": "C",
+        "text": "Dinar"
+      },
+      {
+        "id": "85000000-0000-0056-0000-000000000004",
+        "label": "D",
+        "text": "Riyal"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0056-0000-000000000002",
+    "explanation": "Afghanistan uses the afghani as its national currency.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000057",
+    "code": "PMA-Q-087",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 87. The largest continent in the world is:",
+    "options": [
+      {
+        "id": "85000000-0000-0057-0000-000000000001",
+        "label": "A",
+        "text": "Africa"
+      },
+      {
+        "id": "85000000-0000-0057-0000-000000000002",
+        "label": "B",
+        "text": "Europe"
+      },
+      {
+        "id": "85000000-0000-0057-0000-000000000003",
+        "label": "C",
+        "text": "Asia"
+      },
+      {
+        "id": "85000000-0000-0057-0000-000000000004",
+        "label": "D",
+        "text": "North America"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0057-0000-000000000003",
+    "explanation": "Asia has the greatest land area of the seven commonly recognized continents.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000058",
+    "code": "PMA-Q-088",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 88. The smallest continent is:",
+    "options": [
+      {
+        "id": "85000000-0000-0058-0000-000000000001",
+        "label": "A",
+        "text": "Europe"
+      },
+      {
+        "id": "85000000-0000-0058-0000-000000000002",
+        "label": "B",
+        "text": "Australia"
+      },
+      {
+        "id": "85000000-0000-0058-0000-000000000003",
+        "label": "C",
+        "text": "South America"
+      },
+      {
+        "id": "85000000-0000-0058-0000-000000000004",
+        "label": "D",
+        "text": "Antarctica"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0058-0000-000000000002",
+    "explanation": "Australia is the smallest continent in the conventional seven-continent model.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000059",
+    "code": "PMA-Q-089",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 89. The largest ocean in the world is:",
+    "options": [
+      {
+        "id": "85000000-0000-0059-0000-000000000001",
+        "label": "A",
+        "text": "Atlantic Ocean"
+      },
+      {
+        "id": "85000000-0000-0059-0000-000000000002",
+        "label": "B",
+        "text": "Indian Ocean"
+      },
+      {
+        "id": "85000000-0000-0059-0000-000000000003",
+        "label": "C",
+        "text": "Pacific Ocean"
+      },
+      {
+        "id": "85000000-0000-0059-0000-000000000004",
+        "label": "D",
+        "text": "Arctic Ocean"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0059-0000-000000000003",
+    "explanation": "The Pacific covers a greater surface area than any other ocean.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000005a",
+    "code": "PMA-Q-090",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 90. The deepest ocean trench in the world is:",
+    "options": [
+      {
+        "id": "85000000-0000-005a-0000-000000000001",
+        "label": "A",
+        "text": "Java Trench"
+      },
+      {
+        "id": "85000000-0000-005a-0000-000000000002",
+        "label": "B",
+        "text": "Mariana Trench"
+      },
+      {
+        "id": "85000000-0000-005a-0000-000000000003",
+        "label": "C",
+        "text": "Tonga Trench"
+      },
+      {
+        "id": "85000000-0000-005a-0000-000000000004",
+        "label": "D",
+        "text": "Peru-Chile Trench"
+      }
+    ],
+    "correctOptionId": "85000000-0000-005a-0000-000000000002",
+    "explanation": "The Mariana Trench contains Challenger Deep, the deepest known ocean location.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000005b",
+    "code": "PMA-Q-091",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 91. The largest hot desert in the world is:",
+    "options": [
+      {
+        "id": "85000000-0000-005b-0000-000000000001",
+        "label": "A",
+        "text": "Gobi"
+      },
+      {
+        "id": "85000000-0000-005b-0000-000000000002",
+        "label": "B",
+        "text": "Sahara"
+      },
+      {
+        "id": "85000000-0000-005b-0000-000000000003",
+        "label": "C",
+        "text": "Thar"
+      },
+      {
+        "id": "85000000-0000-005b-0000-000000000004",
+        "label": "D",
+        "text": "Arabian Desert"
+      }
+    ],
+    "correctOptionId": "85000000-0000-005b-0000-000000000002",
+    "explanation": "The Sahara is the world's largest hot desert; Antarctica is larger when cold deserts are included.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000005c",
+    "code": "PMA-Q-092",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 92. The highest mountain in the world is:",
+    "options": [
+      {
+        "id": "85000000-0000-005c-0000-000000000001",
+        "label": "A",
+        "text": "K2"
+      },
+      {
+        "id": "85000000-0000-005c-0000-000000000002",
+        "label": "B",
+        "text": "Mount Everest"
+      },
+      {
+        "id": "85000000-0000-005c-0000-000000000003",
+        "label": "C",
+        "text": "Nanga Parbat"
+      },
+      {
+        "id": "85000000-0000-005c-0000-000000000004",
+        "label": "D",
+        "text": "Makalu"
+      }
+    ],
+    "correctOptionId": "85000000-0000-005c-0000-000000000002",
+    "explanation": "Mount Everest has the highest summit elevation above sea level.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000005d",
+    "code": "PMA-Q-093",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 93. The longest river in South America is:",
+    "options": [
+      {
+        "id": "85000000-0000-005d-0000-000000000001",
+        "label": "A",
+        "text": "Nile"
+      },
+      {
+        "id": "85000000-0000-005d-0000-000000000002",
+        "label": "B",
+        "text": "Amazon"
+      },
+      {
+        "id": "85000000-0000-005d-0000-000000000003",
+        "label": "C",
+        "text": "Yangtze"
+      },
+      {
+        "id": "85000000-0000-005d-0000-000000000004",
+        "label": "D",
+        "text": "Mississippi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-005d-0000-000000000002",
+    "explanation": "The Amazon is South America's longest river and has the world's greatest river discharge.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000005e",
+    "code": "PMA-Q-094",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 94. The largest country in the world by area is:",
+    "options": [
+      {
+        "id": "85000000-0000-005e-0000-000000000001",
+        "label": "A",
+        "text": "Canada"
+      },
+      {
+        "id": "85000000-0000-005e-0000-000000000002",
+        "label": "B",
+        "text": "China"
+      },
+      {
+        "id": "85000000-0000-005e-0000-000000000003",
+        "label": "C",
+        "text": "Russia"
+      },
+      {
+        "id": "85000000-0000-005e-0000-000000000004",
+        "label": "D",
+        "text": "USA"
+      }
+    ],
+    "correctOptionId": "85000000-0000-005e-0000-000000000003",
+    "explanation": "Russia has the largest total national territory by area.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000005f",
+    "code": "PMA-Q-095",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 95. The smallest country in the world is:",
+    "options": [
+      {
+        "id": "85000000-0000-005f-0000-000000000001",
+        "label": "A",
+        "text": "Monaco"
+      },
+      {
+        "id": "85000000-0000-005f-0000-000000000002",
+        "label": "B",
+        "text": "Vatican City"
+      },
+      {
+        "id": "85000000-0000-005f-0000-000000000003",
+        "label": "C",
+        "text": "San Marino"
+      },
+      {
+        "id": "85000000-0000-005f-0000-000000000004",
+        "label": "D",
+        "text": "Maldives"
+      }
+    ],
+    "correctOptionId": "85000000-0000-005f-0000-000000000002",
+    "explanation": "Vatican City is the world's smallest sovereign state by area.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000060",
+    "code": "PMA-Q-096",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 96. The Equator passes through how many continents?",
+    "options": [
+      {
+        "id": "85000000-0000-0060-0000-000000000001",
+        "label": "A",
+        "text": "2"
+      },
+      {
+        "id": "85000000-0000-0060-0000-000000000002",
+        "label": "B",
+        "text": "3"
+      },
+      {
+        "id": "85000000-0000-0060-0000-000000000003",
+        "label": "C",
+        "text": "4"
+      },
+      {
+        "id": "85000000-0000-0060-0000-000000000004",
+        "label": "D",
+        "text": "5"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0060-0000-000000000002",
+    "explanation": "The Equator crosses South America, Africa and Asia, counting Indonesia as part of Asia.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000061",
+    "code": "PMA-Q-097",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 97. The planet known as the Red Planet is:",
+    "options": [
+      {
+        "id": "85000000-0000-0061-0000-000000000001",
+        "label": "A",
+        "text": "Venus"
+      },
+      {
+        "id": "85000000-0000-0061-0000-000000000002",
+        "label": "B",
+        "text": "Mars"
+      },
+      {
+        "id": "85000000-0000-0061-0000-000000000003",
+        "label": "C",
+        "text": "Jupiter"
+      },
+      {
+        "id": "85000000-0000-0061-0000-000000000004",
+        "label": "D",
+        "text": "Mercury"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0061-0000-000000000002",
+    "explanation": "Iron oxides on Mars give its surface a reddish appearance.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000062",
+    "code": "PMA-Q-098",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 98. The largest planet in the Solar System is:",
+    "options": [
+      {
+        "id": "85000000-0000-0062-0000-000000000001",
+        "label": "A",
+        "text": "Saturn"
+      },
+      {
+        "id": "85000000-0000-0062-0000-000000000002",
+        "label": "B",
+        "text": "Earth"
+      },
+      {
+        "id": "85000000-0000-0062-0000-000000000003",
+        "label": "C",
+        "text": "Jupiter"
+      },
+      {
+        "id": "85000000-0000-0062-0000-000000000004",
+        "label": "D",
+        "text": "Neptune"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0062-0000-000000000003",
+    "explanation": "Jupiter is the Solar System's largest planet by diameter and mass.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000063",
+    "code": "PMA-Q-099",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 99. The planet closest to the Sun is:",
+    "options": [
+      {
+        "id": "85000000-0000-0063-0000-000000000001",
+        "label": "A",
+        "text": "Venus"
+      },
+      {
+        "id": "85000000-0000-0063-0000-000000000002",
+        "label": "B",
+        "text": "Mercury"
+      },
+      {
+        "id": "85000000-0000-0063-0000-000000000003",
+        "label": "C",
+        "text": "Earth"
+      },
+      {
+        "id": "85000000-0000-0063-0000-000000000004",
+        "label": "D",
+        "text": "Mars"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0063-0000-000000000002",
+    "explanation": "Mercury has the closest orbit to the Sun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000064",
+    "code": "PMA-Q-100",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 100. The natural satellite of Earth is:",
+    "options": [
+      {
+        "id": "85000000-0000-0064-0000-000000000001",
+        "label": "A",
+        "text": "Mars"
+      },
+      {
+        "id": "85000000-0000-0064-0000-000000000002",
+        "label": "B",
+        "text": "Moon"
+      },
+      {
+        "id": "85000000-0000-0064-0000-000000000003",
+        "label": "C",
+        "text": "Venus"
+      },
+      {
+        "id": "85000000-0000-0064-0000-000000000004",
+        "label": "D",
+        "text": "Titan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0064-0000-000000000002",
+    "explanation": "The Moon is Earth's natural satellite.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000065",
+    "code": "PMA-Q-101",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 101. The force that keeps planets in orbit around the Sun is:",
+    "options": [
+      {
+        "id": "85000000-0000-0065-0000-000000000001",
+        "label": "A",
+        "text": "Friction"
+      },
+      {
+        "id": "85000000-0000-0065-0000-000000000002",
+        "label": "B",
+        "text": "Magnetism"
+      },
+      {
+        "id": "85000000-0000-0065-0000-000000000003",
+        "label": "C",
+        "text": "Gravity"
+      },
+      {
+        "id": "85000000-0000-0065-0000-000000000004",
+        "label": "D",
+        "text": "Electricity"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0065-0000-000000000003",
+    "explanation": "The Sun's gravitational attraction provides the force that bends planetary paths into orbits.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000066",
+    "code": "PMA-Q-102",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 102. The chemical symbol for gold is:",
+    "options": [
+      {
+        "id": "85000000-0000-0066-0000-000000000001",
+        "label": "A",
+        "text": "Ag"
+      },
+      {
+        "id": "85000000-0000-0066-0000-000000000002",
+        "label": "B",
+        "text": "Au"
+      },
+      {
+        "id": "85000000-0000-0066-0000-000000000003",
+        "label": "C",
+        "text": "Gd"
+      },
+      {
+        "id": "85000000-0000-0066-0000-000000000004",
+        "label": "D",
+        "text": "Go"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0066-0000-000000000002",
+    "explanation": "Gold's chemical symbol Au comes from the Latin name aurum.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000067",
+    "code": "PMA-Q-103",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 103. The chemical symbol for silver is:",
+    "options": [
+      {
+        "id": "85000000-0000-0067-0000-000000000001",
+        "label": "A",
+        "text": "Si"
+      },
+      {
+        "id": "85000000-0000-0067-0000-000000000002",
+        "label": "B",
+        "text": "Ag"
+      },
+      {
+        "id": "85000000-0000-0067-0000-000000000003",
+        "label": "C",
+        "text": "Au"
+      },
+      {
+        "id": "85000000-0000-0067-0000-000000000004",
+        "label": "D",
+        "text": "S"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0067-0000-000000000002",
+    "explanation": "Silver's chemical symbol Ag comes from the Latin name argentum.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000068",
+    "code": "PMA-Q-104",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 104. The hardest natural substance is:",
+    "options": [
+      {
+        "id": "85000000-0000-0068-0000-000000000001",
+        "label": "A",
+        "text": "Iron"
+      },
+      {
+        "id": "85000000-0000-0068-0000-000000000002",
+        "label": "B",
+        "text": "Diamond"
+      },
+      {
+        "id": "85000000-0000-0068-0000-000000000003",
+        "label": "C",
+        "text": "Quartz"
+      },
+      {
+        "id": "85000000-0000-0068-0000-000000000004",
+        "label": "D",
+        "text": "Graphite"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0068-0000-000000000002",
+    "explanation": "Diamond is the standard hardest natural mineral on the Mohs scale.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000069",
+    "code": "PMA-Q-105",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 105. The gas most abundant in Earth's atmosphere is:",
+    "options": [
+      {
+        "id": "85000000-0000-0069-0000-000000000001",
+        "label": "A",
+        "text": "Oxygen"
+      },
+      {
+        "id": "85000000-0000-0069-0000-000000000002",
+        "label": "B",
+        "text": "Nitrogen"
+      },
+      {
+        "id": "85000000-0000-0069-0000-000000000003",
+        "label": "C",
+        "text": "Carbon dioxide"
+      },
+      {
+        "id": "85000000-0000-0069-0000-000000000004",
+        "label": "D",
+        "text": "Hydrogen"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0069-0000-000000000002",
+    "explanation": "Nitrogen constitutes about 78% of Earth's dry atmosphere by volume.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000006a",
+    "code": "PMA-Q-106",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 106. The gas essential for human respiration is:",
+    "options": [
+      {
+        "id": "85000000-0000-006a-0000-000000000001",
+        "label": "A",
+        "text": "Nitrogen"
+      },
+      {
+        "id": "85000000-0000-006a-0000-000000000002",
+        "label": "B",
+        "text": "Oxygen"
+      },
+      {
+        "id": "85000000-0000-006a-0000-000000000003",
+        "label": "C",
+        "text": "Carbon dioxide"
+      },
+      {
+        "id": "85000000-0000-006a-0000-000000000004",
+        "label": "D",
+        "text": "Hydrogen"
+      }
+    ],
+    "correctOptionId": "85000000-0000-006a-0000-000000000002",
+    "explanation": "Human aerobic respiration uses oxygen to release energy from nutrients.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000006b",
+    "code": "PMA-Q-107",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 107. The normal boiling point of water at sea level is:",
+    "options": [
+      {
+        "id": "85000000-0000-006b-0000-000000000001",
+        "label": "A",
+        "text": "0 degrees C"
+      },
+      {
+        "id": "85000000-0000-006b-0000-000000000002",
+        "label": "B",
+        "text": "50 degrees C"
+      },
+      {
+        "id": "85000000-0000-006b-0000-000000000003",
+        "label": "C",
+        "text": "100 degrees C"
+      },
+      {
+        "id": "85000000-0000-006b-0000-000000000004",
+        "label": "D",
+        "text": "212 degrees C"
+      }
+    ],
+    "correctOptionId": "85000000-0000-006b-0000-000000000003",
+    "explanation": "Pure water boils at approximately 100 degrees C under standard atmospheric pressure.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000006c",
+    "code": "PMA-Q-108",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 108. The SI unit of force is:",
+    "options": [
+      {
+        "id": "85000000-0000-006c-0000-000000000001",
+        "label": "A",
+        "text": "Joule"
+      },
+      {
+        "id": "85000000-0000-006c-0000-000000000002",
+        "label": "B",
+        "text": "Watt"
+      },
+      {
+        "id": "85000000-0000-006c-0000-000000000003",
+        "label": "C",
+        "text": "Newton"
+      },
+      {
+        "id": "85000000-0000-006c-0000-000000000004",
+        "label": "D",
+        "text": "Pascal"
+      }
+    ],
+    "correctOptionId": "85000000-0000-006c-0000-000000000003",
+    "explanation": "Force is measured in newtons, equivalent to kg*m/s^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000006d",
+    "code": "PMA-Q-109",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 109. The SI unit of power is:",
+    "options": [
+      {
+        "id": "85000000-0000-006d-0000-000000000001",
+        "label": "A",
+        "text": "Joule"
+      },
+      {
+        "id": "85000000-0000-006d-0000-000000000002",
+        "label": "B",
+        "text": "Watt"
+      },
+      {
+        "id": "85000000-0000-006d-0000-000000000003",
+        "label": "C",
+        "text": "Newton"
+      },
+      {
+        "id": "85000000-0000-006d-0000-000000000004",
+        "label": "D",
+        "text": "Volt"
+      }
+    ],
+    "correctOptionId": "85000000-0000-006d-0000-000000000002",
+    "explanation": "Power is measured in watts, equivalent to joules per second.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000006e",
+    "code": "PMA-Q-110",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 110. The SI unit of electric current is:",
+    "options": [
+      {
+        "id": "85000000-0000-006e-0000-000000000001",
+        "label": "A",
+        "text": "Volt"
+      },
+      {
+        "id": "85000000-0000-006e-0000-000000000002",
+        "label": "B",
+        "text": "Ohm"
+      },
+      {
+        "id": "85000000-0000-006e-0000-000000000003",
+        "label": "C",
+        "text": "Ampere"
+      },
+      {
+        "id": "85000000-0000-006e-0000-000000000004",
+        "label": "D",
+        "text": "Coulomb"
+      }
+    ],
+    "correctOptionId": "85000000-0000-006e-0000-000000000003",
+    "explanation": "The ampere is the SI base unit of electric current.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000006f",
+    "code": "PMA-Q-111",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Science",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 111. The speed of light in vacuum is approximately:",
+    "options": [
+      {
+        "id": "85000000-0000-006f-0000-000000000001",
+        "label": "A",
+        "text": "3 * 10^6 m/s"
+      },
+      {
+        "id": "85000000-0000-006f-0000-000000000002",
+        "label": "B",
+        "text": "3 * 10^7 m/s"
+      },
+      {
+        "id": "85000000-0000-006f-0000-000000000003",
+        "label": "C",
+        "text": "3 * 10^8 m/s"
+      },
+      {
+        "id": "85000000-0000-006f-0000-000000000004",
+        "label": "D",
+        "text": "3 * 10^9 m/s"
+      }
+    ],
+    "correctOptionId": "85000000-0000-006f-0000-000000000003",
+    "explanation": "Light travels in vacuum at 299,792,458 m/s, approximately 3*10^8 m/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000070",
+    "code": "PMA-Q-112",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 112. Who discovered penicillin?",
+    "options": [
+      {
+        "id": "85000000-0000-0070-0000-000000000001",
+        "label": "A",
+        "text": "Louis Pasteur"
+      },
+      {
+        "id": "85000000-0000-0070-0000-000000000002",
+        "label": "B",
+        "text": "Alexander Fleming"
+      },
+      {
+        "id": "85000000-0000-0070-0000-000000000003",
+        "label": "C",
+        "text": "Robert Koch"
+      },
+      {
+        "id": "85000000-0000-0070-0000-000000000004",
+        "label": "D",
+        "text": "Edward Jenner"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0070-0000-000000000002",
+    "explanation": "Alexander Fleming observed penicillin's antibacterial effect in 1928.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000071",
+    "code": "PMA-Q-113",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 113. Which scientist formulated the special and general theories of relativity?",
+    "options": [
+      {
+        "id": "85000000-0000-0071-0000-000000000001",
+        "label": "A",
+        "text": "Isaac Newton"
+      },
+      {
+        "id": "85000000-0000-0071-0000-000000000002",
+        "label": "B",
+        "text": "Albert Einstein"
+      },
+      {
+        "id": "85000000-0000-0071-0000-000000000003",
+        "label": "C",
+        "text": "Galileo"
+      },
+      {
+        "id": "85000000-0000-0071-0000-000000000004",
+        "label": "D",
+        "text": "Faraday"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0071-0000-000000000002",
+    "explanation": "Albert Einstein formulated the special and general theories of relativity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000072",
+    "code": "PMA-Q-114",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 114. Who formulated the law of universal gravitation?",
+    "options": [
+      {
+        "id": "85000000-0000-0072-0000-000000000001",
+        "label": "A",
+        "text": "Einstein"
+      },
+      {
+        "id": "85000000-0000-0072-0000-000000000002",
+        "label": "B",
+        "text": "Newton"
+      },
+      {
+        "id": "85000000-0000-0072-0000-000000000003",
+        "label": "C",
+        "text": "Galileo"
+      },
+      {
+        "id": "85000000-0000-0072-0000-000000000004",
+        "label": "D",
+        "text": "Kepler"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0072-0000-000000000002",
+    "explanation": "Isaac Newton formulated the universal law of gravitation in the seventeenth century.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000073",
+    "code": "PMA-Q-115",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 115. Which blood group is known as the universal donor for red blood cells?",
+    "options": [
+      {
+        "id": "85000000-0000-0073-0000-000000000001",
+        "label": "A",
+        "text": "AB+"
+      },
+      {
+        "id": "85000000-0000-0073-0000-000000000002",
+        "label": "B",
+        "text": "A+"
+      },
+      {
+        "id": "85000000-0000-0073-0000-000000000003",
+        "label": "C",
+        "text": "O-"
+      },
+      {
+        "id": "85000000-0000-0073-0000-000000000004",
+        "label": "D",
+        "text": "B-"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0073-0000-000000000003",
+    "explanation": "O-negative red cells lack A, B and RhD antigens, making them suitable for broad emergency red-cell donation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000074",
+    "code": "PMA-Q-116",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 116. Which blood group is commonly known as the universal recipient for red blood cells?",
+    "options": [
+      {
+        "id": "85000000-0000-0074-0000-000000000001",
+        "label": "A",
+        "text": "O-"
+      },
+      {
+        "id": "85000000-0000-0074-0000-000000000002",
+        "label": "B",
+        "text": "AB+"
+      },
+      {
+        "id": "85000000-0000-0074-0000-000000000003",
+        "label": "C",
+        "text": "A-"
+      },
+      {
+        "id": "85000000-0000-0074-0000-000000000004",
+        "label": "D",
+        "text": "B+"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0074-0000-000000000002",
+    "explanation": "AB-positive recipients can receive red cells from all ABO and RhD groups, subject to compatibility checks.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000075",
+    "code": "PMA-Q-117",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 117. Which vitamin is mainly produced in the skin in response to sunlight?",
+    "options": [
+      {
+        "id": "85000000-0000-0075-0000-000000000001",
+        "label": "A",
+        "text": "Vitamin A"
+      },
+      {
+        "id": "85000000-0000-0075-0000-000000000002",
+        "label": "B",
+        "text": "Vitamin B12"
+      },
+      {
+        "id": "85000000-0000-0075-0000-000000000003",
+        "label": "C",
+        "text": "Vitamin C"
+      },
+      {
+        "id": "85000000-0000-0075-0000-000000000004",
+        "label": "D",
+        "text": "Vitamin D"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0075-0000-000000000004",
+    "explanation": "UVB sunlight initiates vitamin D synthesis in the skin.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000076",
+    "code": "PMA-Q-118",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 118. The largest organ of the human body is:",
+    "options": [
+      {
+        "id": "85000000-0000-0076-0000-000000000001",
+        "label": "A",
+        "text": "Liver"
+      },
+      {
+        "id": "85000000-0000-0076-0000-000000000002",
+        "label": "B",
+        "text": "Brain"
+      },
+      {
+        "id": "85000000-0000-0076-0000-000000000003",
+        "label": "C",
+        "text": "Skin"
+      },
+      {
+        "id": "85000000-0000-0076-0000-000000000004",
+        "label": "D",
+        "text": "Lungs"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0076-0000-000000000003",
+    "explanation": "The skin covers the body's surface and is its largest organ.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000077",
+    "code": "PMA-Q-119",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 119. The normal human body temperature is approximately:",
+    "options": [
+      {
+        "id": "85000000-0000-0077-0000-000000000001",
+        "label": "A",
+        "text": "35 degrees C"
+      },
+      {
+        "id": "85000000-0000-0077-0000-000000000002",
+        "label": "B",
+        "text": "37 degrees C"
+      },
+      {
+        "id": "85000000-0000-0077-0000-000000000003",
+        "label": "C",
+        "text": "39 degrees C"
+      },
+      {
+        "id": "85000000-0000-0077-0000-000000000004",
+        "label": "D",
+        "text": "41 degrees C"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0077-0000-000000000002",
+    "explanation": "Typical human core body temperature is near 37 degrees C, although normal values vary.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000078",
+    "code": "PMA-Q-120",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 120. The first man to walk on the Moon was:",
+    "options": [
+      {
+        "id": "85000000-0000-0078-0000-000000000001",
+        "label": "A",
+        "text": "Yuri Gagarin"
+      },
+      {
+        "id": "85000000-0000-0078-0000-000000000002",
+        "label": "B",
+        "text": "Neil Armstrong"
+      },
+      {
+        "id": "85000000-0000-0078-0000-000000000003",
+        "label": "C",
+        "text": "Buzz Aldrin"
+      },
+      {
+        "id": "85000000-0000-0078-0000-000000000004",
+        "label": "D",
+        "text": "Michael Collins"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0078-0000-000000000002",
+    "explanation": "Neil Armstrong became the first person to step onto the Moon during Apollo 11 in 1969.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000079",
+    "code": "PMA-Q-121",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 121. The first artificial satellite launched into space was:",
+    "options": [
+      {
+        "id": "85000000-0000-0079-0000-000000000001",
+        "label": "A",
+        "text": "Apollo 11"
+      },
+      {
+        "id": "85000000-0000-0079-0000-000000000002",
+        "label": "B",
+        "text": "Sputnik 1"
+      },
+      {
+        "id": "85000000-0000-0079-0000-000000000003",
+        "label": "C",
+        "text": "Explorer 1"
+      },
+      {
+        "id": "85000000-0000-0079-0000-000000000004",
+        "label": "D",
+        "text": "Vostok 1"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0079-0000-000000000002",
+    "explanation": "The Soviet Union launched Sputnik 1 in October 1957 as the first artificial Earth satellite.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000007a",
+    "code": "PMA-Q-122",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 122. Who was the first Pakistani to win a Nobel Prize?",
+    "options": [
+      {
+        "id": "85000000-0000-007a-0000-000000000001",
+        "label": "A",
+        "text": "Abdul Qadeer Khan"
+      },
+      {
+        "id": "85000000-0000-007a-0000-000000000002",
+        "label": "B",
+        "text": "Abdus Salam"
+      },
+      {
+        "id": "85000000-0000-007a-0000-000000000003",
+        "label": "C",
+        "text": "Malala Yousafzai"
+      },
+      {
+        "id": "85000000-0000-007a-0000-000000000004",
+        "label": "D",
+        "text": "Atta-ur-Rahman"
+      }
+    ],
+    "correctOptionId": "85000000-0000-007a-0000-000000000002",
+    "explanation": "Abdus Salam shared the Nobel Prize in Physics in 1979.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000007b",
+    "code": "PMA-Q-123",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 123. Pakistan's first Nobel Prize was awarded in:",
+    "options": [
+      {
+        "id": "85000000-0000-007b-0000-000000000001",
+        "label": "A",
+        "text": "Physics"
+      },
+      {
+        "id": "85000000-0000-007b-0000-000000000002",
+        "label": "B",
+        "text": "Chemistry"
+      },
+      {
+        "id": "85000000-0000-007b-0000-000000000003",
+        "label": "C",
+        "text": "Medicine"
+      },
+      {
+        "id": "85000000-0000-007b-0000-000000000004",
+        "label": "D",
+        "text": "Literature"
+      }
+    ],
+    "correctOptionId": "85000000-0000-007b-0000-000000000001",
+    "explanation": "Pakistan's first Nobel laureate, Abdus Salam, received the prize for Physics.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000007c",
+    "code": "PMA-Q-124",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 124. Which Pakistani won the Nobel Peace Prize in 2014?",
+    "options": [
+      {
+        "id": "85000000-0000-007c-0000-000000000001",
+        "label": "A",
+        "text": "Benazir Bhutto"
+      },
+      {
+        "id": "85000000-0000-007c-0000-000000000002",
+        "label": "B",
+        "text": "Malala Yousafzai"
+      },
+      {
+        "id": "85000000-0000-007c-0000-000000000003",
+        "label": "C",
+        "text": "Sharmeen Obaid-Chinoy"
+      },
+      {
+        "id": "85000000-0000-007c-0000-000000000004",
+        "label": "D",
+        "text": "Asma Jahangir"
+      }
+    ],
+    "correctOptionId": "85000000-0000-007c-0000-000000000002",
+    "explanation": "Malala Yousafzai shared the 2014 Nobel Peace Prize for advocacy of children's education.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000007d",
+    "code": "PMA-Q-125",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 125. Which country won the first Cricket World Cup in 1975?",
+    "options": [
+      {
+        "id": "85000000-0000-007d-0000-000000000001",
+        "label": "A",
+        "text": "Australia"
+      },
+      {
+        "id": "85000000-0000-007d-0000-000000000002",
+        "label": "B",
+        "text": "England"
+      },
+      {
+        "id": "85000000-0000-007d-0000-000000000003",
+        "label": "C",
+        "text": "West Indies"
+      },
+      {
+        "id": "85000000-0000-007d-0000-000000000004",
+        "label": "D",
+        "text": "India"
+      }
+    ],
+    "correctOptionId": "85000000-0000-007d-0000-000000000003",
+    "explanation": "The West Indies defeated Australia in the inaugural men's Cricket World Cup final in 1975.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000007e",
+    "code": "PMA-Q-126",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 126. Pakistan won its first Cricket World Cup in:",
+    "options": [
+      {
+        "id": "85000000-0000-007e-0000-000000000001",
+        "label": "A",
+        "text": "1987"
+      },
+      {
+        "id": "85000000-0000-007e-0000-000000000002",
+        "label": "B",
+        "text": "1992"
+      },
+      {
+        "id": "85000000-0000-007e-0000-000000000003",
+        "label": "C",
+        "text": "1996"
+      },
+      {
+        "id": "85000000-0000-007e-0000-000000000004",
+        "label": "D",
+        "text": "1999"
+      }
+    ],
+    "correctOptionId": "85000000-0000-007e-0000-000000000002",
+    "explanation": "Pakistan defeated England in the 1992 men's Cricket World Cup final.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000007f",
+    "code": "PMA-Q-127",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 127. Antonio Guterres, UN Secretary-General as of 6 October 2026, belongs to which country?",
+    "options": [
+      {
+        "id": "85000000-0000-007f-0000-000000000001",
+        "label": "A",
+        "text": "Spain"
+      },
+      {
+        "id": "85000000-0000-007f-0000-000000000002",
+        "label": "B",
+        "text": "Portugal"
+      },
+      {
+        "id": "85000000-0000-007f-0000-000000000003",
+        "label": "C",
+        "text": "Italy"
+      },
+      {
+        "id": "85000000-0000-007f-0000-000000000004",
+        "label": "D",
+        "text": "France"
+      }
+    ],
+    "correctOptionId": "85000000-0000-007f-0000-000000000002",
+    "explanation": "Antonio Guterres is Portuguese and previously served as Portugal's Prime Minister.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000080",
+    "code": "PMA-Q-128",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 128. What is the capital of Nepal?",
+    "options": [
+      {
+        "id": "85000000-0000-0080-0000-000000000001",
+        "label": "A",
+        "text": "Pokhara"
+      },
+      {
+        "id": "85000000-0000-0080-0000-000000000002",
+        "label": "B",
+        "text": "Kathmandu"
+      },
+      {
+        "id": "85000000-0000-0080-0000-000000000003",
+        "label": "C",
+        "text": "Lalitpur"
+      },
+      {
+        "id": "85000000-0000-0080-0000-000000000004",
+        "label": "D",
+        "text": "Biratnagar"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0080-0000-000000000002",
+    "explanation": "Kathmandu is Nepal's capital and principal administrative centre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000081",
+    "code": "PMA-Q-129",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 129. As of 6 October 2026, how many member states are in the European Union?",
+    "options": [
+      {
+        "id": "85000000-0000-0081-0000-000000000001",
+        "label": "A",
+        "text": "25"
+      },
+      {
+        "id": "85000000-0000-0081-0000-000000000002",
+        "label": "B",
+        "text": "26"
+      },
+      {
+        "id": "85000000-0000-0081-0000-000000000003",
+        "label": "C",
+        "text": "27"
+      },
+      {
+        "id": "85000000-0000-0081-0000-000000000004",
+        "label": "D",
+        "text": "28"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0081-0000-000000000003",
+    "explanation": "The European Union has 27 member states following the United Kingdom's withdrawal in 2020.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000082",
+    "code": "PMA-Q-130",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 130. Which Indian Prime Minister signed the Indus Waters Treaty with Pakistan in 1960?",
+    "options": [
+      {
+        "id": "85000000-0000-0082-0000-000000000001",
+        "label": "A",
+        "text": "Indira Gandhi"
+      },
+      {
+        "id": "85000000-0000-0082-0000-000000000002",
+        "label": "B",
+        "text": "Jawaharlal Nehru"
+      },
+      {
+        "id": "85000000-0000-0082-0000-000000000003",
+        "label": "C",
+        "text": "Lal Bahadur Shastri"
+      },
+      {
+        "id": "85000000-0000-0082-0000-000000000004",
+        "label": "D",
+        "text": "Rajiv Gandhi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0082-0000-000000000002",
+    "explanation": "Jawaharlal Nehru signed the 1960 treaty for India alongside Pakistan's President Ayub Khan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000083",
+    "code": "PMA-Q-131",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 131. Prophet Ismail (A.S.) was the son of whom?",
+    "options": [
+      {
+        "id": "85000000-0000-0083-0000-000000000001",
+        "label": "A",
+        "text": "Prophet Musa (A.S.)"
+      },
+      {
+        "id": "85000000-0000-0083-0000-000000000002",
+        "label": "B",
+        "text": "Prophet Ibrahim (A.S.)"
+      },
+      {
+        "id": "85000000-0000-0083-0000-000000000003",
+        "label": "C",
+        "text": "Prophet Yaqub (A.S.)"
+      },
+      {
+        "id": "85000000-0000-0083-0000-000000000004",
+        "label": "D",
+        "text": "Prophet Nuh (A.S.)"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0083-0000-000000000002",
+    "explanation": "Prophet Ismail was a son of Prophet Ibrahim.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000084",
+    "code": "PMA-Q-132",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 132. How old was Prophet Muhammad (PBUH) when his mother passed away?",
+    "options": [
+      {
+        "id": "85000000-0000-0084-0000-000000000001",
+        "label": "A",
+        "text": "4 years"
+      },
+      {
+        "id": "85000000-0000-0084-0000-000000000002",
+        "label": "B",
+        "text": "5 years"
+      },
+      {
+        "id": "85000000-0000-0084-0000-000000000003",
+        "label": "C",
+        "text": "6 years"
+      },
+      {
+        "id": "85000000-0000-0084-0000-000000000004",
+        "label": "D",
+        "text": "8 years"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0084-0000-000000000003",
+    "explanation": "Standard biographical accounts place Aminah's death when the Prophet was about six.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000085",
+    "code": "PMA-Q-133",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 133. As of 6 October 2026, who is the Chief Justice of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0085-0000-000000000001",
+        "label": "A",
+        "text": "Qazi Faez Isa"
+      },
+      {
+        "id": "85000000-0000-0085-0000-000000000002",
+        "label": "B",
+        "text": "Yahya Afridi"
+      },
+      {
+        "id": "85000000-0000-0085-0000-000000000003",
+        "label": "C",
+        "text": "Gulzar Ahmed"
+      },
+      {
+        "id": "85000000-0000-0085-0000-000000000004",
+        "label": "D",
+        "text": "Umar Ata Bandial"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0085-0000-000000000002",
+    "explanation": "Justice Yahya Afridi assumed the office of Chief Justice of Pakistan in October 2024.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000086",
+    "code": "PMA-Q-134",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 134. What is the highest military award of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0086-0000-000000000001",
+        "label": "A",
+        "text": "Sitara-e-Jurat"
+      },
+      {
+        "id": "85000000-0000-0086-0000-000000000002",
+        "label": "B",
+        "text": "Hilal-e-Jurat"
+      },
+      {
+        "id": "85000000-0000-0086-0000-000000000003",
+        "label": "C",
+        "text": "Nishan-e-Haider"
+      },
+      {
+        "id": "85000000-0000-0086-0000-000000000004",
+        "label": "D",
+        "text": "Tamgha-e-Jurat"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0086-0000-000000000003",
+    "explanation": "Nishan-e-Haider is Pakistan's highest military decoration for exceptional bravery.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000087",
+    "code": "PMA-Q-135",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 135. What is the capital of Kazakhstan?",
+    "options": [
+      {
+        "id": "85000000-0000-0087-0000-000000000001",
+        "label": "A",
+        "text": "Almaty"
+      },
+      {
+        "id": "85000000-0000-0087-0000-000000000002",
+        "label": "B",
+        "text": "Astana"
+      },
+      {
+        "id": "85000000-0000-0087-0000-000000000003",
+        "label": "C",
+        "text": "Tashkent"
+      },
+      {
+        "id": "85000000-0000-0087-0000-000000000004",
+        "label": "D",
+        "text": "Bishkek"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0087-0000-000000000002",
+    "explanation": "Astana is Kazakhstan's capital, having regained that name in 2022.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000088",
+    "code": "PMA-Q-136",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 136. In which Hijri year did the Battle of Uhud take place?",
+    "options": [
+      {
+        "id": "85000000-0000-0088-0000-000000000001",
+        "label": "A",
+        "text": "1 AH"
+      },
+      {
+        "id": "85000000-0000-0088-0000-000000000002",
+        "label": "B",
+        "text": "2 AH"
+      },
+      {
+        "id": "85000000-0000-0088-0000-000000000003",
+        "label": "C",
+        "text": "3 AH"
+      },
+      {
+        "id": "85000000-0000-0088-0000-000000000004",
+        "label": "D",
+        "text": "5 AH"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0088-0000-000000000003",
+    "explanation": "The Battle of Uhud took place in the third year after the Hijrah.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000089",
+    "code": "PMA-Q-137",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 137. Who wrote Loyal Muhammadans of India?",
+    "options": [
+      {
+        "id": "85000000-0000-0089-0000-000000000001",
+        "label": "A",
+        "text": "Allama Iqbal"
+      },
+      {
+        "id": "85000000-0000-0089-0000-000000000002",
+        "label": "B",
+        "text": "Sir Syed Ahmad Khan"
+      },
+      {
+        "id": "85000000-0000-0089-0000-000000000003",
+        "label": "C",
+        "text": "Maulana Azad"
+      },
+      {
+        "id": "85000000-0000-0089-0000-000000000004",
+        "label": "D",
+        "text": "Shah Waliullah"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0089-0000-000000000002",
+    "explanation": "Sir Syed Ahmad Khan wrote Loyal Muhammadans of India to discuss Muslim loyalty after the 1857 uprising.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000008a",
+    "code": "PMA-Q-138",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 138. The proposed Kalabagh Dam site lies in which district of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-008a-0000-000000000001",
+        "label": "A",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-008a-0000-000000000002",
+        "label": "B",
+        "text": "Mianwali"
+      },
+      {
+        "id": "85000000-0000-008a-0000-000000000003",
+        "label": "C",
+        "text": "Multan"
+      },
+      {
+        "id": "85000000-0000-008a-0000-000000000004",
+        "label": "D",
+        "text": "Attock"
+      }
+    ],
+    "correctOptionId": "85000000-0000-008a-0000-000000000002",
+    "explanation": "The proposed Kalabagh Dam site is on the Indus River in Mianwali District.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000008b",
+    "code": "PMA-Q-139",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 139. In which city is the shrine of Data Ganj Bakhsh located?",
+    "options": [
+      {
+        "id": "85000000-0000-008b-0000-000000000001",
+        "label": "A",
+        "text": "Multan"
+      },
+      {
+        "id": "85000000-0000-008b-0000-000000000002",
+        "label": "B",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-008b-0000-000000000003",
+        "label": "C",
+        "text": "Peshawar"
+      },
+      {
+        "id": "85000000-0000-008b-0000-000000000004",
+        "label": "D",
+        "text": "Karachi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-008b-0000-000000000002",
+    "explanation": "The shrine of Ali Hujwiri, known as Data Ganj Bakhsh, is in Lahore.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000008c",
+    "code": "PMA-Q-140",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 140. What was the name of Pakistan's first satellite launched into space?",
+    "options": [
+      {
+        "id": "85000000-0000-008c-0000-000000000001",
+        "label": "A",
+        "text": "Badr-1"
+      },
+      {
+        "id": "85000000-0000-008c-0000-000000000002",
+        "label": "B",
+        "text": "Paksat-1"
+      },
+      {
+        "id": "85000000-0000-008c-0000-000000000003",
+        "label": "C",
+        "text": "PRSS-1"
+      },
+      {
+        "id": "85000000-0000-008c-0000-000000000004",
+        "label": "D",
+        "text": "iCUBE-Q"
+      }
+    ],
+    "correctOptionId": "85000000-0000-008c-0000-000000000001",
+    "explanation": "Badr-1 was Pakistan's first satellite, launched in 1990.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000008d",
+    "code": "PMA-Q-141",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 141. According to India's Ministry of Home Affairs, its listed boundary with Pakistan is approximately how long?",
+    "options": [
+      {
+        "id": "85000000-0000-008d-0000-000000000001",
+        "label": "A",
+        "text": "2,912 km"
+      },
+      {
+        "id": "85000000-0000-008d-0000-000000000002",
+        "label": "B",
+        "text": "3,323 km"
+      },
+      {
+        "id": "85000000-0000-008d-0000-000000000003",
+        "label": "C",
+        "text": "1,200 km"
+      },
+      {
+        "id": "85000000-0000-008d-0000-000000000004",
+        "label": "D",
+        "text": "4,500 km"
+      }
+    ],
+    "correctOptionId": "85000000-0000-008d-0000-000000000002",
+    "explanation": "India's Ministry of Home Affairs lists its boundary with Pakistan as approximately 3,323 km, including its listed Kashmir sections.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000008e",
+    "code": "PMA-Q-142",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 142. How many Muslims were martyred in the Battle of Badr?",
+    "options": [
+      {
+        "id": "85000000-0000-008e-0000-000000000001",
+        "label": "A",
+        "text": "10"
+      },
+      {
+        "id": "85000000-0000-008e-0000-000000000002",
+        "label": "B",
+        "text": "14"
+      },
+      {
+        "id": "85000000-0000-008e-0000-000000000003",
+        "label": "C",
+        "text": "25"
+      },
+      {
+        "id": "85000000-0000-008e-0000-000000000004",
+        "label": "D",
+        "text": "70"
+      }
+    ],
+    "correctOptionId": "85000000-0000-008e-0000-000000000002",
+    "explanation": "Traditional accounts list fourteen Muslim martyrs in the Battle of Badr.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000008f",
+    "code": "PMA-Q-143",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 143. Which authority regulates electronic media in Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-008f-0000-000000000001",
+        "label": "A",
+        "text": "PTA"
+      },
+      {
+        "id": "85000000-0000-008f-0000-000000000002",
+        "label": "B",
+        "text": "PEMRA"
+      },
+      {
+        "id": "85000000-0000-008f-0000-000000000003",
+        "label": "C",
+        "text": "SECP"
+      },
+      {
+        "id": "85000000-0000-008f-0000-000000000004",
+        "label": "D",
+        "text": "NAB"
+      }
+    ],
+    "correctOptionId": "85000000-0000-008f-0000-000000000002",
+    "explanation": "PEMRA regulates electronic broadcast media in Pakistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000090",
+    "code": "PMA-Q-144",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 144. When is Independence Day of the United States celebrated?",
+    "options": [
+      {
+        "id": "85000000-0000-0090-0000-000000000001",
+        "label": "A",
+        "text": "14 August"
+      },
+      {
+        "id": "85000000-0000-0090-0000-000000000002",
+        "label": "B",
+        "text": "4 July"
+      },
+      {
+        "id": "85000000-0000-0090-0000-000000000003",
+        "label": "C",
+        "text": "23 March"
+      },
+      {
+        "id": "85000000-0000-0090-0000-000000000004",
+        "label": "D",
+        "text": "1 May"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0090-0000-000000000002",
+    "explanation": "US Independence Day commemorates adoption of the Declaration of Independence on 4 July 1776.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000091",
+    "code": "PMA-Q-145",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 145. On which date did Pakistan conduct its nuclear tests at Chagai?",
+    "options": [
+      {
+        "id": "85000000-0000-0091-0000-000000000001",
+        "label": "A",
+        "text": "14 August 1997"
+      },
+      {
+        "id": "85000000-0000-0091-0000-000000000002",
+        "label": "B",
+        "text": "28 May 1998"
+      },
+      {
+        "id": "85000000-0000-0091-0000-000000000003",
+        "label": "C",
+        "text": "6 September 1998"
+      },
+      {
+        "id": "85000000-0000-0091-0000-000000000004",
+        "label": "D",
+        "text": "23 March 1999"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0091-0000-000000000002",
+    "explanation": "Pakistan conducted the Chagai-I nuclear tests on 28 May 1998.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000092",
+    "code": "PMA-Q-146",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 146. What is the meaning of the Arabic word \"Ayat\"?",
+    "options": [
+      {
+        "id": "85000000-0000-0092-0000-000000000001",
+        "label": "A",
+        "text": "Prayer"
+      },
+      {
+        "id": "85000000-0000-0092-0000-000000000002",
+        "label": "B",
+        "text": "Sign/Verse"
+      },
+      {
+        "id": "85000000-0000-0092-0000-000000000003",
+        "label": "C",
+        "text": "Book"
+      },
+      {
+        "id": "85000000-0000-0092-0000-000000000004",
+        "label": "D",
+        "text": "Chapter"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0092-0000-000000000002",
+    "explanation": "Ayah can mean a sign and is also the Arabic term for a Quranic verse.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000093",
+    "code": "PMA-Q-147",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 147. What are the last two Surahs of the Holy Quran collectively called?",
+    "options": [
+      {
+        "id": "85000000-0000-0093-0000-000000000001",
+        "label": "A",
+        "text": "Muqatta'at"
+      },
+      {
+        "id": "85000000-0000-0093-0000-000000000002",
+        "label": "B",
+        "text": "Mu'awwidhatayn"
+      },
+      {
+        "id": "85000000-0000-0093-0000-000000000003",
+        "label": "C",
+        "text": "Sab'ul Mathani"
+      },
+      {
+        "id": "85000000-0000-0093-0000-000000000004",
+        "label": "D",
+        "text": "Al-Hawameem"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0093-0000-000000000002",
+    "explanation": "Surah Al-Falaq and Surah An-Nas are the two protective chapters called Al-Mu'awwidhatayn.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000094",
+    "code": "PMA-Q-148",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 148. What was the old name of Madinah?",
+    "options": [
+      {
+        "id": "85000000-0000-0094-0000-000000000001",
+        "label": "A",
+        "text": "Bakkah"
+      },
+      {
+        "id": "85000000-0000-0094-0000-000000000002",
+        "label": "B",
+        "text": "Yathrib"
+      },
+      {
+        "id": "85000000-0000-0094-0000-000000000003",
+        "label": "C",
+        "text": "Taif"
+      },
+      {
+        "id": "85000000-0000-0094-0000-000000000004",
+        "label": "D",
+        "text": "Najran"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0094-0000-000000000002",
+    "explanation": "Madinah was known as Yathrib before becoming the Prophet's city.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000095",
+    "code": "PMA-Q-149",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 149. On which date was the United Nations officially established?",
+    "options": [
+      {
+        "id": "85000000-0000-0095-0000-000000000001",
+        "label": "A",
+        "text": "14 August 1947"
+      },
+      {
+        "id": "85000000-0000-0095-0000-000000000002",
+        "label": "B",
+        "text": "24 October 1945"
+      },
+      {
+        "id": "85000000-0000-0095-0000-000000000003",
+        "label": "C",
+        "text": "10 December 1945"
+      },
+      {
+        "id": "85000000-0000-0095-0000-000000000004",
+        "label": "D",
+        "text": "1 January 1946"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0095-0000-000000000002",
+    "explanation": "The UN Charter entered into force on 24 October 1945, the date commemorated as United Nations Day.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000096",
+    "code": "PMA-Q-150",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 150. As of 6 October 2026, who is the Federal Minister for National Health Services, Regulations and Coordination of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0096-0000-000000000001",
+        "label": "A",
+        "text": "Abdul Qadir Patel"
+      },
+      {
+        "id": "85000000-0000-0096-0000-000000000002",
+        "label": "B",
+        "text": "Syed Mustafa Kamal"
+      },
+      {
+        "id": "85000000-0000-0096-0000-000000000003",
+        "label": "C",
+        "text": "Ahsan Iqbal"
+      },
+      {
+        "id": "85000000-0000-0096-0000-000000000004",
+        "label": "D",
+        "text": "Khawaja Asif"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0096-0000-000000000002",
+    "explanation": "Syed Mustafa Kamal holds the federal health portfolio as of 6 October 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000097",
+    "code": "PMA-Q-151",
+    "subject": "ACADEMIC_MATH",
+    "subjectName": "Mathematics",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 151. What is 90% of 90?",
+    "options": [
+      {
+        "id": "85000000-0000-0097-0000-000000000001",
+        "label": "A",
+        "text": "81"
+      },
+      {
+        "id": "85000000-0000-0097-0000-000000000002",
+        "label": "B",
+        "text": "80"
+      },
+      {
+        "id": "85000000-0000-0097-0000-000000000003",
+        "label": "C",
+        "text": "90"
+      },
+      {
+        "id": "85000000-0000-0097-0000-000000000004",
+        "label": "D",
+        "text": "99"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0097-0000-000000000001",
+    "explanation": "90% of 90 is 0.90*90 = 81.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000098",
+    "code": "PMA-Q-152",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 152. What is the international boundary between Pakistan and India commonly called?",
+    "options": [
+      {
+        "id": "85000000-0000-0098-0000-000000000001",
+        "label": "A",
+        "text": "Durand Line"
+      },
+      {
+        "id": "85000000-0000-0098-0000-000000000002",
+        "label": "B",
+        "text": "Radcliffe Line"
+      },
+      {
+        "id": "85000000-0000-0098-0000-000000000003",
+        "label": "C",
+        "text": "McMahon Line"
+      },
+      {
+        "id": "85000000-0000-0098-0000-000000000004",
+        "label": "D",
+        "text": "Goldsmid Line"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0098-0000-000000000002",
+    "explanation": "The Radcliffe Line is the boundary award associated with the India-Pakistan partition.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000099",
+    "code": "PMA-Q-153",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 153. Who founded Pakistan Tehreek-e-Insaf (PTI)?",
+    "options": [
+      {
+        "id": "85000000-0000-0099-0000-000000000001",
+        "label": "A",
+        "text": "Nawaz Sharif"
+      },
+      {
+        "id": "85000000-0000-0099-0000-000000000002",
+        "label": "B",
+        "text": "Benazir Bhutto"
+      },
+      {
+        "id": "85000000-0000-0099-0000-000000000003",
+        "label": "C",
+        "text": "Imran Khan"
+      },
+      {
+        "id": "85000000-0000-0099-0000-000000000004",
+        "label": "D",
+        "text": "Pervez Musharraf"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0099-0000-000000000003",
+    "explanation": "Imran Khan founded Pakistan Tehreek-e-Insaf in 1996.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000009a",
+    "code": "PMA-Q-154",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 154. As of 6 October 2026, who is the Governor of Sindh?",
+    "options": [
+      {
+        "id": "85000000-0000-009a-0000-000000000001",
+        "label": "A",
+        "text": "Kamran Tessori"
+      },
+      {
+        "id": "85000000-0000-009a-0000-000000000002",
+        "label": "B",
+        "text": "Imran Ismail"
+      },
+      {
+        "id": "85000000-0000-009a-0000-000000000003",
+        "label": "C",
+        "text": "Syed Muhammad Nehal Hashmi"
+      },
+      {
+        "id": "85000000-0000-009a-0000-000000000004",
+        "label": "D",
+        "text": "Ishrat-ul-Ibad"
+      }
+    ],
+    "correctOptionId": "85000000-0000-009a-0000-000000000003",
+    "explanation": "Syed Muhammad Nehal Hashmi took oath as Governor of Sindh in March 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000009b",
+    "code": "PMA-Q-155",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 155. When did Pakistan become an Islamic Republic?",
+    "options": [
+      {
+        "id": "85000000-0000-009b-0000-000000000001",
+        "label": "A",
+        "text": "14 August 1947"
+      },
+      {
+        "id": "85000000-0000-009b-0000-000000000002",
+        "label": "B",
+        "text": "23 March 1956"
+      },
+      {
+        "id": "85000000-0000-009b-0000-000000000003",
+        "label": "C",
+        "text": "8 June 1962"
+      },
+      {
+        "id": "85000000-0000-009b-0000-000000000004",
+        "label": "D",
+        "text": "14 August 1973"
+      }
+    ],
+    "correctOptionId": "85000000-0000-009b-0000-000000000002",
+    "explanation": "The 1956 Constitution came into force on 23 March and declared Pakistan an Islamic Republic.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000009c",
+    "code": "PMA-Q-156",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 156. When did the Cripps Mission arrive in India?",
+    "options": [
+      {
+        "id": "85000000-0000-009c-0000-000000000001",
+        "label": "A",
+        "text": "1940"
+      },
+      {
+        "id": "85000000-0000-009c-0000-000000000002",
+        "label": "B",
+        "text": "1941"
+      },
+      {
+        "id": "85000000-0000-009c-0000-000000000003",
+        "label": "C",
+        "text": "1942"
+      },
+      {
+        "id": "85000000-0000-009c-0000-000000000004",
+        "label": "D",
+        "text": "1945"
+      }
+    ],
+    "correctOptionId": "85000000-0000-009c-0000-000000000003",
+    "explanation": "Stafford Cripps brought British constitutional proposals to India in March 1942.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000009d",
+    "code": "PMA-Q-157",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 157. Where is the headquarters of the International Monetary Fund (IMF) located?",
+    "options": [
+      {
+        "id": "85000000-0000-009d-0000-000000000001",
+        "label": "A",
+        "text": "New York"
+      },
+      {
+        "id": "85000000-0000-009d-0000-000000000002",
+        "label": "B",
+        "text": "Geneva"
+      },
+      {
+        "id": "85000000-0000-009d-0000-000000000003",
+        "label": "C",
+        "text": "Washington, D.C."
+      },
+      {
+        "id": "85000000-0000-009d-0000-000000000004",
+        "label": "D",
+        "text": "London"
+      }
+    ],
+    "correctOptionId": "85000000-0000-009d-0000-000000000003",
+    "explanation": "The International Monetary Fund has its headquarters in Washington, D.C.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000009e",
+    "code": "PMA-Q-158",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 158. On which date was the Simla Pact signed?",
+    "options": [
+      {
+        "id": "85000000-0000-009e-0000-000000000001",
+        "label": "A",
+        "text": "14 August 1971"
+      },
+      {
+        "id": "85000000-0000-009e-0000-000000000002",
+        "label": "B",
+        "text": "2 July 1972"
+      },
+      {
+        "id": "85000000-0000-009e-0000-000000000003",
+        "label": "C",
+        "text": "16 December 1971"
+      },
+      {
+        "id": "85000000-0000-009e-0000-000000000004",
+        "label": "D",
+        "text": "23 March 1973"
+      }
+    ],
+    "correctOptionId": "85000000-0000-009e-0000-000000000002",
+    "explanation": "Pakistan and India signed the Simla Agreement on 2 July 1972.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000009f",
+    "code": "PMA-Q-159",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 159. Where is the Golden Gate Bridge located?",
+    "options": [
+      {
+        "id": "85000000-0000-009f-0000-000000000001",
+        "label": "A",
+        "text": "Los Angeles"
+      },
+      {
+        "id": "85000000-0000-009f-0000-000000000002",
+        "label": "B",
+        "text": "New York"
+      },
+      {
+        "id": "85000000-0000-009f-0000-000000000003",
+        "label": "C",
+        "text": "San Francisco"
+      },
+      {
+        "id": "85000000-0000-009f-0000-000000000004",
+        "label": "D",
+        "text": "Chicago"
+      }
+    ],
+    "correctOptionId": "85000000-0000-009f-0000-000000000003",
+    "explanation": "The Golden Gate Bridge spans the Golden Gate strait at San Francisco, California.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a0",
+    "code": "PMA-Q-160",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 160. What is the capital of Bahrain?",
+    "options": [
+      {
+        "id": "85000000-0000-00a0-0000-000000000001",
+        "label": "A",
+        "text": "Doha"
+      },
+      {
+        "id": "85000000-0000-00a0-0000-000000000002",
+        "label": "B",
+        "text": "Manama"
+      },
+      {
+        "id": "85000000-0000-00a0-0000-000000000003",
+        "label": "C",
+        "text": "Muscat"
+      },
+      {
+        "id": "85000000-0000-00a0-0000-000000000004",
+        "label": "D",
+        "text": "Kuwait City"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a0-0000-000000000002",
+    "explanation": "Manama is Bahrain's capital and principal commercial centre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a1",
+    "code": "PMA-Q-161",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 161. Finland is also known as the:",
+    "options": [
+      {
+        "id": "85000000-0000-00a1-0000-000000000001",
+        "label": "A",
+        "text": "Land of Midnight Sun"
+      },
+      {
+        "id": "85000000-0000-00a1-0000-000000000002",
+        "label": "B",
+        "text": "Land of a Thousand Lakes"
+      },
+      {
+        "id": "85000000-0000-00a1-0000-000000000003",
+        "label": "C",
+        "text": "Land of Mountains"
+      },
+      {
+        "id": "85000000-0000-00a1-0000-000000000004",
+        "label": "D",
+        "text": "Land of Rivers"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a1-0000-000000000002",
+    "explanation": "Finland's very large number of lakes gives it the nickname Land of a Thousand Lakes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a2",
+    "code": "PMA-Q-162",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 162. When did the Kargil War take place?",
+    "options": [
+      {
+        "id": "85000000-0000-00a2-0000-000000000001",
+        "label": "A",
+        "text": "3 May-26 July 1999"
+      },
+      {
+        "id": "85000000-0000-00a2-0000-000000000002",
+        "label": "B",
+        "text": "5 June-15 August 1998"
+      },
+      {
+        "id": "85000000-0000-00a2-0000-000000000003",
+        "label": "C",
+        "text": "14 August-26 September 1999"
+      },
+      {
+        "id": "85000000-0000-00a2-0000-000000000004",
+        "label": "D",
+        "text": "1 May-15 July 2000"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a2-0000-000000000001",
+    "explanation": "The Kargil conflict occurred during May-July 1999.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a3",
+    "code": "PMA-Q-163",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 163. What is the height of K2?",
+    "options": [
+      {
+        "id": "85000000-0000-00a3-0000-000000000001",
+        "label": "A",
+        "text": "8,611 m"
+      },
+      {
+        "id": "85000000-0000-00a3-0000-000000000002",
+        "label": "B",
+        "text": "8,516 m"
+      },
+      {
+        "id": "85000000-0000-00a3-0000-000000000003",
+        "label": "C",
+        "text": "8,848 m"
+      },
+      {
+        "id": "85000000-0000-00a3-0000-000000000004",
+        "label": "D",
+        "text": "8,091 m"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a3-0000-000000000001",
+    "explanation": "K2's accepted summit elevation is 8,611 metres above sea level.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a4",
+    "code": "PMA-Q-164",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 164. The Indus Water Treaty was brokered by:",
+    "options": [
+      {
+        "id": "85000000-0000-00a4-0000-000000000001",
+        "label": "A",
+        "text": "IMF"
+      },
+      {
+        "id": "85000000-0000-00a4-0000-000000000002",
+        "label": "B",
+        "text": "World Bank"
+      },
+      {
+        "id": "85000000-0000-00a4-0000-000000000003",
+        "label": "C",
+        "text": "United Nations"
+      },
+      {
+        "id": "85000000-0000-00a4-0000-000000000004",
+        "label": "D",
+        "text": "Asian Development Bank"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a4-0000-000000000002",
+    "explanation": "The World Bank facilitated negotiations and signed the Indus Waters Treaty as a participant for specified provisions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a5",
+    "code": "PMA-Q-165",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 165. Who wrote Mein Kampf?",
+    "options": [
+      {
+        "id": "85000000-0000-00a5-0000-000000000001",
+        "label": "A",
+        "text": "Benito Mussolini"
+      },
+      {
+        "id": "85000000-0000-00a5-0000-000000000002",
+        "label": "B",
+        "text": "Adolf Hitler"
+      },
+      {
+        "id": "85000000-0000-00a5-0000-000000000003",
+        "label": "C",
+        "text": "Joseph Stalin"
+      },
+      {
+        "id": "85000000-0000-00a5-0000-000000000004",
+        "label": "D",
+        "text": "Winston Churchill"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a5-0000-000000000002",
+    "explanation": "Adolf Hitler wrote Mein Kampf, combining autobiography and political ideology.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a6",
+    "code": "PMA-Q-166",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 166. Muhammad bin Qasim conquered Sindh in:",
+    "options": [
+      {
+        "id": "85000000-0000-00a6-0000-000000000001",
+        "label": "A",
+        "text": "711 AD"
+      },
+      {
+        "id": "85000000-0000-00a6-0000-000000000002",
+        "label": "B",
+        "text": "712 AD"
+      },
+      {
+        "id": "85000000-0000-00a6-0000-000000000003",
+        "label": "C",
+        "text": "713 AD"
+      },
+      {
+        "id": "85000000-0000-00a6-0000-000000000004",
+        "label": "D",
+        "text": "715 AD"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a6-0000-000000000002",
+    "explanation": "Muhammad bin Qasim led the Umayyad conquest of Sindh in 712 CE.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a7",
+    "code": "PMA-Q-167",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 167. Sindh was conquered during the reign of which Umayyad Caliph?",
+    "options": [
+      {
+        "id": "85000000-0000-00a7-0000-000000000001",
+        "label": "A",
+        "text": "Umar bin Abdul Aziz"
+      },
+      {
+        "id": "85000000-0000-00a7-0000-000000000002",
+        "label": "B",
+        "text": "Al-Walid I"
+      },
+      {
+        "id": "85000000-0000-00a7-0000-000000000003",
+        "label": "C",
+        "text": "Muawiya I"
+      },
+      {
+        "id": "85000000-0000-00a7-0000-000000000004",
+        "label": "D",
+        "text": "Yazid I"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a7-0000-000000000002",
+    "explanation": "The conquest of Sindh occurred during the caliphate of Al-Walid I.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a8",
+    "code": "PMA-Q-168",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 168. Pakistan bought Gwadar from:",
+    "options": [
+      {
+        "id": "85000000-0000-00a8-0000-000000000001",
+        "label": "A",
+        "text": "Oman"
+      },
+      {
+        "id": "85000000-0000-00a8-0000-000000000002",
+        "label": "B",
+        "text": "Iran"
+      },
+      {
+        "id": "85000000-0000-00a8-0000-000000000003",
+        "label": "C",
+        "text": "UAE"
+      },
+      {
+        "id": "85000000-0000-00a8-0000-000000000004",
+        "label": "D",
+        "text": "Saudi Arabia"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a8-0000-000000000001",
+    "explanation": "Pakistan purchased Gwadar from the Sultanate of Oman in 1958.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000a9",
+    "code": "PMA-Q-169",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 169. Who was the second Prime Minister of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00a9-0000-000000000001",
+        "label": "A",
+        "text": "Liaquat Ali Khan"
+      },
+      {
+        "id": "85000000-0000-00a9-0000-000000000002",
+        "label": "B",
+        "text": "Khawaja Nazimuddin"
+      },
+      {
+        "id": "85000000-0000-00a9-0000-000000000003",
+        "label": "C",
+        "text": "Muhammad Ali Bogra"
+      },
+      {
+        "id": "85000000-0000-00a9-0000-000000000004",
+        "label": "D",
+        "text": "Chaudhry Muhammad Ali"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00a9-0000-000000000002",
+    "explanation": "Khawaja Nazimuddin succeeded Liaquat Ali Khan as Prime Minister in October 1951.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000aa",
+    "code": "PMA-Q-170",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 170. The \"Black Lives Matter\" movement originated in which country?",
+    "options": [
+      {
+        "id": "85000000-0000-00aa-0000-000000000001",
+        "label": "A",
+        "text": "United Kingdom"
+      },
+      {
+        "id": "85000000-0000-00aa-0000-000000000002",
+        "label": "B",
+        "text": "Canada"
+      },
+      {
+        "id": "85000000-0000-00aa-0000-000000000003",
+        "label": "C",
+        "text": "United States"
+      },
+      {
+        "id": "85000000-0000-00aa-0000-000000000004",
+        "label": "D",
+        "text": "Australia"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00aa-0000-000000000003",
+    "explanation": "Black Lives Matter began in the United States in 2013.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ab",
+    "code": "PMA-Q-171",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 171. The Indian National Congress was founded in:",
+    "options": [
+      {
+        "id": "85000000-0000-00ab-0000-000000000001",
+        "label": "A",
+        "text": "1885"
+      },
+      {
+        "id": "85000000-0000-00ab-0000-000000000002",
+        "label": "B",
+        "text": "1887"
+      },
+      {
+        "id": "85000000-0000-00ab-0000-000000000003",
+        "label": "C",
+        "text": "1905"
+      },
+      {
+        "id": "85000000-0000-00ab-0000-000000000004",
+        "label": "D",
+        "text": "1911"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ab-0000-000000000001",
+    "explanation": "The Indian National Congress held its first session in Bombay in 1885.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ac",
+    "code": "PMA-Q-172",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 172. The Indus Water Treaty was signed between Pakistan and India in:",
+    "options": [
+      {
+        "id": "85000000-0000-00ac-0000-000000000001",
+        "label": "A",
+        "text": "1956"
+      },
+      {
+        "id": "85000000-0000-00ac-0000-000000000002",
+        "label": "B",
+        "text": "1958"
+      },
+      {
+        "id": "85000000-0000-00ac-0000-000000000003",
+        "label": "C",
+        "text": "1960"
+      },
+      {
+        "id": "85000000-0000-00ac-0000-000000000004",
+        "label": "D",
+        "text": "1965"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ac-0000-000000000003",
+    "explanation": "The Indus Waters Treaty was signed in September 1960.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ad",
+    "code": "PMA-Q-173",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 173. Prophet Muhammad (PBUH) was born in:",
+    "options": [
+      {
+        "id": "85000000-0000-00ad-0000-000000000001",
+        "label": "A",
+        "text": "Madinah"
+      },
+      {
+        "id": "85000000-0000-00ad-0000-000000000002",
+        "label": "B",
+        "text": "Taif"
+      },
+      {
+        "id": "85000000-0000-00ad-0000-000000000003",
+        "label": "C",
+        "text": "Makkah"
+      },
+      {
+        "id": "85000000-0000-00ad-0000-000000000004",
+        "label": "D",
+        "text": "Jerusalem"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ad-0000-000000000003",
+    "explanation": "The Prophet Muhammad was born in Makkah.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ae",
+    "code": "PMA-Q-174",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 174. The Roe River, historically cited in shortest-river record discussions, is located in which US state?",
+    "options": [
+      {
+        "id": "85000000-0000-00ae-0000-000000000001",
+        "label": "A",
+        "text": "Montana"
+      },
+      {
+        "id": "85000000-0000-00ae-0000-000000000002",
+        "label": "B",
+        "text": "California"
+      },
+      {
+        "id": "85000000-0000-00ae-0000-000000000003",
+        "label": "C",
+        "text": "Texas"
+      },
+      {
+        "id": "85000000-0000-00ae-0000-000000000004",
+        "label": "D",
+        "text": "Florida"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ae-0000-000000000001",
+    "explanation": "The Roe River is a short river near Great Falls in Montana, historically promoted as a shortest-river record holder.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000af",
+    "code": "PMA-Q-175",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 175. The World Health Organization (WHO) was founded on:",
+    "options": [
+      {
+        "id": "85000000-0000-00af-0000-000000000001",
+        "label": "A",
+        "text": "7 April 1948"
+      },
+      {
+        "id": "85000000-0000-00af-0000-000000000002",
+        "label": "B",
+        "text": "24 October 1945"
+      },
+      {
+        "id": "85000000-0000-00af-0000-000000000003",
+        "label": "C",
+        "text": "10 December 1948"
+      },
+      {
+        "id": "85000000-0000-00af-0000-000000000004",
+        "label": "D",
+        "text": "1 January 1950"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00af-0000-000000000001",
+    "explanation": "WHO's Constitution entered into force on 7 April 1948.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b0",
+    "code": "PMA-Q-176",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 176. International Women's Day is celebrated on:",
+    "options": [
+      {
+        "id": "85000000-0000-00b0-0000-000000000001",
+        "label": "A",
+        "text": "5 March"
+      },
+      {
+        "id": "85000000-0000-00b0-0000-000000000002",
+        "label": "B",
+        "text": "8 March"
+      },
+      {
+        "id": "85000000-0000-00b0-0000-000000000003",
+        "label": "C",
+        "text": "10 March"
+      },
+      {
+        "id": "85000000-0000-00b0-0000-000000000004",
+        "label": "D",
+        "text": "12 March"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b0-0000-000000000002",
+    "explanation": "International Women's Day is observed each year on 8 March.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b1",
+    "code": "PMA-Q-177",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 177. Harappa is approximately how far from Sahiwal?",
+    "options": [
+      {
+        "id": "85000000-0000-00b1-0000-000000000001",
+        "label": "A",
+        "text": "12 km"
+      },
+      {
+        "id": "85000000-0000-00b1-0000-000000000002",
+        "label": "B",
+        "text": "24 km"
+      },
+      {
+        "id": "85000000-0000-00b1-0000-000000000003",
+        "label": "C",
+        "text": "40 km"
+      },
+      {
+        "id": "85000000-0000-00b1-0000-000000000004",
+        "label": "D",
+        "text": "60 km"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b1-0000-000000000002",
+    "explanation": "The archaeological site of Harappa lies roughly 24 km from Sahiwal.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b2",
+    "code": "PMA-Q-178",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 178. Who was the first Pakistani woman to win a gold medal in athletics at the South Asian Games?",
+    "options": [
+      {
+        "id": "85000000-0000-00b2-0000-000000000001",
+        "label": "A",
+        "text": "Shabana Akhtar"
+      },
+      {
+        "id": "85000000-0000-00b2-0000-000000000002",
+        "label": "B",
+        "text": "Naseem Hameed"
+      },
+      {
+        "id": "85000000-0000-00b2-0000-000000000003",
+        "label": "C",
+        "text": "Samina Baig"
+      },
+      {
+        "id": "85000000-0000-00b2-0000-000000000004",
+        "label": "D",
+        "text": "Sana Mir"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b2-0000-000000000001",
+    "explanation": "Shabana Akhtar won athletics gold medals for Pakistan at the 1995 South Asian Games.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b3",
+    "code": "PMA-Q-179",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 179. The General Pervez Musharraf's first Provisional Constitutional Order (PCO) was issued in:",
+    "options": [
+      {
+        "id": "85000000-0000-00b3-0000-000000000001",
+        "label": "A",
+        "text": "1998"
+      },
+      {
+        "id": "85000000-0000-00b3-0000-000000000002",
+        "label": "B",
+        "text": "1999"
+      },
+      {
+        "id": "85000000-0000-00b3-0000-000000000003",
+        "label": "C",
+        "text": "2000"
+      },
+      {
+        "id": "85000000-0000-00b3-0000-000000000004",
+        "label": "D",
+        "text": "2001"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b3-0000-000000000002",
+    "explanation": "Musharraf issued his first Provisional Constitutional Order after taking power in October 1999.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b4",
+    "code": "PMA-Q-180",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 180. Margalla Hills are located near which city?",
+    "options": [
+      {
+        "id": "85000000-0000-00b4-0000-000000000001",
+        "label": "A",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-00b4-0000-000000000002",
+        "label": "B",
+        "text": "Islamabad"
+      },
+      {
+        "id": "85000000-0000-00b4-0000-000000000003",
+        "label": "C",
+        "text": "Peshawar"
+      },
+      {
+        "id": "85000000-0000-00b4-0000-000000000004",
+        "label": "D",
+        "text": "Quetta"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b4-0000-000000000002",
+    "explanation": "The Margalla Hills form the hill range along Islamabad's northern edge.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b5",
+    "code": "PMA-Q-181",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 181. What is the meaning of \"privilege\"?",
+    "options": [
+      {
+        "id": "85000000-0000-00b5-0000-000000000001",
+        "label": "A",
+        "text": "Special right or advantage"
+      },
+      {
+        "id": "85000000-0000-00b5-0000-000000000002",
+        "label": "B",
+        "text": "Punishment"
+      },
+      {
+        "id": "85000000-0000-00b5-0000-000000000003",
+        "label": "C",
+        "text": "Responsibility"
+      },
+      {
+        "id": "85000000-0000-00b5-0000-000000000004",
+        "label": "D",
+        "text": "Restriction"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b5-0000-000000000001",
+    "explanation": "A privilege is a special right, benefit or advantage granted to someone.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b6",
+    "code": "PMA-Q-182",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 182. The first Nobel Prize was awarded in:",
+    "options": [
+      {
+        "id": "85000000-0000-00b6-0000-000000000001",
+        "label": "A",
+        "text": "1900"
+      },
+      {
+        "id": "85000000-0000-00b6-0000-000000000002",
+        "label": "B",
+        "text": "1901"
+      },
+      {
+        "id": "85000000-0000-00b6-0000-000000000003",
+        "label": "C",
+        "text": "1902"
+      },
+      {
+        "id": "85000000-0000-00b6-0000-000000000004",
+        "label": "D",
+        "text": "1905"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b6-0000-000000000002",
+    "explanation": "The first Nobel Prizes were awarded in 1901 under Alfred Nobel's will.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b7",
+    "code": "PMA-Q-183",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 183. The Battle of Plassey in 1757 was fought between:",
+    "options": [
+      {
+        "id": "85000000-0000-00b7-0000-000000000001",
+        "label": "A",
+        "text": "British East India Company and Siraj-ud-Daulah"
+      },
+      {
+        "id": "85000000-0000-00b7-0000-000000000002",
+        "label": "B",
+        "text": "British and Tipu Sultan"
+      },
+      {
+        "id": "85000000-0000-00b7-0000-000000000003",
+        "label": "C",
+        "text": "Mughals and Marathas"
+      },
+      {
+        "id": "85000000-0000-00b7-0000-000000000004",
+        "label": "D",
+        "text": "Sikhs and British"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b7-0000-000000000001",
+    "explanation": "The East India Company's forces defeated Siraj-ud-Daulah at Plassey in 1757.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b8",
+    "code": "PMA-Q-184",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 184. Nehru Report was a response to:",
+    "options": [
+      {
+        "id": "85000000-0000-00b8-0000-000000000001",
+        "label": "A",
+        "text": "Simon Commission"
+      },
+      {
+        "id": "85000000-0000-00b8-0000-000000000002",
+        "label": "B",
+        "text": "Cabinet Mission"
+      },
+      {
+        "id": "85000000-0000-00b8-0000-000000000003",
+        "label": "C",
+        "text": "Cripps Mission"
+      },
+      {
+        "id": "85000000-0000-00b8-0000-000000000004",
+        "label": "D",
+        "text": "Mountbatten Plan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b8-0000-000000000001",
+    "explanation": "The Nehru Report arose from the constitutional debate prompted by the Simon Commission and British challenges to formulate agreed proposals.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000b9",
+    "code": "PMA-Q-185",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 185. Benazir Bhutto began her second term as Prime Minister in:",
+    "options": [
+      {
+        "id": "85000000-0000-00b9-0000-000000000001",
+        "label": "A",
+        "text": "October 1990"
+      },
+      {
+        "id": "85000000-0000-00b9-0000-000000000002",
+        "label": "B",
+        "text": "October 1993"
+      },
+      {
+        "id": "85000000-0000-00b9-0000-000000000003",
+        "label": "C",
+        "text": "November 1994"
+      },
+      {
+        "id": "85000000-0000-00b9-0000-000000000004",
+        "label": "D",
+        "text": "December 1995"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00b9-0000-000000000002",
+    "explanation": "Benazir Bhutto began her second premiership in October 1993.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ba",
+    "code": "PMA-Q-186",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 186. The first modern Olympic Games were held in:",
+    "options": [
+      {
+        "id": "85000000-0000-00ba-0000-000000000001",
+        "label": "A",
+        "text": "1888"
+      },
+      {
+        "id": "85000000-0000-00ba-0000-000000000002",
+        "label": "B",
+        "text": "1892"
+      },
+      {
+        "id": "85000000-0000-00ba-0000-000000000003",
+        "label": "C",
+        "text": "1896"
+      },
+      {
+        "id": "85000000-0000-00ba-0000-000000000004",
+        "label": "D",
+        "text": "1900"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ba-0000-000000000003",
+    "explanation": "The first modern Olympic Games were held in Athens in 1896.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000bb",
+    "code": "PMA-Q-187",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 187. Which Pakistani won a gold medal at the 2024 Paris Olympics?",
+    "options": [
+      {
+        "id": "85000000-0000-00bb-0000-000000000001",
+        "label": "A",
+        "text": "Arshad Nadeem"
+      },
+      {
+        "id": "85000000-0000-00bb-0000-000000000002",
+        "label": "B",
+        "text": "Neeraj Chopra"
+      },
+      {
+        "id": "85000000-0000-00bb-0000-000000000003",
+        "label": "C",
+        "text": "Jahangir Khan"
+      },
+      {
+        "id": "85000000-0000-00bb-0000-000000000004",
+        "label": "D",
+        "text": "Abdul Razzaq"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00bb-0000-000000000001",
+    "explanation": "Arshad Nadeem won the men's javelin gold medal at the Paris 2024 Olympics.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000bc",
+    "code": "PMA-Q-188",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 188. Jahangir Khan's winning streak in squash was:",
+    "options": [
+      {
+        "id": "85000000-0000-00bc-0000-000000000001",
+        "label": "A",
+        "text": "355 matches"
+      },
+      {
+        "id": "85000000-0000-00bc-0000-000000000002",
+        "label": "B",
+        "text": "455 matches"
+      },
+      {
+        "id": "85000000-0000-00bc-0000-000000000003",
+        "label": "C",
+        "text": "555 consecutive matches"
+      },
+      {
+        "id": "85000000-0000-00bc-0000-000000000004",
+        "label": "D",
+        "text": "655 matches"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00bc-0000-000000000003",
+    "explanation": "Jahangir Khan's unbeaten squash run is widely recorded as 555 consecutive matches from 1981 to 1986.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000bd",
+    "code": "PMA-Q-189",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 189. LOC stands for:",
+    "options": [
+      {
+        "id": "85000000-0000-00bd-0000-000000000001",
+        "label": "A",
+        "text": "Line of Communication"
+      },
+      {
+        "id": "85000000-0000-00bd-0000-000000000002",
+        "label": "B",
+        "text": "Line of Control"
+      },
+      {
+        "id": "85000000-0000-00bd-0000-000000000003",
+        "label": "C",
+        "text": "Line of Contact"
+      },
+      {
+        "id": "85000000-0000-00bd-0000-000000000004",
+        "label": "D",
+        "text": "Limit of Control"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00bd-0000-000000000002",
+    "explanation": "LOC is the abbreviation for Line of Control in the disputed Kashmir region.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000be",
+    "code": "PMA-Q-190",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 190. As of 6 October 2026, who is the Chief Minister of Punjab?",
+    "options": [
+      {
+        "id": "85000000-0000-00be-0000-000000000001",
+        "label": "A",
+        "text": "Maryam Nawaz"
+      },
+      {
+        "id": "85000000-0000-00be-0000-000000000002",
+        "label": "B",
+        "text": "Hamza Shahbaz"
+      },
+      {
+        "id": "85000000-0000-00be-0000-000000000003",
+        "label": "C",
+        "text": "Usman Buzdar"
+      },
+      {
+        "id": "85000000-0000-00be-0000-000000000004",
+        "label": "D",
+        "text": "Parvez Elahi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00be-0000-000000000001",
+    "explanation": "Maryam Nawaz is Punjab's Chief Minister as of 6 October 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000bf",
+    "code": "PMA-Q-191",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 191. Who wrote The Alchemist?",
+    "options": [
+      {
+        "id": "85000000-0000-00bf-0000-000000000001",
+        "label": "A",
+        "text": "Paulo Coelho"
+      },
+      {
+        "id": "85000000-0000-00bf-0000-000000000002",
+        "label": "B",
+        "text": "William Shakespeare"
+      },
+      {
+        "id": "85000000-0000-00bf-0000-000000000003",
+        "label": "C",
+        "text": "George Orwell"
+      },
+      {
+        "id": "85000000-0000-00bf-0000-000000000004",
+        "label": "D",
+        "text": "Charles Dickens"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00bf-0000-000000000001",
+    "explanation": "Paulo Coelho wrote the novel The Alchemist, first published in 1988.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c0",
+    "code": "PMA-Q-192",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 192. What are the synonyms and antonyms of \"wild\"?",
+    "options": [
+      {
+        "id": "85000000-0000-00c0-0000-000000000001",
+        "label": "A",
+        "text": "Synonyms: feral, untamed; Antonyms: tame, domesticated"
+      },
+      {
+        "id": "85000000-0000-00c0-0000-000000000002",
+        "label": "B",
+        "text": "Synonyms: calm, gentle; Antonyms: fierce, savage"
+      },
+      {
+        "id": "85000000-0000-00c0-0000-000000000003",
+        "label": "C",
+        "text": "Synonyms: domestic, tame; Antonyms: feral, untamed"
+      },
+      {
+        "id": "85000000-0000-00c0-0000-000000000004",
+        "label": "D",
+        "text": "Synonyms: civilized, trained; Antonyms: peaceful, calm"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c0-0000-000000000001",
+    "explanation": "Wild can mean feral or untamed, while tame and domesticated express the opposite idea.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c1",
+    "code": "PMA-Q-193",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 193. Who was the first woman Prime Minister of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00c1-0000-000000000001",
+        "label": "A",
+        "text": "Benazir Bhutto"
+      },
+      {
+        "id": "85000000-0000-00c1-0000-000000000002",
+        "label": "B",
+        "text": "Fatima Jinnah"
+      },
+      {
+        "id": "85000000-0000-00c1-0000-000000000003",
+        "label": "C",
+        "text": "Begum Ra'ana Liaquat Ali Khan"
+      },
+      {
+        "id": "85000000-0000-00c1-0000-000000000004",
+        "label": "D",
+        "text": "Maryam Nawaz"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c1-0000-000000000001",
+    "explanation": "Benazir Bhutto became Pakistan's first woman Prime Minister in December 1988, not its President.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c2",
+    "code": "PMA-Q-194",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 194. Babusar Pass connects Chilas with:",
+    "options": [
+      {
+        "id": "85000000-0000-00c2-0000-000000000001",
+        "label": "A",
+        "text": "Gilgit"
+      },
+      {
+        "id": "85000000-0000-00c2-0000-000000000002",
+        "label": "B",
+        "text": "Kaghan Valley"
+      },
+      {
+        "id": "85000000-0000-00c2-0000-000000000003",
+        "label": "C",
+        "text": "Skardu"
+      },
+      {
+        "id": "85000000-0000-00c2-0000-000000000004",
+        "label": "D",
+        "text": "Hunza"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c2-0000-000000000002",
+    "explanation": "Babusar Pass links the Kaghan Valley with the route toward Chilas.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c3",
+    "code": "PMA-Q-195",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 195. Quaid-e-Azam presented his Fourteen Points in which month and year?",
+    "options": [
+      {
+        "id": "85000000-0000-00c3-0000-000000000001",
+        "label": "A",
+        "text": "March 1929"
+      },
+      {
+        "id": "85000000-0000-00c3-0000-000000000002",
+        "label": "B",
+        "text": "August 1928"
+      },
+      {
+        "id": "85000000-0000-00c3-0000-000000000003",
+        "label": "C",
+        "text": "March 1930"
+      },
+      {
+        "id": "85000000-0000-00c3-0000-000000000004",
+        "label": "D",
+        "text": "December 1930"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c3-0000-000000000001",
+    "explanation": "Jinnah presented his Fourteen Points in March 1929.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c4",
+    "code": "PMA-Q-196",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 196. Who wrote the National Anthem of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00c4-0000-000000000001",
+        "label": "A",
+        "text": "Hafeez Jalandhari"
+      },
+      {
+        "id": "85000000-0000-00c4-0000-000000000002",
+        "label": "B",
+        "text": "Allama Iqbal"
+      },
+      {
+        "id": "85000000-0000-00c4-0000-000000000003",
+        "label": "C",
+        "text": "Faiz Ahmed Faiz"
+      },
+      {
+        "id": "85000000-0000-00c4-0000-000000000004",
+        "label": "D",
+        "text": "Josh Malihabadi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c4-0000-000000000001",
+    "explanation": "Hafeez Jalandhari wrote the lyrics of Pakistan's national anthem.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c5",
+    "code": "PMA-Q-197",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 197. Who composed the music of Pakistan's national anthem?",
+    "options": [
+      {
+        "id": "85000000-0000-00c5-0000-000000000001",
+        "label": "A",
+        "text": "Ahmad G. Chagla"
+      },
+      {
+        "id": "85000000-0000-00c5-0000-000000000002",
+        "label": "B",
+        "text": "Hafeez Jalandhari"
+      },
+      {
+        "id": "85000000-0000-00c5-0000-000000000003",
+        "label": "C",
+        "text": "Allama Iqbal"
+      },
+      {
+        "id": "85000000-0000-00c5-0000-000000000004",
+        "label": "D",
+        "text": "Faiz Ahmed Faiz"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c5-0000-000000000001",
+    "explanation": "Ahmad G. Chagla composed the music of Pakistan's national anthem before its lyrics were officially adopted.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c6",
+    "code": "PMA-Q-198",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 198. If five papers are written in five minutes, how long does it take to write one paper?",
+    "options": [
+      {
+        "id": "85000000-0000-00c6-0000-000000000001",
+        "label": "A",
+        "text": "1 minute"
+      },
+      {
+        "id": "85000000-0000-00c6-0000-000000000002",
+        "label": "B",
+        "text": "2 minutes"
+      },
+      {
+        "id": "85000000-0000-00c6-0000-000000000003",
+        "label": "C",
+        "text": "5 minutes"
+      },
+      {
+        "id": "85000000-0000-00c6-0000-000000000004",
+        "label": "D",
+        "text": "25 minutes"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c6-0000-000000000001",
+    "explanation": "At a constant writing rate, five minutes divided by five papers gives one minute per paper.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c7",
+    "code": "PMA-Q-199",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 199. Which organization is responsible for conducting the census in Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00c7-0000-000000000001",
+        "label": "A",
+        "text": "NADRA"
+      },
+      {
+        "id": "85000000-0000-00c7-0000-000000000002",
+        "label": "B",
+        "text": "Pakistan Bureau of Statistics"
+      },
+      {
+        "id": "85000000-0000-00c7-0000-000000000003",
+        "label": "C",
+        "text": "Election Commission"
+      },
+      {
+        "id": "85000000-0000-00c7-0000-000000000004",
+        "label": "D",
+        "text": "State Bank of Pakistan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c7-0000-000000000002",
+    "explanation": "The Pakistan Bureau of Statistics organizes and conducts the national population and housing census.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c8",
+    "code": "PMA-Q-200",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 200. What is the synonym of \"obsolete\"?",
+    "options": [
+      {
+        "id": "85000000-0000-00c8-0000-000000000001",
+        "label": "A",
+        "text": "Modern"
+      },
+      {
+        "id": "85000000-0000-00c8-0000-000000000002",
+        "label": "B",
+        "text": "Antiquated"
+      },
+      {
+        "id": "85000000-0000-00c8-0000-000000000003",
+        "label": "C",
+        "text": "Recent"
+      },
+      {
+        "id": "85000000-0000-00c8-0000-000000000004",
+        "label": "D",
+        "text": "Current"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c8-0000-000000000002",
+    "explanation": "Obsolete means outdated or no longer in use, similar to antiquated.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000c9",
+    "code": "PMA-Q-201",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 201. Which of these is a Pakistani unmanned aircraft associated with NESCOM?",
+    "options": [
+      {
+        "id": "85000000-0000-00c9-0000-000000000001",
+        "label": "A",
+        "text": "Burraq"
+      },
+      {
+        "id": "85000000-0000-00c9-0000-000000000002",
+        "label": "B",
+        "text": "Sputnik 1"
+      },
+      {
+        "id": "85000000-0000-00c9-0000-000000000003",
+        "label": "C",
+        "text": "Apollo 11"
+      },
+      {
+        "id": "85000000-0000-00c9-0000-000000000004",
+        "label": "D",
+        "text": "Voyager 1"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00c9-0000-000000000001",
+    "explanation": "Burraq is a Pakistani unmanned aircraft associated with NESCOM, rather than the name of a manufacturer itself.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ca",
+    "code": "PMA-Q-202",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 202. What is the largest bone in the human body?",
+    "options": [
+      {
+        "id": "85000000-0000-00ca-0000-000000000001",
+        "label": "A",
+        "text": "Tibia"
+      },
+      {
+        "id": "85000000-0000-00ca-0000-000000000002",
+        "label": "B",
+        "text": "Femur"
+      },
+      {
+        "id": "85000000-0000-00ca-0000-000000000003",
+        "label": "C",
+        "text": "Humerus"
+      },
+      {
+        "id": "85000000-0000-00ca-0000-000000000004",
+        "label": "D",
+        "text": "Radius"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ca-0000-000000000002",
+    "explanation": "The femur is the thigh bone and the largest and longest bone in the human body.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000cb",
+    "code": "PMA-Q-203",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 203. As of 6 October 2026, who is the Speaker of Pakistan's National Assembly?",
+    "options": [
+      {
+        "id": "85000000-0000-00cb-0000-000000000001",
+        "label": "A",
+        "text": "Raja Pervaiz Ashraf"
+      },
+      {
+        "id": "85000000-0000-00cb-0000-000000000002",
+        "label": "B",
+        "text": "Sardar Ayaz Sadiq"
+      },
+      {
+        "id": "85000000-0000-00cb-0000-000000000003",
+        "label": "C",
+        "text": "Asad Qaiser"
+      },
+      {
+        "id": "85000000-0000-00cb-0000-000000000004",
+        "label": "D",
+        "text": "Shahbaz Sharif"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00cb-0000-000000000002",
+    "explanation": "Sardar Ayaz Sadiq is the National Assembly Speaker as of 6 October 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000cc",
+    "code": "PMA-Q-204",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 204. Which country is the largest producer of coffee?",
+    "options": [
+      {
+        "id": "85000000-0000-00cc-0000-000000000001",
+        "label": "A",
+        "text": "Brazil"
+      },
+      {
+        "id": "85000000-0000-00cc-0000-000000000002",
+        "label": "B",
+        "text": "Colombia"
+      },
+      {
+        "id": "85000000-0000-00cc-0000-000000000003",
+        "label": "C",
+        "text": "Vietnam"
+      },
+      {
+        "id": "85000000-0000-00cc-0000-000000000004",
+        "label": "D",
+        "text": "Ethiopia"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00cc-0000-000000000001",
+    "explanation": "Brazil is the world's leading coffee-producing country.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000cd",
+    "code": "PMA-Q-205",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 205. Who received Nobel Prizes in both Chemistry and Peace?",
+    "options": [
+      {
+        "id": "85000000-0000-00cd-0000-000000000001",
+        "label": "A",
+        "text": "Linus Pauling"
+      },
+      {
+        "id": "85000000-0000-00cd-0000-000000000002",
+        "label": "B",
+        "text": "Albert Einstein"
+      },
+      {
+        "id": "85000000-0000-00cd-0000-000000000003",
+        "label": "C",
+        "text": "Marie Curie"
+      },
+      {
+        "id": "85000000-0000-00cd-0000-000000000004",
+        "label": "D",
+        "text": "Niels Bohr"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00cd-0000-000000000001",
+    "explanation": "Linus Pauling won the Chemistry Nobel in 1954 and the Peace Nobel for 1962.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ce",
+    "code": "PMA-Q-206",
+    "subject": "ACADEMIC_MATH",
+    "subjectName": "Mathematics",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 206. Balochistan occupies approximately what percentage of Pakistan's roughly 796,096-square-kilometre census area?",
+    "options": [
+      {
+        "id": "85000000-0000-00ce-0000-000000000001",
+        "label": "A",
+        "text": "34%"
+      },
+      {
+        "id": "85000000-0000-00ce-0000-000000000002",
+        "label": "B",
+        "text": "44%"
+      },
+      {
+        "id": "85000000-0000-00ce-0000-000000000003",
+        "label": "C",
+        "text": "54%"
+      },
+      {
+        "id": "85000000-0000-00ce-0000-000000000004",
+        "label": "D",
+        "text": "64%"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ce-0000-000000000002",
+    "explanation": "Balochistan's 347,190 km^2 is about 43.6%, rounded to 44%, of the approximately 796,096 km^2 census area.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000cf",
+    "code": "PMA-Q-207",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 207. Indonesia is known as the:",
+    "options": [
+      {
+        "id": "85000000-0000-00cf-0000-000000000001",
+        "label": "A",
+        "text": "Land of Islands"
+      },
+      {
+        "id": "85000000-0000-00cf-0000-000000000002",
+        "label": "B",
+        "text": "Land of Thousand Islands"
+      },
+      {
+        "id": "85000000-0000-00cf-0000-000000000003",
+        "label": "C",
+        "text": "Emerald of the Equator"
+      },
+      {
+        "id": "85000000-0000-00cf-0000-000000000004",
+        "label": "D",
+        "text": "Land of Rising Sun"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00cf-0000-000000000003",
+    "explanation": "Indonesia's equatorial location and lush islands give it the nickname Emerald of the Equator.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d0",
+    "code": "PMA-Q-208",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 208. Which country initially opposed Pakistan's entry into the United Nations?",
+    "options": [
+      {
+        "id": "85000000-0000-00d0-0000-000000000001",
+        "label": "A",
+        "text": "India"
+      },
+      {
+        "id": "85000000-0000-00d0-0000-000000000002",
+        "label": "B",
+        "text": "Afghanistan"
+      },
+      {
+        "id": "85000000-0000-00d0-0000-000000000003",
+        "label": "C",
+        "text": "Iran"
+      },
+      {
+        "id": "85000000-0000-00d0-0000-000000000004",
+        "label": "D",
+        "text": "China"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d0-0000-000000000002",
+    "explanation": "Afghanistan cast the sole opposing vote when Pakistan's UN admission was considered in 1947.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d1",
+    "code": "PMA-Q-209",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 209. Which continent has the most countries?",
+    "options": [
+      {
+        "id": "85000000-0000-00d1-0000-000000000001",
+        "label": "A",
+        "text": "Asia"
+      },
+      {
+        "id": "85000000-0000-00d1-0000-000000000002",
+        "label": "B",
+        "text": "Europe"
+      },
+      {
+        "id": "85000000-0000-00d1-0000-000000000003",
+        "label": "C",
+        "text": "Africa"
+      },
+      {
+        "id": "85000000-0000-00d1-0000-000000000004",
+        "label": "D",
+        "text": "South America"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d1-0000-000000000003",
+    "explanation": "Africa has the most sovereign countries of the commonly recognized continents.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d2",
+    "code": "PMA-Q-210",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 210. Much of Pakistan's Karakoram mountain terrain lies in which region?",
+    "options": [
+      {
+        "id": "85000000-0000-00d2-0000-000000000001",
+        "label": "A",
+        "text": "Gilgit-Baltistan"
+      },
+      {
+        "id": "85000000-0000-00d2-0000-000000000002",
+        "label": "B",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-00d2-0000-000000000003",
+        "label": "C",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-00d2-0000-000000000004",
+        "label": "D",
+        "text": "Balochistan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d2-0000-000000000001",
+    "explanation": "Gilgit-Baltistan contains much of Pakistan's Karakoram mountain terrain.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d3",
+    "code": "PMA-Q-211",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 211. Rohtas Fort is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-00d3-0000-000000000001",
+        "label": "A",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-00d3-0000-000000000002",
+        "label": "B",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-00d3-0000-000000000003",
+        "label": "C",
+        "text": "Khyber Pakhtunkhwa"
+      },
+      {
+        "id": "85000000-0000-00d3-0000-000000000004",
+        "label": "D",
+        "text": "Balochistan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d3-0000-000000000001",
+    "explanation": "Rohtas Fort is near Dina in Jhelum District, Punjab.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d4",
+    "code": "PMA-Q-212",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 212. General Zia-ul-Haq's plane crash occurred on:",
+    "options": [
+      {
+        "id": "85000000-0000-00d4-0000-000000000001",
+        "label": "A",
+        "text": "17 August 1988"
+      },
+      {
+        "id": "85000000-0000-00d4-0000-000000000002",
+        "label": "B",
+        "text": "14 August 1988"
+      },
+      {
+        "id": "85000000-0000-00d4-0000-000000000003",
+        "label": "C",
+        "text": "6 September 1988"
+      },
+      {
+        "id": "85000000-0000-00d4-0000-000000000004",
+        "label": "D",
+        "text": "11 September 1988"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d4-0000-000000000001",
+    "explanation": "Zia-ul-Haq died in an aircraft crash near Bahawalpur on 17 August 1988.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d5",
+    "code": "PMA-Q-213",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 213. Who coined the term \"Artificial Intelligence\"?",
+    "options": [
+      {
+        "id": "85000000-0000-00d5-0000-000000000001",
+        "label": "A",
+        "text": "Alan Turing"
+      },
+      {
+        "id": "85000000-0000-00d5-0000-000000000002",
+        "label": "B",
+        "text": "John McCarthy"
+      },
+      {
+        "id": "85000000-0000-00d5-0000-000000000003",
+        "label": "C",
+        "text": "Bill Gates"
+      },
+      {
+        "id": "85000000-0000-00d5-0000-000000000004",
+        "label": "D",
+        "text": "Steve Jobs"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d5-0000-000000000002",
+    "explanation": "John McCarthy coined artificial intelligence in connection with the 1956 Dartmouth research project.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d6",
+    "code": "PMA-Q-214",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 214. Which is the second-largest continent in the world?",
+    "options": [
+      {
+        "id": "85000000-0000-00d6-0000-000000000001",
+        "label": "A",
+        "text": "Asia"
+      },
+      {
+        "id": "85000000-0000-00d6-0000-000000000002",
+        "label": "B",
+        "text": "Africa"
+      },
+      {
+        "id": "85000000-0000-00d6-0000-000000000003",
+        "label": "C",
+        "text": "Europe"
+      },
+      {
+        "id": "85000000-0000-00d6-0000-000000000004",
+        "label": "D",
+        "text": "North America"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d6-0000-000000000002",
+    "explanation": "Africa is second only to Asia in continental land area.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d7",
+    "code": "PMA-Q-215",
+    "subject": "ACADEMIC_MATH",
+    "subjectName": "Mathematics",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 215. Approximately what percentage of British India's assets were allocated to Pakistan at Partition?",
+    "options": [
+      {
+        "id": "85000000-0000-00d7-0000-000000000001",
+        "label": "A",
+        "text": "12.5%"
+      },
+      {
+        "id": "85000000-0000-00d7-0000-000000000002",
+        "label": "B",
+        "text": "17.5%"
+      },
+      {
+        "id": "85000000-0000-00d7-0000-000000000003",
+        "label": "C",
+        "text": "25%"
+      },
+      {
+        "id": "85000000-0000-00d7-0000-000000000004",
+        "label": "D",
+        "text": "30%"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d7-0000-000000000002",
+    "explanation": "The conventional Partition resource-sharing figure assigns Pakistan approximately 17.5% of undivided India's assets.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d8",
+    "code": "PMA-Q-216",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 216. According to the Pakistan Economic Survey 2025-26, agriculture contributed approximately what share of GDP?",
+    "options": [
+      {
+        "id": "85000000-0000-00d8-0000-000000000001",
+        "label": "A",
+        "text": "14%"
+      },
+      {
+        "id": "85000000-0000-00d8-0000-000000000002",
+        "label": "B",
+        "text": "23.44%"
+      },
+      {
+        "id": "85000000-0000-00d8-0000-000000000003",
+        "label": "C",
+        "text": "34%"
+      },
+      {
+        "id": "85000000-0000-00d8-0000-000000000004",
+        "label": "D",
+        "text": "44%"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d8-0000-000000000002",
+    "explanation": "The Pakistan Economic Survey 2025-26 reports agriculture's GDP share as approximately 23.44%.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000d9",
+    "code": "PMA-Q-217",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 217. Which country possesses the world's largest freshwater resources?",
+    "options": [
+      {
+        "id": "85000000-0000-00d9-0000-000000000001",
+        "label": "A",
+        "text": "Brazil"
+      },
+      {
+        "id": "85000000-0000-00d9-0000-000000000002",
+        "label": "B",
+        "text": "Canada"
+      },
+      {
+        "id": "85000000-0000-00d9-0000-000000000003",
+        "label": "C",
+        "text": "Russia"
+      },
+      {
+        "id": "85000000-0000-00d9-0000-000000000004",
+        "label": "D",
+        "text": "China"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00d9-0000-000000000001",
+    "explanation": "Brazil's extensive river systems, including the Amazon basin, give it the largest internal renewable freshwater resources.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000da",
+    "code": "PMA-Q-218",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 218. Under Zulfikar Ali Bhutto's 1972 land reforms, the basic irrigated-land holding ceiling was:",
+    "options": [
+      {
+        "id": "85000000-0000-00da-0000-000000000001",
+        "label": "A",
+        "text": "100 acres"
+      },
+      {
+        "id": "85000000-0000-00da-0000-000000000002",
+        "label": "B",
+        "text": "150 acres"
+      },
+      {
+        "id": "85000000-0000-00da-0000-000000000003",
+        "label": "C",
+        "text": "200 acres"
+      },
+      {
+        "id": "85000000-0000-00da-0000-000000000004",
+        "label": "D",
+        "text": "300 acres"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00da-0000-000000000002",
+    "explanation": "Bhutto's 1972 reforms set a ceiling of 150 acres for irrigated land, subject to specified qualifications.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000db",
+    "code": "PMA-Q-219",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 219. Why do we boil milk?",
+    "options": [
+      {
+        "id": "85000000-0000-00db-0000-000000000001",
+        "label": "A",
+        "text": "To increase its color"
+      },
+      {
+        "id": "85000000-0000-00db-0000-000000000002",
+        "label": "B",
+        "text": "To kill harmful germs"
+      },
+      {
+        "id": "85000000-0000-00db-0000-000000000003",
+        "label": "C",
+        "text": "To increase its fat"
+      },
+      {
+        "id": "85000000-0000-00db-0000-000000000004",
+        "label": "D",
+        "text": "To remove water"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00db-0000-000000000002",
+    "explanation": "Boiling kills many harmful microorganisms in milk.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000dc",
+    "code": "PMA-Q-220",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 220. Thomas Cup is associated with:",
+    "options": [
+      {
+        "id": "85000000-0000-00dc-0000-000000000001",
+        "label": "A",
+        "text": "Cricket"
+      },
+      {
+        "id": "85000000-0000-00dc-0000-000000000002",
+        "label": "B",
+        "text": "Badminton"
+      },
+      {
+        "id": "85000000-0000-00dc-0000-000000000003",
+        "label": "C",
+        "text": "Hockey"
+      },
+      {
+        "id": "85000000-0000-00dc-0000-000000000004",
+        "label": "D",
+        "text": "Tennis"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00dc-0000-000000000002",
+    "explanation": "The Thomas Cup is the international men's team championship in badminton.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000dd",
+    "code": "PMA-Q-221",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 221. Hazrat Ali (RA) was awarded the title:",
+    "options": [
+      {
+        "id": "85000000-0000-00dd-0000-000000000001",
+        "label": "A",
+        "text": "Sword of Allah"
+      },
+      {
+        "id": "85000000-0000-00dd-0000-000000000002",
+        "label": "B",
+        "text": "Asadullah"
+      },
+      {
+        "id": "85000000-0000-00dd-0000-000000000003",
+        "label": "C",
+        "text": "Saifullah"
+      },
+      {
+        "id": "85000000-0000-00dd-0000-000000000004",
+        "label": "D",
+        "text": "Khalilullah"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00dd-0000-000000000002",
+    "explanation": "Asadullah means Lion of Allah and is a title associated with Hazrat Ali.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000de",
+    "code": "PMA-Q-222",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 222. Who was the first civilian Chief Martial Law Administrator of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00de-0000-000000000001",
+        "label": "A",
+        "text": "Zulfikar Ali Bhutto"
+      },
+      {
+        "id": "85000000-0000-00de-0000-000000000002",
+        "label": "B",
+        "text": "Nawaz Sharif"
+      },
+      {
+        "id": "85000000-0000-00de-0000-000000000003",
+        "label": "C",
+        "text": "Liaquat Ali Khan"
+      },
+      {
+        "id": "85000000-0000-00de-0000-000000000004",
+        "label": "D",
+        "text": "Muhammad Khan Junejo"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00de-0000-000000000001",
+    "explanation": "Zulfikar Ali Bhutto became President and civilian Chief Martial Law Administrator in December 1971.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000df",
+    "code": "PMA-Q-223",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "Islamic Studies & General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 223. Which prophet remained in the belly of a fish?",
+    "options": [
+      {
+        "id": "85000000-0000-00df-0000-000000000001",
+        "label": "A",
+        "text": "Prophet Yunus (AS)"
+      },
+      {
+        "id": "85000000-0000-00df-0000-000000000002",
+        "label": "B",
+        "text": "Prophet Ibrahim (AS)"
+      },
+      {
+        "id": "85000000-0000-00df-0000-000000000003",
+        "label": "C",
+        "text": "Prophet Musa (AS)"
+      },
+      {
+        "id": "85000000-0000-00df-0000-000000000004",
+        "label": "D",
+        "text": "Prophet Nuh (AS)"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00df-0000-000000000001",
+    "explanation": "The Quran recounts Prophet Yunus being swallowed by a great fish.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e0",
+    "code": "PMA-Q-224",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 224. Which highly saline lake lies between Jordan and Israel/the West Bank?",
+    "options": [
+      {
+        "id": "85000000-0000-00e0-0000-000000000001",
+        "label": "A",
+        "text": "Red Sea"
+      },
+      {
+        "id": "85000000-0000-00e0-0000-000000000002",
+        "label": "B",
+        "text": "Dead Sea"
+      },
+      {
+        "id": "85000000-0000-00e0-0000-000000000003",
+        "label": "C",
+        "text": "Arabian Sea"
+      },
+      {
+        "id": "85000000-0000-00e0-0000-000000000004",
+        "label": "D",
+        "text": "Caspian Sea"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e0-0000-000000000002",
+    "explanation": "The Dead Sea lies between Jordan and Israel/the West Bank and is a highly saline inland lake.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e1",
+    "code": "PMA-Q-225",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 225. Who wrote Daughter of Destiny?",
+    "options": [
+      {
+        "id": "85000000-0000-00e1-0000-000000000001",
+        "label": "A",
+        "text": "Benazir Bhutto"
+      },
+      {
+        "id": "85000000-0000-00e1-0000-000000000002",
+        "label": "B",
+        "text": "Fatima Jinnah"
+      },
+      {
+        "id": "85000000-0000-00e1-0000-000000000003",
+        "label": "C",
+        "text": "Malala Yousafzai"
+      },
+      {
+        "id": "85000000-0000-00e1-0000-000000000004",
+        "label": "D",
+        "text": "Begum Ra'ana Liaquat Ali Khan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e1-0000-000000000001",
+    "explanation": "Daughter of Destiny is Benazir Bhutto's autobiography.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e2",
+    "code": "PMA-Q-226",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 226. Benazir Bhutto was assassinated on:",
+    "options": [
+      {
+        "id": "85000000-0000-00e2-0000-000000000001",
+        "label": "A",
+        "text": "27 December 2007"
+      },
+      {
+        "id": "85000000-0000-00e2-0000-000000000002",
+        "label": "B",
+        "text": "25 December 2007"
+      },
+      {
+        "id": "85000000-0000-00e2-0000-000000000003",
+        "label": "C",
+        "text": "27 November 2007"
+      },
+      {
+        "id": "85000000-0000-00e2-0000-000000000004",
+        "label": "D",
+        "text": "28 December 2008"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e2-0000-000000000001",
+    "explanation": "Benazir Bhutto was assassinated in Rawalpindi on 27 December 2007.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e3",
+    "code": "PMA-Q-227",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 227. In which sport is a free throw allowed?",
+    "options": [
+      {
+        "id": "85000000-0000-00e3-0000-000000000001",
+        "label": "A",
+        "text": "Cricket"
+      },
+      {
+        "id": "85000000-0000-00e3-0000-000000000002",
+        "label": "B",
+        "text": "Basketball"
+      },
+      {
+        "id": "85000000-0000-00e3-0000-000000000003",
+        "label": "C",
+        "text": "Football"
+      },
+      {
+        "id": "85000000-0000-00e3-0000-000000000004",
+        "label": "D",
+        "text": "Hockey"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e3-0000-000000000002",
+    "explanation": "Basketball awards free throws for specified fouls and other rule violations.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e4",
+    "code": "PMA-Q-228",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 228. What is the capital of the Philippines?",
+    "options": [
+      {
+        "id": "85000000-0000-00e4-0000-000000000001",
+        "label": "A",
+        "text": "Manila"
+      },
+      {
+        "id": "85000000-0000-00e4-0000-000000000002",
+        "label": "B",
+        "text": "Jakarta"
+      },
+      {
+        "id": "85000000-0000-00e4-0000-000000000003",
+        "label": "C",
+        "text": "Bangkok"
+      },
+      {
+        "id": "85000000-0000-00e4-0000-000000000004",
+        "label": "D",
+        "text": "Hanoi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e4-0000-000000000001",
+    "explanation": "Manila is the national capital of the Philippines.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e5",
+    "code": "PMA-Q-229",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 229. Thimphu is the capital of:",
+    "options": [
+      {
+        "id": "85000000-0000-00e5-0000-000000000001",
+        "label": "A",
+        "text": "Nepal"
+      },
+      {
+        "id": "85000000-0000-00e5-0000-000000000002",
+        "label": "B",
+        "text": "Bhutan"
+      },
+      {
+        "id": "85000000-0000-00e5-0000-000000000003",
+        "label": "C",
+        "text": "Myanmar"
+      },
+      {
+        "id": "85000000-0000-00e5-0000-000000000004",
+        "label": "D",
+        "text": "Laos"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e5-0000-000000000002",
+    "explanation": "Thimphu is Bhutan's capital and seat of government.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e6",
+    "code": "PMA-Q-230",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 230. According to UN World Urbanization Prospects 2025, which city ranks as the world's most populous under its standardized definition?",
+    "options": [
+      {
+        "id": "85000000-0000-00e6-0000-000000000001",
+        "label": "A",
+        "text": "Jakarta"
+      },
+      {
+        "id": "85000000-0000-00e6-0000-000000000002",
+        "label": "B",
+        "text": "Delhi"
+      },
+      {
+        "id": "85000000-0000-00e6-0000-000000000003",
+        "label": "C",
+        "text": "Shanghai"
+      },
+      {
+        "id": "85000000-0000-00e6-0000-000000000004",
+        "label": "D",
+        "text": "New York"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e6-0000-000000000001",
+    "explanation": "UN World Urbanization Prospects 2025 ranks Jakarta first under its standardized city definition.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e7",
+    "code": "PMA-Q-231",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 231. PEMRA stands for:",
+    "options": [
+      {
+        "id": "85000000-0000-00e7-0000-000000000001",
+        "label": "A",
+        "text": "Pakistan Electronic Media Regulatory Authority"
+      },
+      {
+        "id": "85000000-0000-00e7-0000-000000000002",
+        "label": "B",
+        "text": "Pakistan Electronic Management and Regulation Agency"
+      },
+      {
+        "id": "85000000-0000-00e7-0000-000000000003",
+        "label": "C",
+        "text": "Pakistan Entertainment Media Regulatory Association"
+      },
+      {
+        "id": "85000000-0000-00e7-0000-000000000004",
+        "label": "D",
+        "text": "Pakistan Electronic Monitoring and Radio Authority"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e7-0000-000000000001",
+    "explanation": "PEMRA expands to Pakistan Electronic Media Regulatory Authority.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e8",
+    "code": "PMA-Q-232",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 232. Who was President when Pakistan's first nationwide martial law was imposed in 1958?",
+    "options": [
+      {
+        "id": "85000000-0000-00e8-0000-000000000001",
+        "label": "A",
+        "text": "Iskander Mirza"
+      },
+      {
+        "id": "85000000-0000-00e8-0000-000000000002",
+        "label": "B",
+        "text": "Ayub Khan"
+      },
+      {
+        "id": "85000000-0000-00e8-0000-000000000003",
+        "label": "C",
+        "text": "Yahya Khan"
+      },
+      {
+        "id": "85000000-0000-00e8-0000-000000000004",
+        "label": "D",
+        "text": "Zia-ul-Haq"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e8-0000-000000000001",
+    "explanation": "Iskander Mirza was President when Pakistan's first nationwide martial law was proclaimed in 1958.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000e9",
+    "code": "PMA-Q-233",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 233. Nawaz Sharif took oath as Prime Minister for his second term on:",
+    "options": [
+      {
+        "id": "85000000-0000-00e9-0000-000000000001",
+        "label": "A",
+        "text": "17 February 1997"
+      },
+      {
+        "id": "85000000-0000-00e9-0000-000000000002",
+        "label": "B",
+        "text": "14 August 1997"
+      },
+      {
+        "id": "85000000-0000-00e9-0000-000000000003",
+        "label": "C",
+        "text": "6 September 1997"
+      },
+      {
+        "id": "85000000-0000-00e9-0000-000000000004",
+        "label": "D",
+        "text": "25 February 1998"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00e9-0000-000000000001",
+    "explanation": "Nawaz Sharif took oath for his second premiership on 17 February 1997.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ea",
+    "code": "PMA-Q-234",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 234. The Indus Water Treaty was signed in:",
+    "options": [
+      {
+        "id": "85000000-0000-00ea-0000-000000000001",
+        "label": "A",
+        "text": "September 1958"
+      },
+      {
+        "id": "85000000-0000-00ea-0000-000000000002",
+        "label": "B",
+        "text": "September 1960"
+      },
+      {
+        "id": "85000000-0000-00ea-0000-000000000003",
+        "label": "C",
+        "text": "August 1961"
+      },
+      {
+        "id": "85000000-0000-00ea-0000-000000000004",
+        "label": "D",
+        "text": "September 1965"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ea-0000-000000000002",
+    "explanation": "The Indus Waters Treaty was signed on 19 September 1960.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000eb",
+    "code": "PMA-Q-235",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 235. The Chauri Chaura incident took place in:",
+    "options": [
+      {
+        "id": "85000000-0000-00eb-0000-000000000001",
+        "label": "A",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-00eb-0000-000000000002",
+        "label": "B",
+        "text": "Uttar Pradesh, India"
+      },
+      {
+        "id": "85000000-0000-00eb-0000-000000000003",
+        "label": "C",
+        "text": "Bengal"
+      },
+      {
+        "id": "85000000-0000-00eb-0000-000000000004",
+        "label": "D",
+        "text": "Bihar"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00eb-0000-000000000002",
+    "explanation": "Chauri Chaura is in present-day Uttar Pradesh, India.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ec",
+    "code": "PMA-Q-236",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 236. The Red Cross was established in:",
+    "options": [
+      {
+        "id": "85000000-0000-00ec-0000-000000000001",
+        "label": "A",
+        "text": "1853"
+      },
+      {
+        "id": "85000000-0000-00ec-0000-000000000002",
+        "label": "B",
+        "text": "1863"
+      },
+      {
+        "id": "85000000-0000-00ec-0000-000000000003",
+        "label": "C",
+        "text": "1873"
+      },
+      {
+        "id": "85000000-0000-00ec-0000-000000000004",
+        "label": "D",
+        "text": "1883"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ec-0000-000000000002",
+    "explanation": "The International Committee of the Red Cross was founded in Geneva in 1863.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ed",
+    "code": "PMA-Q-237",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 237. Pakistan's 2023 census key findings report lists its census area as approximately:",
+    "options": [
+      {
+        "id": "85000000-0000-00ed-0000-000000000001",
+        "label": "A",
+        "text": "881,913 square kilometres"
+      },
+      {
+        "id": "85000000-0000-00ed-0000-000000000002",
+        "label": "B",
+        "text": "796,096 square kilometres"
+      },
+      {
+        "id": "85000000-0000-00ed-0000-000000000003",
+        "label": "C",
+        "text": "1,000,000 square kilometres"
+      },
+      {
+        "id": "85000000-0000-00ed-0000-000000000004",
+        "label": "D",
+        "text": "650,000 square kilometres"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ed-0000-000000000002",
+    "explanation": "Pakistan's 2023 census key findings report lists a census area of approximately 796,096 km^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ee",
+    "code": "PMA-Q-238",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 238. Who designed the National Flag of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00ee-0000-000000000001",
+        "label": "A",
+        "text": "Syed Amir-uddin Kedwaii"
+      },
+      {
+        "id": "85000000-0000-00ee-0000-000000000002",
+        "label": "B",
+        "text": "Hafeez Jalandhari"
+      },
+      {
+        "id": "85000000-0000-00ee-0000-000000000003",
+        "label": "C",
+        "text": "Allama Iqbal"
+      },
+      {
+        "id": "85000000-0000-00ee-0000-000000000004",
+        "label": "D",
+        "text": "Abdul Rab Nishtar"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ee-0000-000000000001",
+    "explanation": "Syed Amir-uddin Kedwaii is credited with designing Pakistan's national flag.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ef",
+    "code": "PMA-Q-239",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 239. Pakistan is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-00ef-0000-000000000001",
+        "label": "A",
+        "text": "South Asia"
+      },
+      {
+        "id": "85000000-0000-00ef-0000-000000000002",
+        "label": "B",
+        "text": "Southeast Asia"
+      },
+      {
+        "id": "85000000-0000-00ef-0000-000000000003",
+        "label": "C",
+        "text": "Central Asia"
+      },
+      {
+        "id": "85000000-0000-00ef-0000-000000000004",
+        "label": "D",
+        "text": "West Asia"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ef-0000-000000000001",
+    "explanation": "Pakistan is geographically classified as part of South Asia.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f0",
+    "code": "PMA-Q-240",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 240. Who was the first Chief Minister of Pakistani Punjab after independence in 1947?",
+    "options": [
+      {
+        "id": "85000000-0000-00f0-0000-000000000001",
+        "label": "A",
+        "text": "Nawab Iftikhar Hussain Khan Mamdot"
+      },
+      {
+        "id": "85000000-0000-00f0-0000-000000000002",
+        "label": "B",
+        "text": "Sikandar Hayat Khan"
+      },
+      {
+        "id": "85000000-0000-00f0-0000-000000000003",
+        "label": "C",
+        "text": "Malik Firoz Khan Noon"
+      },
+      {
+        "id": "85000000-0000-00f0-0000-000000000004",
+        "label": "D",
+        "text": "Mumtaz Daultana"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f0-0000-000000000001",
+    "explanation": "Iftikhar Hussain Khan Mamdot was the first Chief Minister of Pakistani Punjab after independence.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f1",
+    "code": "PMA-Q-241",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 241. Where is the headquarters of Interpol located?",
+    "options": [
+      {
+        "id": "85000000-0000-00f1-0000-000000000001",
+        "label": "A",
+        "text": "Lyon, France"
+      },
+      {
+        "id": "85000000-0000-00f1-0000-000000000002",
+        "label": "B",
+        "text": "Geneva, Switzerland"
+      },
+      {
+        "id": "85000000-0000-00f1-0000-000000000003",
+        "label": "C",
+        "text": "London, UK"
+      },
+      {
+        "id": "85000000-0000-00f1-0000-000000000004",
+        "label": "D",
+        "text": "Rome, Italy"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f1-0000-000000000001",
+    "explanation": "INTERPOL's General Secretariat is headquartered in Lyon, France.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f2",
+    "code": "PMA-Q-242",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 242. Why do we send children to school?",
+    "options": [
+      {
+        "id": "85000000-0000-00f2-0000-000000000001",
+        "label": "A",
+        "text": "For grooming and education"
+      },
+      {
+        "id": "85000000-0000-00f2-0000-000000000002",
+        "label": "B",
+        "text": "For entertainment"
+      },
+      {
+        "id": "85000000-0000-00f2-0000-000000000003",
+        "label": "C",
+        "text": "For travelling"
+      },
+      {
+        "id": "85000000-0000-00f2-0000-000000000004",
+        "label": "D",
+        "text": "For punishment"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f2-0000-000000000001",
+    "explanation": "Schooling develops knowledge, skills and social development.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f3",
+    "code": "PMA-Q-243",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 243. As of 6 October 2026, who is the Chief Minister of Balochistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00f3-0000-000000000001",
+        "label": "A",
+        "text": "Jam Kamal Khan"
+      },
+      {
+        "id": "85000000-0000-00f3-0000-000000000002",
+        "label": "B",
+        "text": "Mir Sarfraz Bugti"
+      },
+      {
+        "id": "85000000-0000-00f3-0000-000000000003",
+        "label": "C",
+        "text": "Abdul Quddus Bizenjo"
+      },
+      {
+        "id": "85000000-0000-00f3-0000-000000000004",
+        "label": "D",
+        "text": "Nawab Sanaullah Zehri"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f3-0000-000000000002",
+    "explanation": "Mir Sarfraz Bugti is Balochistan's Chief Minister as of 6 October 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f4",
+    "code": "PMA-Q-244",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 244. Why do we use cars?",
+    "options": [
+      {
+        "id": "85000000-0000-00f4-0000-000000000001",
+        "label": "A",
+        "text": "For travelling"
+      },
+      {
+        "id": "85000000-0000-00f4-0000-000000000002",
+        "label": "B",
+        "text": "For cooking"
+      },
+      {
+        "id": "85000000-0000-00f4-0000-000000000003",
+        "label": "C",
+        "text": "For communication"
+      },
+      {
+        "id": "85000000-0000-00f4-0000-000000000004",
+        "label": "D",
+        "text": "For farming"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f4-0000-000000000001",
+    "explanation": "Cars primarily provide transport for people and goods.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f5",
+    "code": "PMA-Q-245",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 245. Which bird reaches the greatest speed during a hunting dive?",
+    "options": [
+      {
+        "id": "85000000-0000-00f5-0000-000000000001",
+        "label": "A",
+        "text": "Peregrine falcon"
+      },
+      {
+        "id": "85000000-0000-00f5-0000-000000000002",
+        "label": "B",
+        "text": "Ostrich"
+      },
+      {
+        "id": "85000000-0000-00f5-0000-000000000003",
+        "label": "C",
+        "text": "Chukar"
+      },
+      {
+        "id": "85000000-0000-00f5-0000-000000000004",
+        "label": "D",
+        "text": "Golden eagle"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f5-0000-000000000001",
+    "explanation": "The peregrine falcon reaches the highest recorded bird speeds during its hunting dive.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f6",
+    "code": "PMA-Q-246",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 246. Which name of Allah means \"The Most Merciful\"?",
+    "options": [
+      {
+        "id": "85000000-0000-00f6-0000-000000000001",
+        "label": "A",
+        "text": "Karim"
+      },
+      {
+        "id": "85000000-0000-00f6-0000-000000000002",
+        "label": "B",
+        "text": "Hakim"
+      },
+      {
+        "id": "85000000-0000-00f6-0000-000000000003",
+        "label": "C",
+        "text": "Majid"
+      },
+      {
+        "id": "85000000-0000-00f6-0000-000000000004",
+        "label": "D",
+        "text": "Rahim"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f6-0000-000000000004",
+    "explanation": "Ar-Rahim is conventionally translated as The Most Merciful or Especially Merciful.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f7",
+    "code": "PMA-Q-247",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 247. What does the Arabic name Muhammad mean?",
+    "options": [
+      {
+        "id": "85000000-0000-00f7-0000-000000000001",
+        "label": "A",
+        "text": "Peace"
+      },
+      {
+        "id": "85000000-0000-00f7-0000-000000000002",
+        "label": "B",
+        "text": "Innocent"
+      },
+      {
+        "id": "85000000-0000-00f7-0000-000000000003",
+        "label": "C",
+        "text": "Praiseworthy"
+      },
+      {
+        "id": "85000000-0000-00f7-0000-000000000004",
+        "label": "D",
+        "text": "None of these"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f7-0000-000000000003",
+    "explanation": "The Arabic name Muhammad means praised or praiseworthy; S.A.W. is a separate honorific abbreviation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f8",
+    "code": "PMA-Q-248",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 248. Neelum Valley is located in which region?",
+    "options": [
+      {
+        "id": "85000000-0000-00f8-0000-000000000001",
+        "label": "A",
+        "text": "Swat"
+      },
+      {
+        "id": "85000000-0000-00f8-0000-000000000002",
+        "label": "B",
+        "text": "Azad Jammu and Kashmir"
+      },
+      {
+        "id": "85000000-0000-00f8-0000-000000000003",
+        "label": "C",
+        "text": "South Waziristan"
+      },
+      {
+        "id": "85000000-0000-00f8-0000-000000000004",
+        "label": "D",
+        "text": "Naran"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f8-0000-000000000002",
+    "explanation": "Neelum Valley is in Azad Jammu and Kashmir and follows the Neelum River northeast of Muzaffarabad.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000f9",
+    "code": "PMA-Q-249",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 249. Which Apple chief executive introduced the first iPhone in 2007?",
+    "options": [
+      {
+        "id": "85000000-0000-00f9-0000-000000000001",
+        "label": "A",
+        "text": "Steve Jobs"
+      },
+      {
+        "id": "85000000-0000-00f9-0000-000000000002",
+        "label": "B",
+        "text": "Mark Zuckerberg"
+      },
+      {
+        "id": "85000000-0000-00f9-0000-000000000003",
+        "label": "C",
+        "text": "Michael Jackson"
+      },
+      {
+        "id": "85000000-0000-00f9-0000-000000000004",
+        "label": "D",
+        "text": "Michael Jordan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00f9-0000-000000000001",
+    "explanation": "Steve Jobs introduced the first iPhone in 2007 as Apple's chief executive; it was developed by an Apple team.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000fa",
+    "code": "PMA-Q-250",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 250. Which is the longest river in Asia?",
+    "options": [
+      {
+        "id": "85000000-0000-00fa-0000-000000000001",
+        "label": "A",
+        "text": "Amazon River"
+      },
+      {
+        "id": "85000000-0000-00fa-0000-000000000002",
+        "label": "B",
+        "text": "Indus River"
+      },
+      {
+        "id": "85000000-0000-00fa-0000-000000000003",
+        "label": "C",
+        "text": "Yangtze River"
+      },
+      {
+        "id": "85000000-0000-00fa-0000-000000000004",
+        "label": "D",
+        "text": "Nile River"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00fa-0000-000000000003",
+    "explanation": "The Yangtze is Asia's longest river and flows across China.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000fb",
+    "code": "PMA-Q-251",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 251. How many seats are reserved for women in Pakistan's National Assembly?",
+    "options": [
+      {
+        "id": "85000000-0000-00fb-0000-000000000001",
+        "label": "A",
+        "text": "50"
+      },
+      {
+        "id": "85000000-0000-00fb-0000-000000000002",
+        "label": "B",
+        "text": "60"
+      },
+      {
+        "id": "85000000-0000-00fb-0000-000000000003",
+        "label": "C",
+        "text": "70"
+      },
+      {
+        "id": "85000000-0000-00fb-0000-000000000004",
+        "label": "D",
+        "text": "80"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00fb-0000-000000000002",
+    "explanation": "Pakistan's National Assembly includes 60 constitutionally reserved seats for women.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000fc",
+    "code": "PMA-Q-252",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 252. According to the UN's 2024 population estimates, Pakistan ranked approximately where by population?",
+    "options": [
+      {
+        "id": "85000000-0000-00fc-0000-000000000001",
+        "label": "A",
+        "text": "4th"
+      },
+      {
+        "id": "85000000-0000-00fc-0000-000000000002",
+        "label": "B",
+        "text": "5th"
+      },
+      {
+        "id": "85000000-0000-00fc-0000-000000000003",
+        "label": "C",
+        "text": "6th"
+      },
+      {
+        "id": "85000000-0000-00fc-0000-000000000004",
+        "label": "D",
+        "text": "7th"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00fc-0000-000000000002",
+    "explanation": "Pakistan ranked fifth by population in the UN's 2024 population estimates.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000fd",
+    "code": "PMA-Q-253",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 253. Ranikot Fort is located in which province of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-00fd-0000-000000000001",
+        "label": "A",
+        "text": "Punjab"
+      },
+      {
+        "id": "85000000-0000-00fd-0000-000000000002",
+        "label": "B",
+        "text": "Sindh"
+      },
+      {
+        "id": "85000000-0000-00fd-0000-000000000003",
+        "label": "C",
+        "text": "Khyber Pakhtunkhwa"
+      },
+      {
+        "id": "85000000-0000-00fd-0000-000000000004",
+        "label": "D",
+        "text": "Balochistan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00fd-0000-000000000002",
+    "explanation": "Ranikot Fort lies in Jamshoro District in Sindh.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000fe",
+    "code": "PMA-Q-254",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 254. The Battle of Plassey was fought on:",
+    "options": [
+      {
+        "id": "85000000-0000-00fe-0000-000000000001",
+        "label": "A",
+        "text": "23 June 1757"
+      },
+      {
+        "id": "85000000-0000-00fe-0000-000000000002",
+        "label": "B",
+        "text": "23 June 1756"
+      },
+      {
+        "id": "85000000-0000-00fe-0000-000000000003",
+        "label": "C",
+        "text": "23 June 1754"
+      },
+      {
+        "id": "85000000-0000-00fe-0000-000000000004",
+        "label": "D",
+        "text": "23 June 1755"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00fe-0000-000000000001",
+    "explanation": "The Battle of Plassey took place on 23 June 1757.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-0000000000ff",
+    "code": "PMA-Q-255",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 255. World War II ended on:",
+    "options": [
+      {
+        "id": "85000000-0000-00ff-0000-000000000001",
+        "label": "A",
+        "text": "2 September 1943"
+      },
+      {
+        "id": "85000000-0000-00ff-0000-000000000002",
+        "label": "B",
+        "text": "2 September 1944"
+      },
+      {
+        "id": "85000000-0000-00ff-0000-000000000003",
+        "label": "C",
+        "text": "2 September 1945"
+      },
+      {
+        "id": "85000000-0000-00ff-0000-000000000004",
+        "label": "D",
+        "text": "2 September 1946"
+      }
+    ],
+    "correctOptionId": "85000000-0000-00ff-0000-000000000003",
+    "explanation": "Japan's formal surrender on 2 September 1945 marks the end of World War II.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000100",
+    "code": "PMA-Q-256",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 256. What is a synonym of \"disrupt\"?",
+    "options": [
+      {
+        "id": "85000000-0000-0100-0000-000000000001",
+        "label": "A",
+        "text": "Bring through confusion"
+      },
+      {
+        "id": "85000000-0000-0100-0000-000000000002",
+        "label": "B",
+        "text": "Arrange"
+      },
+      {
+        "id": "85000000-0000-0100-0000-000000000003",
+        "label": "C",
+        "text": "Improve"
+      },
+      {
+        "id": "85000000-0000-0100-0000-000000000004",
+        "label": "D",
+        "text": "Stabilize"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0100-0000-000000000001",
+    "explanation": "Disrupt means to interrupt normal activity or throw it into disorder.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000101",
+    "code": "PMA-Q-257",
+    "subject": "ACADEMIC_MATH",
+    "subjectName": "Mathematics",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 257. As of 6 October 2026, what percentage of Pakistan's 96 Senate seats are reserved for women?",
+    "options": [
+      {
+        "id": "85000000-0000-0101-0000-000000000001",
+        "label": "A",
+        "text": "10%"
+      },
+      {
+        "id": "85000000-0000-0101-0000-000000000002",
+        "label": "B",
+        "text": "About 17.7%"
+      },
+      {
+        "id": "85000000-0000-0101-0000-000000000003",
+        "label": "C",
+        "text": "25%"
+      },
+      {
+        "id": "85000000-0000-0101-0000-000000000004",
+        "label": "D",
+        "text": "50%"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0101-0000-000000000002",
+    "explanation": "Pakistan's Senate has 17 seats reserved for women out of 96 total seats, approximately 17.7%.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000102",
+    "code": "PMA-Q-258",
+    "subject": "ACADEMIC_MATH",
+    "subjectName": "Mathematics",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 258. Into how many continents is the Earth commonly divided?",
+    "options": [
+      {
+        "id": "85000000-0000-0102-0000-000000000001",
+        "label": "A",
+        "text": "5"
+      },
+      {
+        "id": "85000000-0000-0102-0000-000000000002",
+        "label": "B",
+        "text": "6"
+      },
+      {
+        "id": "85000000-0000-0102-0000-000000000003",
+        "label": "C",
+        "text": "7"
+      },
+      {
+        "id": "85000000-0000-0102-0000-000000000004",
+        "label": "D",
+        "text": "8"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0102-0000-000000000003",
+    "explanation": "The conventional seven-continent model lists Asia, Africa, Europe, North America, South America, Antarctica and Australia.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000103",
+    "code": "PMA-Q-259",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 259. Aligarh Muslim University was established in:",
+    "options": [
+      {
+        "id": "85000000-0000-0103-0000-000000000001",
+        "label": "A",
+        "text": "1918"
+      },
+      {
+        "id": "85000000-0000-0103-0000-000000000002",
+        "label": "B",
+        "text": "1920"
+      },
+      {
+        "id": "85000000-0000-0103-0000-000000000003",
+        "label": "C",
+        "text": "1922"
+      },
+      {
+        "id": "85000000-0000-0103-0000-000000000004",
+        "label": "D",
+        "text": "1925"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0103-0000-000000000002",
+    "explanation": "Aligarh Muslim University was established by legislation in 1920, succeeding the MAO College.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000104",
+    "code": "PMA-Q-260",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 260. Warsak Dam is built on which river?",
+    "options": [
+      {
+        "id": "85000000-0000-0104-0000-000000000001",
+        "label": "A",
+        "text": "Indus"
+      },
+      {
+        "id": "85000000-0000-0104-0000-000000000002",
+        "label": "B",
+        "text": "Kabul"
+      },
+      {
+        "id": "85000000-0000-0104-0000-000000000003",
+        "label": "C",
+        "text": "Jhelum"
+      },
+      {
+        "id": "85000000-0000-0104-0000-000000000004",
+        "label": "D",
+        "text": "Ravi"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0104-0000-000000000002",
+    "explanation": "Warsak Dam is built on the Kabul River near Peshawar.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000105",
+    "code": "PMA-Q-261",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 261. What is the name of Pakistan's Super League?",
+    "options": [
+      {
+        "id": "85000000-0000-0105-0000-000000000001",
+        "label": "A",
+        "text": "Pakistan Super League (PSL)"
+      },
+      {
+        "id": "85000000-0000-0105-0000-000000000002",
+        "label": "B",
+        "text": "Pakistan Premier League"
+      },
+      {
+        "id": "85000000-0000-0105-0000-000000000003",
+        "label": "C",
+        "text": "Pakistan Cricket League"
+      },
+      {
+        "id": "85000000-0000-0105-0000-000000000004",
+        "label": "D",
+        "text": "National Super League"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0105-0000-000000000001",
+    "explanation": "PSL is the abbreviation for Pakistan Super League, Pakistan's franchise T20 cricket competition.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000106",
+    "code": "PMA-Q-262",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 262. Who won the ICC Champions Trophy 2025?",
+    "options": [
+      {
+        "id": "85000000-0000-0106-0000-000000000001",
+        "label": "A",
+        "text": "Pakistan"
+      },
+      {
+        "id": "85000000-0000-0106-0000-000000000002",
+        "label": "B",
+        "text": "India"
+      },
+      {
+        "id": "85000000-0000-0106-0000-000000000003",
+        "label": "C",
+        "text": "New Zealand"
+      },
+      {
+        "id": "85000000-0000-0106-0000-000000000004",
+        "label": "D",
+        "text": "Australia"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0106-0000-000000000002",
+    "explanation": "India defeated New Zealand in the final of the 2025 ICC Champions Trophy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000107",
+    "code": "PMA-Q-263",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 263. Mohamed Salah belongs to:",
+    "options": [
+      {
+        "id": "85000000-0000-0107-0000-000000000001",
+        "label": "A",
+        "text": "Egypt"
+      },
+      {
+        "id": "85000000-0000-0107-0000-000000000002",
+        "label": "B",
+        "text": "Morocco"
+      },
+      {
+        "id": "85000000-0000-0107-0000-000000000003",
+        "label": "C",
+        "text": "Algeria"
+      },
+      {
+        "id": "85000000-0000-0107-0000-000000000004",
+        "label": "D",
+        "text": "Tunisia"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0107-0000-000000000001",
+    "explanation": "Mohamed Salah is an Egyptian footballer who represents Egypt internationally.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000108",
+    "code": "PMA-Q-264",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 264. What is the name of the Pakistan-China border crossing?",
+    "options": [
+      {
+        "id": "85000000-0000-0108-0000-000000000001",
+        "label": "A",
+        "text": "Khyber Pass"
+      },
+      {
+        "id": "85000000-0000-0108-0000-000000000002",
+        "label": "B",
+        "text": "Khunjerab Pass"
+      },
+      {
+        "id": "85000000-0000-0108-0000-000000000003",
+        "label": "C",
+        "text": "Bolan Pass"
+      },
+      {
+        "id": "85000000-0000-0108-0000-000000000004",
+        "label": "D",
+        "text": "Lowari Pass"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0108-0000-000000000002",
+    "explanation": "Khunjerab Pass is the Pakistan-China crossing on the Karakoram Highway.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000109",
+    "code": "PMA-Q-265",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 265. As of 6 October 2026, who is the Secretary-General of the United Nations?",
+    "options": [
+      {
+        "id": "85000000-0000-0109-0000-000000000001",
+        "label": "A",
+        "text": "Ban Ki-moon"
+      },
+      {
+        "id": "85000000-0000-0109-0000-000000000002",
+        "label": "B",
+        "text": "Antonio Guterres"
+      },
+      {
+        "id": "85000000-0000-0109-0000-000000000003",
+        "label": "C",
+        "text": "Kofi Annan"
+      },
+      {
+        "id": "85000000-0000-0109-0000-000000000004",
+        "label": "D",
+        "text": "Boutros Boutros-Ghali"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0109-0000-000000000002",
+    "explanation": "Antonio Guterres is the UN Secretary-General as of 6 October 2026; his second term ends in December 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000010a",
+    "code": "PMA-Q-266",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 266. Video games are developed by:",
+    "options": [
+      {
+        "id": "85000000-0000-010a-0000-000000000001",
+        "label": "A",
+        "text": "Only Microsoft"
+      },
+      {
+        "id": "85000000-0000-010a-0000-000000000002",
+        "label": "B",
+        "text": "Various companies"
+      },
+      {
+        "id": "85000000-0000-010a-0000-000000000003",
+        "label": "C",
+        "text": "Only Sony"
+      },
+      {
+        "id": "85000000-0000-010a-0000-000000000004",
+        "label": "D",
+        "text": "Only Nintendo"
+      }
+    ],
+    "correctOptionId": "85000000-0000-010a-0000-000000000002",
+    "explanation": "Video games are created by many independent developers and companies rather than a single manufacturer.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000010b",
+    "code": "PMA-Q-267",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 267. As of 6 October 2026, who is the Governor of Khyber Pakhtunkhwa?",
+    "options": [
+      {
+        "id": "85000000-0000-010b-0000-000000000001",
+        "label": "A",
+        "text": "Faisal Karim Kundi"
+      },
+      {
+        "id": "85000000-0000-010b-0000-000000000002",
+        "label": "B",
+        "text": "Ali Amin Gandapur"
+      },
+      {
+        "id": "85000000-0000-010b-0000-000000000003",
+        "label": "C",
+        "text": "Pervez Khattak"
+      },
+      {
+        "id": "85000000-0000-010b-0000-000000000004",
+        "label": "D",
+        "text": "Mahmood Khan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-010b-0000-000000000001",
+    "explanation": "Faisal Karim Kundi is Governor of Khyber Pakhtunkhwa as of 6 October 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000010c",
+    "code": "PMA-Q-268",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 268. The Nobel Prize was founded by:",
+    "options": [
+      {
+        "id": "85000000-0000-010c-0000-000000000001",
+        "label": "A",
+        "text": "Alfred Nobel"
+      },
+      {
+        "id": "85000000-0000-010c-0000-000000000002",
+        "label": "B",
+        "text": "Albert Einstein"
+      },
+      {
+        "id": "85000000-0000-010c-0000-000000000003",
+        "label": "C",
+        "text": "Isaac Newton"
+      },
+      {
+        "id": "85000000-0000-010c-0000-000000000004",
+        "label": "D",
+        "text": "Alexander Fleming"
+      }
+    ],
+    "correctOptionId": "85000000-0000-010c-0000-000000000001",
+    "explanation": "Alfred Nobel's will established the original Nobel Prize awards.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000010d",
+    "code": "PMA-Q-269",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 269. The Badshahi Mosque is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-010d-0000-000000000001",
+        "label": "A",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-010d-0000-000000000002",
+        "label": "B",
+        "text": "Karachi"
+      },
+      {
+        "id": "85000000-0000-010d-0000-000000000003",
+        "label": "C",
+        "text": "Islamabad"
+      },
+      {
+        "id": "85000000-0000-010d-0000-000000000004",
+        "label": "D",
+        "text": "Multan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-010d-0000-000000000001",
+    "explanation": "The Badshahi Mosque stands in Lahore near Lahore Fort.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000010e",
+    "code": "PMA-Q-270",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 270. The 1916 Congress and All-India Muslim League agreement was called:",
+    "options": [
+      {
+        "id": "85000000-0000-010e-0000-000000000001",
+        "label": "A",
+        "text": "Lucknow Pact"
+      },
+      {
+        "id": "85000000-0000-010e-0000-000000000002",
+        "label": "B",
+        "text": "Delhi Pact"
+      },
+      {
+        "id": "85000000-0000-010e-0000-000000000003",
+        "label": "C",
+        "text": "Lahore Pact"
+      },
+      {
+        "id": "85000000-0000-010e-0000-000000000004",
+        "label": "D",
+        "text": "Simla Pact"
+      }
+    ],
+    "correctOptionId": "85000000-0000-010e-0000-000000000001",
+    "explanation": "The 1916 Congress-Muslim League agreement is known as the Lucknow Pact.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000010f",
+    "code": "PMA-Q-271",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 271. Labour Day is celebrated on:",
+    "options": [
+      {
+        "id": "85000000-0000-010f-0000-000000000001",
+        "label": "A",
+        "text": "1 May"
+      },
+      {
+        "id": "85000000-0000-010f-0000-000000000002",
+        "label": "B",
+        "text": "1 June"
+      },
+      {
+        "id": "85000000-0000-010f-0000-000000000003",
+        "label": "C",
+        "text": "14 August"
+      },
+      {
+        "id": "85000000-0000-010f-0000-000000000004",
+        "label": "D",
+        "text": "5 September"
+      }
+    ],
+    "correctOptionId": "85000000-0000-010f-0000-000000000001",
+    "explanation": "International Workers' Day, commonly called Labour Day, is observed on 1 May.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000110",
+    "code": "PMA-Q-272",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 272. Nelson Mandela was a leader of:",
+    "options": [
+      {
+        "id": "85000000-0000-0110-0000-000000000001",
+        "label": "A",
+        "text": "African National Congress (ANC)"
+      },
+      {
+        "id": "85000000-0000-0110-0000-000000000002",
+        "label": "B",
+        "text": "Indian National Congress"
+      },
+      {
+        "id": "85000000-0000-0110-0000-000000000003",
+        "label": "C",
+        "text": "Muslim League"
+      },
+      {
+        "id": "85000000-0000-0110-0000-000000000004",
+        "label": "D",
+        "text": "African Union"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0110-0000-000000000001",
+    "explanation": "Nelson Mandela led the African National Congress in the struggle against apartheid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000111",
+    "code": "PMA-Q-273",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 273. Harappa was famous for which ancient civilization?",
+    "options": [
+      {
+        "id": "85000000-0000-0111-0000-000000000001",
+        "label": "A",
+        "text": "Roman Civilization"
+      },
+      {
+        "id": "85000000-0000-0111-0000-000000000002",
+        "label": "B",
+        "text": "Indus Valley Civilization"
+      },
+      {
+        "id": "85000000-0000-0111-0000-000000000003",
+        "label": "C",
+        "text": "Greek Civilization"
+      },
+      {
+        "id": "85000000-0000-0111-0000-000000000004",
+        "label": "D",
+        "text": "Egyptian Civilization"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0111-0000-000000000002",
+    "explanation": "Harappa was a major urban centre of the Indus Valley Civilization.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000112",
+    "code": "PMA-Q-274",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 274. Who founded the Indian National Congress?",
+    "options": [
+      {
+        "id": "85000000-0000-0112-0000-000000000001",
+        "label": "A",
+        "text": "Allan Octavian Hume"
+      },
+      {
+        "id": "85000000-0000-0112-0000-000000000002",
+        "label": "B",
+        "text": "Jawaharlal Nehru"
+      },
+      {
+        "id": "85000000-0000-0112-0000-000000000003",
+        "label": "C",
+        "text": "Mahatma Gandhi"
+      },
+      {
+        "id": "85000000-0000-0112-0000-000000000004",
+        "label": "D",
+        "text": "Lord Curzon"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0112-0000-000000000001",
+    "explanation": "Allan Octavian Hume was a leading organizer in the founding of the Indian National Congress in 1885.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000113",
+    "code": "PMA-Q-275",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 275. Who was known as the \"Ambassador of Hindu-Muslim Unity\"?",
+    "options": [
+      {
+        "id": "85000000-0000-0113-0000-000000000001",
+        "label": "A",
+        "text": "Quaid-e-Azam Muhammad Ali Jinnah"
+      },
+      {
+        "id": "85000000-0000-0113-0000-000000000002",
+        "label": "B",
+        "text": "Allama Iqbal"
+      },
+      {
+        "id": "85000000-0000-0113-0000-000000000003",
+        "label": "C",
+        "text": "Sir Syed Ahmad Khan"
+      },
+      {
+        "id": "85000000-0000-0113-0000-000000000004",
+        "label": "D",
+        "text": "Liaquat Ali Khan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0113-0000-000000000001",
+    "explanation": "Jinnah's early efforts at intercommunal cooperation earned him the title Ambassador of Hindu-Muslim Unity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000114",
+    "code": "PMA-Q-276",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 276. Pakistan established diplomatic relations with the United States on:",
+    "options": [
+      {
+        "id": "85000000-0000-0114-0000-000000000001",
+        "label": "A",
+        "text": "15 August 1947"
+      },
+      {
+        "id": "85000000-0000-0114-0000-000000000002",
+        "label": "B",
+        "text": "14 August 1947"
+      },
+      {
+        "id": "85000000-0000-0114-0000-000000000003",
+        "label": "C",
+        "text": "30 September 1947"
+      },
+      {
+        "id": "85000000-0000-0114-0000-000000000004",
+        "label": "D",
+        "text": "1 January 1948"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0114-0000-000000000001",
+    "explanation": "The United States established diplomatic relations with Pakistan on 15 August 1947.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000115",
+    "code": "PMA-Q-277",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 277. Pakistan aligned itself with the United States during the:",
+    "options": [
+      {
+        "id": "85000000-0000-0115-0000-000000000001",
+        "label": "A",
+        "text": "First World War"
+      },
+      {
+        "id": "85000000-0000-0115-0000-000000000002",
+        "label": "B",
+        "text": "Cold War"
+      },
+      {
+        "id": "85000000-0000-0115-0000-000000000003",
+        "label": "C",
+        "text": "Second World War"
+      },
+      {
+        "id": "85000000-0000-0115-0000-000000000004",
+        "label": "D",
+        "text": "Gulf War"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0115-0000-000000000002",
+    "explanation": "Pakistan's participation in US-aligned security arrangements developed during the Cold War.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000116",
+    "code": "PMA-Q-278",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 278. As of 6 October 2026, who is the Prime Minister of Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0116-0000-000000000001",
+        "label": "A",
+        "text": "Imran Khan"
+      },
+      {
+        "id": "85000000-0000-0116-0000-000000000002",
+        "label": "B",
+        "text": "Shehbaz Sharif"
+      },
+      {
+        "id": "85000000-0000-0116-0000-000000000003",
+        "label": "C",
+        "text": "Nawaz Sharif"
+      },
+      {
+        "id": "85000000-0000-0116-0000-000000000004",
+        "label": "D",
+        "text": "Asif Ali Zardari"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0116-0000-000000000002",
+    "explanation": "Shehbaz Sharif is Pakistan's Prime Minister as of 6 October 2026.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000117",
+    "code": "PMA-Q-279",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 279. How many total seats are there in Pakistan's National Assembly?",
+    "options": [
+      {
+        "id": "85000000-0000-0117-0000-000000000001",
+        "label": "A",
+        "text": "326"
+      },
+      {
+        "id": "85000000-0000-0117-0000-000000000002",
+        "label": "B",
+        "text": "336"
+      },
+      {
+        "id": "85000000-0000-0117-0000-000000000003",
+        "label": "C",
+        "text": "342"
+      },
+      {
+        "id": "85000000-0000-0117-0000-000000000004",
+        "label": "D",
+        "text": "346"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0117-0000-000000000002",
+    "explanation": "The National Assembly has 266 general seats, 60 reserved for women and 10 for non-Muslims, totaling 336.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000118",
+    "code": "PMA-Q-280",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 280. Pakistan joined the Organization of Islamic Cooperation (OIC) in:",
+    "options": [
+      {
+        "id": "85000000-0000-0118-0000-000000000001",
+        "label": "A",
+        "text": "1967"
+      },
+      {
+        "id": "85000000-0000-0118-0000-000000000002",
+        "label": "B",
+        "text": "1969"
+      },
+      {
+        "id": "85000000-0000-0118-0000-000000000003",
+        "label": "C",
+        "text": "1971"
+      },
+      {
+        "id": "85000000-0000-0118-0000-000000000004",
+        "label": "D",
+        "text": "1973"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0118-0000-000000000002",
+    "explanation": "Pakistan was a founding member of the OIC when it was established in 1969.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000119",
+    "code": "PMA-Q-281",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 281. The Olympic Games scheduled for 1916 were cancelled due to:",
+    "options": [
+      {
+        "id": "85000000-0000-0119-0000-000000000001",
+        "label": "A",
+        "text": "World War I"
+      },
+      {
+        "id": "85000000-0000-0119-0000-000000000002",
+        "label": "B",
+        "text": "World War II"
+      },
+      {
+        "id": "85000000-0000-0119-0000-000000000003",
+        "label": "C",
+        "text": "Economic crisis"
+      },
+      {
+        "id": "85000000-0000-0119-0000-000000000004",
+        "label": "D",
+        "text": "Political dispute"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0119-0000-000000000001",
+    "explanation": "The planned Berlin Olympics of 1916 were cancelled because of World War I.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000011a",
+    "code": "PMA-Q-282",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 282. The famous Leaning Tower is located in:",
+    "options": [
+      {
+        "id": "85000000-0000-011a-0000-000000000001",
+        "label": "A",
+        "text": "Rome"
+      },
+      {
+        "id": "85000000-0000-011a-0000-000000000002",
+        "label": "B",
+        "text": "Venice"
+      },
+      {
+        "id": "85000000-0000-011a-0000-000000000003",
+        "label": "C",
+        "text": "Pisa"
+      },
+      {
+        "id": "85000000-0000-011a-0000-000000000004",
+        "label": "D",
+        "text": "Milan"
+      }
+    ],
+    "correctOptionId": "85000000-0000-011a-0000-000000000003",
+    "explanation": "The famous leaning bell tower is in Pisa, Italy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000011b",
+    "code": "PMA-Q-283",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 283. Khyber Pass connects Peshawar with:",
+    "options": [
+      {
+        "id": "85000000-0000-011b-0000-000000000001",
+        "label": "A",
+        "text": "Kabul"
+      },
+      {
+        "id": "85000000-0000-011b-0000-000000000002",
+        "label": "B",
+        "text": "Lahore"
+      },
+      {
+        "id": "85000000-0000-011b-0000-000000000003",
+        "label": "C",
+        "text": "Quetta"
+      },
+      {
+        "id": "85000000-0000-011b-0000-000000000004",
+        "label": "D",
+        "text": "Jalalabad only"
+      }
+    ],
+    "correctOptionId": "85000000-0000-011b-0000-000000000001",
+    "explanation": "The Khyber Pass forms part of the historic route from Peshawar toward Kabul through eastern Afghanistan.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000011c",
+    "code": "PMA-Q-284",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 284. Khawaja Nazimuddin became Prime Minister of Pakistan in which month and year?",
+    "options": [
+      {
+        "id": "85000000-0000-011c-0000-000000000001",
+        "label": "A",
+        "text": "October 1951"
+      },
+      {
+        "id": "85000000-0000-011c-0000-000000000002",
+        "label": "B",
+        "text": "August 1951"
+      },
+      {
+        "id": "85000000-0000-011c-0000-000000000003",
+        "label": "C",
+        "text": "December 1951"
+      },
+      {
+        "id": "85000000-0000-011c-0000-000000000004",
+        "label": "D",
+        "text": "March 1952"
+      }
+    ],
+    "correctOptionId": "85000000-0000-011c-0000-000000000001",
+    "explanation": "Khawaja Nazimuddin succeeded Liaquat Ali Khan as Prime Minister in October 1951.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000011d",
+    "code": "PMA-Q-285",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 285. Pakistan was admitted to the United Nations on:",
+    "options": [
+      {
+        "id": "85000000-0000-011d-0000-000000000001",
+        "label": "A",
+        "text": "14 August 1947"
+      },
+      {
+        "id": "85000000-0000-011d-0000-000000000002",
+        "label": "B",
+        "text": "30 September 1947"
+      },
+      {
+        "id": "85000000-0000-011d-0000-000000000003",
+        "label": "C",
+        "text": "24 October 1945"
+      },
+      {
+        "id": "85000000-0000-011d-0000-000000000004",
+        "label": "D",
+        "text": "23 March 1948"
+      }
+    ],
+    "correctOptionId": "85000000-0000-011d-0000-000000000002",
+    "explanation": "Pakistan was admitted to the United Nations on 30 September 1947.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000011e",
+    "code": "PMA-Q-286",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 286. Which famous pass is located between Pakistan and Afghanistan?",
+    "options": [
+      {
+        "id": "85000000-0000-011e-0000-000000000001",
+        "label": "A",
+        "text": "Khyber Pass"
+      },
+      {
+        "id": "85000000-0000-011e-0000-000000000002",
+        "label": "B",
+        "text": "Khunjerab Pass"
+      },
+      {
+        "id": "85000000-0000-011e-0000-000000000003",
+        "label": "C",
+        "text": "Babusar Pass"
+      },
+      {
+        "id": "85000000-0000-011e-0000-000000000004",
+        "label": "D",
+        "text": "Bolan Pass"
+      }
+    ],
+    "correctOptionId": "85000000-0000-011e-0000-000000000001",
+    "explanation": "The Khyber Pass crosses the Pakistan-Afghanistan frontier.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-00000000011f",
+    "code": "PMA-Q-287",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 287. The COVID-19 outbreak was first identified in:",
+    "options": [
+      {
+        "id": "85000000-0000-011f-0000-000000000001",
+        "label": "A",
+        "text": "Beijing"
+      },
+      {
+        "id": "85000000-0000-011f-0000-000000000002",
+        "label": "B",
+        "text": "Wuhan, China"
+      },
+      {
+        "id": "85000000-0000-011f-0000-000000000003",
+        "label": "C",
+        "text": "Shanghai"
+      },
+      {
+        "id": "85000000-0000-011f-0000-000000000004",
+        "label": "D",
+        "text": "Hong Kong"
+      }
+    ],
+    "correctOptionId": "85000000-0000-011f-0000-000000000002",
+    "explanation": "The first recognized COVID-19 cluster was reported in Wuhan, China, in late 2019.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000120",
+    "code": "PMA-Q-288",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 288. Under Pakistan's Constitution, the President has how long to assent to a bill after reconsideration by Parliament?",
+    "options": [
+      {
+        "id": "85000000-0000-0120-0000-000000000001",
+        "label": "A",
+        "text": "5 days"
+      },
+      {
+        "id": "85000000-0000-0120-0000-000000000002",
+        "label": "B",
+        "text": "10 days"
+      },
+      {
+        "id": "85000000-0000-0120-0000-000000000003",
+        "label": "C",
+        "text": "30 days"
+      },
+      {
+        "id": "85000000-0000-0120-0000-000000000004",
+        "label": "D",
+        "text": "4 months"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0120-0000-000000000002",
+    "explanation": "Article 75 requires assent within ten days after Parliament passes a returned bill again, otherwise assent is deemed given.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000121",
+    "code": "PMA-Q-289",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 289. Which historical event is commemorated at Minar-e-Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0121-0000-000000000001",
+        "label": "A",
+        "text": "Lahore Resolution of 1940"
+      },
+      {
+        "id": "85000000-0000-0121-0000-000000000002",
+        "label": "B",
+        "text": "Pakistan's independence"
+      },
+      {
+        "id": "85000000-0000-0121-0000-000000000003",
+        "label": "C",
+        "text": "Objectives Resolution"
+      },
+      {
+        "id": "85000000-0000-0121-0000-000000000004",
+        "label": "D",
+        "text": "Simla Agreement"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0121-0000-000000000001",
+    "explanation": "Minar-e-Pakistan commemorates the Lahore Resolution associated with 23 March 1940.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000122",
+    "code": "PMA-Q-290",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 290. Who sold Kashmir to Maharaja Gulab Singh under the Treaty of Amritsar?",
+    "options": [
+      {
+        "id": "85000000-0000-0122-0000-000000000001",
+        "label": "A",
+        "text": "British East India Company"
+      },
+      {
+        "id": "85000000-0000-0122-0000-000000000002",
+        "label": "B",
+        "text": "Mughal Emperor"
+      },
+      {
+        "id": "85000000-0000-0122-0000-000000000003",
+        "label": "C",
+        "text": "Afghan Empire"
+      },
+      {
+        "id": "85000000-0000-0122-0000-000000000004",
+        "label": "D",
+        "text": "Sikh Empire"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0122-0000-000000000001",
+    "explanation": "The British East India Company transferred Kashmir to Gulab Singh under the 1846 Treaty of Amritsar.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000123",
+    "code": "PMA-Q-291",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 291. Choose the correct sentence:",
+    "options": [
+      {
+        "id": "85000000-0000-0123-0000-000000000001",
+        "label": "A",
+        "text": "He reminds me his history teacher."
+      },
+      {
+        "id": "85000000-0000-0123-0000-000000000002",
+        "label": "B",
+        "text": "He reminds me of his history teacher."
+      },
+      {
+        "id": "85000000-0000-0123-0000-000000000003",
+        "label": "C",
+        "text": "He reminds me from his history teacher."
+      },
+      {
+        "id": "85000000-0000-0123-0000-000000000004",
+        "label": "D",
+        "text": "He reminds me with his history teacher."
+      }
+    ],
+    "correctOptionId": "85000000-0000-0123-0000-000000000002",
+    "explanation": "The standard verb pattern is remind someone of someone or something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000124",
+    "code": "PMA-Q-292",
+    "subject": "ACADEMIC_MATH",
+    "subjectName": "Mathematics",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 292. Which mathematical process divides a line segment into smaller equal parts?",
+    "options": [
+      {
+        "id": "85000000-0000-0124-0000-000000000001",
+        "label": "A",
+        "text": "Division"
+      },
+      {
+        "id": "85000000-0000-0124-0000-000000000002",
+        "label": "B",
+        "text": "Addition"
+      },
+      {
+        "id": "85000000-0000-0124-0000-000000000003",
+        "label": "C",
+        "text": "Multiplication"
+      },
+      {
+        "id": "85000000-0000-0124-0000-000000000004",
+        "label": "D",
+        "text": "Subtraction"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0124-0000-000000000001",
+    "explanation": "Dividing a segment into equal parts is a process of division or partitioning.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000125",
+    "code": "PMA-Q-293",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 293. Saint John is a city in which Canadian province?",
+    "options": [
+      {
+        "id": "85000000-0000-0125-0000-000000000001",
+        "label": "A",
+        "text": "Ontario"
+      },
+      {
+        "id": "85000000-0000-0125-0000-000000000002",
+        "label": "B",
+        "text": "Quebec"
+      },
+      {
+        "id": "85000000-0000-0125-0000-000000000003",
+        "label": "C",
+        "text": "New Brunswick"
+      },
+      {
+        "id": "85000000-0000-0125-0000-000000000004",
+        "label": "D",
+        "text": "Manitoba"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0125-0000-000000000003",
+    "explanation": "Saint John is in New Brunswick; St. John's is a different city in Newfoundland and Labrador.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
+  },
+  {
+    "id": "75000000-0000-0000-0000-000000000126",
+    "code": "PMA-Q-294",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "PMA--Q no 294. Which is the largest freshwater lake in Pakistan?",
+    "options": [
+      {
+        "id": "85000000-0000-0126-0000-000000000001",
+        "label": "A",
+        "text": "Lake Saif-ul-Muluk"
+      },
+      {
+        "id": "85000000-0000-0126-0000-000000000002",
+        "label": "B",
+        "text": "Lake Manchar"
+      },
+      {
+        "id": "85000000-0000-0126-0000-000000000003",
+        "label": "C",
+        "text": "Hanna Lake"
+      },
+      {
+        "id": "85000000-0000-0126-0000-000000000004",
+        "label": "D",
+        "text": "Keenjhar Lake"
+      }
+    ],
+    "correctOptionId": "85000000-0000-0126-0000-000000000002",
+    "explanation": "Manchar Lake in Sindh is widely identified as Pakistan's largest natural freshwater lake.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "PMA Long Course Board",
+    "tags": [
+      "PMA",
+      "PMA Long Course",
+      "Academic"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101"
+    ]
   }
 ];
