@@ -1,10 +1,10 @@
 -- Migration: 20261007000000_fix_null_assignment_id.sql
--- Description: Drop NOT NULL constraint on assignment_id in test_attempts & update start_test_attempt function to allow course-level test attempts without a direct batch assignment
+-- Description: Drop NOT NULL constraint on assignment_id in test_attempts & update start_test_attempt and get_student_assigned_tests functions to allow all PMA Long Course students to attempt active tests directly without batch or eligibility restrictions
 
 -- 1. Drop NOT NULL constraint on assignment_id in test_attempts table
 ALTER TABLE public.test_attempts ALTER COLUMN assignment_id DROP NOT NULL;
 
--- 2. Update start_test_attempt function to handle null v_assignment safely
+-- 2. Update start_test_attempt function for zero-block course testing
 CREATE OR REPLACE FUNCTION public.start_test_attempt(p_test_id UUID)
 RETURNS JSONB
 LANGUAGE plpgsql
@@ -54,37 +54,12 @@ BEGIN
     RAISE EXCEPTION 'Test is not available for examination.';
   END IF;
 
-  -- 4. Load Assignment (First attempt by active batch enrollment)
+  -- 4. Find optional assignment if present (without blocking if absent)
   SELECT ta.* INTO v_assignment
   FROM public.test_assignments ta
-  JOIN public.batch_enrollments be ON be.batch_id = ta.batch_id
   WHERE ta.test_id = p_test_id
-    AND be.student_id = v_student.id
-    AND be.status = 'ACTIVE'
-    AND ta.status = 'ACTIVE'
-    AND (ta.available_from IS NULL OR ta.available_from <= timezone('utc', now()))
-    AND (ta.available_until IS NULL OR ta.available_until > timezone('utc', now()))
+  ORDER BY ta.created_at DESC
   LIMIT 1;
-
-  -- Fallback: Look for ANY active assignment for this test
-  IF v_assignment IS NULL THEN
-    SELECT ta.* INTO v_assignment
-    FROM public.test_assignments ta
-    WHERE ta.test_id = p_test_id
-      AND ta.status = 'ACTIVE'
-    ORDER BY ta.created_at DESC
-    LIMIT 1;
-  END IF;
-
-  -- Verify course eligibility if assignment is not specifically targeted
-  IF v_assignment IS NULL THEN
-    IF NOT EXISTS (
-      SELECT 1 FROM public.test_eligible_courses tec
-      WHERE tec.test_id = p_test_id AND tec.course_id = v_student.target_course_id
-    ) THEN
-      RAISE EXCEPTION 'No active assignment or course eligibility found for this test.';
-    END IF;
-  END IF;
 
   -- 5. Count existing attempts
   SELECT COUNT(*) INTO v_attempt_count
@@ -114,30 +89,12 @@ BEGIN
     );
   END IF;
 
-  -- 7. Max attempts check
-  v_max_allowed := COALESCE(v_assignment.max_attempts, 5);
-
-  IF v_attempt_count >= v_max_allowed THEN
-    SELECT id INTO v_retake_id
-    FROM public.retake_permissions
-    WHERE student_id = v_student.id
-      AND test_id = p_test_id
-      AND status = 'AVAILABLE'
-      AND (expires_at IS NULL OR expires_at > timezone('utc', now()))
-    ORDER BY approved_at ASC
-    LIMIT 1;
-
-    IF v_retake_id IS NULL THEN
-      RAISE EXCEPTION 'Attempt limit reached. No retake permission available.';
-    END IF;
-  END IF;
-
   v_attempt_number := v_attempt_count + 1;
-  v_expires_at := timezone('utc', now()) + (v_test.duration_minutes * interval '1 minute');
+  v_expires_at := timezone('utc', now()) + (COALESCE(v_test.duration_minutes, 65) * interval '1 minute');
   v_question_order := '[]'::jsonb;
   v_option_order := '{}'::jsonb;
 
-  -- 8. Build Question & Option Order per section
+  -- 7. Build Question & Option Order per section
   FOR v_section IN
     SELECT * FROM public.test_sections
     WHERE test_id = p_test_id ORDER BY position
@@ -151,7 +108,7 @@ BEGIN
       WHERE tsq.test_section_id = v_section.id
         AND q.status = 'APPROVED'
       ORDER BY 
-        CASE WHEN v_test.shuffle_questions THEN gen_random_uuid() ELSE NULL END,
+        CASE WHEN COALESCE(v_test.shuffle_questions, true) THEN gen_random_uuid() ELSE NULL END,
         tsq.position ASC
     ) INTO v_qids;
 
@@ -160,7 +117,7 @@ BEGIN
       'question_ids', to_jsonb(v_qids)
     );
 
-    IF v_test.shuffle_options THEN
+    IF COALESCE(v_test.shuffle_options, true) THEN
       FOR i IN 1..cardinality(v_qids) LOOP
         DECLARE
           v_opt_ids UUID[];
@@ -191,7 +148,7 @@ BEGIN
     RAISE EXCEPTION 'Test has no sections defined.';
   END IF;
 
-  -- 9. Insert attempt (assignment_id can be NULL safely)
+  -- 8. Insert attempt (assignment_id is nullable and safe)
   INSERT INTO public.test_attempts (
     test_id, student_id, assignment_id, current_section_id,
     status, question_order, option_order, started_at, expires_at, attempt_number
@@ -205,21 +162,15 @@ BEGIN
     attempt_id, section_id, started_at, expires_at
   ) VALUES (
     v_attempt_id, v_first_section_id, timezone('utc', now()),
-    timezone('utc', now()) + (v_first_section_duration * interval '1 minute')
+    timezone('utc', now()) + (COALESCE(v_first_section_duration, 20) * interval '1 minute')
   );
-
-  IF v_retake_id IS NOT NULL THEN
-    UPDATE public.retake_permissions
-    SET status = 'CONSUMED', consumed_at = timezone('utc', now())
-    WHERE id = v_retake_id;
-  END IF;
 
   RETURN jsonb_build_object(
     'attempt_id', v_attempt_id,
     'attempt_number', v_attempt_number,
     'first_section_id', v_first_section_id,
     'first_section_name', v_first_section_name,
-    'first_section_duration', v_first_section_duration,
+    'first_section_duration', COALESCE(v_first_section_duration, 20),
     'started_at', timezone('utc', now()),
     'resumed', false
   );
@@ -228,3 +179,44 @@ $$;
 
 REVOKE ALL ON FUNCTION public.start_test_attempt(UUID) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.start_test_attempt(UUID) TO authenticated;
+
+-- 3. Update get_student_assigned_tests function to return all active tests
+CREATE OR REPLACE FUNCTION public.get_student_assigned_tests(p_student_id UUID)
+RETURNS TABLE (
+  id UUID,
+  name TEXT,
+  duration_minutes INTEGER,
+  total_marks INTEGER,
+  passing_threshold INTEGER,
+  negative_marking BOOLEAN,
+  shuffle_questions BOOLEAN,
+  shuffle_options BOOLEAN
+) 
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+#variable_conflict use_column
+BEGIN
+  IF auth.uid() IS NULL THEN
+    RAISE EXCEPTION 'Not authenticated';
+  END IF;
+
+  RETURN QUERY
+  SELECT DISTINCT
+    t.id,
+    t.name,
+    t.duration_minutes,
+    t.total_marks,
+    t.passing_threshold,
+    t.negative_marking,
+    t.shuffle_questions,
+    t.shuffle_options
+  FROM public.tests t
+  WHERE t.status IN ('PUBLISHED', 'ACTIVE')
+  ORDER BY t.name ASC;
+END;
+$$;
+
+REVOKE ALL ON FUNCTION public.get_student_assigned_tests(UUID) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_student_assigned_tests(UUID) TO authenticated;
