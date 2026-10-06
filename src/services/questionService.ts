@@ -15,7 +15,6 @@ async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<stri
   }
 
   try {
-    // 1. Try exact code match
     const { data: codeMatch } = await (supabase as any)
       .from('subjects')
       .select('id')
@@ -24,7 +23,6 @@ async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<stri
 
     if (codeMatch?.id) return codeMatch.id;
 
-    // 2. Search by key terms
     const searchTerms: string[] = [];
     if (fallbackCode.includes('NON_VERBAL') || fallbackCode.includes('NON-VERBAL')) {
       searchTerms.push('Non-Verbal', 'INTELLIGENCE_NON_VERBAL');
@@ -51,7 +49,6 @@ async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<stri
       if (termMatch?.id) return termMatch.id;
     }
 
-    // 3. Fallback to first available subject
     const { data: firstSubject } = await (supabase as any)
       .from('subjects')
       .select('id')
@@ -60,7 +57,6 @@ async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<stri
 
     if (firstSubject?.id) return firstSubject.id;
 
-    // 4. Auto-create subject in subjects table if missing
     const cleanCode = fallbackCode.toUpperCase();
     const cleanName = cleanCode
       .replace(/_/g, ' ')
@@ -72,7 +68,7 @@ async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<stri
       ? 'ACADEMIC'
       : 'GENERAL';
 
-    const { data: created, error: createErr } = await (supabase as any)
+    const { data: created } = await (supabase as any)
       .from('subjects')
       .insert({
         code: cleanCode,
@@ -84,7 +80,6 @@ async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<stri
       .single();
 
     if (created?.id) return created.id;
-    if (createErr) console.warn('Failed to auto-create subject in DB:', createErr.message);
   } catch (err) {
     console.warn('Failed to resolve subject UUID for:', fallbackCode, err);
   }
@@ -98,38 +93,56 @@ export const questionService = {
       return [];
     }
 
-    const { data, error } = await (supabase as any)
-      .from('questions')
-      .select(`
-        *,
-        subjects (
-          id,
-          code,
-          name
-        ),
-        profiles:profiles!questions_author_id_fkey (
-          display_name
-        ),
-        question_options (
-          id,
-          label,
-          text,
-          image_url,
-          is_correct
-        )
-      `)
-      .order('created_at', { ascending: false });
+    // Paginate to load ALL questions beyond Supabase 1000 default limit
+    let allData: any[] = [];
+    let from = 0;
+    const PAGE_SIZE = 1000;
 
-    if (error || !data) {
-      console.warn('Failed to load questions from database:', error);
-      return [];
+    while (true) {
+      const { data, error } = await (supabase as any)
+        .from('questions')
+        .select(`
+          *,
+          subjects (
+            id,
+            code,
+            name
+          ),
+          profiles:profiles!questions_author_id_fkey (
+            display_name
+          ),
+          question_options (
+            id,
+            label,
+            option_key,
+            text,
+            image_url,
+            is_correct
+          )
+        `)
+        .range(from, from + PAGE_SIZE - 1);
+
+      if (error || !data || data.length === 0) break;
+      allData.push(...data);
+      if (data.length < PAGE_SIZE) break;
+      from += PAGE_SIZE;
     }
 
-    return data.map((q: any) => {
+    const mapped = allData.map((q: any) => {
       const subject = q.subjects as any;
       const profile = q.profiles as any;
       const opts = (q.question_options || []) as any[];
       const correctOpt = opts.find((o) => o.is_correct);
+
+      const tags: string[] = q.tags || [];
+      const isAFNS = tags.includes('AFNS') || q.code.startsWith('AFNS') || q.stem.startsWith('AFNS');
+      const isVerbal = tags.includes('Verbal') || q.code.startsWith('VERBAL') || q.stem.startsWith('V--Q');
+      
+      const branch = isAFNS && !tags.includes('PMA') 
+        ? 'ARMED_FORCES_NURSING_SERVICE' 
+        : isVerbal 
+        ? 'TRI_SERVICE' 
+        : 'PAKISTAN_ARMY';
 
       return {
         id: q.id,
@@ -137,25 +150,50 @@ export const questionService = {
         subject_id: q.subject_id,
         subjectName: subject?.name || subject?.code || 'General',
         subject: (subject?.code || 'INTELLIGENCE_VERBAL') as any,
-        branch: 'TRI_SERVICE',
+        branch: branch as any,
         stem: q.stem,
         options: opts.map((o) => ({
           id: o.id,
-          label: o.label as any,
-          text: o.text,
+          label: (o.label || o.option_key || 'A') as any,
+          text: o.text || '',
           imageUrl: o.image_url || undefined,
         })),
         correctOptionId: correctOpt?.id || (opts[0]?.id ?? 'opt-a'),
         explanation: q.explanation || '',
         difficulty: q.difficulty as any,
-        timeLimitSeconds: q.time_limit_seconds,
-        status: (q.status === 'ARCHIVED' ? 'ARCHIVED' : q.status === 'APPROVED' ? 'APPROVED' : 'DRAFT') as any,
+        timeLimitSeconds: q.time_limit_seconds || 30,
+        status: (q.status === 'ARCHIVED' ? 'ARCHIVED' : q.status === 'APPROVED' ? 'APPROVED' : q.status === 'INACTIVE' ? 'DRAFT' : 'DRAFT') as any,
         imageUrl: q.stem_image_url || undefined,
         authorName: profile?.display_name || 'Faculty Officer',
-        tags: q.tags || [],
-        updatedAt: q.updated_at.split('T')[0],
+        tags,
+        updatedAt: q.updated_at ? q.updated_at.split('T')[0] : '2026-10-06',
       };
     });
+
+    // Sequential & Numerical Sorting: Verbal -> AFNS -> PMA (1, 2, 3...)
+    mapped.sort((a, b) => {
+      const parseStemNum = (str: string) => {
+        const m = str.match(/(?:PMA|V|AFNS)--Q\s*(?:no\.?|#)?\s*(\d+)/i) || str.match(/(?:PMA|VERBAL|AFNS)-Q-(\d+)/i);
+        return m ? parseInt(m[1], 10) : 999999;
+      };
+
+      const getPrefixGroup = (str: string) => {
+        if (str.includes('V--Q') || str.includes('VERBAL')) return 1;
+        if (str.includes('AFNS')) return 2;
+        return 3;
+      };
+
+      const groupA = getPrefixGroup(a.stem + a.code);
+      const groupB = getPrefixGroup(b.stem + b.code);
+
+      if (groupA !== groupB) return groupA - groupB;
+
+      const numA = parseStemNum(a.stem + a.code);
+      const numB = parseStemNum(b.stem + b.code);
+      return numA - numB;
+    });
+
+    return mapped;
   },
 
   async upsertQuestion(payload: {
@@ -182,10 +220,8 @@ export const questionService = {
       return payload.id || 'mock-qid';
     }
 
-    // Resolve subjectId to a valid UUID if a code like "INTELLIGENCE_VERBAL" was passed
     const resolvedSubjectUuid = await resolveSubjectUuid(payload.subjectId);
 
-    // 1. Try RPC call with explicit null for optional parameters
     try {
       const { data, error } = await (supabase as any).rpc('admin_upsert_question', {
         p_id: payload.id ?? null,
@@ -199,99 +235,53 @@ export const questionService = {
         p_status: payload.status,
         p_tags: payload.tags || [],
         p_course_ids: payload.courseIds || [],
-        p_options: payload.options as any,
+        p_options: payload.options,
       });
 
       if (!error && data) {
-        return data;
-      }
-      if (error) {
-        console.warn('RPC admin_upsert_question returned warning, attempting direct table upsert:', error.message);
+        return data as string;
       }
     } catch (rpcErr) {
-      console.warn('RPC execution failed, using direct table fallback:', rpcErr);
+      console.warn('RPC admin_upsert_question unavailable or failed:', rpcErr);
     }
 
-    // 2. Direct table fallback if RPC is missing in schema cache or errors out
-    let questionId = payload.id;
-    if (!questionId) {
-      const { data: newQ, error: qErr } = await (supabase as any)
-        .from('questions')
-        .insert({
-          code: payload.code,
-          subject_id: resolvedSubjectUuid,
-          difficulty: payload.difficulty,
-          stem: payload.stem,
-          stem_image_url: payload.stemImageUrl ?? null,
-          explanation: payload.explanation ?? null,
-          time_limit_seconds: payload.timeLimitSeconds,
-          status: payload.status,
-          tags: payload.tags || [],
-        })
-        .select('id')
-        .single();
+    // Direct table fallback upsert
+    const qRow = {
+      id: payload.id || `q-${Date.now()}`,
+      code: payload.code,
+      subject_id: resolvedSubjectUuid,
+      difficulty: payload.difficulty,
+      stem: payload.stem,
+      stem_image_url: payload.stemImageUrl || null,
+      explanation: payload.explanation || null,
+      time_limit_seconds: payload.timeLimitSeconds,
+      status: payload.status,
+      tags: payload.tags || [],
+    };
 
-      if (qErr || !newQ) throw new Error(qErr?.message || 'Failed to create question record.');
-      questionId = newQ.id;
-    } else {
-      const { error: updateErr } = await (supabase as any)
-        .from('questions')
-        .update({
-          code: payload.code,
-          subject_id: resolvedSubjectUuid,
-          difficulty: payload.difficulty,
-          stem: payload.stem,
-          stem_image_url: payload.stemImageUrl ?? null,
-          explanation: payload.explanation ?? null,
-          time_limit_seconds: payload.timeLimitSeconds,
-          status: payload.status,
-          tags: payload.tags || [],
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', questionId);
+    const { error: qErr } = await (supabase as any).from('questions').upsert(qRow);
+    if (qErr) throw qErr;
 
-      if (updateErr) throw new Error(updateErr.message);
-    }
-
-    // Upsert options
     if (payload.options && payload.options.length > 0) {
-      await (supabase as any).from('question_options').delete().eq('question_id', questionId);
-
-      const optionRows = payload.options.map((opt) => ({
-        question_id: questionId,
-        option_key: opt.option_key || opt.label,
-        label: opt.label,
-        text: opt.text,
-        image_url: opt.image_url ?? null,
-        is_correct: opt.is_correct,
+      const optRows = payload.options.map((o) => ({
+        question_id: qRow.id,
+        option_key: o.option_key || o.label,
+        label: o.label,
+        text: o.text,
+        image_url: o.image_url || null,
+        is_correct: o.is_correct,
       }));
-
-      const { error: optErr } = await (supabase as any).from('question_options').insert(optionRows);
-      if (optErr) console.warn('Options insert warning:', optErr.message);
+      await (supabase as any).from('question_options').upsert(optRows);
     }
 
-    // Upsert course eligibilities
     if (payload.courseIds && payload.courseIds.length > 0) {
-      const qRows = payload.courseIds.map((cid) => ({
-        question_id: questionId,
+      const courseRows = payload.courseIds.map((cid) => ({
+        question_id: qRow.id,
         course_id: cid,
       }));
-
-      try {
-        await (supabase as any).from('question_courses').delete().eq('question_id', questionId);
-        await (supabase as any).from('question_courses').insert(qRows);
-      } catch (e) {
-        /* ignore */
-      }
-
-      try {
-        await (supabase as any).from('question_course_eligibilities').delete().eq('question_id', questionId);
-        await (supabase as any).from('question_course_eligibilities').insert(qRows);
-      } catch (e) {
-        /* ignore */
-      }
+      await (supabase as any).from('question_courses').upsert(courseRows);
     }
 
-    return questionId as string;
+    return qRow.id;
   },
 };

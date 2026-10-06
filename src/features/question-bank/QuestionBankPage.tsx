@@ -42,10 +42,46 @@ export const QuestionBankPage: React.FC = () => {
       q.authorName.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesSubject = selectedSubject === 'ALL' || q.subject === selectedSubject;
-    const matchesBranch = selectedBranch === 'ALL' || q.branch === selectedBranch || q.branch === 'TRI_SERVICE';
+    
+    const isAFNS = q.tags?.includes('AFNS') || q.code.startsWith('AFNS') || q.branch === 'ARMED_FORCES_NURSING_SERVICE';
+    const isPMA = q.tags?.includes('PMA') || q.code.startsWith('PMA') || q.branch === 'PAKISTAN_ARMY';
+    const isVerbal = q.subject === 'INTELLIGENCE_VERBAL' || q.code.startsWith('VERBAL') || q.tags?.includes('Verbal');
+
+    let matchesBranch = true;
+    if (selectedBranch === 'ARMED_FORCES_NURSING_SERVICE') {
+      matchesBranch = isAFNS || (isVerbal && !isPMA);
+    } else if (selectedBranch === 'PAKISTAN_ARMY') {
+      matchesBranch = isPMA || isVerbal;
+    } else if (selectedBranch !== 'ALL') {
+      matchesBranch = q.branch === selectedBranch || q.branch === 'TRI_SERVICE';
+    }
+
     const matchesStatus = selectedStatus === 'ALL' || q.status === selectedStatus;
 
     return matchesSearch && matchesSubject && matchesBranch && matchesStatus;
+  });
+
+  // Sort sequentially and numerically (Verbal 1..19 -> AFNS 1..762 -> PMA 1..1630)
+  filteredQuestions.sort((a, b) => {
+    const parseStemNum = (str: string) => {
+      const m = str.match(/(?:PMA|V|AFNS)--Q\s*(?:no\.?|#)?\s*(\d+)/i) || str.match(/(?:PMA|VERBAL|AFNS)-Q-(\d+)/i);
+      return m ? parseInt(m[1], 10) : 999999;
+    };
+
+    const getPrefixGroup = (str: string) => {
+      if (str.includes('V--Q') || str.includes('VERBAL')) return 1;
+      if (str.includes('AFNS')) return 2;
+      return 3;
+    };
+
+    const groupA = getPrefixGroup(a.stem + a.code);
+    const groupB = getPrefixGroup(b.stem + b.code);
+
+    if (groupA !== groupB) return groupA - groupB;
+
+    const numA = parseStemNum(a.stem + a.code);
+    const numB = parseStemNum(b.stem + b.code);
+    return numA - numB;
   });
 
   const toggleSelectAll = () => {
@@ -172,7 +208,8 @@ export const QuestionBankPage: React.FC = () => {
               className="px-3 py-2 border border-[#D4D9DF] rounded bg-white text-[#0E1B2A] font-semibold focus:outline-none"
             >
               <option value="ALL">All Forces</option>
-              <option value="PAKISTAN_ARMY">Pakistan Army</option>
+              <option value="PAKISTAN_ARMY">Pakistan Army (PMA)</option>
+              <option value="ARMED_FORCES_NURSING_SERVICE">AFNS / Nursing</option>
               <option value="PAKISTAN_AIR_FORCE">Pakistan Air Force</option>
               <option value="PAKISTAN_NAVY">Pakistan Navy</option>
             </select>
