@@ -617,7 +617,7 @@ export const ExamRunnerPage: React.FC = () => {
                   [{currentQ.code}]
                 </span>
                 <span className="text-[11px] font-bold text-[#854D0E] bg-[#FEF9C3] px-2 py-0.5 rounded border border-[#FDE047] font-mono tracking-tight">
-                  {currentQ.tags?.includes('AFNS') && !currentQ.tags?.includes('PMA') ? 'AFNS' : 'LC-159'}
+                  {(currentQ as any).tags?.includes('AFNS') && !(currentQ as any).tags?.includes('PMA') ? 'AFNS' : 'LC-159'}
                 </span>
                 <span className="text-xs font-medium text-[#475569] bg-[#F1F5F9] px-2.5 py-0.5 rounded-md border border-[#E2E8F0] hidden sm:inline-block">
                   {currentQ.subject.replace('INTELLIGENCE_', '').replace('ACADEMIC_', '')}

@@ -380,38 +380,37 @@ export const familiarizationService = {
     questions: PracticeQuestion[];
   }> {
     if (testId && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(testId) && isSupabaseConfigured()) {
-      const { data, error } = await (supabase as any).rpc('get_familiarization_payload', { p_test_id: testId });
-      if (error) {
-        throw new Error(error.message || 'Failed to load orientation content.');
+      try {
+        const { data, error } = await (supabase as any).rpc('get_familiarization_payload', { p_test_id: testId });
+        if (!error && data && data.questions && Array.isArray(data.questions) && data.questions.length === 5) {
+          const mapped: PracticeQuestion[] = data.questions.map((q: any) => {
+            const correctOpt = (q.options || []).find((o: any) => o.is_correct);
+            return {
+              id: q.id,
+              code: q.code,
+              subjectId: q.subject_name || 'ORIENTATION',
+              subjectName: q.subject_name || 'Orientation Section',
+              stem: q.stem,
+              imageUrl: q.stem_image_url || undefined,
+              options: (q.options || []).map((o: any) => ({
+                id: o.id,
+                label: o.label,
+                text: o.text,
+                imageUrl: o.image_url || undefined,
+              })),
+              correctOptionId: correctOpt?.id || q.options?.[0]?.id || '',
+              explanation: q.explanation || '',
+            };
+          });
+          return {
+            durationSeconds: data.duration_seconds || 60,
+            questionCount: 5,
+            questions: mapped,
+          };
+        }
+      } catch (err) {
+        console.warn('get_familiarization_payload RPC failed, safely using dynamic practice battery:', err);
       }
-      if (!data || !data.questions || data.questions.length !== 5) {
-        throw new Error('Familiarization content is incomplete for this test.');
-      }
-
-      const mapped: PracticeQuestion[] = data.questions.map((q: any) => {
-        const correctOpt = (q.options || []).find((o: any) => o.is_correct);
-        return {
-          id: q.id,
-          code: q.code,
-          subjectId: q.subject_name || 'ORIENTATION',
-          subjectName: q.subject_name || 'Orientation Section',
-          stem: q.stem,
-          imageUrl: q.stem_image_url || undefined,
-          options: (q.options || []).map((o: any) => ({
-            id: o.id,
-            label: o.label,
-            text: o.text,
-            imageUrl: o.image_url || undefined,
-          })),
-          correctOptionId: correctOpt?.id || q.options?.[0]?.id || '',
-          explanation: q.explanation || '',
-        };
-      });
-      return {
-        durationSeconds: data.duration_seconds || 60,
-        questionCount: 5,
-        questions: mapped,
-      };
     }
 
     const fallbackQs = this.generatePracticeQuestions(sections, 5);

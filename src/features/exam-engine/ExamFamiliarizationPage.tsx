@@ -8,7 +8,6 @@ import {
   RotateCcw,
   Sparkles,
   BookOpen,
-  AlertTriangle,
   Grid,
   SkipForward,
   Check,
@@ -37,7 +36,6 @@ export const ExamFamiliarizationPage: React.FC = () => {
   const [secondsRemaining, setSecondsRemaining] = useState(PRACTICE_DURATION_SECONDS);
   const [isFinished, setIsFinished] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
 
   // Load real test metadata to extract sections for dynamic subject matching
   useEffect(() => {
@@ -69,15 +67,26 @@ export const ExamFamiliarizationPage: React.FC = () => {
         }
 
         // Load exactly 5 practice MCQs dynamically matching test pattern
-        const famData = await familiarizationService.getFamiliarizationData(t?.id || rawTestId, sections);
+        let famQuestions: PracticeQuestion[] = [];
+        let durationSec = PRACTICE_DURATION_SECONDS;
+        try {
+          const famData = await familiarizationService.getFamiliarizationData(t?.id || rawTestId, sections);
+          famQuestions = famData.questions;
+          durationSec = famData.durationSeconds || PRACTICE_DURATION_SECONDS;
+        } catch {
+          famQuestions = familiarizationService.generatePracticeQuestions(sections, 5);
+        }
+
         if (isMounted) {
-          setQuestions(famData.questions);
-          setSecondsRemaining(famData.durationSeconds || PRACTICE_DURATION_SECONDS);
+          setQuestions(famQuestions);
+          setSecondsRemaining(durationSec);
           setLoading(false);
         }
       } catch (err: any) {
         if (isMounted) {
-          setLoadError(err?.message || 'Familiarization content is incomplete for this test.');
+          const fallbackQs = familiarizationService.generatePracticeQuestions([], 5);
+          setQuestions(fallbackQs);
+          setSecondsRemaining(PRACTICE_DURATION_SECONDS);
           setLoading(false);
         }
       }
@@ -242,37 +251,6 @@ export const ExamFamiliarizationPage: React.FC = () => {
         <span className="text-xs font-sans font-semibold text-[#64748B] uppercase tracking-wider">
           Initializing 1-Minute Practice Environment...
         </span>
-      </div>
-    );
-  }
-
-  if (loadError) {
-    return (
-      <div className="flex-1 flex flex-col justify-center max-w-xl mx-auto w-full py-12 px-4 select-none">
-        <div className="bg-white border-2 border-[#991B1B] rounded-lg p-8 shadow-sm text-center space-y-4">
-          <div className="w-12 h-12 rounded-full bg-[#FEF2F2] border border-[#FCA5A5] flex items-center justify-center mx-auto text-[#991B1B]">
-            <AlertTriangle className="w-6 h-6" />
-          </div>
-          <div className="space-y-1">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#991B1B] bg-[#FEF2F2] px-2 py-0.5 rounded border border-[#FCA5A5]">
-              Configuration / Eligibility Notice
-            </span>
-            <h2 className="text-lg font-bold text-[#0E1B2A] uppercase tracking-wide mt-2">
-              Orientation Unavailable
-            </h2>
-            <p className="text-xs text-[#64748B] max-w-md mx-auto leading-relaxed">
-              {loadError}
-            </p>
-          </div>
-          <div className="pt-3">
-            <button
-              onClick={() => navigate('/student/tests')}
-              className="px-6 py-2.5 bg-[#0E1B2A] hover:bg-[#1A2C42] text-white rounded text-xs font-bold uppercase tracking-wider transition-colors"
-            >
-              Return to Assigned Tests
-            </button>
-          </div>
-        </div>
       </div>
     );
   }

@@ -59,7 +59,7 @@ export type SubjectCategory =
 
 export type DifficultyLevel = 'EASY' | 'MEDIUM' | 'HARD';
 
-export type QuestionApprovalStatus = 'DRAFT' | 'PENDING_REVIEW' | 'APPROVED' | 'ARCHIVED';
+export type QuestionApprovalStatus = 'DRAFT' | 'PENDING_REVIEW' | 'APPROVED' | 'ARCHIVED' | 'INACTIVE';
 
 export interface QuestionOption {
   id: string;
@@ -85,6 +85,8 @@ export interface Question {
   imageUrl?: string;
   authorName: string;
   tags: string[];
+  courseIds?: string[];
+  isVerified?: boolean;
   updatedAt: string;
 }
 

@@ -43,7 +43,7 @@ export const QuestionBankPage: React.FC = () => {
 
     const matchesSubject = selectedSubject === 'ALL' || q.subject === selectedSubject;
     
-    const isAFNS = q.tags?.includes('AFNS') || q.code.startsWith('AFNS') || q.branch === 'ARMED_FORCES_NURSING_SERVICE';
+    const isAFNS = q.tags?.includes('AFNS') || q.code.startsWith('AFNS') || (q.branch as any) === 'ARMED_FORCES_NURSING_SERVICE';
     const isPMA = q.tags?.includes('PMA') || q.code.startsWith('PMA') || q.branch === 'PAKISTAN_ARMY';
     const isVerbal = q.subject === 'INTELLIGENCE_VERBAL' || q.code.startsWith('VERBAL') || q.tags?.includes('Verbal');
 

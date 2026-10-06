@@ -496,6 +496,10 @@ export const studentRegistrationService = {
       rpcError = e;
     }
 
+    if (rpcError) {
+      console.warn('create_registered_student_profile RPC info:', rpcError);
+    }
+
     let studentId = createdAuthId;
 
     // 1. Primary Attempt: Call admin_create_student RPC (SECURITY DEFINER)
