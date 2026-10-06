@@ -1,3 +1,32008 @@
 import { Question } from '@/types';
 
-export const mockQuestions: Question[] = [];
+export const mockQuestions: Question[] = [
+  {
+    "id": "70000000-0000-0000-0000-000000000001",
+    "code": "AFNS-Q-001",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 1. What is the IUPAC name of formaldehyde?",
+    "options": [
+      {
+        "id": "80000000-0000-0001-0000-000000000001",
+        "label": "A",
+        "text": "Methanol"
+      },
+      {
+        "id": "80000000-0000-0001-0000-000000000002",
+        "label": "B",
+        "text": "Methanoic acid"
+      },
+      {
+        "id": "80000000-0000-0001-0000-000000000003",
+        "label": "C",
+        "text": "Methanal"
+      },
+      {
+        "id": "80000000-0000-0001-0000-000000000004",
+        "label": "D",
+        "text": "Methanone"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0001-0000-000000000003",
+    "explanation": "Formaldehyde is the one-carbon aldehyde, so its IUPAC name is methanal.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000002",
+    "code": "AFNS-Q-002",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 2. What is the molecular formula of formaldehyde?",
+    "options": [
+      {
+        "id": "80000000-0000-0002-0000-000000000001",
+        "label": "A",
+        "text": "CH3OH"
+      },
+      {
+        "id": "80000000-0000-0002-0000-000000000002",
+        "label": "B",
+        "text": "CH3CHO"
+      },
+      {
+        "id": "80000000-0000-0002-0000-000000000003",
+        "label": "C",
+        "text": "HCHO"
+      },
+      {
+        "id": "80000000-0000-0002-0000-000000000004",
+        "label": "D",
+        "text": "HCOOH"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0002-0000-000000000003",
+    "explanation": "Formaldehyde contains one carbon, two hydrogens and one oxygen, represented as HCHO.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000003",
+    "code": "AFNS-Q-003",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 3. Which functional group is present in aldehydes?",
+    "options": [
+      {
+        "id": "80000000-0000-0003-0000-000000000001",
+        "label": "A",
+        "text": "-OH"
+      },
+      {
+        "id": "80000000-0000-0003-0000-000000000002",
+        "label": "B",
+        "text": "-COOH"
+      },
+      {
+        "id": "80000000-0000-0003-0000-000000000003",
+        "label": "C",
+        "text": "-CHO"
+      },
+      {
+        "id": "80000000-0000-0003-0000-000000000004",
+        "label": "D",
+        "text": "-COO-"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0003-0000-000000000003",
+    "explanation": "An aldehyde has a terminal carbonyl carbon bonded to hydrogen, giving the -CHO group.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000004",
+    "code": "AFNS-Q-004",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 4. Formaldehyde reacts with Tollens' reagent to produce:",
+    "options": [
+      {
+        "id": "80000000-0000-0004-0000-000000000001",
+        "label": "A",
+        "text": "Copper metal"
+      },
+      {
+        "id": "80000000-0000-0004-0000-000000000002",
+        "label": "B",
+        "text": "Silver mirror"
+      },
+      {
+        "id": "80000000-0000-0004-0000-000000000003",
+        "label": "C",
+        "text": "Hydrogen gas"
+      },
+      {
+        "id": "80000000-0000-0004-0000-000000000004",
+        "label": "D",
+        "text": "Carbon dioxide"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0004-0000-000000000002",
+    "explanation": "Formaldehyde reduces silver ions in Tollens' reagent to metallic silver.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000005",
+    "code": "AFNS-Q-005",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 5. Formaldehyde on oxidation gives:",
+    "options": [
+      {
+        "id": "80000000-0000-0005-0000-000000000001",
+        "label": "A",
+        "text": "Methanol"
+      },
+      {
+        "id": "80000000-0000-0005-0000-000000000002",
+        "label": "B",
+        "text": "Acetaldehyde"
+      },
+      {
+        "id": "80000000-0000-0005-0000-000000000003",
+        "label": "C",
+        "text": "Methanoic acid"
+      },
+      {
+        "id": "80000000-0000-0005-0000-000000000004",
+        "label": "D",
+        "text": "Acetic acid"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0005-0000-000000000003",
+    "explanation": "Oxidation converts the aldehyde group of formaldehyde into the carboxyl group of methanoic acid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000006",
+    "code": "AFNS-Q-006",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 6. Which reagent is commonly used to distinguish an aldehyde from a ketone?",
+    "options": [
+      {
+        "id": "80000000-0000-0006-0000-000000000001",
+        "label": "A",
+        "text": "NaCl"
+      },
+      {
+        "id": "80000000-0000-0006-0000-000000000002",
+        "label": "B",
+        "text": "HCl"
+      },
+      {
+        "id": "80000000-0000-0006-0000-000000000003",
+        "label": "C",
+        "text": "Tollens' reagent"
+      },
+      {
+        "id": "80000000-0000-0006-0000-000000000004",
+        "label": "D",
+        "text": "NaOH"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0006-0000-000000000003",
+    "explanation": "Tollens' reagent oxidizes ordinary aldehydes and deposits silver, while ordinary ketones do not react.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000007",
+    "code": "AFNS-Q-007",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 7. Formaldehyde is prepared industrially by the controlled oxidation of:",
+    "options": [
+      {
+        "id": "80000000-0000-0007-0000-000000000001",
+        "label": "A",
+        "text": "Ethane"
+      },
+      {
+        "id": "80000000-0000-0007-0000-000000000002",
+        "label": "B",
+        "text": "Methanol"
+      },
+      {
+        "id": "80000000-0000-0007-0000-000000000003",
+        "label": "C",
+        "text": "Ethanol"
+      },
+      {
+        "id": "80000000-0000-0007-0000-000000000004",
+        "label": "D",
+        "text": "Methane"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0007-0000-000000000002",
+    "explanation": "Controlled oxidation of methanol converts its -CH2OH group to the aldehyde HCHO.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000008",
+    "code": "AFNS-Q-008",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 8. Which of the following aldehydes does not contain an alkyl group attached to the carbonyl carbon?",
+    "options": [
+      {
+        "id": "80000000-0000-0008-0000-000000000001",
+        "label": "A",
+        "text": "Acetaldehyde"
+      },
+      {
+        "id": "80000000-0000-0008-0000-000000000002",
+        "label": "B",
+        "text": "Propanal"
+      },
+      {
+        "id": "80000000-0000-0008-0000-000000000003",
+        "label": "C",
+        "text": "Formaldehyde"
+      },
+      {
+        "id": "80000000-0000-0008-0000-000000000004",
+        "label": "D",
+        "text": "Butanal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0008-0000-000000000003",
+    "explanation": "The carbonyl carbon of formaldehyde is bonded to two hydrogens rather than an alkyl group.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000009",
+    "code": "AFNS-Q-009",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 9. What is the general structure of a ketone?",
+    "options": [
+      {
+        "id": "80000000-0000-0009-0000-000000000001",
+        "label": "A",
+        "text": "R-CHO"
+      },
+      {
+        "id": "80000000-0000-0009-0000-000000000002",
+        "label": "B",
+        "text": "R-COOH"
+      },
+      {
+        "id": "80000000-0000-0009-0000-000000000003",
+        "label": "C",
+        "text": "R-CO-R'"
+      },
+      {
+        "id": "80000000-0000-0009-0000-000000000004",
+        "label": "D",
+        "text": "R-OH"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0009-0000-000000000003",
+    "explanation": "A ketone has its carbonyl carbon bonded to two carbon-containing groups, R-CO-R'.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000000a",
+    "code": "AFNS-Q-010",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 10. What is the IUPAC name of acetone?",
+    "options": [
+      {
+        "id": "80000000-0000-000a-0000-000000000001",
+        "label": "A",
+        "text": "Propanal"
+      },
+      {
+        "id": "80000000-0000-000a-0000-000000000002",
+        "label": "B",
+        "text": "Propanone"
+      },
+      {
+        "id": "80000000-0000-000a-0000-000000000003",
+        "label": "C",
+        "text": "Propanol"
+      },
+      {
+        "id": "80000000-0000-000a-0000-000000000004",
+        "label": "D",
+        "text": "Propanoic acid"
+      }
+    ],
+    "correctOptionId": "80000000-0000-000a-0000-000000000002",
+    "explanation": "Acetone is a three-carbon ketone with the carbonyl at carbon 2, named propanone.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000000b",
+    "code": "AFNS-Q-011",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 11. Which of the following is a ketone?",
+    "options": [
+      {
+        "id": "80000000-0000-000b-0000-000000000001",
+        "label": "A",
+        "text": "CH3CHO"
+      },
+      {
+        "id": "80000000-0000-000b-0000-000000000002",
+        "label": "B",
+        "text": "HCHO"
+      },
+      {
+        "id": "80000000-0000-000b-0000-000000000003",
+        "label": "C",
+        "text": "CH3COCH3"
+      },
+      {
+        "id": "80000000-0000-000b-0000-000000000004",
+        "label": "D",
+        "text": "CH3COOH"
+      }
+    ],
+    "correctOptionId": "80000000-0000-000b-0000-000000000003",
+    "explanation": "CH3COCH3 contains a carbonyl group between two methyl groups, making it a ketone.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000000c",
+    "code": "AFNS-Q-012",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 12. Ketones generally undergo oxidation less readily than:",
+    "options": [
+      {
+        "id": "80000000-0000-000c-0000-000000000001",
+        "label": "A",
+        "text": "Alcohols"
+      },
+      {
+        "id": "80000000-0000-000c-0000-000000000002",
+        "label": "B",
+        "text": "Esters"
+      },
+      {
+        "id": "80000000-0000-000c-0000-000000000003",
+        "label": "C",
+        "text": "Aldehydes"
+      },
+      {
+        "id": "80000000-0000-000c-0000-000000000004",
+        "label": "D",
+        "text": "Ethers"
+      }
+    ],
+    "correctOptionId": "80000000-0000-000c-0000-000000000003",
+    "explanation": "Aldehydes have a carbonyl hydrogen and oxidize to acids more readily than ordinary ketones.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000000d",
+    "code": "AFNS-Q-013",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 13. The carbon atom of the carbonyl group in a ketone is:",
+    "options": [
+      {
+        "id": "80000000-0000-000d-0000-000000000001",
+        "label": "A",
+        "text": "sp^3 hybridized"
+      },
+      {
+        "id": "80000000-0000-000d-0000-000000000002",
+        "label": "B",
+        "text": "sp hybridized"
+      },
+      {
+        "id": "80000000-0000-000d-0000-000000000003",
+        "label": "C",
+        "text": "sp^2 hybridized"
+      },
+      {
+        "id": "80000000-0000-000d-0000-000000000004",
+        "label": "D",
+        "text": "sp^3d hybridized"
+      }
+    ],
+    "correctOptionId": "80000000-0000-000d-0000-000000000003",
+    "explanation": "A carbonyl carbon has three regions of electron density and trigonal-planar sp^2 bonding.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000000e",
+    "code": "AFNS-Q-014",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 14. Acetone reacts with hydrogen in the presence of a suitable catalyst to form:",
+    "options": [
+      {
+        "id": "80000000-0000-000e-0000-000000000001",
+        "label": "A",
+        "text": "Propanoic acid"
+      },
+      {
+        "id": "80000000-0000-000e-0000-000000000002",
+        "label": "B",
+        "text": "Propanal"
+      },
+      {
+        "id": "80000000-0000-000e-0000-000000000003",
+        "label": "C",
+        "text": "2-Propanol"
+      },
+      {
+        "id": "80000000-0000-000e-0000-000000000004",
+        "label": "D",
+        "text": "Ethanol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-000e-0000-000000000003",
+    "explanation": "Hydrogenation reduces acetone's carbonyl group to the secondary alcohol propan-2-ol.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000000f",
+    "code": "AFNS-Q-015",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 15. Which of the following has the highest boiling point among the compounds with similar molecular masses?",
+    "options": [
+      {
+        "id": "80000000-0000-000f-0000-000000000001",
+        "label": "A",
+        "text": "Propane"
+      },
+      {
+        "id": "80000000-0000-000f-0000-000000000002",
+        "label": "B",
+        "text": "Propene"
+      },
+      {
+        "id": "80000000-0000-000f-0000-000000000003",
+        "label": "C",
+        "text": "Propanone"
+      },
+      {
+        "id": "80000000-0000-000f-0000-000000000004",
+        "label": "D",
+        "text": "Ethane"
+      }
+    ],
+    "correctOptionId": "80000000-0000-000f-0000-000000000003",
+    "explanation": "Propanone has a polar carbonyl group and stronger intermolecular attractions than the listed hydrocarbons.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000010",
+    "code": "AFNS-Q-016",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 16. Lattice energy is a measure of the strength of attraction between:",
+    "options": [
+      {
+        "id": "80000000-0000-0010-0000-000000000001",
+        "label": "A",
+        "text": "Molecules in a gas"
+      },
+      {
+        "id": "80000000-0000-0010-0000-000000000002",
+        "label": "B",
+        "text": "Ions in an ionic crystal"
+      },
+      {
+        "id": "80000000-0000-0010-0000-000000000003",
+        "label": "C",
+        "text": "Atoms in a metal"
+      },
+      {
+        "id": "80000000-0000-0010-0000-000000000004",
+        "label": "D",
+        "text": "Electrons and neutrons"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0010-0000-000000000002",
+    "explanation": "Lattice energy reflects the electrostatic attraction between oppositely charged ions in a crystal.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000011",
+    "code": "AFNS-Q-017",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 17. Lattice energy generally increases when the charges on the ions:",
+    "options": [
+      {
+        "id": "80000000-0000-0011-0000-000000000001",
+        "label": "A",
+        "text": "Decrease"
+      },
+      {
+        "id": "80000000-0000-0011-0000-000000000002",
+        "label": "B",
+        "text": "Become zero"
+      },
+      {
+        "id": "80000000-0000-0011-0000-000000000003",
+        "label": "C",
+        "text": "Increase"
+      },
+      {
+        "id": "80000000-0000-0011-0000-000000000004",
+        "label": "D",
+        "text": "Remain unrelated"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0011-0000-000000000003",
+    "explanation": "Higher ionic charges strengthen electrostatic attraction and increase lattice-energy magnitude.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000012",
+    "code": "AFNS-Q-018",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 18. Which ionic compound is expected to have the greatest lattice energy?",
+    "options": [
+      {
+        "id": "80000000-0000-0012-0000-000000000001",
+        "label": "A",
+        "text": "NaCl"
+      },
+      {
+        "id": "80000000-0000-0012-0000-000000000002",
+        "label": "B",
+        "text": "KCl"
+      },
+      {
+        "id": "80000000-0000-0012-0000-000000000003",
+        "label": "C",
+        "text": "MgO"
+      },
+      {
+        "id": "80000000-0000-0012-0000-000000000004",
+        "label": "D",
+        "text": "NaF"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0012-0000-000000000003",
+    "explanation": "MgO contains doubly charged ions whose attraction exceeds that of the listed singly charged salts.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000013",
+    "code": "AFNS-Q-019",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 19. Lattice energy generally increases as the ionic radii:",
+    "options": [
+      {
+        "id": "80000000-0000-0013-0000-000000000001",
+        "label": "A",
+        "text": "Increase"
+      },
+      {
+        "id": "80000000-0000-0013-0000-000000000002",
+        "label": "B",
+        "text": "Remain constant"
+      },
+      {
+        "id": "80000000-0000-0013-0000-000000000003",
+        "label": "C",
+        "text": "Decrease"
+      },
+      {
+        "id": "80000000-0000-0013-0000-000000000004",
+        "label": "D",
+        "text": "Become equal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0013-0000-000000000003",
+    "explanation": "Smaller ionic radii allow ions to approach more closely, increasing electrostatic attraction.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000014",
+    "code": "AFNS-Q-020",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 20. Which pair of ions would produce the strongest electrostatic attraction?",
+    "options": [
+      {
+        "id": "80000000-0000-0014-0000-000000000001",
+        "label": "A",
+        "text": "Na+ and Cl-"
+      },
+      {
+        "id": "80000000-0000-0014-0000-000000000002",
+        "label": "B",
+        "text": "K+ and Br-"
+      },
+      {
+        "id": "80000000-0000-0014-0000-000000000003",
+        "label": "C",
+        "text": "Mg^2+ and O^2-"
+      },
+      {
+        "id": "80000000-0000-0014-0000-000000000004",
+        "label": "D",
+        "text": "Li+ and F-"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0014-0000-000000000003",
+    "explanation": "Mg2+ and O2- have a charge product of magnitude 4, stronger than the listed singly charged pairs.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000015",
+    "code": "AFNS-Q-021",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 21. According to Coulomb's law, electrostatic force between two ions is proportional to:",
+    "options": [
+      {
+        "id": "80000000-0000-0015-0000-000000000001",
+        "label": "A",
+        "text": "Distance between ions"
+      },
+      {
+        "id": "80000000-0000-0015-0000-000000000002",
+        "label": "B",
+        "text": "Square of distance"
+      },
+      {
+        "id": "80000000-0000-0015-0000-000000000003",
+        "label": "C",
+        "text": "Product of their charges"
+      },
+      {
+        "id": "80000000-0000-0015-0000-000000000004",
+        "label": "D",
+        "text": "Sum of their masses"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0015-0000-000000000003",
+    "explanation": "Coulomb's law gives F proportional to abs(q1*q2)/r^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000016",
+    "code": "AFNS-Q-022",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 22. A large lattice energy generally indicates that an ionic compound has:",
+    "options": [
+      {
+        "id": "80000000-0000-0016-0000-000000000001",
+        "label": "A",
+        "text": "Weak ionic bonding"
+      },
+      {
+        "id": "80000000-0000-0016-0000-000000000002",
+        "label": "B",
+        "text": "Low melting point"
+      },
+      {
+        "id": "80000000-0000-0016-0000-000000000003",
+        "label": "C",
+        "text": "Strong ionic bonding"
+      },
+      {
+        "id": "80000000-0000-0016-0000-000000000004",
+        "label": "D",
+        "text": "No electrostatic attraction"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0016-0000-000000000003",
+    "explanation": "A large lattice-energy magnitude indicates strong attraction between the ions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000017",
+    "code": "AFNS-Q-023",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 23. What is the main purpose of a catalyst in a chemical reaction?",
+    "options": [
+      {
+        "id": "80000000-0000-0017-0000-000000000001",
+        "label": "A",
+        "text": "To increase the amount of product at equilibrium"
+      },
+      {
+        "id": "80000000-0000-0017-0000-000000000002",
+        "label": "B",
+        "text": "To decrease the amount of reactants"
+      },
+      {
+        "id": "80000000-0000-0017-0000-000000000003",
+        "label": "C",
+        "text": "To lower the activation energy"
+      },
+      {
+        "id": "80000000-0000-0017-0000-000000000004",
+        "label": "D",
+        "text": "To change the equilibrium constant"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0017-0000-000000000003",
+    "explanation": "A catalyst provides a reaction pathway with lower activation energy without changing the equilibrium constant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000018",
+    "code": "AFNS-Q-024",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 24. Lindlar's catalyst is used for the partial hydrogenation of:",
+    "options": [
+      {
+        "id": "80000000-0000-0018-0000-000000000001",
+        "label": "A",
+        "text": "Alkanes"
+      },
+      {
+        "id": "80000000-0000-0018-0000-000000000002",
+        "label": "B",
+        "text": "Alkenes"
+      },
+      {
+        "id": "80000000-0000-0018-0000-000000000003",
+        "label": "C",
+        "text": "Alkynes"
+      },
+      {
+        "id": "80000000-0000-0018-0000-000000000004",
+        "label": "D",
+        "text": "Alcohols"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0018-0000-000000000003",
+    "explanation": "Lindlar's catalyst selectively hydrogenates an alkyne to an alkene without normally continuing to an alkane.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000019",
+    "code": "AFNS-Q-025",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 25. Lindlar's catalyst converts an alkyne mainly into:",
+    "options": [
+      {
+        "id": "80000000-0000-0019-0000-000000000001",
+        "label": "A",
+        "text": "Alkane"
+      },
+      {
+        "id": "80000000-0000-0019-0000-000000000002",
+        "label": "B",
+        "text": "Trans-alkene"
+      },
+      {
+        "id": "80000000-0000-0019-0000-000000000003",
+        "label": "C",
+        "text": "Cis-alkene"
+      },
+      {
+        "id": "80000000-0000-0019-0000-000000000004",
+        "label": "D",
+        "text": "Alcohol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0019-0000-000000000003",
+    "explanation": "Hydrogen adds to the same side of an alkyne on Lindlar's catalyst, producing a cis-alkene where applicable.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000001a",
+    "code": "AFNS-Q-026",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 26. Lindlar's catalyst consists of palladium supported on calcium carbonate and poisoned with:",
+    "options": [
+      {
+        "id": "80000000-0000-001a-0000-000000000001",
+        "label": "A",
+        "text": "H2SO4"
+      },
+      {
+        "id": "80000000-0000-001a-0000-000000000002",
+        "label": "B",
+        "text": "NaOH"
+      },
+      {
+        "id": "80000000-0000-001a-0000-000000000003",
+        "label": "C",
+        "text": "Lead acetate and quinoline"
+      },
+      {
+        "id": "80000000-0000-001a-0000-000000000004",
+        "label": "D",
+        "text": "KMnO4"
+      }
+    ],
+    "correctOptionId": "80000000-0000-001a-0000-000000000003",
+    "explanation": "Lead compounds and quinoline reduce palladium's activity so hydrogenation stops at the alkene stage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000001b",
+    "code": "AFNS-Q-027",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 27. Which catalyst is commonly used in the Haber process?",
+    "options": [
+      {
+        "id": "80000000-0000-001b-0000-000000000001",
+        "label": "A",
+        "text": "Nickel"
+      },
+      {
+        "id": "80000000-0000-001b-0000-000000000002",
+        "label": "B",
+        "text": "Platinum"
+      },
+      {
+        "id": "80000000-0000-001b-0000-000000000003",
+        "label": "C",
+        "text": "Iron"
+      },
+      {
+        "id": "80000000-0000-001b-0000-000000000004",
+        "label": "D",
+        "text": "Copper"
+      }
+    ],
+    "correctOptionId": "80000000-0000-001b-0000-000000000003",
+    "explanation": "Promoted iron catalyzes the reaction of nitrogen and hydrogen in the Haber process.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000001c",
+    "code": "AFNS-Q-028",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 28. Which catalyst is used in the hydrogenation of vegetable oils?",
+    "options": [
+      {
+        "id": "80000000-0000-001c-0000-000000000001",
+        "label": "A",
+        "text": "Iron"
+      },
+      {
+        "id": "80000000-0000-001c-0000-000000000002",
+        "label": "B",
+        "text": "Nickel"
+      },
+      {
+        "id": "80000000-0000-001c-0000-000000000003",
+        "label": "C",
+        "text": "Zinc"
+      },
+      {
+        "id": "80000000-0000-001c-0000-000000000004",
+        "label": "D",
+        "text": "Copper"
+      }
+    ],
+    "correctOptionId": "80000000-0000-001c-0000-000000000002",
+    "explanation": "Nickel catalyzes hydrogen addition across the carbon-carbon double bonds of unsaturated oils.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000001d",
+    "code": "AFNS-Q-029",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 29. In the Contact process for manufacturing sulfuric acid, the catalyst used is:",
+    "options": [
+      {
+        "id": "80000000-0000-001d-0000-000000000001",
+        "label": "A",
+        "text": "Fe2O3"
+      },
+      {
+        "id": "80000000-0000-001d-0000-000000000002",
+        "label": "B",
+        "text": "Ni"
+      },
+      {
+        "id": "80000000-0000-001d-0000-000000000003",
+        "label": "C",
+        "text": "V2O5"
+      },
+      {
+        "id": "80000000-0000-001d-0000-000000000004",
+        "label": "D",
+        "text": "MnO2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-001d-0000-000000000003",
+    "explanation": "Vanadium(V) oxide catalyzes oxidation of SO2 to SO3 in the Contact process.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000001e",
+    "code": "AFNS-Q-030",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 30. In simple harmonic motion, the restoring force is directly proportional to:",
+    "options": [
+      {
+        "id": "80000000-0000-001e-0000-000000000001",
+        "label": "A",
+        "text": "Velocity"
+      },
+      {
+        "id": "80000000-0000-001e-0000-000000000002",
+        "label": "B",
+        "text": "Acceleration squared"
+      },
+      {
+        "id": "80000000-0000-001e-0000-000000000003",
+        "label": "C",
+        "text": "Displacement"
+      },
+      {
+        "id": "80000000-0000-001e-0000-000000000004",
+        "label": "D",
+        "text": "Time"
+      }
+    ],
+    "correctOptionId": "80000000-0000-001e-0000-000000000003",
+    "explanation": "In SHM, the restoring force follows F = -k*x and is proportional to displacement.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000001f",
+    "code": "AFNS-Q-031",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 31. The restoring force in SHM is always directed:",
+    "options": [
+      {
+        "id": "80000000-0000-001f-0000-000000000001",
+        "label": "A",
+        "text": "Away from the mean position"
+      },
+      {
+        "id": "80000000-0000-001f-0000-000000000002",
+        "label": "B",
+        "text": "Along the velocity"
+      },
+      {
+        "id": "80000000-0000-001f-0000-000000000003",
+        "label": "C",
+        "text": "Towards the mean position"
+      },
+      {
+        "id": "80000000-0000-001f-0000-000000000004",
+        "label": "D",
+        "text": "Perpendicular to displacement"
+      }
+    ],
+    "correctOptionId": "80000000-0000-001f-0000-000000000003",
+    "explanation": "The minus sign in F = -k*x means the force acts toward the equilibrium position.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000020",
+    "code": "AFNS-Q-032",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 32. Which of the following represents the displacement of a particle executing SHM?",
+    "options": [
+      {
+        "id": "80000000-0000-0020-0000-000000000001",
+        "label": "A",
+        "text": "x = vt"
+      },
+      {
+        "id": "80000000-0000-0020-0000-000000000002",
+        "label": "B",
+        "text": "x = A sin(omegat + phi)"
+      },
+      {
+        "id": "80000000-0000-0020-0000-000000000003",
+        "label": "C",
+        "text": "x = A/t"
+      },
+      {
+        "id": "80000000-0000-0020-0000-000000000004",
+        "label": "D",
+        "text": "x = vt^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0020-0000-000000000002",
+    "explanation": "SHM displacement varies sinusoidally with time, with amplitude A and angular frequency omega.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000021",
+    "code": "AFNS-Q-033",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 33. The maximum displacement of a particle from its mean position in SHM is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0021-0000-000000000001",
+        "label": "A",
+        "text": "Frequency"
+      },
+      {
+        "id": "80000000-0000-0021-0000-000000000002",
+        "label": "B",
+        "text": "Time period"
+      },
+      {
+        "id": "80000000-0000-0021-0000-000000000003",
+        "label": "C",
+        "text": "Amplitude"
+      },
+      {
+        "id": "80000000-0000-0021-0000-000000000004",
+        "label": "D",
+        "text": "Phase"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0021-0000-000000000003",
+    "explanation": "Amplitude is the greatest distance reached from the equilibrium position.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000022",
+    "code": "AFNS-Q-034",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 34. At the mean position of an ideal SHM, the velocity of the particle is:",
+    "options": [
+      {
+        "id": "80000000-0000-0022-0000-000000000001",
+        "label": "A",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0022-0000-000000000002",
+        "label": "B",
+        "text": "Minimum"
+      },
+      {
+        "id": "80000000-0000-0022-0000-000000000003",
+        "label": "C",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-0022-0000-000000000004",
+        "label": "D",
+        "text": "Constant and zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0022-0000-000000000003",
+    "explanation": "At equilibrium, potential energy is minimum and kinetic energy and speed are maximum.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000023",
+    "code": "AFNS-Q-035",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 35. At the extreme position of SHM, the velocity of the particle is:",
+    "options": [
+      {
+        "id": "80000000-0000-0023-0000-000000000001",
+        "label": "A",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-0023-0000-000000000002",
+        "label": "B",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0023-0000-000000000003",
+        "label": "C",
+        "text": "Infinite"
+      },
+      {
+        "id": "80000000-0000-0023-0000-000000000004",
+        "label": "D",
+        "text": "Equal to amplitude"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0023-0000-000000000002",
+    "explanation": "An oscillator momentarily stops at each turning point before reversing direction.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000024",
+    "code": "AFNS-Q-036",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 36. At the mean position of SHM, the acceleration is:",
+    "options": [
+      {
+        "id": "80000000-0000-0024-0000-000000000001",
+        "label": "A",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-0024-0000-000000000002",
+        "label": "B",
+        "text": "Infinite"
+      },
+      {
+        "id": "80000000-0000-0024-0000-000000000003",
+        "label": "C",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0024-0000-000000000004",
+        "label": "D",
+        "text": "Equal to g"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0024-0000-000000000003",
+    "explanation": "Since a = -omega^2*x, acceleration is zero where displacement is zero.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000025",
+    "code": "AFNS-Q-037",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 37. At the extreme position of SHM, the magnitude of acceleration is:",
+    "options": [
+      {
+        "id": "80000000-0000-0025-0000-000000000001",
+        "label": "A",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0025-0000-000000000002",
+        "label": "B",
+        "text": "Minimum"
+      },
+      {
+        "id": "80000000-0000-0025-0000-000000000003",
+        "label": "C",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-0025-0000-000000000004",
+        "label": "D",
+        "text": "Constant at all positions"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0025-0000-000000000003",
+    "explanation": "Since abs(a) = omega^2*abs(x), acceleration magnitude is greatest at maximum displacement.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000026",
+    "code": "AFNS-Q-038",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 38. The time period of a simple pendulum is proportional to:",
+    "options": [
+      {
+        "id": "80000000-0000-0026-0000-000000000001",
+        "label": "A",
+        "text": "sqrtg"
+      },
+      {
+        "id": "80000000-0000-0026-0000-000000000002",
+        "label": "B",
+        "text": "g"
+      },
+      {
+        "id": "80000000-0000-0026-0000-000000000003",
+        "label": "C",
+        "text": "sqrtL"
+      },
+      {
+        "id": "80000000-0000-0026-0000-000000000004",
+        "label": "D",
+        "text": "1/L"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0026-0000-000000000003",
+    "explanation": "For small oscillations, T = 2*pi*sqrt(L/g), so T is proportional to sqrt(L).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000027",
+    "code": "AFNS-Q-039",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 39. The time period of a simple pendulum depends on its mass:",
+    "options": [
+      {
+        "id": "80000000-0000-0027-0000-000000000001",
+        "label": "A",
+        "text": "Directly"
+      },
+      {
+        "id": "80000000-0000-0027-0000-000000000002",
+        "label": "B",
+        "text": "Inversely"
+      },
+      {
+        "id": "80000000-0000-0027-0000-000000000003",
+        "label": "C",
+        "text": "It does not depend on mass"
+      },
+      {
+        "id": "80000000-0000-0027-0000-000000000004",
+        "label": "D",
+        "text": "Depends on the square of mass"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0027-0000-000000000003",
+    "explanation": "The mass cancels from the small-angle pendulum equation T = 2*pi*sqrt(L/g).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000028",
+    "code": "AFNS-Q-040",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 40. The frequency of an SHM is 5 Hz. What is its time period?",
+    "options": [
+      {
+        "id": "80000000-0000-0028-0000-000000000001",
+        "label": "A",
+        "text": "5 s"
+      },
+      {
+        "id": "80000000-0000-0028-0000-000000000002",
+        "label": "B",
+        "text": "0.5 s"
+      },
+      {
+        "id": "80000000-0000-0028-0000-000000000003",
+        "label": "C",
+        "text": "0.2 s"
+      },
+      {
+        "id": "80000000-0000-0028-0000-000000000004",
+        "label": "D",
+        "text": "2 s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0028-0000-000000000003",
+    "explanation": "The period is T = 1/f = 1/5 = 0.2 s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000029",
+    "code": "AFNS-Q-041",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 41. If the frequency of an oscillator is doubled, its time period becomes:",
+    "options": [
+      {
+        "id": "80000000-0000-0029-0000-000000000001",
+        "label": "A",
+        "text": "2T"
+      },
+      {
+        "id": "80000000-0000-0029-0000-000000000002",
+        "label": "B",
+        "text": "T/2"
+      },
+      {
+        "id": "80000000-0000-0029-0000-000000000003",
+        "label": "C",
+        "text": "4T"
+      },
+      {
+        "id": "80000000-0000-0029-0000-000000000004",
+        "label": "D",
+        "text": "T"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0029-0000-000000000002",
+    "explanation": "Period and frequency are inversely related, so doubling frequency halves the period.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000002a",
+    "code": "AFNS-Q-042",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 42. If the amplitude of an ideal SHM is doubled, its maximum velocity becomes:",
+    "options": [
+      {
+        "id": "80000000-0000-002a-0000-000000000001",
+        "label": "A",
+        "text": "Half"
+      },
+      {
+        "id": "80000000-0000-002a-0000-000000000002",
+        "label": "B",
+        "text": "Unchanged"
+      },
+      {
+        "id": "80000000-0000-002a-0000-000000000003",
+        "label": "C",
+        "text": "Doubled"
+      },
+      {
+        "id": "80000000-0000-002a-0000-000000000004",
+        "label": "D",
+        "text": "Four times"
+      }
+    ],
+    "correctOptionId": "80000000-0000-002a-0000-000000000003",
+    "explanation": "Maximum speed is v_max = omega*A, so doubling amplitude doubles maximum speed.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000002b",
+    "code": "AFNS-Q-043",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 43. The total mechanical energy of an ideal oscillator executing SHM is proportional to:",
+    "options": [
+      {
+        "id": "80000000-0000-002b-0000-000000000001",
+        "label": "A",
+        "text": "A"
+      },
+      {
+        "id": "80000000-0000-002b-0000-000000000002",
+        "label": "B",
+        "text": "1/A"
+      },
+      {
+        "id": "80000000-0000-002b-0000-000000000003",
+        "label": "C",
+        "text": "A^2"
+      },
+      {
+        "id": "80000000-0000-002b-0000-000000000004",
+        "label": "D",
+        "text": "sqrtA"
+      }
+    ],
+    "correctOptionId": "80000000-0000-002b-0000-000000000003",
+    "explanation": "The oscillator's total energy is E = 0.5*k*A^2, proportional to amplitude squared.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000002c",
+    "code": "AFNS-Q-044",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 44. The angular frequency omega of an oscillator is related to its frequency f by:",
+    "options": [
+      {
+        "id": "80000000-0000-002c-0000-000000000001",
+        "label": "A",
+        "text": "omega = f/2pi"
+      },
+      {
+        "id": "80000000-0000-002c-0000-000000000002",
+        "label": "B",
+        "text": "omega = 2pi/f"
+      },
+      {
+        "id": "80000000-0000-002c-0000-000000000003",
+        "label": "C",
+        "text": "omega = 2pif"
+      },
+      {
+        "id": "80000000-0000-002c-0000-000000000004",
+        "label": "D",
+        "text": "omega = f^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-002c-0000-000000000002",
+    "explanation": "One cycle corresponds to 2*pi radians, giving omega = 2*pi*f.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000002d",
+    "code": "AFNS-Q-045",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 45. In SHM, potential energy is maximum at the:",
+    "options": [
+      {
+        "id": "80000000-0000-002d-0000-000000000001",
+        "label": "A",
+        "text": "Mean position"
+      },
+      {
+        "id": "80000000-0000-002d-0000-000000000002",
+        "label": "B",
+        "text": "Extreme position"
+      },
+      {
+        "id": "80000000-0000-002d-0000-000000000003",
+        "label": "C",
+        "text": "Equilibrium position"
+      },
+      {
+        "id": "80000000-0000-002d-0000-000000000004",
+        "label": "D",
+        "text": "Midpoint only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-002d-0000-000000000002",
+    "explanation": "Elastic potential energy is 0.5*k*x^2 and is greatest at the extreme positions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000002e",
+    "code": "AFNS-Q-046",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 46. When an electron in a hydrogen atom falls from a higher energy level to n = 1, the emitted radiation belongs to the:",
+    "options": [
+      {
+        "id": "80000000-0000-002e-0000-000000000001",
+        "label": "A",
+        "text": "Balmer series"
+      },
+      {
+        "id": "80000000-0000-002e-0000-000000000002",
+        "label": "B",
+        "text": "Paschen series"
+      },
+      {
+        "id": "80000000-0000-002e-0000-000000000003",
+        "label": "C",
+        "text": "Lyman series"
+      },
+      {
+        "id": "80000000-0000-002e-0000-000000000004",
+        "label": "D",
+        "text": "Pfund series"
+      }
+    ],
+    "correctOptionId": "80000000-0000-002e-0000-000000000003",
+    "explanation": "Hydrogen transitions ending at n = 1 form the Lyman series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000002f",
+    "code": "AFNS-Q-047",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 47. The Lyman series of hydrogen lies mainly in the:",
+    "options": [
+      {
+        "id": "80000000-0000-002f-0000-000000000001",
+        "label": "A",
+        "text": "Visible region"
+      },
+      {
+        "id": "80000000-0000-002f-0000-000000000002",
+        "label": "B",
+        "text": "Infrared region"
+      },
+      {
+        "id": "80000000-0000-002f-0000-000000000003",
+        "label": "C",
+        "text": "Ultraviolet region"
+      },
+      {
+        "id": "80000000-0000-002f-0000-000000000004",
+        "label": "D",
+        "text": "Microwave region"
+      }
+    ],
+    "correctOptionId": "80000000-0000-002f-0000-000000000003",
+    "explanation": "Lyman transitions have high photon energies and wavelengths in the ultraviolet region.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000030",
+    "code": "AFNS-Q-048",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 48. The Balmer series is produced when an electron falls to the energy level:",
+    "options": [
+      {
+        "id": "80000000-0000-0030-0000-000000000001",
+        "label": "A",
+        "text": "n = 1"
+      },
+      {
+        "id": "80000000-0000-0030-0000-000000000002",
+        "label": "B",
+        "text": "n = 2"
+      },
+      {
+        "id": "80000000-0000-0030-0000-000000000003",
+        "label": "C",
+        "text": "n = 3"
+      },
+      {
+        "id": "80000000-0000-0030-0000-000000000004",
+        "label": "D",
+        "text": "n = 4"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0030-0000-000000000002",
+    "explanation": "The Balmer series consists of hydrogen transitions ending at n = 2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000031",
+    "code": "AFNS-Q-049",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 49. The Paschen series is produced when an electron falls to:",
+    "options": [
+      {
+        "id": "80000000-0000-0031-0000-000000000001",
+        "label": "A",
+        "text": "n = 1"
+      },
+      {
+        "id": "80000000-0000-0031-0000-000000000002",
+        "label": "B",
+        "text": "n = 2"
+      },
+      {
+        "id": "80000000-0000-0031-0000-000000000003",
+        "label": "C",
+        "text": "n = 3"
+      },
+      {
+        "id": "80000000-0000-0031-0000-000000000004",
+        "label": "D",
+        "text": "n = 4"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0031-0000-000000000003",
+    "explanation": "The Paschen series consists of hydrogen transitions ending at n = 3.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000032",
+    "code": "AFNS-Q-050",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 50. The Brackett series is produced when an electron falls to:",
+    "options": [
+      {
+        "id": "80000000-0000-0032-0000-000000000001",
+        "label": "A",
+        "text": "n = 2"
+      },
+      {
+        "id": "80000000-0000-0032-0000-000000000002",
+        "label": "B",
+        "text": "n = 3"
+      },
+      {
+        "id": "80000000-0000-0032-0000-000000000003",
+        "label": "C",
+        "text": "n = 4"
+      },
+      {
+        "id": "80000000-0000-0032-0000-000000000004",
+        "label": "D",
+        "text": "n = 5"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0032-0000-000000000003",
+    "explanation": "The Brackett series consists of hydrogen transitions ending at n = 4.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000033",
+    "code": "AFNS-Q-051",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 51. Which hydrogen spectral series lies in the visible region?",
+    "options": [
+      {
+        "id": "80000000-0000-0033-0000-000000000001",
+        "label": "A",
+        "text": "Lyman"
+      },
+      {
+        "id": "80000000-0000-0033-0000-000000000002",
+        "label": "B",
+        "text": "Balmer"
+      },
+      {
+        "id": "80000000-0000-0033-0000-000000000003",
+        "label": "C",
+        "text": "Paschen"
+      },
+      {
+        "id": "80000000-0000-0033-0000-000000000004",
+        "label": "D",
+        "text": "Pfund"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0033-0000-000000000002",
+    "explanation": "The prominent visible hydrogen emission lines belong to the Balmer series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000034",
+    "code": "AFNS-Q-052",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 52. Which hydrogen spectral series lies in the infrared region?",
+    "options": [
+      {
+        "id": "80000000-0000-0034-0000-000000000001",
+        "label": "A",
+        "text": "Lyman only"
+      },
+      {
+        "id": "80000000-0000-0034-0000-000000000002",
+        "label": "B",
+        "text": "Balmer only"
+      },
+      {
+        "id": "80000000-0000-0034-0000-000000000003",
+        "label": "C",
+        "text": "Paschen, Brackett and Pfund"
+      },
+      {
+        "id": "80000000-0000-0034-0000-000000000004",
+        "label": "D",
+        "text": "None of these"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0034-0000-000000000003",
+    "explanation": "Transitions ending at n = 3, 4 and 5 form infrared Paschen, Brackett and Pfund series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000035",
+    "code": "AFNS-Q-053",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 53. When an electron moves from a lower energy level to a higher energy level, it:",
+    "options": [
+      {
+        "id": "80000000-0000-0035-0000-000000000001",
+        "label": "A",
+        "text": "Emits a photon"
+      },
+      {
+        "id": "80000000-0000-0035-0000-000000000002",
+        "label": "B",
+        "text": "Absorbs a photon"
+      },
+      {
+        "id": "80000000-0000-0035-0000-000000000003",
+        "label": "C",
+        "text": "Emits an electron"
+      },
+      {
+        "id": "80000000-0000-0035-0000-000000000004",
+        "label": "D",
+        "text": "Loses its energy as heat only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0035-0000-000000000002",
+    "explanation": "An electron must gain energy by photon absorption to move to a higher energy level.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000036",
+    "code": "AFNS-Q-054",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 54. When an electron falls from n = 5 to n = 2 in a hydrogen atom, the emitted line belongs to the:",
+    "options": [
+      {
+        "id": "80000000-0000-0036-0000-000000000001",
+        "label": "A",
+        "text": "Lyman series"
+      },
+      {
+        "id": "80000000-0000-0036-0000-000000000002",
+        "label": "B",
+        "text": "Balmer series"
+      },
+      {
+        "id": "80000000-0000-0036-0000-000000000003",
+        "label": "C",
+        "text": "Paschen series"
+      },
+      {
+        "id": "80000000-0000-0036-0000-000000000004",
+        "label": "D",
+        "text": "Pfund series"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0036-0000-000000000002",
+    "explanation": "The final level n = 2 identifies the emitted line as part of the Balmer series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000037",
+    "code": "AFNS-Q-055",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 55. Which of the following compounds can be easily oxidized by acidified potassium dichromate (K2Cr2O7/H2SO4)?",
+    "options": [
+      {
+        "id": "80000000-0000-0037-0000-000000000001",
+        "label": "A",
+        "text": "Ketone"
+      },
+      {
+        "id": "80000000-0000-0037-0000-000000000002",
+        "label": "B",
+        "text": "Aldehyde"
+      },
+      {
+        "id": "80000000-0000-0037-0000-000000000003",
+        "label": "C",
+        "text": "Ester"
+      },
+      {
+        "id": "80000000-0000-0037-0000-000000000004",
+        "label": "D",
+        "text": "Ether"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0037-0000-000000000002",
+    "explanation": "Acidified dichromate readily oxidizes aldehydes to carboxylic acids under suitable conditions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000038",
+    "code": "AFNS-Q-056",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 56. Formaldehyde (HCHO) belongs to which class of organic compounds?",
+    "options": [
+      {
+        "id": "80000000-0000-0038-0000-000000000001",
+        "label": "A",
+        "text": "Ketones"
+      },
+      {
+        "id": "80000000-0000-0038-0000-000000000002",
+        "label": "B",
+        "text": "Esters"
+      },
+      {
+        "id": "80000000-0000-0038-0000-000000000003",
+        "label": "C",
+        "text": "Aldehydes"
+      },
+      {
+        "id": "80000000-0000-0038-0000-000000000004",
+        "label": "D",
+        "text": "Ethers"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0038-0000-000000000003",
+    "explanation": "HCHO has a carbonyl carbon bonded to hydrogen, the defining feature of an aldehyde.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000039",
+    "code": "AFNS-Q-057",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 57. Which functional group is present in ketones?",
+    "options": [
+      {
+        "id": "80000000-0000-0039-0000-000000000001",
+        "label": "A",
+        "text": "-OH"
+      },
+      {
+        "id": "80000000-0000-0039-0000-000000000002",
+        "label": "B",
+        "text": "-COOH"
+      },
+      {
+        "id": "80000000-0000-0039-0000-000000000003",
+        "label": "C",
+        "text": ">C=O"
+      },
+      {
+        "id": "80000000-0000-0039-0000-000000000004",
+        "label": "D",
+        "text": "-CHO"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0039-0000-000000000003",
+    "explanation": "Ketones contain a carbonyl group whose carbon is bonded to two carbon atoms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000003a",
+    "code": "AFNS-Q-058",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 58. Which functional group is characteristic of esters?",
+    "options": [
+      {
+        "id": "80000000-0000-003a-0000-000000000001",
+        "label": "A",
+        "text": "-CHO"
+      },
+      {
+        "id": "80000000-0000-003a-0000-000000000002",
+        "label": "B",
+        "text": "-OH"
+      },
+      {
+        "id": "80000000-0000-003a-0000-000000000003",
+        "label": "C",
+        "text": "-COO-"
+      },
+      {
+        "id": "80000000-0000-003a-0000-000000000004",
+        "label": "D",
+        "text": "-NH2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-003a-0000-000000000003",
+    "explanation": "An ester has the linkage R-C(=O)-O-R', often written -COO-.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000003b",
+    "code": "AFNS-Q-059",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 59. Ammonium acetate, on heating, produces which compound?",
+    "options": [
+      {
+        "id": "80000000-0000-003b-0000-000000000001",
+        "label": "A",
+        "text": "Methane"
+      },
+      {
+        "id": "80000000-0000-003b-0000-000000000002",
+        "label": "B",
+        "text": "Acetamide"
+      },
+      {
+        "id": "80000000-0000-003b-0000-000000000003",
+        "label": "C",
+        "text": "Acetic acid"
+      },
+      {
+        "id": "80000000-0000-003b-0000-000000000004",
+        "label": "D",
+        "text": "Methylamine"
+      }
+    ],
+    "correctOptionId": "80000000-0000-003b-0000-000000000002",
+    "explanation": "Heating ammonium acetate removes water and forms the amide CH3CONH2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000003c",
+    "code": "AFNS-Q-060",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 60. What is the molecular geometry of PCl5?",
+    "options": [
+      {
+        "id": "80000000-0000-003c-0000-000000000001",
+        "label": "A",
+        "text": "Tetrahedral"
+      },
+      {
+        "id": "80000000-0000-003c-0000-000000000002",
+        "label": "B",
+        "text": "Square planar"
+      },
+      {
+        "id": "80000000-0000-003c-0000-000000000003",
+        "label": "C",
+        "text": "Trigonal bipyramidal"
+      },
+      {
+        "id": "80000000-0000-003c-0000-000000000004",
+        "label": "D",
+        "text": "Octahedral"
+      }
+    ],
+    "correctOptionId": "80000000-0000-003c-0000-000000000003",
+    "explanation": "Five bonding pairs around phosphorus arrange in a trigonal-bipyramidal geometry.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000003d",
+    "code": "AFNS-Q-061",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 61. If the tension in a stretched string is doubled, its frequency will become:",
+    "options": [
+      {
+        "id": "80000000-0000-003d-0000-000000000001",
+        "label": "A",
+        "text": "2f"
+      },
+      {
+        "id": "80000000-0000-003d-0000-000000000002",
+        "label": "B",
+        "text": "f/2"
+      },
+      {
+        "id": "80000000-0000-003d-0000-000000000003",
+        "label": "C",
+        "text": "sqrt2f"
+      },
+      {
+        "id": "80000000-0000-003d-0000-000000000004",
+        "label": "D",
+        "text": "f/sqrt2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-003d-0000-000000000003",
+    "explanation": "String frequency is proportional to sqrt(tension), so doubling tension multiplies frequency by sqrt(2).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000003e",
+    "code": "AFNS-Q-062",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 62. A particle in SHM has velocity v at the mean position. If the frequency of the SHM is doubled while the amplitude remains constant, what will be its velocity at the mean position?",
+    "options": [
+      {
+        "id": "80000000-0000-003e-0000-000000000001",
+        "label": "A",
+        "text": "v/2"
+      },
+      {
+        "id": "80000000-0000-003e-0000-000000000002",
+        "label": "B",
+        "text": "v"
+      },
+      {
+        "id": "80000000-0000-003e-0000-000000000003",
+        "label": "C",
+        "text": "2v"
+      },
+      {
+        "id": "80000000-0000-003e-0000-000000000004",
+        "label": "D",
+        "text": "v/sqrt2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-003e-0000-000000000003",
+    "explanation": "At equilibrium v_max = 2*pi*f*A, so doubling f at fixed A doubles speed.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000003f",
+    "code": "AFNS-Q-063",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 63. Which of the following is the SI unit of electric current?",
+    "options": [
+      {
+        "id": "80000000-0000-003f-0000-000000000001",
+        "label": "A",
+        "text": "Volt"
+      },
+      {
+        "id": "80000000-0000-003f-0000-000000000002",
+        "label": "B",
+        "text": "Ohm"
+      },
+      {
+        "id": "80000000-0000-003f-0000-000000000003",
+        "label": "C",
+        "text": "Watt"
+      },
+      {
+        "id": "80000000-0000-003f-0000-000000000004",
+        "label": "D",
+        "text": "Ampere"
+      }
+    ],
+    "correctOptionId": "80000000-0000-003f-0000-000000000004",
+    "explanation": "Electric current is measured in amperes, equivalent to coulombs per second.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000040",
+    "code": "AFNS-Q-064",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 64. Which of the following is the SI unit of electric potential difference?",
+    "options": [
+      {
+        "id": "80000000-0000-0040-0000-000000000001",
+        "label": "A",
+        "text": "Ampere"
+      },
+      {
+        "id": "80000000-0000-0040-0000-000000000002",
+        "label": "B",
+        "text": "Joule"
+      },
+      {
+        "id": "80000000-0000-0040-0000-000000000003",
+        "label": "C",
+        "text": "Volt"
+      },
+      {
+        "id": "80000000-0000-0040-0000-000000000004",
+        "label": "D",
+        "text": "Coulomb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0040-0000-000000000003",
+    "explanation": "Potential difference is energy per unit charge, measured in volts or joules per coulomb.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000041",
+    "code": "AFNS-Q-065",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 65. Which structure in Hydra is primarily responsible for offense and defense?",
+    "options": [
+      {
+        "id": "80000000-0000-0041-0000-000000000001",
+        "label": "A",
+        "text": "Tentacles"
+      },
+      {
+        "id": "80000000-0000-0041-0000-000000000002",
+        "label": "B",
+        "text": "Nematocysts"
+      },
+      {
+        "id": "80000000-0000-0041-0000-000000000003",
+        "label": "C",
+        "text": "Gastrovascular cavity"
+      },
+      {
+        "id": "80000000-0000-0041-0000-000000000004",
+        "label": "D",
+        "text": "Bud"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0041-0000-000000000002",
+    "explanation": "Nematocysts are stinging capsules used to capture prey and defend Hydra.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000042",
+    "code": "AFNS-Q-066",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 66. In Hydra, nematocysts are mainly present in which cells?",
+    "options": [
+      {
+        "id": "80000000-0000-0042-0000-000000000001",
+        "label": "A",
+        "text": "Digestive cells"
+      },
+      {
+        "id": "80000000-0000-0042-0000-000000000002",
+        "label": "B",
+        "text": "Gland cells"
+      },
+      {
+        "id": "80000000-0000-0042-0000-000000000003",
+        "label": "C",
+        "text": "Cnidocytes"
+      },
+      {
+        "id": "80000000-0000-0042-0000-000000000004",
+        "label": "D",
+        "text": "Interstitial cells"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0042-0000-000000000003",
+    "explanation": "Cnidocytes are the specialized stinging cells that contain nematocysts.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000043",
+    "code": "AFNS-Q-067",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 67. What is the main function of mitochondria in a cell?",
+    "options": [
+      {
+        "id": "80000000-0000-0043-0000-000000000001",
+        "label": "A",
+        "text": "Protein synthesis"
+      },
+      {
+        "id": "80000000-0000-0043-0000-000000000002",
+        "label": "B",
+        "text": "Photosynthesis"
+      },
+      {
+        "id": "80000000-0000-0043-0000-000000000003",
+        "label": "C",
+        "text": "Production of ATP/energy"
+      },
+      {
+        "id": "80000000-0000-0043-0000-000000000004",
+        "label": "D",
+        "text": "Storage of genetic material"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0043-0000-000000000003",
+    "explanation": "Mitochondria produce most ATP through aerobic respiration in typical eukaryotic cells.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000044",
+    "code": "AFNS-Q-068",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 68. Which part of speech is the word \"quickly\" in the sentence \"He runs quickly\"?",
+    "options": [
+      {
+        "id": "80000000-0000-0044-0000-000000000001",
+        "label": "A",
+        "text": "Noun"
+      },
+      {
+        "id": "80000000-0000-0044-0000-000000000002",
+        "label": "B",
+        "text": "Adjective"
+      },
+      {
+        "id": "80000000-0000-0044-0000-000000000003",
+        "label": "C",
+        "text": "Adverb"
+      },
+      {
+        "id": "80000000-0000-0044-0000-000000000004",
+        "label": "D",
+        "text": "Preposition"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0044-0000-000000000003",
+    "explanation": "Quickly modifies the verb runs by describing how the action occurs.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000045",
+    "code": "AFNS-Q-069",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 69. Which part of speech is the word \"beautiful\" in the sentence \"She has a beautiful dress\"?",
+    "options": [
+      {
+        "id": "80000000-0000-0045-0000-000000000001",
+        "label": "A",
+        "text": "Noun"
+      },
+      {
+        "id": "80000000-0000-0045-0000-000000000002",
+        "label": "B",
+        "text": "Adjective"
+      },
+      {
+        "id": "80000000-0000-0045-0000-000000000003",
+        "label": "C",
+        "text": "Adverb"
+      },
+      {
+        "id": "80000000-0000-0045-0000-000000000004",
+        "label": "D",
+        "text": "Verb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0045-0000-000000000002",
+    "explanation": "Beautiful describes the noun dress, so it is an adjective.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000046",
+    "code": "AFNS-Q-070",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 70. Which of the following is a noun?",
+    "options": [
+      {
+        "id": "80000000-0000-0046-0000-000000000001",
+        "label": "A",
+        "text": "Run"
+      },
+      {
+        "id": "80000000-0000-0046-0000-000000000002",
+        "label": "B",
+        "text": "Quickly"
+      },
+      {
+        "id": "80000000-0000-0046-0000-000000000003",
+        "label": "C",
+        "text": "Beautiful"
+      },
+      {
+        "id": "80000000-0000-0046-0000-000000000004",
+        "label": "D",
+        "text": "Honesty"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0046-0000-000000000004",
+    "explanation": "Honesty names an abstract quality and is therefore a noun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000047",
+    "code": "AFNS-Q-071",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 71. Which of the following is a dependent clause?",
+    "options": [
+      {
+        "id": "80000000-0000-0047-0000-000000000001",
+        "label": "A",
+        "text": "I went home."
+      },
+      {
+        "id": "80000000-0000-0047-0000-000000000002",
+        "label": "B",
+        "text": "She is happy."
+      },
+      {
+        "id": "80000000-0000-0047-0000-000000000003",
+        "label": "C",
+        "text": "Because it was raining"
+      },
+      {
+        "id": "80000000-0000-0047-0000-000000000004",
+        "label": "D",
+        "text": "He plays cricket."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0047-0000-000000000003",
+    "explanation": "Because introduces a subordinate clause that cannot stand alone as a complete sentence.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000048",
+    "code": "AFNS-Q-072",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 72. Which conjunction is used to show contrast?",
+    "options": [
+      {
+        "id": "80000000-0000-0048-0000-000000000001",
+        "label": "A",
+        "text": "And"
+      },
+      {
+        "id": "80000000-0000-0048-0000-000000000002",
+        "label": "B",
+        "text": "Or"
+      },
+      {
+        "id": "80000000-0000-0048-0000-000000000003",
+        "label": "C",
+        "text": "But"
+      },
+      {
+        "id": "80000000-0000-0048-0000-000000000004",
+        "label": "D",
+        "text": "So"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0048-0000-000000000003",
+    "explanation": "But joins ideas with contrasting meanings.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000049",
+    "code": "AFNS-Q-073",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 73. Which of the following sentences contains a conjunction?",
+    "options": [
+      {
+        "id": "80000000-0000-0049-0000-000000000001",
+        "label": "A",
+        "text": "Ali runs quickly."
+      },
+      {
+        "id": "80000000-0000-0049-0000-000000000002",
+        "label": "B",
+        "text": "Ali and Ahmed play cricket."
+      },
+      {
+        "id": "80000000-0000-0049-0000-000000000003",
+        "label": "C",
+        "text": "Ali is intelligent."
+      },
+      {
+        "id": "80000000-0000-0049-0000-000000000004",
+        "label": "D",
+        "text": "Ali is happy."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0049-0000-000000000002",
+    "explanation": "And connects the two names and functions as a coordinating conjunction.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000004a",
+    "code": "AFNS-Q-074",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 74. Which of the following is a preposition?",
+    "options": [
+      {
+        "id": "80000000-0000-004a-0000-000000000001",
+        "label": "A",
+        "text": "Quickly"
+      },
+      {
+        "id": "80000000-0000-004a-0000-000000000002",
+        "label": "B",
+        "text": "Beautiful"
+      },
+      {
+        "id": "80000000-0000-004a-0000-000000000003",
+        "label": "C",
+        "text": "Under"
+      },
+      {
+        "id": "80000000-0000-004a-0000-000000000004",
+        "label": "D",
+        "text": "Happiness"
+      }
+    ],
+    "correctOptionId": "80000000-0000-004a-0000-000000000003",
+    "explanation": "Under expresses a positional relationship and is a preposition.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000004b",
+    "code": "AFNS-Q-075",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 75. Identify the adjective in the following sentence: \"The clever boy solved the difficult question.\"",
+    "options": [
+      {
+        "id": "80000000-0000-004b-0000-000000000001",
+        "label": "A",
+        "text": "Boy"
+      },
+      {
+        "id": "80000000-0000-004b-0000-000000000002",
+        "label": "B",
+        "text": "Solved"
+      },
+      {
+        "id": "80000000-0000-004b-0000-000000000003",
+        "label": "C",
+        "text": "Clever"
+      },
+      {
+        "id": "80000000-0000-004b-0000-000000000004",
+        "label": "D",
+        "text": "Question"
+      }
+    ],
+    "correctOptionId": "80000000-0000-004b-0000-000000000003",
+    "explanation": "Clever modifies the noun boy and is therefore an adjective.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000004c",
+    "code": "AFNS-Q-076",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 76. Identify the verb in the following sentence: \"The students completed their assignment.\"",
+    "options": [
+      {
+        "id": "80000000-0000-004c-0000-000000000001",
+        "label": "A",
+        "text": "Students"
+      },
+      {
+        "id": "80000000-0000-004c-0000-000000000002",
+        "label": "B",
+        "text": "Assignment"
+      },
+      {
+        "id": "80000000-0000-004c-0000-000000000003",
+        "label": "C",
+        "text": "Their"
+      },
+      {
+        "id": "80000000-0000-004c-0000-000000000004",
+        "label": "D",
+        "text": "Completed"
+      }
+    ],
+    "correctOptionId": "80000000-0000-004c-0000-000000000004",
+    "explanation": "Completed expresses the action performed by the students.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000004d",
+    "code": "AFNS-Q-077",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 77. Which type of clause can stand alone as a complete sentence?",
+    "options": [
+      {
+        "id": "80000000-0000-004d-0000-000000000001",
+        "label": "A",
+        "text": "Dependent clause"
+      },
+      {
+        "id": "80000000-0000-004d-0000-000000000002",
+        "label": "B",
+        "text": "Relative clause"
+      },
+      {
+        "id": "80000000-0000-004d-0000-000000000003",
+        "label": "C",
+        "text": "Independent clause"
+      },
+      {
+        "id": "80000000-0000-004d-0000-000000000004",
+        "label": "D",
+        "text": "Adverbial clause"
+      }
+    ],
+    "correctOptionId": "80000000-0000-004d-0000-000000000003",
+    "explanation": "An independent clause expresses a complete thought and can stand alone.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000004e",
+    "code": "AFNS-Q-078",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 78. Which of the following is an isoelectronic species of nitrogen molecule (N2)?",
+    "options": [
+      {
+        "id": "80000000-0000-004e-0000-000000000001",
+        "label": "A",
+        "text": "O2"
+      },
+      {
+        "id": "80000000-0000-004e-0000-000000000002",
+        "label": "B",
+        "text": "CO"
+      },
+      {
+        "id": "80000000-0000-004e-0000-000000000003",
+        "label": "C",
+        "text": "NO2"
+      },
+      {
+        "id": "80000000-0000-004e-0000-000000000004",
+        "label": "D",
+        "text": "CO2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-004e-0000-000000000002",
+    "explanation": "N2 and CO each have 14 total electrons, making them isoelectronic.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000004f",
+    "code": "AFNS-Q-079",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 79. Which of the following elements belongs to the d-block of the periodic table?",
+    "options": [
+      {
+        "id": "80000000-0000-004f-0000-000000000001",
+        "label": "A",
+        "text": "Boron"
+      },
+      {
+        "id": "80000000-0000-004f-0000-000000000002",
+        "label": "B",
+        "text": "Carbon"
+      },
+      {
+        "id": "80000000-0000-004f-0000-000000000003",
+        "label": "C",
+        "text": "Cobalt"
+      },
+      {
+        "id": "80000000-0000-004f-0000-000000000004",
+        "label": "D",
+        "text": "Neon"
+      }
+    ],
+    "correctOptionId": "80000000-0000-004f-0000-000000000003",
+    "explanation": "Cobalt is a transition element whose differentiating electrons occupy the d subshell.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000050",
+    "code": "AFNS-Q-080",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 80. Boron is classified as a:",
+    "options": [
+      {
+        "id": "80000000-0000-0050-0000-000000000001",
+        "label": "A",
+        "text": "Metal"
+      },
+      {
+        "id": "80000000-0000-0050-0000-000000000002",
+        "label": "B",
+        "text": "Non-metal"
+      },
+      {
+        "id": "80000000-0000-0050-0000-000000000003",
+        "label": "C",
+        "text": "Metalloid"
+      },
+      {
+        "id": "80000000-0000-0050-0000-000000000004",
+        "label": "D",
+        "text": "Noble gas"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0050-0000-000000000003",
+    "explanation": "Boron has properties intermediate between metals and non-metals and is classified as a metalloid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000051",
+    "code": "AFNS-Q-081",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 81. Which nitrogenous base is absent in RNA?",
+    "options": [
+      {
+        "id": "80000000-0000-0051-0000-000000000001",
+        "label": "A",
+        "text": "Adenine"
+      },
+      {
+        "id": "80000000-0000-0051-0000-000000000002",
+        "label": "B",
+        "text": "Guanine"
+      },
+      {
+        "id": "80000000-0000-0051-0000-000000000003",
+        "label": "C",
+        "text": "Cytosine"
+      },
+      {
+        "id": "80000000-0000-0051-0000-000000000004",
+        "label": "D",
+        "text": "Thymine"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0051-0000-000000000004",
+    "explanation": "RNA normally uses uracil in place of thymine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000052",
+    "code": "AFNS-Q-082",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 82. Which of the following is a correct set of nitrogenous bases found in RNA?",
+    "options": [
+      {
+        "id": "80000000-0000-0052-0000-000000000001",
+        "label": "A",
+        "text": "A, T, G, C"
+      },
+      {
+        "id": "80000000-0000-0052-0000-000000000002",
+        "label": "B",
+        "text": "A, U, G, C"
+      },
+      {
+        "id": "80000000-0000-0052-0000-000000000003",
+        "label": "C",
+        "text": "A, T, U, G"
+      },
+      {
+        "id": "80000000-0000-0052-0000-000000000004",
+        "label": "D",
+        "text": "T, U, C, G"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0052-0000-000000000002",
+    "explanation": "The standard RNA bases are adenine, uracil, guanine and cytosine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000053",
+    "code": "AFNS-Q-083",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 83. A ribonucleotide consists of:",
+    "options": [
+      {
+        "id": "80000000-0000-0053-0000-000000000001",
+        "label": "A",
+        "text": "Ribose and a nitrogenous base only"
+      },
+      {
+        "id": "80000000-0000-0053-0000-000000000002",
+        "label": "B",
+        "text": "Deoxyribose, phosphate and a base"
+      },
+      {
+        "id": "80000000-0000-0053-0000-000000000003",
+        "label": "C",
+        "text": "Ribose, phosphate group and a nitrogenous base"
+      },
+      {
+        "id": "80000000-0000-0053-0000-000000000004",
+        "label": "D",
+        "text": "Ribose and phosphate only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0053-0000-000000000003",
+    "explanation": "A ribonucleotide contains ribose sugar, a phosphate group and a nitrogenous base.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000054",
+    "code": "AFNS-Q-084",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 84. How many polypeptide chains are present in a myoglobin molecule?",
+    "options": [
+      {
+        "id": "80000000-0000-0054-0000-000000000001",
+        "label": "A",
+        "text": "2"
+      },
+      {
+        "id": "80000000-0000-0054-0000-000000000002",
+        "label": "B",
+        "text": "3"
+      },
+      {
+        "id": "80000000-0000-0054-0000-000000000003",
+        "label": "C",
+        "text": "1"
+      },
+      {
+        "id": "80000000-0000-0054-0000-000000000004",
+        "label": "D",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0054-0000-000000000003",
+    "explanation": "Myoglobin is a single-polypeptide oxygen-binding protein.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000055",
+    "code": "AFNS-Q-085",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 85. How many polypeptide chains are present in a normal adult hemoglobin molecule?",
+    "options": [
+      {
+        "id": "80000000-0000-0055-0000-000000000001",
+        "label": "A",
+        "text": "2"
+      },
+      {
+        "id": "80000000-0000-0055-0000-000000000002",
+        "label": "B",
+        "text": "3"
+      },
+      {
+        "id": "80000000-0000-0055-0000-000000000003",
+        "label": "C",
+        "text": "4"
+      },
+      {
+        "id": "80000000-0000-0055-0000-000000000004",
+        "label": "D",
+        "text": "6"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0055-0000-000000000003",
+    "explanation": "Adult hemoglobin HbA contains four polypeptide chains.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000056",
+    "code": "AFNS-Q-086",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 86. What is the ratio of alpha to beta chains in normal adult hemoglobin (HbA)?",
+    "options": [
+      {
+        "id": "80000000-0000-0056-0000-000000000001",
+        "label": "A",
+        "text": "1:2"
+      },
+      {
+        "id": "80000000-0000-0056-0000-000000000002",
+        "label": "B",
+        "text": "1:1"
+      },
+      {
+        "id": "80000000-0000-0056-0000-000000000003",
+        "label": "C",
+        "text": "2:1"
+      },
+      {
+        "id": "80000000-0000-0056-0000-000000000004",
+        "label": "D",
+        "text": "2:2:1"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0056-0000-000000000002",
+    "explanation": "HbA contains two alpha and two beta chains, giving an alpha-to-beta ratio of 1:1.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000057",
+    "code": "AFNS-Q-087",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 87. Which of the following is an auxiliary verb?",
+    "options": [
+      {
+        "id": "80000000-0000-0057-0000-000000000001",
+        "label": "A",
+        "text": "Run"
+      },
+      {
+        "id": "80000000-0000-0057-0000-000000000002",
+        "label": "B",
+        "text": "Beautiful"
+      },
+      {
+        "id": "80000000-0000-0057-0000-000000000003",
+        "label": "C",
+        "text": "Do"
+      },
+      {
+        "id": "80000000-0000-0057-0000-000000000004",
+        "label": "D",
+        "text": "Quickly"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0057-0000-000000000003",
+    "explanation": "Do can help form questions, negatives and emphatic verb constructions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000058",
+    "code": "AFNS-Q-088",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 88. In the sentence \"She seems happy,\" the word \"seems\" functions as a:",
+    "options": [
+      {
+        "id": "80000000-0000-0058-0000-000000000001",
+        "label": "A",
+        "text": "Transitive verb"
+      },
+      {
+        "id": "80000000-0000-0058-0000-000000000002",
+        "label": "B",
+        "text": "Linking verb"
+      },
+      {
+        "id": "80000000-0000-0058-0000-000000000003",
+        "label": "C",
+        "text": "Noun"
+      },
+      {
+        "id": "80000000-0000-0058-0000-000000000004",
+        "label": "D",
+        "text": "Adverb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0058-0000-000000000002",
+    "explanation": "Seems links the subject she to the describing complement happy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000059",
+    "code": "AFNS-Q-089",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 89. If the length of a stretched string is doubled while its tension and mass per unit length remain constant, its frequency becomes:",
+    "options": [
+      {
+        "id": "80000000-0000-0059-0000-000000000001",
+        "label": "A",
+        "text": "Doubled"
+      },
+      {
+        "id": "80000000-0000-0059-0000-000000000002",
+        "label": "B",
+        "text": "Unchanged"
+      },
+      {
+        "id": "80000000-0000-0059-0000-000000000003",
+        "label": "C",
+        "text": "Half"
+      },
+      {
+        "id": "80000000-0000-0059-0000-000000000004",
+        "label": "D",
+        "text": "Four times"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0059-0000-000000000003",
+    "explanation": "At fixed tension and linear density, string frequency is inversely proportional to length.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000005a",
+    "code": "AFNS-Q-090",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 90. If the length of a stretched string is doubled and its cross-sectional area is reduced to half, while the tension remains constant, how does its frequency change?",
+    "options": [
+      {
+        "id": "80000000-0000-005a-0000-000000000001",
+        "label": "A",
+        "text": "Becomes half"
+      },
+      {
+        "id": "80000000-0000-005a-0000-000000000002",
+        "label": "B",
+        "text": "Remains unchanged"
+      },
+      {
+        "id": "80000000-0000-005a-0000-000000000003",
+        "label": "C",
+        "text": "Becomes f/sqrt(2)"
+      },
+      {
+        "id": "80000000-0000-005a-0000-000000000004",
+        "label": "D",
+        "text": "Becomes four times"
+      }
+    ],
+    "correctOptionId": "80000000-0000-005a-0000-000000000003",
+    "explanation": "Since f is proportional to 1/(L*sqrt(area)), doubling L and halving the area gives f_new = f/sqrt(2).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000005b",
+    "code": "AFNS-Q-091",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 91. A current-carrying coil produces a magnetic field because of the:",
+    "options": [
+      {
+        "id": "80000000-0000-005b-0000-000000000001",
+        "label": "A",
+        "text": "Charge at rest"
+      },
+      {
+        "id": "80000000-0000-005b-0000-000000000002",
+        "label": "B",
+        "text": "Motion of electric charges"
+      },
+      {
+        "id": "80000000-0000-005b-0000-000000000003",
+        "label": "C",
+        "text": "Gravitational force"
+      },
+      {
+        "id": "80000000-0000-005b-0000-000000000004",
+        "label": "D",
+        "text": "Nuclear force"
+      }
+    ],
+    "correctOptionId": "80000000-0000-005b-0000-000000000002",
+    "explanation": "Moving charges generate a magnetic field around a current-carrying coil.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000005c",
+    "code": "AFNS-Q-092",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 92. Two parallel current-carrying conductors carrying currents in the same direction will:",
+    "options": [
+      {
+        "id": "80000000-0000-005c-0000-000000000001",
+        "label": "A",
+        "text": "Repel each other"
+      },
+      {
+        "id": "80000000-0000-005c-0000-000000000002",
+        "label": "B",
+        "text": "Attract each other"
+      },
+      {
+        "id": "80000000-0000-005c-0000-000000000003",
+        "label": "C",
+        "text": "Have no force between them"
+      },
+      {
+        "id": "80000000-0000-005c-0000-000000000004",
+        "label": "D",
+        "text": "Cancel each other's magnetic fields completely"
+      }
+    ],
+    "correctOptionId": "80000000-0000-005c-0000-000000000002",
+    "explanation": "The magnetic force between parallel conductors carrying currents in the same direction is attractive.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000005d",
+    "code": "AFNS-Q-093",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 93. If a helicopter consumes 50 gallons of fuel to travel 320 km, how many gallons will it require to travel 400 km at the same rate?",
+    "options": [
+      {
+        "id": "80000000-0000-005d-0000-000000000001",
+        "label": "A",
+        "text": "55 gallons"
+      },
+      {
+        "id": "80000000-0000-005d-0000-000000000002",
+        "label": "B",
+        "text": "60 gallons"
+      },
+      {
+        "id": "80000000-0000-005d-0000-000000000003",
+        "label": "C",
+        "text": "62.5 gallons"
+      },
+      {
+        "id": "80000000-0000-005d-0000-000000000004",
+        "label": "D",
+        "text": "75 gallons"
+      }
+    ],
+    "correctOptionId": "80000000-0000-005d-0000-000000000003",
+    "explanation": "Fuel consumption is proportional to distance: 50*400/320 = 62.5 gallons.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000005e",
+    "code": "AFNS-Q-094",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 94. Which cell organelle consists of curved stacks of flattened membrane sacs?",
+    "options": [
+      {
+        "id": "80000000-0000-005e-0000-000000000001",
+        "label": "A",
+        "text": "Nucleus"
+      },
+      {
+        "id": "80000000-0000-005e-0000-000000000002",
+        "label": "B",
+        "text": "Golgi apparatus"
+      },
+      {
+        "id": "80000000-0000-005e-0000-000000000003",
+        "label": "C",
+        "text": "Ribosome"
+      },
+      {
+        "id": "80000000-0000-005e-0000-000000000004",
+        "label": "D",
+        "text": "Mitochondrion"
+      }
+    ],
+    "correctOptionId": "80000000-0000-005e-0000-000000000002",
+    "explanation": "The Golgi apparatus consists of curved stacks of flattened membrane sacs called cisternae.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000005f",
+    "code": "AFNS-Q-095",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 95. The dark reactions of photosynthesis take place mainly in the:",
+    "options": [
+      {
+        "id": "80000000-0000-005f-0000-000000000001",
+        "label": "A",
+        "text": "Thylakoid membrane"
+      },
+      {
+        "id": "80000000-0000-005f-0000-000000000002",
+        "label": "B",
+        "text": "Grana"
+      },
+      {
+        "id": "80000000-0000-005f-0000-000000000003",
+        "label": "C",
+        "text": "Stroma of chloroplast"
+      },
+      {
+        "id": "80000000-0000-005f-0000-000000000004",
+        "label": "D",
+        "text": "Outer membrane"
+      }
+    ],
+    "correctOptionId": "80000000-0000-005f-0000-000000000003",
+    "explanation": "The Calvin cycle fixes carbon dioxide in the chloroplast stroma.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000060",
+    "code": "AFNS-Q-096",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 96. What is the approximate length of DNA present in a single human cell if it is completely extended?",
+    "options": [
+      {
+        "id": "80000000-0000-0060-0000-000000000001",
+        "label": "A",
+        "text": "0.1 m"
+      },
+      {
+        "id": "80000000-0000-0060-0000-000000000002",
+        "label": "B",
+        "text": "About 2 m"
+      },
+      {
+        "id": "80000000-0000-0060-0000-000000000003",
+        "label": "C",
+        "text": "20 m"
+      },
+      {
+        "id": "80000000-0000-0060-0000-000000000004",
+        "label": "D",
+        "text": "200 m"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0060-0000-000000000002",
+    "explanation": "The DNA in a typical diploid human nucleated cell extends to roughly 2 m when uncoiled.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000061",
+    "code": "AFNS-Q-097",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 97. Which molecule acts as the final electron acceptor in the light-dependent reactions of photosynthesis?",
+    "options": [
+      {
+        "id": "80000000-0000-0061-0000-000000000001",
+        "label": "A",
+        "text": "ATP"
+      },
+      {
+        "id": "80000000-0000-0061-0000-000000000002",
+        "label": "B",
+        "text": "Oxygen"
+      },
+      {
+        "id": "80000000-0000-0061-0000-000000000003",
+        "label": "C",
+        "text": "NADP+"
+      },
+      {
+        "id": "80000000-0000-0061-0000-000000000004",
+        "label": "D",
+        "text": "Carbon dioxide"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0061-0000-000000000003",
+    "explanation": "NADP+ accepts electrons at the end of linear photosynthetic electron transport to form NADPH.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000062",
+    "code": "AFNS-Q-098",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 98. Which of the following is the correct definition of a nucleotide?",
+    "options": [
+      {
+        "id": "80000000-0000-0062-0000-000000000001",
+        "label": "A",
+        "text": "Sugar + nitrogenous base"
+      },
+      {
+        "id": "80000000-0000-0062-0000-000000000002",
+        "label": "B",
+        "text": "Sugar + nitrogenous base + phosphate group"
+      },
+      {
+        "id": "80000000-0000-0062-0000-000000000003",
+        "label": "C",
+        "text": "Sugar + phosphate only"
+      },
+      {
+        "id": "80000000-0000-0062-0000-000000000004",
+        "label": "D",
+        "text": "Nitrogenous base + phosphate only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0062-0000-000000000002",
+    "explanation": "A nucleotide contains a sugar, a nitrogenous base and at least one phosphate group.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000063",
+    "code": "AFNS-Q-099",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 99. Which of the following is a nucleoside?",
+    "options": [
+      {
+        "id": "80000000-0000-0063-0000-000000000001",
+        "label": "A",
+        "text": "Adenine + phosphate"
+      },
+      {
+        "id": "80000000-0000-0063-0000-000000000002",
+        "label": "B",
+        "text": "Ribose + phosphate"
+      },
+      {
+        "id": "80000000-0000-0063-0000-000000000003",
+        "label": "C",
+        "text": "Ribose + nitrogenous base"
+      },
+      {
+        "id": "80000000-0000-0063-0000-000000000004",
+        "label": "D",
+        "text": "Ribose + nitrogenous base + phosphate"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0063-0000-000000000003",
+    "explanation": "A nucleoside contains a sugar and a nitrogenous base but no phosphate group.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000064",
+    "code": "AFNS-Q-100",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 100. Which nitrogenous base is present in RNA but not normally found in DNA?",
+    "options": [
+      {
+        "id": "80000000-0000-0064-0000-000000000001",
+        "label": "A",
+        "text": "Thymine"
+      },
+      {
+        "id": "80000000-0000-0064-0000-000000000002",
+        "label": "B",
+        "text": "Cytosine"
+      },
+      {
+        "id": "80000000-0000-0064-0000-000000000003",
+        "label": "C",
+        "text": "Guanine"
+      },
+      {
+        "id": "80000000-0000-0064-0000-000000000004",
+        "label": "D",
+        "text": "Uracil"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0064-0000-000000000004",
+    "explanation": "Uracil is a standard RNA base, whereas DNA normally contains thymine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000065",
+    "code": "AFNS-Q-101",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 101. Which of the following is the correct relationship between DNA and a gene?",
+    "options": [
+      {
+        "id": "80000000-0000-0065-0000-000000000001",
+        "label": "A",
+        "text": "Genes are made only of proteins"
+      },
+      {
+        "id": "80000000-0000-0065-0000-000000000002",
+        "label": "B",
+        "text": "DNA is made of amino acids"
+      },
+      {
+        "id": "80000000-0000-0065-0000-000000000003",
+        "label": "C",
+        "text": "Genes are specific segments of DNA"
+      },
+      {
+        "id": "80000000-0000-0065-0000-000000000004",
+        "label": "D",
+        "text": "DNA is a type of carbohydrate"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0065-0000-000000000003",
+    "explanation": "A gene is a DNA sequence carrying information for a functional RNA or protein product.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000066",
+    "code": "AFNS-Q-102",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 102. Which of the following best describes myoglobin?",
+    "options": [
+      {
+        "id": "80000000-0000-0066-0000-000000000001",
+        "label": "A",
+        "text": "A four-chain respiratory protein"
+      },
+      {
+        "id": "80000000-0000-0066-0000-000000000002",
+        "label": "B",
+        "text": "A carbohydrate stored in muscles"
+      },
+      {
+        "id": "80000000-0000-0066-0000-000000000003",
+        "label": "C",
+        "text": "A single-chain oxygen-binding protein found mainly in muscle"
+      },
+      {
+        "id": "80000000-0000-0066-0000-000000000004",
+        "label": "D",
+        "text": "A membrane lipid"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0066-0000-000000000003",
+    "explanation": "Myoglobin binds oxygen in muscle and consists of one polypeptide chain.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000067",
+    "code": "AFNS-Q-103",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 103. Which statement about adult hemoglobin (HbA) is correct?",
+    "options": [
+      {
+        "id": "80000000-0000-0067-0000-000000000001",
+        "label": "A",
+        "text": "It contains four beta chains"
+      },
+      {
+        "id": "80000000-0000-0067-0000-000000000002",
+        "label": "B",
+        "text": "It contains four alpha chains"
+      },
+      {
+        "id": "80000000-0000-0067-0000-000000000003",
+        "label": "C",
+        "text": "It consists of two alpha and two beta chains"
+      },
+      {
+        "id": "80000000-0000-0067-0000-000000000004",
+        "label": "D",
+        "text": "It consists of one alpha and three beta chains"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0067-0000-000000000003",
+    "explanation": "Normal adult HbA has the subunit composition alpha2-beta2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000068",
+    "code": "AFNS-Q-104",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 104. Which type of hybridization is present in BF3?",
+    "options": [
+      {
+        "id": "80000000-0000-0068-0000-000000000001",
+        "label": "A",
+        "text": "sp"
+      },
+      {
+        "id": "80000000-0000-0068-0000-000000000002",
+        "label": "B",
+        "text": "sp^2"
+      },
+      {
+        "id": "80000000-0000-0068-0000-000000000003",
+        "label": "C",
+        "text": "sp^3"
+      },
+      {
+        "id": "80000000-0000-0068-0000-000000000004",
+        "label": "D",
+        "text": "sp^3d"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0068-0000-000000000002",
+    "explanation": "Boron in BF3 forms three sigma bonds with trigonal-planar sp^2 geometry.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000069",
+    "code": "AFNS-Q-105",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 105. Which of the following statements about RNA is correct?",
+    "options": [
+      {
+        "id": "80000000-0000-0069-0000-000000000001",
+        "label": "A",
+        "text": "RNA always contains thymine"
+      },
+      {
+        "id": "80000000-0000-0069-0000-000000000002",
+        "label": "B",
+        "text": "RNA contains deoxyribose sugar"
+      },
+      {
+        "id": "80000000-0000-0069-0000-000000000003",
+        "label": "C",
+        "text": "RNA generally contains ribose sugar and uracil"
+      },
+      {
+        "id": "80000000-0000-0069-0000-000000000004",
+        "label": "D",
+        "text": "RNA is always double-stranded"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0069-0000-000000000003",
+    "explanation": "RNA normally contains ribose and uses uracil as one of its four bases.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006a",
+    "code": "AFNS-Q-106",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 106. Which process converts light energy into chemical energy during photosynthesis?",
+    "options": [
+      {
+        "id": "80000000-0000-006a-0000-000000000001",
+        "label": "A",
+        "text": "Respiration"
+      },
+      {
+        "id": "80000000-0000-006a-0000-000000000002",
+        "label": "B",
+        "text": "Digestion"
+      },
+      {
+        "id": "80000000-0000-006a-0000-000000000003",
+        "label": "C",
+        "text": "Photosynthesis"
+      },
+      {
+        "id": "80000000-0000-006a-0000-000000000004",
+        "label": "D",
+        "text": "Fermentation"
+      }
+    ],
+    "correctOptionId": "80000000-0000-006a-0000-000000000003",
+    "explanation": "Photosynthesis stores absorbed light energy in chemical bonds.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006b",
+    "code": "AFNS-Q-107",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 107. Which of the following is responsible for carrying genetic information in most living organisms?",
+    "options": [
+      {
+        "id": "80000000-0000-006b-0000-000000000001",
+        "label": "A",
+        "text": "ATP"
+      },
+      {
+        "id": "80000000-0000-006b-0000-000000000002",
+        "label": "B",
+        "text": "Lipid"
+      },
+      {
+        "id": "80000000-0000-006b-0000-000000000003",
+        "label": "C",
+        "text": "DNA"
+      },
+      {
+        "id": "80000000-0000-006b-0000-000000000004",
+        "label": "D",
+        "text": "Glucose"
+      }
+    ],
+    "correctOptionId": "80000000-0000-006b-0000-000000000003",
+    "explanation": "DNA stores hereditary information in its sequence of nucleotide bases.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006c",
+    "code": "AFNS-Q-108",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 108. In the light-dependent reactions of photosynthesis, NADP+ is reduced to:",
+    "options": [
+      {
+        "id": "80000000-0000-006c-0000-000000000001",
+        "label": "A",
+        "text": "NAD+"
+      },
+      {
+        "id": "80000000-0000-006c-0000-000000000002",
+        "label": "B",
+        "text": "ATP"
+      },
+      {
+        "id": "80000000-0000-006c-0000-000000000003",
+        "label": "C",
+        "text": "NADPH"
+      },
+      {
+        "id": "80000000-0000-006c-0000-000000000004",
+        "label": "D",
+        "text": "FADH2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-006c-0000-000000000003",
+    "explanation": "NADP+ gains electrons and hydrogen to form reduced NADPH.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006d",
+    "code": "AFNS-Q-109",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 109. Which structure contains the genetic material in a typical eukaryotic cell?",
+    "options": [
+      {
+        "id": "80000000-0000-006d-0000-000000000001",
+        "label": "A",
+        "text": "Ribosome"
+      },
+      {
+        "id": "80000000-0000-006d-0000-000000000002",
+        "label": "B",
+        "text": "Golgi apparatus"
+      },
+      {
+        "id": "80000000-0000-006d-0000-000000000003",
+        "label": "C",
+        "text": "Nucleus"
+      },
+      {
+        "id": "80000000-0000-006d-0000-000000000004",
+        "label": "D",
+        "text": "Lysosome"
+      }
+    ],
+    "correctOptionId": "80000000-0000-006d-0000-000000000003",
+    "explanation": "Most DNA in a typical eukaryotic cell is contained in the nucleus.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006e",
+    "code": "AFNS-Q-110",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 110. Which of the following is the correct base-pairing rule in DNA?",
+    "options": [
+      {
+        "id": "80000000-0000-006e-0000-000000000001",
+        "label": "A",
+        "text": "A-C and G-T"
+      },
+      {
+        "id": "80000000-0000-006e-0000-000000000002",
+        "label": "B",
+        "text": "A-G and C-T"
+      },
+      {
+        "id": "80000000-0000-006e-0000-000000000003",
+        "label": "C",
+        "text": "A-T and G-C"
+      },
+      {
+        "id": "80000000-0000-006e-0000-000000000004",
+        "label": "D",
+        "text": "A-U and G-C"
+      }
+    ],
+    "correctOptionId": "80000000-0000-006e-0000-000000000003",
+    "explanation": "DNA complementary bases pair as adenine-thymine and guanine-cytosine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006f",
+    "code": "AFNS-Q-111",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 111. Which sugar is present in RNA?",
+    "options": [
+      {
+        "id": "80000000-0000-006f-0000-000000000001",
+        "label": "A",
+        "text": "Glucose"
+      },
+      {
+        "id": "80000000-0000-006f-0000-000000000002",
+        "label": "B",
+        "text": "Deoxyribose"
+      },
+      {
+        "id": "80000000-0000-006f-0000-000000000003",
+        "label": "C",
+        "text": "Ribose"
+      },
+      {
+        "id": "80000000-0000-006f-0000-000000000004",
+        "label": "D",
+        "text": "Fructose"
+      }
+    ],
+    "correctOptionId": "80000000-0000-006f-0000-000000000003",
+    "explanation": "RNA nucleotides contain ribose sugar.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000070",
+    "code": "AFNS-Q-112",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 112. The apparent change in frequency of a wave due to the relative motion between the source and observer is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0070-0000-000000000001",
+        "label": "A",
+        "text": "Resonance"
+      },
+      {
+        "id": "80000000-0000-0070-0000-000000000002",
+        "label": "B",
+        "text": "Interference"
+      },
+      {
+        "id": "80000000-0000-0070-0000-000000000003",
+        "label": "C",
+        "text": "Doppler Effect"
+      },
+      {
+        "id": "80000000-0000-0070-0000-000000000004",
+        "label": "D",
+        "text": "Diffraction"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0070-0000-000000000003",
+    "explanation": "Relative motion changes the observed wave frequency, which is the Doppler effect.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000071",
+    "code": "AFNS-Q-113",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 113. When a source of sound moves toward a stationary observer, the apparent frequency heard by the observer:",
+    "options": [
+      {
+        "id": "80000000-0000-0071-0000-000000000001",
+        "label": "A",
+        "text": "Decreases"
+      },
+      {
+        "id": "80000000-0000-0071-0000-000000000002",
+        "label": "B",
+        "text": "Remains unchanged"
+      },
+      {
+        "id": "80000000-0000-0071-0000-000000000003",
+        "label": "C",
+        "text": "Becomes zero"
+      },
+      {
+        "id": "80000000-0000-0071-0000-000000000004",
+        "label": "D",
+        "text": "Increases"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0071-0000-000000000004",
+    "explanation": "An approaching source compresses wavefront spacing and increases the observed frequency.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000072",
+    "code": "AFNS-Q-114",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 114. When a source of sound moves away from a stationary observer, the apparent frequency:",
+    "options": [
+      {
+        "id": "80000000-0000-0072-0000-000000000001",
+        "label": "A",
+        "text": "Decreases"
+      },
+      {
+        "id": "80000000-0000-0072-0000-000000000002",
+        "label": "B",
+        "text": "Increases"
+      },
+      {
+        "id": "80000000-0000-0072-0000-000000000003",
+        "label": "C",
+        "text": "Remains constant"
+      },
+      {
+        "id": "80000000-0000-0072-0000-000000000004",
+        "label": "D",
+        "text": "Becomes infinite"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0072-0000-000000000001",
+    "explanation": "A receding source spreads wavefronts farther apart and lowers the observed frequency.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000073",
+    "code": "AFNS-Q-115",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 115. If both the source and observer move with the same velocity in the same direction, the Doppler effect will be:",
+    "options": [
+      {
+        "id": "80000000-0000-0073-0000-000000000001",
+        "label": "A",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-0073-0000-000000000002",
+        "label": "B",
+        "text": "Minimum"
+      },
+      {
+        "id": "80000000-0000-0073-0000-000000000003",
+        "label": "C",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0073-0000-000000000004",
+        "label": "D",
+        "text": "Infinite"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0073-0000-000000000003",
+    "explanation": "Equal source and observer velocities along the same direction give no relative approach or recession.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000074",
+    "code": "AFNS-Q-116",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 116. The path followed by a projectile moving under the influence of gravity is:",
+    "options": [
+      {
+        "id": "80000000-0000-0074-0000-000000000001",
+        "label": "A",
+        "text": "Circular"
+      },
+      {
+        "id": "80000000-0000-0074-0000-000000000002",
+        "label": "B",
+        "text": "Straight"
+      },
+      {
+        "id": "80000000-0000-0074-0000-000000000003",
+        "label": "C",
+        "text": "Elliptical"
+      },
+      {
+        "id": "80000000-0000-0074-0000-000000000004",
+        "label": "D",
+        "text": "Parabolic"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0074-0000-000000000004",
+    "explanation": "Combining uniform horizontal motion with uniformly accelerated vertical motion gives a parabola.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000075",
+    "code": "AFNS-Q-117",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 117. At the highest point of a projectile, its vertical component of velocity is:",
+    "options": [
+      {
+        "id": "80000000-0000-0075-0000-000000000001",
+        "label": "A",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-0075-0000-000000000002",
+        "label": "B",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0075-0000-000000000003",
+        "label": "C",
+        "text": "Equal to acceleration"
+      },
+      {
+        "id": "80000000-0000-0075-0000-000000000004",
+        "label": "D",
+        "text": "Infinite"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0075-0000-000000000002",
+    "explanation": "At maximum height, the projectile stops rising before descending, so vertical velocity is zero.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000076",
+    "code": "AFNS-Q-118",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 118. The horizontal component of velocity of a projectile, when air resistance is neglected, is:",
+    "options": [
+      {
+        "id": "80000000-0000-0076-0000-000000000001",
+        "label": "A",
+        "text": "Continuously increasing"
+      },
+      {
+        "id": "80000000-0000-0076-0000-000000000002",
+        "label": "B",
+        "text": "Continuously decreasing"
+      },
+      {
+        "id": "80000000-0000-0076-0000-000000000003",
+        "label": "C",
+        "text": "Constant"
+      },
+      {
+        "id": "80000000-0000-0076-0000-000000000004",
+        "label": "D",
+        "text": "Zero at the highest point"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0076-0000-000000000003",
+    "explanation": "Without air resistance there is no horizontal force, so horizontal velocity remains constant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000077",
+    "code": "AFNS-Q-119",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 119. For a projectile launched at speed u and angle theta on level ground, neglecting air resistance, its horizontal range is:",
+    "options": [
+      {
+        "id": "80000000-0000-0077-0000-000000000001",
+        "label": "A",
+        "text": "u^2*sin(2*theta)/g"
+      },
+      {
+        "id": "80000000-0000-0077-0000-000000000002",
+        "label": "B",
+        "text": "u*sin(theta)/g"
+      },
+      {
+        "id": "80000000-0000-0077-0000-000000000003",
+        "label": "C",
+        "text": "u^2*cos(theta)/g"
+      },
+      {
+        "id": "80000000-0000-0077-0000-000000000004",
+        "label": "D",
+        "text": "u^2/(2*g)"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0077-0000-000000000001",
+    "explanation": "Using flight time 2*u*sin(theta)/g and horizontal speed u*cos(theta) gives R = u^2*sin(2*theta)/g.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000078",
+    "code": "AFNS-Q-120",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 120. The maximum horizontal range of a projectile is obtained when the angle of projection is:",
+    "options": [
+      {
+        "id": "80000000-0000-0078-0000-000000000001",
+        "label": "A",
+        "text": "0 degrees"
+      },
+      {
+        "id": "80000000-0000-0078-0000-000000000002",
+        "label": "B",
+        "text": "30 degrees"
+      },
+      {
+        "id": "80000000-0000-0078-0000-000000000003",
+        "label": "C",
+        "text": "60 degrees"
+      },
+      {
+        "id": "80000000-0000-0078-0000-000000000004",
+        "label": "D",
+        "text": "45 degrees"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0078-0000-000000000004",
+    "explanation": "For level-ground projection, R is proportional to sin(2*theta), maximized at theta = 45 degrees.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000079",
+    "code": "AFNS-Q-121",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 121. The minimum velocity required for an object to escape completely from the gravitational field of a planet is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0079-0000-000000000001",
+        "label": "A",
+        "text": "Orbital velocity"
+      },
+      {
+        "id": "80000000-0000-0079-0000-000000000002",
+        "label": "B",
+        "text": "Terminal velocity"
+      },
+      {
+        "id": "80000000-0000-0079-0000-000000000003",
+        "label": "C",
+        "text": "Escape velocity"
+      },
+      {
+        "id": "80000000-0000-0079-0000-000000000004",
+        "label": "D",
+        "text": "Critical velocity"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0079-0000-000000000003",
+    "explanation": "Escape velocity is the minimum launch speed needed to escape without further propulsion.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007a",
+    "code": "AFNS-Q-122",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 122. The escape velocity from the surface of Earth is approximately:",
+    "options": [
+      {
+        "id": "80000000-0000-007a-0000-000000000001",
+        "label": "A",
+        "text": "5.6 km/s"
+      },
+      {
+        "id": "80000000-0000-007a-0000-000000000002",
+        "label": "B",
+        "text": "11.2 km/s"
+      },
+      {
+        "id": "80000000-0000-007a-0000-000000000003",
+        "label": "C",
+        "text": "15.2 km/s"
+      },
+      {
+        "id": "80000000-0000-007a-0000-000000000004",
+        "label": "D",
+        "text": "22.4 km/s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-007a-0000-000000000002",
+    "explanation": "Using sqrt(2*G*M/R) for Earth gives an escape speed of approximately 11.2 km/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007b",
+    "code": "AFNS-Q-123",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 123. The escape velocity from a planet depends upon its:",
+    "options": [
+      {
+        "id": "80000000-0000-007b-0000-000000000001",
+        "label": "A",
+        "text": "Mass of object only"
+      },
+      {
+        "id": "80000000-0000-007b-0000-000000000002",
+        "label": "B",
+        "text": "Temperature only"
+      },
+      {
+        "id": "80000000-0000-007b-0000-000000000003",
+        "label": "C",
+        "text": "Mass and radius"
+      },
+      {
+        "id": "80000000-0000-007b-0000-000000000004",
+        "label": "D",
+        "text": "Atmospheric pressure only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-007b-0000-000000000003",
+    "explanation": "Escape speed is sqrt(2*G*M/R), depending on the planet's mass and radius.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007c",
+    "code": "AFNS-Q-124",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 124. The work done by a constant force F through displacement s at angle theta is:",
+    "options": [
+      {
+        "id": "80000000-0000-007c-0000-000000000001",
+        "label": "A",
+        "text": "F/s"
+      },
+      {
+        "id": "80000000-0000-007c-0000-000000000002",
+        "label": "B",
+        "text": "F*s*cos(theta)"
+      },
+      {
+        "id": "80000000-0000-007c-0000-000000000003",
+        "label": "C",
+        "text": "F*s*sin(theta)"
+      },
+      {
+        "id": "80000000-0000-007c-0000-000000000004",
+        "label": "D",
+        "text": "F+s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-007c-0000-000000000002",
+    "explanation": "Work is the dot product of force and displacement, W = F*s*cos(theta).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007d",
+    "code": "AFNS-Q-125",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 125. The work done by a force is maximum when the angle between force and displacement is:",
+    "options": [
+      {
+        "id": "80000000-0000-007d-0000-000000000001",
+        "label": "A",
+        "text": "90 degrees"
+      },
+      {
+        "id": "80000000-0000-007d-0000-000000000002",
+        "label": "B",
+        "text": "180 degrees"
+      },
+      {
+        "id": "80000000-0000-007d-0000-000000000003",
+        "label": "C",
+        "text": "45 degrees"
+      },
+      {
+        "id": "80000000-0000-007d-0000-000000000004",
+        "label": "D",
+        "text": "0 degrees"
+      }
+    ],
+    "correctOptionId": "80000000-0000-007d-0000-000000000004",
+    "explanation": "W = F*s*cos(theta) is greatest when cos(theta) = 1, at 0 degrees.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007e",
+    "code": "AFNS-Q-126",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 126. If a force acts perpendicular to the displacement, the work done is:",
+    "options": [
+      {
+        "id": "80000000-0000-007e-0000-000000000001",
+        "label": "A",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-007e-0000-000000000002",
+        "label": "B",
+        "text": "Minimum"
+      },
+      {
+        "id": "80000000-0000-007e-0000-000000000003",
+        "label": "C",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-007e-0000-000000000004",
+        "label": "D",
+        "text": "Negative"
+      }
+    ],
+    "correctOptionId": "80000000-0000-007e-0000-000000000003",
+    "explanation": "A perpendicular force has no component along displacement, so its work is zero.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007f",
+    "code": "AFNS-Q-127",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 127. A force of 10 N moves an object through 5 m in the same direction as the force. What is the work done?",
+    "options": [
+      {
+        "id": "80000000-0000-007f-0000-000000000001",
+        "label": "A",
+        "text": "2 J"
+      },
+      {
+        "id": "80000000-0000-007f-0000-000000000002",
+        "label": "B",
+        "text": "15 J"
+      },
+      {
+        "id": "80000000-0000-007f-0000-000000000003",
+        "label": "C",
+        "text": "50 J"
+      },
+      {
+        "id": "80000000-0000-007f-0000-000000000004",
+        "label": "D",
+        "text": "100 J"
+      }
+    ],
+    "correctOptionId": "80000000-0000-007f-0000-000000000003",
+    "explanation": "For a force parallel to displacement, W = F*s = 10*5 = 50 J.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000080",
+    "code": "AFNS-Q-128",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 128. What are the dimensions of velocity?",
+    "options": [
+      {
+        "id": "80000000-0000-0080-0000-000000000001",
+        "label": "A",
+        "text": "[LT]"
+      },
+      {
+        "id": "80000000-0000-0080-0000-000000000002",
+        "label": "B",
+        "text": "[LT-^1]"
+      },
+      {
+        "id": "80000000-0000-0080-0000-000000000003",
+        "label": "C",
+        "text": "[LT-^2]"
+      },
+      {
+        "id": "80000000-0000-0080-0000-000000000004",
+        "label": "D",
+        "text": "[MLT-^1]"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0080-0000-000000000002",
+    "explanation": "Velocity is displacement divided by time, so its dimensions are L*T^-1.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000081",
+    "code": "AFNS-Q-129",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 129. What are the dimensions of acceleration?",
+    "options": [
+      {
+        "id": "80000000-0000-0081-0000-000000000001",
+        "label": "A",
+        "text": "[LT-^1]"
+      },
+      {
+        "id": "80000000-0000-0081-0000-000000000002",
+        "label": "B",
+        "text": "[LT-^2]"
+      },
+      {
+        "id": "80000000-0000-0081-0000-000000000003",
+        "label": "C",
+        "text": "[MLT-^2]"
+      },
+      {
+        "id": "80000000-0000-0081-0000-000000000004",
+        "label": "D",
+        "text": "[ML^2T-^2]"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0081-0000-000000000002",
+    "explanation": "Acceleration is velocity change per time, giving L*T^-2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000082",
+    "code": "AFNS-Q-130",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 130. What are the dimensions of force?",
+    "options": [
+      {
+        "id": "80000000-0000-0082-0000-000000000001",
+        "label": "A",
+        "text": "[MLT-^1]"
+      },
+      {
+        "id": "80000000-0000-0082-0000-000000000002",
+        "label": "B",
+        "text": "[ML^2T-^2]"
+      },
+      {
+        "id": "80000000-0000-0082-0000-000000000003",
+        "label": "C",
+        "text": "[MLT-^2]"
+      },
+      {
+        "id": "80000000-0000-0082-0000-000000000004",
+        "label": "D",
+        "text": "[ML-^1T-^2]"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0082-0000-000000000003",
+    "explanation": "F = m*a gives force dimensions M*L*T^-2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000083",
+    "code": "AFNS-Q-131",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 131. What are the dimensions of work or energy?",
+    "options": [
+      {
+        "id": "80000000-0000-0083-0000-000000000001",
+        "label": "A",
+        "text": "[MLT-^2]"
+      },
+      {
+        "id": "80000000-0000-0083-0000-000000000002",
+        "label": "B",
+        "text": "[MLT-^1]"
+      },
+      {
+        "id": "80000000-0000-0083-0000-000000000003",
+        "label": "C",
+        "text": "[ML^2T-^2]"
+      },
+      {
+        "id": "80000000-0000-0083-0000-000000000004",
+        "label": "D",
+        "text": "[M^2LT-^2]"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0083-0000-000000000003",
+    "explanation": "Work is force times displacement, giving M*L^2*T^-2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000084",
+    "code": "AFNS-Q-132",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 132. What are the dimensions of power?",
+    "options": [
+      {
+        "id": "80000000-0000-0084-0000-000000000001",
+        "label": "A",
+        "text": "[ML^2T-^2]"
+      },
+      {
+        "id": "80000000-0000-0084-0000-000000000002",
+        "label": "B",
+        "text": "[ML^2T-^3]"
+      },
+      {
+        "id": "80000000-0000-0084-0000-000000000003",
+        "label": "C",
+        "text": "[MLT-^2]"
+      },
+      {
+        "id": "80000000-0000-0084-0000-000000000004",
+        "label": "D",
+        "text": "[MLT-^1]"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0084-0000-000000000002",
+    "explanation": "Power is energy per time, giving M*L^2*T^-3.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000085",
+    "code": "AFNS-Q-133",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 133. In the sentence \"They elected him President,\" the word \"President\" is:",
+    "options": [
+      {
+        "id": "80000000-0000-0085-0000-000000000001",
+        "label": "A",
+        "text": "Subject complement"
+      },
+      {
+        "id": "80000000-0000-0085-0000-000000000002",
+        "label": "B",
+        "text": "Object complement"
+      },
+      {
+        "id": "80000000-0000-0085-0000-000000000003",
+        "label": "C",
+        "text": "Direct object"
+      },
+      {
+        "id": "80000000-0000-0085-0000-000000000004",
+        "label": "D",
+        "text": "Adverb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0085-0000-000000000002",
+    "explanation": "President describes the role assigned to the object him, making it an object complement.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000086",
+    "code": "AFNS-Q-134",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 134. In the sentence \"Please do your own work,\" the word \"do\" is a:",
+    "options": [
+      {
+        "id": "80000000-0000-0086-0000-000000000001",
+        "label": "A",
+        "text": "Helping verb"
+      },
+      {
+        "id": "80000000-0000-0086-0000-000000000002",
+        "label": "B",
+        "text": "Modal verb"
+      },
+      {
+        "id": "80000000-0000-0086-0000-000000000003",
+        "label": "C",
+        "text": "Main verb"
+      },
+      {
+        "id": "80000000-0000-0086-0000-000000000004",
+        "label": "D",
+        "text": "Linking verb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0086-0000-000000000003",
+    "explanation": "Do expresses the action itself and does not assist another verb in this sentence.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000087",
+    "code": "AFNS-Q-135",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 135. Choose the correct verb: \"All the furniture ____ old.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0087-0000-000000000001",
+        "label": "A",
+        "text": "Are"
+      },
+      {
+        "id": "80000000-0000-0087-0000-000000000002",
+        "label": "B",
+        "text": "Were"
+      },
+      {
+        "id": "80000000-0000-0087-0000-000000000003",
+        "label": "C",
+        "text": "Is"
+      },
+      {
+        "id": "80000000-0000-0087-0000-000000000004",
+        "label": "D",
+        "text": "Have"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0087-0000-000000000003",
+    "explanation": "Furniture is an uncountable singular noun and takes the singular verb is.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000088",
+    "code": "AFNS-Q-136",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 136. In the sentence \"He saw a new world which spread around him,\" the word \"which\" is a:",
+    "options": [
+      {
+        "id": "80000000-0000-0088-0000-000000000001",
+        "label": "A",
+        "text": "Demonstrative pronoun"
+      },
+      {
+        "id": "80000000-0000-0088-0000-000000000002",
+        "label": "B",
+        "text": "Personal pronoun"
+      },
+      {
+        "id": "80000000-0000-0088-0000-000000000003",
+        "label": "C",
+        "text": "Relative pronoun"
+      },
+      {
+        "id": "80000000-0000-0088-0000-000000000004",
+        "label": "D",
+        "text": "Reflexive pronoun"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0088-0000-000000000003",
+    "explanation": "Which introduces a relative clause describing the noun world.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000089",
+    "code": "AFNS-Q-137",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 137. In the sentence \"Who is as rich as that?\", the adjective \"rich\" is in the:",
+    "options": [
+      {
+        "id": "80000000-0000-0089-0000-000000000001",
+        "label": "A",
+        "text": "Comparative degree"
+      },
+      {
+        "id": "80000000-0000-0089-0000-000000000002",
+        "label": "B",
+        "text": "Superlative degree"
+      },
+      {
+        "id": "80000000-0000-0089-0000-000000000003",
+        "label": "C",
+        "text": "Positive degree"
+      },
+      {
+        "id": "80000000-0000-0089-0000-000000000004",
+        "label": "D",
+        "text": "None of these"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0089-0000-000000000003",
+    "explanation": "As rich as uses the base adjective rich rather than a comparative or superlative form.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008a",
+    "code": "AFNS-Q-138",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 138. Choose the synonym of the word \"incapable\":",
+    "options": [
+      {
+        "id": "80000000-0000-008a-0000-000000000001",
+        "label": "A",
+        "text": "Able"
+      },
+      {
+        "id": "80000000-0000-008a-0000-000000000002",
+        "label": "B",
+        "text": "Powerful"
+      },
+      {
+        "id": "80000000-0000-008a-0000-000000000003",
+        "label": "C",
+        "text": "Unable"
+      },
+      {
+        "id": "80000000-0000-008a-0000-000000000004",
+        "label": "D",
+        "text": "Efficient"
+      }
+    ],
+    "correctOptionId": "80000000-0000-008a-0000-000000000003",
+    "explanation": "Incapable means lacking the ability to do something, equivalent to unable.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008b",
+    "code": "AFNS-Q-139",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 139. An animal having shelled eggs, dry skin and internal fertilization belongs to the class:",
+    "options": [
+      {
+        "id": "80000000-0000-008b-0000-000000000001",
+        "label": "A",
+        "text": "Amphibia"
+      },
+      {
+        "id": "80000000-0000-008b-0000-000000000002",
+        "label": "B",
+        "text": "Mammalia"
+      },
+      {
+        "id": "80000000-0000-008b-0000-000000000003",
+        "label": "C",
+        "text": "Aves"
+      },
+      {
+        "id": "80000000-0000-008b-0000-000000000004",
+        "label": "D",
+        "text": "Reptilia"
+      }
+    ],
+    "correctOptionId": "80000000-0000-008b-0000-000000000004",
+    "explanation": "Dry skin, shelled eggs and internal fertilization are characteristic reptilian features.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008c",
+    "code": "AFNS-Q-140",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 140. Which plant hormone promotes flowering and is associated with the formation of flower buds?",
+    "options": [
+      {
+        "id": "80000000-0000-008c-0000-000000000001",
+        "label": "A",
+        "text": "Auxin"
+      },
+      {
+        "id": "80000000-0000-008c-0000-000000000002",
+        "label": "B",
+        "text": "Cytokinin"
+      },
+      {
+        "id": "80000000-0000-008c-0000-000000000003",
+        "label": "C",
+        "text": "Gibberellin"
+      },
+      {
+        "id": "80000000-0000-008c-0000-000000000004",
+        "label": "D",
+        "text": "Florigen"
+      }
+    ],
+    "correctOptionId": "80000000-0000-008c-0000-000000000004",
+    "explanation": "Florigen is the mobile flowering signal associated with initiating floral development.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008d",
+    "code": "AFNS-Q-141",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 141. Which organelle is present in all living cells and is responsible for protein synthesis?",
+    "options": [
+      {
+        "id": "80000000-0000-008d-0000-000000000001",
+        "label": "A",
+        "text": "Mitochondrion"
+      },
+      {
+        "id": "80000000-0000-008d-0000-000000000002",
+        "label": "B",
+        "text": "Golgi apparatus"
+      },
+      {
+        "id": "80000000-0000-008d-0000-000000000003",
+        "label": "C",
+        "text": "Ribosome"
+      },
+      {
+        "id": "80000000-0000-008d-0000-000000000004",
+        "label": "D",
+        "text": "Lysosome"
+      }
+    ],
+    "correctOptionId": "80000000-0000-008d-0000-000000000003",
+    "explanation": "Ribosomes translate messenger RNA into proteins in living cells.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008e",
+    "code": "AFNS-Q-142",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 142. Choose the correct option: \"They try their best ____ mistakes.\"",
+    "options": [
+      {
+        "id": "80000000-0000-008e-0000-000000000001",
+        "label": "A",
+        "text": "Avoid"
+      },
+      {
+        "id": "80000000-0000-008e-0000-000000000002",
+        "label": "B",
+        "text": "Avoiding"
+      },
+      {
+        "id": "80000000-0000-008e-0000-000000000003",
+        "label": "C",
+        "text": "To avoid"
+      },
+      {
+        "id": "80000000-0000-008e-0000-000000000004",
+        "label": "D",
+        "text": "Avoided"
+      }
+    ],
+    "correctOptionId": "80000000-0000-008e-0000-000000000003",
+    "explanation": "The infinitive to avoid expresses the purpose of trying their best.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008f",
+    "code": "AFNS-Q-143",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 143. Which of the following is used to produce artificial active immunity in the human body?",
+    "options": [
+      {
+        "id": "80000000-0000-008f-0000-000000000001",
+        "label": "A",
+        "text": "Antibiotic"
+      },
+      {
+        "id": "80000000-0000-008f-0000-000000000002",
+        "label": "B",
+        "text": "Antiserum"
+      },
+      {
+        "id": "80000000-0000-008f-0000-000000000003",
+        "label": "C",
+        "text": "Vaccine"
+      },
+      {
+        "id": "80000000-0000-008f-0000-000000000004",
+        "label": "D",
+        "text": "Antigen only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-008f-0000-000000000003",
+    "explanation": "A vaccine stimulates the body's own immune response and memory, producing artificial active immunity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000090",
+    "code": "AFNS-Q-144",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 144. Biotechnology mainly involves the use of living organisms or biological systems to:",
+    "options": [
+      {
+        "id": "80000000-0000-0090-0000-000000000001",
+        "label": "A",
+        "text": "Destroy all microorganisms"
+      },
+      {
+        "id": "80000000-0000-0090-0000-000000000002",
+        "label": "B",
+        "text": "Produce only medicines"
+      },
+      {
+        "id": "80000000-0000-0090-0000-000000000003",
+        "label": "C",
+        "text": "Develop useful products and processes"
+      },
+      {
+        "id": "80000000-0000-0090-0000-000000000004",
+        "label": "D",
+        "text": "Stop cellular activities"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0090-0000-000000000003",
+    "explanation": "Biotechnology applies organisms or biological systems to useful products and processes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000091",
+    "code": "AFNS-Q-145",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 145. What is the chemical formula of chloroform?",
+    "options": [
+      {
+        "id": "80000000-0000-0091-0000-000000000001",
+        "label": "A",
+        "text": "CH3Cl"
+      },
+      {
+        "id": "80000000-0000-0091-0000-000000000002",
+        "label": "B",
+        "text": "CCl4"
+      },
+      {
+        "id": "80000000-0000-0091-0000-000000000003",
+        "label": "C",
+        "text": "CHCl3"
+      },
+      {
+        "id": "80000000-0000-0091-0000-000000000004",
+        "label": "D",
+        "text": "CH2Cl2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0091-0000-000000000003",
+    "explanation": "Chloroform is trichloromethane, with formula CHCl3.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000092",
+    "code": "AFNS-Q-146",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 146. What is the chemical formula of hydroquinone?",
+    "options": [
+      {
+        "id": "80000000-0000-0092-0000-000000000001",
+        "label": "A",
+        "text": "C6H6O"
+      },
+      {
+        "id": "80000000-0000-0092-0000-000000000002",
+        "label": "B",
+        "text": "C6H5OH"
+      },
+      {
+        "id": "80000000-0000-0092-0000-000000000003",
+        "label": "C",
+        "text": "C6H4(OH)2"
+      },
+      {
+        "id": "80000000-0000-0092-0000-000000000004",
+        "label": "D",
+        "text": "C6H5CHO"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0092-0000-000000000003",
+    "explanation": "Hydroquinone is benzene-1,4-diol with formula C6H4(OH)2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000093",
+    "code": "AFNS-Q-147",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 147. What is the chemical formula of hydrocyanic acid?",
+    "options": [
+      {
+        "id": "80000000-0000-0093-0000-000000000001",
+        "label": "A",
+        "text": "H2CO3"
+      },
+      {
+        "id": "80000000-0000-0093-0000-000000000002",
+        "label": "B",
+        "text": "HNO3"
+      },
+      {
+        "id": "80000000-0000-0093-0000-000000000003",
+        "label": "C",
+        "text": "HCN"
+      },
+      {
+        "id": "80000000-0000-0093-0000-000000000004",
+        "label": "D",
+        "text": "H2S"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0093-0000-000000000003",
+    "explanation": "Hydrocyanic acid is aqueous hydrogen cyanide, HCN.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000094",
+    "code": "AFNS-Q-148",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 148. Mutual induction is the working principle of a:",
+    "options": [
+      {
+        "id": "80000000-0000-0094-0000-000000000001",
+        "label": "A",
+        "text": "Electric motor"
+      },
+      {
+        "id": "80000000-0000-0094-0000-000000000002",
+        "label": "B",
+        "text": "Generator only"
+      },
+      {
+        "id": "80000000-0000-0094-0000-000000000003",
+        "label": "C",
+        "text": "Transformer"
+      },
+      {
+        "id": "80000000-0000-0094-0000-000000000004",
+        "label": "D",
+        "text": "Capacitor"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0094-0000-000000000003",
+    "explanation": "Changing current in the primary coil induces emf in the secondary coil by mutual induction.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000095",
+    "code": "AFNS-Q-149",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 149. For a reversible process, the change in entropy of the universe is:",
+    "options": [
+      {
+        "id": "80000000-0000-0095-0000-000000000001",
+        "label": "A",
+        "text": "Positive"
+      },
+      {
+        "id": "80000000-0000-0095-0000-000000000002",
+        "label": "B",
+        "text": "Negative"
+      },
+      {
+        "id": "80000000-0000-0095-0000-000000000003",
+        "label": "C",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0095-0000-000000000004",
+        "label": "D",
+        "text": "Infinite"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0095-0000-000000000003",
+    "explanation": "An ideal reversible process creates no entropy, so the universe's entropy change is zero.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000096",
+    "code": "AFNS-Q-150",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 150. When ethanol reacts with ammonia in the presence of a suitable catalyst, the catalyst commonly used is:",
+    "options": [
+      {
+        "id": "80000000-0000-0096-0000-000000000001",
+        "label": "A",
+        "text": "Fe2O3"
+      },
+      {
+        "id": "80000000-0000-0096-0000-000000000002",
+        "label": "B",
+        "text": "V2O5"
+      },
+      {
+        "id": "80000000-0000-0096-0000-000000000003",
+        "label": "C",
+        "text": "Al2O3"
+      },
+      {
+        "id": "80000000-0000-0096-0000-000000000004",
+        "label": "D",
+        "text": "NiO"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0096-0000-000000000003",
+    "explanation": "Alumina can catalyze the reaction of ethanol with ammonia to produce ethylamine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000097",
+    "code": "AFNS-Q-151",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 151. The SI unit of electric field intensity is:",
+    "options": [
+      {
+        "id": "80000000-0000-0097-0000-000000000001",
+        "label": "A",
+        "text": "Volt"
+      },
+      {
+        "id": "80000000-0000-0097-0000-000000000002",
+        "label": "B",
+        "text": "Ohm"
+      },
+      {
+        "id": "80000000-0000-0097-0000-000000000003",
+        "label": "C",
+        "text": "N/C"
+      },
+      {
+        "id": "80000000-0000-0097-0000-000000000004",
+        "label": "D",
+        "text": "Ampere"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0097-0000-000000000003",
+    "explanation": "Electric field is force per unit charge, giving the SI unit N/C.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000098",
+    "code": "AFNS-Q-152",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 152. If a simple pendulum is moving upward with constant velocity, its time period is:",
+    "options": [
+      {
+        "id": "80000000-0000-0098-0000-000000000001",
+        "label": "A",
+        "text": "Increased"
+      },
+      {
+        "id": "80000000-0000-0098-0000-000000000002",
+        "label": "B",
+        "text": "Decreased"
+      },
+      {
+        "id": "80000000-0000-0098-0000-000000000003",
+        "label": "C",
+        "text": "Unchanged"
+      },
+      {
+        "id": "80000000-0000-0098-0000-000000000004",
+        "label": "D",
+        "text": "Zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0098-0000-000000000003",
+    "explanation": "Constant translational velocity adds no acceleration, so effective gravity and pendulum period are unchanged.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000099",
+    "code": "AFNS-Q-153",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 153. The half-life of iodine is 8 days. If the initial amount is 20 mg, what amount will remain after 32 days?",
+    "options": [
+      {
+        "id": "80000000-0000-0099-0000-000000000001",
+        "label": "A",
+        "text": "10 mg"
+      },
+      {
+        "id": "80000000-0000-0099-0000-000000000002",
+        "label": "B",
+        "text": "5 mg"
+      },
+      {
+        "id": "80000000-0000-0099-0000-000000000003",
+        "label": "C",
+        "text": "2.5 mg"
+      },
+      {
+        "id": "80000000-0000-0099-0000-000000000004",
+        "label": "D",
+        "text": "1.25 mg"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0099-0000-000000000004",
+    "explanation": "32 days is four half-lives, so the remaining mass is 20/(2^4) = 1.25 mg.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000009a",
+    "code": "AFNS-Q-154",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 154. If 10^18 electrons pass through a wire every second, the current is approximately:",
+    "options": [
+      {
+        "id": "80000000-0000-009a-0000-000000000001",
+        "label": "A",
+        "text": "0.016 A"
+      },
+      {
+        "id": "80000000-0000-009a-0000-000000000002",
+        "label": "B",
+        "text": "0.16 A"
+      },
+      {
+        "id": "80000000-0000-009a-0000-000000000003",
+        "label": "C",
+        "text": "1.6 A"
+      },
+      {
+        "id": "80000000-0000-009a-0000-000000000004",
+        "label": "D",
+        "text": "16 A"
+      }
+    ],
+    "correctOptionId": "80000000-0000-009a-0000-000000000002",
+    "explanation": "I = N*e/t = 10^18 * 1.602*10^-19 / 1, approximately 0.16 A.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000009b",
+    "code": "AFNS-Q-155",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 155. One horsepower is approximately equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-009b-0000-000000000001",
+        "label": "A",
+        "text": "100 W"
+      },
+      {
+        "id": "80000000-0000-009b-0000-000000000002",
+        "label": "B",
+        "text": "500 W"
+      },
+      {
+        "id": "80000000-0000-009b-0000-000000000003",
+        "label": "C",
+        "text": "746 W"
+      },
+      {
+        "id": "80000000-0000-009b-0000-000000000004",
+        "label": "D",
+        "text": "1000 W"
+      }
+    ],
+    "correctOptionId": "80000000-0000-009b-0000-000000000003",
+    "explanation": "One mechanical horsepower is approximately 745.7 W, rounded to 746 W.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000009c",
+    "code": "AFNS-Q-156",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 156. Formic acid is commonly used in the preservation of:",
+    "options": [
+      {
+        "id": "80000000-0000-009c-0000-000000000001",
+        "label": "A",
+        "text": "Metals"
+      },
+      {
+        "id": "80000000-0000-009c-0000-000000000002",
+        "label": "B",
+        "text": "Glass"
+      },
+      {
+        "id": "80000000-0000-009c-0000-000000000003",
+        "label": "C",
+        "text": "Animal feed/silage"
+      },
+      {
+        "id": "80000000-0000-009c-0000-000000000004",
+        "label": "D",
+        "text": "Cement"
+      }
+    ],
+    "correctOptionId": "80000000-0000-009c-0000-000000000003",
+    "explanation": "Formic acid acidifies silage and helps inhibit spoilage organisms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000009d",
+    "code": "AFNS-Q-157",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 157. If the kinetic energy of a particle is maximum in simple harmonic motion, its displacement from the mean position is:",
+    "options": [
+      {
+        "id": "80000000-0000-009d-0000-000000000001",
+        "label": "A",
+        "text": "Maximum"
+      },
+      {
+        "id": "80000000-0000-009d-0000-000000000002",
+        "label": "B",
+        "text": "Equal to amplitude"
+      },
+      {
+        "id": "80000000-0000-009d-0000-000000000003",
+        "label": "C",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-009d-0000-000000000004",
+        "label": "D",
+        "text": "Infinite"
+      }
+    ],
+    "correctOptionId": "80000000-0000-009d-0000-000000000003",
+    "explanation": "SHM kinetic energy is greatest at equilibrium, where displacement is zero.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000009e",
+    "code": "AFNS-Q-158",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 158. Which type of waves are used in an electron microscope?",
+    "options": [
+      {
+        "id": "80000000-0000-009e-0000-000000000001",
+        "label": "A",
+        "text": "Sound waves"
+      },
+      {
+        "id": "80000000-0000-009e-0000-000000000002",
+        "label": "B",
+        "text": "Electromagnetic waves only"
+      },
+      {
+        "id": "80000000-0000-009e-0000-000000000003",
+        "label": "C",
+        "text": "Matter waves associated with electrons"
+      },
+      {
+        "id": "80000000-0000-009e-0000-000000000004",
+        "label": "D",
+        "text": "Water waves"
+      }
+    ],
+    "correctOptionId": "80000000-0000-009e-0000-000000000003",
+    "explanation": "Electron microscopes exploit the short de Broglie wavelengths of moving electrons.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000009f",
+    "code": "AFNS-Q-159",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 159. The wavelength associated with an electron is given by:",
+    "options": [
+      {
+        "id": "80000000-0000-009f-0000-000000000001",
+        "label": "A",
+        "text": "lambda = h*p"
+      },
+      {
+        "id": "80000000-0000-009f-0000-000000000002",
+        "label": "B",
+        "text": "lambda = p/h"
+      },
+      {
+        "id": "80000000-0000-009f-0000-000000000003",
+        "label": "C",
+        "text": "lambda = h/p"
+      },
+      {
+        "id": "80000000-0000-009f-0000-000000000004",
+        "label": "D",
+        "text": "lambda = h*m"
+      }
+    ],
+    "correctOptionId": "80000000-0000-009f-0000-000000000001",
+    "explanation": "The de Broglie relation is lambda = h/p, with Planck's constant h and momentum p.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a0",
+    "code": "AFNS-Q-160",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 160. What is the shape of a molecule having sp^2 hybridization with three bonding pairs and no lone pair on the central atom?",
+    "options": [
+      {
+        "id": "80000000-0000-00a0-0000-000000000001",
+        "label": "A",
+        "text": "Linear"
+      },
+      {
+        "id": "80000000-0000-00a0-0000-000000000002",
+        "label": "B",
+        "text": "Tetrahedral"
+      },
+      {
+        "id": "80000000-0000-00a0-0000-000000000003",
+        "label": "C",
+        "text": "Trigonal planar"
+      },
+      {
+        "id": "80000000-0000-00a0-0000-000000000004",
+        "label": "D",
+        "text": "Trigonal pyramidal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a0-0000-000000000003",
+    "explanation": "Three bonding regions and no lone pair give a trigonal-planar molecular shape.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a1",
+    "code": "AFNS-Q-161",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 161. Which of the following molecules has sp^3 hybridization at its central atom?",
+    "options": [
+      {
+        "id": "80000000-0000-00a1-0000-000000000001",
+        "label": "A",
+        "text": "BF3"
+      },
+      {
+        "id": "80000000-0000-00a1-0000-000000000002",
+        "label": "B",
+        "text": "BeCl2"
+      },
+      {
+        "id": "80000000-0000-00a1-0000-000000000003",
+        "label": "C",
+        "text": "CH4"
+      },
+      {
+        "id": "80000000-0000-00a1-0000-000000000004",
+        "label": "D",
+        "text": "CO2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a1-0000-000000000003",
+    "explanation": "Methane's carbon forms four sigma bonds in a tetrahedral sp^3 arrangement.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a2",
+    "code": "AFNS-Q-162",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 162. Which of the following molecules has sp hybridization?",
+    "options": [
+      {
+        "id": "80000000-0000-00a2-0000-000000000001",
+        "label": "A",
+        "text": "CH4"
+      },
+      {
+        "id": "80000000-0000-00a2-0000-000000000002",
+        "label": "B",
+        "text": "NH3"
+      },
+      {
+        "id": "80000000-0000-00a2-0000-000000000003",
+        "label": "C",
+        "text": "BF3"
+      },
+      {
+        "id": "80000000-0000-00a2-0000-000000000004",
+        "label": "D",
+        "text": "BeCl2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a2-0000-000000000004",
+    "explanation": "Gaseous BeCl2 has two bonding regions around beryllium and a linear sp arrangement.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a3",
+    "code": "AFNS-Q-163",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 163. % of Oxygen in CaCO3?",
+    "options": [
+      {
+        "id": "80000000-0000-00a3-0000-000000000001",
+        "label": "A",
+        "text": "72%"
+      },
+      {
+        "id": "80000000-0000-00a3-0000-000000000002",
+        "label": "B",
+        "text": "60%"
+      },
+      {
+        "id": "80000000-0000-00a3-0000-000000000003",
+        "label": "C",
+        "text": "48%"
+      },
+      {
+        "id": "80000000-0000-00a3-0000-000000000004",
+        "label": "D",
+        "text": "40%"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a3-0000-000000000003",
+    "explanation": "CaCO3 has molar mass about 100 g/mol, of which oxygen contributes 48 g/mol, or 48%.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a4",
+    "code": "AFNS-Q-164",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 164. 1 g of protein gives how much energy?",
+    "options": [
+      {
+        "id": "80000000-0000-00a4-0000-000000000001",
+        "label": "A",
+        "text": "9 kcal"
+      },
+      {
+        "id": "80000000-0000-00a4-0000-000000000002",
+        "label": "B",
+        "text": "6 kcal"
+      },
+      {
+        "id": "80000000-0000-00a4-0000-000000000003",
+        "label": "C",
+        "text": "4 kcal"
+      },
+      {
+        "id": "80000000-0000-00a4-0000-000000000004",
+        "label": "D",
+        "text": "2 kcal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a4-0000-000000000003",
+    "explanation": "Dietary protein provides approximately 4 kcal of energy per gram.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a5",
+    "code": "AFNS-Q-165",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 165. Reduction of diazonium salt gives:",
+    "options": [
+      {
+        "id": "80000000-0000-00a5-0000-000000000001",
+        "label": "A",
+        "text": "Carboxylic acid"
+      },
+      {
+        "id": "80000000-0000-00a5-0000-000000000002",
+        "label": "B",
+        "text": "Aniline"
+      },
+      {
+        "id": "80000000-0000-00a5-0000-000000000003",
+        "label": "C",
+        "text": "Phenol"
+      },
+      {
+        "id": "80000000-0000-00a5-0000-000000000004",
+        "label": "D",
+        "text": "Benzene"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a5-0000-000000000004",
+    "explanation": "Reduction of an aryl diazonium group to hydrogen gives the corresponding arene, benzene in this case.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a6",
+    "code": "AFNS-Q-166",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 166. Structural formula of Acetyl Chloride is:",
+    "options": [
+      {
+        "id": "80000000-0000-00a6-0000-000000000001",
+        "label": "A",
+        "text": "HCOCl"
+      },
+      {
+        "id": "80000000-0000-00a6-0000-000000000002",
+        "label": "B",
+        "text": "CH3-CH2-Cl"
+      },
+      {
+        "id": "80000000-0000-00a6-0000-000000000003",
+        "label": "C",
+        "text": "CH3-COCl"
+      },
+      {
+        "id": "80000000-0000-00a6-0000-000000000004",
+        "label": "D",
+        "text": "CH3-COOH"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a6-0000-000000000003",
+    "explanation": "Acetyl chloride is the acid chloride derived from acetic acid, with formula CH3COCl.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a7",
+    "code": "AFNS-Q-167",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 167. Composition of secondary cell wall is:",
+    "options": [
+      {
+        "id": "80000000-0000-00a7-0000-000000000001",
+        "label": "A",
+        "text": "Starch + Lignin"
+      },
+      {
+        "id": "80000000-0000-00a7-0000-000000000002",
+        "label": "B",
+        "text": "Chitin + Protein"
+      },
+      {
+        "id": "80000000-0000-00a7-0000-000000000003",
+        "label": "C",
+        "text": "Cellulose + Protein + Lipid"
+      },
+      {
+        "id": "80000000-0000-00a7-0000-000000000004",
+        "label": "D",
+        "text": "Cellulose + Hemicellulose + Lignin"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a7-0000-000000000004",
+    "explanation": "Secondary plant cell walls contain cellulose and hemicellulose and are often reinforced by lignin.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a8",
+    "code": "AFNS-Q-168",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 168. Types of pronouns include:",
+    "options": [
+      {
+        "id": "80000000-0000-00a8-0000-000000000001",
+        "label": "A",
+        "text": "Only personal pronouns"
+      },
+      {
+        "id": "80000000-0000-00a8-0000-000000000002",
+        "label": "B",
+        "text": "Personal, reflexive, demonstrative, relative, indefinite, interrogative and possessive pronouns"
+      },
+      {
+        "id": "80000000-0000-00a8-0000-000000000003",
+        "label": "C",
+        "text": "Adjectives and verbs"
+      },
+      {
+        "id": "80000000-0000-00a8-0000-000000000004",
+        "label": "D",
+        "text": "Articles and adverbs"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a8-0000-000000000002",
+    "explanation": "Pronouns are classified by functions such as reference, possession, questioning and reflexive use.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000a9",
+    "code": "AFNS-Q-169",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 169. What is 90% of 90?",
+    "options": [
+      {
+        "id": "80000000-0000-00a9-0000-000000000001",
+        "label": "A",
+        "text": "85"
+      },
+      {
+        "id": "80000000-0000-00a9-0000-000000000002",
+        "label": "B",
+        "text": "81"
+      },
+      {
+        "id": "80000000-0000-00a9-0000-000000000003",
+        "label": "C",
+        "text": "80"
+      },
+      {
+        "id": "80000000-0000-00a9-0000-000000000004",
+        "label": "D",
+        "text": "72"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00a9-0000-000000000002",
+    "explanation": "90% of 90 is 0.9*90 = 81.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000aa",
+    "code": "AFNS-Q-170",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 170. Ali is 20 years old and his father is four times as old as Ali. How old is his father?",
+    "options": [
+      {
+        "id": "80000000-0000-00aa-0000-000000000001",
+        "label": "A",
+        "text": "40 years"
+      },
+      {
+        "id": "80000000-0000-00aa-0000-000000000002",
+        "label": "B",
+        "text": "80 years"
+      },
+      {
+        "id": "80000000-0000-00aa-0000-000000000003",
+        "label": "C",
+        "text": "70 years"
+      },
+      {
+        "id": "80000000-0000-00aa-0000-000000000004",
+        "label": "D",
+        "text": "60 years"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00aa-0000-000000000002",
+    "explanation": "Four times Ali's age is 4*20 = 80 years.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ab",
+    "code": "AFNS-Q-171",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 171. Series: 2, 4, 8, 16, ?",
+    "options": [
+      {
+        "id": "80000000-0000-00ab-0000-000000000001",
+        "label": "A",
+        "text": "36"
+      },
+      {
+        "id": "80000000-0000-00ab-0000-000000000002",
+        "label": "B",
+        "text": "32"
+      },
+      {
+        "id": "80000000-0000-00ab-0000-000000000003",
+        "label": "C",
+        "text": "24"
+      },
+      {
+        "id": "80000000-0000-00ab-0000-000000000004",
+        "label": "D",
+        "text": "20"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ab-0000-000000000002",
+    "explanation": "Each term doubles, so the next term after 16 is 32.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ac",
+    "code": "AFNS-Q-172",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 172. A person is facing North, turns right, then again right. Which direction is he facing?",
+    "options": [
+      {
+        "id": "80000000-0000-00ac-0000-000000000001",
+        "label": "A",
+        "text": "West"
+      },
+      {
+        "id": "80000000-0000-00ac-0000-000000000002",
+        "label": "B",
+        "text": "East"
+      },
+      {
+        "id": "80000000-0000-00ac-0000-000000000003",
+        "label": "C",
+        "text": "North"
+      },
+      {
+        "id": "80000000-0000-00ac-0000-000000000004",
+        "label": "D",
+        "text": "South"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ac-0000-000000000004",
+    "explanation": "Two right turns rotate a north-facing person 180 degrees to face south.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ad",
+    "code": "AFNS-Q-173",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 173. If the letters of CAT are written in reverse order, what is obtained?",
+    "options": [
+      {
+        "id": "80000000-0000-00ad-0000-000000000001",
+        "label": "A",
+        "text": "TCA"
+      },
+      {
+        "id": "80000000-0000-00ad-0000-000000000002",
+        "label": "B",
+        "text": "CTA"
+      },
+      {
+        "id": "80000000-0000-00ad-0000-000000000003",
+        "label": "C",
+        "text": "ACT"
+      },
+      {
+        "id": "80000000-0000-00ad-0000-000000000004",
+        "label": "D",
+        "text": "TAC"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ad-0000-000000000004",
+    "explanation": "Reversing C-A-T gives T-A-C; a true mirror image would also reverse the shapes of the letters.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ae",
+    "code": "AFNS-Q-174",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 174. 2 + 2 / 2 = ?",
+    "options": [
+      {
+        "id": "80000000-0000-00ae-0000-000000000001",
+        "label": "A",
+        "text": "5"
+      },
+      {
+        "id": "80000000-0000-00ae-0000-000000000002",
+        "label": "B",
+        "text": "4"
+      },
+      {
+        "id": "80000000-0000-00ae-0000-000000000003",
+        "label": "C",
+        "text": "3"
+      },
+      {
+        "id": "80000000-0000-00ae-0000-000000000004",
+        "label": "D",
+        "text": "2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ae-0000-000000000003",
+    "explanation": "Division is performed before addition, so 2 + 2/2 = 2 + 1 = 3.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000af",
+    "code": "AFNS-Q-175",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 175. Snakes lack which external structure?",
+    "options": [
+      {
+        "id": "80000000-0000-00af-0000-000000000001",
+        "label": "A",
+        "text": "External ears"
+      },
+      {
+        "id": "80000000-0000-00af-0000-000000000002",
+        "label": "B",
+        "text": "Tongue"
+      },
+      {
+        "id": "80000000-0000-00af-0000-000000000003",
+        "label": "C",
+        "text": "Nostrils"
+      },
+      {
+        "id": "80000000-0000-00af-0000-000000000004",
+        "label": "D",
+        "text": "Eyes"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00af-0000-000000000001",
+    "explanation": "Snakes have no external ears but can detect vibrations and some airborne sounds.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b0",
+    "code": "AFNS-Q-176",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 176. Today is Monday, day after tomorrow will be?",
+    "options": [
+      {
+        "id": "80000000-0000-00b0-0000-000000000001",
+        "label": "A",
+        "text": "Friday"
+      },
+      {
+        "id": "80000000-0000-00b0-0000-000000000002",
+        "label": "B",
+        "text": "Thursday"
+      },
+      {
+        "id": "80000000-0000-00b0-0000-000000000003",
+        "label": "C",
+        "text": "Wednesday"
+      },
+      {
+        "id": "80000000-0000-00b0-0000-000000000004",
+        "label": "D",
+        "text": "Tuesday"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b0-0000-000000000003",
+    "explanation": "Two days after Monday is Wednesday.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b1",
+    "code": "AFNS-Q-177",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 177. If 4th day of the month is Friday, then 23rd day will be?",
+    "options": [
+      {
+        "id": "80000000-0000-00b1-0000-000000000001",
+        "label": "A",
+        "text": "Friday"
+      },
+      {
+        "id": "80000000-0000-00b1-0000-000000000002",
+        "label": "B",
+        "text": "Wednesday"
+      },
+      {
+        "id": "80000000-0000-00b1-0000-000000000003",
+        "label": "C",
+        "text": "Tuesday"
+      },
+      {
+        "id": "80000000-0000-00b1-0000-000000000004",
+        "label": "D",
+        "text": "Monday"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b1-0000-000000000002",
+    "explanation": "The 23rd is 19 days after the 4th; 19 modulo 7 is 5, so Friday advances to Wednesday.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b2",
+    "code": "AFNS-Q-178",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 178. A town had 800 people in 1985, and its population doubled every five years. What was its population in 1980?",
+    "options": [
+      {
+        "id": "80000000-0000-00b2-0000-000000000001",
+        "label": "A",
+        "text": "800"
+      },
+      {
+        "id": "80000000-0000-00b2-0000-000000000002",
+        "label": "B",
+        "text": "400"
+      },
+      {
+        "id": "80000000-0000-00b2-0000-000000000003",
+        "label": "C",
+        "text": "200"
+      },
+      {
+        "id": "80000000-0000-00b2-0000-000000000004",
+        "label": "D",
+        "text": "100"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b2-0000-000000000002",
+    "explanation": "Going back one five-year doubling interval halves 800 to 400.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b3",
+    "code": "AFNS-Q-179",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 179. What is the main purpose of sending children to school?",
+    "options": [
+      {
+        "id": "80000000-0000-00b3-0000-000000000001",
+        "label": "A",
+        "text": "To gain knowledge"
+      },
+      {
+        "id": "80000000-0000-00b3-0000-000000000002",
+        "label": "B",
+        "text": "To fight"
+      },
+      {
+        "id": "80000000-0000-00b3-0000-000000000003",
+        "label": "C",
+        "text": "To sleep"
+      },
+      {
+        "id": "80000000-0000-00b3-0000-000000000004",
+        "label": "D",
+        "text": "To avoid learning"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b3-0000-000000000001",
+    "explanation": "Schooling primarily develops knowledge, understanding and skills.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b4",
+    "code": "AFNS-Q-180",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 180. Boil milk:",
+    "options": [
+      {
+        "id": "80000000-0000-00b4-0000-000000000001",
+        "label": "A",
+        "text": "To cool it"
+      },
+      {
+        "id": "80000000-0000-00b4-0000-000000000002",
+        "label": "B",
+        "text": "To kill germs"
+      },
+      {
+        "id": "80000000-0000-00b4-0000-000000000003",
+        "label": "C",
+        "text": "To make it thick"
+      },
+      {
+        "id": "80000000-0000-00b4-0000-000000000004",
+        "label": "D",
+        "text": "To add taste"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b4-0000-000000000002",
+    "explanation": "Boiling kills many disease-causing microorganisms in milk.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b5",
+    "code": "AFNS-Q-181",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 181. In \"They said that they were always with me,\" the clause \"that they were always with me\" is a:",
+    "options": [
+      {
+        "id": "80000000-0000-00b5-0000-000000000001",
+        "label": "A",
+        "text": "Independent clause"
+      },
+      {
+        "id": "80000000-0000-00b5-0000-000000000002",
+        "label": "B",
+        "text": "Adverb clause"
+      },
+      {
+        "id": "80000000-0000-00b5-0000-000000000003",
+        "label": "C",
+        "text": "Noun clause"
+      },
+      {
+        "id": "80000000-0000-00b5-0000-000000000004",
+        "label": "D",
+        "text": "Adjective clause"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b5-0000-000000000003",
+    "explanation": "The clause functions as the object of the verb \"said,\" so it is a noun clause.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b6",
+    "code": "AFNS-Q-182",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 182. One-third of 120 is?",
+    "options": [
+      {
+        "id": "80000000-0000-00b6-0000-000000000001",
+        "label": "A",
+        "text": "60"
+      },
+      {
+        "id": "80000000-0000-00b6-0000-000000000002",
+        "label": "B",
+        "text": "40"
+      },
+      {
+        "id": "80000000-0000-00b6-0000-000000000003",
+        "label": "C",
+        "text": "30"
+      },
+      {
+        "id": "80000000-0000-00b6-0000-000000000004",
+        "label": "D",
+        "text": "20"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b6-0000-000000000002",
+    "explanation": "One-third of 120 is 120/3 = 40.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b7",
+    "code": "AFNS-Q-183",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 183. Which gland produces insulin?",
+    "options": [
+      {
+        "id": "80000000-0000-00b7-0000-000000000001",
+        "label": "A",
+        "text": "Pituitary"
+      },
+      {
+        "id": "80000000-0000-00b7-0000-000000000002",
+        "label": "B",
+        "text": "Liver"
+      },
+      {
+        "id": "80000000-0000-00b7-0000-000000000003",
+        "label": "C",
+        "text": "Pancreas"
+      },
+      {
+        "id": "80000000-0000-00b7-0000-000000000004",
+        "label": "D",
+        "text": "Kidney"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b7-0000-000000000003",
+    "explanation": "Beta cells of the pancreatic islets secrete insulin.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b8",
+    "code": "AFNS-Q-184",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 184. Which is NOT a unit of pressure?",
+    "options": [
+      {
+        "id": "80000000-0000-00b8-0000-000000000001",
+        "label": "A",
+        "text": "Torr"
+      },
+      {
+        "id": "80000000-0000-00b8-0000-000000000002",
+        "label": "B",
+        "text": "Joule"
+      },
+      {
+        "id": "80000000-0000-00b8-0000-000000000003",
+        "label": "C",
+        "text": "Newton/m^2"
+      },
+      {
+        "id": "80000000-0000-00b8-0000-000000000004",
+        "label": "D",
+        "text": "Pascal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b8-0000-000000000002",
+    "explanation": "Joule measures energy, whereas torr, pascal and N/m^2 measure pressure.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000b9",
+    "code": "AFNS-Q-185",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 185. Bread is formed by which fungi?",
+    "options": [
+      {
+        "id": "80000000-0000-00b9-0000-000000000001",
+        "label": "A",
+        "text": "Yeast"
+      },
+      {
+        "id": "80000000-0000-00b9-0000-000000000002",
+        "label": "B",
+        "text": "Penicillium"
+      },
+      {
+        "id": "80000000-0000-00b9-0000-000000000003",
+        "label": "C",
+        "text": "Aspergillus"
+      },
+      {
+        "id": "80000000-0000-00b9-0000-000000000004",
+        "label": "D",
+        "text": "Rhizopus"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00b9-0000-000000000001",
+    "explanation": "Yeast ferments sugars and releases carbon dioxide that makes bread dough rise.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ba",
+    "code": "AFNS-Q-186",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 186. Synonym of Wild:",
+    "options": [
+      {
+        "id": "80000000-0000-00ba-0000-000000000001",
+        "label": "A",
+        "text": "Soft"
+      },
+      {
+        "id": "80000000-0000-00ba-0000-000000000002",
+        "label": "B",
+        "text": "Gentle"
+      },
+      {
+        "id": "80000000-0000-00ba-0000-000000000003",
+        "label": "C",
+        "text": "Savage"
+      },
+      {
+        "id": "80000000-0000-00ba-0000-000000000004",
+        "label": "D",
+        "text": "Tamed"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ba-0000-000000000003",
+    "explanation": "Savage can mean untamed or wild.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000bb",
+    "code": "AFNS-Q-187",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 187. Salt that absorbs moisture from air?",
+    "options": [
+      {
+        "id": "80000000-0000-00bb-0000-000000000001",
+        "label": "A",
+        "text": "AgCl"
+      },
+      {
+        "id": "80000000-0000-00bb-0000-000000000002",
+        "label": "B",
+        "text": "KCl"
+      },
+      {
+        "id": "80000000-0000-00bb-0000-000000000003",
+        "label": "C",
+        "text": "CaCl2"
+      },
+      {
+        "id": "80000000-0000-00bb-0000-000000000004",
+        "label": "D",
+        "text": "NaCl"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00bb-0000-000000000003",
+    "explanation": "Calcium chloride is hygroscopic and can absorb substantial moisture from air.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000bc",
+    "code": "AFNS-Q-188",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 188. -CH-NH2 group is called?",
+    "options": [
+      {
+        "id": "80000000-0000-00bc-0000-000000000001",
+        "label": "A",
+        "text": "Ketone group"
+      },
+      {
+        "id": "80000000-0000-00bc-0000-000000000002",
+        "label": "B",
+        "text": "Amino group"
+      },
+      {
+        "id": "80000000-0000-00bc-0000-000000000003",
+        "label": "C",
+        "text": "Hydroxyl group"
+      },
+      {
+        "id": "80000000-0000-00bc-0000-000000000004",
+        "label": "D",
+        "text": "Carboxyl group"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00bc-0000-000000000002",
+    "explanation": "The -NH2 functional group is an amino group.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000bd",
+    "code": "AFNS-Q-189",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 189. If spring constant is halved, what happens?",
+    "options": [
+      {
+        "id": "80000000-0000-00bd-0000-000000000001",
+        "label": "A",
+        "text": "Breaks"
+      },
+      {
+        "id": "80000000-0000-00bd-0000-000000000002",
+        "label": "B",
+        "text": "No change"
+      },
+      {
+        "id": "80000000-0000-00bd-0000-000000000003",
+        "label": "C",
+        "text": "Spring becomes softer"
+      },
+      {
+        "id": "80000000-0000-00bd-0000-000000000004",
+        "label": "D",
+        "text": "Spring becomes stiffer"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00bd-0000-000000000003",
+    "explanation": "Since F = k*x, a smaller spring constant means less force is needed for the same extension.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000be",
+    "code": "AFNS-Q-190",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 190. A ball thrown at 20 m/s at 60 degrees, find velocity at highest point.",
+    "options": [
+      {
+        "id": "80000000-0000-00be-0000-000000000001",
+        "label": "A",
+        "text": "12 m/s"
+      },
+      {
+        "id": "80000000-0000-00be-0000-000000000002",
+        "label": "B",
+        "text": "15 m/s"
+      },
+      {
+        "id": "80000000-0000-00be-0000-000000000003",
+        "label": "C",
+        "text": "20 m/s"
+      },
+      {
+        "id": "80000000-0000-00be-0000-000000000004",
+        "label": "D",
+        "text": "10 m/s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00be-0000-000000000004",
+    "explanation": "At maximum height only the horizontal component remains, v = 20*cos(60 degrees) = 10 m/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000bf",
+    "code": "AFNS-Q-191",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 191. Which cell wall layer has lignin?",
+    "options": [
+      {
+        "id": "80000000-0000-00bf-0000-000000000001",
+        "label": "A",
+        "text": "None"
+      },
+      {
+        "id": "80000000-0000-00bf-0000-000000000002",
+        "label": "B",
+        "text": "Middle lamella"
+      },
+      {
+        "id": "80000000-0000-00bf-0000-000000000003",
+        "label": "C",
+        "text": "Secondary"
+      },
+      {
+        "id": "80000000-0000-00bf-0000-000000000004",
+        "label": "D",
+        "text": "Primary"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00bf-0000-000000000003",
+    "explanation": "Lignin commonly strengthens the secondary walls of plant cells.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c0",
+    "code": "AFNS-Q-192",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 192. Functional group of Acetyl chloride (CH3COCl) is?",
+    "options": [
+      {
+        "id": "80000000-0000-00c0-0000-000000000001",
+        "label": "A",
+        "text": "-OH"
+      },
+      {
+        "id": "80000000-0000-00c0-0000-000000000002",
+        "label": "B",
+        "text": "-COCl"
+      },
+      {
+        "id": "80000000-0000-00c0-0000-000000000003",
+        "label": "C",
+        "text": "-CHO"
+      },
+      {
+        "id": "80000000-0000-00c0-0000-000000000004",
+        "label": "D",
+        "text": "-COOH"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c0-0000-000000000002",
+    "explanation": "An acid chloride contains the acyl chloride functional group -COCl.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c1",
+    "code": "AFNS-Q-193",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 193. Hygroscopic substance absorbs?",
+    "options": [
+      {
+        "id": "80000000-0000-00c1-0000-000000000001",
+        "label": "A",
+        "text": "Light"
+      },
+      {
+        "id": "80000000-0000-00c1-0000-000000000002",
+        "label": "B",
+        "text": "Moisture"
+      },
+      {
+        "id": "80000000-0000-00c1-0000-000000000003",
+        "label": "C",
+        "text": "Oxygen"
+      },
+      {
+        "id": "80000000-0000-00c1-0000-000000000004",
+        "label": "D",
+        "text": "Heat"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c1-0000-000000000002",
+    "explanation": "A hygroscopic substance absorbs water vapor from its surroundings.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c2",
+    "code": "AFNS-Q-194",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 194. Nervous disorder in brain is called?",
+    "options": [
+      {
+        "id": "80000000-0000-00c2-0000-000000000001",
+        "label": "A",
+        "text": "Scurvy"
+      },
+      {
+        "id": "80000000-0000-00c2-0000-000000000002",
+        "label": "B",
+        "text": "Asthma"
+      },
+      {
+        "id": "80000000-0000-00c2-0000-000000000003",
+        "label": "C",
+        "text": "Tuberculosis"
+      },
+      {
+        "id": "80000000-0000-00c2-0000-000000000004",
+        "label": "D",
+        "text": "Epilepsy"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c2-0000-000000000004",
+    "explanation": "Epilepsy is a neurological disorder characterized by recurrent unprovoked seizures.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c3",
+    "code": "AFNS-Q-195",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 195. Growth of two fetuses separately in mother's womb is called?",
+    "options": [
+      {
+        "id": "80000000-0000-00c3-0000-000000000001",
+        "label": "A",
+        "text": "Clones"
+      },
+      {
+        "id": "80000000-0000-00c3-0000-000000000002",
+        "label": "B",
+        "text": "Siamese twins"
+      },
+      {
+        "id": "80000000-0000-00c3-0000-000000000003",
+        "label": "C",
+        "text": "Fraternal twins"
+      },
+      {
+        "id": "80000000-0000-00c3-0000-000000000004",
+        "label": "D",
+        "text": "Identical twins"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c3-0000-000000000003",
+    "explanation": "Fraternal twins develop from two separately fertilized ova.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c4",
+    "code": "AFNS-Q-196",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 196. A helicopter carries 60 gallons of fuel. If it uses 15 gallons per hour, how long will it fly?",
+    "options": [
+      {
+        "id": "80000000-0000-00c4-0000-000000000001",
+        "label": "A",
+        "text": "5 hours"
+      },
+      {
+        "id": "80000000-0000-00c4-0000-000000000002",
+        "label": "B",
+        "text": "4 hours"
+      },
+      {
+        "id": "80000000-0000-00c4-0000-000000000003",
+        "label": "C",
+        "text": "3 hours"
+      },
+      {
+        "id": "80000000-0000-00c4-0000-000000000004",
+        "label": "D",
+        "text": "2 hours"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c4-0000-000000000002",
+    "explanation": "Flight time is available fuel divided by consumption rate: 60/15 = 4 hours.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c5",
+    "code": "AFNS-Q-197",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 197. A person covers 20 km in 1 hour 40 minutes. What is the time for 1 km?",
+    "options": [
+      {
+        "id": "80000000-0000-00c5-0000-000000000001",
+        "label": "A",
+        "text": "6 min"
+      },
+      {
+        "id": "80000000-0000-00c5-0000-000000000002",
+        "label": "B",
+        "text": "4 min"
+      },
+      {
+        "id": "80000000-0000-00c5-0000-000000000003",
+        "label": "C",
+        "text": "5 min"
+      },
+      {
+        "id": "80000000-0000-00c5-0000-000000000004",
+        "label": "D",
+        "text": "3 min"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c5-0000-000000000003",
+    "explanation": "100 minutes for 20 km gives 100/20 = 5 minutes per kilometre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c6",
+    "code": "AFNS-Q-198",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 198. An organism with genotype TT is:",
+    "options": [
+      {
+        "id": "80000000-0000-00c6-0000-000000000001",
+        "label": "A",
+        "text": "Recessive"
+      },
+      {
+        "id": "80000000-0000-00c6-0000-000000000002",
+        "label": "B",
+        "text": "Dominant"
+      },
+      {
+        "id": "80000000-0000-00c6-0000-000000000003",
+        "label": "C",
+        "text": "Heterozygous"
+      },
+      {
+        "id": "80000000-0000-00c6-0000-000000000004",
+        "label": "D",
+        "text": "Homozygous"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c6-0000-000000000004",
+    "explanation": "TT has two identical alleles and is homozygous; a gamete would carry only one T allele.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c7",
+    "code": "AFNS-Q-199",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 199. Smallest bone of ear is?",
+    "options": [
+      {
+        "id": "80000000-0000-00c7-0000-000000000001",
+        "label": "A",
+        "text": "Cochlea"
+      },
+      {
+        "id": "80000000-0000-00c7-0000-000000000002",
+        "label": "B",
+        "text": "Incus"
+      },
+      {
+        "id": "80000000-0000-00c7-0000-000000000003",
+        "label": "C",
+        "text": "Stapes"
+      },
+      {
+        "id": "80000000-0000-00c7-0000-000000000004",
+        "label": "D",
+        "text": "Malleus"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c7-0000-000000000003",
+    "explanation": "The stapes is the smallest bone in the human body and is located in the middle ear.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c8",
+    "code": "AFNS-Q-200",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 200. Lamarckism theory explains?",
+    "options": [
+      {
+        "id": "80000000-0000-00c8-0000-000000000001",
+        "label": "A",
+        "text": "Genetics"
+      },
+      {
+        "id": "80000000-0000-00c8-0000-000000000002",
+        "label": "B",
+        "text": "Mutations"
+      },
+      {
+        "id": "80000000-0000-00c8-0000-000000000003",
+        "label": "C",
+        "text": "Natural selection"
+      },
+      {
+        "id": "80000000-0000-00c8-0000-000000000004",
+        "label": "D",
+        "text": "Inheritance of acquired characters"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c8-0000-000000000004",
+    "explanation": "Lamarck proposed that acquired characteristics could be inherited by offspring.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000c9",
+    "code": "AFNS-Q-201",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 201. Brain and spinal cord make up?",
+    "options": [
+      {
+        "id": "80000000-0000-00c9-0000-000000000001",
+        "label": "A",
+        "text": "Somatic nervous system"
+      },
+      {
+        "id": "80000000-0000-00c9-0000-000000000002",
+        "label": "B",
+        "text": "Autonomic nervous system"
+      },
+      {
+        "id": "80000000-0000-00c9-0000-000000000003",
+        "label": "C",
+        "text": "Central nervous system"
+      },
+      {
+        "id": "80000000-0000-00c9-0000-000000000004",
+        "label": "D",
+        "text": "Peripheral nervous system"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00c9-0000-000000000003",
+    "explanation": "The brain and spinal cord together constitute the central nervous system.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ca",
+    "code": "AFNS-Q-202",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 202. Propene reacts with HCl to form?",
+    "options": [
+      {
+        "id": "80000000-0000-00ca-0000-000000000001",
+        "label": "A",
+        "text": "Methane"
+      },
+      {
+        "id": "80000000-0000-00ca-0000-000000000002",
+        "label": "B",
+        "text": "2-chloropropane"
+      },
+      {
+        "id": "80000000-0000-00ca-0000-000000000003",
+        "label": "C",
+        "text": "Propyl chloride"
+      },
+      {
+        "id": "80000000-0000-00ca-0000-000000000004",
+        "label": "D",
+        "text": "Propanol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ca-0000-000000000002",
+    "explanation": "Markovnikov addition of HCl to propene forms mainly 2-chloropropane.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000cb",
+    "code": "AFNS-Q-203",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 203. Formula of Caustic Soda is?",
+    "options": [
+      {
+        "id": "80000000-0000-00cb-0000-000000000001",
+        "label": "A",
+        "text": "Ca(OH)2"
+      },
+      {
+        "id": "80000000-0000-00cb-0000-000000000002",
+        "label": "B",
+        "text": "Na2CO3"
+      },
+      {
+        "id": "80000000-0000-00cb-0000-000000000003",
+        "label": "C",
+        "text": "NaOH"
+      },
+      {
+        "id": "80000000-0000-00cb-0000-000000000004",
+        "label": "D",
+        "text": "NaCl"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00cb-0000-000000000003",
+    "explanation": "Caustic soda is the common name for sodium hydroxide, NaOH.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000cc",
+    "code": "AFNS-Q-204",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 204. Soda lime is a mixture of?",
+    "options": [
+      {
+        "id": "80000000-0000-00cc-0000-000000000001",
+        "label": "A",
+        "text": "CaCO3 + NaCl"
+      },
+      {
+        "id": "80000000-0000-00cc-0000-000000000002",
+        "label": "B",
+        "text": "NaOH + H2O"
+      },
+      {
+        "id": "80000000-0000-00cc-0000-000000000003",
+        "label": "C",
+        "text": "NaCl + CaCl2"
+      },
+      {
+        "id": "80000000-0000-00cc-0000-000000000004",
+        "label": "D",
+        "text": "NaOH + CaO"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00cc-0000-000000000004",
+    "explanation": "Soda lime used in school-level decarboxylation consists principally of NaOH and CaO.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000cd",
+    "code": "AFNS-Q-205",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 205. Molarity is defined as?",
+    "options": [
+      {
+        "id": "80000000-0000-00cd-0000-000000000001",
+        "label": "A",
+        "text": "Moles / density"
+      },
+      {
+        "id": "80000000-0000-00cd-0000-000000000002",
+        "label": "B",
+        "text": "Mass / volume"
+      },
+      {
+        "id": "80000000-0000-00cd-0000-000000000003",
+        "label": "C",
+        "text": "Moles of solute / volume of solution in liters"
+      },
+      {
+        "id": "80000000-0000-00cd-0000-000000000004",
+        "label": "D",
+        "text": "Moles of solute / mass of solvent"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00cd-0000-000000000003",
+    "explanation": "Molarity is the number of moles of solute per litre of solution.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ce",
+    "code": "AFNS-Q-206",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 206. Conversion of AC to DC is called?",
+    "options": [
+      {
+        "id": "80000000-0000-00ce-0000-000000000001",
+        "label": "A",
+        "text": "Oscillation"
+      },
+      {
+        "id": "80000000-0000-00ce-0000-000000000002",
+        "label": "B",
+        "text": "Amplification"
+      },
+      {
+        "id": "80000000-0000-00ce-0000-000000000003",
+        "label": "C",
+        "text": "Rectification"
+      },
+      {
+        "id": "80000000-0000-00ce-0000-000000000004",
+        "label": "D",
+        "text": "Induction"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ce-0000-000000000003",
+    "explanation": "Rectification converts alternating current into unidirectional current.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000cf",
+    "code": "AFNS-Q-207",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 207. V = romega relates to?",
+    "options": [
+      {
+        "id": "80000000-0000-00cf-0000-000000000001",
+        "label": "A",
+        "text": "Momentum"
+      },
+      {
+        "id": "80000000-0000-00cf-0000-000000000002",
+        "label": "B",
+        "text": "Centripetal force"
+      },
+      {
+        "id": "80000000-0000-00cf-0000-000000000003",
+        "label": "C",
+        "text": "Angular velocity"
+      },
+      {
+        "id": "80000000-0000-00cf-0000-000000000004",
+        "label": "D",
+        "text": "Torque"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00cf-0000-000000000003",
+    "explanation": "v = r*omega relates tangential speed to angular velocity at radius r.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d0",
+    "code": "AFNS-Q-208",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 208. SI unit of torque is?",
+    "options": [
+      {
+        "id": "80000000-0000-00d0-0000-000000000001",
+        "label": "A",
+        "text": "Pascal"
+      },
+      {
+        "id": "80000000-0000-00d0-0000-000000000002",
+        "label": "B",
+        "text": "Newton-meter"
+      },
+      {
+        "id": "80000000-0000-00d0-0000-000000000003",
+        "label": "C",
+        "text": "Newton"
+      },
+      {
+        "id": "80000000-0000-00d0-0000-000000000004",
+        "label": "D",
+        "text": "Joule"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d0-0000-000000000002",
+    "explanation": "Torque is force times perpendicular lever arm, giving the unit newton metre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d1",
+    "code": "AFNS-Q-209",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 209. Wave speed formula is?",
+    "options": [
+      {
+        "id": "80000000-0000-00d1-0000-000000000001",
+        "label": "A",
+        "text": "v = r*omega"
+      },
+      {
+        "id": "80000000-0000-00d1-0000-000000000002",
+        "label": "B",
+        "text": "v = a/t"
+      },
+      {
+        "id": "80000000-0000-00d1-0000-000000000003",
+        "label": "C",
+        "text": "v = f*lambda"
+      },
+      {
+        "id": "80000000-0000-00d1-0000-000000000004",
+        "label": "D",
+        "text": "v = f/lambda"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d1-0000-000000000003",
+    "explanation": "A wave travels one wavelength each period, so its speed is frequency times wavelength.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d2",
+    "code": "AFNS-Q-210",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 210. Phase difference is measured in?",
+    "options": [
+      {
+        "id": "80000000-0000-00d2-0000-000000000001",
+        "label": "A",
+        "text": "Second"
+      },
+      {
+        "id": "80000000-0000-00d2-0000-000000000002",
+        "label": "B",
+        "text": "Newton"
+      },
+      {
+        "id": "80000000-0000-00d2-0000-000000000003",
+        "label": "C",
+        "text": "Joule"
+      },
+      {
+        "id": "80000000-0000-00d2-0000-000000000004",
+        "label": "D",
+        "text": "Radian"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d2-0000-000000000004",
+    "explanation": "Phase is an angular quantity expressed in radians.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d3",
+    "code": "AFNS-Q-211",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 211. Which is a compound sentence?",
+    "options": [
+      {
+        "id": "80000000-0000-00d3-0000-000000000001",
+        "label": "A",
+        "text": "Where are you going?"
+      },
+      {
+        "id": "80000000-0000-00d3-0000-000000000002",
+        "label": "B",
+        "text": "She sings."
+      },
+      {
+        "id": "80000000-0000-00d3-0000-000000000003",
+        "label": "C",
+        "text": "Although he was late, I waited."
+      },
+      {
+        "id": "80000000-0000-00d3-0000-000000000004",
+        "label": "D",
+        "text": "He came, and I left."
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d3-0000-000000000004",
+    "explanation": "He came and I left are independent clauses joined by the coordinating conjunction and.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d4",
+    "code": "AFNS-Q-212",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 212. Choose the correct preposition: He is fond ____ music.",
+    "options": [
+      {
+        "id": "80000000-0000-00d4-0000-000000000001",
+        "label": "A",
+        "text": "with"
+      },
+      {
+        "id": "80000000-0000-00d4-0000-000000000002",
+        "label": "B",
+        "text": "of"
+      },
+      {
+        "id": "80000000-0000-00d4-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-00d4-0000-000000000004",
+        "label": "D",
+        "text": "in"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d4-0000-000000000002",
+    "explanation": "The standard adjective-preposition combination is fond of.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d5",
+    "code": "AFNS-Q-213",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 213. Synonym of Rapid?",
+    "options": [
+      {
+        "id": "80000000-0000-00d5-0000-000000000001",
+        "label": "A",
+        "text": "Lazy"
+      },
+      {
+        "id": "80000000-0000-00d5-0000-000000000002",
+        "label": "B",
+        "text": "Weak"
+      },
+      {
+        "id": "80000000-0000-00d5-0000-000000000003",
+        "label": "C",
+        "text": "Quick"
+      },
+      {
+        "id": "80000000-0000-00d5-0000-000000000004",
+        "label": "D",
+        "text": "Slow"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d5-0000-000000000003",
+    "explanation": "Rapid means occurring quickly or at high speed.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d6",
+    "code": "AFNS-Q-214",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 214. Antonym of Ancient?",
+    "options": [
+      {
+        "id": "80000000-0000-00d6-0000-000000000001",
+        "label": "A",
+        "text": "Elder"
+      },
+      {
+        "id": "80000000-0000-00d6-0000-000000000002",
+        "label": "B",
+        "text": "Past"
+      },
+      {
+        "id": "80000000-0000-00d6-0000-000000000003",
+        "label": "C",
+        "text": "Old"
+      },
+      {
+        "id": "80000000-0000-00d6-0000-000000000004",
+        "label": "D",
+        "text": "Modern"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d6-0000-000000000004",
+    "explanation": "Modern means belonging to the present era, opposite to ancient.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d7",
+    "code": "AFNS-Q-215",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 215. Synonym of Flee?",
+    "options": [
+      {
+        "id": "80000000-0000-00d7-0000-000000000001",
+        "label": "A",
+        "text": "Arrive"
+      },
+      {
+        "id": "80000000-0000-00d7-0000-000000000002",
+        "label": "B",
+        "text": "Hide"
+      },
+      {
+        "id": "80000000-0000-00d7-0000-000000000003",
+        "label": "C",
+        "text": "Walk"
+      },
+      {
+        "id": "80000000-0000-00d7-0000-000000000004",
+        "label": "D",
+        "text": "Run away"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d7-0000-000000000004",
+    "explanation": "To flee means to run away from danger or an unwanted situation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d8",
+    "code": "AFNS-Q-216",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 216. Which type of noun is \"Bunch of grapes\"?",
+    "options": [
+      {
+        "id": "80000000-0000-00d8-0000-000000000001",
+        "label": "A",
+        "text": "Collective noun"
+      },
+      {
+        "id": "80000000-0000-00d8-0000-000000000002",
+        "label": "B",
+        "text": "Material noun"
+      },
+      {
+        "id": "80000000-0000-00d8-0000-000000000003",
+        "label": "C",
+        "text": "Abstract noun"
+      },
+      {
+        "id": "80000000-0000-00d8-0000-000000000004",
+        "label": "D",
+        "text": "Proper noun"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d8-0000-000000000001",
+    "explanation": "Bunch names a group considered as a unit and is a collective noun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000d9",
+    "code": "AFNS-Q-217",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 217. In a pressure cooker, temperature...?",
+    "options": [
+      {
+        "id": "80000000-0000-00d9-0000-000000000001",
+        "label": "A",
+        "text": "First decreases then increases"
+      },
+      {
+        "id": "80000000-0000-00d9-0000-000000000002",
+        "label": "B",
+        "text": "First increases then decreases"
+      },
+      {
+        "id": "80000000-0000-00d9-0000-000000000003",
+        "label": "C",
+        "text": "Increases"
+      },
+      {
+        "id": "80000000-0000-00d9-0000-000000000004",
+        "label": "D",
+        "text": "Decreases"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00d9-0000-000000000003",
+    "explanation": "Higher pressure raises water's boiling point, allowing food to cook at a higher temperature.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000da",
+    "code": "AFNS-Q-218",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 218. SI unit of capacitance is?",
+    "options": [
+      {
+        "id": "80000000-0000-00da-0000-000000000001",
+        "label": "A",
+        "text": "Henry"
+      },
+      {
+        "id": "80000000-0000-00da-0000-000000000002",
+        "label": "B",
+        "text": "Farad"
+      },
+      {
+        "id": "80000000-0000-00da-0000-000000000003",
+        "label": "C",
+        "text": "Coulomb"
+      },
+      {
+        "id": "80000000-0000-00da-0000-000000000004",
+        "label": "D",
+        "text": "Mho"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00da-0000-000000000002",
+    "explanation": "Capacitance C = Q/V is measured in farads.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000db",
+    "code": "AFNS-Q-219",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 219. SI unit of time?",
+    "options": [
+      {
+        "id": "80000000-0000-00db-0000-000000000001",
+        "label": "A",
+        "text": "Metre"
+      },
+      {
+        "id": "80000000-0000-00db-0000-000000000002",
+        "label": "B",
+        "text": "Second"
+      },
+      {
+        "id": "80000000-0000-00db-0000-000000000003",
+        "label": "C",
+        "text": "Minute"
+      },
+      {
+        "id": "80000000-0000-00db-0000-000000000004",
+        "label": "D",
+        "text": "Hour"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00db-0000-000000000002",
+    "explanation": "The SI base unit of time is the second, defined using a caesium-133 transition.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000dc",
+    "code": "AFNS-Q-220",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 220. The magnitude of the emf induced in one coil by a changing current in another coil is:",
+    "options": [
+      {
+        "id": "80000000-0000-00dc-0000-000000000001",
+        "label": "A",
+        "text": "emf = q/t"
+      },
+      {
+        "id": "80000000-0000-00dc-0000-000000000002",
+        "label": "B",
+        "text": "emf = E*d"
+      },
+      {
+        "id": "80000000-0000-00dc-0000-000000000003",
+        "label": "C",
+        "text": "emf = I*R"
+      },
+      {
+        "id": "80000000-0000-00dc-0000-000000000004",
+        "label": "D",
+        "text": "emf = M*abs(dI/dt)"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00dc-0000-000000000004",
+    "explanation": "Mutual induction gives induced emf magnitude M times the rate of change of current in the other coil.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000dd",
+    "code": "AFNS-Q-221",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 221. Which has the highest boiling point?",
+    "options": [
+      {
+        "id": "80000000-0000-00dd-0000-000000000001",
+        "label": "A",
+        "text": "NH3"
+      },
+      {
+        "id": "80000000-0000-00dd-0000-000000000002",
+        "label": "B",
+        "text": "H2S"
+      },
+      {
+        "id": "80000000-0000-00dd-0000-000000000003",
+        "label": "C",
+        "text": "H2O"
+      },
+      {
+        "id": "80000000-0000-00dd-0000-000000000004",
+        "label": "D",
+        "text": "HF"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00dd-0000-000000000003",
+    "explanation": "Water forms an extensive hydrogen-bond network, giving it the highest boiling point of these substances.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000de",
+    "code": "AFNS-Q-222",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 222. Colour of Lead Sulphide (PbS)?",
+    "options": [
+      {
+        "id": "80000000-0000-00de-0000-000000000001",
+        "label": "A",
+        "text": "Brown"
+      },
+      {
+        "id": "80000000-0000-00de-0000-000000000002",
+        "label": "B",
+        "text": "White"
+      },
+      {
+        "id": "80000000-0000-00de-0000-000000000003",
+        "label": "C",
+        "text": "Black"
+      },
+      {
+        "id": "80000000-0000-00de-0000-000000000004",
+        "label": "D",
+        "text": "Yellow"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00de-0000-000000000003",
+    "explanation": "Lead(II) sulfide is a black solid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000df",
+    "code": "AFNS-Q-223",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 223. Which pair of gases diffuses at the same rate (at constant temperature)?",
+    "options": [
+      {
+        "id": "80000000-0000-00df-0000-000000000001",
+        "label": "A",
+        "text": "O2 and N2"
+      },
+      {
+        "id": "80000000-0000-00df-0000-000000000002",
+        "label": "B",
+        "text": "SO2 and NO2"
+      },
+      {
+        "id": "80000000-0000-00df-0000-000000000003",
+        "label": "C",
+        "text": "H2O and H2S"
+      },
+      {
+        "id": "80000000-0000-00df-0000-000000000004",
+        "label": "D",
+        "text": "CO2 and N2O"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00df-0000-000000000004",
+    "explanation": "CO2 and N2O have approximately equal molar masses, so Graham's law predicts equal diffusion rates.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e0",
+    "code": "AFNS-Q-224",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 224. Length of one complete turn of the double helix of DNA is?",
+    "options": [
+      {
+        "id": "80000000-0000-00e0-0000-000000000001",
+        "label": "A",
+        "text": "5.0 nm"
+      },
+      {
+        "id": "80000000-0000-00e0-0000-000000000002",
+        "label": "B",
+        "text": "1.8 nm"
+      },
+      {
+        "id": "80000000-0000-00e0-0000-000000000003",
+        "label": "C",
+        "text": "3.4 nm"
+      },
+      {
+        "id": "80000000-0000-00e0-0000-000000000004",
+        "label": "D",
+        "text": "2.4 nm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e0-0000-000000000003",
+    "explanation": "One turn of typical B-DNA spans approximately 3.4 nm.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e1",
+    "code": "AFNS-Q-225",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 225. Menstrual cycle is controlled by which part of the brain?",
+    "options": [
+      {
+        "id": "80000000-0000-00e1-0000-000000000001",
+        "label": "A",
+        "text": "Hypothalamus"
+      },
+      {
+        "id": "80000000-0000-00e1-0000-000000000002",
+        "label": "B",
+        "text": "Medulla"
+      },
+      {
+        "id": "80000000-0000-00e1-0000-000000000003",
+        "label": "C",
+        "text": "Cerebellum"
+      },
+      {
+        "id": "80000000-0000-00e1-0000-000000000004",
+        "label": "D",
+        "text": "Cerebrum"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e1-0000-000000000001",
+    "explanation": "The hypothalamus releases GnRH, which regulates pituitary hormones involved in the menstrual cycle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e2",
+    "code": "AFNS-Q-226",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 226. Which provides support to the primary parts of plants?",
+    "options": [
+      {
+        "id": "80000000-0000-00e2-0000-000000000001",
+        "label": "A",
+        "text": "Cortex"
+      },
+      {
+        "id": "80000000-0000-00e2-0000-000000000002",
+        "label": "B",
+        "text": "Lignin"
+      },
+      {
+        "id": "80000000-0000-00e2-0000-000000000003",
+        "label": "C",
+        "text": "Cuticle"
+      },
+      {
+        "id": "80000000-0000-00e2-0000-000000000004",
+        "label": "D",
+        "text": "Cell wall"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e2-0000-000000000004",
+    "explanation": "The plant cell wall provides structural support and resistance to turgor pressure.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e3",
+    "code": "AFNS-Q-227",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 227. If the 4th day of the month is Sunday, then the 19th day will be?",
+    "options": [
+      {
+        "id": "80000000-0000-00e3-0000-000000000001",
+        "label": "A",
+        "text": "Thursday"
+      },
+      {
+        "id": "80000000-0000-00e3-0000-000000000002",
+        "label": "B",
+        "text": "Wednesday"
+      },
+      {
+        "id": "80000000-0000-00e3-0000-000000000003",
+        "label": "C",
+        "text": "Tuesday"
+      },
+      {
+        "id": "80000000-0000-00e3-0000-000000000004",
+        "label": "D",
+        "text": "Monday"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e3-0000-000000000004",
+    "explanation": "The 19th is 15 days after the 4th, so Sunday advances by one weekday to Monday.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e4",
+    "code": "AFNS-Q-228",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 228. Which law explains the recoil of a gun when fired?",
+    "options": [
+      {
+        "id": "80000000-0000-00e4-0000-000000000001",
+        "label": "A",
+        "text": "Newton's third law"
+      },
+      {
+        "id": "80000000-0000-00e4-0000-000000000002",
+        "label": "B",
+        "text": "Newton's second law"
+      },
+      {
+        "id": "80000000-0000-00e4-0000-000000000003",
+        "label": "C",
+        "text": "Newton's first law"
+      },
+      {
+        "id": "80000000-0000-00e4-0000-000000000004",
+        "label": "D",
+        "text": "Law of gravitation"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e4-0000-000000000001",
+    "explanation": "The forward force on the bullet has an equal and opposite reaction force on the gun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e5",
+    "code": "AFNS-Q-229",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 229. Escape velocity on the Moon compared to Earth is?",
+    "options": [
+      {
+        "id": "80000000-0000-00e5-0000-000000000001",
+        "label": "A",
+        "text": "Infinite"
+      },
+      {
+        "id": "80000000-0000-00e5-0000-000000000002",
+        "label": "B",
+        "text": "Same"
+      },
+      {
+        "id": "80000000-0000-00e5-0000-000000000003",
+        "label": "C",
+        "text": "Lower"
+      },
+      {
+        "id": "80000000-0000-00e5-0000-000000000004",
+        "label": "D",
+        "text": "Higher"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e5-0000-000000000003",
+    "explanation": "The Moon's smaller mass-to-radius ratio gives it a lower escape velocity than Earth.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e6",
+    "code": "AFNS-Q-230",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 230. Speed of sound in air at room temperature is approximately?",
+    "options": [
+      {
+        "id": "80000000-0000-00e6-0000-000000000001",
+        "label": "A",
+        "text": "360 m/s"
+      },
+      {
+        "id": "80000000-0000-00e6-0000-000000000002",
+        "label": "B",
+        "text": "343 m/s"
+      },
+      {
+        "id": "80000000-0000-00e6-0000-000000000003",
+        "label": "C",
+        "text": "330 m/s"
+      },
+      {
+        "id": "80000000-0000-00e6-0000-000000000004",
+        "label": "D",
+        "text": "300 m/s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e6-0000-000000000002",
+    "explanation": "At about 20 degrees C, the speed of sound in air is approximately 343 m/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e7",
+    "code": "AFNS-Q-231",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 231. Chemical formula of bleaching powder?",
+    "options": [
+      {
+        "id": "80000000-0000-00e7-0000-000000000001",
+        "label": "A",
+        "text": "CaCO3"
+      },
+      {
+        "id": "80000000-0000-00e7-0000-000000000002",
+        "label": "B",
+        "text": "Ca(OH)2"
+      },
+      {
+        "id": "80000000-0000-00e7-0000-000000000003",
+        "label": "C",
+        "text": "CaOCl2"
+      },
+      {
+        "id": "80000000-0000-00e7-0000-000000000004",
+        "label": "D",
+        "text": "CaCl2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e7-0000-000000000003",
+    "explanation": "Bleaching powder is conventionally represented in school chemistry as CaOCl2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e8",
+    "code": "AFNS-Q-232",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 232. Which element has the highest electronegativity?",
+    "options": [
+      {
+        "id": "80000000-0000-00e8-0000-000000000001",
+        "label": "A",
+        "text": "Chlorine"
+      },
+      {
+        "id": "80000000-0000-00e8-0000-000000000002",
+        "label": "B",
+        "text": "Fluorine"
+      },
+      {
+        "id": "80000000-0000-00e8-0000-000000000003",
+        "label": "C",
+        "text": "Nitrogen"
+      },
+      {
+        "id": "80000000-0000-00e8-0000-000000000004",
+        "label": "D",
+        "text": "Oxygen"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e8-0000-000000000002",
+    "explanation": "Fluorine attracts shared electrons most strongly and has the highest electronegativity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000e9",
+    "code": "AFNS-Q-233",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 233. Which process converts glucose into alcohol in the absence of oxygen?",
+    "options": [
+      {
+        "id": "80000000-0000-00e9-0000-000000000001",
+        "label": "A",
+        "text": "Hydrolysis"
+      },
+      {
+        "id": "80000000-0000-00e9-0000-000000000002",
+        "label": "B",
+        "text": "Fermentation"
+      },
+      {
+        "id": "80000000-0000-00e9-0000-000000000003",
+        "label": "C",
+        "text": "Photosynthesis"
+      },
+      {
+        "id": "80000000-0000-00e9-0000-000000000004",
+        "label": "D",
+        "text": "Respiration"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00e9-0000-000000000002",
+    "explanation": "Alcoholic fermentation converts glucose to ethanol and carbon dioxide without oxygen.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ea",
+    "code": "AFNS-Q-234",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 234. Which part of the brain controls heartbeat and breathing?",
+    "options": [
+      {
+        "id": "80000000-0000-00ea-0000-000000000001",
+        "label": "A",
+        "text": "Hypothalamus"
+      },
+      {
+        "id": "80000000-0000-00ea-0000-000000000002",
+        "label": "B",
+        "text": "Medulla oblongata"
+      },
+      {
+        "id": "80000000-0000-00ea-0000-000000000003",
+        "label": "C",
+        "text": "Cerebellum"
+      },
+      {
+        "id": "80000000-0000-00ea-0000-000000000004",
+        "label": "D",
+        "text": "Cerebrum"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ea-0000-000000000002",
+    "explanation": "The medulla oblongata contains centres regulating breathing and cardiovascular activity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000eb",
+    "code": "AFNS-Q-235",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 235. Correct the sentence: \"He is senior than me.\"",
+    "options": [
+      {
+        "id": "80000000-0000-00eb-0000-000000000001",
+        "label": "A",
+        "text": "He is senior from me."
+      },
+      {
+        "id": "80000000-0000-00eb-0000-000000000002",
+        "label": "B",
+        "text": "He is senior to me."
+      },
+      {
+        "id": "80000000-0000-00eb-0000-000000000003",
+        "label": "C",
+        "text": "He is more senior than me."
+      },
+      {
+        "id": "80000000-0000-00eb-0000-000000000004",
+        "label": "D",
+        "text": "He is senior than me."
+      }
+    ],
+    "correctOptionId": "80000000-0000-00eb-0000-000000000002",
+    "explanation": "The adjective senior conventionally takes to, as in senior to me.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ec",
+    "code": "AFNS-Q-236",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 236. Synonym of Precise?",
+    "options": [
+      {
+        "id": "80000000-0000-00ec-0000-000000000001",
+        "label": "A",
+        "text": "Wrong"
+      },
+      {
+        "id": "80000000-0000-00ec-0000-000000000002",
+        "label": "B",
+        "text": "Exact"
+      },
+      {
+        "id": "80000000-0000-00ec-0000-000000000003",
+        "label": "C",
+        "text": "Rough"
+      },
+      {
+        "id": "80000000-0000-00ec-0000-000000000004",
+        "label": "D",
+        "text": "Vague"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ec-0000-000000000002",
+    "explanation": "Precise means exact or accurately specified.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ed",
+    "code": "AFNS-Q-237",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 237. Which gas molecule evolves faster through a small hole (effusion)?",
+    "options": [
+      {
+        "id": "80000000-0000-00ed-0000-000000000001",
+        "label": "A",
+        "text": "N2"
+      },
+      {
+        "id": "80000000-0000-00ed-0000-000000000002",
+        "label": "B",
+        "text": "CO2"
+      },
+      {
+        "id": "80000000-0000-00ed-0000-000000000003",
+        "label": "C",
+        "text": "H2"
+      },
+      {
+        "id": "80000000-0000-00ed-0000-000000000004",
+        "label": "D",
+        "text": "O2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ed-0000-000000000003",
+    "explanation": "Graham's law gives faster effusion for lower molar mass, making H2 the fastest gas listed.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ee",
+    "code": "AFNS-Q-238",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 238. Which compound has extra stability due to aromatic delocalization?",
+    "options": [
+      {
+        "id": "80000000-0000-00ee-0000-000000000001",
+        "label": "A",
+        "text": "Ethane"
+      },
+      {
+        "id": "80000000-0000-00ee-0000-000000000002",
+        "label": "B",
+        "text": "Ethene"
+      },
+      {
+        "id": "80000000-0000-00ee-0000-000000000003",
+        "label": "C",
+        "text": "Benzene"
+      },
+      {
+        "id": "80000000-0000-00ee-0000-000000000004",
+        "label": "D",
+        "text": "Ethyne"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ee-0000-000000000003",
+    "explanation": "Benzene's delocalized pi electrons provide aromatic stabilization.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ef",
+    "code": "AFNS-Q-239",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 239. Product when Grignard reagent reacts with CO2?",
+    "options": [
+      {
+        "id": "80000000-0000-00ef-0000-000000000001",
+        "label": "A",
+        "text": "Ketone"
+      },
+      {
+        "id": "80000000-0000-00ef-0000-000000000002",
+        "label": "B",
+        "text": "Carboxylic acid"
+      },
+      {
+        "id": "80000000-0000-00ef-0000-000000000003",
+        "label": "C",
+        "text": "Aldehyde"
+      },
+      {
+        "id": "80000000-0000-00ef-0000-000000000004",
+        "label": "D",
+        "text": "Alcohol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ef-0000-000000000002",
+    "explanation": "A Grignard reagent reacts with CO2 to form a carboxylate that yields a carboxylic acid after acidification.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f0",
+    "code": "AFNS-Q-240",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 240. Which reagent gives a precipitate with the carbonyl group of simple aldehydes and ketones?",
+    "options": [
+      {
+        "id": "80000000-0000-00f0-0000-000000000001",
+        "label": "A",
+        "text": "2,4-DNP test"
+      },
+      {
+        "id": "80000000-0000-00f0-0000-000000000002",
+        "label": "B",
+        "text": "Fehling's test"
+      },
+      {
+        "id": "80000000-0000-00f0-0000-000000000003",
+        "label": "C",
+        "text": "Tollen's test"
+      },
+      {
+        "id": "80000000-0000-00f0-0000-000000000004",
+        "label": "D",
+        "text": "Benedict's test"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f0-0000-000000000001",
+    "explanation": "2,4-DNP reacts with aldehyde and ketone carbonyl groups to form hydrazone precipitates.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f1",
+    "code": "AFNS-Q-241",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 241. Atomic bomb is based on which reaction?",
+    "options": [
+      {
+        "id": "80000000-0000-00f1-0000-000000000001",
+        "label": "A",
+        "text": "Radioactive decay"
+      },
+      {
+        "id": "80000000-0000-00f1-0000-000000000002",
+        "label": "B",
+        "text": "Chain reaction"
+      },
+      {
+        "id": "80000000-0000-00f1-0000-000000000003",
+        "label": "C",
+        "text": "Nuclear fission"
+      },
+      {
+        "id": "80000000-0000-00f1-0000-000000000004",
+        "label": "D",
+        "text": "Nuclear fusion"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f1-0000-000000000003",
+    "explanation": "A fission bomb releases energy through an uncontrolled nuclear-fission chain reaction.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f2",
+    "code": "AFNS-Q-242",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 242. Choose the synonym of \"excuse\" when it means to pardon someone:",
+    "options": [
+      {
+        "id": "80000000-0000-00f2-0000-000000000001",
+        "label": "A",
+        "text": "Blame"
+      },
+      {
+        "id": "80000000-0000-00f2-0000-000000000002",
+        "label": "B",
+        "text": "Punish"
+      },
+      {
+        "id": "80000000-0000-00f2-0000-000000000003",
+        "label": "C",
+        "text": "Justify"
+      },
+      {
+        "id": "80000000-0000-00f2-0000-000000000004",
+        "label": "D",
+        "text": "Forgive"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f2-0000-000000000004",
+    "explanation": "To excuse a person can mean to forgive or pardon them.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f3",
+    "code": "AFNS-Q-243",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 243. Synonym of Passive?",
+    "options": [
+      {
+        "id": "80000000-0000-00f3-0000-000000000001",
+        "label": "A",
+        "text": "Energetic"
+      },
+      {
+        "id": "80000000-0000-00f3-0000-000000000002",
+        "label": "B",
+        "text": "Inactive"
+      },
+      {
+        "id": "80000000-0000-00f3-0000-000000000003",
+        "label": "C",
+        "text": "Aggressive"
+      },
+      {
+        "id": "80000000-0000-00f3-0000-000000000004",
+        "label": "D",
+        "text": "Active"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f3-0000-000000000002",
+    "explanation": "Passive means inactive or not taking an active role.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f4",
+    "code": "AFNS-Q-244",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 244. The repetition of the same initial consonant sound in nearby words is called:",
+    "options": [
+      {
+        "id": "80000000-0000-00f4-0000-000000000001",
+        "label": "A",
+        "text": "Adjective"
+      },
+      {
+        "id": "80000000-0000-00f4-0000-000000000002",
+        "label": "B",
+        "text": "Alliteration"
+      },
+      {
+        "id": "80000000-0000-00f4-0000-000000000003",
+        "label": "C",
+        "text": "Condiment"
+      },
+      {
+        "id": "80000000-0000-00f4-0000-000000000004",
+        "label": "D",
+        "text": "Simile"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f4-0000-000000000002",
+    "explanation": "Alliteration repeats initial consonant sounds in nearby words.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f5",
+    "code": "AFNS-Q-245",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 245. Wavelength range of visible light?",
+    "options": [
+      {
+        "id": "80000000-0000-00f5-0000-000000000001",
+        "label": "A",
+        "text": "100-300 nm"
+      },
+      {
+        "id": "80000000-0000-00f5-0000-000000000002",
+        "label": "B",
+        "text": "700-1200 nm"
+      },
+      {
+        "id": "80000000-0000-00f5-0000-000000000003",
+        "label": "C",
+        "text": "400-700 nm"
+      },
+      {
+        "id": "80000000-0000-00f5-0000-000000000004",
+        "label": "D",
+        "text": "200-400 nm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f5-0000-000000000003",
+    "explanation": "Visible light is commonly approximated as wavelengths from 400 to 700 nm.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f6",
+    "code": "AFNS-Q-246",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 246. Which has similar units to PV (Pressure * Volume)?",
+    "options": [
+      {
+        "id": "80000000-0000-00f6-0000-000000000001",
+        "label": "A",
+        "text": "Atmospheric pressure"
+      },
+      {
+        "id": "80000000-0000-00f6-0000-000000000002",
+        "label": "B",
+        "text": "Force"
+      },
+      {
+        "id": "80000000-0000-00f6-0000-000000000003",
+        "label": "C",
+        "text": "Work"
+      },
+      {
+        "id": "80000000-0000-00f6-0000-000000000004",
+        "label": "D",
+        "text": "Density"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f6-0000-000000000003",
+    "explanation": "Pressure times volume has dimensions (force/area)*volume = force*distance, the same as work.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f7",
+    "code": "AFNS-Q-247",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 247. Which of the following is a crystalline covalent network solid?",
+    "options": [
+      {
+        "id": "80000000-0000-00f7-0000-000000000001",
+        "label": "A",
+        "text": "Copper"
+      },
+      {
+        "id": "80000000-0000-00f7-0000-000000000002",
+        "label": "B",
+        "text": "Liquid water"
+      },
+      {
+        "id": "80000000-0000-00f7-0000-000000000003",
+        "label": "C",
+        "text": "Glass"
+      },
+      {
+        "id": "80000000-0000-00f7-0000-000000000004",
+        "label": "D",
+        "text": "Diamond"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f7-0000-000000000004",
+    "explanation": "Diamond consists of a three-dimensional covalent network of carbon atoms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f8",
+    "code": "AFNS-Q-248",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 248. The substance that breaks just after the elastic limit is?",
+    "options": [
+      {
+        "id": "80000000-0000-00f8-0000-000000000001",
+        "label": "A",
+        "text": "Plastic substance"
+      },
+      {
+        "id": "80000000-0000-00f8-0000-000000000002",
+        "label": "B",
+        "text": "Elastic substance"
+      },
+      {
+        "id": "80000000-0000-00f8-0000-000000000003",
+        "label": "C",
+        "text": "Brittle substance"
+      },
+      {
+        "id": "80000000-0000-00f8-0000-000000000004",
+        "label": "D",
+        "text": "Ductile substance"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f8-0000-000000000003",
+    "explanation": "Brittle materials fracture with little plastic deformation beyond their elastic behaviour.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000f9",
+    "code": "AFNS-Q-249",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 249. Osteoclasts are...?",
+    "options": [
+      {
+        "id": "80000000-0000-00f9-0000-000000000001",
+        "label": "A",
+        "text": "Nerve cells"
+      },
+      {
+        "id": "80000000-0000-00f9-0000-000000000002",
+        "label": "B",
+        "text": "Muscle cells"
+      },
+      {
+        "id": "80000000-0000-00f9-0000-000000000003",
+        "label": "C",
+        "text": "Bone-destroying cells"
+      },
+      {
+        "id": "80000000-0000-00f9-0000-000000000004",
+        "label": "D",
+        "text": "Bone-forming cells"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00f9-0000-000000000003",
+    "explanation": "Osteoclasts resorb bone by breaking down its mineral and organic matrix.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000fa",
+    "code": "AFNS-Q-250",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 250. Which method is used to remove muscle disorders?",
+    "options": [
+      {
+        "id": "80000000-0000-00fa-0000-000000000001",
+        "label": "A",
+        "text": "Vaccination"
+      },
+      {
+        "id": "80000000-0000-00fa-0000-000000000002",
+        "label": "B",
+        "text": "Chemotherapy"
+      },
+      {
+        "id": "80000000-0000-00fa-0000-000000000003",
+        "label": "C",
+        "text": "Dialysis"
+      },
+      {
+        "id": "80000000-0000-00fa-0000-000000000004",
+        "label": "D",
+        "text": "Physiotherapy"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00fa-0000-000000000004",
+    "explanation": "Physiotherapy uses movement and physical techniques to help restore muscular function.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000fb",
+    "code": "AFNS-Q-251",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 251. For a moving body with nonzero speed, the numerical values of momentum in kg*m/s and kinetic energy in joules are equal. Its speed is:",
+    "options": [
+      {
+        "id": "80000000-0000-00fb-0000-000000000001",
+        "label": "A",
+        "text": "Infinite"
+      },
+      {
+        "id": "80000000-0000-00fb-0000-000000000002",
+        "label": "B",
+        "text": "2 m/s"
+      },
+      {
+        "id": "80000000-0000-00fb-0000-000000000003",
+        "label": "C",
+        "text": "1 m/s"
+      },
+      {
+        "id": "80000000-0000-00fb-0000-000000000004",
+        "label": "D",
+        "text": "Zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00fb-0000-000000000002",
+    "explanation": "Numerically setting m*v = 0.5*m*v^2 for nonzero speed gives v = 2 m/s in the stated units.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000fc",
+    "code": "AFNS-Q-252",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 252. DNA base pairing rule?",
+    "options": [
+      {
+        "id": "80000000-0000-00fc-0000-000000000001",
+        "label": "A",
+        "text": "G = T"
+      },
+      {
+        "id": "80000000-0000-00fc-0000-000000000002",
+        "label": "B",
+        "text": "G = A"
+      },
+      {
+        "id": "80000000-0000-00fc-0000-000000000003",
+        "label": "C",
+        "text": "A = T"
+      },
+      {
+        "id": "80000000-0000-00fc-0000-000000000004",
+        "label": "D",
+        "text": "A = C"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00fc-0000-000000000003",
+    "explanation": "Complementary DNA strands pair adenine with thymine and guanine with cytosine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000fd",
+    "code": "AFNS-Q-253",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 253. SI unit of mutual induction?",
+    "options": [
+      {
+        "id": "80000000-0000-00fd-0000-000000000001",
+        "label": "A",
+        "text": "Farad"
+      },
+      {
+        "id": "80000000-0000-00fd-0000-000000000002",
+        "label": "B",
+        "text": "Weber"
+      },
+      {
+        "id": "80000000-0000-00fd-0000-000000000003",
+        "label": "C",
+        "text": "Henry"
+      },
+      {
+        "id": "80000000-0000-00fd-0000-000000000004",
+        "label": "D",
+        "text": "Tesla"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00fd-0000-000000000003",
+    "explanation": "Mutual inductance is measured in henries.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000fe",
+    "code": "AFNS-Q-254",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 254. Boyle's Law graph is?",
+    "options": [
+      {
+        "id": "80000000-0000-00fe-0000-000000000001",
+        "label": "A",
+        "text": "Isochoric"
+      },
+      {
+        "id": "80000000-0000-00fe-0000-000000000002",
+        "label": "B",
+        "text": "Isobar"
+      },
+      {
+        "id": "80000000-0000-00fe-0000-000000000003",
+        "label": "C",
+        "text": "Adiabatic"
+      },
+      {
+        "id": "80000000-0000-00fe-0000-000000000004",
+        "label": "D",
+        "text": "Isotherm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00fe-0000-000000000004",
+    "explanation": "Boyle's law relates pressure and volume at constant temperature, so its curve is an isotherm.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000000ff",
+    "code": "AFNS-Q-255",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 255. Byproduct of bacterial photosynthesis (sulphur bacteria)?",
+    "options": [
+      {
+        "id": "80000000-0000-00ff-0000-000000000001",
+        "label": "A",
+        "text": "Hydrogen"
+      },
+      {
+        "id": "80000000-0000-00ff-0000-000000000002",
+        "label": "B",
+        "text": "Nitrogen"
+      },
+      {
+        "id": "80000000-0000-00ff-0000-000000000003",
+        "label": "C",
+        "text": "Sulphur"
+      },
+      {
+        "id": "80000000-0000-00ff-0000-000000000004",
+        "label": "D",
+        "text": "Oxygen"
+      }
+    ],
+    "correctOptionId": "80000000-0000-00ff-0000-000000000003",
+    "explanation": "Some sulfur bacteria use H2S in anoxygenic photosynthesis and produce elemental sulfur.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000100",
+    "code": "AFNS-Q-256",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 256. Water exits a small hole 1 m below the surface in a large tank. Neglecting losses, the efflux speed is approximately:",
+    "options": [
+      {
+        "id": "80000000-0000-0100-0000-000000000001",
+        "label": "A",
+        "text": "6.0 m/s"
+      },
+      {
+        "id": "80000000-0000-0100-0000-000000000002",
+        "label": "B",
+        "text": "5.0 m/s"
+      },
+      {
+        "id": "80000000-0000-0100-0000-000000000003",
+        "label": "C",
+        "text": "4.4 m/s"
+      },
+      {
+        "id": "80000000-0000-0100-0000-000000000004",
+        "label": "D",
+        "text": "2.2 m/s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0100-0000-000000000003",
+    "explanation": "Torricelli's relation gives v = sqrt(2*g*h) = sqrt(19.6), approximately 4.4 m/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000101",
+    "code": "AFNS-Q-257",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 257. Which of the following is a dinucleotide coenzyme rather than a nucleoside triphosphate?",
+    "options": [
+      {
+        "id": "80000000-0000-0101-0000-000000000001",
+        "label": "A",
+        "text": "CTP"
+      },
+      {
+        "id": "80000000-0000-0101-0000-000000000002",
+        "label": "B",
+        "text": "GTP"
+      },
+      {
+        "id": "80000000-0000-0101-0000-000000000003",
+        "label": "C",
+        "text": "NAD"
+      },
+      {
+        "id": "80000000-0000-0101-0000-000000000004",
+        "label": "D",
+        "text": "ATP"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0101-0000-000000000003",
+    "explanation": "NAD is a dinucleotide coenzyme, whereas ATP, GTP and CTP are nucleoside triphosphates.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000102",
+    "code": "AFNS-Q-258",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 258. Voltage leads current in?",
+    "options": [
+      {
+        "id": "80000000-0000-0102-0000-000000000001",
+        "label": "A",
+        "text": "Pure resistor"
+      },
+      {
+        "id": "80000000-0000-0102-0000-000000000002",
+        "label": "B",
+        "text": "RLC circuit"
+      },
+      {
+        "id": "80000000-0000-0102-0000-000000000003",
+        "label": "C",
+        "text": "RL circuit"
+      },
+      {
+        "id": "80000000-0000-0102-0000-000000000004",
+        "label": "D",
+        "text": "RC circuit"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0102-0000-000000000003",
+    "explanation": "Inductive reactance in an RL circuit makes the supply voltage lead the current.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000103",
+    "code": "AFNS-Q-259",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 259. Phase difference in 3-phase current?",
+    "options": [
+      {
+        "id": "80000000-0000-0103-0000-000000000001",
+        "label": "A",
+        "text": "180 degrees"
+      },
+      {
+        "id": "80000000-0000-0103-0000-000000000002",
+        "label": "B",
+        "text": "120 degrees"
+      },
+      {
+        "id": "80000000-0000-0103-0000-000000000003",
+        "label": "C",
+        "text": "90 degrees"
+      },
+      {
+        "id": "80000000-0000-0103-0000-000000000004",
+        "label": "D",
+        "text": "60 degrees"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0103-0000-000000000002",
+    "explanation": "The three sinusoidal phases are evenly spaced over a full cycle: 360/3 = 120 degrees.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000104",
+    "code": "AFNS-Q-260",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 260. \"A gust of anger claimed her\" means?",
+    "options": [
+      {
+        "id": "80000000-0000-0104-0000-000000000001",
+        "label": "A",
+        "text": "Calmness"
+      },
+      {
+        "id": "80000000-0000-0104-0000-000000000002",
+        "label": "B",
+        "text": "Relaxation"
+      },
+      {
+        "id": "80000000-0000-0104-0000-000000000003",
+        "label": "C",
+        "text": "Fit of fury"
+      },
+      {
+        "id": "80000000-0000-0104-0000-000000000004",
+        "label": "D",
+        "text": "Joy"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0104-0000-000000000003",
+    "explanation": "A gust of anger figuratively describes a sudden strong fit of fury.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000105",
+    "code": "AFNS-Q-261",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 261. A rotating cup is filled to the brim with liquid and kept rotating at the same angular speed. What can happen to the liquid?",
+    "options": [
+      {
+        "id": "80000000-0000-0105-0000-000000000001",
+        "label": "A",
+        "text": "It remains flat"
+      },
+      {
+        "id": "80000000-0000-0105-0000-000000000002",
+        "label": "B",
+        "text": "It overflows"
+      },
+      {
+        "id": "80000000-0000-0105-0000-000000000003",
+        "label": "C",
+        "text": "It freezes"
+      },
+      {
+        "id": "80000000-0000-0105-0000-000000000004",
+        "label": "D",
+        "text": "It evaporates instantly"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0105-0000-000000000002",
+    "explanation": "Rotation makes the liquid surface higher near the rim, allowing a brim-full cup to overflow.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000106",
+    "code": "AFNS-Q-262",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 262. Which livestock disease was the subject of Pasteur's famous 1881 vaccination demonstration?",
+    "options": [
+      {
+        "id": "80000000-0000-0106-0000-000000000001",
+        "label": "A",
+        "text": "Polio"
+      },
+      {
+        "id": "80000000-0000-0106-0000-000000000002",
+        "label": "B",
+        "text": "Anthrax"
+      },
+      {
+        "id": "80000000-0000-0106-0000-000000000003",
+        "label": "C",
+        "text": "Smallpox"
+      },
+      {
+        "id": "80000000-0000-0106-0000-000000000004",
+        "label": "D",
+        "text": "Rabies"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0106-0000-000000000002",
+    "explanation": "Pasteur publicly demonstrated the protective effect of his anthrax vaccine in sheep in 1881.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000107",
+    "code": "AFNS-Q-263",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 263. Complete the expression: \"Shrug ____ my mistake.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0107-0000-000000000001",
+        "label": "A",
+        "text": "In"
+      },
+      {
+        "id": "80000000-0000-0107-0000-000000000002",
+        "label": "B",
+        "text": "Off"
+      },
+      {
+        "id": "80000000-0000-0107-0000-000000000003",
+        "label": "C",
+        "text": "Out"
+      },
+      {
+        "id": "80000000-0000-0107-0000-000000000004",
+        "label": "D",
+        "text": "Up"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0107-0000-000000000002",
+    "explanation": "Shrug off is a phrasal verb meaning to dismiss or treat as unimportant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000108",
+    "code": "AFNS-Q-264",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 264. Analogy: Rough : Smooth :: Crude : ?",
+    "options": [
+      {
+        "id": "80000000-0000-0108-0000-000000000001",
+        "label": "A",
+        "text": "Hard"
+      },
+      {
+        "id": "80000000-0000-0108-0000-000000000002",
+        "label": "B",
+        "text": "Soft"
+      },
+      {
+        "id": "80000000-0000-0108-0000-000000000003",
+        "label": "C",
+        "text": "Polished"
+      },
+      {
+        "id": "80000000-0000-0108-0000-000000000004",
+        "label": "D",
+        "text": "Weak"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0108-0000-000000000003",
+    "explanation": "Polished is the opposite of crude, just as smooth is the opposite of rough.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000109",
+    "code": "AFNS-Q-265",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 265. Choose the opposite of \"wild\" when describing an animal:",
+    "options": [
+      {
+        "id": "80000000-0000-0109-0000-000000000001",
+        "label": "A",
+        "text": "Aggressive"
+      },
+      {
+        "id": "80000000-0000-0109-0000-000000000002",
+        "label": "B",
+        "text": "Harsh"
+      },
+      {
+        "id": "80000000-0000-0109-0000-000000000003",
+        "label": "C",
+        "text": "Wild"
+      },
+      {
+        "id": "80000000-0000-0109-0000-000000000004",
+        "label": "D",
+        "text": "Tamed"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0109-0000-000000000004",
+    "explanation": "A tamed animal has become accustomed to human control, unlike a wild one.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000010a",
+    "code": "AFNS-Q-266",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 266. In a cereal seed infected by loose smut, dormant fungal mycelium can persist in the:",
+    "options": [
+      {
+        "id": "80000000-0000-010a-0000-000000000001",
+        "label": "A",
+        "text": "Ovary"
+      },
+      {
+        "id": "80000000-0000-010a-0000-000000000002",
+        "label": "B",
+        "text": "Cotyledon"
+      },
+      {
+        "id": "80000000-0000-010a-0000-000000000003",
+        "label": "C",
+        "text": "Spore"
+      },
+      {
+        "id": "80000000-0000-010a-0000-000000000004",
+        "label": "D",
+        "text": "Embryo"
+      }
+    ],
+    "correctOptionId": "80000000-0000-010a-0000-000000000004",
+    "explanation": "Loose-smut fungi can persist as dormant mycelium within the seed embryo.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000010b",
+    "code": "AFNS-Q-267",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 267. For sinusoidal current, RMS = 10 A. The maximum value is?",
+    "options": [
+      {
+        "id": "80000000-0000-010b-0000-000000000001",
+        "label": "A",
+        "text": "10 A"
+      },
+      {
+        "id": "80000000-0000-010b-0000-000000000002",
+        "label": "B",
+        "text": "20 A"
+      },
+      {
+        "id": "80000000-0000-010b-0000-000000000003",
+        "label": "C",
+        "text": "14.14 A"
+      },
+      {
+        "id": "80000000-0000-010b-0000-000000000004",
+        "label": "D",
+        "text": "12 A"
+      }
+    ],
+    "correctOptionId": "80000000-0000-010b-0000-000000000003",
+    "explanation": "For a sine wave, I_max = sqrt(2)*I_rms = sqrt(2)*10, approximately 14.14 A.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000010c",
+    "code": "AFNS-Q-268",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 268. Atomic radius across a period:",
+    "options": [
+      {
+        "id": "80000000-0000-010c-0000-000000000001",
+        "label": "A",
+        "text": "Increases"
+      },
+      {
+        "id": "80000000-0000-010c-0000-000000000002",
+        "label": "B",
+        "text": "Decreases"
+      },
+      {
+        "id": "80000000-0000-010c-0000-000000000003",
+        "label": "C",
+        "text": "Remains constant"
+      },
+      {
+        "id": "80000000-0000-010c-0000-000000000004",
+        "label": "D",
+        "text": "First increases then decreases"
+      }
+    ],
+    "correctOptionId": "80000000-0000-010c-0000-000000000002",
+    "explanation": "Increasing effective nuclear charge across a period generally pulls electrons closer and reduces atomic radius.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000010d",
+    "code": "AFNS-Q-269",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 269. Oxidation of a secondary alcohol gives:",
+    "options": [
+      {
+        "id": "80000000-0000-010d-0000-000000000001",
+        "label": "A",
+        "text": "Aldehyde"
+      },
+      {
+        "id": "80000000-0000-010d-0000-000000000002",
+        "label": "B",
+        "text": "Ketone"
+      },
+      {
+        "id": "80000000-0000-010d-0000-000000000003",
+        "label": "C",
+        "text": "Carboxylic acid"
+      },
+      {
+        "id": "80000000-0000-010d-0000-000000000004",
+        "label": "D",
+        "text": "Ester"
+      }
+    ],
+    "correctOptionId": "80000000-0000-010d-0000-000000000002",
+    "explanation": "Secondary alcohols oxidize to ketones.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000010e",
+    "code": "AFNS-Q-270",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 270. Standard electrode potential of SHE is:",
+    "options": [
+      {
+        "id": "80000000-0000-010e-0000-000000000001",
+        "label": "A",
+        "text": "+1 V"
+      },
+      {
+        "id": "80000000-0000-010e-0000-000000000002",
+        "label": "B",
+        "text": "0 V"
+      },
+      {
+        "id": "80000000-0000-010e-0000-000000000003",
+        "label": "C",
+        "text": "-1 V"
+      },
+      {
+        "id": "80000000-0000-010e-0000-000000000004",
+        "label": "D",
+        "text": "2.3 V"
+      }
+    ],
+    "correctOptionId": "80000000-0000-010e-0000-000000000002",
+    "explanation": "The Standard Hydrogen Electrode is assigned a potential of 0 V.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000010f",
+    "code": "AFNS-Q-271",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 271. Which colligative property is related to vapor pressure lowering?",
+    "options": [
+      {
+        "id": "80000000-0000-010f-0000-000000000001",
+        "label": "A",
+        "text": "Osmotic pressure"
+      },
+      {
+        "id": "80000000-0000-010f-0000-000000000002",
+        "label": "B",
+        "text": "Relative lowering of vapor pressure"
+      },
+      {
+        "id": "80000000-0000-010f-0000-000000000003",
+        "label": "C",
+        "text": "Boiling point elevation"
+      },
+      {
+        "id": "80000000-0000-010f-0000-000000000004",
+        "label": "D",
+        "text": "Freezing point depression"
+      }
+    ],
+    "correctOptionId": "80000000-0000-010f-0000-000000000002",
+    "explanation": "It depends on the number of solute particles.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000110",
+    "code": "AFNS-Q-272",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 272. Aldol condensation occurs between:",
+    "options": [
+      {
+        "id": "80000000-0000-0110-0000-000000000001",
+        "label": "A",
+        "text": "Alkane and alkene"
+      },
+      {
+        "id": "80000000-0000-0110-0000-000000000002",
+        "label": "B",
+        "text": "Alcohol and ester"
+      },
+      {
+        "id": "80000000-0000-0110-0000-000000000003",
+        "label": "C",
+        "text": "Aldehyde/ketone with alpha-hydrogen"
+      },
+      {
+        "id": "80000000-0000-0110-0000-000000000004",
+        "label": "D",
+        "text": "Carboxylic acid and alcohol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0110-0000-000000000003",
+    "explanation": "An alpha-hydrogen is required for enolate formation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000111",
+    "code": "AFNS-Q-273",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 273. Which gases cause acid rain?",
+    "options": [
+      {
+        "id": "80000000-0000-0111-0000-000000000001",
+        "label": "A",
+        "text": "O2"
+      },
+      {
+        "id": "80000000-0000-0111-0000-000000000002",
+        "label": "B",
+        "text": "N2"
+      },
+      {
+        "id": "80000000-0000-0111-0000-000000000003",
+        "label": "C",
+        "text": "SO2 / NO2"
+      },
+      {
+        "id": "80000000-0000-0111-0000-000000000004",
+        "label": "D",
+        "text": "CO"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0111-0000-000000000003",
+    "explanation": "SO2 and nitrogen oxides react in the atmosphere to form acids that contribute to acid rain.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000112",
+    "code": "AFNS-Q-274",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 274. Which uranium isotope is used in nuclear reactors?",
+    "options": [
+      {
+        "id": "80000000-0000-0112-0000-000000000001",
+        "label": "A",
+        "text": "U-234"
+      },
+      {
+        "id": "80000000-0000-0112-0000-000000000002",
+        "label": "B",
+        "text": "U-235"
+      },
+      {
+        "id": "80000000-0000-0112-0000-000000000003",
+        "label": "C",
+        "text": "U-238"
+      },
+      {
+        "id": "80000000-0000-0112-0000-000000000004",
+        "label": "D",
+        "text": "U-239"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0112-0000-000000000002",
+    "explanation": "U-235 is a fissile isotope used as nuclear fuel.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000113",
+    "code": "AFNS-Q-275",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 275. What is the synonym of \"Expand\"?",
+    "options": [
+      {
+        "id": "80000000-0000-0113-0000-000000000001",
+        "label": "A",
+        "text": "Enlarge"
+      },
+      {
+        "id": "80000000-0000-0113-0000-000000000002",
+        "label": "B",
+        "text": "Reduce"
+      },
+      {
+        "id": "80000000-0000-0113-0000-000000000003",
+        "label": "C",
+        "text": "Narrow"
+      },
+      {
+        "id": "80000000-0000-0113-0000-000000000004",
+        "label": "D",
+        "text": "Decline"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0113-0000-000000000001",
+    "explanation": "Expand means to enlarge or increase.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000114",
+    "code": "AFNS-Q-276",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 276. What is the antonym of \"Hostile\"?",
+    "options": [
+      {
+        "id": "80000000-0000-0114-0000-000000000001",
+        "label": "A",
+        "text": "Aggressive"
+      },
+      {
+        "id": "80000000-0000-0114-0000-000000000002",
+        "label": "B",
+        "text": "Angry"
+      },
+      {
+        "id": "80000000-0000-0114-0000-000000000003",
+        "label": "C",
+        "text": "Friendly"
+      },
+      {
+        "id": "80000000-0000-0114-0000-000000000004",
+        "label": "D",
+        "text": "Rude"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0114-0000-000000000003",
+    "explanation": "Hostile means unfriendly, so its opposite is friendly.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000115",
+    "code": "AFNS-Q-277",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 277. One who can speak many languages is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0115-0000-000000000001",
+        "label": "A",
+        "text": "Translator"
+      },
+      {
+        "id": "80000000-0000-0115-0000-000000000002",
+        "label": "B",
+        "text": "Polyglot"
+      },
+      {
+        "id": "80000000-0000-0115-0000-000000000003",
+        "label": "C",
+        "text": "Linguist"
+      },
+      {
+        "id": "80000000-0000-0115-0000-000000000004",
+        "label": "D",
+        "text": "Interpreter"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0115-0000-000000000002",
+    "explanation": "A polyglot is a person who speaks many languages.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000116",
+    "code": "AFNS-Q-278",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 278. He is interested ____ science.",
+    "options": [
+      {
+        "id": "80000000-0000-0116-0000-000000000001",
+        "label": "A",
+        "text": "On"
+      },
+      {
+        "id": "80000000-0000-0116-0000-000000000002",
+        "label": "B",
+        "text": "With"
+      },
+      {
+        "id": "80000000-0000-0116-0000-000000000003",
+        "label": "C",
+        "text": "About"
+      },
+      {
+        "id": "80000000-0000-0116-0000-000000000004",
+        "label": "D",
+        "text": "In"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0116-0000-000000000004",
+    "explanation": "The correct expression is \"interested in.\"",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000117",
+    "code": "AFNS-Q-279",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 279. Choose the correct spelling:",
+    "options": [
+      {
+        "id": "80000000-0000-0117-0000-000000000001",
+        "label": "A",
+        "text": "Neccessary"
+      },
+      {
+        "id": "80000000-0000-0117-0000-000000000002",
+        "label": "B",
+        "text": "Nesesary"
+      },
+      {
+        "id": "80000000-0000-0117-0000-000000000003",
+        "label": "C",
+        "text": "Necessary"
+      },
+      {
+        "id": "80000000-0000-0117-0000-000000000004",
+        "label": "D",
+        "text": "Necesery"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0117-0000-000000000003",
+    "explanation": "\"Necessary\" is the correct spelling.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000118",
+    "code": "AFNS-Q-280",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 280. Words that imitate sounds are called:",
+    "options": [
+      {
+        "id": "80000000-0000-0118-0000-000000000001",
+        "label": "A",
+        "text": "Hyperbole"
+      },
+      {
+        "id": "80000000-0000-0118-0000-000000000002",
+        "label": "B",
+        "text": "Onomatopoeia"
+      },
+      {
+        "id": "80000000-0000-0118-0000-000000000003",
+        "label": "C",
+        "text": "Metaphor"
+      },
+      {
+        "id": "80000000-0000-0118-0000-000000000004",
+        "label": "D",
+        "text": "Alliteration"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0118-0000-000000000002",
+    "explanation": "Words such as \"buzz,\" \"hiss,\" and \"bang\" imitate sounds.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000119",
+    "code": "AFNS-Q-281",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 281. The SI unit of force is:",
+    "options": [
+      {
+        "id": "80000000-0000-0119-0000-000000000001",
+        "label": "A",
+        "text": "Joule"
+      },
+      {
+        "id": "80000000-0000-0119-0000-000000000002",
+        "label": "B",
+        "text": "Pascal"
+      },
+      {
+        "id": "80000000-0000-0119-0000-000000000003",
+        "label": "C",
+        "text": "Newton"
+      },
+      {
+        "id": "80000000-0000-0119-0000-000000000004",
+        "label": "D",
+        "text": "Watt"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0119-0000-000000000003",
+    "explanation": "Force = mass * acceleration, giving the unit kg*m/s^2 or Newton.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000011a",
+    "code": "AFNS-Q-282",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 282. Critical angle is related to:",
+    "options": [
+      {
+        "id": "80000000-0000-011a-0000-000000000001",
+        "label": "A",
+        "text": "Reflection"
+      },
+      {
+        "id": "80000000-0000-011a-0000-000000000002",
+        "label": "B",
+        "text": "Total internal reflection"
+      },
+      {
+        "id": "80000000-0000-011a-0000-000000000003",
+        "label": "C",
+        "text": "Diffraction"
+      },
+      {
+        "id": "80000000-0000-011a-0000-000000000004",
+        "label": "D",
+        "text": "Dispersion"
+      }
+    ],
+    "correctOptionId": "80000000-0000-011a-0000-000000000002",
+    "explanation": "At the critical angle, the refracted ray makes 90 degrees with the normal.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000011b",
+    "code": "AFNS-Q-283",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 283. Resistivity depends on:",
+    "options": [
+      {
+        "id": "80000000-0000-011b-0000-000000000001",
+        "label": "A",
+        "text": "Material and temperature"
+      },
+      {
+        "id": "80000000-0000-011b-0000-000000000002",
+        "label": "B",
+        "text": "Current"
+      },
+      {
+        "id": "80000000-0000-011b-0000-000000000003",
+        "label": "C",
+        "text": "Length only"
+      },
+      {
+        "id": "80000000-0000-011b-0000-000000000004",
+        "label": "D",
+        "text": "Voltage"
+      }
+    ],
+    "correctOptionId": "80000000-0000-011b-0000-000000000001",
+    "explanation": "Resistivity is a property of the material and changes with temperature.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000011c",
+    "code": "AFNS-Q-284",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 284. The electron was discovered by:",
+    "options": [
+      {
+        "id": "80000000-0000-011c-0000-000000000001",
+        "label": "A",
+        "text": "Rutherford"
+      },
+      {
+        "id": "80000000-0000-011c-0000-000000000002",
+        "label": "B",
+        "text": "Bohr"
+      },
+      {
+        "id": "80000000-0000-011c-0000-000000000003",
+        "label": "C",
+        "text": "J.J. Thomson"
+      },
+      {
+        "id": "80000000-0000-011c-0000-000000000004",
+        "label": "D",
+        "text": "Chadwick"
+      }
+    ],
+    "correctOptionId": "80000000-0000-011c-0000-000000000003",
+    "explanation": "Thomson discovered the electron through cathode-ray experiments.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000011d",
+    "code": "AFNS-Q-285",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 285. The first law of thermodynamics is based on:",
+    "options": [
+      {
+        "id": "80000000-0000-011d-0000-000000000001",
+        "label": "A",
+        "text": "Entropy always increases"
+      },
+      {
+        "id": "80000000-0000-011d-0000-000000000002",
+        "label": "B",
+        "text": "Heat = Work"
+      },
+      {
+        "id": "80000000-0000-011d-0000-000000000003",
+        "label": "C",
+        "text": "Conservation of energy"
+      },
+      {
+        "id": "80000000-0000-011d-0000-000000000004",
+        "label": "D",
+        "text": "Pressure is constant"
+      }
+    ],
+    "correctOptionId": "80000000-0000-011d-0000-000000000003",
+    "explanation": "Energy cannot be created or destroyed, only transformed.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000011e",
+    "code": "AFNS-Q-286",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 286. What is the kinetic energy of a 2 kg mass moving at 10 m/s?",
+    "options": [
+      {
+        "id": "80000000-0000-011e-0000-000000000001",
+        "label": "A",
+        "text": "50 J"
+      },
+      {
+        "id": "80000000-0000-011e-0000-000000000002",
+        "label": "B",
+        "text": "100 J"
+      },
+      {
+        "id": "80000000-0000-011e-0000-000000000003",
+        "label": "C",
+        "text": "200 J"
+      },
+      {
+        "id": "80000000-0000-011e-0000-000000000004",
+        "label": "D",
+        "text": "20 J"
+      }
+    ],
+    "correctOptionId": "80000000-0000-011e-0000-000000000002",
+    "explanation": "KE = 0.5mv^2 = 0.5 * 2 * 10^2 = 100 J.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000011f",
+    "code": "AFNS-Q-287",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 287. The lens formula is based on:",
+    "options": [
+      {
+        "id": "80000000-0000-011f-0000-000000000001",
+        "label": "A",
+        "text": "Pressure and volume"
+      },
+      {
+        "id": "80000000-0000-011f-0000-000000000002",
+        "label": "B",
+        "text": "Focal length and distances"
+      },
+      {
+        "id": "80000000-0000-011f-0000-000000000003",
+        "label": "C",
+        "text": "KE and PE"
+      },
+      {
+        "id": "80000000-0000-011f-0000-000000000004",
+        "label": "D",
+        "text": "Angle and height"
+      }
+    ],
+    "correctOptionId": "80000000-0000-011f-0000-000000000002",
+    "explanation": "Lens formula is 1/f = 1/v - 1/u.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000120",
+    "code": "AFNS-Q-288",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 288. Which organelle has its own DNA?",
+    "options": [
+      {
+        "id": "80000000-0000-0120-0000-000000000001",
+        "label": "A",
+        "text": "Ribosome"
+      },
+      {
+        "id": "80000000-0000-0120-0000-000000000002",
+        "label": "B",
+        "text": "Mitochondria"
+      },
+      {
+        "id": "80000000-0000-0120-0000-000000000003",
+        "label": "C",
+        "text": "Lysosome"
+      },
+      {
+        "id": "80000000-0000-0120-0000-000000000004",
+        "label": "D",
+        "text": "Endoplasmic reticulum"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0120-0000-000000000002",
+    "explanation": "Mitochondria contain their own DNA; chloroplasts also have DNA.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000121",
+    "code": "AFNS-Q-289",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 289. The site of RBC production is:",
+    "options": [
+      {
+        "id": "80000000-0000-0121-0000-000000000001",
+        "label": "A",
+        "text": "Liver"
+      },
+      {
+        "id": "80000000-0000-0121-0000-000000000002",
+        "label": "B",
+        "text": "Bone marrow"
+      },
+      {
+        "id": "80000000-0000-0121-0000-000000000003",
+        "label": "C",
+        "text": "Kidney"
+      },
+      {
+        "id": "80000000-0000-0121-0000-000000000004",
+        "label": "D",
+        "text": "Spleen"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0121-0000-000000000002",
+    "explanation": "Red blood cells are produced in the bone marrow.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000122",
+    "code": "AFNS-Q-290",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 290. How many chromosomes are present in a human gamete?",
+    "options": [
+      {
+        "id": "80000000-0000-0122-0000-000000000001",
+        "label": "A",
+        "text": "46"
+      },
+      {
+        "id": "80000000-0000-0122-0000-000000000002",
+        "label": "B",
+        "text": "44"
+      },
+      {
+        "id": "80000000-0000-0122-0000-000000000003",
+        "label": "C",
+        "text": "23"
+      },
+      {
+        "id": "80000000-0000-0122-0000-000000000004",
+        "label": "D",
+        "text": "24"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0122-0000-000000000003",
+    "explanation": "Human gametes are haploid and contain 23 chromosomes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000123",
+    "code": "AFNS-Q-291",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 291. Which enzyme acts on starch?",
+    "options": [
+      {
+        "id": "80000000-0000-0123-0000-000000000001",
+        "label": "A",
+        "text": "Lipase"
+      },
+      {
+        "id": "80000000-0000-0123-0000-000000000002",
+        "label": "B",
+        "text": "Amylase"
+      },
+      {
+        "id": "80000000-0000-0123-0000-000000000003",
+        "label": "C",
+        "text": "Protease"
+      },
+      {
+        "id": "80000000-0000-0123-0000-000000000004",
+        "label": "D",
+        "text": "Cellulase"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0123-0000-000000000002",
+    "explanation": "Amylase breaks down starch into simpler sugars.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000124",
+    "code": "AFNS-Q-292",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 292. Darwin's theory is based on:",
+    "options": [
+      {
+        "id": "80000000-0000-0124-0000-000000000001",
+        "label": "A",
+        "text": "Artificial selection"
+      },
+      {
+        "id": "80000000-0000-0124-0000-000000000002",
+        "label": "B",
+        "text": "Natural selection"
+      },
+      {
+        "id": "80000000-0000-0124-0000-000000000003",
+        "label": "C",
+        "text": "Mutation"
+      },
+      {
+        "id": "80000000-0000-0124-0000-000000000004",
+        "label": "D",
+        "text": "Hybridization"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0124-0000-000000000002",
+    "explanation": "Darwin explained evolution through natural selection.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000125",
+    "code": "AFNS-Q-293",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 293. Food is transported in plants by:",
+    "options": [
+      {
+        "id": "80000000-0000-0125-0000-000000000001",
+        "label": "A",
+        "text": "Xylem"
+      },
+      {
+        "id": "80000000-0000-0125-0000-000000000002",
+        "label": "B",
+        "text": "Phloem"
+      },
+      {
+        "id": "80000000-0000-0125-0000-000000000003",
+        "label": "C",
+        "text": "Cambium"
+      },
+      {
+        "id": "80000000-0000-0125-0000-000000000004",
+        "label": "D",
+        "text": "Cortex"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0125-0000-000000000002",
+    "explanation": "Phloem transports sugars/food throughout the plant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000126",
+    "code": "AFNS-Q-294",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 294. HIV causes:",
+    "options": [
+      {
+        "id": "80000000-0000-0126-0000-000000000001",
+        "label": "A",
+        "text": "TB"
+      },
+      {
+        "id": "80000000-0000-0126-0000-000000000002",
+        "label": "B",
+        "text": "AIDS"
+      },
+      {
+        "id": "80000000-0000-0126-0000-000000000003",
+        "label": "C",
+        "text": "Malaria"
+      },
+      {
+        "id": "80000000-0000-0126-0000-000000000004",
+        "label": "D",
+        "text": "Influenza"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0126-0000-000000000002",
+    "explanation": "HIV infection can lead to Acquired Immunodeficiency Syndrome.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000127",
+    "code": "AFNS-Q-295",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 295. Xylem is a type of:",
+    "options": [
+      {
+        "id": "80000000-0000-0127-0000-000000000001",
+        "label": "A",
+        "text": "Dermal tissue"
+      },
+      {
+        "id": "80000000-0000-0127-0000-000000000002",
+        "label": "B",
+        "text": "Vascular tissue"
+      },
+      {
+        "id": "80000000-0000-0127-0000-000000000003",
+        "label": "C",
+        "text": "Ground tissue"
+      },
+      {
+        "id": "80000000-0000-0127-0000-000000000004",
+        "label": "D",
+        "text": "Epidermal tissue"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0127-0000-000000000002",
+    "explanation": "Xylem is part of the vascular tissue system.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000128",
+    "code": "AFNS-Q-296",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 296. Find the next term: 4, 8, 16, 32, ?",
+    "options": [
+      {
+        "id": "80000000-0000-0128-0000-000000000001",
+        "label": "A",
+        "text": "48"
+      },
+      {
+        "id": "80000000-0000-0128-0000-000000000002",
+        "label": "B",
+        "text": "64"
+      },
+      {
+        "id": "80000000-0000-0128-0000-000000000003",
+        "label": "C",
+        "text": "128"
+      },
+      {
+        "id": "80000000-0000-0128-0000-000000000004",
+        "label": "D",
+        "text": "96"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0128-0000-000000000002",
+    "explanation": "Each term doubles, so the term after 32 is 64.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000129",
+    "code": "AFNS-Q-297",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 297. What is 35% of 240?",
+    "options": [
+      {
+        "id": "80000000-0000-0129-0000-000000000001",
+        "label": "A",
+        "text": "60"
+      },
+      {
+        "id": "80000000-0000-0129-0000-000000000002",
+        "label": "B",
+        "text": "70"
+      },
+      {
+        "id": "80000000-0000-0129-0000-000000000003",
+        "label": "C",
+        "text": "84"
+      },
+      {
+        "id": "80000000-0000-0129-0000-000000000004",
+        "label": "D",
+        "text": "96"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0129-0000-000000000003",
+    "explanation": "35% of 240 is 0.35*240 = 84.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000012a",
+    "code": "AFNS-Q-298",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 298. Five men complete a work in 10 days. Ten men will complete it in:",
+    "options": [
+      {
+        "id": "80000000-0000-012a-0000-000000000001",
+        "label": "A",
+        "text": "2 days"
+      },
+      {
+        "id": "80000000-0000-012a-0000-000000000002",
+        "label": "B",
+        "text": "5 days"
+      },
+      {
+        "id": "80000000-0000-012a-0000-000000000003",
+        "label": "C",
+        "text": "10 days"
+      },
+      {
+        "id": "80000000-0000-012a-0000-000000000004",
+        "label": "D",
+        "text": "15 days"
+      }
+    ],
+    "correctOptionId": "80000000-0000-012a-0000-000000000002",
+    "explanation": "Doubling the workers halves the required time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000012b",
+    "code": "AFNS-Q-299",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 299. A father is 3 times as old as his son. If the son is 12, the father is:",
+    "options": [
+      {
+        "id": "80000000-0000-012b-0000-000000000001",
+        "label": "A",
+        "text": "30"
+      },
+      {
+        "id": "80000000-0000-012b-0000-000000000002",
+        "label": "B",
+        "text": "33"
+      },
+      {
+        "id": "80000000-0000-012b-0000-000000000003",
+        "label": "C",
+        "text": "36"
+      },
+      {
+        "id": "80000000-0000-012b-0000-000000000004",
+        "label": "D",
+        "text": "40"
+      }
+    ],
+    "correctOptionId": "80000000-0000-012b-0000-000000000003",
+    "explanation": "The father's age is 3*12 = 36 years.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000012c",
+    "code": "AFNS-Q-300",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 300. Find the odd one out: Square, Circle, Rectangle, Banana",
+    "options": [
+      {
+        "id": "80000000-0000-012c-0000-000000000001",
+        "label": "A",
+        "text": "Square"
+      },
+      {
+        "id": "80000000-0000-012c-0000-000000000002",
+        "label": "B",
+        "text": "Circle"
+      },
+      {
+        "id": "80000000-0000-012c-0000-000000000003",
+        "label": "C",
+        "text": "Rectangle"
+      },
+      {
+        "id": "80000000-0000-012c-0000-000000000004",
+        "label": "D",
+        "text": "Banana"
+      }
+    ],
+    "correctOptionId": "80000000-0000-012c-0000-000000000004",
+    "explanation": "The first three are geometrical shapes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000012d",
+    "code": "AFNS-Q-301",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 301. Find the next term: A1, C3, E5, G7, ?",
+    "options": [
+      {
+        "id": "80000000-0000-012d-0000-000000000001",
+        "label": "A",
+        "text": "I9"
+      },
+      {
+        "id": "80000000-0000-012d-0000-000000000002",
+        "label": "B",
+        "text": "J8"
+      },
+      {
+        "id": "80000000-0000-012d-0000-000000000003",
+        "label": "C",
+        "text": "H10"
+      },
+      {
+        "id": "80000000-0000-012d-0000-000000000004",
+        "label": "D",
+        "text": "K11"
+      }
+    ],
+    "correctOptionId": "80000000-0000-012d-0000-000000000001",
+    "explanation": "Letters advance by two places and numbers by two, so G7 is followed by I9.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000012e",
+    "code": "AFNS-Q-302",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 302. If CAT = 24, then DOG = ?",
+    "options": [
+      {
+        "id": "80000000-0000-012e-0000-000000000001",
+        "label": "A",
+        "text": "25"
+      },
+      {
+        "id": "80000000-0000-012e-0000-000000000002",
+        "label": "B",
+        "text": "26"
+      },
+      {
+        "id": "80000000-0000-012e-0000-000000000003",
+        "label": "C",
+        "text": "28"
+      },
+      {
+        "id": "80000000-0000-012e-0000-000000000004",
+        "label": "D",
+        "text": "30"
+      }
+    ],
+    "correctOptionId": "80000000-0000-012e-0000-000000000002",
+    "explanation": "Using alphabet positions, D + O + G = 4 + 15 + 7 = 26.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000012f",
+    "code": "AFNS-Q-303",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 303. All doctors are educated. Ali is a doctor. Therefore Ali is:",
+    "options": [
+      {
+        "id": "80000000-0000-012f-0000-000000000001",
+        "label": "A",
+        "text": "Uneducated"
+      },
+      {
+        "id": "80000000-0000-012f-0000-000000000002",
+        "label": "B",
+        "text": "Teacher"
+      },
+      {
+        "id": "80000000-0000-012f-0000-000000000003",
+        "label": "C",
+        "text": "Educated"
+      },
+      {
+        "id": "80000000-0000-012f-0000-000000000004",
+        "label": "D",
+        "text": "Patient"
+      }
+    ],
+    "correctOptionId": "80000000-0000-012f-0000-000000000003",
+    "explanation": "Ali belongs to the group described as educated.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000130",
+    "code": "AFNS-Q-304",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 304. Which travels at the speed of light?",
+    "options": [
+      {
+        "id": "80000000-0000-0130-0000-000000000001",
+        "label": "A",
+        "text": "Electrons"
+      },
+      {
+        "id": "80000000-0000-0130-0000-000000000002",
+        "label": "B",
+        "text": "Protons"
+      },
+      {
+        "id": "80000000-0000-0130-0000-000000000003",
+        "label": "C",
+        "text": "Photons"
+      },
+      {
+        "id": "80000000-0000-0130-0000-000000000004",
+        "label": "D",
+        "text": "Neutrons"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0130-0000-000000000003",
+    "explanation": "Photons are particles of electromagnetic radiation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000131",
+    "code": "AFNS-Q-305",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 305. Maximum height of a projectile is achieved at an angle of:",
+    "options": [
+      {
+        "id": "80000000-0000-0131-0000-000000000001",
+        "label": "A",
+        "text": "0 degrees"
+      },
+      {
+        "id": "80000000-0000-0131-0000-000000000002",
+        "label": "B",
+        "text": "30 degrees"
+      },
+      {
+        "id": "80000000-0000-0131-0000-000000000003",
+        "label": "C",
+        "text": "45 degrees"
+      },
+      {
+        "id": "80000000-0000-0131-0000-000000000004",
+        "label": "D",
+        "text": "90 degrees"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0131-0000-000000000004",
+    "explanation": "A vertical projectile reaches maximum possible height.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000132",
+    "code": "AFNS-Q-306",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 306. For a small sphere falling in a viscous fluid under Stokes-law conditions, doubling its radius makes terminal speed:",
+    "options": [
+      {
+        "id": "80000000-0000-0132-0000-000000000001",
+        "label": "A",
+        "text": "2 times"
+      },
+      {
+        "id": "80000000-0000-0132-0000-000000000002",
+        "label": "B",
+        "text": "3 times"
+      },
+      {
+        "id": "80000000-0000-0132-0000-000000000003",
+        "label": "C",
+        "text": "4 times"
+      },
+      {
+        "id": "80000000-0000-0132-0000-000000000004",
+        "label": "D",
+        "text": "8 times"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0132-0000-000000000003",
+    "explanation": "Under Stokes-law conditions, terminal speed is proportional to radius squared, so doubling the radius makes it four times larger.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000133",
+    "code": "AFNS-Q-307",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 307. The color of V^3+ (vanadium +3) is:",
+    "options": [
+      {
+        "id": "80000000-0000-0133-0000-000000000001",
+        "label": "A",
+        "text": "Blue"
+      },
+      {
+        "id": "80000000-0000-0133-0000-000000000002",
+        "label": "B",
+        "text": "Yellow"
+      },
+      {
+        "id": "80000000-0000-0133-0000-000000000003",
+        "label": "C",
+        "text": "Green"
+      },
+      {
+        "id": "80000000-0000-0133-0000-000000000004",
+        "label": "D",
+        "text": "Violet"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0133-0000-000000000003",
+    "explanation": "The aqueous V3+ ion typically gives a green solution.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000134",
+    "code": "AFNS-Q-308",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 308. Which of the following is not a standard industrial application of boric acid?",
+    "options": [
+      {
+        "id": "80000000-0000-0134-0000-000000000001",
+        "label": "A",
+        "text": "Borosilicate glass manufacture"
+      },
+      {
+        "id": "80000000-0000-0134-0000-000000000002",
+        "label": "B",
+        "text": "Ceramic glazes"
+      },
+      {
+        "id": "80000000-0000-0134-0000-000000000003",
+        "label": "C",
+        "text": "Flame retardants"
+      },
+      {
+        "id": "80000000-0000-0134-0000-000000000004",
+        "label": "D",
+        "text": "Carbonation of soft drinks"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0134-0000-000000000004",
+    "explanation": "Soft drinks are carbonated with carbon dioxide, whereas boric acid is used in glass, ceramics and flame-retardant formulations.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000135",
+    "code": "AFNS-Q-309",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 309. Cobalt belongs to the:",
+    "options": [
+      {
+        "id": "80000000-0000-0135-0000-000000000001",
+        "label": "A",
+        "text": "s-block"
+      },
+      {
+        "id": "80000000-0000-0135-0000-000000000002",
+        "label": "B",
+        "text": "p-block"
+      },
+      {
+        "id": "80000000-0000-0135-0000-000000000003",
+        "label": "C",
+        "text": "d-block"
+      },
+      {
+        "id": "80000000-0000-0135-0000-000000000004",
+        "label": "D",
+        "text": "f-block"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0135-0000-000000000003",
+    "explanation": "Cobalt is a transition element in the d-block.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000136",
+    "code": "AFNS-Q-310",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 310. Inhaling fungal spores from soil contaminated with bird or bat droppings can cause:",
+    "options": [
+      {
+        "id": "80000000-0000-0136-0000-000000000001",
+        "label": "A",
+        "text": "Malaria"
+      },
+      {
+        "id": "80000000-0000-0136-0000-000000000002",
+        "label": "B",
+        "text": "Histoplasmosis"
+      },
+      {
+        "id": "80000000-0000-0136-0000-000000000003",
+        "label": "C",
+        "text": "Cholera"
+      },
+      {
+        "id": "80000000-0000-0136-0000-000000000004",
+        "label": "D",
+        "text": "TB"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0136-0000-000000000002",
+    "explanation": "Histoplasma is associated with bird and bat droppings.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000137",
+    "code": "AFNS-Q-311",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 311. Which amino acid has H as its side chain?",
+    "options": [
+      {
+        "id": "80000000-0000-0137-0000-000000000001",
+        "label": "A",
+        "text": "Alanine"
+      },
+      {
+        "id": "80000000-0000-0137-0000-000000000002",
+        "label": "B",
+        "text": "Glycine"
+      },
+      {
+        "id": "80000000-0000-0137-0000-000000000003",
+        "label": "C",
+        "text": "Valine"
+      },
+      {
+        "id": "80000000-0000-0137-0000-000000000004",
+        "label": "D",
+        "text": "Proline"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0137-0000-000000000002",
+    "explanation": "Glycine has a hydrogen atom as its side chain.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000138",
+    "code": "AFNS-Q-312",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 312. The optimum pH of pepsin is approximately:",
+    "options": [
+      {
+        "id": "80000000-0000-0138-0000-000000000001",
+        "label": "A",
+        "text": "1"
+      },
+      {
+        "id": "80000000-0000-0138-0000-000000000002",
+        "label": "B",
+        "text": "2"
+      },
+      {
+        "id": "80000000-0000-0138-0000-000000000003",
+        "label": "C",
+        "text": "6"
+      },
+      {
+        "id": "80000000-0000-0138-0000-000000000004",
+        "label": "D",
+        "text": "7"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0138-0000-000000000002",
+    "explanation": "Pepsin works best in the acidic environment of the stomach.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000139",
+    "code": "AFNS-Q-313",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 313. The optimum pH of salivary amylase is:",
+    "options": [
+      {
+        "id": "80000000-0000-0139-0000-000000000001",
+        "label": "A",
+        "text": "2"
+      },
+      {
+        "id": "80000000-0000-0139-0000-000000000002",
+        "label": "B",
+        "text": "5"
+      },
+      {
+        "id": "80000000-0000-0139-0000-000000000003",
+        "label": "C",
+        "text": "6-7"
+      },
+      {
+        "id": "80000000-0000-0139-0000-000000000004",
+        "label": "D",
+        "text": "9"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0139-0000-000000000003",
+    "explanation": "Salivary amylase works best near neutral pH.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000013a",
+    "code": "AFNS-Q-314",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 314. How much CO2 is removed during glycolysis?",
+    "options": [
+      {
+        "id": "80000000-0000-013a-0000-000000000001",
+        "label": "A",
+        "text": "0"
+      },
+      {
+        "id": "80000000-0000-013a-0000-000000000002",
+        "label": "B",
+        "text": "1"
+      },
+      {
+        "id": "80000000-0000-013a-0000-000000000003",
+        "label": "C",
+        "text": "2"
+      },
+      {
+        "id": "80000000-0000-013a-0000-000000000004",
+        "label": "D",
+        "text": "4"
+      }
+    ],
+    "correctOptionId": "80000000-0000-013a-0000-000000000001",
+    "explanation": "Glycolysis converts glucose to pyruvate without releasing CO2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000013b",
+    "code": "AFNS-Q-315",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 315. Which cells in the stomach are responsible for secretion?",
+    "options": [
+      {
+        "id": "80000000-0000-013b-0000-000000000001",
+        "label": "A",
+        "text": "Nerve cells"
+      },
+      {
+        "id": "80000000-0000-013b-0000-000000000002",
+        "label": "B",
+        "text": "Epithelial cells"
+      },
+      {
+        "id": "80000000-0000-013b-0000-000000000003",
+        "label": "C",
+        "text": "Muscle cells"
+      },
+      {
+        "id": "80000000-0000-013b-0000-000000000004",
+        "label": "D",
+        "text": "RBCs"
+      }
+    ],
+    "correctOptionId": "80000000-0000-013b-0000-000000000002",
+    "explanation": "Gastric epithelial cells contribute to secretion in the stomach lining.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000013c",
+    "code": "AFNS-Q-316",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 316. Photosystem I absorbs light at:",
+    "options": [
+      {
+        "id": "80000000-0000-013c-0000-000000000001",
+        "label": "A",
+        "text": "400 nm"
+      },
+      {
+        "id": "80000000-0000-013c-0000-000000000002",
+        "label": "B",
+        "text": "500 nm"
+      },
+      {
+        "id": "80000000-0000-013c-0000-000000000003",
+        "label": "C",
+        "text": "680 nm"
+      },
+      {
+        "id": "80000000-0000-013c-0000-000000000004",
+        "label": "D",
+        "text": "700 nm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-013c-0000-000000000004",
+    "explanation": "Photosystem I has the reaction center P700.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000013d",
+    "code": "AFNS-Q-317",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 317. The master gland of the body is:",
+    "options": [
+      {
+        "id": "80000000-0000-013d-0000-000000000001",
+        "label": "A",
+        "text": "Thyroid"
+      },
+      {
+        "id": "80000000-0000-013d-0000-000000000002",
+        "label": "B",
+        "text": "Pituitary"
+      },
+      {
+        "id": "80000000-0000-013d-0000-000000000003",
+        "label": "C",
+        "text": "Adrenal"
+      },
+      {
+        "id": "80000000-0000-013d-0000-000000000004",
+        "label": "D",
+        "text": "Pineal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-013d-0000-000000000002",
+    "explanation": "The pituitary regulates several other endocrine glands.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000013e",
+    "code": "AFNS-Q-318",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 318. Louis Pasteur developed vaccines for:",
+    "options": [
+      {
+        "id": "80000000-0000-013e-0000-000000000001",
+        "label": "A",
+        "text": "Malaria"
+      },
+      {
+        "id": "80000000-0000-013e-0000-000000000002",
+        "label": "B",
+        "text": "Anthrax, rabies and chicken cholera"
+      },
+      {
+        "id": "80000000-0000-013e-0000-000000000003",
+        "label": "C",
+        "text": "Tuberculosis and polio"
+      },
+      {
+        "id": "80000000-0000-013e-0000-000000000004",
+        "label": "D",
+        "text": "Smallpox and measles"
+      }
+    ],
+    "correctOptionId": "80000000-0000-013e-0000-000000000002",
+    "explanation": "Pasteur developed vaccines against chicken cholera, anthrax and rabies; chicken cholera differs from human cholera.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000013f",
+    "code": "AFNS-Q-319",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 319. In DNA replication, which enzyme unzips the double helix?",
+    "options": [
+      {
+        "id": "80000000-0000-013f-0000-000000000001",
+        "label": "A",
+        "text": "Ligase"
+      },
+      {
+        "id": "80000000-0000-013f-0000-000000000002",
+        "label": "B",
+        "text": "Helicase"
+      },
+      {
+        "id": "80000000-0000-013f-0000-000000000003",
+        "label": "C",
+        "text": "Polymerase"
+      },
+      {
+        "id": "80000000-0000-013f-0000-000000000004",
+        "label": "D",
+        "text": "Gyrase"
+      }
+    ],
+    "correctOptionId": "80000000-0000-013f-0000-000000000002",
+    "explanation": "During DNA replication, helicase is the enzyme that breaks hydrogen bonds between the DNA strands, unwinding the double helix.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000140",
+    "code": "AFNS-Q-320",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 320. Which phylum of Kingdom Animalia has a water vascular system?",
+    "options": [
+      {
+        "id": "80000000-0000-0140-0000-000000000001",
+        "label": "A",
+        "text": "Arthropoda"
+      },
+      {
+        "id": "80000000-0000-0140-0000-000000000002",
+        "label": "B",
+        "text": "Mollusca"
+      },
+      {
+        "id": "80000000-0000-0140-0000-000000000003",
+        "label": "C",
+        "text": "Echinodermata"
+      },
+      {
+        "id": "80000000-0000-0140-0000-000000000004",
+        "label": "D",
+        "text": "Annelida"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0140-0000-000000000003",
+    "explanation": "The water vascular system is a characteristic feature of echinoderms, such as starfish.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000141",
+    "code": "AFNS-Q-321",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 321. Which plant hormone classically promotes elongation of cells in young shoots?",
+    "options": [
+      {
+        "id": "80000000-0000-0141-0000-000000000001",
+        "label": "A",
+        "text": "Cytokinin"
+      },
+      {
+        "id": "80000000-0000-0141-0000-000000000002",
+        "label": "B",
+        "text": "Auxin"
+      },
+      {
+        "id": "80000000-0000-0141-0000-000000000003",
+        "label": "C",
+        "text": "Abscisic acid"
+      },
+      {
+        "id": "80000000-0000-0141-0000-000000000004",
+        "label": "D",
+        "text": "Ethylene"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0141-0000-000000000002",
+    "explanation": "Auxins promote cell elongation, phototropism, and root growth.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000142",
+    "code": "AFNS-Q-322",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 322. Hemoglobin is responsible for transporting:",
+    "options": [
+      {
+        "id": "80000000-0000-0142-0000-000000000001",
+        "label": "A",
+        "text": "Carbon dioxide"
+      },
+      {
+        "id": "80000000-0000-0142-0000-000000000002",
+        "label": "B",
+        "text": "Oxygen"
+      },
+      {
+        "id": "80000000-0000-0142-0000-000000000003",
+        "label": "C",
+        "text": "Nutrients"
+      },
+      {
+        "id": "80000000-0000-0142-0000-000000000004",
+        "label": "D",
+        "text": "Hormones"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0142-0000-000000000002",
+    "explanation": "Hemoglobin in red blood cells binds with oxygen and carries it throughout the body.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000143",
+    "code": "AFNS-Q-323",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 323. The bond linking amino acids together in proteins is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0143-0000-000000000001",
+        "label": "A",
+        "text": "Ionic bond"
+      },
+      {
+        "id": "80000000-0000-0143-0000-000000000002",
+        "label": "B",
+        "text": "Hydrogen bond"
+      },
+      {
+        "id": "80000000-0000-0143-0000-000000000003",
+        "label": "C",
+        "text": "Peptide bond"
+      },
+      {
+        "id": "80000000-0000-0143-0000-000000000004",
+        "label": "D",
+        "text": "Disulfide bond"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0143-0000-000000000003",
+    "explanation": "A peptide bond forms between the amino group of one amino acid and the carboxyl group of another.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000144",
+    "code": "AFNS-Q-324",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 324. Which alcohol reacts immediately with Lucas reagent?",
+    "options": [
+      {
+        "id": "80000000-0000-0144-0000-000000000001",
+        "label": "A",
+        "text": "Primary alcohol"
+      },
+      {
+        "id": "80000000-0000-0144-0000-000000000002",
+        "label": "B",
+        "text": "Secondary alcohol"
+      },
+      {
+        "id": "80000000-0000-0144-0000-000000000003",
+        "label": "C",
+        "text": "Tertiary alcohol"
+      },
+      {
+        "id": "80000000-0000-0144-0000-000000000004",
+        "label": "D",
+        "text": "None"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0144-0000-000000000003",
+    "explanation": "Lucas reagent reacts instantly with tertiary alcohols, slowly with secondary, and very slowly with primary alcohols.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000145",
+    "code": "AFNS-Q-325",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 325. The hydrate is maximum for:",
+    "options": [
+      {
+        "id": "80000000-0000-0145-0000-000000000001",
+        "label": "A",
+        "text": "Acetone"
+      },
+      {
+        "id": "80000000-0000-0145-0000-000000000002",
+        "label": "B",
+        "text": "Acetaldehyde"
+      },
+      {
+        "id": "80000000-0000-0145-0000-000000000003",
+        "label": "C",
+        "text": "Formaldehyde"
+      },
+      {
+        "id": "80000000-0000-0145-0000-000000000004",
+        "label": "D",
+        "text": "Methanol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0145-0000-000000000003",
+    "explanation": "Formaldehyde has the highest tendency to form hydrates due to its small size and high reactivity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000146",
+    "code": "AFNS-Q-326",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 326. Hybridization of the central carbon in ethene (CH2=CH2) is:",
+    "options": [
+      {
+        "id": "80000000-0000-0146-0000-000000000001",
+        "label": "A",
+        "text": "sp"
+      },
+      {
+        "id": "80000000-0000-0146-0000-000000000002",
+        "label": "B",
+        "text": "sp^2"
+      },
+      {
+        "id": "80000000-0000-0146-0000-000000000003",
+        "label": "C",
+        "text": "sp^3"
+      },
+      {
+        "id": "80000000-0000-0146-0000-000000000004",
+        "label": "D",
+        "text": "dsp^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0146-0000-000000000002",
+    "explanation": "In ethene, each carbon forms three sigma bonds and one pi bond, so the hybridization is sp^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000147",
+    "code": "AFNS-Q-327",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 327. Which substance is soft and has weak intermolecular forces?",
+    "options": [
+      {
+        "id": "80000000-0000-0147-0000-000000000001",
+        "label": "A",
+        "text": "H2O"
+      },
+      {
+        "id": "80000000-0000-0147-0000-000000000002",
+        "label": "B",
+        "text": "I2"
+      },
+      {
+        "id": "80000000-0000-0147-0000-000000000003",
+        "label": "C",
+        "text": "Graphite"
+      },
+      {
+        "id": "80000000-0000-0147-0000-000000000004",
+        "label": "D",
+        "text": "Sugar"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0147-0000-000000000002",
+    "explanation": "Iodine (I2) is a molecular solid held together by weak van der Waals forces, making it soft.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000148",
+    "code": "AFNS-Q-328",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 328. A body of mass 10 kg moving at 5 m/s has kinetic energy:",
+    "options": [
+      {
+        "id": "80000000-0000-0148-0000-000000000001",
+        "label": "A",
+        "text": "50 J"
+      },
+      {
+        "id": "80000000-0000-0148-0000-000000000002",
+        "label": "B",
+        "text": "100 J"
+      },
+      {
+        "id": "80000000-0000-0148-0000-000000000003",
+        "label": "C",
+        "text": "125 J"
+      },
+      {
+        "id": "80000000-0000-0148-0000-000000000004",
+        "label": "D",
+        "text": "150 J"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0148-0000-000000000003",
+    "explanation": "Kinetic energy is 0.5*m*v^2 = 0.5*10*25 = 125 J.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000149",
+    "code": "AFNS-Q-329",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 329. A coil of 500 turns, area 1 m^2, carries a 2 A current. Its magnetic dipole moment is:",
+    "options": [
+      {
+        "id": "80000000-0000-0149-0000-000000000001",
+        "label": "A",
+        "text": "250 Am^2"
+      },
+      {
+        "id": "80000000-0000-0149-0000-000000000002",
+        "label": "B",
+        "text": "500 Am^2"
+      },
+      {
+        "id": "80000000-0000-0149-0000-000000000003",
+        "label": "C",
+        "text": "750 Am^2"
+      },
+      {
+        "id": "80000000-0000-0149-0000-000000000004",
+        "label": "D",
+        "text": "1000 Am^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0149-0000-000000000004",
+    "explanation": "Magnetic moment is N*I*A = 500*2*1 = 1000 A*m^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000014a",
+    "code": "AFNS-Q-330",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 330. If the frequency of light doubles, the energy of a photon:",
+    "options": [
+      {
+        "id": "80000000-0000-014a-0000-000000000001",
+        "label": "A",
+        "text": "Doubles"
+      },
+      {
+        "id": "80000000-0000-014a-0000-000000000002",
+        "label": "B",
+        "text": "Halves"
+      },
+      {
+        "id": "80000000-0000-014a-0000-000000000003",
+        "label": "C",
+        "text": "Remains the same"
+      },
+      {
+        "id": "80000000-0000-014a-0000-000000000004",
+        "label": "D",
+        "text": "Becomes zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-014a-0000-000000000001",
+    "explanation": "Energy of a photon, E = h * f. If frequency (f) doubles, energy also doubles.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000014b",
+    "code": "AFNS-Q-331",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 331. Time period of a simple pendulum of length 1 m is approximately:",
+    "options": [
+      {
+        "id": "80000000-0000-014b-0000-000000000001",
+        "label": "A",
+        "text": "1 second"
+      },
+      {
+        "id": "80000000-0000-014b-0000-000000000002",
+        "label": "B",
+        "text": "2 seconds"
+      },
+      {
+        "id": "80000000-0000-014b-0000-000000000003",
+        "label": "C",
+        "text": "3 seconds"
+      },
+      {
+        "id": "80000000-0000-014b-0000-000000000004",
+        "label": "D",
+        "text": "4 seconds"
+      }
+    ],
+    "correctOptionId": "80000000-0000-014b-0000-000000000002",
+    "explanation": "T = 2*pi*sqrt(1/9.8), approximately 2 s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000014c",
+    "code": "AFNS-Q-332",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 332. In Young's double-slit experiment, fringe width increases if:",
+    "options": [
+      {
+        "id": "80000000-0000-014c-0000-000000000001",
+        "label": "A",
+        "text": "Wavelength decreases"
+      },
+      {
+        "id": "80000000-0000-014c-0000-000000000002",
+        "label": "B",
+        "text": "Wavelength increases"
+      },
+      {
+        "id": "80000000-0000-014c-0000-000000000003",
+        "label": "C",
+        "text": "Slit separation increases"
+      },
+      {
+        "id": "80000000-0000-014c-0000-000000000004",
+        "label": "D",
+        "text": "Distance between screen decreases"
+      }
+    ],
+    "correctOptionId": "80000000-0000-014c-0000-000000000002",
+    "explanation": "Fringe width is proportional to wavelength, so if wavelength increases, fringe width also increases.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000014d",
+    "code": "AFNS-Q-333",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 333. Absolute zero temperature is equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-014d-0000-000000000001",
+        "label": "A",
+        "text": "100 degreesC"
+      },
+      {
+        "id": "80000000-0000-014d-0000-000000000002",
+        "label": "B",
+        "text": "-273 degreesC"
+      },
+      {
+        "id": "80000000-0000-014d-0000-000000000003",
+        "label": "C",
+        "text": "0 degreesC"
+      },
+      {
+        "id": "80000000-0000-014d-0000-000000000004",
+        "label": "D",
+        "text": "-400 degreesC"
+      }
+    ],
+    "correctOptionId": "80000000-0000-014d-0000-000000000002",
+    "explanation": "Absolute zero is 0 K, approximately -273.15 degrees C; quantum zero-point motion can still remain.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000014e",
+    "code": "AFNS-Q-334",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 334. Momentum is equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-014e-0000-000000000001",
+        "label": "A",
+        "text": "Force * Time"
+      },
+      {
+        "id": "80000000-0000-014e-0000-000000000002",
+        "label": "B",
+        "text": "Mass * Velocity"
+      },
+      {
+        "id": "80000000-0000-014e-0000-000000000003",
+        "label": "C",
+        "text": "Pressure * Volume"
+      },
+      {
+        "id": "80000000-0000-014e-0000-000000000004",
+        "label": "D",
+        "text": "Energy * Distance"
+      }
+    ],
+    "correctOptionId": "80000000-0000-014e-0000-000000000002",
+    "explanation": "Momentum (p) = Mass * Velocity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000014f",
+    "code": "AFNS-Q-335",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 335. Identify the compound sentence:",
+    "options": [
+      {
+        "id": "80000000-0000-014f-0000-000000000001",
+        "label": "A",
+        "text": "\"She wanted to go, but she stayed home.\""
+      },
+      {
+        "id": "80000000-0000-014f-0000-000000000002",
+        "label": "B",
+        "text": "\"When she arrived, the meeting had started.\""
+      },
+      {
+        "id": "80000000-0000-014f-0000-000000000003",
+        "label": "C",
+        "text": "\"She ran fast.\""
+      },
+      {
+        "id": "80000000-0000-014f-0000-000000000004",
+        "label": "D",
+        "text": "\"Go to your room.\""
+      }
+    ],
+    "correctOptionId": "80000000-0000-014f-0000-000000000001",
+    "explanation": "A compound sentence has two independent clauses joined by a conjunction - \"She wanted to go, but she stayed home.\"",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000150",
+    "code": "AFNS-Q-336",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 336. Synonym of \"Diminish\":",
+    "options": [
+      {
+        "id": "80000000-0000-0150-0000-000000000001",
+        "label": "A",
+        "text": "Increase"
+      },
+      {
+        "id": "80000000-0000-0150-0000-000000000002",
+        "label": "B",
+        "text": "Reduce"
+      },
+      {
+        "id": "80000000-0000-0150-0000-000000000003",
+        "label": "C",
+        "text": "Expand"
+      },
+      {
+        "id": "80000000-0000-0150-0000-000000000004",
+        "label": "D",
+        "text": "Enlarge"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0150-0000-000000000002",
+    "explanation": "\"Diminish\" means to reduce in size or importance.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000151",
+    "code": "AFNS-Q-337",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 337. A body completes a revolution in a given time. If angular velocity is required and the answer is 14.5 rad/s, what is the formula used?",
+    "options": [
+      {
+        "id": "80000000-0000-0151-0000-000000000001",
+        "label": "A",
+        "text": "omega = 2pi/T"
+      },
+      {
+        "id": "80000000-0000-0151-0000-000000000002",
+        "label": "B",
+        "text": "omega = pi/T"
+      },
+      {
+        "id": "80000000-0000-0151-0000-000000000003",
+        "label": "C",
+        "text": "omega = theta/t"
+      },
+      {
+        "id": "80000000-0000-0151-0000-000000000004",
+        "label": "D",
+        "text": "omega = v/r"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0151-0000-000000000001",
+    "explanation": "For uniform rotation, one full revolution is 2*pi radians, so omega = 2*pi/T.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000152",
+    "code": "AFNS-Q-338",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 338. A wheel rotates at 12 rpm. Find its angular velocity in rad/s.",
+    "options": [
+      {
+        "id": "80000000-0000-0152-0000-000000000001",
+        "label": "A",
+        "text": "1.0 rad/s"
+      },
+      {
+        "id": "80000000-0000-0152-0000-000000000002",
+        "label": "B",
+        "text": "1.25 rad/s"
+      },
+      {
+        "id": "80000000-0000-0152-0000-000000000003",
+        "label": "C",
+        "text": "1.26 rad/s"
+      },
+      {
+        "id": "80000000-0000-0152-0000-000000000004",
+        "label": "D",
+        "text": "1.50 rad/s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0152-0000-000000000003",
+    "explanation": "12 rpm equals 12*2*pi/60, approximately 1.26 rad/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000153",
+    "code": "AFNS-Q-339",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 339. When a dielectric is placed between the plates of a capacitor, the capacitance:",
+    "options": [
+      {
+        "id": "80000000-0000-0153-0000-000000000001",
+        "label": "A",
+        "text": "Increases"
+      },
+      {
+        "id": "80000000-0000-0153-0000-000000000002",
+        "label": "B",
+        "text": "Decreases"
+      },
+      {
+        "id": "80000000-0000-0153-0000-000000000003",
+        "label": "C",
+        "text": "Remains constant"
+      },
+      {
+        "id": "80000000-0000-0153-0000-000000000004",
+        "label": "D",
+        "text": "Becomes zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0153-0000-000000000001",
+    "explanation": "Capacitance increases because the dielectric reduces the effective electric field, allowing more charge storage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000154",
+    "code": "AFNS-Q-340",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 340. Radiation dose unit of 0.01 Gy corresponds to:",
+    "options": [
+      {
+        "id": "80000000-0000-0154-0000-000000000001",
+        "label": "A",
+        "text": "1 rad"
+      },
+      {
+        "id": "80000000-0000-0154-0000-000000000002",
+        "label": "B",
+        "text": "10 rad"
+      },
+      {
+        "id": "80000000-0000-0154-0000-000000000003",
+        "label": "C",
+        "text": "100 rad"
+      },
+      {
+        "id": "80000000-0000-0154-0000-000000000004",
+        "label": "D",
+        "text": "0.1 rad"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0154-0000-000000000001",
+    "explanation": "1 Gy = 100 rad. Therefore, 0.01 Gy = 1 rad.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000155",
+    "code": "AFNS-Q-341",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 341. The rate of change of momentum is equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-0155-0000-000000000001",
+        "label": "A",
+        "text": "Velocity"
+      },
+      {
+        "id": "80000000-0000-0155-0000-000000000002",
+        "label": "B",
+        "text": "Energy"
+      },
+      {
+        "id": "80000000-0000-0155-0000-000000000003",
+        "label": "C",
+        "text": "Work"
+      },
+      {
+        "id": "80000000-0000-0155-0000-000000000004",
+        "label": "D",
+        "text": "Force"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0155-0000-000000000004",
+    "explanation": "According to Newton's 2nd law, F = d(mv)/dt. Force is the rate of change of momentum.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000156",
+    "code": "AFNS-Q-342",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 342. The unit of impedance is:",
+    "options": [
+      {
+        "id": "80000000-0000-0156-0000-000000000001",
+        "label": "A",
+        "text": "Henry"
+      },
+      {
+        "id": "80000000-0000-0156-0000-000000000002",
+        "label": "B",
+        "text": "Ohm"
+      },
+      {
+        "id": "80000000-0000-0156-0000-000000000003",
+        "label": "C",
+        "text": "Weber"
+      },
+      {
+        "id": "80000000-0000-0156-0000-000000000004",
+        "label": "D",
+        "text": "Farad"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0156-0000-000000000002",
+    "explanation": "Impedance has the same unit as resistance - Ohm (ohm).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000157",
+    "code": "AFNS-Q-343",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 343. Circumference formula of a circle is:",
+    "options": [
+      {
+        "id": "80000000-0000-0157-0000-000000000001",
+        "label": "A",
+        "text": "pir^2"
+      },
+      {
+        "id": "80000000-0000-0157-0000-000000000002",
+        "label": "B",
+        "text": "2pir"
+      },
+      {
+        "id": "80000000-0000-0157-0000-000000000003",
+        "label": "C",
+        "text": "pid^2"
+      },
+      {
+        "id": "80000000-0000-0157-0000-000000000004",
+        "label": "D",
+        "text": "2r"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0157-0000-000000000002",
+    "explanation": "Circumference = 2pir, where r is the radius.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000158",
+    "code": "AFNS-Q-344",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 344. Alpha rays are:",
+    "options": [
+      {
+        "id": "80000000-0000-0158-0000-000000000001",
+        "label": "A",
+        "text": "Positively charged helium nuclei"
+      },
+      {
+        "id": "80000000-0000-0158-0000-000000000002",
+        "label": "B",
+        "text": "Negatively charged electrons"
+      },
+      {
+        "id": "80000000-0000-0158-0000-000000000003",
+        "label": "C",
+        "text": "Gamma radiation"
+      },
+      {
+        "id": "80000000-0000-0158-0000-000000000004",
+        "label": "D",
+        "text": "Neutrons"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0158-0000-000000000001",
+    "explanation": "Alpha rays are helium nuclei consisting of 2 protons and 2 neutrons, with a +2 charge.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000159",
+    "code": "AFNS-Q-345",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 345. Controlled partial oxidation of methane can produce:",
+    "options": [
+      {
+        "id": "80000000-0000-0159-0000-000000000001",
+        "label": "A",
+        "text": "Ethane"
+      },
+      {
+        "id": "80000000-0000-0159-0000-000000000002",
+        "label": "B",
+        "text": "Ethene"
+      },
+      {
+        "id": "80000000-0000-0159-0000-000000000003",
+        "label": "C",
+        "text": "Formaldehyde"
+      },
+      {
+        "id": "80000000-0000-0159-0000-000000000004",
+        "label": "D",
+        "text": "Ethanol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0159-0000-000000000003",
+    "explanation": "Partial oxidation of methane gives formaldehyde (HCHO).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000015a",
+    "code": "AFNS-Q-346",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 346. The Kolbe-Schmitt reaction of sodium phenoxide with carbon dioxide followed by acidification produces:",
+    "options": [
+      {
+        "id": "80000000-0000-015a-0000-000000000001",
+        "label": "A",
+        "text": "Ethanol"
+      },
+      {
+        "id": "80000000-0000-015a-0000-000000000002",
+        "label": "B",
+        "text": "Salicylic acid"
+      },
+      {
+        "id": "80000000-0000-015a-0000-000000000003",
+        "label": "C",
+        "text": "Acetic acid"
+      },
+      {
+        "id": "80000000-0000-015a-0000-000000000004",
+        "label": "D",
+        "text": "Benzoic acid"
+      }
+    ],
+    "correctOptionId": "80000000-0000-015a-0000-000000000002",
+    "explanation": "Kolbe's synthesis involves sodium phenoxide and CO2 under pressure to produce salicylic acid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000015b",
+    "code": "AFNS-Q-347",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 347. Decarboxylation of carboxylic acid uses:",
+    "options": [
+      {
+        "id": "80000000-0000-015b-0000-000000000001",
+        "label": "A",
+        "text": "Washing soda"
+      },
+      {
+        "id": "80000000-0000-015b-0000-000000000002",
+        "label": "B",
+        "text": "Caustic soda"
+      },
+      {
+        "id": "80000000-0000-015b-0000-000000000003",
+        "label": "C",
+        "text": "Soda lime"
+      },
+      {
+        "id": "80000000-0000-015b-0000-000000000004",
+        "label": "D",
+        "text": "Baking soda"
+      }
+    ],
+    "correctOptionId": "80000000-0000-015b-0000-000000000003",
+    "explanation": "Decarboxylation occurs with soda lime, which is a mixture of NaOH and CaO.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000015c",
+    "code": "AFNS-Q-348",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 348. The most abundant polymer on earth is:",
+    "options": [
+      {
+        "id": "80000000-0000-015c-0000-000000000001",
+        "label": "A",
+        "text": "Starch"
+      },
+      {
+        "id": "80000000-0000-015c-0000-000000000002",
+        "label": "B",
+        "text": "Cellulose"
+      },
+      {
+        "id": "80000000-0000-015c-0000-000000000003",
+        "label": "C",
+        "text": "Glycogen"
+      },
+      {
+        "id": "80000000-0000-015c-0000-000000000004",
+        "label": "D",
+        "text": "Protein"
+      }
+    ],
+    "correctOptionId": "80000000-0000-015c-0000-000000000002",
+    "explanation": "Cellulose is the most abundant natural polymer found in plant cell walls.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000015d",
+    "code": "AFNS-Q-349",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 349. The process that occurs in mitochondria is:",
+    "options": [
+      {
+        "id": "80000000-0000-015d-0000-000000000001",
+        "label": "A",
+        "text": "Photosynthesis"
+      },
+      {
+        "id": "80000000-0000-015d-0000-000000000002",
+        "label": "B",
+        "text": "Anaerobic respiration"
+      },
+      {
+        "id": "80000000-0000-015d-0000-000000000003",
+        "label": "C",
+        "text": "Aerobic respiration"
+      },
+      {
+        "id": "80000000-0000-015d-0000-000000000004",
+        "label": "D",
+        "text": "Fermentation"
+      }
+    ],
+    "correctOptionId": "80000000-0000-015d-0000-000000000003",
+    "explanation": "Mitochondria are the site of aerobic respiration and ATP production.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000015e",
+    "code": "AFNS-Q-350",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 350. Which group does Ribulose belong to?",
+    "options": [
+      {
+        "id": "80000000-0000-015e-0000-000000000001",
+        "label": "A",
+        "text": "Pentose sugar"
+      },
+      {
+        "id": "80000000-0000-015e-0000-000000000002",
+        "label": "B",
+        "text": "Hexose sugar"
+      },
+      {
+        "id": "80000000-0000-015e-0000-000000000003",
+        "label": "C",
+        "text": "Disaccharide"
+      },
+      {
+        "id": "80000000-0000-015e-0000-000000000004",
+        "label": "D",
+        "text": "Polysaccharide"
+      }
+    ],
+    "correctOptionId": "80000000-0000-015e-0000-000000000001",
+    "explanation": "Ribulose is a pentose sugar with 5 carbon atoms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000015f",
+    "code": "AFNS-Q-351",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 351. Which of these is the strongest base in aqueous solution?",
+    "options": [
+      {
+        "id": "80000000-0000-015f-0000-000000000001",
+        "label": "A",
+        "text": "Methylamine"
+      },
+      {
+        "id": "80000000-0000-015f-0000-000000000002",
+        "label": "B",
+        "text": "Dimethylamine"
+      },
+      {
+        "id": "80000000-0000-015f-0000-000000000003",
+        "label": "C",
+        "text": "Ammonia"
+      },
+      {
+        "id": "80000000-0000-015f-0000-000000000004",
+        "label": "D",
+        "text": "Aniline"
+      }
+    ],
+    "correctOptionId": "80000000-0000-015f-0000-000000000002",
+    "explanation": "Dimethylamine has electron-donating methyl groups and a more available nitrogen lone pair than ammonia or aniline.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000160",
+    "code": "AFNS-Q-352",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 352. Opposite of \"Wild\":",
+    "options": [
+      {
+        "id": "80000000-0000-0160-0000-000000000001",
+        "label": "A",
+        "text": "Civilized"
+      },
+      {
+        "id": "80000000-0000-0160-0000-000000000002",
+        "label": "B",
+        "text": "Aggressive"
+      },
+      {
+        "id": "80000000-0000-0160-0000-000000000003",
+        "label": "C",
+        "text": "Domestic"
+      },
+      {
+        "id": "80000000-0000-0160-0000-000000000004",
+        "label": "D",
+        "text": "Calm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0160-0000-000000000003",
+    "explanation": "The opposite of \"Wild\" is Domestic.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000161",
+    "code": "AFNS-Q-353",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 353. Identify the correct tense for the sentence: \"She played the piano yesterday.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0161-0000-000000000001",
+        "label": "A",
+        "text": "Present Indefinite"
+      },
+      {
+        "id": "80000000-0000-0161-0000-000000000002",
+        "label": "B",
+        "text": "Past Indefinite"
+      },
+      {
+        "id": "80000000-0000-0161-0000-000000000003",
+        "label": "C",
+        "text": "Present Continuous"
+      },
+      {
+        "id": "80000000-0000-0161-0000-000000000004",
+        "label": "D",
+        "text": "Past Perfect"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0161-0000-000000000002",
+    "explanation": "The verb \"played\" indicates Past Indefinite tense.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000162",
+    "code": "AFNS-Q-354",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 354. In \"Running is good exercise,\" the word \"Running\" is a:",
+    "options": [
+      {
+        "id": "80000000-0000-0162-0000-000000000001",
+        "label": "A",
+        "text": "Gerund"
+      },
+      {
+        "id": "80000000-0000-0162-0000-000000000002",
+        "label": "B",
+        "text": "Adverb"
+      },
+      {
+        "id": "80000000-0000-0162-0000-000000000003",
+        "label": "C",
+        "text": "Adjective"
+      },
+      {
+        "id": "80000000-0000-0162-0000-000000000004",
+        "label": "D",
+        "text": "Finite verb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0162-0000-000000000001",
+    "explanation": "Running is an -ing verb form used as the subject noun of the sentence.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000163",
+    "code": "AFNS-Q-355",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 355. The focal length of a convex lens is 20 cm. What is its power?",
+    "options": [
+      {
+        "id": "80000000-0000-0163-0000-000000000001",
+        "label": "A",
+        "text": "4D"
+      },
+      {
+        "id": "80000000-0000-0163-0000-000000000002",
+        "label": "B",
+        "text": "5D"
+      },
+      {
+        "id": "80000000-0000-0163-0000-000000000003",
+        "label": "C",
+        "text": "10D"
+      },
+      {
+        "id": "80000000-0000-0163-0000-000000000004",
+        "label": "D",
+        "text": "20D"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0163-0000-000000000002",
+    "explanation": "Formula: P = 100/f (in cm). Therefore, P = 100/20 = 5D.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000164",
+    "code": "AFNS-Q-356",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 356. Two waves with the same amplitude and frequency travel in opposite directions. They interfere to produce:",
+    "options": [
+      {
+        "id": "80000000-0000-0164-0000-000000000001",
+        "label": "A",
+        "text": "Reflection"
+      },
+      {
+        "id": "80000000-0000-0164-0000-000000000002",
+        "label": "B",
+        "text": "Refraction"
+      },
+      {
+        "id": "80000000-0000-0164-0000-000000000003",
+        "label": "C",
+        "text": "Stationary wave"
+      },
+      {
+        "id": "80000000-0000-0164-0000-000000000004",
+        "label": "D",
+        "text": "Beats"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0164-0000-000000000003",
+    "explanation": "When two identical waves travel in opposite directions, stationary waves are formed due to constructive and destructive interference.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000165",
+    "code": "AFNS-Q-357",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 357. The SI unit of wavefront speed is:",
+    "options": [
+      {
+        "id": "80000000-0000-0165-0000-000000000001",
+        "label": "A",
+        "text": "m"
+      },
+      {
+        "id": "80000000-0000-0165-0000-000000000002",
+        "label": "B",
+        "text": "m/s"
+      },
+      {
+        "id": "80000000-0000-0165-0000-000000000003",
+        "label": "C",
+        "text": "s"
+      },
+      {
+        "id": "80000000-0000-0165-0000-000000000004",
+        "label": "D",
+        "text": "Hz"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0165-0000-000000000002",
+    "explanation": "Wavefront speed measures distance travelled per second, so its unit is m/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000166",
+    "code": "AFNS-Q-358",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 358. Two resistors of 4ohm and 6ohm are connected in series. Find their equivalent resistance.",
+    "options": [
+      {
+        "id": "80000000-0000-0166-0000-000000000001",
+        "label": "A",
+        "text": "2ohm"
+      },
+      {
+        "id": "80000000-0000-0166-0000-000000000002",
+        "label": "B",
+        "text": "4ohm"
+      },
+      {
+        "id": "80000000-0000-0166-0000-000000000003",
+        "label": "C",
+        "text": "10ohm"
+      },
+      {
+        "id": "80000000-0000-0166-0000-000000000004",
+        "label": "D",
+        "text": "12ohm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0166-0000-000000000003",
+    "explanation": "For series connection, Req = R1 + R2 = 4 + 6 = 10ohm",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000167",
+    "code": "AFNS-Q-359",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 359. Which reagent converts primary alcohol into aldehyde?",
+    "options": [
+      {
+        "id": "80000000-0000-0167-0000-000000000001",
+        "label": "A",
+        "text": "KMnO4"
+      },
+      {
+        "id": "80000000-0000-0167-0000-000000000002",
+        "label": "B",
+        "text": "PCC"
+      },
+      {
+        "id": "80000000-0000-0167-0000-000000000003",
+        "label": "C",
+        "text": "K2Cr2O7"
+      },
+      {
+        "id": "80000000-0000-0167-0000-000000000004",
+        "label": "D",
+        "text": "H2SO4"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0167-0000-000000000002",
+    "explanation": "PCC is a mild oxidant that can oxidize a primary alcohol to an aldehyde without normally continuing to the acid under dry conditions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000168",
+    "code": "AFNS-Q-360",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 360. A vector with Cartesian components Ax, Ay and Az is represented as:",
+    "options": [
+      {
+        "id": "80000000-0000-0168-0000-000000000001",
+        "label": "A",
+        "text": "Ax*i + Ay*j + Az*k"
+      },
+      {
+        "id": "80000000-0000-0168-0000-000000000002",
+        "label": "B",
+        "text": "Ax + Ay + Az"
+      },
+      {
+        "id": "80000000-0000-0168-0000-000000000003",
+        "label": "C",
+        "text": "Ax*i*Ay*j*Az*k"
+      },
+      {
+        "id": "80000000-0000-0168-0000-000000000004",
+        "label": "D",
+        "text": "Ax = Ay = Az"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0168-0000-000000000001",
+    "explanation": "A vector is the sum of its components multiplied by the corresponding unit vectors.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000169",
+    "code": "AFNS-Q-361",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 361. The luster of a metal is due to:",
+    "options": [
+      {
+        "id": "80000000-0000-0169-0000-000000000001",
+        "label": "A",
+        "text": "Presence of free electrons"
+      },
+      {
+        "id": "80000000-0000-0169-0000-000000000002",
+        "label": "B",
+        "text": "Presence of neutrons"
+      },
+      {
+        "id": "80000000-0000-0169-0000-000000000003",
+        "label": "C",
+        "text": "Absence of electrons"
+      },
+      {
+        "id": "80000000-0000-0169-0000-000000000004",
+        "label": "D",
+        "text": "Presence of water"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0169-0000-000000000001",
+    "explanation": "Free conduction electrons respond to and reflect incident light, producing metallic lustre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000016a",
+    "code": "AFNS-Q-362",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 362. Who discovered the diode bulb?",
+    "options": [
+      {
+        "id": "80000000-0000-016a-0000-000000000001",
+        "label": "A",
+        "text": "Sir J. S. Fleming"
+      },
+      {
+        "id": "80000000-0000-016a-0000-000000000002",
+        "label": "B",
+        "text": "Isaac Newton"
+      },
+      {
+        "id": "80000000-0000-016a-0000-000000000003",
+        "label": "C",
+        "text": "James Chadwick"
+      },
+      {
+        "id": "80000000-0000-016a-0000-000000000004",
+        "label": "D",
+        "text": "Niels Bohr"
+      }
+    ],
+    "correctOptionId": "80000000-0000-016a-0000-000000000001",
+    "explanation": "John Ambrose Fleming developed the thermionic diode valve in 1904.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000016b",
+    "code": "AFNS-Q-363",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 363. Which is a unique mammal that can fly?",
+    "options": [
+      {
+        "id": "80000000-0000-016b-0000-000000000001",
+        "label": "A",
+        "text": "Bat"
+      },
+      {
+        "id": "80000000-0000-016b-0000-000000000002",
+        "label": "B",
+        "text": "Flying squirrel"
+      },
+      {
+        "id": "80000000-0000-016b-0000-000000000003",
+        "label": "C",
+        "text": "Ostrich"
+      },
+      {
+        "id": "80000000-0000-016b-0000-000000000004",
+        "label": "D",
+        "text": "Penguin"
+      }
+    ],
+    "correctOptionId": "80000000-0000-016b-0000-000000000001",
+    "explanation": "Bats are the only mammals capable of sustained powered flight.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000016c",
+    "code": "AFNS-Q-364",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 364. Complete the sentence: \"Where there is faith, there is ____ hope.\"",
+    "options": [
+      {
+        "id": "80000000-0000-016c-0000-000000000001",
+        "label": "A",
+        "text": "a"
+      },
+      {
+        "id": "80000000-0000-016c-0000-000000000002",
+        "label": "B",
+        "text": "an"
+      },
+      {
+        "id": "80000000-0000-016c-0000-000000000003",
+        "label": "C",
+        "text": "the"
+      },
+      {
+        "id": "80000000-0000-016c-0000-000000000004",
+        "label": "D",
+        "text": "no article"
+      }
+    ],
+    "correctOptionId": "80000000-0000-016c-0000-000000000004",
+    "explanation": "Hope is an uncountable abstract noun here and does not require an indefinite article.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000016d",
+    "code": "AFNS-Q-365",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 365. The unit of energy is:",
+    "options": [
+      {
+        "id": "80000000-0000-016d-0000-000000000001",
+        "label": "A",
+        "text": "Joule"
+      },
+      {
+        "id": "80000000-0000-016d-0000-000000000002",
+        "label": "B",
+        "text": "Newton"
+      },
+      {
+        "id": "80000000-0000-016d-0000-000000000003",
+        "label": "C",
+        "text": "Watt"
+      },
+      {
+        "id": "80000000-0000-016d-0000-000000000004",
+        "label": "D",
+        "text": "Pascal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-016d-0000-000000000001",
+    "explanation": "The joule is the SI unit of energy, equal to one newton metre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000016e",
+    "code": "AFNS-Q-366",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 366. The main component of an organic compound is:",
+    "options": [
+      {
+        "id": "80000000-0000-016e-0000-000000000001",
+        "label": "A",
+        "text": "Carbon"
+      },
+      {
+        "id": "80000000-0000-016e-0000-000000000002",
+        "label": "B",
+        "text": "Sodium"
+      },
+      {
+        "id": "80000000-0000-016e-0000-000000000003",
+        "label": "C",
+        "text": "Helium"
+      },
+      {
+        "id": "80000000-0000-016e-0000-000000000004",
+        "label": "D",
+        "text": "Argon"
+      }
+    ],
+    "correctOptionId": "80000000-0000-016e-0000-000000000001",
+    "explanation": "Organic compounds are based on carbon-containing molecular structures.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000016f",
+    "code": "AFNS-Q-367",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 367. Long-sightedness is corrected by:",
+    "options": [
+      {
+        "id": "80000000-0000-016f-0000-000000000001",
+        "label": "A",
+        "text": "Convex lens"
+      },
+      {
+        "id": "80000000-0000-016f-0000-000000000002",
+        "label": "B",
+        "text": "Concave lens"
+      },
+      {
+        "id": "80000000-0000-016f-0000-000000000003",
+        "label": "C",
+        "text": "Plane glass"
+      },
+      {
+        "id": "80000000-0000-016f-0000-000000000004",
+        "label": "D",
+        "text": "Opaque screen"
+      }
+    ],
+    "correctOptionId": "80000000-0000-016f-0000-000000000001",
+    "explanation": "A convex lens converges light to help focus nearby objects onto a farsighted eye's retina.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000170",
+    "code": "AFNS-Q-368",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 368. How many traditional senses are commonly listed in elementary biology?",
+    "options": [
+      {
+        "id": "80000000-0000-0170-0000-000000000001",
+        "label": "A",
+        "text": "Five"
+      },
+      {
+        "id": "80000000-0000-0170-0000-000000000002",
+        "label": "B",
+        "text": "Two"
+      },
+      {
+        "id": "80000000-0000-0170-0000-000000000003",
+        "label": "C",
+        "text": "Three"
+      },
+      {
+        "id": "80000000-0000-0170-0000-000000000004",
+        "label": "D",
+        "text": "Seven"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0170-0000-000000000001",
+    "explanation": "The traditional five senses are sight, hearing, smell, taste and touch.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000171",
+    "code": "AFNS-Q-369",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 369. Lipids dissolve in:",
+    "options": [
+      {
+        "id": "80000000-0000-0171-0000-000000000001",
+        "label": "A",
+        "text": "Non-polar solvent / Acetone"
+      },
+      {
+        "id": "80000000-0000-0171-0000-000000000002",
+        "label": "B",
+        "text": "Water only"
+      },
+      {
+        "id": "80000000-0000-0171-0000-000000000003",
+        "label": "C",
+        "text": "Dilute salt solution"
+      },
+      {
+        "id": "80000000-0000-0171-0000-000000000004",
+        "label": "D",
+        "text": "Aqueous sugar solution"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0171-0000-000000000001",
+    "explanation": "Lipids are largely non-polar and dissolve in suitable organic solvents rather than water.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000172",
+    "code": "AFNS-Q-370",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 370. The pH of blood is:",
+    "options": [
+      {
+        "id": "80000000-0000-0172-0000-000000000001",
+        "label": "A",
+        "text": "7.4"
+      },
+      {
+        "id": "80000000-0000-0172-0000-000000000002",
+        "label": "B",
+        "text": "2.0"
+      },
+      {
+        "id": "80000000-0000-0172-0000-000000000003",
+        "label": "C",
+        "text": "5.0"
+      },
+      {
+        "id": "80000000-0000-0172-0000-000000000004",
+        "label": "D",
+        "text": "10.5"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0172-0000-000000000001",
+    "explanation": "Normal arterial blood is slightly alkaline, with pH about 7.35-7.45.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000173",
+    "code": "AFNS-Q-371",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 371. A law in which temperature is kept constant is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0173-0000-000000000001",
+        "label": "A",
+        "text": "Boyle's Law"
+      },
+      {
+        "id": "80000000-0000-0173-0000-000000000002",
+        "label": "B",
+        "text": "Charles's law"
+      },
+      {
+        "id": "80000000-0000-0173-0000-000000000003",
+        "label": "C",
+        "text": "Faraday's law"
+      },
+      {
+        "id": "80000000-0000-0173-0000-000000000004",
+        "label": "D",
+        "text": "Hooke's law"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0173-0000-000000000001",
+    "explanation": "Boyle's law relates pressure and volume while gas temperature remains constant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000174",
+    "code": "AFNS-Q-372",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 372. Deficiency of Vitamin A causes:",
+    "options": [
+      {
+        "id": "80000000-0000-0174-0000-000000000001",
+        "label": "A",
+        "text": "Night Blindness"
+      },
+      {
+        "id": "80000000-0000-0174-0000-000000000002",
+        "label": "B",
+        "text": "Scurvy"
+      },
+      {
+        "id": "80000000-0000-0174-0000-000000000003",
+        "label": "C",
+        "text": "Rickets"
+      },
+      {
+        "id": "80000000-0000-0174-0000-000000000004",
+        "label": "D",
+        "text": "Beriberi"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0174-0000-000000000001",
+    "explanation": "Vitamin A is needed to form retinal visual pigments, so deficiency can impair night vision.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000175",
+    "code": "AFNS-Q-373",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 373. The rate of change of displacement is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0175-0000-000000000001",
+        "label": "A",
+        "text": "Velocity"
+      },
+      {
+        "id": "80000000-0000-0175-0000-000000000002",
+        "label": "B",
+        "text": "Acceleration"
+      },
+      {
+        "id": "80000000-0000-0175-0000-000000000003",
+        "label": "C",
+        "text": "Force"
+      },
+      {
+        "id": "80000000-0000-0175-0000-000000000004",
+        "label": "D",
+        "text": "Power"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0175-0000-000000000001",
+    "explanation": "Velocity is the rate of change of displacement with time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000176",
+    "code": "AFNS-Q-374",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 374. The motion of planets around the Sun is described by:",
+    "options": [
+      {
+        "id": "80000000-0000-0176-0000-000000000001",
+        "label": "A",
+        "text": "Kepler's laws"
+      },
+      {
+        "id": "80000000-0000-0176-0000-000000000002",
+        "label": "B",
+        "text": "Ohm's law"
+      },
+      {
+        "id": "80000000-0000-0176-0000-000000000003",
+        "label": "C",
+        "text": "Hooke's law"
+      },
+      {
+        "id": "80000000-0000-0176-0000-000000000004",
+        "label": "D",
+        "text": "Boyle's law"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0176-0000-000000000001",
+    "explanation": "Kepler's laws describe planetary orbital shape, equal-area motion and the period-radius relationship.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000177",
+    "code": "AFNS-Q-375",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 375. The study of atomic structure and electrons is primarily called:",
+    "options": [
+      {
+        "id": "80000000-0000-0177-0000-000000000001",
+        "label": "A",
+        "text": "Atomic physics"
+      },
+      {
+        "id": "80000000-0000-0177-0000-000000000002",
+        "label": "B",
+        "text": "Acoustics"
+      },
+      {
+        "id": "80000000-0000-0177-0000-000000000003",
+        "label": "C",
+        "text": "Fluid mechanics"
+      },
+      {
+        "id": "80000000-0000-0177-0000-000000000004",
+        "label": "D",
+        "text": "Geometrical optics"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0177-0000-000000000001",
+    "explanation": "Atomic physics studies atomic structure and the behaviour of electrons in atoms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000178",
+    "code": "AFNS-Q-376",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 376. Which gas diffuses more rapidly, H2 or N2?",
+    "options": [
+      {
+        "id": "80000000-0000-0178-0000-000000000001",
+        "label": "A",
+        "text": "H2"
+      },
+      {
+        "id": "80000000-0000-0178-0000-000000000002",
+        "label": "B",
+        "text": "N2"
+      },
+      {
+        "id": "80000000-0000-0178-0000-000000000003",
+        "label": "C",
+        "text": "Both at the same rate"
+      },
+      {
+        "id": "80000000-0000-0178-0000-000000000004",
+        "label": "D",
+        "text": "Neither can diffuse"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0178-0000-000000000001",
+    "explanation": "Hydrogen has a much lower molar mass than nitrogen and therefore diffuses faster at the same temperature.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000179",
+    "code": "AFNS-Q-377",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 377. Laughing gas is:",
+    "options": [
+      {
+        "id": "80000000-0000-0179-0000-000000000001",
+        "label": "A",
+        "text": "N2O"
+      },
+      {
+        "id": "80000000-0000-0179-0000-000000000002",
+        "label": "B",
+        "text": "NO2"
+      },
+      {
+        "id": "80000000-0000-0179-0000-000000000003",
+        "label": "C",
+        "text": "NO"
+      },
+      {
+        "id": "80000000-0000-0179-0000-000000000004",
+        "label": "D",
+        "text": "N2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0179-0000-000000000001",
+    "explanation": "Laughing gas is nitrous oxide, N2O.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000017a",
+    "code": "AFNS-Q-378",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 378. Choose a noun that is a synonym of \"doubt\":",
+    "options": [
+      {
+        "id": "80000000-0000-017a-0000-000000000001",
+        "label": "A",
+        "text": "Uncertainty"
+      },
+      {
+        "id": "80000000-0000-017a-0000-000000000002",
+        "label": "B",
+        "text": "Certainty"
+      },
+      {
+        "id": "80000000-0000-017a-0000-000000000003",
+        "label": "C",
+        "text": "Approval"
+      },
+      {
+        "id": "80000000-0000-017a-0000-000000000004",
+        "label": "D",
+        "text": "Confidence"
+      }
+    ],
+    "correctOptionId": "80000000-0000-017a-0000-000000000001",
+    "explanation": "Doubt as a noun means uncertainty or a lack of confidence.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000017b",
+    "code": "AFNS-Q-379",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 379. Acceleration is a ____ quantity.",
+    "options": [
+      {
+        "id": "80000000-0000-017b-0000-000000000001",
+        "label": "A",
+        "text": "Vector"
+      },
+      {
+        "id": "80000000-0000-017b-0000-000000000002",
+        "label": "B",
+        "text": "Scalar"
+      },
+      {
+        "id": "80000000-0000-017b-0000-000000000003",
+        "label": "C",
+        "text": "Dimensionless"
+      },
+      {
+        "id": "80000000-0000-017b-0000-000000000004",
+        "label": "D",
+        "text": "Always zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-017b-0000-000000000001",
+    "explanation": "Acceleration has both magnitude and direction and is therefore a vector.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000017c",
+    "code": "AFNS-Q-380",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 380. The empirical formula of water is:",
+    "options": [
+      {
+        "id": "80000000-0000-017c-0000-000000000001",
+        "label": "A",
+        "text": "H2O"
+      },
+      {
+        "id": "80000000-0000-017c-0000-000000000002",
+        "label": "B",
+        "text": "HO"
+      },
+      {
+        "id": "80000000-0000-017c-0000-000000000003",
+        "label": "C",
+        "text": "H2O2"
+      },
+      {
+        "id": "80000000-0000-017c-0000-000000000004",
+        "label": "D",
+        "text": "HO2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-017c-0000-000000000001",
+    "explanation": "Water's simplest whole-number atom ratio is hydrogen:oxygen = 2:1, giving H2O.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000017d",
+    "code": "AFNS-Q-381",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 381. Torque is the product of:",
+    "options": [
+      {
+        "id": "80000000-0000-017d-0000-000000000001",
+        "label": "A",
+        "text": "r cross F"
+      },
+      {
+        "id": "80000000-0000-017d-0000-000000000002",
+        "label": "B",
+        "text": "r dot F"
+      },
+      {
+        "id": "80000000-0000-017d-0000-000000000003",
+        "label": "C",
+        "text": "F/r"
+      },
+      {
+        "id": "80000000-0000-017d-0000-000000000004",
+        "label": "D",
+        "text": "r+F"
+      }
+    ],
+    "correctOptionId": "80000000-0000-017d-0000-000000000001",
+    "explanation": "Torque is the vector cross product of the position vector and force, tau = r cross F.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000017e",
+    "code": "AFNS-Q-382",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 382. Alcohol reacts with carboxylic acid in the presence of:",
+    "options": [
+      {
+        "id": "80000000-0000-017e-0000-000000000001",
+        "label": "A",
+        "text": "Sulphuric Acid"
+      },
+      {
+        "id": "80000000-0000-017e-0000-000000000002",
+        "label": "B",
+        "text": "Sodium chloride"
+      },
+      {
+        "id": "80000000-0000-017e-0000-000000000003",
+        "label": "C",
+        "text": "Nitrogen gas"
+      },
+      {
+        "id": "80000000-0000-017e-0000-000000000004",
+        "label": "D",
+        "text": "Calcium carbonate"
+      }
+    ],
+    "correctOptionId": "80000000-0000-017e-0000-000000000001",
+    "explanation": "Concentrated sulfuric acid catalyzes esterification of an alcohol with a carboxylic acid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000017f",
+    "code": "AFNS-Q-383",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 383. When a body moves in a circle at constant speed, its kinetic energy:",
+    "options": [
+      {
+        "id": "80000000-0000-017f-0000-000000000001",
+        "label": "A",
+        "text": "Remains constant"
+      },
+      {
+        "id": "80000000-0000-017f-0000-000000000002",
+        "label": "B",
+        "text": "Always increases"
+      },
+      {
+        "id": "80000000-0000-017f-0000-000000000003",
+        "label": "C",
+        "text": "Always decreases"
+      },
+      {
+        "id": "80000000-0000-017f-0000-000000000004",
+        "label": "D",
+        "text": "Becomes zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-017f-0000-000000000001",
+    "explanation": "Kinetic energy depends on speed squared, so changing direction alone does not change it.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000180",
+    "code": "AFNS-Q-384",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 384. The strongest chamber of the heart is:",
+    "options": [
+      {
+        "id": "80000000-0000-0180-0000-000000000001",
+        "label": "A",
+        "text": "Left ventricle"
+      },
+      {
+        "id": "80000000-0000-0180-0000-000000000002",
+        "label": "B",
+        "text": "Right ventricle"
+      },
+      {
+        "id": "80000000-0000-0180-0000-000000000003",
+        "label": "C",
+        "text": "Left atrium"
+      },
+      {
+        "id": "80000000-0000-0180-0000-000000000004",
+        "label": "D",
+        "text": "Right atrium"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0180-0000-000000000001",
+    "explanation": "The left ventricle has the thickest muscular wall because it pumps blood around the whole body.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000181",
+    "code": "AFNS-Q-385",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 385. The unit of magnetic flux is:",
+    "options": [
+      {
+        "id": "80000000-0000-0181-0000-000000000001",
+        "label": "A",
+        "text": "Weber"
+      },
+      {
+        "id": "80000000-0000-0181-0000-000000000002",
+        "label": "B",
+        "text": "Tesla"
+      },
+      {
+        "id": "80000000-0000-0181-0000-000000000003",
+        "label": "C",
+        "text": "Henry"
+      },
+      {
+        "id": "80000000-0000-0181-0000-000000000004",
+        "label": "D",
+        "text": "Coulomb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0181-0000-000000000001",
+    "explanation": "Magnetic flux is measured in webers; tesla measures magnetic flux density.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000182",
+    "code": "AFNS-Q-386",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 386. In an exothermic reaction, heat is:",
+    "options": [
+      {
+        "id": "80000000-0000-0182-0000-000000000001",
+        "label": "A",
+        "text": "Released"
+      },
+      {
+        "id": "80000000-0000-0182-0000-000000000002",
+        "label": "B",
+        "text": "Always absorbed"
+      },
+      {
+        "id": "80000000-0000-0182-0000-000000000003",
+        "label": "C",
+        "text": "Never transferred"
+      },
+      {
+        "id": "80000000-0000-0182-0000-000000000004",
+        "label": "D",
+        "text": "Converted only to mass"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0182-0000-000000000001",
+    "explanation": "An exothermic reaction transfers heat from the reacting system to its surroundings.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000183",
+    "code": "AFNS-Q-387",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 387. Gravity at the center of the Earth is:",
+    "options": [
+      {
+        "id": "80000000-0000-0183-0000-000000000001",
+        "label": "A",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-0183-0000-000000000002",
+        "label": "B",
+        "text": "9.8 m/s^2"
+      },
+      {
+        "id": "80000000-0000-0183-0000-000000000003",
+        "label": "C",
+        "text": "Infinite"
+      },
+      {
+        "id": "80000000-0000-0183-0000-000000000004",
+        "label": "D",
+        "text": "19.6 m/s^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0183-0000-000000000001",
+    "explanation": "At the centre of an ideal spherical Earth, gravitational contributions cancel in every direction.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000184",
+    "code": "AFNS-Q-388",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 388. X-rays are produced when a stream of electrons in an X-ray tube:",
+    "options": [
+      {
+        "id": "80000000-0000-0184-0000-000000000001",
+        "label": "A",
+        "text": "Strike the metal target"
+      },
+      {
+        "id": "80000000-0000-0184-0000-000000000002",
+        "label": "B",
+        "text": "Leave the filament only"
+      },
+      {
+        "id": "80000000-0000-0184-0000-000000000003",
+        "label": "C",
+        "text": "Pass through air only"
+      },
+      {
+        "id": "80000000-0000-0184-0000-000000000004",
+        "label": "D",
+        "text": "Stop at the glass wall only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0184-0000-000000000001",
+    "explanation": "Fast electrons hitting a metal target produce X-rays through rapid deceleration and inner-shell transitions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000185",
+    "code": "AFNS-Q-389",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 389. The SI unit of electric dipole moment is:",
+    "options": [
+      {
+        "id": "80000000-0000-0185-0000-000000000001",
+        "label": "A",
+        "text": "Coulomb metre"
+      },
+      {
+        "id": "80000000-0000-0185-0000-000000000002",
+        "label": "B",
+        "text": "Coulomb per metre"
+      },
+      {
+        "id": "80000000-0000-0185-0000-000000000003",
+        "label": "C",
+        "text": "Tesla metre"
+      },
+      {
+        "id": "80000000-0000-0185-0000-000000000004",
+        "label": "D",
+        "text": "Joule per second"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0185-0000-000000000001",
+    "explanation": "Electric dipole moment equals charge times separation, giving the unit coulomb metre.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000186",
+    "code": "AFNS-Q-390",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 390. Ohm is the unit of:",
+    "options": [
+      {
+        "id": "80000000-0000-0186-0000-000000000001",
+        "label": "A",
+        "text": "Resistance"
+      },
+      {
+        "id": "80000000-0000-0186-0000-000000000002",
+        "label": "B",
+        "text": "Capacitance"
+      },
+      {
+        "id": "80000000-0000-0186-0000-000000000003",
+        "label": "C",
+        "text": "Inductance"
+      },
+      {
+        "id": "80000000-0000-0186-0000-000000000004",
+        "label": "D",
+        "text": "Magnetic flux"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0186-0000-000000000001",
+    "explanation": "Electrical resistance R = V/I is measured in ohms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000187",
+    "code": "AFNS-Q-391",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 391. The synonym of \"Awkward\" is:",
+    "options": [
+      {
+        "id": "80000000-0000-0187-0000-000000000001",
+        "label": "A",
+        "text": "Uncomfortable"
+      },
+      {
+        "id": "80000000-0000-0187-0000-000000000002",
+        "label": "B",
+        "text": "Elegant"
+      },
+      {
+        "id": "80000000-0000-0187-0000-000000000003",
+        "label": "C",
+        "text": "Confident"
+      },
+      {
+        "id": "80000000-0000-0187-0000-000000000004",
+        "label": "D",
+        "text": "Convenient"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0187-0000-000000000001",
+    "explanation": "Awkward can describe a situation that feels uncomfortable or embarrassing.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000188",
+    "code": "AFNS-Q-392",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 392. The rate of doing work is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0188-0000-000000000001",
+        "label": "A",
+        "text": "Power"
+      },
+      {
+        "id": "80000000-0000-0188-0000-000000000002",
+        "label": "B",
+        "text": "Energy"
+      },
+      {
+        "id": "80000000-0000-0188-0000-000000000003",
+        "label": "C",
+        "text": "Momentum"
+      },
+      {
+        "id": "80000000-0000-0188-0000-000000000004",
+        "label": "D",
+        "text": "Pressure"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0188-0000-000000000001",
+    "explanation": "Power is the amount of work done per unit time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000189",
+    "code": "AFNS-Q-393",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 393. Newton's First Law of Motion is also called:",
+    "options": [
+      {
+        "id": "80000000-0000-0189-0000-000000000001",
+        "label": "A",
+        "text": "Law of Inertia"
+      },
+      {
+        "id": "80000000-0000-0189-0000-000000000002",
+        "label": "B",
+        "text": "Law of gravitation"
+      },
+      {
+        "id": "80000000-0000-0189-0000-000000000003",
+        "label": "C",
+        "text": "Law of induction"
+      },
+      {
+        "id": "80000000-0000-0189-0000-000000000004",
+        "label": "D",
+        "text": "Law of conservation of charge"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0189-0000-000000000001",
+    "explanation": "Newton's first law describes the tendency to maintain rest or uniform motion, called inertia.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000018a",
+    "code": "AFNS-Q-394",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 394. Magnetic flux density is also commonly called:",
+    "options": [
+      {
+        "id": "80000000-0000-018a-0000-000000000001",
+        "label": "A",
+        "text": "Magnetic induction"
+      },
+      {
+        "id": "80000000-0000-018a-0000-000000000002",
+        "label": "B",
+        "text": "Electric potential"
+      },
+      {
+        "id": "80000000-0000-018a-0000-000000000003",
+        "label": "C",
+        "text": "Magnetic flux"
+      },
+      {
+        "id": "80000000-0000-018a-0000-000000000004",
+        "label": "D",
+        "text": "Electric charge"
+      }
+    ],
+    "correctOptionId": "80000000-0000-018a-0000-000000000001",
+    "explanation": "Magnetic induction is another name for magnetic flux density B.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000018b",
+    "code": "AFNS-Q-395",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 395. Which model shows the energy of orbits?",
+    "options": [
+      {
+        "id": "80000000-0000-018b-0000-000000000001",
+        "label": "A",
+        "text": "Bohr Atomic Model"
+      },
+      {
+        "id": "80000000-0000-018b-0000-000000000002",
+        "label": "B",
+        "text": "Thomson's plum-pudding model"
+      },
+      {
+        "id": "80000000-0000-018b-0000-000000000003",
+        "label": "C",
+        "text": "Dalton's solid-sphere model"
+      },
+      {
+        "id": "80000000-0000-018b-0000-000000000004",
+        "label": "D",
+        "text": "An ideal-gas model"
+      }
+    ],
+    "correctOptionId": "80000000-0000-018b-0000-000000000001",
+    "explanation": "Bohr's model assigns discrete allowed energies to an electron's atomic orbits.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000018c",
+    "code": "AFNS-Q-396",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 396. Besides light and chlorophyll, which raw materials are directly needed for photosynthesis?",
+    "options": [
+      {
+        "id": "80000000-0000-018c-0000-000000000001",
+        "label": "A",
+        "text": "Carbon dioxide and water"
+      },
+      {
+        "id": "80000000-0000-018c-0000-000000000002",
+        "label": "B",
+        "text": "Oxygen and nitrogen"
+      },
+      {
+        "id": "80000000-0000-018c-0000-000000000003",
+        "label": "C",
+        "text": "Glucose and oxygen"
+      },
+      {
+        "id": "80000000-0000-018c-0000-000000000004",
+        "label": "D",
+        "text": "Nitrogen and helium"
+      }
+    ],
+    "correctOptionId": "80000000-0000-018c-0000-000000000001",
+    "explanation": "Photosynthesis consumes carbon dioxide and water to form carbohydrates using light energy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000018d",
+    "code": "AFNS-Q-397",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 397. At the same rated voltage, which bulb has greater operating resistance: 100 W or 2 W?",
+    "options": [
+      {
+        "id": "80000000-0000-018d-0000-000000000001",
+        "label": "A",
+        "text": "2 watt"
+      },
+      {
+        "id": "80000000-0000-018d-0000-000000000002",
+        "label": "B",
+        "text": "100 watt"
+      },
+      {
+        "id": "80000000-0000-018d-0000-000000000003",
+        "label": "C",
+        "text": "Both have equal resistance"
+      },
+      {
+        "id": "80000000-0000-018d-0000-000000000004",
+        "label": "D",
+        "text": "Power gives no information at equal voltage"
+      }
+    ],
+    "correctOptionId": "80000000-0000-018d-0000-000000000001",
+    "explanation": "At equal rated voltage, R = V^2/P, so the lower-power 2 W bulb has greater operating resistance.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000018e",
+    "code": "AFNS-Q-398",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 398. Potassium deficiency in plants causes:",
+    "options": [
+      {
+        "id": "80000000-0000-018e-0000-000000000001",
+        "label": "A",
+        "text": "Chlorosis"
+      },
+      {
+        "id": "80000000-0000-018e-0000-000000000002",
+        "label": "B",
+        "text": "Immediate flowering"
+      },
+      {
+        "id": "80000000-0000-018e-0000-000000000003",
+        "label": "C",
+        "text": "Increased chlorophyll in all leaves"
+      },
+      {
+        "id": "80000000-0000-018e-0000-000000000004",
+        "label": "D",
+        "text": "No visible symptoms ever"
+      }
+    ],
+    "correctOptionId": "80000000-0000-018e-0000-000000000001",
+    "explanation": "Potassium deficiency can cause yellowing, especially along leaf margins, followed by necrosis.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000018f",
+    "code": "AFNS-Q-399",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 399. Water is only slightly soluble in which type of solvent?",
+    "options": [
+      {
+        "id": "80000000-0000-018f-0000-000000000001",
+        "label": "A",
+        "text": "Non-polar organic solvents"
+      },
+      {
+        "id": "80000000-0000-018f-0000-000000000002",
+        "label": "B",
+        "text": "Pure water"
+      },
+      {
+        "id": "80000000-0000-018f-0000-000000000003",
+        "label": "C",
+        "text": "Aqueous ethanol"
+      },
+      {
+        "id": "80000000-0000-018f-0000-000000000004",
+        "label": "D",
+        "text": "Dilute salt solutions"
+      }
+    ],
+    "correctOptionId": "80000000-0000-018f-0000-000000000001",
+    "explanation": "Water is polar and mixes poorly with non-polar organic solvents.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000190",
+    "code": "AFNS-Q-400",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 400. Photosynthesis in oceans is carried out mainly by:",
+    "options": [
+      {
+        "id": "80000000-0000-0190-0000-000000000001",
+        "label": "A",
+        "text": "Phytoplankton"
+      },
+      {
+        "id": "80000000-0000-0190-0000-000000000002",
+        "label": "B",
+        "text": "Fish"
+      },
+      {
+        "id": "80000000-0000-0190-0000-000000000003",
+        "label": "C",
+        "text": "Marine mammals"
+      },
+      {
+        "id": "80000000-0000-0190-0000-000000000004",
+        "label": "D",
+        "text": "Deep-sea fungi only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0190-0000-000000000001",
+    "explanation": "Marine phytoplankton are the principal photosynthetic producers in ocean waters.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000191",
+    "code": "AFNS-Q-401",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 401. Down cell is used to prepare:",
+    "options": [
+      {
+        "id": "80000000-0000-0191-0000-000000000001",
+        "label": "A",
+        "text": "Sodium Metal"
+      },
+      {
+        "id": "80000000-0000-0191-0000-000000000002",
+        "label": "B",
+        "text": "Sulfuric acid"
+      },
+      {
+        "id": "80000000-0000-0191-0000-000000000003",
+        "label": "C",
+        "text": "Ammonia"
+      },
+      {
+        "id": "80000000-0000-0191-0000-000000000004",
+        "label": "D",
+        "text": "Methanol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0191-0000-000000000001",
+    "explanation": "The Downs cell electrolyzes molten sodium chloride to produce sodium metal.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000192",
+    "code": "AFNS-Q-402",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 402. Alkali is a:",
+    "options": [
+      {
+        "id": "80000000-0000-0192-0000-000000000001",
+        "label": "A",
+        "text": "Base"
+      },
+      {
+        "id": "80000000-0000-0192-0000-000000000002",
+        "label": "B",
+        "text": "Neutral gas"
+      },
+      {
+        "id": "80000000-0000-0192-0000-000000000003",
+        "label": "C",
+        "text": "Strong acid only"
+      },
+      {
+        "id": "80000000-0000-0192-0000-000000000004",
+        "label": "D",
+        "text": "Metallic element"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0192-0000-000000000001",
+    "explanation": "An alkali is a base that dissolves in water to produce hydroxide ions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000193",
+    "code": "AFNS-Q-403",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 403. Dalton's law of partial pressures describes:",
+    "options": [
+      {
+        "id": "80000000-0000-0193-0000-000000000001",
+        "label": "A",
+        "text": "The total pressure of a mixture of non-reacting gases"
+      },
+      {
+        "id": "80000000-0000-0193-0000-000000000002",
+        "label": "B",
+        "text": "Elastic force in a spring"
+      },
+      {
+        "id": "80000000-0000-0193-0000-000000000003",
+        "label": "C",
+        "text": "Electrical resistance"
+      },
+      {
+        "id": "80000000-0000-0193-0000-000000000004",
+        "label": "D",
+        "text": "Rate of radioactive decay"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0193-0000-000000000001",
+    "explanation": "Dalton's law states that total gas-mixture pressure equals the sum of component partial pressures.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000194",
+    "code": "AFNS-Q-404",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 404. Movement of water across a membrane is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0194-0000-000000000001",
+        "label": "A",
+        "text": "Osmosis"
+      },
+      {
+        "id": "80000000-0000-0194-0000-000000000002",
+        "label": "B",
+        "text": "Translation"
+      },
+      {
+        "id": "80000000-0000-0194-0000-000000000003",
+        "label": "C",
+        "text": "Transcription"
+      },
+      {
+        "id": "80000000-0000-0194-0000-000000000004",
+        "label": "D",
+        "text": "Fermentation"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0194-0000-000000000001",
+    "explanation": "Osmosis is net water movement through a selectively permeable membrane down a water-potential gradient.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000195",
+    "code": "AFNS-Q-405",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 405. Which scientist played an important role in the periodic table?",
+    "options": [
+      {
+        "id": "80000000-0000-0195-0000-000000000001",
+        "label": "A",
+        "text": "Mendeleev"
+      },
+      {
+        "id": "80000000-0000-0195-0000-000000000002",
+        "label": "B",
+        "text": "Darwin"
+      },
+      {
+        "id": "80000000-0000-0195-0000-000000000003",
+        "label": "C",
+        "text": "Pasteur"
+      },
+      {
+        "id": "80000000-0000-0195-0000-000000000004",
+        "label": "D",
+        "text": "Fleming"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0195-0000-000000000001",
+    "explanation": "Mendeleev organized elements systematically and predicted properties of missing elements.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000196",
+    "code": "AFNS-Q-406",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 406. Covalent bond is not found in:",
+    "options": [
+      {
+        "id": "80000000-0000-0196-0000-000000000001",
+        "label": "A",
+        "text": "Iron"
+      },
+      {
+        "id": "80000000-0000-0196-0000-000000000002",
+        "label": "B",
+        "text": "Methane"
+      },
+      {
+        "id": "80000000-0000-0196-0000-000000000003",
+        "label": "C",
+        "text": "Water"
+      },
+      {
+        "id": "80000000-0000-0196-0000-000000000004",
+        "label": "D",
+        "text": "Carbon dioxide"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0196-0000-000000000001",
+    "explanation": "Elemental iron is held together primarily by metallic bonding.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000197",
+    "code": "AFNS-Q-407",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 407. In photoelectric absorption by an electron, the incident photon:",
+    "options": [
+      {
+        "id": "80000000-0000-0197-0000-000000000001",
+        "label": "A",
+        "text": "Transfers its entire energy"
+      },
+      {
+        "id": "80000000-0000-0197-0000-000000000002",
+        "label": "B",
+        "text": "Transfers half its energy in every event"
+      },
+      {
+        "id": "80000000-0000-0197-0000-000000000003",
+        "label": "C",
+        "text": "Keeps all its energy"
+      },
+      {
+        "id": "80000000-0000-0197-0000-000000000004",
+        "label": "D",
+        "text": "Splits into two electrons"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0197-0000-000000000001",
+    "explanation": "A photon is absorbed as a whole, with its energy used for electron release and kinetic energy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000198",
+    "code": "AFNS-Q-408",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 408. The electric potential of a dry cell is:",
+    "options": [
+      {
+        "id": "80000000-0000-0198-0000-000000000001",
+        "label": "A",
+        "text": "1.5 Volts"
+      },
+      {
+        "id": "80000000-0000-0198-0000-000000000002",
+        "label": "B",
+        "text": "12 Volts"
+      },
+      {
+        "id": "80000000-0000-0198-0000-000000000003",
+        "label": "C",
+        "text": "220 Volts"
+      },
+      {
+        "id": "80000000-0000-0198-0000-000000000004",
+        "label": "D",
+        "text": "0.01 Volts"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0198-0000-000000000001",
+    "explanation": "A conventional zinc-carbon dry cell has a nominal potential difference of about 1.5 V.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000199",
+    "code": "AFNS-Q-409",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 409. A device which converts electrical power into coherent light is called:",
+    "options": [
+      {
+        "id": "80000000-0000-0199-0000-000000000001",
+        "label": "A",
+        "text": "Laser Diode"
+      },
+      {
+        "id": "80000000-0000-0199-0000-000000000002",
+        "label": "B",
+        "text": "Transformer"
+      },
+      {
+        "id": "80000000-0000-0199-0000-000000000003",
+        "label": "C",
+        "text": "Capacitor"
+      },
+      {
+        "id": "80000000-0000-0199-0000-000000000004",
+        "label": "D",
+        "text": "Electromagnet"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0199-0000-000000000001",
+    "explanation": "A laser diode is a semiconductor device that converts electrical energy into coherent light.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000019a",
+    "code": "AFNS-Q-410",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 410. The wood is glued ____ the metal.",
+    "options": [
+      {
+        "id": "80000000-0000-019a-0000-000000000001",
+        "label": "A",
+        "text": "to"
+      },
+      {
+        "id": "80000000-0000-019a-0000-000000000002",
+        "label": "B",
+        "text": "against"
+      },
+      {
+        "id": "80000000-0000-019a-0000-000000000003",
+        "label": "C",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-019a-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-019a-0000-000000000001",
+    "explanation": "The standard construction is glued to when one material is attached to another.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000019b",
+    "code": "AFNS-Q-411",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 411. Picric acid is formed when ____ reacts with nitric acid.",
+    "options": [
+      {
+        "id": "80000000-0000-019b-0000-000000000001",
+        "label": "A",
+        "text": "Phenol"
+      },
+      {
+        "id": "80000000-0000-019b-0000-000000000002",
+        "label": "B",
+        "text": "Methane"
+      },
+      {
+        "id": "80000000-0000-019b-0000-000000000003",
+        "label": "C",
+        "text": "Ethane"
+      },
+      {
+        "id": "80000000-0000-019b-0000-000000000004",
+        "label": "D",
+        "text": "Acetone"
+      }
+    ],
+    "correctOptionId": "80000000-0000-019b-0000-000000000001",
+    "explanation": "Nitration of phenol with suitable strong conditions produces 2,4,6-trinitrophenol, or picric acid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000019c",
+    "code": "AFNS-Q-412",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 412. The functional unit of the kidney is:",
+    "options": [
+      {
+        "id": "80000000-0000-019c-0000-000000000001",
+        "label": "A",
+        "text": "Nephron"
+      },
+      {
+        "id": "80000000-0000-019c-0000-000000000002",
+        "label": "B",
+        "text": "Neuron"
+      },
+      {
+        "id": "80000000-0000-019c-0000-000000000003",
+        "label": "C",
+        "text": "Alveolus"
+      },
+      {
+        "id": "80000000-0000-019c-0000-000000000004",
+        "label": "D",
+        "text": "Villus"
+      }
+    ],
+    "correctOptionId": "80000000-0000-019c-0000-000000000001",
+    "explanation": "The nephron filters blood and modifies filtrate to form urine, making it the kidney's functional unit.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000019d",
+    "code": "AFNS-Q-413",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 413. Which energy is directly provided to the muscles?",
+    "options": [
+      {
+        "id": "80000000-0000-019d-0000-000000000001",
+        "label": "A",
+        "text": "ATP"
+      },
+      {
+        "id": "80000000-0000-019d-0000-000000000002",
+        "label": "B",
+        "text": "DNA"
+      },
+      {
+        "id": "80000000-0000-019d-0000-000000000003",
+        "label": "C",
+        "text": "Cellulose"
+      },
+      {
+        "id": "80000000-0000-019d-0000-000000000004",
+        "label": "D",
+        "text": "Cholesterol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-019d-0000-000000000001",
+    "explanation": "ATP hydrolysis directly supplies energy for the muscle cross-bridge cycle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000019e",
+    "code": "AFNS-Q-414",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 414. For a radioactive isotope with decay constant lambda, its half-life is:",
+    "options": [
+      {
+        "id": "80000000-0000-019e-0000-000000000001",
+        "label": "A",
+        "text": "ln(2)/lambda"
+      },
+      {
+        "id": "80000000-0000-019e-0000-000000000002",
+        "label": "B",
+        "text": "lambda/ln(2)"
+      },
+      {
+        "id": "80000000-0000-019e-0000-000000000003",
+        "label": "C",
+        "text": "2*lambda"
+      },
+      {
+        "id": "80000000-0000-019e-0000-000000000004",
+        "label": "D",
+        "text": "lambda^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-019e-0000-000000000001",
+    "explanation": "Radioactive half-life follows t_half = ln(2)/lambda and is inversely proportional to decay constant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000019f",
+    "code": "AFNS-Q-415",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 415. If the length of a simple pendulum is increased four times, its time period will be:",
+    "options": [
+      {
+        "id": "80000000-0000-019f-0000-000000000001",
+        "label": "A",
+        "text": "Double"
+      },
+      {
+        "id": "80000000-0000-019f-0000-000000000002",
+        "label": "B",
+        "text": "Half"
+      },
+      {
+        "id": "80000000-0000-019f-0000-000000000003",
+        "label": "C",
+        "text": "Four times"
+      },
+      {
+        "id": "80000000-0000-019f-0000-000000000004",
+        "label": "D",
+        "text": "Unchanged"
+      }
+    ],
+    "correctOptionId": "80000000-0000-019f-0000-000000000001",
+    "explanation": "Pendulum period is proportional to sqrt(L), so quadrupling length doubles the period.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a0",
+    "code": "AFNS-Q-416",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 416. The reaction of sodium acetate with soda lime gives:",
+    "options": [
+      {
+        "id": "80000000-0000-01a0-0000-000000000001",
+        "label": "A",
+        "text": "Methane"
+      },
+      {
+        "id": "80000000-0000-01a0-0000-000000000002",
+        "label": "B",
+        "text": "Ethane"
+      },
+      {
+        "id": "80000000-0000-01a0-0000-000000000003",
+        "label": "C",
+        "text": "Ethene"
+      },
+      {
+        "id": "80000000-0000-01a0-0000-000000000004",
+        "label": "D",
+        "text": "Methanol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a0-0000-000000000001",
+    "explanation": "Soda-lime decarboxylation removes the carboxyl carbon of sodium acetate and produces methane.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a1",
+    "code": "AFNS-Q-417",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 417. Ripening of fruits is hastened by which gas?",
+    "options": [
+      {
+        "id": "80000000-0000-01a1-0000-000000000001",
+        "label": "A",
+        "text": "Ethylene"
+      },
+      {
+        "id": "80000000-0000-01a1-0000-000000000002",
+        "label": "B",
+        "text": "Oxygen"
+      },
+      {
+        "id": "80000000-0000-01a1-0000-000000000003",
+        "label": "C",
+        "text": "Nitrogen"
+      },
+      {
+        "id": "80000000-0000-01a1-0000-000000000004",
+        "label": "D",
+        "text": "Hydrogen"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a1-0000-000000000001",
+    "explanation": "Ethylene is a gaseous plant hormone that promotes ripening in many fruits.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a2",
+    "code": "AFNS-Q-418",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 418. Elements having the same atomic number but different atomic mass numbers are called:",
+    "options": [
+      {
+        "id": "80000000-0000-01a2-0000-000000000001",
+        "label": "A",
+        "text": "Isotopes"
+      },
+      {
+        "id": "80000000-0000-01a2-0000-000000000002",
+        "label": "B",
+        "text": "Isobars"
+      },
+      {
+        "id": "80000000-0000-01a2-0000-000000000003",
+        "label": "C",
+        "text": "Isotones"
+      },
+      {
+        "id": "80000000-0000-01a2-0000-000000000004",
+        "label": "D",
+        "text": "Allotropes"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a2-0000-000000000001",
+    "explanation": "Isotopes have equal proton numbers but different neutron numbers and mass numbers.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a3",
+    "code": "AFNS-Q-419",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 419. One-third of one-tenth of 90 is:",
+    "options": [
+      {
+        "id": "80000000-0000-01a3-0000-000000000001",
+        "label": "A",
+        "text": "3"
+      },
+      {
+        "id": "80000000-0000-01a3-0000-000000000002",
+        "label": "B",
+        "text": "9"
+      },
+      {
+        "id": "80000000-0000-01a3-0000-000000000003",
+        "label": "C",
+        "text": "30"
+      },
+      {
+        "id": "80000000-0000-01a3-0000-000000000004",
+        "label": "D",
+        "text": "1"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a3-0000-000000000001",
+    "explanation": "One-third of one-tenth of 90 is 90/(10*3) = 3.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a4",
+    "code": "AFNS-Q-420",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 420. My father got angry ____ my failure.",
+    "options": [
+      {
+        "id": "80000000-0000-01a4-0000-000000000001",
+        "label": "A",
+        "text": "At"
+      },
+      {
+        "id": "80000000-0000-01a4-0000-000000000002",
+        "label": "B",
+        "text": "With"
+      },
+      {
+        "id": "80000000-0000-01a4-0000-000000000003",
+        "label": "C",
+        "text": "By"
+      },
+      {
+        "id": "80000000-0000-01a4-0000-000000000004",
+        "label": "D",
+        "text": "From"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a4-0000-000000000001",
+    "explanation": "Angry at can describe anger directed toward an event such as a failure.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a5",
+    "code": "AFNS-Q-421",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 421. Benzene reacts with bromine in the presence of FeBr3 mainly by:",
+    "options": [
+      {
+        "id": "80000000-0000-01a5-0000-000000000001",
+        "label": "A",
+        "text": "Electrophilic substitution"
+      },
+      {
+        "id": "80000000-0000-01a5-0000-000000000002",
+        "label": "B",
+        "text": "Nucleophilic substitution"
+      },
+      {
+        "id": "80000000-0000-01a5-0000-000000000003",
+        "label": "C",
+        "text": "Neutralization"
+      },
+      {
+        "id": "80000000-0000-01a5-0000-000000000004",
+        "label": "D",
+        "text": "Complete combustion"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a5-0000-000000000001",
+    "explanation": "FeBr3 activates bromine for electrophilic substitution on benzene's aromatic ring.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a6",
+    "code": "AFNS-Q-422",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 422. Ammonium chloride is ____ in nature.",
+    "options": [
+      {
+        "id": "80000000-0000-01a6-0000-000000000001",
+        "label": "A",
+        "text": "Acidic"
+      },
+      {
+        "id": "80000000-0000-01a6-0000-000000000002",
+        "label": "B",
+        "text": "Basic"
+      },
+      {
+        "id": "80000000-0000-01a6-0000-000000000003",
+        "label": "C",
+        "text": "Always neutral"
+      },
+      {
+        "id": "80000000-0000-01a6-0000-000000000004",
+        "label": "D",
+        "text": "Non-ionic in water"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a6-0000-000000000001",
+    "explanation": "NH4+ undergoes acidic hydrolysis in water, making ammonium chloride solution acidic.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a7",
+    "code": "AFNS-Q-423",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 423. How much blood from the heart goes to the kidney?",
+    "options": [
+      {
+        "id": "80000000-0000-01a7-0000-000000000001",
+        "label": "A",
+        "text": "20%"
+      },
+      {
+        "id": "80000000-0000-01a7-0000-000000000002",
+        "label": "B",
+        "text": "2%"
+      },
+      {
+        "id": "80000000-0000-01a7-0000-000000000003",
+        "label": "C",
+        "text": "50%"
+      },
+      {
+        "id": "80000000-0000-01a7-0000-000000000004",
+        "label": "D",
+        "text": "90%"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a7-0000-000000000001",
+    "explanation": "The kidneys receive approximately one-fifth of resting cardiac output.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a8",
+    "code": "AFNS-Q-424",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 424. Two ice cubes are passed over each other and unite to form one cube. Which force is responsible for holding them together?",
+    "options": [
+      {
+        "id": "80000000-0000-01a8-0000-000000000001",
+        "label": "A",
+        "text": "H-Bonding"
+      },
+      {
+        "id": "80000000-0000-01a8-0000-000000000002",
+        "label": "B",
+        "text": "Metallic bonding"
+      },
+      {
+        "id": "80000000-0000-01a8-0000-000000000003",
+        "label": "C",
+        "text": "Ionic bonding"
+      },
+      {
+        "id": "80000000-0000-01a8-0000-000000000004",
+        "label": "D",
+        "text": "Nuclear attraction"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a8-0000-000000000001",
+    "explanation": "Hydrogen bonds help hold the ice lattice together after pressure-assisted melting and refreezing join the surfaces.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001a9",
+    "code": "AFNS-Q-425",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 425. Acceleration of different bodies falling freely is:",
+    "options": [
+      {
+        "id": "80000000-0000-01a9-0000-000000000001",
+        "label": "A",
+        "text": "9.8 m/s^2"
+      },
+      {
+        "id": "80000000-0000-01a9-0000-000000000002",
+        "label": "B",
+        "text": "0.98 m/s^2"
+      },
+      {
+        "id": "80000000-0000-01a9-0000-000000000003",
+        "label": "C",
+        "text": "98 m/s^2"
+      },
+      {
+        "id": "80000000-0000-01a9-0000-000000000004",
+        "label": "D",
+        "text": "0 m/s^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01a9-0000-000000000001",
+    "explanation": "Near Earth's surface, freely falling bodies accelerate at about 9.8 m/s^2 when air resistance is negligible.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001aa",
+    "code": "AFNS-Q-426",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 426. Halogens exist in:",
+    "options": [
+      {
+        "id": "80000000-0000-01aa-0000-000000000001",
+        "label": "A",
+        "text": "All states"
+      },
+      {
+        "id": "80000000-0000-01aa-0000-000000000002",
+        "label": "B",
+        "text": "Only gases"
+      },
+      {
+        "id": "80000000-0000-01aa-0000-000000000003",
+        "label": "C",
+        "text": "Only liquids"
+      },
+      {
+        "id": "80000000-0000-01aa-0000-000000000004",
+        "label": "D",
+        "text": "Only solids"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01aa-0000-000000000001",
+    "explanation": "At room temperature, halogens include gases such as chlorine, liquid bromine and solids such as iodine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ab",
+    "code": "AFNS-Q-427",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 427. How many s-block elements begin the seventh period?",
+    "options": [
+      {
+        "id": "80000000-0000-01ab-0000-000000000001",
+        "label": "A",
+        "text": "Two"
+      },
+      {
+        "id": "80000000-0000-01ab-0000-000000000002",
+        "label": "B",
+        "text": "Four"
+      },
+      {
+        "id": "80000000-0000-01ab-0000-000000000003",
+        "label": "C",
+        "text": "Six"
+      },
+      {
+        "id": "80000000-0000-01ab-0000-000000000004",
+        "label": "D",
+        "text": "Eight"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ab-0000-000000000001",
+    "explanation": "Francium and radium are the two s-block elements at the start of period seven.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ac",
+    "code": "AFNS-Q-428",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 428. Electron volt is a unit of:",
+    "options": [
+      {
+        "id": "80000000-0000-01ac-0000-000000000001",
+        "label": "A",
+        "text": "Energy"
+      },
+      {
+        "id": "80000000-0000-01ac-0000-000000000002",
+        "label": "B",
+        "text": "Power"
+      },
+      {
+        "id": "80000000-0000-01ac-0000-000000000003",
+        "label": "C",
+        "text": "Charge"
+      },
+      {
+        "id": "80000000-0000-01ac-0000-000000000004",
+        "label": "D",
+        "text": "Force"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ac-0000-000000000001",
+    "explanation": "An electron volt is the energy gained by an elementary charge across a potential difference of one volt.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ad",
+    "code": "AFNS-Q-429",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 429. The unit of charge is:",
+    "options": [
+      {
+        "id": "80000000-0000-01ad-0000-000000000001",
+        "label": "A",
+        "text": "Coulomb"
+      },
+      {
+        "id": "80000000-0000-01ad-0000-000000000002",
+        "label": "B",
+        "text": "Ampere"
+      },
+      {
+        "id": "80000000-0000-01ad-0000-000000000003",
+        "label": "C",
+        "text": "Volt"
+      },
+      {
+        "id": "80000000-0000-01ad-0000-000000000004",
+        "label": "D",
+        "text": "Ohm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ad-0000-000000000001",
+    "explanation": "The coulomb is the SI unit of electric charge.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ae",
+    "code": "AFNS-Q-430",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 430. He ____ hard so that he will pass.",
+    "options": [
+      {
+        "id": "80000000-0000-01ae-0000-000000000001",
+        "label": "A",
+        "text": "Works"
+      },
+      {
+        "id": "80000000-0000-01ae-0000-000000000002",
+        "label": "B",
+        "text": "Work"
+      },
+      {
+        "id": "80000000-0000-01ae-0000-000000000003",
+        "label": "C",
+        "text": "Working"
+      },
+      {
+        "id": "80000000-0000-01ae-0000-000000000004",
+        "label": "D",
+        "text": "Have worked"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ae-0000-000000000001",
+    "explanation": "The singular subject he takes works in the simple present tense.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001af",
+    "code": "AFNS-Q-431",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 431. Work hard lest you ____ fail.",
+    "options": [
+      {
+        "id": "80000000-0000-01af-0000-000000000001",
+        "label": "A",
+        "text": "Should"
+      },
+      {
+        "id": "80000000-0000-01af-0000-000000000002",
+        "label": "B",
+        "text": "Can"
+      },
+      {
+        "id": "80000000-0000-01af-0000-000000000003",
+        "label": "C",
+        "text": "Would have"
+      },
+      {
+        "id": "80000000-0000-01af-0000-000000000004",
+        "label": "D",
+        "text": "Are"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01af-0000-000000000001",
+    "explanation": "The formal construction lest you should fail uses should to express an outcome to avoid.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b0",
+    "code": "AFNS-Q-432",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 432. Solid NaCl is an:",
+    "options": [
+      {
+        "id": "80000000-0000-01b0-0000-000000000001",
+        "label": "A",
+        "text": "Insulator"
+      },
+      {
+        "id": "80000000-0000-01b0-0000-000000000002",
+        "label": "B",
+        "text": "Good electronic conductor"
+      },
+      {
+        "id": "80000000-0000-01b0-0000-000000000003",
+        "label": "C",
+        "text": "Superconductor"
+      },
+      {
+        "id": "80000000-0000-01b0-0000-000000000004",
+        "label": "D",
+        "text": "Liquid electrolyte"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b0-0000-000000000001",
+    "explanation": "In solid NaCl the ions are fixed in the lattice and cannot carry current freely.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b1",
+    "code": "AFNS-Q-433",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 433. In gases, when temperature increases, the viscosity of gases:",
+    "options": [
+      {
+        "id": "80000000-0000-01b1-0000-000000000001",
+        "label": "A",
+        "text": "Increases"
+      },
+      {
+        "id": "80000000-0000-01b1-0000-000000000002",
+        "label": "B",
+        "text": "Decreases"
+      },
+      {
+        "id": "80000000-0000-01b1-0000-000000000003",
+        "label": "C",
+        "text": "Always remains constant"
+      },
+      {
+        "id": "80000000-0000-01b1-0000-000000000004",
+        "label": "D",
+        "text": "Becomes zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b1-0000-000000000001",
+    "explanation": "Increasing gas temperature increases molecular momentum transport and generally increases viscosity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b2",
+    "code": "AFNS-Q-434",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 434. In physics, we study the relation between:",
+    "options": [
+      {
+        "id": "80000000-0000-01b2-0000-000000000001",
+        "label": "A",
+        "text": "Matter & Energy"
+      },
+      {
+        "id": "80000000-0000-01b2-0000-000000000002",
+        "label": "B",
+        "text": "Only living cells"
+      },
+      {
+        "id": "80000000-0000-01b2-0000-000000000003",
+        "label": "C",
+        "text": "Only ancient cultures"
+      },
+      {
+        "id": "80000000-0000-01b2-0000-000000000004",
+        "label": "D",
+        "text": "Only grammar"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b2-0000-000000000001",
+    "explanation": "Physics investigates matter, energy, motion and their interactions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b3",
+    "code": "AFNS-Q-435",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 435. The zone of Earth in which living organisms occur is called:",
+    "options": [
+      {
+        "id": "80000000-0000-01b3-0000-000000000001",
+        "label": "A",
+        "text": "Biosphere"
+      },
+      {
+        "id": "80000000-0000-01b3-0000-000000000002",
+        "label": "B",
+        "text": "Lithosphere only"
+      },
+      {
+        "id": "80000000-0000-01b3-0000-000000000003",
+        "label": "C",
+        "text": "Core"
+      },
+      {
+        "id": "80000000-0000-01b3-0000-000000000004",
+        "label": "D",
+        "text": "Stratosphere only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b3-0000-000000000001",
+    "explanation": "The biosphere comprises Earth's regions that support living organisms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b4",
+    "code": "AFNS-Q-436",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 436. Impulse has the same dimensions as:",
+    "options": [
+      {
+        "id": "80000000-0000-01b4-0000-000000000001",
+        "label": "A",
+        "text": "Momentum"
+      },
+      {
+        "id": "80000000-0000-01b4-0000-000000000002",
+        "label": "B",
+        "text": "Power"
+      },
+      {
+        "id": "80000000-0000-01b4-0000-000000000003",
+        "label": "C",
+        "text": "Pressure"
+      },
+      {
+        "id": "80000000-0000-01b4-0000-000000000004",
+        "label": "D",
+        "text": "Density"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b4-0000-000000000001",
+    "explanation": "Impulse is the change in momentum, so both have dimensions M*L*T^-1.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b5",
+    "code": "AFNS-Q-437",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 437. The formula of wood spirit is:",
+    "options": [
+      {
+        "id": "80000000-0000-01b5-0000-000000000001",
+        "label": "A",
+        "text": "CH3OH"
+      },
+      {
+        "id": "80000000-0000-01b5-0000-000000000002",
+        "label": "B",
+        "text": "C2H5OH"
+      },
+      {
+        "id": "80000000-0000-01b5-0000-000000000003",
+        "label": "C",
+        "text": "HCOOH"
+      },
+      {
+        "id": "80000000-0000-01b5-0000-000000000004",
+        "label": "D",
+        "text": "CH3CHO"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b5-0000-000000000001",
+    "explanation": "Wood spirit is methanol, with molecular formula CH3OH.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b6",
+    "code": "AFNS-Q-438",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 438. According to special relativity, a particle with nonzero rest mass can:",
+    "options": [
+      {
+        "id": "80000000-0000-01b6-0000-000000000001",
+        "label": "A",
+        "text": "Approach but never reach the speed of light"
+      },
+      {
+        "id": "80000000-0000-01b6-0000-000000000002",
+        "label": "B",
+        "text": "Reach c with finite energy"
+      },
+      {
+        "id": "80000000-0000-01b6-0000-000000000003",
+        "label": "C",
+        "text": "Exceed c by continuous acceleration"
+      },
+      {
+        "id": "80000000-0000-01b6-0000-000000000004",
+        "label": "D",
+        "text": "Remain stationary only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b6-0000-000000000001",
+    "explanation": "The energy required to accelerate a massive particle grows without bound as its speed approaches c.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b7",
+    "code": "AFNS-Q-439",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 439. The two functional groups common to free amino acids are:",
+    "options": [
+      {
+        "id": "80000000-0000-01b7-0000-000000000001",
+        "label": "A",
+        "text": "Amino and carboxyl groups"
+      },
+      {
+        "id": "80000000-0000-01b7-0000-000000000002",
+        "label": "B",
+        "text": "Hydroxyl and ester groups only"
+      },
+      {
+        "id": "80000000-0000-01b7-0000-000000000003",
+        "label": "C",
+        "text": "Aldehyde and ketone groups only"
+      },
+      {
+        "id": "80000000-0000-01b7-0000-000000000004",
+        "label": "D",
+        "text": "Nitro and halogen groups only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b7-0000-000000000001",
+    "explanation": "Free amino acids contain amino and carboxyl groups, which can link through peptide-bond formation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b8",
+    "code": "AFNS-Q-440",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 440. One gram of dietary fat provides approximately how much energy?",
+    "options": [
+      {
+        "id": "80000000-0000-01b8-0000-000000000001",
+        "label": "A",
+        "text": "9 kcal"
+      },
+      {
+        "id": "80000000-0000-01b8-0000-000000000002",
+        "label": "B",
+        "text": "4 kcal"
+      },
+      {
+        "id": "80000000-0000-01b8-0000-000000000003",
+        "label": "C",
+        "text": "1 kcal"
+      },
+      {
+        "id": "80000000-0000-01b8-0000-000000000004",
+        "label": "D",
+        "text": "15 kcal"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b8-0000-000000000001",
+    "explanation": "Dietary fat provides approximately 9 kcal per gram.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001b9",
+    "code": "AFNS-Q-441",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 441. High temperatures can denature enzymes by:",
+    "options": [
+      {
+        "id": "80000000-0000-01b9-0000-000000000001",
+        "label": "A",
+        "text": "Disrupting their three-dimensional structure"
+      },
+      {
+        "id": "80000000-0000-01b9-0000-000000000002",
+        "label": "B",
+        "text": "Adding amino acids to every chain"
+      },
+      {
+        "id": "80000000-0000-01b9-0000-000000000003",
+        "label": "C",
+        "text": "Converting them into DNA"
+      },
+      {
+        "id": "80000000-0000-01b9-0000-000000000004",
+        "label": "D",
+        "text": "Making their active sites permanently stronger"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01b9-0000-000000000001",
+    "explanation": "Heat can disrupt enzyme folding and the active-site shape needed for catalysis.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ba",
+    "code": "AFNS-Q-442",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 442. What will be the efflux from a high water tank hole?",
+    "options": [
+      {
+        "id": "80000000-0000-01ba-0000-000000000001",
+        "label": "A",
+        "text": "V = sqrt(2*g*h), Torricelli's law"
+      },
+      {
+        "id": "80000000-0000-01ba-0000-000000000002",
+        "label": "B",
+        "text": "V = g/h"
+      },
+      {
+        "id": "80000000-0000-01ba-0000-000000000003",
+        "label": "C",
+        "text": "V = 2*g*h"
+      },
+      {
+        "id": "80000000-0000-01ba-0000-000000000004",
+        "label": "D",
+        "text": "V = h/g"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ba-0000-000000000001",
+    "explanation": "Torricelli's law gives ideal efflux speed sqrt(2*g*h), with h the depth below the liquid surface.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001bb",
+    "code": "AFNS-Q-443",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 443. Mass of an electron is:",
+    "options": [
+      {
+        "id": "80000000-0000-01bb-0000-000000000001",
+        "label": "A",
+        "text": "9.1*10^-31 kg"
+      },
+      {
+        "id": "80000000-0000-01bb-0000-000000000002",
+        "label": "B",
+        "text": "1.67*10^-27 kg"
+      },
+      {
+        "id": "80000000-0000-01bb-0000-000000000003",
+        "label": "C",
+        "text": "9.1*10^-19 kg"
+      },
+      {
+        "id": "80000000-0000-01bb-0000-000000000004",
+        "label": "D",
+        "text": "1.0 kg"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01bb-0000-000000000001",
+    "explanation": "The electron's rest mass is approximately 9.11*10^-31 kg.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001bc",
+    "code": "AFNS-Q-444",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 444. Xanthophyll colors are:",
+    "options": [
+      {
+        "id": "80000000-0000-01bc-0000-000000000001",
+        "label": "A",
+        "text": "Yellow"
+      },
+      {
+        "id": "80000000-0000-01bc-0000-000000000002",
+        "label": "B",
+        "text": "Blue"
+      },
+      {
+        "id": "80000000-0000-01bc-0000-000000000003",
+        "label": "C",
+        "text": "Purple"
+      },
+      {
+        "id": "80000000-0000-01bc-0000-000000000004",
+        "label": "D",
+        "text": "Black"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01bc-0000-000000000001",
+    "explanation": "Xanthophylls are yellow carotenoid pigments found in photosynthetic organisms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001bd",
+    "code": "AFNS-Q-445",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 445. The unit of intensity of light is:",
+    "options": [
+      {
+        "id": "80000000-0000-01bd-0000-000000000001",
+        "label": "A",
+        "text": "Candela"
+      },
+      {
+        "id": "80000000-0000-01bd-0000-000000000002",
+        "label": "B",
+        "text": "Lumen"
+      },
+      {
+        "id": "80000000-0000-01bd-0000-000000000003",
+        "label": "C",
+        "text": "Lux"
+      },
+      {
+        "id": "80000000-0000-01bd-0000-000000000004",
+        "label": "D",
+        "text": "Watt"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01bd-0000-000000000001",
+    "explanation": "Candela is the SI base unit of luminous intensity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001be",
+    "code": "AFNS-Q-446",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 446. Ribosomes are made up of:",
+    "options": [
+      {
+        "id": "80000000-0000-01be-0000-000000000001",
+        "label": "A",
+        "text": "RNA & Proteins"
+      },
+      {
+        "id": "80000000-0000-01be-0000-000000000002",
+        "label": "B",
+        "text": "DNA & Lipids"
+      },
+      {
+        "id": "80000000-0000-01be-0000-000000000003",
+        "label": "C",
+        "text": "Cellulose & Starch"
+      },
+      {
+        "id": "80000000-0000-01be-0000-000000000004",
+        "label": "D",
+        "text": "Only carbohydrates"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01be-0000-000000000001",
+    "explanation": "Ribosomes consist of ribosomal RNA and associated proteins.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001bf",
+    "code": "AFNS-Q-447",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 447. The structure of Golgi bodies is:",
+    "options": [
+      {
+        "id": "80000000-0000-01bf-0000-000000000001",
+        "label": "A",
+        "text": "Cisternae"
+      },
+      {
+        "id": "80000000-0000-01bf-0000-000000000002",
+        "label": "B",
+        "text": "Cristae"
+      },
+      {
+        "id": "80000000-0000-01bf-0000-000000000003",
+        "label": "C",
+        "text": "Microvilli"
+      },
+      {
+        "id": "80000000-0000-01bf-0000-000000000004",
+        "label": "D",
+        "text": "Flagella"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01bf-0000-000000000001",
+    "explanation": "The Golgi apparatus is composed of stacks of flattened membrane sacs called cisternae.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c0",
+    "code": "AFNS-Q-448",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 448. The synonym of \"Permit\" is:",
+    "options": [
+      {
+        "id": "80000000-0000-01c0-0000-000000000001",
+        "label": "A",
+        "text": "Allow"
+      },
+      {
+        "id": "80000000-0000-01c0-0000-000000000002",
+        "label": "B",
+        "text": "Forbid"
+      },
+      {
+        "id": "80000000-0000-01c0-0000-000000000003",
+        "label": "C",
+        "text": "Reject"
+      },
+      {
+        "id": "80000000-0000-01c0-0000-000000000004",
+        "label": "D",
+        "text": "Prevent"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c0-0000-000000000001",
+    "explanation": "Permit means to allow an action or give permission.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c1",
+    "code": "AFNS-Q-449",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 449. A force of 1000 N acts on an object for 0.01 s. What is the impulse produced by the force?",
+    "options": [
+      {
+        "id": "80000000-0000-01c1-0000-000000000001",
+        "label": "A",
+        "text": "1 N*s"
+      },
+      {
+        "id": "80000000-0000-01c1-0000-000000000002",
+        "label": "B",
+        "text": "10 N*s"
+      },
+      {
+        "id": "80000000-0000-01c1-0000-000000000003",
+        "label": "C",
+        "text": "100 N*s"
+      },
+      {
+        "id": "80000000-0000-01c1-0000-000000000004",
+        "label": "D",
+        "text": "1000 N*s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c1-0000-000000000002",
+    "explanation": "Impulse is F*delta_t = 1000*0.01 = 10 N*s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c2",
+    "code": "AFNS-Q-450",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 450. The resultant effect of resistance and reactance in an AC circuit is called:",
+    "options": [
+      {
+        "id": "80000000-0000-01c2-0000-000000000001",
+        "label": "A",
+        "text": "Resistance"
+      },
+      {
+        "id": "80000000-0000-01c2-0000-000000000002",
+        "label": "B",
+        "text": "Conductance"
+      },
+      {
+        "id": "80000000-0000-01c2-0000-000000000003",
+        "label": "C",
+        "text": "Impedance"
+      },
+      {
+        "id": "80000000-0000-01c2-0000-000000000004",
+        "label": "D",
+        "text": "Admittance"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c2-0000-000000000003",
+    "explanation": "Impedance combines resistance and reactance to describe opposition to alternating current.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c3",
+    "code": "AFNS-Q-451",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 451. The percentage errors in the measurement of mass and speed are 2% and 3%, respectively. What is the maximum percentage error in kinetic energy?",
+    "options": [
+      {
+        "id": "80000000-0000-01c3-0000-000000000001",
+        "label": "A",
+        "text": "5%"
+      },
+      {
+        "id": "80000000-0000-01c3-0000-000000000002",
+        "label": "B",
+        "text": "6%"
+      },
+      {
+        "id": "80000000-0000-01c3-0000-000000000003",
+        "label": "C",
+        "text": "8%"
+      },
+      {
+        "id": "80000000-0000-01c3-0000-000000000004",
+        "label": "D",
+        "text": "9%"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c3-0000-000000000003",
+    "explanation": "Since KE is proportional to m*v^2, the maximum percentage error is 2% + 2*3% = 8%.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c4",
+    "code": "AFNS-Q-452",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 452. Which of the following is absent in a typical Gram-positive bacterial cell wall?",
+    "options": [
+      {
+        "id": "80000000-0000-01c4-0000-000000000001",
+        "label": "A",
+        "text": "Teichoic acid"
+      },
+      {
+        "id": "80000000-0000-01c4-0000-000000000002",
+        "label": "B",
+        "text": "Lipoteichoic acid"
+      },
+      {
+        "id": "80000000-0000-01c4-0000-000000000003",
+        "label": "C",
+        "text": "Lipopolysaccharide"
+      },
+      {
+        "id": "80000000-0000-01c4-0000-000000000004",
+        "label": "D",
+        "text": "Peptidoglycan"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c4-0000-000000000003",
+    "explanation": "Gram-positive bacteria lack the lipopolysaccharide-containing outer membrane typical of Gram-negative bacteria.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c5",
+    "code": "AFNS-Q-453",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 453. Which of the following is an incorrect statement about mitosis?",
+    "options": [
+      {
+        "id": "80000000-0000-01c5-0000-000000000001",
+        "label": "A",
+        "text": "It produces genetically similar daughter cells"
+      },
+      {
+        "id": "80000000-0000-01c5-0000-000000000002",
+        "label": "B",
+        "text": "It maintains the chromosome number"
+      },
+      {
+        "id": "80000000-0000-01c5-0000-000000000003",
+        "label": "C",
+        "text": "It is involved in growth and repair"
+      },
+      {
+        "id": "80000000-0000-01c5-0000-000000000004",
+        "label": "D",
+        "text": "It produces haploid cells from diploid cells"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c5-0000-000000000004",
+    "explanation": "Mitosis normally preserves chromosome number rather than reducing diploid cells to haploid cells.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c6",
+    "code": "AFNS-Q-454",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 454. If a female is exposed to ionizing radiation, what may be the effect on her developing ova?",
+    "options": [
+      {
+        "id": "80000000-0000-01c6-0000-000000000001",
+        "label": "A",
+        "text": "Increased respiration"
+      },
+      {
+        "id": "80000000-0000-01c6-0000-000000000002",
+        "label": "B",
+        "text": "Increased growth"
+      },
+      {
+        "id": "80000000-0000-01c6-0000-000000000003",
+        "label": "C",
+        "text": "Gene mutation"
+      },
+      {
+        "id": "80000000-0000-01c6-0000-000000000004",
+        "label": "D",
+        "text": "Increased fertilization"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c6-0000-000000000003",
+    "explanation": "Ionizing radiation can damage DNA and cause mutations in developing germ cells.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c7",
+    "code": "AFNS-Q-455",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 455. Which of the following carboxylic acids is least soluble in a non-polar organic solvent?",
+    "options": [
+      {
+        "id": "80000000-0000-01c7-0000-000000000001",
+        "label": "A",
+        "text": "Butyric acid"
+      },
+      {
+        "id": "80000000-0000-01c7-0000-000000000002",
+        "label": "B",
+        "text": "Propionic acid"
+      },
+      {
+        "id": "80000000-0000-01c7-0000-000000000003",
+        "label": "C",
+        "text": "Acetic acid"
+      },
+      {
+        "id": "80000000-0000-01c7-0000-000000000004",
+        "label": "D",
+        "text": "Valeric acid"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c7-0000-000000000003",
+    "explanation": "Acetic acid has the shortest non-polar hydrocarbon portion of these acids and is least favoured by a non-polar solvent.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c8",
+    "code": "AFNS-Q-456",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 456. During which phase of bacterial growth is the highest amount of nutrients consumed and cell division most active?",
+    "options": [
+      {
+        "id": "80000000-0000-01c8-0000-000000000001",
+        "label": "A",
+        "text": "Lag phase"
+      },
+      {
+        "id": "80000000-0000-01c8-0000-000000000002",
+        "label": "B",
+        "text": "Log phase"
+      },
+      {
+        "id": "80000000-0000-01c8-0000-000000000003",
+        "label": "C",
+        "text": "Stationary phase"
+      },
+      {
+        "id": "80000000-0000-01c8-0000-000000000004",
+        "label": "D",
+        "text": "Death phase"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c8-0000-000000000002",
+    "explanation": "In the log phase, bacteria divide exponentially and actively consume nutrients.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001c9",
+    "code": "AFNS-Q-457",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 457. Propan-1-ol is mildly oxidized. Its product reacts with HCN to form 2-hydroxybutanenitrile. What is the initial alcohol?",
+    "options": [
+      {
+        "id": "80000000-0000-01c9-0000-000000000001",
+        "label": "A",
+        "text": "Butan-2-ol"
+      },
+      {
+        "id": "80000000-0000-01c9-0000-000000000002",
+        "label": "B",
+        "text": "Propan-1-ol"
+      },
+      {
+        "id": "80000000-0000-01c9-0000-000000000003",
+        "label": "C",
+        "text": "Butan-1-ol"
+      },
+      {
+        "id": "80000000-0000-01c9-0000-000000000004",
+        "label": "D",
+        "text": "Butan-2-one"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01c9-0000-000000000002",
+    "explanation": "Propan-1-ol oxidizes to propanal, and HCN addition adds one carbon to form 2-hydroxybutanenitrile.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ca",
+    "code": "AFNS-Q-458",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 458. Which carbon structure has approximately 120-degree bond angles rather than tetrahedral angles?",
+    "options": [
+      {
+        "id": "80000000-0000-01ca-0000-000000000001",
+        "label": "A",
+        "text": "Methane"
+      },
+      {
+        "id": "80000000-0000-01ca-0000-000000000002",
+        "label": "B",
+        "text": "Ammonia"
+      },
+      {
+        "id": "80000000-0000-01ca-0000-000000000003",
+        "label": "C",
+        "text": "Diamond"
+      },
+      {
+        "id": "80000000-0000-01ca-0000-000000000004",
+        "label": "D",
+        "text": "Graphite"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ca-0000-000000000004",
+    "explanation": "Graphite's sp^2-bonded carbon atoms form planar arrangements with angles of about 120 degrees.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001cb",
+    "code": "AFNS-Q-459",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 459. In nuclear magnetic resonance, nuclei are promoted from a lower spin energy level to a higher spin energy level by the absorption of:",
+    "options": [
+      {
+        "id": "80000000-0000-01cb-0000-000000000001",
+        "label": "A",
+        "text": "Ultraviolet radiation"
+      },
+      {
+        "id": "80000000-0000-01cb-0000-000000000002",
+        "label": "B",
+        "text": "Infrared radiation"
+      },
+      {
+        "id": "80000000-0000-01cb-0000-000000000003",
+        "label": "C",
+        "text": "Radio waves"
+      },
+      {
+        "id": "80000000-0000-01cb-0000-000000000004",
+        "label": "D",
+        "text": "X-rays"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01cb-0000-000000000003",
+    "explanation": "NMR uses radiofrequency energy to drive transitions between nuclear spin energy levels.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001cc",
+    "code": "AFNS-Q-460",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 460. What is the oxidation number of manganese in KMnO4?",
+    "options": [
+      {
+        "id": "80000000-0000-01cc-0000-000000000001",
+        "label": "A",
+        "text": "+2"
+      },
+      {
+        "id": "80000000-0000-01cc-0000-000000000002",
+        "label": "B",
+        "text": "+4"
+      },
+      {
+        "id": "80000000-0000-01cc-0000-000000000003",
+        "label": "C",
+        "text": "+6"
+      },
+      {
+        "id": "80000000-0000-01cc-0000-000000000004",
+        "label": "D",
+        "text": "+7"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01cc-0000-000000000004",
+    "explanation": "With K = +1 and four O atoms totaling -8, manganese must be +7 in neutral KMnO4.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001cd",
+    "code": "AFNS-Q-461",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 461. Which added substance increases reaction rate without changing the equilibrium constant?",
+    "options": [
+      {
+        "id": "80000000-0000-01cd-0000-000000000001",
+        "label": "A",
+        "text": "Temperature"
+      },
+      {
+        "id": "80000000-0000-01cd-0000-000000000002",
+        "label": "B",
+        "text": "Pressure"
+      },
+      {
+        "id": "80000000-0000-01cd-0000-000000000003",
+        "label": "C",
+        "text": "Concentration"
+      },
+      {
+        "id": "80000000-0000-01cd-0000-000000000004",
+        "label": "D",
+        "text": "Catalyst"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01cd-0000-000000000004",
+    "explanation": "A catalyst changes the reaction pathway and rate but does not alter the equilibrium constant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ce",
+    "code": "AFNS-Q-462",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 462. One radian is approximately equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-01ce-0000-000000000001",
+        "label": "A",
+        "text": "45 degrees"
+      },
+      {
+        "id": "80000000-0000-01ce-0000-000000000002",
+        "label": "B",
+        "text": "57.3 degrees"
+      },
+      {
+        "id": "80000000-0000-01ce-0000-000000000003",
+        "label": "C",
+        "text": "90 degrees"
+      },
+      {
+        "id": "80000000-0000-01ce-0000-000000000004",
+        "label": "D",
+        "text": "180 degrees"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ce-0000-000000000002",
+    "explanation": "One radian equals 180/pi degrees, approximately 57.3 degrees.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001cf",
+    "code": "AFNS-Q-463",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 463. Two resistors of 4 ohm and 6 ohm are connected in parallel. What is their equivalent resistance?",
+    "options": [
+      {
+        "id": "80000000-0000-01cf-0000-000000000001",
+        "label": "A",
+        "text": "1.2 ohm"
+      },
+      {
+        "id": "80000000-0000-01cf-0000-000000000002",
+        "label": "B",
+        "text": "2.4 ohm"
+      },
+      {
+        "id": "80000000-0000-01cf-0000-000000000003",
+        "label": "C",
+        "text": "5 ohm"
+      },
+      {
+        "id": "80000000-0000-01cf-0000-000000000004",
+        "label": "D",
+        "text": "10 ohm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01cf-0000-000000000002",
+    "explanation": "Parallel resistance is R1*R2/(R1+R2) = 4*6/10 = 2.4 ohm.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d0",
+    "code": "AFNS-Q-464",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 464. The angular displacement of pi radians is equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-01d0-0000-000000000001",
+        "label": "A",
+        "text": "90 degrees"
+      },
+      {
+        "id": "80000000-0000-01d0-0000-000000000002",
+        "label": "B",
+        "text": "180 degrees"
+      },
+      {
+        "id": "80000000-0000-01d0-0000-000000000003",
+        "label": "C",
+        "text": "270 degrees"
+      },
+      {
+        "id": "80000000-0000-01d0-0000-000000000004",
+        "label": "D",
+        "text": "360 degrees"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d0-0000-000000000002",
+    "explanation": "A full turn is 2*pi radians or 360 degrees, so pi radians is 180 degrees.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d1",
+    "code": "AFNS-Q-465",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 465. Which of the following is an infinitive?",
+    "options": [
+      {
+        "id": "80000000-0000-01d1-0000-000000000001",
+        "label": "A",
+        "text": "Working"
+      },
+      {
+        "id": "80000000-0000-01d1-0000-000000000002",
+        "label": "B",
+        "text": "Worked"
+      },
+      {
+        "id": "80000000-0000-01d1-0000-000000000003",
+        "label": "C",
+        "text": "To stoop"
+      },
+      {
+        "id": "80000000-0000-01d1-0000-000000000004",
+        "label": "D",
+        "text": "Stopped"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d1-0000-000000000003",
+    "explanation": "To stoop is the to-infinitive form of the verb stoop.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d2",
+    "code": "AFNS-Q-466",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 466. In the phrase \"By working hard,\" the word \"working\" is a:",
+    "options": [
+      {
+        "id": "80000000-0000-01d2-0000-000000000001",
+        "label": "A",
+        "text": "Gerund"
+      },
+      {
+        "id": "80000000-0000-01d2-0000-000000000002",
+        "label": "B",
+        "text": "Present participle"
+      },
+      {
+        "id": "80000000-0000-01d2-0000-000000000003",
+        "label": "C",
+        "text": "Past participle"
+      },
+      {
+        "id": "80000000-0000-01d2-0000-000000000004",
+        "label": "D",
+        "text": "Infinitive"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d2-0000-000000000001",
+    "explanation": "Working functions as a noun after the preposition by and is therefore a gerund.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d3",
+    "code": "AFNS-Q-467",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 467. The word \"educational\" is related to the word \"education\" as a:",
+    "options": [
+      {
+        "id": "80000000-0000-01d3-0000-000000000001",
+        "label": "A",
+        "text": "Noun"
+      },
+      {
+        "id": "80000000-0000-01d3-0000-000000000002",
+        "label": "B",
+        "text": "Pronoun"
+      },
+      {
+        "id": "80000000-0000-01d3-0000-000000000003",
+        "label": "C",
+        "text": "Adjective"
+      },
+      {
+        "id": "80000000-0000-01d3-0000-000000000004",
+        "label": "D",
+        "text": "Adverb"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d3-0000-000000000003",
+    "explanation": "Educational describes a noun, while education names a concept, so educational is an adjective.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d4",
+    "code": "AFNS-Q-468",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 468. The students arrived ____ the school before the bell rang.",
+    "options": [
+      {
+        "id": "80000000-0000-01d4-0000-000000000001",
+        "label": "A",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01d4-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01d4-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01d4-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d4-0000-000000000002",
+    "explanation": "At marks a specific point, location, time or an established adjective-preposition combination.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d5",
+    "code": "AFNS-Q-469",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 469. She placed the books ____ the table before leaving the room.",
+    "options": [
+      {
+        "id": "80000000-0000-01d5-0000-000000000001",
+        "label": "A",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01d5-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01d5-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01d5-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d5-0000-000000000003",
+    "explanation": "On marks contact with a surface or a particular day.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d6",
+    "code": "AFNS-Q-470",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 470. We have been waiting ____ two hours for the bus.",
+    "options": [
+      {
+        "id": "80000000-0000-01d6-0000-000000000001",
+        "label": "A",
+        "text": "since"
+      },
+      {
+        "id": "80000000-0000-01d6-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01d6-0000-000000000003",
+        "label": "C",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01d6-0000-000000000004",
+        "label": "D",
+        "text": "for"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d6-0000-000000000004",
+    "explanation": "For introduces a duration or the intended destination of a departure.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d7",
+    "code": "AFNS-Q-471",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 471. The train will leave ____ Karachi at 8:00 a.m.",
+    "options": [
+      {
+        "id": "80000000-0000-01d7-0000-000000000001",
+        "label": "A",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01d7-0000-000000000002",
+        "label": "B",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01d7-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01d7-0000-000000000004",
+        "label": "D",
+        "text": "above"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d7-0000-000000000002",
+    "explanation": "From marks a source or starting location.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d8",
+    "code": "AFNS-Q-472",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 472. He travelled ____ Islamabad ____ Lahore by train.",
+    "options": [
+      {
+        "id": "80000000-0000-01d8-0000-000000000001",
+        "label": "A",
+        "text": "at, from"
+      },
+      {
+        "id": "80000000-0000-01d8-0000-000000000002",
+        "label": "B",
+        "text": "from, to"
+      },
+      {
+        "id": "80000000-0000-01d8-0000-000000000003",
+        "label": "C",
+        "text": "on, at"
+      },
+      {
+        "id": "80000000-0000-01d8-0000-000000000004",
+        "label": "D",
+        "text": "by, in"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d8-0000-000000000002",
+    "explanation": "From marks the starting point and to marks the destination.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001d9",
+    "code": "AFNS-Q-473",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 473. The teacher divided the class ____ four groups.",
+    "options": [
+      {
+        "id": "80000000-0000-01d9-0000-000000000001",
+        "label": "A",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01d9-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01d9-0000-000000000003",
+        "label": "C",
+        "text": "into"
+      },
+      {
+        "id": "80000000-0000-01d9-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01d9-0000-000000000003",
+    "explanation": "Into marks entry or division into resulting groups.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001da",
+    "code": "AFNS-Q-474",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 474. She is very good ____ solving mathematical problems.",
+    "options": [
+      {
+        "id": "80000000-0000-01da-0000-000000000001",
+        "label": "A",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01da-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01da-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01da-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01da-0000-000000000002",
+    "explanation": "At marks a specific point, location, time or an established adjective-preposition combination.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001db",
+    "code": "AFNS-Q-475",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 475. He is interested ____ learning foreign languages.",
+    "options": [
+      {
+        "id": "80000000-0000-01db-0000-000000000001",
+        "label": "A",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01db-0000-000000000002",
+        "label": "B",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01db-0000-000000000003",
+        "label": "C",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01db-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01db-0000-000000000003",
+    "explanation": "In marks enclosure, a period such as a season, or the established expression interested in.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001dc",
+    "code": "AFNS-Q-476",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 476. The children were sitting ____ the shade of a large tree.",
+    "options": [
+      {
+        "id": "80000000-0000-01dc-0000-000000000001",
+        "label": "A",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01dc-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01dc-0000-000000000003",
+        "label": "C",
+        "text": "under"
+      },
+      {
+        "id": "80000000-0000-01dc-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01dc-0000-000000000003",
+    "explanation": "Under means in a lower or sheltered position beneath something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001dd",
+    "code": "AFNS-Q-477",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 477. The airplane flew ____ the cloud layer.",
+    "options": [
+      {
+        "id": "80000000-0000-01dd-0000-000000000001",
+        "label": "A",
+        "text": "below"
+      },
+      {
+        "id": "80000000-0000-01dd-0000-000000000002",
+        "label": "B",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01dd-0000-000000000003",
+        "label": "C",
+        "text": "into"
+      },
+      {
+        "id": "80000000-0000-01dd-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01dd-0000-000000000002",
+    "explanation": "Above indicates a higher position than the reference point.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001de",
+    "code": "AFNS-Q-478",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 478. The temperature fell ____ zero during the night.",
+    "options": [
+      {
+        "id": "80000000-0000-01de-0000-000000000001",
+        "label": "A",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01de-0000-000000000002",
+        "label": "B",
+        "text": "over"
+      },
+      {
+        "id": "80000000-0000-01de-0000-000000000003",
+        "label": "C",
+        "text": "below"
+      },
+      {
+        "id": "80000000-0000-01de-0000-000000000004",
+        "label": "D",
+        "text": "on"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01de-0000-000000000003",
+    "explanation": "Below indicates a lower position than the reference point.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001df",
+    "code": "AFNS-Q-479",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 479. He climbed ____ the stairs quickly when he heard the noise.",
+    "options": [
+      {
+        "id": "80000000-0000-01df-0000-000000000001",
+        "label": "A",
+        "text": "down"
+      },
+      {
+        "id": "80000000-0000-01df-0000-000000000002",
+        "label": "B",
+        "text": "up"
+      },
+      {
+        "id": "80000000-0000-01df-0000-000000000003",
+        "label": "C",
+        "text": "below"
+      },
+      {
+        "id": "80000000-0000-01df-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01df-0000-000000000002",
+    "explanation": "Up indicates movement toward a higher position.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e0",
+    "code": "AFNS-Q-480",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 480. The boy ran ____ the hill and reached the village.",
+    "options": [
+      {
+        "id": "80000000-0000-01e0-0000-000000000001",
+        "label": "A",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01e0-0000-000000000002",
+        "label": "B",
+        "text": "down"
+      },
+      {
+        "id": "80000000-0000-01e0-0000-000000000003",
+        "label": "C",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01e0-0000-000000000004",
+        "label": "D",
+        "text": "on"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e0-0000-000000000002",
+    "explanation": "Down indicates movement toward a lower position.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e1",
+    "code": "AFNS-Q-481",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 481. The letter was written ____ my elder brother.",
+    "options": [
+      {
+        "id": "80000000-0000-01e1-0000-000000000001",
+        "label": "A",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01e1-0000-000000000002",
+        "label": "B",
+        "text": "to"
+      },
+      {
+        "id": "80000000-0000-01e1-0000-000000000003",
+        "label": "C",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01e1-0000-000000000004",
+        "label": "D",
+        "text": "at"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e1-0000-000000000003",
+    "explanation": "By marks an agent, means of travel or a deadline.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e2",
+    "code": "AFNS-Q-482",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 482. We usually travel ____ bus when the journey is short.",
+    "options": [
+      {
+        "id": "80000000-0000-01e2-0000-000000000001",
+        "label": "A",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01e2-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01e2-0000-000000000003",
+        "label": "C",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01e2-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e2-0000-000000000003",
+    "explanation": "By marks an agent, means of travel or a deadline.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e3",
+    "code": "AFNS-Q-483",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 483. She came ____ the room quietly and sat beside me.",
+    "options": [
+      {
+        "id": "80000000-0000-01e3-0000-000000000001",
+        "label": "A",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01e3-0000-000000000002",
+        "label": "B",
+        "text": "into"
+      },
+      {
+        "id": "80000000-0000-01e3-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01e3-0000-000000000004",
+        "label": "D",
+        "text": "above"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e3-0000-000000000002",
+    "explanation": "Into marks entry or division into resulting groups.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e4",
+    "code": "AFNS-Q-484",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 484. The cat jumped ____ the wall and disappeared.",
+    "options": [
+      {
+        "id": "80000000-0000-01e4-0000-000000000001",
+        "label": "A",
+        "text": "below"
+      },
+      {
+        "id": "80000000-0000-01e4-0000-000000000002",
+        "label": "B",
+        "text": "over"
+      },
+      {
+        "id": "80000000-0000-01e4-0000-000000000003",
+        "label": "C",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01e4-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e4-0000-000000000002",
+    "explanation": "Over marks a position or movement above and across something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e5",
+    "code": "AFNS-Q-485",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 485. The children walked ____ the river for nearly an hour.",
+    "options": [
+      {
+        "id": "80000000-0000-01e5-0000-000000000001",
+        "label": "A",
+        "text": "along"
+      },
+      {
+        "id": "80000000-0000-01e5-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01e5-0000-000000000003",
+        "label": "C",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01e5-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e5-0000-000000000001",
+    "explanation": "Along describes movement following the length of something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e6",
+    "code": "AFNS-Q-486",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 486. He stood ____ his friend during the difficult situation.",
+    "options": [
+      {
+        "id": "80000000-0000-01e6-0000-000000000001",
+        "label": "A",
+        "text": "between"
+      },
+      {
+        "id": "80000000-0000-01e6-0000-000000000002",
+        "label": "B",
+        "text": "beside"
+      },
+      {
+        "id": "80000000-0000-01e6-0000-000000000003",
+        "label": "C",
+        "text": "below"
+      },
+      {
+        "id": "80000000-0000-01e6-0000-000000000004",
+        "label": "D",
+        "text": "into"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e6-0000-000000000002",
+    "explanation": "Beside means next to or alongside.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e7",
+    "code": "AFNS-Q-487",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 487. The principal walked ____ the two rows of students.",
+    "options": [
+      {
+        "id": "80000000-0000-01e7-0000-000000000001",
+        "label": "A",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01e7-0000-000000000002",
+        "label": "B",
+        "text": "between"
+      },
+      {
+        "id": "80000000-0000-01e7-0000-000000000003",
+        "label": "C",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01e7-0000-000000000004",
+        "label": "D",
+        "text": "over"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e7-0000-000000000002",
+    "explanation": "Between relates two distinct entities or positions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e8",
+    "code": "AFNS-Q-488",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 488. The agreement was signed ____ the two countries.",
+    "options": [
+      {
+        "id": "80000000-0000-01e8-0000-000000000001",
+        "label": "A",
+        "text": "among"
+      },
+      {
+        "id": "80000000-0000-01e8-0000-000000000002",
+        "label": "B",
+        "text": "between"
+      },
+      {
+        "id": "80000000-0000-01e8-0000-000000000003",
+        "label": "C",
+        "text": "into"
+      },
+      {
+        "id": "80000000-0000-01e8-0000-000000000004",
+        "label": "D",
+        "text": "below"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e8-0000-000000000002",
+    "explanation": "Between relates two distinct entities or positions.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001e9",
+    "code": "AFNS-Q-489",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 489. The teacher distributed the books ____ the students.",
+    "options": [
+      {
+        "id": "80000000-0000-01e9-0000-000000000001",
+        "label": "A",
+        "text": "between"
+      },
+      {
+        "id": "80000000-0000-01e9-0000-000000000002",
+        "label": "B",
+        "text": "among"
+      },
+      {
+        "id": "80000000-0000-01e9-0000-000000000003",
+        "label": "C",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01e9-0000-000000000004",
+        "label": "D",
+        "text": "into"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01e9-0000-000000000002",
+    "explanation": "Among describes distribution within a group of several people.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ea",
+    "code": "AFNS-Q-490",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 490. He has been absent ____ Monday.",
+    "options": [
+      {
+        "id": "80000000-0000-01ea-0000-000000000001",
+        "label": "A",
+        "text": "for"
+      },
+      {
+        "id": "80000000-0000-01ea-0000-000000000002",
+        "label": "B",
+        "text": "since"
+      },
+      {
+        "id": "80000000-0000-01ea-0000-000000000003",
+        "label": "C",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01ea-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ea-0000-000000000002",
+    "explanation": "Since introduces the starting point of a situation continuing over time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001eb",
+    "code": "AFNS-Q-491",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 491. She stayed at home ____ the heavy rain.",
+    "options": [
+      {
+        "id": "80000000-0000-01eb-0000-000000000001",
+        "label": "A",
+        "text": "since"
+      },
+      {
+        "id": "80000000-0000-01eb-0000-000000000002",
+        "label": "B",
+        "text": "because of"
+      },
+      {
+        "id": "80000000-0000-01eb-0000-000000000003",
+        "label": "C",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01eb-0000-000000000004",
+        "label": "D",
+        "text": "into"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01eb-0000-000000000002",
+    "explanation": "Because of introduces a noun phrase giving the reason.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ec",
+    "code": "AFNS-Q-492",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 492. The match was cancelled ____ bad weather.",
+    "options": [
+      {
+        "id": "80000000-0000-01ec-0000-000000000001",
+        "label": "A",
+        "text": "because of"
+      },
+      {
+        "id": "80000000-0000-01ec-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01ec-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01ec-0000-000000000004",
+        "label": "D",
+        "text": "to"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ec-0000-000000000001",
+    "explanation": "Because of introduces a noun phrase giving the reason.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ed",
+    "code": "AFNS-Q-493",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 493. He succeeded ____ his hard work and determination.",
+    "options": [
+      {
+        "id": "80000000-0000-01ed-0000-000000000001",
+        "label": "A",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01ed-0000-000000000002",
+        "label": "B",
+        "text": "through"
+      },
+      {
+        "id": "80000000-0000-01ed-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01ed-0000-000000000004",
+        "label": "D",
+        "text": "above"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ed-0000-000000000002",
+    "explanation": "Through can express the means by which a result is achieved.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ee",
+    "code": "AFNS-Q-494",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 494. The students entered the examination hall ____ permission.",
+    "options": [
+      {
+        "id": "80000000-0000-01ee-0000-000000000001",
+        "label": "A",
+        "text": "with"
+      },
+      {
+        "id": "80000000-0000-01ee-0000-000000000002",
+        "label": "B",
+        "text": "without"
+      },
+      {
+        "id": "80000000-0000-01ee-0000-000000000003",
+        "label": "C",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01ee-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ee-0000-000000000002",
+    "explanation": "Without expresses the absence of something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ef",
+    "code": "AFNS-Q-495",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 495. She completed the assignment ____ the deadline.",
+    "options": [
+      {
+        "id": "80000000-0000-01ef-0000-000000000001",
+        "label": "A",
+        "text": "after"
+      },
+      {
+        "id": "80000000-0000-01ef-0000-000000000002",
+        "label": "B",
+        "text": "before"
+      },
+      {
+        "id": "80000000-0000-01ef-0000-000000000003",
+        "label": "C",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01ef-0000-000000000004",
+        "label": "D",
+        "text": "between"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ef-0000-000000000002",
+    "explanation": "Before places an action earlier than a reference event or deadline.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f0",
+    "code": "AFNS-Q-496",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 496. We reached the station ____ the train had departed.",
+    "options": [
+      {
+        "id": "80000000-0000-01f0-0000-000000000001",
+        "label": "A",
+        "text": "after"
+      },
+      {
+        "id": "80000000-0000-01f0-0000-000000000002",
+        "label": "B",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01f0-0000-000000000003",
+        "label": "C",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01f0-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f0-0000-000000000001",
+    "explanation": "After places an action later than the reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f1",
+    "code": "AFNS-Q-497",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 497. You must finish this work ____ Friday.",
+    "options": [
+      {
+        "id": "80000000-0000-01f1-0000-000000000001",
+        "label": "A",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01f1-0000-000000000002",
+        "label": "B",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01f1-0000-000000000003",
+        "label": "C",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01f1-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f1-0000-000000000003",
+    "explanation": "By marks an agent, means of travel or a deadline.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f2",
+    "code": "AFNS-Q-498",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 498. The meeting will be held ____ Monday morning.",
+    "options": [
+      {
+        "id": "80000000-0000-01f2-0000-000000000001",
+        "label": "A",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01f2-0000-000000000002",
+        "label": "B",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01f2-0000-000000000003",
+        "label": "C",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01f2-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f2-0000-000000000002",
+    "explanation": "On marks contact with a surface or a particular day.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f3",
+    "code": "AFNS-Q-499",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 499. My father usually gets up ____ dawn.",
+    "options": [
+      {
+        "id": "80000000-0000-01f3-0000-000000000001",
+        "label": "A",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01f3-0000-000000000002",
+        "label": "B",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01f3-0000-000000000003",
+        "label": "C",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01f3-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f3-0000-000000000003",
+    "explanation": "At marks a specific point, location, time or an established adjective-preposition combination.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f4",
+    "code": "AFNS-Q-500",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 500. We usually go on vacation ____ summer.",
+    "options": [
+      {
+        "id": "80000000-0000-01f4-0000-000000000001",
+        "label": "A",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01f4-0000-000000000002",
+        "label": "B",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01f4-0000-000000000003",
+        "label": "C",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01f4-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f4-0000-000000000003",
+    "explanation": "In marks enclosure, a period such as a season, or the established expression interested in.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f5",
+    "code": "AFNS-Q-501",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 501. The shop remains open ____ 9 p.m.",
+    "options": [
+      {
+        "id": "80000000-0000-01f5-0000-000000000001",
+        "label": "A",
+        "text": "since"
+      },
+      {
+        "id": "80000000-0000-01f5-0000-000000000002",
+        "label": "B",
+        "text": "until"
+      },
+      {
+        "id": "80000000-0000-01f5-0000-000000000003",
+        "label": "C",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01f5-0000-000000000004",
+        "label": "D",
+        "text": "at"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f5-0000-000000000002",
+    "explanation": "Until marks the time up to which a situation continues.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f6",
+    "code": "AFNS-Q-502",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 502. He worked ____ midnight to complete the project.",
+    "options": [
+      {
+        "id": "80000000-0000-01f6-0000-000000000001",
+        "label": "A",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01f6-0000-000000000002",
+        "label": "B",
+        "text": "until"
+      },
+      {
+        "id": "80000000-0000-01f6-0000-000000000003",
+        "label": "C",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01f6-0000-000000000004",
+        "label": "D",
+        "text": "on"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f6-0000-000000000002",
+    "explanation": "Until marks the time up to which a situation continues.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f7",
+    "code": "AFNS-Q-503",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 503. The manager has been away ____ three days.",
+    "options": [
+      {
+        "id": "80000000-0000-01f7-0000-000000000001",
+        "label": "A",
+        "text": "since"
+      },
+      {
+        "id": "80000000-0000-01f7-0000-000000000002",
+        "label": "B",
+        "text": "for"
+      },
+      {
+        "id": "80000000-0000-01f7-0000-000000000003",
+        "label": "C",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01f7-0000-000000000004",
+        "label": "D",
+        "text": "at"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f7-0000-000000000002",
+    "explanation": "For introduces a duration or the intended destination of a departure.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f8",
+    "code": "AFNS-Q-504",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 504. The children were playing ____ the garden.",
+    "options": [
+      {
+        "id": "80000000-0000-01f8-0000-000000000001",
+        "label": "A",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01f8-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01f8-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01f8-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f8-0000-000000000001",
+    "explanation": "In marks enclosure, a period such as a season, or the established expression interested in.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001f9",
+    "code": "AFNS-Q-505",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 505. There is a small bridge ____ the river.",
+    "options": [
+      {
+        "id": "80000000-0000-01f9-0000-000000000001",
+        "label": "A",
+        "text": "under"
+      },
+      {
+        "id": "80000000-0000-01f9-0000-000000000002",
+        "label": "B",
+        "text": "over"
+      },
+      {
+        "id": "80000000-0000-01f9-0000-000000000003",
+        "label": "C",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01f9-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01f9-0000-000000000002",
+    "explanation": "Over marks a position or movement above and across something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001fa",
+    "code": "AFNS-Q-506",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 506. The dog was hiding ____ the table.",
+    "options": [
+      {
+        "id": "80000000-0000-01fa-0000-000000000001",
+        "label": "A",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01fa-0000-000000000002",
+        "label": "B",
+        "text": "under"
+      },
+      {
+        "id": "80000000-0000-01fa-0000-000000000003",
+        "label": "C",
+        "text": "over"
+      },
+      {
+        "id": "80000000-0000-01fa-0000-000000000004",
+        "label": "D",
+        "text": "between"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01fa-0000-000000000002",
+    "explanation": "Under means in a lower or sheltered position beneath something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001fb",
+    "code": "AFNS-Q-507",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 507. The picture is hanging ____ the wall.",
+    "options": [
+      {
+        "id": "80000000-0000-01fb-0000-000000000001",
+        "label": "A",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01fb-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01fb-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01fb-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01fb-0000-000000000003",
+    "explanation": "On marks contact with a surface or a particular day.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001fc",
+    "code": "AFNS-Q-508",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 508. He is standing ____ the entrance of the building.",
+    "options": [
+      {
+        "id": "80000000-0000-01fc-0000-000000000001",
+        "label": "A",
+        "text": "in"
+      },
+      {
+        "id": "80000000-0000-01fc-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01fc-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01fc-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01fc-0000-000000000002",
+    "explanation": "At marks a specific point, location, time or an established adjective-preposition combination.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001fd",
+    "code": "AFNS-Q-509",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 509. She borrowed a book ____ the library.",
+    "options": [
+      {
+        "id": "80000000-0000-01fd-0000-000000000001",
+        "label": "A",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01fd-0000-000000000002",
+        "label": "B",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01fd-0000-000000000003",
+        "label": "C",
+        "text": "on"
+      },
+      {
+        "id": "80000000-0000-01fd-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01fd-0000-000000000002",
+    "explanation": "From marks a source or starting location.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001fe",
+    "code": "AFNS-Q-510",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 510. Please give this message ____ your brother.",
+    "options": [
+      {
+        "id": "80000000-0000-01fe-0000-000000000001",
+        "label": "A",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-01fe-0000-000000000002",
+        "label": "B",
+        "text": "to"
+      },
+      {
+        "id": "80000000-0000-01fe-0000-000000000003",
+        "label": "C",
+        "text": "by"
+      },
+      {
+        "id": "80000000-0000-01fe-0000-000000000004",
+        "label": "D",
+        "text": "at"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01fe-0000-000000000002",
+    "explanation": "To marks a destination or recipient.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000001ff",
+    "code": "AFNS-Q-511",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 511. The road passes ____ a dense forest.",
+    "options": [
+      {
+        "id": "80000000-0000-01ff-0000-000000000001",
+        "label": "A",
+        "text": "through"
+      },
+      {
+        "id": "80000000-0000-01ff-0000-000000000002",
+        "label": "B",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-01ff-0000-000000000003",
+        "label": "C",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-01ff-0000-000000000004",
+        "label": "D",
+        "text": "on"
+      }
+    ],
+    "correctOptionId": "80000000-0000-01ff-0000-000000000001",
+    "explanation": "Through describes passage inside and across the forest from one side to another.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000200",
+    "code": "AFNS-Q-512",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 512. He walked ____ the road without looking back.",
+    "options": [
+      {
+        "id": "80000000-0000-0200-0000-000000000001",
+        "label": "A",
+        "text": "along"
+      },
+      {
+        "id": "80000000-0000-0200-0000-000000000002",
+        "label": "B",
+        "text": "into"
+      },
+      {
+        "id": "80000000-0000-0200-0000-000000000003",
+        "label": "C",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-0200-0000-000000000004",
+        "label": "D",
+        "text": "between"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0200-0000-000000000001",
+    "explanation": "Along describes movement following the length of something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000201",
+    "code": "AFNS-Q-513",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 513. The teacher is standing ____ the students.",
+    "options": [
+      {
+        "id": "80000000-0000-0201-0000-000000000001",
+        "label": "A",
+        "text": "below"
+      },
+      {
+        "id": "80000000-0000-0201-0000-000000000002",
+        "label": "B",
+        "text": "among"
+      },
+      {
+        "id": "80000000-0000-0201-0000-000000000003",
+        "label": "C",
+        "text": "into"
+      },
+      {
+        "id": "80000000-0000-0201-0000-000000000004",
+        "label": "D",
+        "text": "from"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0201-0000-000000000002",
+    "explanation": "Among places the teacher within a group of students.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000202",
+    "code": "AFNS-Q-514",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 514. The ball rolled ____ the sofa and disappeared.",
+    "options": [
+      {
+        "id": "80000000-0000-0202-0000-000000000001",
+        "label": "A",
+        "text": "above"
+      },
+      {
+        "id": "80000000-0000-0202-0000-000000000002",
+        "label": "B",
+        "text": "under"
+      },
+      {
+        "id": "80000000-0000-0202-0000-000000000003",
+        "label": "C",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-0202-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0202-0000-000000000002",
+    "explanation": "Under means in a lower or sheltered position beneath something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000203",
+    "code": "AFNS-Q-515",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 515. The bird flew ____ the window and entered the room.",
+    "options": [
+      {
+        "id": "80000000-0000-0203-0000-000000000001",
+        "label": "A",
+        "text": "through"
+      },
+      {
+        "id": "80000000-0000-0203-0000-000000000002",
+        "label": "B",
+        "text": "at"
+      },
+      {
+        "id": "80000000-0000-0203-0000-000000000003",
+        "label": "C",
+        "text": "below"
+      },
+      {
+        "id": "80000000-0000-0203-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0203-0000-000000000001",
+    "explanation": "Through describes movement through the opening of the window.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000204",
+    "code": "AFNS-Q-516",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 516. He studied hard, ____ he could pass the examination.",
+    "options": [
+      {
+        "id": "80000000-0000-0204-0000-000000000001",
+        "label": "A",
+        "text": "but"
+      },
+      {
+        "id": "80000000-0000-0204-0000-000000000002",
+        "label": "B",
+        "text": "or"
+      },
+      {
+        "id": "80000000-0000-0204-0000-000000000003",
+        "label": "C",
+        "text": "so that"
+      },
+      {
+        "id": "80000000-0000-0204-0000-000000000004",
+        "label": "D",
+        "text": "unless"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0204-0000-000000000003",
+    "explanation": "So that introduces a clause expressing the purpose of studying hard.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000205",
+    "code": "AFNS-Q-517",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 517. Hurry up, ____ you will miss the bus.",
+    "options": [
+      {
+        "id": "80000000-0000-0205-0000-000000000001",
+        "label": "A",
+        "text": "and"
+      },
+      {
+        "id": "80000000-0000-0205-0000-000000000002",
+        "label": "B",
+        "text": "or"
+      },
+      {
+        "id": "80000000-0000-0205-0000-000000000003",
+        "label": "C",
+        "text": "because"
+      },
+      {
+        "id": "80000000-0000-0205-0000-000000000004",
+        "label": "D",
+        "text": "although"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0205-0000-000000000002",
+    "explanation": "Or introduces the unwanted consequence of failing to hurry.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000206",
+    "code": "AFNS-Q-518",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 518. ____ he was tired, he continued working.",
+    "options": [
+      {
+        "id": "80000000-0000-0206-0000-000000000001",
+        "label": "A",
+        "text": "Because"
+      },
+      {
+        "id": "80000000-0000-0206-0000-000000000002",
+        "label": "B",
+        "text": "Although"
+      },
+      {
+        "id": "80000000-0000-0206-0000-000000000003",
+        "label": "C",
+        "text": "And"
+      },
+      {
+        "id": "80000000-0000-0206-0000-000000000004",
+        "label": "D",
+        "text": "So"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0206-0000-000000000002",
+    "explanation": "Although introduces a concessive clause contrasting tiredness with continued work.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000207",
+    "code": "AFNS-Q-519",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 519. I stayed at home ____ it was raining heavily.",
+    "options": [
+      {
+        "id": "80000000-0000-0207-0000-000000000001",
+        "label": "A",
+        "text": "although"
+      },
+      {
+        "id": "80000000-0000-0207-0000-000000000002",
+        "label": "B",
+        "text": "but"
+      },
+      {
+        "id": "80000000-0000-0207-0000-000000000003",
+        "label": "C",
+        "text": "because"
+      },
+      {
+        "id": "80000000-0000-0207-0000-000000000004",
+        "label": "D",
+        "text": "or"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0207-0000-000000000003",
+    "explanation": "Because introduces the reason expressed by the following full clause.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000208",
+    "code": "AFNS-Q-520",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 520. Neither Ali ____ Ahmed attended the meeting.",
+    "options": [
+      {
+        "id": "80000000-0000-0208-0000-000000000001",
+        "label": "A",
+        "text": "or"
+      },
+      {
+        "id": "80000000-0000-0208-0000-000000000002",
+        "label": "B",
+        "text": "but"
+      },
+      {
+        "id": "80000000-0000-0208-0000-000000000003",
+        "label": "C",
+        "text": "nor"
+      },
+      {
+        "id": "80000000-0000-0208-0000-000000000004",
+        "label": "D",
+        "text": "and"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0208-0000-000000000003",
+    "explanation": "Neither pairs with nor to connect two negative alternatives.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000209",
+    "code": "AFNS-Q-521",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 521. You can take ____ tea or coffee.",
+    "options": [
+      {
+        "id": "80000000-0000-0209-0000-000000000001",
+        "label": "A",
+        "text": "neither"
+      },
+      {
+        "id": "80000000-0000-0209-0000-000000000002",
+        "label": "B",
+        "text": "either"
+      },
+      {
+        "id": "80000000-0000-0209-0000-000000000003",
+        "label": "C",
+        "text": "although"
+      },
+      {
+        "id": "80000000-0000-0209-0000-000000000004",
+        "label": "D",
+        "text": "because"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0209-0000-000000000002",
+    "explanation": "Either pairs with or to present a choice between two alternatives.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000020a",
+    "code": "AFNS-Q-522",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 522. He is poor, ____ he is honest.",
+    "options": [
+      {
+        "id": "80000000-0000-020a-0000-000000000001",
+        "label": "A",
+        "text": "because"
+      },
+      {
+        "id": "80000000-0000-020a-0000-000000000002",
+        "label": "B",
+        "text": "but"
+      },
+      {
+        "id": "80000000-0000-020a-0000-000000000003",
+        "label": "C",
+        "text": "or"
+      },
+      {
+        "id": "80000000-0000-020a-0000-000000000004",
+        "label": "D",
+        "text": "so"
+      }
+    ],
+    "correctOptionId": "80000000-0000-020a-0000-000000000002",
+    "explanation": "But connects contrasting ideas about poverty and honesty.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000020b",
+    "code": "AFNS-Q-523",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 523. Work hard ____ you want to succeed.",
+    "options": [
+      {
+        "id": "80000000-0000-020b-0000-000000000001",
+        "label": "A",
+        "text": "although"
+      },
+      {
+        "id": "80000000-0000-020b-0000-000000000002",
+        "label": "B",
+        "text": "if"
+      },
+      {
+        "id": "80000000-0000-020b-0000-000000000003",
+        "label": "C",
+        "text": "but"
+      },
+      {
+        "id": "80000000-0000-020b-0000-000000000004",
+        "label": "D",
+        "text": "nor"
+      }
+    ],
+    "correctOptionId": "80000000-0000-020b-0000-000000000002",
+    "explanation": "If introduces the condition under which the advice applies.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000020c",
+    "code": "AFNS-Q-524",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 524. She waited until her brother ____ home.",
+    "options": [
+      {
+        "id": "80000000-0000-020c-0000-000000000001",
+        "label": "A",
+        "text": "came"
+      },
+      {
+        "id": "80000000-0000-020c-0000-000000000002",
+        "label": "B",
+        "text": "comes"
+      },
+      {
+        "id": "80000000-0000-020c-0000-000000000003",
+        "label": "C",
+        "text": "coming"
+      },
+      {
+        "id": "80000000-0000-020c-0000-000000000004",
+        "label": "D",
+        "text": "come"
+      }
+    ],
+    "correctOptionId": "80000000-0000-020c-0000-000000000001",
+    "explanation": "The main clause is in the past, so came is the matching simple-past form in the until clause.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000020d",
+    "code": "AFNS-Q-525",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 525. I will call you ____ I reach home.",
+    "options": [
+      {
+        "id": "80000000-0000-020d-0000-000000000001",
+        "label": "A",
+        "text": "when"
+      },
+      {
+        "id": "80000000-0000-020d-0000-000000000002",
+        "label": "B",
+        "text": "but"
+      },
+      {
+        "id": "80000000-0000-020d-0000-000000000003",
+        "label": "C",
+        "text": "although"
+      },
+      {
+        "id": "80000000-0000-020d-0000-000000000004",
+        "label": "D",
+        "text": "unless"
+      }
+    ],
+    "correctOptionId": "80000000-0000-020d-0000-000000000001",
+    "explanation": "When introduces the future time clause, which takes the simple present reach rather than will reach.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000020e",
+    "code": "AFNS-Q-526",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 526. Which of the following is a collective noun?",
+    "options": [
+      {
+        "id": "80000000-0000-020e-0000-000000000001",
+        "label": "A",
+        "text": "Boy"
+      },
+      {
+        "id": "80000000-0000-020e-0000-000000000002",
+        "label": "B",
+        "text": "Committee"
+      },
+      {
+        "id": "80000000-0000-020e-0000-000000000003",
+        "label": "C",
+        "text": "Honesty"
+      },
+      {
+        "id": "80000000-0000-020e-0000-000000000004",
+        "label": "D",
+        "text": "Water"
+      }
+    ],
+    "correctOptionId": "80000000-0000-020e-0000-000000000002",
+    "explanation": "Committee names a group regarded as a unit and is a collective noun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000020f",
+    "code": "AFNS-Q-527",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 527. Which noun is normally uncountable?",
+    "options": [
+      {
+        "id": "80000000-0000-020f-0000-000000000001",
+        "label": "A",
+        "text": "Book"
+      },
+      {
+        "id": "80000000-0000-020f-0000-000000000002",
+        "label": "B",
+        "text": "Chair"
+      },
+      {
+        "id": "80000000-0000-020f-0000-000000000003",
+        "label": "C",
+        "text": "Information"
+      },
+      {
+        "id": "80000000-0000-020f-0000-000000000004",
+        "label": "D",
+        "text": "Apple"
+      }
+    ],
+    "correctOptionId": "80000000-0000-020f-0000-000000000003",
+    "explanation": "Information is normally a mass noun and does not take a regular plural -s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000210",
+    "code": "AFNS-Q-528",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 528. What is the plural form of \"criterion\"?",
+    "options": [
+      {
+        "id": "80000000-0000-0210-0000-000000000001",
+        "label": "A",
+        "text": "Criterions"
+      },
+      {
+        "id": "80000000-0000-0210-0000-000000000002",
+        "label": "B",
+        "text": "Criteria"
+      },
+      {
+        "id": "80000000-0000-0210-0000-000000000003",
+        "label": "C",
+        "text": "Criteriones"
+      },
+      {
+        "id": "80000000-0000-0210-0000-000000000004",
+        "label": "D",
+        "text": "Criterion"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0210-0000-000000000002",
+    "explanation": "Criterion has the irregular plural criteria.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000211",
+    "code": "AFNS-Q-529",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 529. Which of the following is a proper noun?",
+    "options": [
+      {
+        "id": "80000000-0000-0211-0000-000000000001",
+        "label": "A",
+        "text": "City"
+      },
+      {
+        "id": "80000000-0000-0211-0000-000000000002",
+        "label": "B",
+        "text": "Country"
+      },
+      {
+        "id": "80000000-0000-0211-0000-000000000003",
+        "label": "C",
+        "text": "Pakistan"
+      },
+      {
+        "id": "80000000-0000-0211-0000-000000000004",
+        "label": "D",
+        "text": "River"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0211-0000-000000000003",
+    "explanation": "Pakistan names a specific country and is a proper noun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000212",
+    "code": "AFNS-Q-530",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 530. Which word is a pronoun in the sentence \"They completed the project themselves\"?",
+    "options": [
+      {
+        "id": "80000000-0000-0212-0000-000000000001",
+        "label": "A",
+        "text": "Completed"
+      },
+      {
+        "id": "80000000-0000-0212-0000-000000000002",
+        "label": "B",
+        "text": "Project"
+      },
+      {
+        "id": "80000000-0000-0212-0000-000000000003",
+        "label": "C",
+        "text": "They"
+      },
+      {
+        "id": "80000000-0000-0212-0000-000000000004",
+        "label": "D",
+        "text": "Themselves"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0212-0000-000000000003",
+    "explanation": "They replaces the names of the people performing the action and is a personal pronoun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000213",
+    "code": "AFNS-Q-531",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 531. Choose the correct pronoun: \"Neither Ahmed nor Ali brought ____ book.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0213-0000-000000000001",
+        "label": "A",
+        "text": "their"
+      },
+      {
+        "id": "80000000-0000-0213-0000-000000000002",
+        "label": "B",
+        "text": "his"
+      },
+      {
+        "id": "80000000-0000-0213-0000-000000000003",
+        "label": "C",
+        "text": "them"
+      },
+      {
+        "id": "80000000-0000-0213-0000-000000000004",
+        "label": "D",
+        "text": "our"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0213-0000-000000000002",
+    "explanation": "The nearer singular male antecedent Ali requires the singular possessive pronoun his.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000214",
+    "code": "AFNS-Q-532",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 532. Choose the correct pronoun: \"This is the student ____ won the competition.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0214-0000-000000000001",
+        "label": "A",
+        "text": "which"
+      },
+      {
+        "id": "80000000-0000-0214-0000-000000000002",
+        "label": "B",
+        "text": "whom"
+      },
+      {
+        "id": "80000000-0000-0214-0000-000000000003",
+        "label": "C",
+        "text": "who"
+      },
+      {
+        "id": "80000000-0000-0214-0000-000000000004",
+        "label": "D",
+        "text": "whose"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0214-0000-000000000003",
+    "explanation": "Who introduces a relative clause whose subject is the person who won.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000215",
+    "code": "AFNS-Q-533",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 533. Choose the correct pronoun: \"The teacher gave the certificates to Sara and ____.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0215-0000-000000000001",
+        "label": "A",
+        "text": "I"
+      },
+      {
+        "id": "80000000-0000-0215-0000-000000000002",
+        "label": "B",
+        "text": "me"
+      },
+      {
+        "id": "80000000-0000-0215-0000-000000000003",
+        "label": "C",
+        "text": "my"
+      },
+      {
+        "id": "80000000-0000-0215-0000-000000000004",
+        "label": "D",
+        "text": "mine"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0215-0000-000000000002",
+    "explanation": "A pronoun after the preposition to takes the object form me.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000216",
+    "code": "AFNS-Q-534",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 534. Which of the following is a reflexive pronoun?",
+    "options": [
+      {
+        "id": "80000000-0000-0216-0000-000000000001",
+        "label": "A",
+        "text": "Them"
+      },
+      {
+        "id": "80000000-0000-0216-0000-000000000002",
+        "label": "B",
+        "text": "Their"
+      },
+      {
+        "id": "80000000-0000-0216-0000-000000000003",
+        "label": "C",
+        "text": "Herself"
+      },
+      {
+        "id": "80000000-0000-0216-0000-000000000004",
+        "label": "D",
+        "text": "Her"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0216-0000-000000000003",
+    "explanation": "Herself refers back to the same female person and is a reflexive pronoun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000217",
+    "code": "AFNS-Q-535",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 535. Choose the synonym of \"Abundant.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0217-0000-000000000001",
+        "label": "A",
+        "text": "Rare"
+      },
+      {
+        "id": "80000000-0000-0217-0000-000000000002",
+        "label": "B",
+        "text": "Limited"
+      },
+      {
+        "id": "80000000-0000-0217-0000-000000000003",
+        "label": "C",
+        "text": "Plentiful"
+      },
+      {
+        "id": "80000000-0000-0217-0000-000000000004",
+        "label": "D",
+        "text": "Empty"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0217-0000-000000000003",
+    "explanation": "Abundant means plentiful in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000218",
+    "code": "AFNS-Q-536",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 536. Choose the synonym of \"Reluctant.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0218-0000-000000000001",
+        "label": "A",
+        "text": "Willing"
+      },
+      {
+        "id": "80000000-0000-0218-0000-000000000002",
+        "label": "B",
+        "text": "Unwilling"
+      },
+      {
+        "id": "80000000-0000-0218-0000-000000000003",
+        "label": "C",
+        "text": "Excited"
+      },
+      {
+        "id": "80000000-0000-0218-0000-000000000004",
+        "label": "D",
+        "text": "Confident"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0218-0000-000000000002",
+    "explanation": "Reluctant means unwilling in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000219",
+    "code": "AFNS-Q-537",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 537. Choose the synonym of \"Accurate.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0219-0000-000000000001",
+        "label": "A",
+        "text": "Wrong"
+      },
+      {
+        "id": "80000000-0000-0219-0000-000000000002",
+        "label": "B",
+        "text": "Approximate"
+      },
+      {
+        "id": "80000000-0000-0219-0000-000000000003",
+        "label": "C",
+        "text": "Correct"
+      },
+      {
+        "id": "80000000-0000-0219-0000-000000000004",
+        "label": "D",
+        "text": "Doubtful"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0219-0000-000000000003",
+    "explanation": "Accurate means correct in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000021a",
+    "code": "AFNS-Q-538",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 538. Choose the synonym of \"Essential.\"",
+    "options": [
+      {
+        "id": "80000000-0000-021a-0000-000000000001",
+        "label": "A",
+        "text": "Optional"
+      },
+      {
+        "id": "80000000-0000-021a-0000-000000000002",
+        "label": "B",
+        "text": "Useless"
+      },
+      {
+        "id": "80000000-0000-021a-0000-000000000003",
+        "label": "C",
+        "text": "Necessary"
+      },
+      {
+        "id": "80000000-0000-021a-0000-000000000004",
+        "label": "D",
+        "text": "Minor"
+      }
+    ],
+    "correctOptionId": "80000000-0000-021a-0000-000000000003",
+    "explanation": "Essential means necessary in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000021b",
+    "code": "AFNS-Q-539",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 539. Choose the synonym of \"Fragile.\"",
+    "options": [
+      {
+        "id": "80000000-0000-021b-0000-000000000001",
+        "label": "A",
+        "text": "Strong"
+      },
+      {
+        "id": "80000000-0000-021b-0000-000000000002",
+        "label": "B",
+        "text": "Heavy"
+      },
+      {
+        "id": "80000000-0000-021b-0000-000000000003",
+        "label": "C",
+        "text": "Delicate"
+      },
+      {
+        "id": "80000000-0000-021b-0000-000000000004",
+        "label": "D",
+        "text": "Hard"
+      }
+    ],
+    "correctOptionId": "80000000-0000-021b-0000-000000000003",
+    "explanation": "Fragile means delicate in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000021c",
+    "code": "AFNS-Q-540",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 540. Choose the synonym of \"Conceal.\"",
+    "options": [
+      {
+        "id": "80000000-0000-021c-0000-000000000001",
+        "label": "A",
+        "text": "Reveal"
+      },
+      {
+        "id": "80000000-0000-021c-0000-000000000002",
+        "label": "B",
+        "text": "Display"
+      },
+      {
+        "id": "80000000-0000-021c-0000-000000000003",
+        "label": "C",
+        "text": "Hide"
+      },
+      {
+        "id": "80000000-0000-021c-0000-000000000004",
+        "label": "D",
+        "text": "Explain"
+      }
+    ],
+    "correctOptionId": "80000000-0000-021c-0000-000000000003",
+    "explanation": "Conceal means hide in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000021d",
+    "code": "AFNS-Q-541",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 541. Choose the synonym of \"Diligent.\"",
+    "options": [
+      {
+        "id": "80000000-0000-021d-0000-000000000001",
+        "label": "A",
+        "text": "Lazy"
+      },
+      {
+        "id": "80000000-0000-021d-0000-000000000002",
+        "label": "B",
+        "text": "Careless"
+      },
+      {
+        "id": "80000000-0000-021d-0000-000000000003",
+        "label": "C",
+        "text": "Hardworking"
+      },
+      {
+        "id": "80000000-0000-021d-0000-000000000004",
+        "label": "D",
+        "text": "Weak"
+      }
+    ],
+    "correctOptionId": "80000000-0000-021d-0000-000000000003",
+    "explanation": "Diligent means hardworking in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000021e",
+    "code": "AFNS-Q-542",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 542. Choose the synonym of \"Brief.\"",
+    "options": [
+      {
+        "id": "80000000-0000-021e-0000-000000000001",
+        "label": "A",
+        "text": "Long"
+      },
+      {
+        "id": "80000000-0000-021e-0000-000000000002",
+        "label": "B",
+        "text": "Short"
+      },
+      {
+        "id": "80000000-0000-021e-0000-000000000003",
+        "label": "C",
+        "text": "Difficult"
+      },
+      {
+        "id": "80000000-0000-021e-0000-000000000004",
+        "label": "D",
+        "text": "Complete"
+      }
+    ],
+    "correctOptionId": "80000000-0000-021e-0000-000000000002",
+    "explanation": "Brief means short in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000021f",
+    "code": "AFNS-Q-543",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 543. Choose the synonym of \"Hostile.\"",
+    "options": [
+      {
+        "id": "80000000-0000-021f-0000-000000000001",
+        "label": "A",
+        "text": "Friendly"
+      },
+      {
+        "id": "80000000-0000-021f-0000-000000000002",
+        "label": "B",
+        "text": "Helpful"
+      },
+      {
+        "id": "80000000-0000-021f-0000-000000000003",
+        "label": "C",
+        "text": "Unfriendly"
+      },
+      {
+        "id": "80000000-0000-021f-0000-000000000004",
+        "label": "D",
+        "text": "Polite"
+      }
+    ],
+    "correctOptionId": "80000000-0000-021f-0000-000000000003",
+    "explanation": "Hostile means unfriendly in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000220",
+    "code": "AFNS-Q-544",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 544. Choose the synonym of \"Obsolete.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0220-0000-000000000001",
+        "label": "A",
+        "text": "Modern"
+      },
+      {
+        "id": "80000000-0000-0220-0000-000000000002",
+        "label": "B",
+        "text": "Useful"
+      },
+      {
+        "id": "80000000-0000-0220-0000-000000000003",
+        "label": "C",
+        "text": "Outdated"
+      },
+      {
+        "id": "80000000-0000-0220-0000-000000000004",
+        "label": "D",
+        "text": "Recent"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0220-0000-000000000003",
+    "explanation": "Obsolete means outdated in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000221",
+    "code": "AFNS-Q-545",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 545. Choose the synonym of \"Commence.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0221-0000-000000000001",
+        "label": "A",
+        "text": "Finish"
+      },
+      {
+        "id": "80000000-0000-0221-0000-000000000002",
+        "label": "B",
+        "text": "Stop"
+      },
+      {
+        "id": "80000000-0000-0221-0000-000000000003",
+        "label": "C",
+        "text": "Begin"
+      },
+      {
+        "id": "80000000-0000-0221-0000-000000000004",
+        "label": "D",
+        "text": "Delay"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0221-0000-000000000003",
+    "explanation": "Commence means begin in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000222",
+    "code": "AFNS-Q-546",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 546. Choose the synonym of \"Benevolent.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0222-0000-000000000001",
+        "label": "A",
+        "text": "Cruel"
+      },
+      {
+        "id": "80000000-0000-0222-0000-000000000002",
+        "label": "B",
+        "text": "Selfish"
+      },
+      {
+        "id": "80000000-0000-0222-0000-000000000003",
+        "label": "C",
+        "text": "Kind"
+      },
+      {
+        "id": "80000000-0000-0222-0000-000000000004",
+        "label": "D",
+        "text": "Angry"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0222-0000-000000000003",
+    "explanation": "Benevolent means kind in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000223",
+    "code": "AFNS-Q-547",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 547. Choose the synonym of \"Transparent.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0223-0000-000000000001",
+        "label": "A",
+        "text": "Dark"
+      },
+      {
+        "id": "80000000-0000-0223-0000-000000000002",
+        "label": "B",
+        "text": "Hidden"
+      },
+      {
+        "id": "80000000-0000-0223-0000-000000000003",
+        "label": "C",
+        "text": "Clear"
+      },
+      {
+        "id": "80000000-0000-0223-0000-000000000004",
+        "label": "D",
+        "text": "Rough"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0223-0000-000000000003",
+    "explanation": "Transparent means clear in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000224",
+    "code": "AFNS-Q-548",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 548. Choose the synonym of \"Perilous.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0224-0000-000000000001",
+        "label": "A",
+        "text": "Safe"
+      },
+      {
+        "id": "80000000-0000-0224-0000-000000000002",
+        "label": "B",
+        "text": "Easy"
+      },
+      {
+        "id": "80000000-0000-0224-0000-000000000003",
+        "label": "C",
+        "text": "Dangerous"
+      },
+      {
+        "id": "80000000-0000-0224-0000-000000000004",
+        "label": "D",
+        "text": "Comfortable"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0224-0000-000000000003",
+    "explanation": "Perilous means dangerous in this usage.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000225",
+    "code": "AFNS-Q-549",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 549. Choose the antonym of \"Expand.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0225-0000-000000000001",
+        "label": "A",
+        "text": "Increase"
+      },
+      {
+        "id": "80000000-0000-0225-0000-000000000002",
+        "label": "B",
+        "text": "Extend"
+      },
+      {
+        "id": "80000000-0000-0225-0000-000000000003",
+        "label": "C",
+        "text": "Contract"
+      },
+      {
+        "id": "80000000-0000-0225-0000-000000000004",
+        "label": "D",
+        "text": "Enlarge"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0225-0000-000000000003",
+    "explanation": "Expand means the opposite of contract.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000226",
+    "code": "AFNS-Q-550",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 550. Choose the antonym of \"Permanent.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0226-0000-000000000001",
+        "label": "A",
+        "text": "Stable"
+      },
+      {
+        "id": "80000000-0000-0226-0000-000000000002",
+        "label": "B",
+        "text": "Fixed"
+      },
+      {
+        "id": "80000000-0000-0226-0000-000000000003",
+        "label": "C",
+        "text": "Temporary"
+      },
+      {
+        "id": "80000000-0000-0226-0000-000000000004",
+        "label": "D",
+        "text": "Lasting"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0226-0000-000000000003",
+    "explanation": "Permanent means the opposite of temporary.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000227",
+    "code": "AFNS-Q-551",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 551. Choose the antonym of \"Generous.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0227-0000-000000000001",
+        "label": "A",
+        "text": "Kind"
+      },
+      {
+        "id": "80000000-0000-0227-0000-000000000002",
+        "label": "B",
+        "text": "Helpful"
+      },
+      {
+        "id": "80000000-0000-0227-0000-000000000003",
+        "label": "C",
+        "text": "Stingy"
+      },
+      {
+        "id": "80000000-0000-0227-0000-000000000004",
+        "label": "D",
+        "text": "Friendly"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0227-0000-000000000003",
+    "explanation": "Generous means the opposite of stingy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000228",
+    "code": "AFNS-Q-552",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 552. Choose the antonym of \"Victory.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0228-0000-000000000001",
+        "label": "A",
+        "text": "Success"
+      },
+      {
+        "id": "80000000-0000-0228-0000-000000000002",
+        "label": "B",
+        "text": "Achievement"
+      },
+      {
+        "id": "80000000-0000-0228-0000-000000000003",
+        "label": "C",
+        "text": "Defeat"
+      },
+      {
+        "id": "80000000-0000-0228-0000-000000000004",
+        "label": "D",
+        "text": "Triumph"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0228-0000-000000000003",
+    "explanation": "Victory means the opposite of defeat.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000229",
+    "code": "AFNS-Q-553",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 553. Choose the antonym of \"Superior.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0229-0000-000000000001",
+        "label": "A",
+        "text": "Excellent"
+      },
+      {
+        "id": "80000000-0000-0229-0000-000000000002",
+        "label": "B",
+        "text": "Higher"
+      },
+      {
+        "id": "80000000-0000-0229-0000-000000000003",
+        "label": "C",
+        "text": "Inferior"
+      },
+      {
+        "id": "80000000-0000-0229-0000-000000000004",
+        "label": "D",
+        "text": "Greater"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0229-0000-000000000003",
+    "explanation": "Superior means the opposite of inferior.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000022a",
+    "code": "AFNS-Q-554",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 554. Choose the antonym of \"Artificial.\"",
+    "options": [
+      {
+        "id": "80000000-0000-022a-0000-000000000001",
+        "label": "A",
+        "text": "False"
+      },
+      {
+        "id": "80000000-0000-022a-0000-000000000002",
+        "label": "B",
+        "text": "Manufactured"
+      },
+      {
+        "id": "80000000-0000-022a-0000-000000000003",
+        "label": "C",
+        "text": "Natural"
+      },
+      {
+        "id": "80000000-0000-022a-0000-000000000004",
+        "label": "D",
+        "text": "Synthetic"
+      }
+    ],
+    "correctOptionId": "80000000-0000-022a-0000-000000000003",
+    "explanation": "Artificial means the opposite of natural.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000022b",
+    "code": "AFNS-Q-555",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 555. Choose the antonym of \"Optimistic.\"",
+    "options": [
+      {
+        "id": "80000000-0000-022b-0000-000000000001",
+        "label": "A",
+        "text": "Hopeful"
+      },
+      {
+        "id": "80000000-0000-022b-0000-000000000002",
+        "label": "B",
+        "text": "Positive"
+      },
+      {
+        "id": "80000000-0000-022b-0000-000000000003",
+        "label": "C",
+        "text": "Pessimistic"
+      },
+      {
+        "id": "80000000-0000-022b-0000-000000000004",
+        "label": "D",
+        "text": "Confident"
+      }
+    ],
+    "correctOptionId": "80000000-0000-022b-0000-000000000003",
+    "explanation": "Optimistic means the opposite of pessimistic.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000022c",
+    "code": "AFNS-Q-556",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 556. Choose the antonym of \"Scarce.\"",
+    "options": [
+      {
+        "id": "80000000-0000-022c-0000-000000000001",
+        "label": "A",
+        "text": "Rare"
+      },
+      {
+        "id": "80000000-0000-022c-0000-000000000002",
+        "label": "B",
+        "text": "Limited"
+      },
+      {
+        "id": "80000000-0000-022c-0000-000000000003",
+        "label": "C",
+        "text": "Abundant"
+      },
+      {
+        "id": "80000000-0000-022c-0000-000000000004",
+        "label": "D",
+        "text": "Insufficient"
+      }
+    ],
+    "correctOptionId": "80000000-0000-022c-0000-000000000003",
+    "explanation": "Scarce means the opposite of abundant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000022d",
+    "code": "AFNS-Q-557",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 557. Choose the antonym of \"Compulsory.\"",
+    "options": [
+      {
+        "id": "80000000-0000-022d-0000-000000000001",
+        "label": "A",
+        "text": "Necessary"
+      },
+      {
+        "id": "80000000-0000-022d-0000-000000000002",
+        "label": "B",
+        "text": "Required"
+      },
+      {
+        "id": "80000000-0000-022d-0000-000000000003",
+        "label": "C",
+        "text": "Optional"
+      },
+      {
+        "id": "80000000-0000-022d-0000-000000000004",
+        "label": "D",
+        "text": "Essential"
+      }
+    ],
+    "correctOptionId": "80000000-0000-022d-0000-000000000003",
+    "explanation": "Compulsory means the opposite of optional.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000022e",
+    "code": "AFNS-Q-558",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 558. Choose the antonym of \"Complicated.\"",
+    "options": [
+      {
+        "id": "80000000-0000-022e-0000-000000000001",
+        "label": "A",
+        "text": "Difficult"
+      },
+      {
+        "id": "80000000-0000-022e-0000-000000000002",
+        "label": "B",
+        "text": "Confusing"
+      },
+      {
+        "id": "80000000-0000-022e-0000-000000000003",
+        "label": "C",
+        "text": "Simple"
+      },
+      {
+        "id": "80000000-0000-022e-0000-000000000004",
+        "label": "D",
+        "text": "Complex"
+      }
+    ],
+    "correctOptionId": "80000000-0000-022e-0000-000000000003",
+    "explanation": "Complicated means the opposite of simple.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000022f",
+    "code": "AFNS-Q-559",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 559. Choose the antonym of \"Genuine.\"",
+    "options": [
+      {
+        "id": "80000000-0000-022f-0000-000000000001",
+        "label": "A",
+        "text": "Real"
+      },
+      {
+        "id": "80000000-0000-022f-0000-000000000002",
+        "label": "B",
+        "text": "Authentic"
+      },
+      {
+        "id": "80000000-0000-022f-0000-000000000003",
+        "label": "C",
+        "text": "Fake"
+      },
+      {
+        "id": "80000000-0000-022f-0000-000000000004",
+        "label": "D",
+        "text": "Original"
+      }
+    ],
+    "correctOptionId": "80000000-0000-022f-0000-000000000003",
+    "explanation": "Genuine means the opposite of fake.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000230",
+    "code": "AFNS-Q-560",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 560. He ____ to school every day.",
+    "options": [
+      {
+        "id": "80000000-0000-0230-0000-000000000001",
+        "label": "A",
+        "text": "go"
+      },
+      {
+        "id": "80000000-0000-0230-0000-000000000002",
+        "label": "B",
+        "text": "goes"
+      },
+      {
+        "id": "80000000-0000-0230-0000-000000000003",
+        "label": "C",
+        "text": "went"
+      },
+      {
+        "id": "80000000-0000-0230-0000-000000000004",
+        "label": "D",
+        "text": "going"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0230-0000-000000000002",
+    "explanation": "Simple present expresses a habit or general truth; a third-person singular subject takes the -s form.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000231",
+    "code": "AFNS-Q-561",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 561. They ____ football when it started raining.",
+    "options": [
+      {
+        "id": "80000000-0000-0231-0000-000000000001",
+        "label": "A",
+        "text": "play"
+      },
+      {
+        "id": "80000000-0000-0231-0000-000000000002",
+        "label": "B",
+        "text": "played"
+      },
+      {
+        "id": "80000000-0000-0231-0000-000000000003",
+        "label": "C",
+        "text": "were playing"
+      },
+      {
+        "id": "80000000-0000-0231-0000-000000000004",
+        "label": "D",
+        "text": "have played"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0231-0000-000000000003",
+    "explanation": "Past continuous describes an action already in progress when another past event occurred.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000232",
+    "code": "AFNS-Q-562",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 562. I ____ my homework already.",
+    "options": [
+      {
+        "id": "80000000-0000-0232-0000-000000000001",
+        "label": "A",
+        "text": "finish"
+      },
+      {
+        "id": "80000000-0000-0232-0000-000000000002",
+        "label": "B",
+        "text": "finished"
+      },
+      {
+        "id": "80000000-0000-0232-0000-000000000003",
+        "label": "C",
+        "text": "have finished"
+      },
+      {
+        "id": "80000000-0000-0232-0000-000000000004",
+        "label": "D",
+        "text": "am finishing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0232-0000-000000000003",
+    "explanation": "Present perfect connects a past action or experience with the present, often signalled by already, yet or since.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000233",
+    "code": "AFNS-Q-563",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 563. When I reached the station, the train ____.",
+    "options": [
+      {
+        "id": "80000000-0000-0233-0000-000000000001",
+        "label": "A",
+        "text": "leaves"
+      },
+      {
+        "id": "80000000-0000-0233-0000-000000000002",
+        "label": "B",
+        "text": "left"
+      },
+      {
+        "id": "80000000-0000-0233-0000-000000000003",
+        "label": "C",
+        "text": "had left"
+      },
+      {
+        "id": "80000000-0000-0233-0000-000000000004",
+        "label": "D",
+        "text": "has left"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0233-0000-000000000003",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000234",
+    "code": "AFNS-Q-564",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 564. We ____ dinner when our guests arrived.",
+    "options": [
+      {
+        "id": "80000000-0000-0234-0000-000000000001",
+        "label": "A",
+        "text": "had"
+      },
+      {
+        "id": "80000000-0000-0234-0000-000000000002",
+        "label": "B",
+        "text": "were having"
+      },
+      {
+        "id": "80000000-0000-0234-0000-000000000003",
+        "label": "C",
+        "text": "have"
+      },
+      {
+        "id": "80000000-0000-0234-0000-000000000004",
+        "label": "D",
+        "text": "are having"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0234-0000-000000000002",
+    "explanation": "Past continuous describes an action already in progress when another past event occurred.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000235",
+    "code": "AFNS-Q-565",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 565. By next month, he ____ his course.",
+    "options": [
+      {
+        "id": "80000000-0000-0235-0000-000000000001",
+        "label": "A",
+        "text": "completes"
+      },
+      {
+        "id": "80000000-0000-0235-0000-000000000002",
+        "label": "B",
+        "text": "completed"
+      },
+      {
+        "id": "80000000-0000-0235-0000-000000000003",
+        "label": "C",
+        "text": "will complete"
+      },
+      {
+        "id": "80000000-0000-0235-0000-000000000004",
+        "label": "D",
+        "text": "will have completed"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0235-0000-000000000004",
+    "explanation": "Future perfect describes an action completed by a stated future time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000236",
+    "code": "AFNS-Q-566",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 566. Look! The children ____.",
+    "options": [
+      {
+        "id": "80000000-0000-0236-0000-000000000001",
+        "label": "A",
+        "text": "run"
+      },
+      {
+        "id": "80000000-0000-0236-0000-000000000002",
+        "label": "B",
+        "text": "ran"
+      },
+      {
+        "id": "80000000-0000-0236-0000-000000000003",
+        "label": "C",
+        "text": "are running"
+      },
+      {
+        "id": "80000000-0000-0236-0000-000000000004",
+        "label": "D",
+        "text": "have run"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0236-0000-000000000003",
+    "explanation": "Present continuous describes an action happening now.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000237",
+    "code": "AFNS-Q-567",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 567. She ____ the book before she watched the movie.",
+    "options": [
+      {
+        "id": "80000000-0000-0237-0000-000000000001",
+        "label": "A",
+        "text": "reads"
+      },
+      {
+        "id": "80000000-0000-0237-0000-000000000002",
+        "label": "B",
+        "text": "has read"
+      },
+      {
+        "id": "80000000-0000-0237-0000-000000000003",
+        "label": "C",
+        "text": "had read"
+      },
+      {
+        "id": "80000000-0000-0237-0000-000000000004",
+        "label": "D",
+        "text": "is reading"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0237-0000-000000000003",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000238",
+    "code": "AFNS-Q-568",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 568. I ____ him yesterday.",
+    "options": [
+      {
+        "id": "80000000-0000-0238-0000-000000000001",
+        "label": "A",
+        "text": "meet"
+      },
+      {
+        "id": "80000000-0000-0238-0000-000000000002",
+        "label": "B",
+        "text": "met"
+      },
+      {
+        "id": "80000000-0000-0238-0000-000000000003",
+        "label": "C",
+        "text": "have met"
+      },
+      {
+        "id": "80000000-0000-0238-0000-000000000004",
+        "label": "D",
+        "text": "am meeting"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0238-0000-000000000002",
+    "explanation": "Simple past describes a completed action at a finished past time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000239",
+    "code": "AFNS-Q-569",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 569. Water ____ at 100 degreesC.",
+    "options": [
+      {
+        "id": "80000000-0000-0239-0000-000000000001",
+        "label": "A",
+        "text": "boil"
+      },
+      {
+        "id": "80000000-0000-0239-0000-000000000002",
+        "label": "B",
+        "text": "boiled"
+      },
+      {
+        "id": "80000000-0000-0239-0000-000000000003",
+        "label": "C",
+        "text": "boils"
+      },
+      {
+        "id": "80000000-0000-0239-0000-000000000004",
+        "label": "D",
+        "text": "is boiling"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0239-0000-000000000003",
+    "explanation": "Simple present expresses a habit or general truth; a third-person singular subject takes the -s form.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000023a",
+    "code": "AFNS-Q-570",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 570. He ____ for two hours.",
+    "options": [
+      {
+        "id": "80000000-0000-023a-0000-000000000001",
+        "label": "A",
+        "text": "studies"
+      },
+      {
+        "id": "80000000-0000-023a-0000-000000000002",
+        "label": "B",
+        "text": "studied"
+      },
+      {
+        "id": "80000000-0000-023a-0000-000000000003",
+        "label": "C",
+        "text": "has been studying"
+      },
+      {
+        "id": "80000000-0000-023a-0000-000000000004",
+        "label": "D",
+        "text": "is studied"
+      }
+    ],
+    "correctOptionId": "80000000-0000-023a-0000-000000000003",
+    "explanation": "Present perfect continuous describes an activity continuing over a period up to the present.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000023b",
+    "code": "AFNS-Q-571",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 571. They ____ here tomorrow.",
+    "options": [
+      {
+        "id": "80000000-0000-023b-0000-000000000001",
+        "label": "A",
+        "text": "come"
+      },
+      {
+        "id": "80000000-0000-023b-0000-000000000002",
+        "label": "B",
+        "text": "came"
+      },
+      {
+        "id": "80000000-0000-023b-0000-000000000003",
+        "label": "C",
+        "text": "will come"
+      },
+      {
+        "id": "80000000-0000-023b-0000-000000000004",
+        "label": "D",
+        "text": "have come"
+      }
+    ],
+    "correctOptionId": "80000000-0000-023b-0000-000000000003",
+    "explanation": "Will plus the base verb describes a future event or the likely result of a first conditional.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000023c",
+    "code": "AFNS-Q-572",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 572. She ____ her work before the teacher arrived.",
+    "options": [
+      {
+        "id": "80000000-0000-023c-0000-000000000001",
+        "label": "A",
+        "text": "finishes"
+      },
+      {
+        "id": "80000000-0000-023c-0000-000000000002",
+        "label": "B",
+        "text": "finished"
+      },
+      {
+        "id": "80000000-0000-023c-0000-000000000003",
+        "label": "C",
+        "text": "had finished"
+      },
+      {
+        "id": "80000000-0000-023c-0000-000000000004",
+        "label": "D",
+        "text": "has finished"
+      }
+    ],
+    "correctOptionId": "80000000-0000-023c-0000-000000000003",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000023d",
+    "code": "AFNS-Q-573",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 573. I ____ this movie three times.",
+    "options": [
+      {
+        "id": "80000000-0000-023d-0000-000000000001",
+        "label": "A",
+        "text": "see"
+      },
+      {
+        "id": "80000000-0000-023d-0000-000000000002",
+        "label": "B",
+        "text": "saw"
+      },
+      {
+        "id": "80000000-0000-023d-0000-000000000003",
+        "label": "C",
+        "text": "have seen"
+      },
+      {
+        "id": "80000000-0000-023d-0000-000000000004",
+        "label": "D",
+        "text": "am seeing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-023d-0000-000000000003",
+    "explanation": "Present perfect connects a past action or experience with the present, often signalled by already, yet or since.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000023e",
+    "code": "AFNS-Q-574",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 574. While Ali ____, his brother was watching television.",
+    "options": [
+      {
+        "id": "80000000-0000-023e-0000-000000000001",
+        "label": "A",
+        "text": "studies"
+      },
+      {
+        "id": "80000000-0000-023e-0000-000000000002",
+        "label": "B",
+        "text": "studied"
+      },
+      {
+        "id": "80000000-0000-023e-0000-000000000003",
+        "label": "C",
+        "text": "was studying"
+      },
+      {
+        "id": "80000000-0000-023e-0000-000000000004",
+        "label": "D",
+        "text": "has studied"
+      }
+    ],
+    "correctOptionId": "80000000-0000-023e-0000-000000000003",
+    "explanation": "Past continuous describes an action already in progress when another past event occurred.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000023f",
+    "code": "AFNS-Q-575",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 575. By 8 p.m., we ____ for five hours.",
+    "options": [
+      {
+        "id": "80000000-0000-023f-0000-000000000001",
+        "label": "A",
+        "text": "travel"
+      },
+      {
+        "id": "80000000-0000-023f-0000-000000000002",
+        "label": "B",
+        "text": "travelled"
+      },
+      {
+        "id": "80000000-0000-023f-0000-000000000003",
+        "label": "C",
+        "text": "will have been travelling"
+      },
+      {
+        "id": "80000000-0000-023f-0000-000000000004",
+        "label": "D",
+        "text": "are travelling"
+      }
+    ],
+    "correctOptionId": "80000000-0000-023f-0000-000000000003",
+    "explanation": "Future perfect continuous describes an action continuing for a duration up to a future reference point.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000240",
+    "code": "AFNS-Q-576",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 576. He ____ his keys, so he cannot open the door.",
+    "options": [
+      {
+        "id": "80000000-0000-0240-0000-000000000001",
+        "label": "A",
+        "text": "loses"
+      },
+      {
+        "id": "80000000-0000-0240-0000-000000000002",
+        "label": "B",
+        "text": "lost"
+      },
+      {
+        "id": "80000000-0000-0240-0000-000000000003",
+        "label": "C",
+        "text": "has lost"
+      },
+      {
+        "id": "80000000-0000-0240-0000-000000000004",
+        "label": "D",
+        "text": "was losing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0240-0000-000000000003",
+    "explanation": "Present perfect connects a past action or experience with the present, often signalled by already, yet or since.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000241",
+    "code": "AFNS-Q-577",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 577. She usually ____ tea in the morning.",
+    "options": [
+      {
+        "id": "80000000-0000-0241-0000-000000000001",
+        "label": "A",
+        "text": "drink"
+      },
+      {
+        "id": "80000000-0000-0241-0000-000000000002",
+        "label": "B",
+        "text": "drinks"
+      },
+      {
+        "id": "80000000-0000-0241-0000-000000000003",
+        "label": "C",
+        "text": "drank"
+      },
+      {
+        "id": "80000000-0000-0241-0000-000000000004",
+        "label": "D",
+        "text": "is drinking"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0241-0000-000000000002",
+    "explanation": "Simple present expresses a habit or general truth; a third-person singular subject takes the -s form.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000242",
+    "code": "AFNS-Q-578",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 578. I ____ TV when you called me.",
+    "options": [
+      {
+        "id": "80000000-0000-0242-0000-000000000001",
+        "label": "A",
+        "text": "watch"
+      },
+      {
+        "id": "80000000-0000-0242-0000-000000000002",
+        "label": "B",
+        "text": "watched"
+      },
+      {
+        "id": "80000000-0000-0242-0000-000000000003",
+        "label": "C",
+        "text": "was watching"
+      },
+      {
+        "id": "80000000-0000-0242-0000-000000000004",
+        "label": "D",
+        "text": "have watched"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0242-0000-000000000003",
+    "explanation": "Past continuous describes an action already in progress when another past event occurred.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000243",
+    "code": "AFNS-Q-579",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 579. If he works hard, he ____ the examination.",
+    "options": [
+      {
+        "id": "80000000-0000-0243-0000-000000000001",
+        "label": "A",
+        "text": "passed"
+      },
+      {
+        "id": "80000000-0000-0243-0000-000000000002",
+        "label": "B",
+        "text": "passes"
+      },
+      {
+        "id": "80000000-0000-0243-0000-000000000003",
+        "label": "C",
+        "text": "will pass"
+      },
+      {
+        "id": "80000000-0000-0243-0000-000000000004",
+        "label": "D",
+        "text": "had passed"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0243-0000-000000000003",
+    "explanation": "Will plus the base verb describes a future event or the likely result of a first conditional.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000244",
+    "code": "AFNS-Q-580",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 580. She ____ her assignment yet.",
+    "options": [
+      {
+        "id": "80000000-0000-0244-0000-000000000001",
+        "label": "A",
+        "text": "did not complete"
+      },
+      {
+        "id": "80000000-0000-0244-0000-000000000002",
+        "label": "B",
+        "text": "has not completed"
+      },
+      {
+        "id": "80000000-0000-0244-0000-000000000003",
+        "label": "C",
+        "text": "does not complete"
+      },
+      {
+        "id": "80000000-0000-0244-0000-000000000004",
+        "label": "D",
+        "text": "was not completing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0244-0000-000000000002",
+    "explanation": "Present perfect connects a past action or experience with the present, often signalled by already, yet or since.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000245",
+    "code": "AFNS-Q-581",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 581. We ____ in Lahore for ten years before moving to Islamabad.",
+    "options": [
+      {
+        "id": "80000000-0000-0245-0000-000000000001",
+        "label": "A",
+        "text": "live"
+      },
+      {
+        "id": "80000000-0000-0245-0000-000000000002",
+        "label": "B",
+        "text": "have lived"
+      },
+      {
+        "id": "80000000-0000-0245-0000-000000000003",
+        "label": "C",
+        "text": "had lived"
+      },
+      {
+        "id": "80000000-0000-0245-0000-000000000004",
+        "label": "D",
+        "text": "are living"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0245-0000-000000000003",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000246",
+    "code": "AFNS-Q-582",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 582. The baby ____ all night.",
+    "options": [
+      {
+        "id": "80000000-0000-0246-0000-000000000001",
+        "label": "A",
+        "text": "cries"
+      },
+      {
+        "id": "80000000-0000-0246-0000-000000000002",
+        "label": "B",
+        "text": "cried"
+      },
+      {
+        "id": "80000000-0000-0246-0000-000000000003",
+        "label": "C",
+        "text": "has been crying"
+      },
+      {
+        "id": "80000000-0000-0246-0000-000000000004",
+        "label": "D",
+        "text": "is cried"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0246-0000-000000000003",
+    "explanation": "Present perfect continuous describes an activity continuing over a period up to the present.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000247",
+    "code": "AFNS-Q-583",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 583. When I entered the room, everyone ____.",
+    "options": [
+      {
+        "id": "80000000-0000-0247-0000-000000000001",
+        "label": "A",
+        "text": "sleeps"
+      },
+      {
+        "id": "80000000-0000-0247-0000-000000000002",
+        "label": "B",
+        "text": "slept"
+      },
+      {
+        "id": "80000000-0000-0247-0000-000000000003",
+        "label": "C",
+        "text": "was sleeping"
+      },
+      {
+        "id": "80000000-0000-0247-0000-000000000004",
+        "label": "D",
+        "text": "has slept"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0247-0000-000000000003",
+    "explanation": "Past continuous describes an action already in progress when another past event occurred.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000248",
+    "code": "AFNS-Q-584",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 584. He ____ his work before going home.",
+    "options": [
+      {
+        "id": "80000000-0000-0248-0000-000000000001",
+        "label": "A",
+        "text": "completes"
+      },
+      {
+        "id": "80000000-0000-0248-0000-000000000002",
+        "label": "B",
+        "text": "completed"
+      },
+      {
+        "id": "80000000-0000-0248-0000-000000000003",
+        "label": "C",
+        "text": "has complete"
+      },
+      {
+        "id": "80000000-0000-0248-0000-000000000004",
+        "label": "D",
+        "text": "completing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0248-0000-000000000002",
+    "explanation": "Simple past describes a completed action at a finished past time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000249",
+    "code": "AFNS-Q-585",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 585. They ____ the match by next Sunday.",
+    "options": [
+      {
+        "id": "80000000-0000-0249-0000-000000000001",
+        "label": "A",
+        "text": "win"
+      },
+      {
+        "id": "80000000-0000-0249-0000-000000000002",
+        "label": "B",
+        "text": "won"
+      },
+      {
+        "id": "80000000-0000-0249-0000-000000000003",
+        "label": "C",
+        "text": "will have won"
+      },
+      {
+        "id": "80000000-0000-0249-0000-000000000004",
+        "label": "D",
+        "text": "have won"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0249-0000-000000000003",
+    "explanation": "Future perfect describes an action completed by a stated future time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000024a",
+    "code": "AFNS-Q-586",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 586. My father ____ newspapers every morning.",
+    "options": [
+      {
+        "id": "80000000-0000-024a-0000-000000000001",
+        "label": "A",
+        "text": "read"
+      },
+      {
+        "id": "80000000-0000-024a-0000-000000000002",
+        "label": "B",
+        "text": "reads"
+      },
+      {
+        "id": "80000000-0000-024a-0000-000000000003",
+        "label": "C",
+        "text": "reading"
+      },
+      {
+        "id": "80000000-0000-024a-0000-000000000004",
+        "label": "D",
+        "text": "has read"
+      }
+    ],
+    "correctOptionId": "80000000-0000-024a-0000-000000000002",
+    "explanation": "Simple present expresses a habit or general truth; a third-person singular subject takes the -s form.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000024b",
+    "code": "AFNS-Q-587",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 587. I ____ him since Monday.",
+    "options": [
+      {
+        "id": "80000000-0000-024b-0000-000000000001",
+        "label": "A",
+        "text": "did not see"
+      },
+      {
+        "id": "80000000-0000-024b-0000-000000000002",
+        "label": "B",
+        "text": "have not seen"
+      },
+      {
+        "id": "80000000-0000-024b-0000-000000000003",
+        "label": "C",
+        "text": "do not see"
+      },
+      {
+        "id": "80000000-0000-024b-0000-000000000004",
+        "label": "D",
+        "text": "was not seeing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-024b-0000-000000000002",
+    "explanation": "Present perfect connects a past action or experience with the present, often signalled by already, yet or since.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000024c",
+    "code": "AFNS-Q-588",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 588. She ____ when I saw her yesterday.",
+    "options": [
+      {
+        "id": "80000000-0000-024c-0000-000000000001",
+        "label": "A",
+        "text": "cries"
+      },
+      {
+        "id": "80000000-0000-024c-0000-000000000002",
+        "label": "B",
+        "text": "cried"
+      },
+      {
+        "id": "80000000-0000-024c-0000-000000000003",
+        "label": "C",
+        "text": "was crying"
+      },
+      {
+        "id": "80000000-0000-024c-0000-000000000004",
+        "label": "D",
+        "text": "has cried"
+      }
+    ],
+    "correctOptionId": "80000000-0000-024c-0000-000000000003",
+    "explanation": "Past continuous describes an action already in progress when another past event occurred.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000024d",
+    "code": "AFNS-Q-589",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 589. The sun ____ in the east.",
+    "options": [
+      {
+        "id": "80000000-0000-024d-0000-000000000001",
+        "label": "A",
+        "text": "rise"
+      },
+      {
+        "id": "80000000-0000-024d-0000-000000000002",
+        "label": "B",
+        "text": "rises"
+      },
+      {
+        "id": "80000000-0000-024d-0000-000000000003",
+        "label": "C",
+        "text": "rose"
+      },
+      {
+        "id": "80000000-0000-024d-0000-000000000004",
+        "label": "D",
+        "text": "is rising"
+      }
+    ],
+    "correctOptionId": "80000000-0000-024d-0000-000000000002",
+    "explanation": "Simple present expresses a habit or general truth; a third-person singular subject takes the -s form.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000024e",
+    "code": "AFNS-Q-590",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 590. He ____ English for three years.",
+    "options": [
+      {
+        "id": "80000000-0000-024e-0000-000000000001",
+        "label": "A",
+        "text": "learns"
+      },
+      {
+        "id": "80000000-0000-024e-0000-000000000002",
+        "label": "B",
+        "text": "learned"
+      },
+      {
+        "id": "80000000-0000-024e-0000-000000000003",
+        "label": "C",
+        "text": "has been learning"
+      },
+      {
+        "id": "80000000-0000-024e-0000-000000000004",
+        "label": "D",
+        "text": "is learned"
+      }
+    ],
+    "correctOptionId": "80000000-0000-024e-0000-000000000003",
+    "explanation": "Present perfect continuous describes an activity continuing over a period up to the present.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000024f",
+    "code": "AFNS-Q-591",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 591. Before the police arrived, the thief ____.",
+    "options": [
+      {
+        "id": "80000000-0000-024f-0000-000000000001",
+        "label": "A",
+        "text": "escaped"
+      },
+      {
+        "id": "80000000-0000-024f-0000-000000000002",
+        "label": "B",
+        "text": "has escaped"
+      },
+      {
+        "id": "80000000-0000-024f-0000-000000000003",
+        "label": "C",
+        "text": "had escaped"
+      },
+      {
+        "id": "80000000-0000-024f-0000-000000000004",
+        "label": "D",
+        "text": "escapes"
+      }
+    ],
+    "correctOptionId": "80000000-0000-024f-0000-000000000003",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000250",
+    "code": "AFNS-Q-592",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 592. I ____ my room tomorrow.",
+    "options": [
+      {
+        "id": "80000000-0000-0250-0000-000000000001",
+        "label": "A",
+        "text": "cleaned"
+      },
+      {
+        "id": "80000000-0000-0250-0000-000000000002",
+        "label": "B",
+        "text": "clean"
+      },
+      {
+        "id": "80000000-0000-0250-0000-000000000003",
+        "label": "C",
+        "text": "will clean"
+      },
+      {
+        "id": "80000000-0000-0250-0000-000000000004",
+        "label": "D",
+        "text": "have cleaned"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0250-0000-000000000003",
+    "explanation": "Will plus the base verb describes a future event or the likely result of a first conditional.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000251",
+    "code": "AFNS-Q-593",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 593. He ____ just ____ the door.",
+    "options": [
+      {
+        "id": "80000000-0000-0251-0000-000000000001",
+        "label": "A",
+        "text": "has / opened"
+      },
+      {
+        "id": "80000000-0000-0251-0000-000000000002",
+        "label": "B",
+        "text": "had / open"
+      },
+      {
+        "id": "80000000-0000-0251-0000-000000000003",
+        "label": "C",
+        "text": "is / opened"
+      },
+      {
+        "id": "80000000-0000-0251-0000-000000000004",
+        "label": "D",
+        "text": "was / opening"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0251-0000-000000000001",
+    "explanation": "Present perfect connects a past action or experience with the present, often signalled by already, yet or since.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000252",
+    "code": "AFNS-Q-594",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 594. At this time tomorrow, we ____ to Karachi.",
+    "options": [
+      {
+        "id": "80000000-0000-0252-0000-000000000001",
+        "label": "A",
+        "text": "travel"
+      },
+      {
+        "id": "80000000-0000-0252-0000-000000000002",
+        "label": "B",
+        "text": "travelled"
+      },
+      {
+        "id": "80000000-0000-0252-0000-000000000003",
+        "label": "C",
+        "text": "will be travelling"
+      },
+      {
+        "id": "80000000-0000-0252-0000-000000000004",
+        "label": "D",
+        "text": "have travelled"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0252-0000-000000000003",
+    "explanation": "Future continuous describes an action in progress at a specified future time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000253",
+    "code": "AFNS-Q-595",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 595. She ____ never ____ such a beautiful place before.",
+    "options": [
+      {
+        "id": "80000000-0000-0253-0000-000000000001",
+        "label": "A",
+        "text": "has / seen"
+      },
+      {
+        "id": "80000000-0000-0253-0000-000000000002",
+        "label": "B",
+        "text": "did / see"
+      },
+      {
+        "id": "80000000-0000-0253-0000-000000000003",
+        "label": "C",
+        "text": "is / seeing"
+      },
+      {
+        "id": "80000000-0000-0253-0000-000000000004",
+        "label": "D",
+        "text": "was / see"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0253-0000-000000000001",
+    "explanation": "Present perfect connects a past action or experience with the present, often signalled by already, yet or since.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000254",
+    "code": "AFNS-Q-596",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 596. They ____ dinner before the guests came.",
+    "options": [
+      {
+        "id": "80000000-0000-0254-0000-000000000001",
+        "label": "A",
+        "text": "have finished"
+      },
+      {
+        "id": "80000000-0000-0254-0000-000000000002",
+        "label": "B",
+        "text": "had finished"
+      },
+      {
+        "id": "80000000-0000-0254-0000-000000000003",
+        "label": "C",
+        "text": "finish"
+      },
+      {
+        "id": "80000000-0000-0254-0000-000000000004",
+        "label": "D",
+        "text": "are finishing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0254-0000-000000000002",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000255",
+    "code": "AFNS-Q-597",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 597. I ____ for you since morning.",
+    "options": [
+      {
+        "id": "80000000-0000-0255-0000-000000000001",
+        "label": "A",
+        "text": "wait"
+      },
+      {
+        "id": "80000000-0000-0255-0000-000000000002",
+        "label": "B",
+        "text": "waited"
+      },
+      {
+        "id": "80000000-0000-0255-0000-000000000003",
+        "label": "C",
+        "text": "have been waiting"
+      },
+      {
+        "id": "80000000-0000-0255-0000-000000000004",
+        "label": "D",
+        "text": "am waited"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0255-0000-000000000003",
+    "explanation": "Present perfect continuous describes an activity continuing over a period up to the present.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000256",
+    "code": "AFNS-Q-598",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 598. By the time you arrive, I ____ for eight hours.",
+    "options": [
+      {
+        "id": "80000000-0000-0256-0000-000000000001",
+        "label": "A",
+        "text": "sleep"
+      },
+      {
+        "id": "80000000-0000-0256-0000-000000000002",
+        "label": "B",
+        "text": "slept"
+      },
+      {
+        "id": "80000000-0000-0256-0000-000000000003",
+        "label": "C",
+        "text": "will sleep"
+      },
+      {
+        "id": "80000000-0000-0256-0000-000000000004",
+        "label": "D",
+        "text": "will have slept"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0256-0000-000000000004",
+    "explanation": "Future perfect describes an action completed by a stated future time.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000257",
+    "code": "AFNS-Q-599",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 599. The teacher teaches English. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0257-0000-000000000001",
+        "label": "A",
+        "text": "English taught by the teacher."
+      },
+      {
+        "id": "80000000-0000-0257-0000-000000000002",
+        "label": "B",
+        "text": "English is taught by the teacher."
+      },
+      {
+        "id": "80000000-0000-0257-0000-000000000003",
+        "label": "C",
+        "text": "English was taught by the teacher."
+      },
+      {
+        "id": "80000000-0000-0257-0000-000000000004",
+        "label": "D",
+        "text": "English has taught by the teacher."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0257-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000258",
+    "code": "AFNS-Q-600",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 600. Ali wrote a letter. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0258-0000-000000000001",
+        "label": "A",
+        "text": "A letter is written by Ali."
+      },
+      {
+        "id": "80000000-0000-0258-0000-000000000002",
+        "label": "B",
+        "text": "A letter was written by Ali."
+      },
+      {
+        "id": "80000000-0000-0258-0000-000000000003",
+        "label": "C",
+        "text": "A letter has written by Ali."
+      },
+      {
+        "id": "80000000-0000-0258-0000-000000000004",
+        "label": "D",
+        "text": "A letter wrote by Ali."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0258-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000259",
+    "code": "AFNS-Q-601",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 601. They are repairing the road. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0259-0000-000000000001",
+        "label": "A",
+        "text": "The road repaired by them."
+      },
+      {
+        "id": "80000000-0000-0259-0000-000000000002",
+        "label": "B",
+        "text": "The road is repaired by them."
+      },
+      {
+        "id": "80000000-0000-0259-0000-000000000003",
+        "label": "C",
+        "text": "The road is being repaired by them."
+      },
+      {
+        "id": "80000000-0000-0259-0000-000000000004",
+        "label": "D",
+        "text": "The road was being repaired by them."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0259-0000-000000000003",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + being + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000025a",
+    "code": "AFNS-Q-602",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 602. She has completed the work. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-025a-0000-000000000001",
+        "label": "A",
+        "text": "The work has been completed by her."
+      },
+      {
+        "id": "80000000-0000-025a-0000-000000000002",
+        "label": "B",
+        "text": "The work was completed by her."
+      },
+      {
+        "id": "80000000-0000-025a-0000-000000000003",
+        "label": "C",
+        "text": "The work is completed by her."
+      },
+      {
+        "id": "80000000-0000-025a-0000-000000000004",
+        "label": "D",
+        "text": "The work had completed by her."
+      }
+    ],
+    "correctOptionId": "80000000-0000-025a-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using have/has/had + been + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000025b",
+    "code": "AFNS-Q-603",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 603. He will finish the project. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-025b-0000-000000000001",
+        "label": "A",
+        "text": "The project is finished by him."
+      },
+      {
+        "id": "80000000-0000-025b-0000-000000000002",
+        "label": "B",
+        "text": "The project was finished by him."
+      },
+      {
+        "id": "80000000-0000-025b-0000-000000000003",
+        "label": "C",
+        "text": "The project will be finished by him."
+      },
+      {
+        "id": "80000000-0000-025b-0000-000000000004",
+        "label": "D",
+        "text": "The project has been finished by him."
+      }
+    ],
+    "correctOptionId": "80000000-0000-025b-0000-000000000003",
+    "explanation": "The passive makes the original object the subject and preserves the tense using modal verb + be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000025c",
+    "code": "AFNS-Q-604",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 604. The police caught the thief. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-025c-0000-000000000001",
+        "label": "A",
+        "text": "The thief is caught by the police."
+      },
+      {
+        "id": "80000000-0000-025c-0000-000000000002",
+        "label": "B",
+        "text": "The thief was caught by the police."
+      },
+      {
+        "id": "80000000-0000-025c-0000-000000000003",
+        "label": "C",
+        "text": "The thief has caught by the police."
+      },
+      {
+        "id": "80000000-0000-025c-0000-000000000004",
+        "label": "D",
+        "text": "The thief had caught the police."
+      }
+    ],
+    "correctOptionId": "80000000-0000-025c-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000025d",
+    "code": "AFNS-Q-605",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 605. Someone has stolen my bag. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-025d-0000-000000000001",
+        "label": "A",
+        "text": "My bag was stolen."
+      },
+      {
+        "id": "80000000-0000-025d-0000-000000000002",
+        "label": "B",
+        "text": "My bag is stolen."
+      },
+      {
+        "id": "80000000-0000-025d-0000-000000000003",
+        "label": "C",
+        "text": "My bag has been stolen."
+      },
+      {
+        "id": "80000000-0000-025d-0000-000000000004",
+        "label": "D",
+        "text": "My bag had stolen."
+      }
+    ],
+    "correctOptionId": "80000000-0000-025d-0000-000000000003",
+    "explanation": "The passive makes the original object the subject and preserves the tense using have/has/had + been + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000025e",
+    "code": "AFNS-Q-606",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 606. Open the door. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-025e-0000-000000000001",
+        "label": "A",
+        "text": "Let the door be opened."
+      },
+      {
+        "id": "80000000-0000-025e-0000-000000000002",
+        "label": "B",
+        "text": "Let the door opened."
+      },
+      {
+        "id": "80000000-0000-025e-0000-000000000003",
+        "label": "C",
+        "text": "The door is open."
+      },
+      {
+        "id": "80000000-0000-025e-0000-000000000004",
+        "label": "D",
+        "text": "The door was opened."
+      }
+    ],
+    "correctOptionId": "80000000-0000-025e-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using let + object + be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000025f",
+    "code": "AFNS-Q-607",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 607. Do not waste water. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-025f-0000-000000000001",
+        "label": "A",
+        "text": "Let water not be wasted."
+      },
+      {
+        "id": "80000000-0000-025f-0000-000000000002",
+        "label": "B",
+        "text": "Let water not wasted."
+      },
+      {
+        "id": "80000000-0000-025f-0000-000000000003",
+        "label": "C",
+        "text": "Water was not wasted."
+      },
+      {
+        "id": "80000000-0000-025f-0000-000000000004",
+        "label": "D",
+        "text": "Water is not waste."
+      }
+    ],
+    "correctOptionId": "80000000-0000-025f-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using let + object + be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000260",
+    "code": "AFNS-Q-608",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 608. Did Ali break the window? The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0260-0000-000000000001",
+        "label": "A",
+        "text": "Was the window broken by Ali?"
+      },
+      {
+        "id": "80000000-0000-0260-0000-000000000002",
+        "label": "B",
+        "text": "Is the window broken by Ali?"
+      },
+      {
+        "id": "80000000-0000-0260-0000-000000000003",
+        "label": "C",
+        "text": "Did the window break by Ali?"
+      },
+      {
+        "id": "80000000-0000-0260-0000-000000000004",
+        "label": "D",
+        "text": "Has the window broken by Ali?"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0260-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000261",
+    "code": "AFNS-Q-609",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 609. People speak English all over the world. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0261-0000-000000000001",
+        "label": "A",
+        "text": "English was spoken all over the world."
+      },
+      {
+        "id": "80000000-0000-0261-0000-000000000002",
+        "label": "B",
+        "text": "English is spoken all over the world."
+      },
+      {
+        "id": "80000000-0000-0261-0000-000000000003",
+        "label": "C",
+        "text": "English has spoken all over the world."
+      },
+      {
+        "id": "80000000-0000-0261-0000-000000000004",
+        "label": "D",
+        "text": "English speaks all over the world."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0261-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000262",
+    "code": "AFNS-Q-610",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 610. They were building a bridge. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0262-0000-000000000001",
+        "label": "A",
+        "text": "A bridge was built by them."
+      },
+      {
+        "id": "80000000-0000-0262-0000-000000000002",
+        "label": "B",
+        "text": "A bridge was being built by them."
+      },
+      {
+        "id": "80000000-0000-0262-0000-000000000003",
+        "label": "C",
+        "text": "A bridge is being built by them."
+      },
+      {
+        "id": "80000000-0000-0262-0000-000000000004",
+        "label": "D",
+        "text": "A bridge had been built by them."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0262-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + being + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000263",
+    "code": "AFNS-Q-611",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 611. She had prepared the meal. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0263-0000-000000000001",
+        "label": "A",
+        "text": "The meal had been prepared by her."
+      },
+      {
+        "id": "80000000-0000-0263-0000-000000000002",
+        "label": "B",
+        "text": "The meal was prepared by her."
+      },
+      {
+        "id": "80000000-0000-0263-0000-000000000003",
+        "label": "C",
+        "text": "The meal has been prepared by her."
+      },
+      {
+        "id": "80000000-0000-0263-0000-000000000004",
+        "label": "D",
+        "text": "The meal is prepared by her."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0263-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using have/has/had + been + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000264",
+    "code": "AFNS-Q-612",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 612. They will announce the result tomorrow. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0264-0000-000000000001",
+        "label": "A",
+        "text": "The result is announced tomorrow."
+      },
+      {
+        "id": "80000000-0000-0264-0000-000000000002",
+        "label": "B",
+        "text": "The result was announced tomorrow."
+      },
+      {
+        "id": "80000000-0000-0264-0000-000000000003",
+        "label": "C",
+        "text": "The result will be announced tomorrow."
+      },
+      {
+        "id": "80000000-0000-0264-0000-000000000004",
+        "label": "D",
+        "text": "The result has been announced tomorrow."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0264-0000-000000000003",
+    "explanation": "The passive makes the original object the subject and preserves the tense using modal verb + be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000265",
+    "code": "AFNS-Q-613",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 613. Who wrote this poem? The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0265-0000-000000000001",
+        "label": "A",
+        "text": "By whom was this poem written?"
+      },
+      {
+        "id": "80000000-0000-0265-0000-000000000002",
+        "label": "B",
+        "text": "By whom is this poem written?"
+      },
+      {
+        "id": "80000000-0000-0265-0000-000000000003",
+        "label": "C",
+        "text": "Who was written this poem?"
+      },
+      {
+        "id": "80000000-0000-0265-0000-000000000004",
+        "label": "D",
+        "text": "By whom this poem wrote?"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0265-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000266",
+    "code": "AFNS-Q-614",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 614. We must obey the rules. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0266-0000-000000000001",
+        "label": "A",
+        "text": "The rules must obey."
+      },
+      {
+        "id": "80000000-0000-0266-0000-000000000002",
+        "label": "B",
+        "text": "The rules must be obeyed."
+      },
+      {
+        "id": "80000000-0000-0266-0000-000000000003",
+        "label": "C",
+        "text": "The rules are obeying."
+      },
+      {
+        "id": "80000000-0000-0266-0000-000000000004",
+        "label": "D",
+        "text": "The rules were obeyed must."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0266-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using modal verb + be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000267",
+    "code": "AFNS-Q-615",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 615. You should respect your parents. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0267-0000-000000000001",
+        "label": "A",
+        "text": "Your parents should be respected."
+      },
+      {
+        "id": "80000000-0000-0267-0000-000000000002",
+        "label": "B",
+        "text": "Your parents should respected."
+      },
+      {
+        "id": "80000000-0000-0267-0000-000000000003",
+        "label": "C",
+        "text": "Your parents are respected should."
+      },
+      {
+        "id": "80000000-0000-0267-0000-000000000004",
+        "label": "D",
+        "text": "Your parents were respected."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0267-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using modal verb + be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000268",
+    "code": "AFNS-Q-616",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 616. Has she cleaned the room? The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0268-0000-000000000001",
+        "label": "A",
+        "text": "Has the room been cleaned by her?"
+      },
+      {
+        "id": "80000000-0000-0268-0000-000000000002",
+        "label": "B",
+        "text": "Was the room cleaned by her?"
+      },
+      {
+        "id": "80000000-0000-0268-0000-000000000003",
+        "label": "C",
+        "text": "Is the room being cleaned by her?"
+      },
+      {
+        "id": "80000000-0000-0268-0000-000000000004",
+        "label": "D",
+        "text": "Did the room clean by her?"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0268-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using have/has/had + been + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000269",
+    "code": "AFNS-Q-617",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 617. The students are writing essays. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0269-0000-000000000001",
+        "label": "A",
+        "text": "Essays are written by the students."
+      },
+      {
+        "id": "80000000-0000-0269-0000-000000000002",
+        "label": "B",
+        "text": "Essays are being written by the students."
+      },
+      {
+        "id": "80000000-0000-0269-0000-000000000003",
+        "label": "C",
+        "text": "Essays were written by the students."
+      },
+      {
+        "id": "80000000-0000-0269-0000-000000000004",
+        "label": "D",
+        "text": "Essays have been written by the students."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0269-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + being + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000026a",
+    "code": "AFNS-Q-618",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 618. Someone will invite me to the party. The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-026a-0000-000000000001",
+        "label": "A",
+        "text": "I will be invited to the party."
+      },
+      {
+        "id": "80000000-0000-026a-0000-000000000002",
+        "label": "B",
+        "text": "I am invited to the party."
+      },
+      {
+        "id": "80000000-0000-026a-0000-000000000003",
+        "label": "C",
+        "text": "I was invited to the party."
+      },
+      {
+        "id": "80000000-0000-026a-0000-000000000004",
+        "label": "D",
+        "text": "I have been invited to the party."
+      }
+    ],
+    "correctOptionId": "80000000-0000-026a-0000-000000000001",
+    "explanation": "The passive makes the original object the subject and preserves the tense using modal verb + be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000026b",
+    "code": "AFNS-Q-619",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 619. He said, \"I am tired.\" The indirect speech is:",
+    "options": [
+      {
+        "id": "80000000-0000-026b-0000-000000000001",
+        "label": "A",
+        "text": "He said that I am tired."
+      },
+      {
+        "id": "80000000-0000-026b-0000-000000000002",
+        "label": "B",
+        "text": "He said that he was tired."
+      },
+      {
+        "id": "80000000-0000-026b-0000-000000000003",
+        "label": "C",
+        "text": "He says that he was tired."
+      },
+      {
+        "id": "80000000-0000-026b-0000-000000000004",
+        "label": "D",
+        "text": "He said that he is tired."
+      }
+    ],
+    "correctOptionId": "80000000-0000-026b-0000-000000000002",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000026c",
+    "code": "AFNS-Q-620",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 620. Ali said, \"I have finished my work.\"",
+    "options": [
+      {
+        "id": "80000000-0000-026c-0000-000000000001",
+        "label": "A",
+        "text": "Ali said that he had finished his work."
+      },
+      {
+        "id": "80000000-0000-026c-0000-000000000002",
+        "label": "B",
+        "text": "Ali said that I have finished my work."
+      },
+      {
+        "id": "80000000-0000-026c-0000-000000000003",
+        "label": "C",
+        "text": "Ali says that he finished his work."
+      },
+      {
+        "id": "80000000-0000-026c-0000-000000000004",
+        "label": "D",
+        "text": "Ali said that he has finish his work."
+      }
+    ],
+    "correctOptionId": "80000000-0000-026c-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000026d",
+    "code": "AFNS-Q-621",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 621. She said, \"I will help you.\"",
+    "options": [
+      {
+        "id": "80000000-0000-026d-0000-000000000001",
+        "label": "A",
+        "text": "She said that she would help me."
+      },
+      {
+        "id": "80000000-0000-026d-0000-000000000002",
+        "label": "B",
+        "text": "She said that I would help her."
+      },
+      {
+        "id": "80000000-0000-026d-0000-000000000003",
+        "label": "C",
+        "text": "She says that she will help me."
+      },
+      {
+        "id": "80000000-0000-026d-0000-000000000004",
+        "label": "D",
+        "text": "She said that she will helped me."
+      }
+    ],
+    "correctOptionId": "80000000-0000-026d-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000026e",
+    "code": "AFNS-Q-622",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 622. He said to me, \"Are you ready?\"",
+    "options": [
+      {
+        "id": "80000000-0000-026e-0000-000000000001",
+        "label": "A",
+        "text": "He asked me if I was ready."
+      },
+      {
+        "id": "80000000-0000-026e-0000-000000000002",
+        "label": "B",
+        "text": "He said to me if I am ready."
+      },
+      {
+        "id": "80000000-0000-026e-0000-000000000003",
+        "label": "C",
+        "text": "He asked me that I am ready."
+      },
+      {
+        "id": "80000000-0000-026e-0000-000000000004",
+        "label": "D",
+        "text": "He told me whether was I ready."
+      }
+    ],
+    "correctOptionId": "80000000-0000-026e-0000-000000000001",
+    "explanation": "Reported questions use statement word order, appropriate pronouns and tense backshift; yes-no questions use if.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000026f",
+    "code": "AFNS-Q-623",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 623. The teacher said to the students, \"Work hard.\"",
+    "options": [
+      {
+        "id": "80000000-0000-026f-0000-000000000001",
+        "label": "A",
+        "text": "The teacher said that work hard."
+      },
+      {
+        "id": "80000000-0000-026f-0000-000000000002",
+        "label": "B",
+        "text": "The teacher advised the students to work hard."
+      },
+      {
+        "id": "80000000-0000-026f-0000-000000000003",
+        "label": "C",
+        "text": "The teacher asked the students worked hard."
+      },
+      {
+        "id": "80000000-0000-026f-0000-000000000004",
+        "label": "D",
+        "text": "The teacher told that they work hard."
+      }
+    ],
+    "correctOptionId": "80000000-0000-026f-0000-000000000002",
+    "explanation": "Reported requests or commands use a reporting verb plus an object and a to-infinitive, with not before negative infinitives.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000270",
+    "code": "AFNS-Q-624",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 624. He said, \"Do not waste your time.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0270-0000-000000000001",
+        "label": "A",
+        "text": "He advised me not to waste my time."
+      },
+      {
+        "id": "80000000-0000-0270-0000-000000000002",
+        "label": "B",
+        "text": "He said me not waste time."
+      },
+      {
+        "id": "80000000-0000-0270-0000-000000000003",
+        "label": "C",
+        "text": "He told that do not waste your time."
+      },
+      {
+        "id": "80000000-0000-0270-0000-000000000004",
+        "label": "D",
+        "text": "He advised me do not wasted my time."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0270-0000-000000000001",
+    "explanation": "Reported requests or commands use a reporting verb plus an object and a to-infinitive, with not before negative infinitives.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000271",
+    "code": "AFNS-Q-625",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 625. She said, \"Where do you live?\"",
+    "options": [
+      {
+        "id": "80000000-0000-0271-0000-000000000001",
+        "label": "A",
+        "text": "She asked me where I lived."
+      },
+      {
+        "id": "80000000-0000-0271-0000-000000000002",
+        "label": "B",
+        "text": "She asked me where did I live."
+      },
+      {
+        "id": "80000000-0000-0271-0000-000000000003",
+        "label": "C",
+        "text": "She said where I live."
+      },
+      {
+        "id": "80000000-0000-0271-0000-000000000004",
+        "label": "D",
+        "text": "She asked where do I lived."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0271-0000-000000000001",
+    "explanation": "Reported questions use statement word order, appropriate pronouns and tense backshift; yes-no questions use if.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000272",
+    "code": "AFNS-Q-626",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 626. He said, \"I can solve this problem.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0272-0000-000000000001",
+        "label": "A",
+        "text": "He said that he could solve that problem."
+      },
+      {
+        "id": "80000000-0000-0272-0000-000000000002",
+        "label": "B",
+        "text": "He said that I can solve this problem."
+      },
+      {
+        "id": "80000000-0000-0272-0000-000000000003",
+        "label": "C",
+        "text": "He says that he could solve this problem."
+      },
+      {
+        "id": "80000000-0000-0272-0000-000000000004",
+        "label": "D",
+        "text": "He said that he can solved that problem."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0272-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000273",
+    "code": "AFNS-Q-627",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 627. Ahmed said, \"I bought this book yesterday.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0273-0000-000000000001",
+        "label": "A",
+        "text": "Ahmed said that he had bought that book the previous day."
+      },
+      {
+        "id": "80000000-0000-0273-0000-000000000002",
+        "label": "B",
+        "text": "Ahmed said that he bought this book yesterday."
+      },
+      {
+        "id": "80000000-0000-0273-0000-000000000003",
+        "label": "C",
+        "text": "Ahmed said that I had bought that book tomorrow."
+      },
+      {
+        "id": "80000000-0000-0273-0000-000000000004",
+        "label": "D",
+        "text": "Ahmed says that he bought that book yesterday."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0273-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000274",
+    "code": "AFNS-Q-628",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 628. She said, \"I am reading a novel now.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0274-0000-000000000001",
+        "label": "A",
+        "text": "She said that she was reading a novel then."
+      },
+      {
+        "id": "80000000-0000-0274-0000-000000000002",
+        "label": "B",
+        "text": "She said that she is reading a novel now."
+      },
+      {
+        "id": "80000000-0000-0274-0000-000000000003",
+        "label": "C",
+        "text": "She said that I was reading a novel then."
+      },
+      {
+        "id": "80000000-0000-0274-0000-000000000004",
+        "label": "D",
+        "text": "She says she was reading a novel now."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0274-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000275",
+    "code": "AFNS-Q-629",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 629. He said to me, \"Please help me.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0275-0000-000000000001",
+        "label": "A",
+        "text": "He requested me to help him."
+      },
+      {
+        "id": "80000000-0000-0275-0000-000000000002",
+        "label": "B",
+        "text": "He ordered me help him."
+      },
+      {
+        "id": "80000000-0000-0275-0000-000000000003",
+        "label": "C",
+        "text": "He said me to help me."
+      },
+      {
+        "id": "80000000-0000-0275-0000-000000000004",
+        "label": "D",
+        "text": "He asked that help him."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0275-0000-000000000001",
+    "explanation": "Reported requests or commands use a reporting verb plus an object and a to-infinitive, with not before negative infinitives.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000276",
+    "code": "AFNS-Q-630",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 630. The teacher said, \"The earth moves around the sun.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0276-0000-000000000001",
+        "label": "A",
+        "text": "The teacher said that the earth moved around the sun."
+      },
+      {
+        "id": "80000000-0000-0276-0000-000000000002",
+        "label": "B",
+        "text": "The teacher said that the earth moves around the sun."
+      },
+      {
+        "id": "80000000-0000-0276-0000-000000000003",
+        "label": "C",
+        "text": "The teacher said that the earth had moved around the sun."
+      },
+      {
+        "id": "80000000-0000-0276-0000-000000000004",
+        "label": "D",
+        "text": "The teacher told that earth move around sun."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0276-0000-000000000002",
+    "explanation": "A universal truth can retain the present tense in reported speech.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000277",
+    "code": "AFNS-Q-631",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 631. He said, \"I saw him two days ago.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0277-0000-000000000001",
+        "label": "A",
+        "text": "He said that he had seen him two days before."
+      },
+      {
+        "id": "80000000-0000-0277-0000-000000000002",
+        "label": "B",
+        "text": "He said that he saw him two days ago."
+      },
+      {
+        "id": "80000000-0000-0277-0000-000000000003",
+        "label": "C",
+        "text": "He said that I had seen him before."
+      },
+      {
+        "id": "80000000-0000-0277-0000-000000000004",
+        "label": "D",
+        "text": "He says that he had seen him two days ago."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0277-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000278",
+    "code": "AFNS-Q-632",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 632. She said to me, \"Will you come tomorrow?\"",
+    "options": [
+      {
+        "id": "80000000-0000-0278-0000-000000000001",
+        "label": "A",
+        "text": "She asked me if I would come the next day."
+      },
+      {
+        "id": "80000000-0000-0278-0000-000000000002",
+        "label": "B",
+        "text": "She asked me will I come tomorrow."
+      },
+      {
+        "id": "80000000-0000-0278-0000-000000000003",
+        "label": "C",
+        "text": "She said if I will come the next day."
+      },
+      {
+        "id": "80000000-0000-0278-0000-000000000004",
+        "label": "D",
+        "text": "She asked that I would come tomorrow."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0278-0000-000000000001",
+    "explanation": "Reported questions use statement word order, appropriate pronouns and tense backshift; yes-no questions use if.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000279",
+    "code": "AFNS-Q-633",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 633. He said, \"What a beautiful flower it is!\"",
+    "options": [
+      {
+        "id": "80000000-0000-0279-0000-000000000001",
+        "label": "A",
+        "text": "He exclaimed that it was a very beautiful flower."
+      },
+      {
+        "id": "80000000-0000-0279-0000-000000000002",
+        "label": "B",
+        "text": "He asked what a beautiful flower it was."
+      },
+      {
+        "id": "80000000-0000-0279-0000-000000000003",
+        "label": "C",
+        "text": "He said that what beautiful flower it is."
+      },
+      {
+        "id": "80000000-0000-0279-0000-000000000004",
+        "label": "D",
+        "text": "He exclaimed what is a beautiful flower."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0279-0000-000000000001",
+    "explanation": "An exclamation is reported as a statement describing the emotion, with suitable pronouns and tense changes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000027a",
+    "code": "AFNS-Q-634",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 634. The boy said, \"Hurrah! We have won the match.\"",
+    "options": [
+      {
+        "id": "80000000-0000-027a-0000-000000000001",
+        "label": "A",
+        "text": "The boy exclaimed with joy that they had won the match."
+      },
+      {
+        "id": "80000000-0000-027a-0000-000000000002",
+        "label": "B",
+        "text": "The boy said sadly that they won the match."
+      },
+      {
+        "id": "80000000-0000-027a-0000-000000000003",
+        "label": "C",
+        "text": "The boy asked if they had won the match."
+      },
+      {
+        "id": "80000000-0000-027a-0000-000000000004",
+        "label": "D",
+        "text": "The boy exclaimed that we win the match."
+      }
+    ],
+    "correctOptionId": "80000000-0000-027a-0000-000000000001",
+    "explanation": "An exclamation is reported as a statement describing the emotion, with suitable pronouns and tense changes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000027b",
+    "code": "AFNS-Q-635",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 635. He said to me, \"May you succeed!\"",
+    "options": [
+      {
+        "id": "80000000-0000-027b-0000-000000000001",
+        "label": "A",
+        "text": "He prayed that I might succeed."
+      },
+      {
+        "id": "80000000-0000-027b-0000-000000000002",
+        "label": "B",
+        "text": "He said that I may succeed."
+      },
+      {
+        "id": "80000000-0000-027b-0000-000000000003",
+        "label": "C",
+        "text": "He ordered me to succeed."
+      },
+      {
+        "id": "80000000-0000-027b-0000-000000000004",
+        "label": "D",
+        "text": "He asked me if I succeeded."
+      }
+    ],
+    "correctOptionId": "80000000-0000-027b-0000-000000000001",
+    "explanation": "A wish beginning with may is reported using prayed and might, with the pronoun adjusted.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000027c",
+    "code": "AFNS-Q-636",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 636. She said, \"I must leave now.\"",
+    "options": [
+      {
+        "id": "80000000-0000-027c-0000-000000000001",
+        "label": "A",
+        "text": "She said that she had to leave then."
+      },
+      {
+        "id": "80000000-0000-027c-0000-000000000002",
+        "label": "B",
+        "text": "She said that I must leave now."
+      },
+      {
+        "id": "80000000-0000-027c-0000-000000000003",
+        "label": "C",
+        "text": "She says that she had left then."
+      },
+      {
+        "id": "80000000-0000-027c-0000-000000000004",
+        "label": "D",
+        "text": "She said that she must left now."
+      }
+    ],
+    "correctOptionId": "80000000-0000-027c-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000027d",
+    "code": "AFNS-Q-637",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 637. He said to his friend, \"Let us go for a walk.\"",
+    "options": [
+      {
+        "id": "80000000-0000-027d-0000-000000000001",
+        "label": "A",
+        "text": "He suggested that they should go for a walk."
+      },
+      {
+        "id": "80000000-0000-027d-0000-000000000002",
+        "label": "B",
+        "text": "He ordered his friend to walk."
+      },
+      {
+        "id": "80000000-0000-027d-0000-000000000003",
+        "label": "C",
+        "text": "He said that let us go for a walk."
+      },
+      {
+        "id": "80000000-0000-027d-0000-000000000004",
+        "label": "D",
+        "text": "He asked his friend that they went walking."
+      }
+    ],
+    "correctOptionId": "80000000-0000-027d-0000-000000000001",
+    "explanation": "A let us proposal becomes a suggestion with that and should in reported speech.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000027e",
+    "code": "AFNS-Q-638",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 638. Mother said to me, \"Have you eaten your breakfast?\"",
+    "options": [
+      {
+        "id": "80000000-0000-027e-0000-000000000001",
+        "label": "A",
+        "text": "Mother asked me if I had eaten my breakfast."
+      },
+      {
+        "id": "80000000-0000-027e-0000-000000000002",
+        "label": "B",
+        "text": "Mother said to me if I ate my breakfast."
+      },
+      {
+        "id": "80000000-0000-027e-0000-000000000003",
+        "label": "C",
+        "text": "Mother asked me had I eaten breakfast."
+      },
+      {
+        "id": "80000000-0000-027e-0000-000000000004",
+        "label": "D",
+        "text": "Mother told me that I have eaten breakfast."
+      }
+    ],
+    "correctOptionId": "80000000-0000-027e-0000-000000000001",
+    "explanation": "Reported questions use statement word order, appropriate pronouns and tense backshift; yes-no questions use if.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000027f",
+    "code": "AFNS-Q-639",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 639. He said, \"I was sleeping when you called.\"",
+    "options": [
+      {
+        "id": "80000000-0000-027f-0000-000000000001",
+        "label": "A",
+        "text": "He said that he had been sleeping when I had called."
+      },
+      {
+        "id": "80000000-0000-027f-0000-000000000002",
+        "label": "B",
+        "text": "He said that he was sleeping when I called."
+      },
+      {
+        "id": "80000000-0000-027f-0000-000000000003",
+        "label": "C",
+        "text": "He says that he was sleeping when I called."
+      },
+      {
+        "id": "80000000-0000-027f-0000-000000000004",
+        "label": "D",
+        "text": "He said that I was sleeping when he called."
+      }
+    ],
+    "correctOptionId": "80000000-0000-027f-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000280",
+    "code": "AFNS-Q-640",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 640. She said to me, \"Why are you crying?\"",
+    "options": [
+      {
+        "id": "80000000-0000-0280-0000-000000000001",
+        "label": "A",
+        "text": "She asked me why I was crying."
+      },
+      {
+        "id": "80000000-0000-0280-0000-000000000002",
+        "label": "B",
+        "text": "She asked me why was I crying."
+      },
+      {
+        "id": "80000000-0000-0280-0000-000000000003",
+        "label": "C",
+        "text": "She said why I am crying."
+      },
+      {
+        "id": "80000000-0000-0280-0000-000000000004",
+        "label": "D",
+        "text": "She asked why am I crying."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0280-0000-000000000001",
+    "explanation": "Reported questions use statement word order, appropriate pronouns and tense backshift; yes-no questions use if.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000281",
+    "code": "AFNS-Q-641",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 641. The officer said to the soldier, \"Stand at the gate.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0281-0000-000000000001",
+        "label": "A",
+        "text": "The officer ordered the soldier to stand at the gate."
+      },
+      {
+        "id": "80000000-0000-0281-0000-000000000002",
+        "label": "B",
+        "text": "The officer asked that the soldier stood at the gate."
+      },
+      {
+        "id": "80000000-0000-0281-0000-000000000003",
+        "label": "C",
+        "text": "The officer said the soldier stand gate."
+      },
+      {
+        "id": "80000000-0000-0281-0000-000000000004",
+        "label": "D",
+        "text": "The officer told that stand at the gate."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0281-0000-000000000001",
+    "explanation": "Reported requests or commands use a reporting verb plus an object and a to-infinitive, with not before negative infinitives.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000282",
+    "code": "AFNS-Q-642",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 642. He said, \"I have been waiting here for two hours.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0282-0000-000000000001",
+        "label": "A",
+        "text": "He said that he had been waiting there for two hours."
+      },
+      {
+        "id": "80000000-0000-0282-0000-000000000002",
+        "label": "B",
+        "text": "He said that he has been waiting here for two hours."
+      },
+      {
+        "id": "80000000-0000-0282-0000-000000000003",
+        "label": "C",
+        "text": "He said that I had waited there for two hours."
+      },
+      {
+        "id": "80000000-0000-0282-0000-000000000004",
+        "label": "D",
+        "text": "He says that he had been waiting here."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0282-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000283",
+    "code": "AFNS-Q-643",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 643. She said, \"I will have completed the work by Friday.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0283-0000-000000000001",
+        "label": "A",
+        "text": "She said that she would have completed the work by Friday."
+      },
+      {
+        "id": "80000000-0000-0283-0000-000000000002",
+        "label": "B",
+        "text": "She said that she will complete the work by Friday."
+      },
+      {
+        "id": "80000000-0000-0283-0000-000000000003",
+        "label": "C",
+        "text": "She said that she had completed the work by Friday."
+      },
+      {
+        "id": "80000000-0000-0283-0000-000000000004",
+        "label": "D",
+        "text": "She says that she would complete the work by Friday."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0283-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000284",
+    "code": "AFNS-Q-644",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 644. He said to me, \"Do you know my brother?\"",
+    "options": [
+      {
+        "id": "80000000-0000-0284-0000-000000000001",
+        "label": "A",
+        "text": "He asked me if I knew his brother."
+      },
+      {
+        "id": "80000000-0000-0284-0000-000000000002",
+        "label": "B",
+        "text": "He asked me did I know his brother."
+      },
+      {
+        "id": "80000000-0000-0284-0000-000000000003",
+        "label": "C",
+        "text": "He said if I know my brother."
+      },
+      {
+        "id": "80000000-0000-0284-0000-000000000004",
+        "label": "D",
+        "text": "He asked that I knew his brother."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0284-0000-000000000001",
+    "explanation": "Reported questions use statement word order, appropriate pronouns and tense backshift; yes-no questions use if.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000285",
+    "code": "AFNS-Q-645",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 645. The teacher said, \"Who has taken my book?\"",
+    "options": [
+      {
+        "id": "80000000-0000-0285-0000-000000000001",
+        "label": "A",
+        "text": "The teacher asked who had taken his book."
+      },
+      {
+        "id": "80000000-0000-0285-0000-000000000002",
+        "label": "B",
+        "text": "The teacher asked who has taken my book."
+      },
+      {
+        "id": "80000000-0000-0285-0000-000000000003",
+        "label": "C",
+        "text": "The teacher said who took his book?"
+      },
+      {
+        "id": "80000000-0000-0285-0000-000000000004",
+        "label": "D",
+        "text": "The teacher asked who had took his book."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0285-0000-000000000001",
+    "explanation": "Reported questions use statement word order, appropriate pronouns and tense backshift; yes-no questions use if.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000286",
+    "code": "AFNS-Q-646",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 646. He said, \"Alas! I have lost my wallet.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0286-0000-000000000001",
+        "label": "A",
+        "text": "He exclaimed with sorrow that he had lost his wallet."
+      },
+      {
+        "id": "80000000-0000-0286-0000-000000000002",
+        "label": "B",
+        "text": "He exclaimed with joy that he lost his wallet."
+      },
+      {
+        "id": "80000000-0000-0286-0000-000000000003",
+        "label": "C",
+        "text": "He said sadly that I lost my wallet."
+      },
+      {
+        "id": "80000000-0000-0286-0000-000000000004",
+        "label": "D",
+        "text": "He asked if he had lost his wallet."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0286-0000-000000000001",
+    "explanation": "An exclamation is reported as a statement describing the emotion, with suitable pronouns and tense changes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000287",
+    "code": "AFNS-Q-647",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 647. She said, \"Let me help you.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0287-0000-000000000001",
+        "label": "A",
+        "text": "She offered to help me."
+      },
+      {
+        "id": "80000000-0000-0287-0000-000000000002",
+        "label": "B",
+        "text": "She ordered me to help her."
+      },
+      {
+        "id": "80000000-0000-0287-0000-000000000003",
+        "label": "C",
+        "text": "She asked me to help her."
+      },
+      {
+        "id": "80000000-0000-0287-0000-000000000004",
+        "label": "D",
+        "text": "She said that let her help me."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0287-0000-000000000001",
+    "explanation": "Let me help you expresses an offer, which becomes offered to help in indirect speech.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000288",
+    "code": "AFNS-Q-648",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 648. He said, \"Good morning, friends.\"",
+    "options": [
+      {
+        "id": "80000000-0000-0288-0000-000000000001",
+        "label": "A",
+        "text": "He wished his friends good morning."
+      },
+      {
+        "id": "80000000-0000-0288-0000-000000000002",
+        "label": "B",
+        "text": "He ordered his friends good morning."
+      },
+      {
+        "id": "80000000-0000-0288-0000-000000000003",
+        "label": "C",
+        "text": "He asked his friends morning."
+      },
+      {
+        "id": "80000000-0000-0288-0000-000000000004",
+        "label": "D",
+        "text": "He said that friends were good."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0288-0000-000000000001",
+    "explanation": "A greeting is reported with wished someone good morning rather than ordinary tense backshift.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000289",
+    "code": "AFNS-Q-649",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 649. If I ____ rich, I would help the poor.",
+    "options": [
+      {
+        "id": "80000000-0000-0289-0000-000000000001",
+        "label": "A",
+        "text": "am"
+      },
+      {
+        "id": "80000000-0000-0289-0000-000000000002",
+        "label": "B",
+        "text": "was"
+      },
+      {
+        "id": "80000000-0000-0289-0000-000000000003",
+        "label": "C",
+        "text": "were"
+      },
+      {
+        "id": "80000000-0000-0289-0000-000000000004",
+        "label": "D",
+        "text": "have been"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0289-0000-000000000003",
+    "explanation": "A hypothetical condition uses subjunctive were followed by would plus the base verb.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000028a",
+    "code": "AFNS-Q-650",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 650. By the time the doctor arrived, the patient ____.",
+    "options": [
+      {
+        "id": "80000000-0000-028a-0000-000000000001",
+        "label": "A",
+        "text": "dies"
+      },
+      {
+        "id": "80000000-0000-028a-0000-000000000002",
+        "label": "B",
+        "text": "had died"
+      },
+      {
+        "id": "80000000-0000-028a-0000-000000000003",
+        "label": "C",
+        "text": "has died"
+      },
+      {
+        "id": "80000000-0000-028a-0000-000000000004",
+        "label": "D",
+        "text": "was dying"
+      }
+    ],
+    "correctOptionId": "80000000-0000-028a-0000-000000000002",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000028b",
+    "code": "AFNS-Q-651",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 651. The manager ____ the report before the meeting began.",
+    "options": [
+      {
+        "id": "80000000-0000-028b-0000-000000000001",
+        "label": "A",
+        "text": "reviews"
+      },
+      {
+        "id": "80000000-0000-028b-0000-000000000002",
+        "label": "B",
+        "text": "has reviewed"
+      },
+      {
+        "id": "80000000-0000-028b-0000-000000000003",
+        "label": "C",
+        "text": "had reviewed"
+      },
+      {
+        "id": "80000000-0000-028b-0000-000000000004",
+        "label": "D",
+        "text": "is reviewing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-028b-0000-000000000003",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000028c",
+    "code": "AFNS-Q-652",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 652. The work ____ by the workers before the supervisor arrived.",
+    "options": [
+      {
+        "id": "80000000-0000-028c-0000-000000000001",
+        "label": "A",
+        "text": "is completing"
+      },
+      {
+        "id": "80000000-0000-028c-0000-000000000002",
+        "label": "B",
+        "text": "had been completed"
+      },
+      {
+        "id": "80000000-0000-028c-0000-000000000003",
+        "label": "C",
+        "text": "has completed"
+      },
+      {
+        "id": "80000000-0000-028c-0000-000000000004",
+        "label": "D",
+        "text": "will completing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-028c-0000-000000000002",
+    "explanation": "The passive makes the original object the subject and preserves the tense using have/has/had + been + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000028d",
+    "code": "AFNS-Q-653",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 653. She said that she ____ the next day.",
+    "options": [
+      {
+        "id": "80000000-0000-028d-0000-000000000001",
+        "label": "A",
+        "text": "will come"
+      },
+      {
+        "id": "80000000-0000-028d-0000-000000000002",
+        "label": "B",
+        "text": "would come"
+      },
+      {
+        "id": "80000000-0000-028d-0000-000000000003",
+        "label": "C",
+        "text": "comes"
+      },
+      {
+        "id": "80000000-0000-028d-0000-000000000004",
+        "label": "D",
+        "text": "came"
+      }
+    ],
+    "correctOptionId": "80000000-0000-028d-0000-000000000002",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000028e",
+    "code": "AFNS-Q-654",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 654. The letter ____ by Ali yesterday.",
+    "options": [
+      {
+        "id": "80000000-0000-028e-0000-000000000001",
+        "label": "A",
+        "text": "writes"
+      },
+      {
+        "id": "80000000-0000-028e-0000-000000000002",
+        "label": "B",
+        "text": "is written"
+      },
+      {
+        "id": "80000000-0000-028e-0000-000000000003",
+        "label": "C",
+        "text": "was written"
+      },
+      {
+        "id": "80000000-0000-028e-0000-000000000004",
+        "label": "D",
+        "text": "has written"
+      }
+    ],
+    "correctOptionId": "80000000-0000-028e-0000-000000000003",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000028f",
+    "code": "AFNS-Q-655",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 655. When we reached the cinema, the film ____.",
+    "options": [
+      {
+        "id": "80000000-0000-028f-0000-000000000001",
+        "label": "A",
+        "text": "already started"
+      },
+      {
+        "id": "80000000-0000-028f-0000-000000000002",
+        "label": "B",
+        "text": "has already started"
+      },
+      {
+        "id": "80000000-0000-028f-0000-000000000003",
+        "label": "C",
+        "text": "had already started"
+      },
+      {
+        "id": "80000000-0000-028f-0000-000000000004",
+        "label": "D",
+        "text": "was already start"
+      }
+    ],
+    "correctOptionId": "80000000-0000-028f-0000-000000000003",
+    "explanation": "Past perfect places a completed action or state before another past reference event.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000290",
+    "code": "AFNS-Q-656",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 656. He said to me, \"I cannot solve this question.\" The correct indirect speech is:",
+    "options": [
+      {
+        "id": "80000000-0000-0290-0000-000000000001",
+        "label": "A",
+        "text": "He told me that he could not solve that question."
+      },
+      {
+        "id": "80000000-0000-0290-0000-000000000002",
+        "label": "B",
+        "text": "He told me that I cannot solve this question."
+      },
+      {
+        "id": "80000000-0000-0290-0000-000000000003",
+        "label": "C",
+        "text": "He said that he cannot solved that question."
+      },
+      {
+        "id": "80000000-0000-0290-0000-000000000004",
+        "label": "D",
+        "text": "He asked me that he could not solve this question."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0290-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000291",
+    "code": "AFNS-Q-657",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 657. \"The police are investigating the case.\" The passive voice is:",
+    "options": [
+      {
+        "id": "80000000-0000-0291-0000-000000000001",
+        "label": "A",
+        "text": "The case is investigated by the police."
+      },
+      {
+        "id": "80000000-0000-0291-0000-000000000002",
+        "label": "B",
+        "text": "The case was investigated by the police."
+      },
+      {
+        "id": "80000000-0000-0291-0000-000000000003",
+        "label": "C",
+        "text": "The case is being investigated by the police."
+      },
+      {
+        "id": "80000000-0000-0291-0000-000000000004",
+        "label": "D",
+        "text": "The case has investigated by the police."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0291-0000-000000000003",
+    "explanation": "The passive makes the original object the subject and preserves the tense using a form of be + being + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000292",
+    "code": "AFNS-Q-658",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 658. He said, \"I had finished my work before you came.\" The indirect speech is:",
+    "options": [
+      {
+        "id": "80000000-0000-0292-0000-000000000001",
+        "label": "A",
+        "text": "He said that he had finished his work before I had come."
+      },
+      {
+        "id": "80000000-0000-0292-0000-000000000002",
+        "label": "B",
+        "text": "He said that he finished my work before I came."
+      },
+      {
+        "id": "80000000-0000-0292-0000-000000000003",
+        "label": "C",
+        "text": "He said that he has finished his work before I came."
+      },
+      {
+        "id": "80000000-0000-0292-0000-000000000004",
+        "label": "D",
+        "text": "He said that I had finished his work before he came."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0292-0000-000000000001",
+    "explanation": "A past reporting verb normally backshifts the tense and adjusts pronouns and time or place references to the reporting context.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000293",
+    "code": "AFNS-Q-659",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 659. A body moving with constant velocity has:",
+    "options": [
+      {
+        "id": "80000000-0000-0293-0000-000000000001",
+        "label": "A",
+        "text": "Constant acceleration"
+      },
+      {
+        "id": "80000000-0000-0293-0000-000000000002",
+        "label": "B",
+        "text": "Zero acceleration"
+      },
+      {
+        "id": "80000000-0000-0293-0000-000000000003",
+        "label": "C",
+        "text": "Increasing acceleration"
+      },
+      {
+        "id": "80000000-0000-0293-0000-000000000004",
+        "label": "D",
+        "text": "Decreasing velocity"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0293-0000-000000000002",
+    "explanation": "Acceleration is the rate of change of velocity and is zero when velocity is constant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000294",
+    "code": "AFNS-Q-660",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 660. Choose the correct sentence:",
+    "options": [
+      {
+        "id": "80000000-0000-0294-0000-000000000001",
+        "label": "A",
+        "text": "She don't like tea."
+      },
+      {
+        "id": "80000000-0000-0294-0000-000000000002",
+        "label": "B",
+        "text": "She doesn't likes tea."
+      },
+      {
+        "id": "80000000-0000-0294-0000-000000000003",
+        "label": "C",
+        "text": "She doesn't like tea."
+      },
+      {
+        "id": "80000000-0000-0294-0000-000000000004",
+        "label": "D",
+        "text": "She didn't likes tea."
+      }
+    ],
+    "correctOptionId": "80000000-0000-0294-0000-000000000003",
+    "explanation": "After doesn't, the main verb uses its base form like rather than likes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000295",
+    "code": "AFNS-Q-661",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 661. Which part of the nephron is primarily responsible for the ultrafiltration of blood?",
+    "options": [
+      {
+        "id": "80000000-0000-0295-0000-000000000001",
+        "label": "A",
+        "text": "Loop of Henle"
+      },
+      {
+        "id": "80000000-0000-0295-0000-000000000002",
+        "label": "B",
+        "text": "Collecting duct"
+      },
+      {
+        "id": "80000000-0000-0295-0000-000000000003",
+        "label": "C",
+        "text": "Glomerulus"
+      },
+      {
+        "id": "80000000-0000-0295-0000-000000000004",
+        "label": "D",
+        "text": "Distal convoluted tubule"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0295-0000-000000000003",
+    "explanation": "The glomerular capillary network filters fluid from the blood into Bowman's capsule.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000296",
+    "code": "AFNS-Q-662",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 662. The pH of a neutral solution at 25 degreesC is:",
+    "options": [
+      {
+        "id": "80000000-0000-0296-0000-000000000001",
+        "label": "A",
+        "text": "0"
+      },
+      {
+        "id": "80000000-0000-0296-0000-000000000002",
+        "label": "B",
+        "text": "5"
+      },
+      {
+        "id": "80000000-0000-0296-0000-000000000003",
+        "label": "C",
+        "text": "7"
+      },
+      {
+        "id": "80000000-0000-0296-0000-000000000004",
+        "label": "D",
+        "text": "14"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0296-0000-000000000003",
+    "explanation": "At 25 degrees C, neutral water has equal H+ and OH- concentrations of 10^-7 mol/L, giving pH 7.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000297",
+    "code": "AFNS-Q-663",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 663. A force of 10 N acts on a body of mass 2 kg. Its acceleration is:",
+    "options": [
+      {
+        "id": "80000000-0000-0297-0000-000000000001",
+        "label": "A",
+        "text": "2 m/s^2"
+      },
+      {
+        "id": "80000000-0000-0297-0000-000000000002",
+        "label": "B",
+        "text": "5 m/s^2"
+      },
+      {
+        "id": "80000000-0000-0297-0000-000000000003",
+        "label": "C",
+        "text": "10 m/s^2"
+      },
+      {
+        "id": "80000000-0000-0297-0000-000000000004",
+        "label": "D",
+        "text": "20 m/s^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0297-0000-000000000002",
+    "explanation": "Newton's second law gives a = F/m = 10/2 = 5 m/s^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000298",
+    "code": "AFNS-Q-664",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 664. Which blood cells are primarily responsible for antibody production?",
+    "options": [
+      {
+        "id": "80000000-0000-0298-0000-000000000001",
+        "label": "A",
+        "text": "Red blood cells"
+      },
+      {
+        "id": "80000000-0000-0298-0000-000000000002",
+        "label": "B",
+        "text": "Platelets"
+      },
+      {
+        "id": "80000000-0000-0298-0000-000000000003",
+        "label": "C",
+        "text": "B-lymphocytes"
+      },
+      {
+        "id": "80000000-0000-0298-0000-000000000004",
+        "label": "D",
+        "text": "Neutrophils"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0298-0000-000000000003",
+    "explanation": "B lymphocytes differentiate into plasma cells that secrete antibodies.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000299",
+    "code": "AFNS-Q-665",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 665. Which quantum number determines the shape of an orbital?",
+    "options": [
+      {
+        "id": "80000000-0000-0299-0000-000000000001",
+        "label": "A",
+        "text": "Principal quantum number"
+      },
+      {
+        "id": "80000000-0000-0299-0000-000000000002",
+        "label": "B",
+        "text": "Azimuthal quantum number"
+      },
+      {
+        "id": "80000000-0000-0299-0000-000000000003",
+        "label": "C",
+        "text": "Magnetic quantum number"
+      },
+      {
+        "id": "80000000-0000-0299-0000-000000000004",
+        "label": "D",
+        "text": "Spin quantum number"
+      }
+    ],
+    "correctOptionId": "80000000-0000-0299-0000-000000000002",
+    "explanation": "The azimuthal quantum number l identifies the subshell and determines orbital shape.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000029a",
+    "code": "AFNS-Q-666",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 666. If I ____ you, I would accept the offer.",
+    "options": [
+      {
+        "id": "80000000-0000-029a-0000-000000000001",
+        "label": "A",
+        "text": "am"
+      },
+      {
+        "id": "80000000-0000-029a-0000-000000000002",
+        "label": "B",
+        "text": "was"
+      },
+      {
+        "id": "80000000-0000-029a-0000-000000000003",
+        "label": "C",
+        "text": "were"
+      },
+      {
+        "id": "80000000-0000-029a-0000-000000000004",
+        "label": "D",
+        "text": "have been"
+      }
+    ],
+    "correctOptionId": "80000000-0000-029a-0000-000000000003",
+    "explanation": "The hypothetical expression if I were you uses the subjunctive were.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000029b",
+    "code": "AFNS-Q-667",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 667. The exchange of segments between homologous chromosomes occurs during:",
+    "options": [
+      {
+        "id": "80000000-0000-029b-0000-000000000001",
+        "label": "A",
+        "text": "Prophase I of meiosis"
+      },
+      {
+        "id": "80000000-0000-029b-0000-000000000002",
+        "label": "B",
+        "text": "Prophase of mitosis"
+      },
+      {
+        "id": "80000000-0000-029b-0000-000000000003",
+        "label": "C",
+        "text": "Metaphase II"
+      },
+      {
+        "id": "80000000-0000-029b-0000-000000000004",
+        "label": "D",
+        "text": "Telophase I"
+      }
+    ],
+    "correctOptionId": "80000000-0000-029b-0000-000000000001",
+    "explanation": "Crossing over occurs between homologous chromatids during prophase I of meiosis.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000029c",
+    "code": "AFNS-Q-668",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 668. Which compound gives a positive test with Tollens' reagent?",
+    "options": [
+      {
+        "id": "80000000-0000-029c-0000-000000000001",
+        "label": "A",
+        "text": "Propanone"
+      },
+      {
+        "id": "80000000-0000-029c-0000-000000000002",
+        "label": "B",
+        "text": "Ethene"
+      },
+      {
+        "id": "80000000-0000-029c-0000-000000000003",
+        "label": "C",
+        "text": "Ethanal"
+      },
+      {
+        "id": "80000000-0000-029c-0000-000000000004",
+        "label": "D",
+        "text": "Ethanol"
+      }
+    ],
+    "correctOptionId": "80000000-0000-029c-0000-000000000003",
+    "explanation": "Ethanal is an aldehyde that reduces Tollens' silver ions to a silver mirror.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000029d",
+    "code": "AFNS-Q-669",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 669. When two resistors of 6 ohm each are connected in parallel, their equivalent resistance is:",
+    "options": [
+      {
+        "id": "80000000-0000-029d-0000-000000000001",
+        "label": "A",
+        "text": "12 ohm"
+      },
+      {
+        "id": "80000000-0000-029d-0000-000000000002",
+        "label": "B",
+        "text": "6 ohm"
+      },
+      {
+        "id": "80000000-0000-029d-0000-000000000003",
+        "label": "C",
+        "text": "3 ohm"
+      },
+      {
+        "id": "80000000-0000-029d-0000-000000000004",
+        "label": "D",
+        "text": "1 ohm"
+      }
+    ],
+    "correctOptionId": "80000000-0000-029d-0000-000000000003",
+    "explanation": "Two equal 6-ohm resistors in parallel give R = 6/2 = 3 ohm.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000029e",
+    "code": "AFNS-Q-670",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 670. Which structure prevents food from entering the trachea during swallowing?",
+    "options": [
+      {
+        "id": "80000000-0000-029e-0000-000000000001",
+        "label": "A",
+        "text": "Larynx"
+      },
+      {
+        "id": "80000000-0000-029e-0000-000000000002",
+        "label": "B",
+        "text": "Epiglottis"
+      },
+      {
+        "id": "80000000-0000-029e-0000-000000000003",
+        "label": "C",
+        "text": "Pharynx"
+      },
+      {
+        "id": "80000000-0000-029e-0000-000000000004",
+        "label": "D",
+        "text": "Glottis"
+      }
+    ],
+    "correctOptionId": "80000000-0000-029e-0000-000000000002",
+    "explanation": "The epiglottis helps cover the airway during swallowing and prevents food entering the trachea.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000029f",
+    "code": "AFNS-Q-671",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 671. The bond present in NaCl is predominantly:",
+    "options": [
+      {
+        "id": "80000000-0000-029f-0000-000000000001",
+        "label": "A",
+        "text": "Covalent"
+      },
+      {
+        "id": "80000000-0000-029f-0000-000000000002",
+        "label": "B",
+        "text": "Coordinate"
+      },
+      {
+        "id": "80000000-0000-029f-0000-000000000003",
+        "label": "C",
+        "text": "Ionic"
+      },
+      {
+        "id": "80000000-0000-029f-0000-000000000004",
+        "label": "D",
+        "text": "Metallic"
+      }
+    ],
+    "correctOptionId": "80000000-0000-029f-0000-000000000003",
+    "explanation": "NaCl consists of oppositely charged sodium and chloride ions held by electrostatic attraction.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a0",
+    "code": "AFNS-Q-672",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 672. Neither the teacher nor the students ____ ready.",
+    "options": [
+      {
+        "id": "80000000-0000-02a0-0000-000000000001",
+        "label": "A",
+        "text": "is"
+      },
+      {
+        "id": "80000000-0000-02a0-0000-000000000002",
+        "label": "B",
+        "text": "was"
+      },
+      {
+        "id": "80000000-0000-02a0-0000-000000000003",
+        "label": "C",
+        "text": "are"
+      },
+      {
+        "id": "80000000-0000-02a0-0000-000000000004",
+        "label": "D",
+        "text": "has"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a0-0000-000000000003",
+    "explanation": "With neither...nor, the verb agrees with the nearer subject students, so are is required.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a1",
+    "code": "AFNS-Q-673",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 673. The functional unit of the nervous system is:",
+    "options": [
+      {
+        "id": "80000000-0000-02a1-0000-000000000001",
+        "label": "A",
+        "text": "Nephron"
+      },
+      {
+        "id": "80000000-0000-02a1-0000-000000000002",
+        "label": "B",
+        "text": "Neuron"
+      },
+      {
+        "id": "80000000-0000-02a1-0000-000000000003",
+        "label": "C",
+        "text": "Alveolus"
+      },
+      {
+        "id": "80000000-0000-02a1-0000-000000000004",
+        "label": "D",
+        "text": "Sarcomere"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a1-0000-000000000002",
+    "explanation": "A neuron receives and transmits signals and is the functional unit of nervous tissue.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a2",
+    "code": "AFNS-Q-674",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 674. Which of the following is an example of a buffer solution?",
+    "options": [
+      {
+        "id": "80000000-0000-02a2-0000-000000000001",
+        "label": "A",
+        "text": "HCl + NaCl"
+      },
+      {
+        "id": "80000000-0000-02a2-0000-000000000002",
+        "label": "B",
+        "text": "NaOH + NaCl"
+      },
+      {
+        "id": "80000000-0000-02a2-0000-000000000003",
+        "label": "C",
+        "text": "CH3COOH + CH3COONa"
+      },
+      {
+        "id": "80000000-0000-02a2-0000-000000000004",
+        "label": "D",
+        "text": "HCl + H2SO4"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a2-0000-000000000003",
+    "explanation": "Acetic acid and sodium acetate form a weak-acid/conjugate-base buffer pair.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a3",
+    "code": "AFNS-Q-675",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 675. According to the first law of thermodynamics, heat supplied to a system is equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-02a3-0000-000000000001",
+        "label": "A",
+        "text": "Work done only"
+      },
+      {
+        "id": "80000000-0000-02a3-0000-000000000002",
+        "label": "B",
+        "text": "Increase in internal energy only"
+      },
+      {
+        "id": "80000000-0000-02a3-0000-000000000003",
+        "label": "C",
+        "text": "Increase in internal energy plus work done by the system"
+      },
+      {
+        "id": "80000000-0000-02a3-0000-000000000004",
+        "label": "D",
+        "text": "Decrease in internal energy only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a3-0000-000000000003",
+    "explanation": "With work defined as done by the system, the first law is Q = delta_U + W.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a4",
+    "code": "AFNS-Q-676",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 676. Which organ produces bile?",
+    "options": [
+      {
+        "id": "80000000-0000-02a4-0000-000000000001",
+        "label": "A",
+        "text": "Pancreas"
+      },
+      {
+        "id": "80000000-0000-02a4-0000-000000000002",
+        "label": "B",
+        "text": "Gall bladder"
+      },
+      {
+        "id": "80000000-0000-02a4-0000-000000000003",
+        "label": "C",
+        "text": "Liver"
+      },
+      {
+        "id": "80000000-0000-02a4-0000-000000000004",
+        "label": "D",
+        "text": "Small intestine"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a4-0000-000000000003",
+    "explanation": "The liver produces bile; the gallbladder stores and concentrates it.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a5",
+    "code": "AFNS-Q-677",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 677. Which of the following is an electrophile?",
+    "options": [
+      {
+        "id": "80000000-0000-02a5-0000-000000000001",
+        "label": "A",
+        "text": "OH-"
+      },
+      {
+        "id": "80000000-0000-02a5-0000-000000000002",
+        "label": "B",
+        "text": "NH3"
+      },
+      {
+        "id": "80000000-0000-02a5-0000-000000000003",
+        "label": "C",
+        "text": "BF3"
+      },
+      {
+        "id": "80000000-0000-02a5-0000-000000000004",
+        "label": "D",
+        "text": "Cl-"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a5-0000-000000000003",
+    "explanation": "BF3 has an electron-deficient boron atom that can accept an electron pair.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a6",
+    "code": "AFNS-Q-678",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 678. A wave has frequency 50 Hz and wavelength 4 m. Its speed is:",
+    "options": [
+      {
+        "id": "80000000-0000-02a6-0000-000000000001",
+        "label": "A",
+        "text": "12.5 m/s"
+      },
+      {
+        "id": "80000000-0000-02a6-0000-000000000002",
+        "label": "B",
+        "text": "46 m/s"
+      },
+      {
+        "id": "80000000-0000-02a6-0000-000000000003",
+        "label": "C",
+        "text": "54 m/s"
+      },
+      {
+        "id": "80000000-0000-02a6-0000-000000000004",
+        "label": "D",
+        "text": "200 m/s"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a6-0000-000000000004",
+    "explanation": "Wave speed is f*lambda = 50*4 = 200 m/s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a7",
+    "code": "AFNS-Q-679",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 679. The passive voice of \"They have completed the work\" is:",
+    "options": [
+      {
+        "id": "80000000-0000-02a7-0000-000000000001",
+        "label": "A",
+        "text": "The work was completed by them."
+      },
+      {
+        "id": "80000000-0000-02a7-0000-000000000002",
+        "label": "B",
+        "text": "The work has been completed by them."
+      },
+      {
+        "id": "80000000-0000-02a7-0000-000000000003",
+        "label": "C",
+        "text": "The work is completed by them."
+      },
+      {
+        "id": "80000000-0000-02a7-0000-000000000004",
+        "label": "D",
+        "text": "The work had completed by them."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a7-0000-000000000002",
+    "explanation": "Present-perfect passive voice uses has been plus the past participle completed.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a8",
+    "code": "AFNS-Q-680",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 680. Which phase of the cardiac cycle involves contraction of the ventricles?",
+    "options": [
+      {
+        "id": "80000000-0000-02a8-0000-000000000001",
+        "label": "A",
+        "text": "Atrial systole"
+      },
+      {
+        "id": "80000000-0000-02a8-0000-000000000002",
+        "label": "B",
+        "text": "Ventricular systole"
+      },
+      {
+        "id": "80000000-0000-02a8-0000-000000000003",
+        "label": "C",
+        "text": "Joint diastole"
+      },
+      {
+        "id": "80000000-0000-02a8-0000-000000000004",
+        "label": "D",
+        "text": "Atrial diastole"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a8-0000-000000000002",
+    "explanation": "Systole is contraction, so ventricular systole is the phase when the ventricles contract.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002a9",
+    "code": "AFNS-Q-681",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 681. The oxidation number of sulfur in H2SO4 is:",
+    "options": [
+      {
+        "id": "80000000-0000-02a9-0000-000000000001",
+        "label": "A",
+        "text": "+2"
+      },
+      {
+        "id": "80000000-0000-02a9-0000-000000000002",
+        "label": "B",
+        "text": "+4"
+      },
+      {
+        "id": "80000000-0000-02a9-0000-000000000003",
+        "label": "C",
+        "text": "+6"
+      },
+      {
+        "id": "80000000-0000-02a9-0000-000000000004",
+        "label": "D",
+        "text": "-2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02a9-0000-000000000003",
+    "explanation": "In H2SO4, 2*(+1) + S + 4*(-2) = 0, giving S = +6.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002aa",
+    "code": "AFNS-Q-682",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 682. In simple harmonic motion, acceleration is:",
+    "options": [
+      {
+        "id": "80000000-0000-02aa-0000-000000000001",
+        "label": "A",
+        "text": "Constant"
+      },
+      {
+        "id": "80000000-0000-02aa-0000-000000000002",
+        "label": "B",
+        "text": "Directly proportional to displacement and opposite in direction"
+      },
+      {
+        "id": "80000000-0000-02aa-0000-000000000003",
+        "label": "C",
+        "text": "Independent of displacement"
+      },
+      {
+        "id": "80000000-0000-02aa-0000-000000000004",
+        "label": "D",
+        "text": "Always zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02aa-0000-000000000002",
+    "explanation": "SHM obeys a = -omega^2*x, making acceleration proportional to displacement and directed toward equilibrium.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ab",
+    "code": "AFNS-Q-683",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 683. She said, \"I have finished my work.\" The indirect speech is:",
+    "options": [
+      {
+        "id": "80000000-0000-02ab-0000-000000000001",
+        "label": "A",
+        "text": "She said that she has finished her work."
+      },
+      {
+        "id": "80000000-0000-02ab-0000-000000000002",
+        "label": "B",
+        "text": "She said that she had finished her work."
+      },
+      {
+        "id": "80000000-0000-02ab-0000-000000000003",
+        "label": "C",
+        "text": "She said that I had finished my work."
+      },
+      {
+        "id": "80000000-0000-02ab-0000-000000000004",
+        "label": "D",
+        "text": "She said that she finished my work."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ab-0000-000000000002",
+    "explanation": "With a past reporting verb, present perfect have finished normally shifts to past perfect had finished.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ac",
+    "code": "AFNS-Q-684",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 684. Which part of the brain maintains balance and coordination of muscular activity?",
+    "options": [
+      {
+        "id": "80000000-0000-02ac-0000-000000000001",
+        "label": "A",
+        "text": "Cerebrum"
+      },
+      {
+        "id": "80000000-0000-02ac-0000-000000000002",
+        "label": "B",
+        "text": "Medulla oblongata"
+      },
+      {
+        "id": "80000000-0000-02ac-0000-000000000003",
+        "label": "C",
+        "text": "Cerebellum"
+      },
+      {
+        "id": "80000000-0000-02ac-0000-000000000004",
+        "label": "D",
+        "text": "Hypothalamus"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ac-0000-000000000003",
+    "explanation": "The cerebellum coordinates voluntary movement and helps maintain posture and balance.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ad",
+    "code": "AFNS-Q-685",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 685. The catalyst used in the hydrogenation of alkynes to form cis-alkenes is:",
+    "options": [
+      {
+        "id": "80000000-0000-02ad-0000-000000000001",
+        "label": "A",
+        "text": "Ziegler-Natta catalyst"
+      },
+      {
+        "id": "80000000-0000-02ad-0000-000000000002",
+        "label": "B",
+        "text": "Lindlar catalyst"
+      },
+      {
+        "id": "80000000-0000-02ad-0000-000000000003",
+        "label": "C",
+        "text": "Grignard reagent"
+      },
+      {
+        "id": "80000000-0000-02ad-0000-000000000004",
+        "label": "D",
+        "text": "Friedel-Crafts catalyst"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ad-0000-000000000002",
+    "explanation": "Poisoned palladium in Lindlar's catalyst permits selective alkyne hydrogenation to cis-alkenes.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ae",
+    "code": "AFNS-Q-686",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 686. Choose the correctly spelled word:",
+    "options": [
+      {
+        "id": "80000000-0000-02ae-0000-000000000001",
+        "label": "A",
+        "text": "Occassion"
+      },
+      {
+        "id": "80000000-0000-02ae-0000-000000000002",
+        "label": "B",
+        "text": "Ocassion"
+      },
+      {
+        "id": "80000000-0000-02ae-0000-000000000003",
+        "label": "C",
+        "text": "Occasion"
+      },
+      {
+        "id": "80000000-0000-02ae-0000-000000000004",
+        "label": "D",
+        "text": "Occassionn"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ae-0000-000000000003",
+    "explanation": "Occasion is spelled with two c letters and one s.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002af",
+    "code": "AFNS-Q-687",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 687. Which gas law states that pressure is inversely proportional to volume at constant temperature?",
+    "options": [
+      {
+        "id": "80000000-0000-02af-0000-000000000001",
+        "label": "A",
+        "text": "Charles' law"
+      },
+      {
+        "id": "80000000-0000-02af-0000-000000000002",
+        "label": "B",
+        "text": "Boyle's law"
+      },
+      {
+        "id": "80000000-0000-02af-0000-000000000003",
+        "label": "C",
+        "text": "Avogadro's law"
+      },
+      {
+        "id": "80000000-0000-02af-0000-000000000004",
+        "label": "D",
+        "text": "Graham's law"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02af-0000-000000000002",
+    "explanation": "Boyle's law states P*V is constant for a fixed amount of gas at constant temperature.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b0",
+    "code": "AFNS-Q-688",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 688. If he had worked hard, he ____ the examination.",
+    "options": [
+      {
+        "id": "80000000-0000-02b0-0000-000000000001",
+        "label": "A",
+        "text": "passes"
+      },
+      {
+        "id": "80000000-0000-02b0-0000-000000000002",
+        "label": "B",
+        "text": "will pass"
+      },
+      {
+        "id": "80000000-0000-02b0-0000-000000000003",
+        "label": "C",
+        "text": "would have passed"
+      },
+      {
+        "id": "80000000-0000-02b0-0000-000000000004",
+        "label": "D",
+        "text": "would pass"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b0-0000-000000000003",
+    "explanation": "The third conditional uses if + past perfect followed by would have + past participle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b1",
+    "code": "AFNS-Q-689",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 689. Which of the following has the greatest first ionization energy?",
+    "options": [
+      {
+        "id": "80000000-0000-02b1-0000-000000000001",
+        "label": "A",
+        "text": "Li"
+      },
+      {
+        "id": "80000000-0000-02b1-0000-000000000002",
+        "label": "B",
+        "text": "Na"
+      },
+      {
+        "id": "80000000-0000-02b1-0000-000000000003",
+        "label": "C",
+        "text": "K"
+      },
+      {
+        "id": "80000000-0000-02b1-0000-000000000004",
+        "label": "D",
+        "text": "Ne"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b1-0000-000000000004",
+    "explanation": "Neon has a closed electron shell and the greatest first ionization energy among the listed elements.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b2",
+    "code": "AFNS-Q-690",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 690. In a photoelectric effect experiment, increasing the frequency of incident light above the threshold frequency increases the:",
+    "options": [
+      {
+        "id": "80000000-0000-02b2-0000-000000000001",
+        "label": "A",
+        "text": "Number of protons"
+      },
+      {
+        "id": "80000000-0000-02b2-0000-000000000002",
+        "label": "B",
+        "text": "Maximum kinetic energy of emitted electrons"
+      },
+      {
+        "id": "80000000-0000-02b2-0000-000000000003",
+        "label": "C",
+        "text": "Work function of metal"
+      },
+      {
+        "id": "80000000-0000-02b2-0000-000000000004",
+        "label": "D",
+        "text": "Mass of electrons"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b2-0000-000000000002",
+    "explanation": "The photoelectric equation K_max = h*f - work_function shows that greater frequency increases maximum kinetic energy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b3",
+    "code": "AFNS-Q-691",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 691. The word \"meticulous\" means:",
+    "options": [
+      {
+        "id": "80000000-0000-02b3-0000-000000000001",
+        "label": "A",
+        "text": "Careless"
+      },
+      {
+        "id": "80000000-0000-02b3-0000-000000000002",
+        "label": "B",
+        "text": "Extremely careful"
+      },
+      {
+        "id": "80000000-0000-02b3-0000-000000000003",
+        "label": "C",
+        "text": "Confused"
+      },
+      {
+        "id": "80000000-0000-02b3-0000-000000000004",
+        "label": "D",
+        "text": "Impatient"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b3-0000-000000000002",
+    "explanation": "Meticulous means very careful and attentive to detail.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b4",
+    "code": "AFNS-Q-692",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 692. Which of the following structures is diploid in a typical human life cycle?",
+    "options": [
+      {
+        "id": "80000000-0000-02b4-0000-000000000001",
+        "label": "A",
+        "text": "Sperm"
+      },
+      {
+        "id": "80000000-0000-02b4-0000-000000000002",
+        "label": "B",
+        "text": "Ovum"
+      },
+      {
+        "id": "80000000-0000-02b4-0000-000000000003",
+        "label": "C",
+        "text": "Zygote"
+      },
+      {
+        "id": "80000000-0000-02b4-0000-000000000004",
+        "label": "D",
+        "text": "Secondary oocyte"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b4-0000-000000000003",
+    "explanation": "A human zygote forms by fusion of two haploid gametes and contains two chromosome sets.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b5",
+    "code": "AFNS-Q-693",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 693. Which phase of mitosis is characterized by the alignment of chromosomes at the equatorial plate?",
+    "options": [
+      {
+        "id": "80000000-0000-02b5-0000-000000000001",
+        "label": "A",
+        "text": "Prophase"
+      },
+      {
+        "id": "80000000-0000-02b5-0000-000000000002",
+        "label": "B",
+        "text": "Metaphase"
+      },
+      {
+        "id": "80000000-0000-02b5-0000-000000000003",
+        "label": "C",
+        "text": "Anaphase"
+      },
+      {
+        "id": "80000000-0000-02b5-0000-000000000004",
+        "label": "D",
+        "text": "Telophase"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b5-0000-000000000002",
+    "explanation": "During metaphase, chromosomes align at the cell's equatorial plate.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b6",
+    "code": "AFNS-Q-694",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 694. If a body is moving in a circular path with constant speed, its velocity is:",
+    "options": [
+      {
+        "id": "80000000-0000-02b6-0000-000000000001",
+        "label": "A",
+        "text": "Constant"
+      },
+      {
+        "id": "80000000-0000-02b6-0000-000000000002",
+        "label": "B",
+        "text": "Zero"
+      },
+      {
+        "id": "80000000-0000-02b6-0000-000000000003",
+        "label": "C",
+        "text": "Changing continuously"
+      },
+      {
+        "id": "80000000-0000-02b6-0000-000000000004",
+        "label": "D",
+        "text": "Increasing uniformly"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b6-0000-000000000003",
+    "explanation": "Velocity includes direction, which continuously changes during circular motion even at constant speed.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b7",
+    "code": "AFNS-Q-695",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 695. Which part of the human respiratory system is the primary site of gaseous exchange?",
+    "options": [
+      {
+        "id": "80000000-0000-02b7-0000-000000000001",
+        "label": "A",
+        "text": "Trachea"
+      },
+      {
+        "id": "80000000-0000-02b7-0000-000000000002",
+        "label": "B",
+        "text": "Bronchi"
+      },
+      {
+        "id": "80000000-0000-02b7-0000-000000000003",
+        "label": "C",
+        "text": "Alveoli"
+      },
+      {
+        "id": "80000000-0000-02b7-0000-000000000004",
+        "label": "D",
+        "text": "Larynx"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b7-0000-000000000003",
+    "explanation": "Thin alveolar walls and their capillary network provide the main surface for gas exchange.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b8",
+    "code": "AFNS-Q-696",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 696. The strongest intermolecular force between molecules of water is:",
+    "options": [
+      {
+        "id": "80000000-0000-02b8-0000-000000000001",
+        "label": "A",
+        "text": "London dispersion force"
+      },
+      {
+        "id": "80000000-0000-02b8-0000-000000000002",
+        "label": "B",
+        "text": "Dipole-induced dipole force"
+      },
+      {
+        "id": "80000000-0000-02b8-0000-000000000003",
+        "label": "C",
+        "text": "Hydrogen bonding"
+      },
+      {
+        "id": "80000000-0000-02b8-0000-000000000004",
+        "label": "D",
+        "text": "Ionic bonding"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b8-0000-000000000003",
+    "explanation": "Water molecules form strong hydrogen bonds through their O-H groups and oxygen lone pairs.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002b9",
+    "code": "AFNS-Q-697",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 697. A car increases its velocity from 10 m/s to 30 m/s in 5 seconds. Its acceleration is:",
+    "options": [
+      {
+        "id": "80000000-0000-02b9-0000-000000000001",
+        "label": "A",
+        "text": "2 m/s^2"
+      },
+      {
+        "id": "80000000-0000-02b9-0000-000000000002",
+        "label": "B",
+        "text": "4 m/s^2"
+      },
+      {
+        "id": "80000000-0000-02b9-0000-000000000003",
+        "label": "C",
+        "text": "5 m/s^2"
+      },
+      {
+        "id": "80000000-0000-02b9-0000-000000000004",
+        "label": "D",
+        "text": "8 m/s^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02b9-0000-000000000002",
+    "explanation": "Acceleration is (30-10)/5 = 4 m/s^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ba",
+    "code": "AFNS-Q-698",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 698. She ____ her homework before she went to bed.",
+    "options": [
+      {
+        "id": "80000000-0000-02ba-0000-000000000001",
+        "label": "A",
+        "text": "completes"
+      },
+      {
+        "id": "80000000-0000-02ba-0000-000000000002",
+        "label": "B",
+        "text": "has completed"
+      },
+      {
+        "id": "80000000-0000-02ba-0000-000000000003",
+        "label": "C",
+        "text": "had completed"
+      },
+      {
+        "id": "80000000-0000-02ba-0000-000000000004",
+        "label": "D",
+        "text": "is completing"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ba-0000-000000000003",
+    "explanation": "Had completed is past perfect and places homework completion before the later past action.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002bb",
+    "code": "AFNS-Q-699",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 699. Which component of blood is mainly responsible for clotting?",
+    "options": [
+      {
+        "id": "80000000-0000-02bb-0000-000000000001",
+        "label": "A",
+        "text": "Erythrocytes"
+      },
+      {
+        "id": "80000000-0000-02bb-0000-000000000002",
+        "label": "B",
+        "text": "Leukocytes"
+      },
+      {
+        "id": "80000000-0000-02bb-0000-000000000003",
+        "label": "C",
+        "text": "Platelets"
+      },
+      {
+        "id": "80000000-0000-02bb-0000-000000000004",
+        "label": "D",
+        "text": "Plasma proteins only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02bb-0000-000000000003",
+    "explanation": "Platelets form a plug and support the clotting cascade at damaged blood vessels.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002bc",
+    "code": "AFNS-Q-700",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 700. The oxidation state of chromium in K2Cr2O7 is:",
+    "options": [
+      {
+        "id": "80000000-0000-02bc-0000-000000000001",
+        "label": "A",
+        "text": "+3"
+      },
+      {
+        "id": "80000000-0000-02bc-0000-000000000002",
+        "label": "B",
+        "text": "+4"
+      },
+      {
+        "id": "80000000-0000-02bc-0000-000000000003",
+        "label": "C",
+        "text": "+6"
+      },
+      {
+        "id": "80000000-0000-02bc-0000-000000000004",
+        "label": "D",
+        "text": "+7"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02bc-0000-000000000003",
+    "explanation": "2*(+1) + 2*Cr + 7*(-2) = 0 gives chromium an oxidation state of +6.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002bd",
+    "code": "AFNS-Q-701",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 701. A 2 kg object moving with a velocity of 5 m/s has kinetic energy equal to:",
+    "options": [
+      {
+        "id": "80000000-0000-02bd-0000-000000000001",
+        "label": "A",
+        "text": "5 J"
+      },
+      {
+        "id": "80000000-0000-02bd-0000-000000000002",
+        "label": "B",
+        "text": "10 J"
+      },
+      {
+        "id": "80000000-0000-02bd-0000-000000000003",
+        "label": "C",
+        "text": "20 J"
+      },
+      {
+        "id": "80000000-0000-02bd-0000-000000000004",
+        "label": "D",
+        "text": "25 J"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02bd-0000-000000000004",
+    "explanation": "Kinetic energy is 0.5*2*5^2 = 25 J.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002be",
+    "code": "AFNS-Q-702",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 702. Which hormone is secreted by the adrenal medulla?",
+    "options": [
+      {
+        "id": "80000000-0000-02be-0000-000000000001",
+        "label": "A",
+        "text": "Insulin"
+      },
+      {
+        "id": "80000000-0000-02be-0000-000000000002",
+        "label": "B",
+        "text": "Adrenaline"
+      },
+      {
+        "id": "80000000-0000-02be-0000-000000000003",
+        "label": "C",
+        "text": "Thyroxine"
+      },
+      {
+        "id": "80000000-0000-02be-0000-000000000004",
+        "label": "D",
+        "text": "Growth hormone"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02be-0000-000000000002",
+    "explanation": "The adrenal medulla secretes adrenaline and noradrenaline during the sympathetic response.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002bf",
+    "code": "AFNS-Q-703",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 703. Which element has the electronic configuration 1s^2 2s^2 2p^6 3s^1?",
+    "options": [
+      {
+        "id": "80000000-0000-02bf-0000-000000000001",
+        "label": "A",
+        "text": "Magnesium"
+      },
+      {
+        "id": "80000000-0000-02bf-0000-000000000002",
+        "label": "B",
+        "text": "Sodium"
+      },
+      {
+        "id": "80000000-0000-02bf-0000-000000000003",
+        "label": "C",
+        "text": "Potassium"
+      },
+      {
+        "id": "80000000-0000-02bf-0000-000000000004",
+        "label": "D",
+        "text": "Neon"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02bf-0000-000000000002",
+    "explanation": "The configuration contains 11 electrons, identifying the neutral atom as sodium.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c0",
+    "code": "AFNS-Q-704",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 704. The time period of a simple pendulum depends primarily upon:",
+    "options": [
+      {
+        "id": "80000000-0000-02c0-0000-000000000001",
+        "label": "A",
+        "text": "Mass of bob"
+      },
+      {
+        "id": "80000000-0000-02c0-0000-000000000002",
+        "label": "B",
+        "text": "Length of pendulum"
+      },
+      {
+        "id": "80000000-0000-02c0-0000-000000000003",
+        "label": "C",
+        "text": "Shape of bob"
+      },
+      {
+        "id": "80000000-0000-02c0-0000-000000000004",
+        "label": "D",
+        "text": "Amplitude only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c0-0000-000000000002",
+    "explanation": "For small oscillations at a fixed location, T = 2*pi*sqrt(L/g), depending on length rather than bob mass.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c1",
+    "code": "AFNS-Q-705",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 705. If I ____ enough money, I would buy a new laptop.",
+    "options": [
+      {
+        "id": "80000000-0000-02c1-0000-000000000001",
+        "label": "A",
+        "text": "have"
+      },
+      {
+        "id": "80000000-0000-02c1-0000-000000000002",
+        "label": "B",
+        "text": "had"
+      },
+      {
+        "id": "80000000-0000-02c1-0000-000000000003",
+        "label": "C",
+        "text": "will have"
+      },
+      {
+        "id": "80000000-0000-02c1-0000-000000000004",
+        "label": "D",
+        "text": "have had"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c1-0000-000000000002",
+    "explanation": "A hypothetical present condition takes a past-tense form, had, followed by would buy.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c2",
+    "code": "AFNS-Q-706",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 706. Which compound is commonly used as a reducing agent in the preparation of alcohols from aldehydes and ketones?",
+    "options": [
+      {
+        "id": "80000000-0000-02c2-0000-000000000001",
+        "label": "A",
+        "text": "NaBH4"
+      },
+      {
+        "id": "80000000-0000-02c2-0000-000000000002",
+        "label": "B",
+        "text": "H2SO4"
+      },
+      {
+        "id": "80000000-0000-02c2-0000-000000000003",
+        "label": "C",
+        "text": "KMnO4"
+      },
+      {
+        "id": "80000000-0000-02c2-0000-000000000004",
+        "label": "D",
+        "text": "NaCl"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c2-0000-000000000001",
+    "explanation": "Sodium borohydride reduces aldehyde and ketone carbonyl groups to alcohols.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c3",
+    "code": "AFNS-Q-707",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 707. Which of the following is a strong electrolyte?",
+    "options": [
+      {
+        "id": "80000000-0000-02c3-0000-000000000001",
+        "label": "A",
+        "text": "CH3COOH"
+      },
+      {
+        "id": "80000000-0000-02c3-0000-000000000002",
+        "label": "B",
+        "text": "NH4OH"
+      },
+      {
+        "id": "80000000-0000-02c3-0000-000000000003",
+        "label": "C",
+        "text": "HCl"
+      },
+      {
+        "id": "80000000-0000-02c3-0000-000000000004",
+        "label": "D",
+        "text": "C2H5OH"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c3-0000-000000000003",
+    "explanation": "HCl ionizes essentially completely in water and is a strong electrolyte.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c4",
+    "code": "AFNS-Q-708",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 708. A satellite orbiting a planet is continuously accelerating because:",
+    "options": [
+      {
+        "id": "80000000-0000-02c4-0000-000000000001",
+        "label": "A",
+        "text": "Its speed is always increasing"
+      },
+      {
+        "id": "80000000-0000-02c4-0000-000000000002",
+        "label": "B",
+        "text": "Its direction of velocity is continuously changing"
+      },
+      {
+        "id": "80000000-0000-02c4-0000-000000000003",
+        "label": "C",
+        "text": "Its mass is increasing"
+      },
+      {
+        "id": "80000000-0000-02c4-0000-000000000004",
+        "label": "D",
+        "text": "Gravity is absent"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c4-0000-000000000002",
+    "explanation": "Acceleration occurs whenever velocity changes direction, even if orbital speed remains constant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c5",
+    "code": "AFNS-Q-709",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 709. He has lived in Islamabad ____ five years.",
+    "options": [
+      {
+        "id": "80000000-0000-02c5-0000-000000000001",
+        "label": "A",
+        "text": "since"
+      },
+      {
+        "id": "80000000-0000-02c5-0000-000000000002",
+        "label": "B",
+        "text": "from"
+      },
+      {
+        "id": "80000000-0000-02c5-0000-000000000003",
+        "label": "C",
+        "text": "for"
+      },
+      {
+        "id": "80000000-0000-02c5-0000-000000000004",
+        "label": "D",
+        "text": "by"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c5-0000-000000000003",
+    "explanation": "For introduces a duration, whereas since introduces a starting point.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c6",
+    "code": "AFNS-Q-710",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 710. Which structure connects a muscle to a bone?",
+    "options": [
+      {
+        "id": "80000000-0000-02c6-0000-000000000001",
+        "label": "A",
+        "text": "Ligament"
+      },
+      {
+        "id": "80000000-0000-02c6-0000-000000000002",
+        "label": "B",
+        "text": "Tendon"
+      },
+      {
+        "id": "80000000-0000-02c6-0000-000000000003",
+        "label": "C",
+        "text": "Cartilage"
+      },
+      {
+        "id": "80000000-0000-02c6-0000-000000000004",
+        "label": "D",
+        "text": "Neuron"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c6-0000-000000000002",
+    "explanation": "Tendons connect muscles to bones; ligaments generally connect bones to bones.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c7",
+    "code": "AFNS-Q-711",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 711. In an elastic collision, which quantities are conserved?",
+    "options": [
+      {
+        "id": "80000000-0000-02c7-0000-000000000001",
+        "label": "A",
+        "text": "Momentum only"
+      },
+      {
+        "id": "80000000-0000-02c7-0000-000000000002",
+        "label": "B",
+        "text": "Kinetic energy only"
+      },
+      {
+        "id": "80000000-0000-02c7-0000-000000000003",
+        "label": "C",
+        "text": "Both momentum and kinetic energy"
+      },
+      {
+        "id": "80000000-0000-02c7-0000-000000000004",
+        "label": "D",
+        "text": "Neither"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c7-0000-000000000003",
+    "explanation": "In an isolated elastic collision, both total momentum and total kinetic energy are conserved.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c8",
+    "code": "AFNS-Q-712",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 712. The passive voice of \"The students are solving the problem\" is:",
+    "options": [
+      {
+        "id": "80000000-0000-02c8-0000-000000000001",
+        "label": "A",
+        "text": "The problem is solved by the students."
+      },
+      {
+        "id": "80000000-0000-02c8-0000-000000000002",
+        "label": "B",
+        "text": "The problem was solved by the students."
+      },
+      {
+        "id": "80000000-0000-02c8-0000-000000000003",
+        "label": "C",
+        "text": "The problem is being solved by the students."
+      },
+      {
+        "id": "80000000-0000-02c8-0000-000000000004",
+        "label": "D",
+        "text": "The problem has been solved by the students."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c8-0000-000000000003",
+    "explanation": "Present-continuous passive voice uses is being plus the past participle solved.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002c9",
+    "code": "AFNS-Q-713",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 713. Which process produces four genetically different haploid cells?",
+    "options": [
+      {
+        "id": "80000000-0000-02c9-0000-000000000001",
+        "label": "A",
+        "text": "Mitosis"
+      },
+      {
+        "id": "80000000-0000-02c9-0000-000000000002",
+        "label": "B",
+        "text": "Binary fission"
+      },
+      {
+        "id": "80000000-0000-02c9-0000-000000000003",
+        "label": "C",
+        "text": "Meiosis"
+      },
+      {
+        "id": "80000000-0000-02c9-0000-000000000004",
+        "label": "D",
+        "text": "Budding"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02c9-0000-000000000003",
+    "explanation": "Meiosis reduces chromosome number and typically produces four genetically varied haploid cells.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ca",
+    "code": "AFNS-Q-714",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 714. The dimensional formula of pressure is:",
+    "options": [
+      {
+        "id": "80000000-0000-02ca-0000-000000000001",
+        "label": "A",
+        "text": "ML-^1T-^2"
+      },
+      {
+        "id": "80000000-0000-02ca-0000-000000000002",
+        "label": "B",
+        "text": "MLT-^2"
+      },
+      {
+        "id": "80000000-0000-02ca-0000-000000000003",
+        "label": "C",
+        "text": "ML^2T-^2"
+      },
+      {
+        "id": "80000000-0000-02ca-0000-000000000004",
+        "label": "D",
+        "text": "M^0L^0T^0"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ca-0000-000000000001",
+    "explanation": "Pressure equals force per area, giving dimensions M*L^-1*T^-2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002cb",
+    "code": "AFNS-Q-715",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 715. He said, \"I am going to the market.\" The indirect speech is:",
+    "options": [
+      {
+        "id": "80000000-0000-02cb-0000-000000000001",
+        "label": "A",
+        "text": "He said that he was going to the market."
+      },
+      {
+        "id": "80000000-0000-02cb-0000-000000000002",
+        "label": "B",
+        "text": "He said that I was going to the market."
+      },
+      {
+        "id": "80000000-0000-02cb-0000-000000000003",
+        "label": "C",
+        "text": "He said that he is going to the market."
+      },
+      {
+        "id": "80000000-0000-02cb-0000-000000000004",
+        "label": "D",
+        "text": "He told that he went to the market."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02cb-0000-000000000001",
+    "explanation": "In reported speech after said, am going normally backshifts to was going and I changes to he.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002cc",
+    "code": "AFNS-Q-716",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 716. Which blood vessel carries oxygenated blood from the lungs to the heart?",
+    "options": [
+      {
+        "id": "80000000-0000-02cc-0000-000000000001",
+        "label": "A",
+        "text": "Pulmonary artery"
+      },
+      {
+        "id": "80000000-0000-02cc-0000-000000000002",
+        "label": "B",
+        "text": "Pulmonary vein"
+      },
+      {
+        "id": "80000000-0000-02cc-0000-000000000003",
+        "label": "C",
+        "text": "Aorta"
+      },
+      {
+        "id": "80000000-0000-02cc-0000-000000000004",
+        "label": "D",
+        "text": "Vena cava"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02cc-0000-000000000002",
+    "explanation": "Pulmonary veins return oxygenated blood from the lungs to the left atrium.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002cd",
+    "code": "AFNS-Q-717",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 717. Which of the following is an example of a heterogeneous mixture?",
+    "options": [
+      {
+        "id": "80000000-0000-02cd-0000-000000000001",
+        "label": "A",
+        "text": "Air"
+      },
+      {
+        "id": "80000000-0000-02cd-0000-000000000002",
+        "label": "B",
+        "text": "Salt solution"
+      },
+      {
+        "id": "80000000-0000-02cd-0000-000000000003",
+        "label": "C",
+        "text": "Brass"
+      },
+      {
+        "id": "80000000-0000-02cd-0000-000000000004",
+        "label": "D",
+        "text": "Sand and water"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02cd-0000-000000000004",
+    "explanation": "Sand and water remain visibly separate phases, making the mixture heterogeneous.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ce",
+    "code": "AFNS-Q-718",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 718. When a charged particle enters a magnetic field perpendicular to the field, its path is:",
+    "options": [
+      {
+        "id": "80000000-0000-02ce-0000-000000000001",
+        "label": "A",
+        "text": "Straight line"
+      },
+      {
+        "id": "80000000-0000-02ce-0000-000000000002",
+        "label": "B",
+        "text": "Circular"
+      },
+      {
+        "id": "80000000-0000-02ce-0000-000000000003",
+        "label": "C",
+        "text": "Parabolic"
+      },
+      {
+        "id": "80000000-0000-02ce-0000-000000000004",
+        "label": "D",
+        "text": "Elliptical"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ce-0000-000000000002",
+    "explanation": "A uniform perpendicular magnetic field exerts a force perpendicular to velocity, producing circular motion.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002cf",
+    "code": "AFNS-Q-719",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 719. Hardly had the teacher entered the class ____ the students became silent.",
+    "options": [
+      {
+        "id": "80000000-0000-02cf-0000-000000000001",
+        "label": "A",
+        "text": "than"
+      },
+      {
+        "id": "80000000-0000-02cf-0000-000000000002",
+        "label": "B",
+        "text": "when"
+      },
+      {
+        "id": "80000000-0000-02cf-0000-000000000003",
+        "label": "C",
+        "text": "then"
+      },
+      {
+        "id": "80000000-0000-02cf-0000-000000000004",
+        "label": "D",
+        "text": "while"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02cf-0000-000000000002",
+    "explanation": "The paired construction is hardly...when, whereas scarcely...when and no sooner...than are related forms.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d0",
+    "code": "AFNS-Q-720",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 720. Which molecule carries the genetic information from DNA to ribosomes?",
+    "options": [
+      {
+        "id": "80000000-0000-02d0-0000-000000000001",
+        "label": "A",
+        "text": "tRNA"
+      },
+      {
+        "id": "80000000-0000-02d0-0000-000000000002",
+        "label": "B",
+        "text": "rRNA"
+      },
+      {
+        "id": "80000000-0000-02d0-0000-000000000003",
+        "label": "C",
+        "text": "mRNA"
+      },
+      {
+        "id": "80000000-0000-02d0-0000-000000000004",
+        "label": "D",
+        "text": "ATP"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d0-0000-000000000003",
+    "explanation": "Messenger RNA carries a transcribed genetic message from DNA to ribosomes for translation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d1",
+    "code": "AFNS-Q-721",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 721. The energy stored in a capacitor is:",
+    "options": [
+      {
+        "id": "80000000-0000-02d1-0000-000000000001",
+        "label": "A",
+        "text": "CV"
+      },
+      {
+        "id": "80000000-0000-02d1-0000-000000000002",
+        "label": "B",
+        "text": "0.5CV^2"
+      },
+      {
+        "id": "80000000-0000-02d1-0000-000000000003",
+        "label": "C",
+        "text": "2CV^2"
+      },
+      {
+        "id": "80000000-0000-02d1-0000-000000000004",
+        "label": "D",
+        "text": "V/C"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d1-0000-000000000002",
+    "explanation": "Integrating the charging work gives capacitor energy U = 0.5*C*V^2.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d2",
+    "code": "AFNS-Q-722",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 722. Which enzyme begins the digestion of starch in the human digestive system?",
+    "options": [
+      {
+        "id": "80000000-0000-02d2-0000-000000000001",
+        "label": "A",
+        "text": "Pepsin"
+      },
+      {
+        "id": "80000000-0000-02d2-0000-000000000002",
+        "label": "B",
+        "text": "Trypsin"
+      },
+      {
+        "id": "80000000-0000-02d2-0000-000000000003",
+        "label": "C",
+        "text": "Salivary amylase"
+      },
+      {
+        "id": "80000000-0000-02d2-0000-000000000004",
+        "label": "D",
+        "text": "Lipase"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d2-0000-000000000003",
+    "explanation": "Salivary amylase begins starch digestion in the mouth.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d3",
+    "code": "AFNS-Q-723",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 723. The conjugate base of H2CO3 after loss of one proton is:",
+    "options": [
+      {
+        "id": "80000000-0000-02d3-0000-000000000001",
+        "label": "A",
+        "text": "CO3^2-"
+      },
+      {
+        "id": "80000000-0000-02d3-0000-000000000002",
+        "label": "B",
+        "text": "HCO3-"
+      },
+      {
+        "id": "80000000-0000-02d3-0000-000000000003",
+        "label": "C",
+        "text": "H3O+"
+      },
+      {
+        "id": "80000000-0000-02d3-0000-000000000004",
+        "label": "D",
+        "text": "OH-"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d3-0000-000000000002",
+    "explanation": "Removing one H+ from H2CO3 leaves its conjugate base HCO3-.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d4",
+    "code": "AFNS-Q-724",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 724. A transformer has 1000 turns in its primary coil and 200 turns in its secondary coil. If the primary voltage is 220 V, the secondary voltage is:",
+    "options": [
+      {
+        "id": "80000000-0000-02d4-0000-000000000001",
+        "label": "A",
+        "text": "22 V"
+      },
+      {
+        "id": "80000000-0000-02d4-0000-000000000002",
+        "label": "B",
+        "text": "44 V"
+      },
+      {
+        "id": "80000000-0000-02d4-0000-000000000003",
+        "label": "C",
+        "text": "110 V"
+      },
+      {
+        "id": "80000000-0000-02d4-0000-000000000004",
+        "label": "D",
+        "text": "440 V"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d4-0000-000000000002",
+    "explanation": "For an ideal transformer, Vs = Vp*Ns/Np = 220*200/1000 = 44 V.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d5",
+    "code": "AFNS-Q-725",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 725. She said to me, \"Do you know the answer?\" The indirect speech is:",
+    "options": [
+      {
+        "id": "80000000-0000-02d5-0000-000000000001",
+        "label": "A",
+        "text": "She asked me if I knew the answer."
+      },
+      {
+        "id": "80000000-0000-02d5-0000-000000000002",
+        "label": "B",
+        "text": "She asked me did I know the answer."
+      },
+      {
+        "id": "80000000-0000-02d5-0000-000000000003",
+        "label": "C",
+        "text": "She said that I know the answer."
+      },
+      {
+        "id": "80000000-0000-02d5-0000-000000000004",
+        "label": "D",
+        "text": "She asked me if I know the answer."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d5-0000-000000000001",
+    "explanation": "Reported yes-no questions use if, statement word order and normal tense backshift to knew.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d6",
+    "code": "AFNS-Q-726",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 726. Which type of bond holds complementary bases together in DNA?",
+    "options": [
+      {
+        "id": "80000000-0000-02d6-0000-000000000001",
+        "label": "A",
+        "text": "Ionic bond"
+      },
+      {
+        "id": "80000000-0000-02d6-0000-000000000002",
+        "label": "B",
+        "text": "Peptide bond"
+      },
+      {
+        "id": "80000000-0000-02d6-0000-000000000003",
+        "label": "C",
+        "text": "Hydrogen bond"
+      },
+      {
+        "id": "80000000-0000-02d6-0000-000000000004",
+        "label": "D",
+        "text": "Metallic bond"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d6-0000-000000000003",
+    "explanation": "Hydrogen bonds form between complementary nitrogenous bases on opposite DNA strands.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d7",
+    "code": "AFNS-Q-727",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 727. Which of the following is the strongest acid?",
+    "options": [
+      {
+        "id": "80000000-0000-02d7-0000-000000000001",
+        "label": "A",
+        "text": "CH3COOH"
+      },
+      {
+        "id": "80000000-0000-02d7-0000-000000000002",
+        "label": "B",
+        "text": "H2CO3"
+      },
+      {
+        "id": "80000000-0000-02d7-0000-000000000003",
+        "label": "C",
+        "text": "HCl"
+      },
+      {
+        "id": "80000000-0000-02d7-0000-000000000004",
+        "label": "D",
+        "text": "NH3"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d7-0000-000000000003",
+    "explanation": "HCl is a strong acid in water, unlike the listed weak acids and ammonia.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d8",
+    "code": "AFNS-Q-728",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 728. A body is thrown vertically upward. At its highest point, its:",
+    "options": [
+      {
+        "id": "80000000-0000-02d8-0000-000000000001",
+        "label": "A",
+        "text": "Velocity and acceleration are both zero"
+      },
+      {
+        "id": "80000000-0000-02d8-0000-000000000002",
+        "label": "B",
+        "text": "Velocity is zero but acceleration is downward"
+      },
+      {
+        "id": "80000000-0000-02d8-0000-000000000003",
+        "label": "C",
+        "text": "Velocity is maximum and acceleration is zero"
+      },
+      {
+        "id": "80000000-0000-02d8-0000-000000000004",
+        "label": "D",
+        "text": "Velocity is downward and acceleration is zero"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d8-0000-000000000002",
+    "explanation": "At the highest point vertical velocity is zero, but gravitational acceleration remains downward.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002d9",
+    "code": "AFNS-Q-729",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 729. Which organelle is primarily responsible for modifying and packaging proteins in a cell?",
+    "options": [
+      {
+        "id": "80000000-0000-02d9-0000-000000000001",
+        "label": "A",
+        "text": "Ribosome"
+      },
+      {
+        "id": "80000000-0000-02d9-0000-000000000002",
+        "label": "B",
+        "text": "Golgi apparatus"
+      },
+      {
+        "id": "80000000-0000-02d9-0000-000000000003",
+        "label": "C",
+        "text": "Lysosome"
+      },
+      {
+        "id": "80000000-0000-02d9-0000-000000000004",
+        "label": "D",
+        "text": "Centriole"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02d9-0000-000000000002",
+    "explanation": "The Golgi apparatus modifies, sorts and packages proteins for transport or secretion.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002da",
+    "code": "AFNS-Q-730",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 730. A body moving in a circle with constant speed has:",
+    "options": [
+      {
+        "id": "80000000-0000-02da-0000-000000000001",
+        "label": "A",
+        "text": "Zero acceleration"
+      },
+      {
+        "id": "80000000-0000-02da-0000-000000000002",
+        "label": "B",
+        "text": "Constant velocity"
+      },
+      {
+        "id": "80000000-0000-02da-0000-000000000003",
+        "label": "C",
+        "text": "Centripetal acceleration"
+      },
+      {
+        "id": "80000000-0000-02da-0000-000000000004",
+        "label": "D",
+        "text": "No force acting on it"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02da-0000-000000000003",
+    "explanation": "Circular motion requires inward centripetal acceleration to change the direction of velocity.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002db",
+    "code": "AFNS-Q-731",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 731. Choose the grammatically correct sentence:",
+    "options": [
+      {
+        "id": "80000000-0000-02db-0000-000000000001",
+        "label": "A",
+        "text": "She don't know the answer."
+      },
+      {
+        "id": "80000000-0000-02db-0000-000000000002",
+        "label": "B",
+        "text": "She doesn't knows the answer."
+      },
+      {
+        "id": "80000000-0000-02db-0000-000000000003",
+        "label": "C",
+        "text": "She doesn't know the answer."
+      },
+      {
+        "id": "80000000-0000-02db-0000-000000000004",
+        "label": "D",
+        "text": "She not know the answer."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02db-0000-000000000003",
+    "explanation": "Doesn't is followed by the base verb know, not knows.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002dc",
+    "code": "AFNS-Q-732",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 732. If a force of 20 N moves an object through 5 m in the direction of the force, the work done is:",
+    "options": [
+      {
+        "id": "80000000-0000-02dc-0000-000000000001",
+        "label": "A",
+        "text": "4 J"
+      },
+      {
+        "id": "80000000-0000-02dc-0000-000000000002",
+        "label": "B",
+        "text": "25 J"
+      },
+      {
+        "id": "80000000-0000-02dc-0000-000000000003",
+        "label": "C",
+        "text": "100 J"
+      },
+      {
+        "id": "80000000-0000-02dc-0000-000000000004",
+        "label": "D",
+        "text": "200 J"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02dc-0000-000000000003",
+    "explanation": "Work parallel to displacement is W = F*s = 20*5 = 100 J.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002dd",
+    "code": "AFNS-Q-733",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 733. The oxidation state of nitrogen in HNO3 is:",
+    "options": [
+      {
+        "id": "80000000-0000-02dd-0000-000000000001",
+        "label": "A",
+        "text": "+3"
+      },
+      {
+        "id": "80000000-0000-02dd-0000-000000000002",
+        "label": "B",
+        "text": "+5"
+      },
+      {
+        "id": "80000000-0000-02dd-0000-000000000003",
+        "label": "C",
+        "text": "-3"
+      },
+      {
+        "id": "80000000-0000-02dd-0000-000000000004",
+        "label": "D",
+        "text": "-5"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02dd-0000-000000000002",
+    "explanation": "For HNO3, +1 + N + 3*(-2) = 0, so nitrogen is +5.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002de",
+    "code": "AFNS-Q-734",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 734. The synonym of \"abandon\" is:",
+    "options": [
+      {
+        "id": "80000000-0000-02de-0000-000000000001",
+        "label": "A",
+        "text": "Continue"
+      },
+      {
+        "id": "80000000-0000-02de-0000-000000000002",
+        "label": "B",
+        "text": "Leave"
+      },
+      {
+        "id": "80000000-0000-02de-0000-000000000003",
+        "label": "C",
+        "text": "Protect"
+      },
+      {
+        "id": "80000000-0000-02de-0000-000000000004",
+        "label": "D",
+        "text": "Maintain"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02de-0000-000000000002",
+    "explanation": "To abandon means to leave or give up something.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002df",
+    "code": "AFNS-Q-735",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 735. Which element has the electronic configuration 2,8,7?",
+    "options": [
+      {
+        "id": "80000000-0000-02df-0000-000000000001",
+        "label": "A",
+        "text": "Sodium"
+      },
+      {
+        "id": "80000000-0000-02df-0000-000000000002",
+        "label": "B",
+        "text": "Chlorine"
+      },
+      {
+        "id": "80000000-0000-02df-0000-000000000003",
+        "label": "C",
+        "text": "Argon"
+      },
+      {
+        "id": "80000000-0000-02df-0000-000000000004",
+        "label": "D",
+        "text": "Magnesium"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02df-0000-000000000002",
+    "explanation": "The shells contain 2+8+7 = 17 electrons, identifying neutral chlorine.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e0",
+    "code": "AFNS-Q-736",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 736. Choose the correct preposition: \"He has lived here ____ 2020.\"",
+    "options": [
+      {
+        "id": "80000000-0000-02e0-0000-000000000001",
+        "label": "A",
+        "text": "For"
+      },
+      {
+        "id": "80000000-0000-02e0-0000-000000000002",
+        "label": "B",
+        "text": "Since"
+      },
+      {
+        "id": "80000000-0000-02e0-0000-000000000003",
+        "label": "C",
+        "text": "From"
+      },
+      {
+        "id": "80000000-0000-02e0-0000-000000000004",
+        "label": "D",
+        "text": "At"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e0-0000-000000000002",
+    "explanation": "Since introduces the starting point 2020 rather than a duration.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e1",
+    "code": "AFNS-Q-737",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 737. Which blood vessel carries deoxygenated blood from the heart to the lungs?",
+    "options": [
+      {
+        "id": "80000000-0000-02e1-0000-000000000001",
+        "label": "A",
+        "text": "Pulmonary artery"
+      },
+      {
+        "id": "80000000-0000-02e1-0000-000000000002",
+        "label": "B",
+        "text": "Pulmonary vein"
+      },
+      {
+        "id": "80000000-0000-02e1-0000-000000000003",
+        "label": "C",
+        "text": "Aorta"
+      },
+      {
+        "id": "80000000-0000-02e1-0000-000000000004",
+        "label": "D",
+        "text": "Coronary artery"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e1-0000-000000000001",
+    "explanation": "The pulmonary artery carries deoxygenated blood from the right ventricle to the lungs.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e2",
+    "code": "AFNS-Q-738",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 738. Which gas is mainly responsible for the greenhouse effect among the following?",
+    "options": [
+      {
+        "id": "80000000-0000-02e2-0000-000000000001",
+        "label": "A",
+        "text": "Oxygen"
+      },
+      {
+        "id": "80000000-0000-02e2-0000-000000000002",
+        "label": "B",
+        "text": "Nitrogen"
+      },
+      {
+        "id": "80000000-0000-02e2-0000-000000000003",
+        "label": "C",
+        "text": "Carbon dioxide"
+      },
+      {
+        "id": "80000000-0000-02e2-0000-000000000004",
+        "label": "D",
+        "text": "Hydrogen"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e2-0000-000000000003",
+    "explanation": "Carbon dioxide absorbs outgoing infrared radiation and contributes to the greenhouse effect.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e3",
+    "code": "AFNS-Q-739",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 739. Change into indirect speech: He said, \"I am busy.\"",
+    "options": [
+      {
+        "id": "80000000-0000-02e3-0000-000000000001",
+        "label": "A",
+        "text": "He said that I am busy."
+      },
+      {
+        "id": "80000000-0000-02e3-0000-000000000002",
+        "label": "B",
+        "text": "He said that he was busy."
+      },
+      {
+        "id": "80000000-0000-02e3-0000-000000000003",
+        "label": "C",
+        "text": "He says that he was busy."
+      },
+      {
+        "id": "80000000-0000-02e3-0000-000000000004",
+        "label": "D",
+        "text": "He said that he is busy."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e3-0000-000000000002",
+    "explanation": "Past reporting normally changes I am to he was in indirect speech.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e4",
+    "code": "AFNS-Q-740",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 740. Which organ is primarily responsible for detoxification of many harmful substances in the body?",
+    "options": [
+      {
+        "id": "80000000-0000-02e4-0000-000000000001",
+        "label": "A",
+        "text": "Heart"
+      },
+      {
+        "id": "80000000-0000-02e4-0000-000000000002",
+        "label": "B",
+        "text": "Liver"
+      },
+      {
+        "id": "80000000-0000-02e4-0000-000000000003",
+        "label": "C",
+        "text": "Spleen"
+      },
+      {
+        "id": "80000000-0000-02e4-0000-000000000004",
+        "label": "D",
+        "text": "Pancreas"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e4-0000-000000000002",
+    "explanation": "The liver metabolizes and detoxifies many drugs and other harmful substances.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e5",
+    "code": "AFNS-Q-741",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 741. The bond formed by sharing an electron pair between atoms is called:",
+    "options": [
+      {
+        "id": "80000000-0000-02e5-0000-000000000001",
+        "label": "A",
+        "text": "Ionic bond"
+      },
+      {
+        "id": "80000000-0000-02e5-0000-000000000002",
+        "label": "B",
+        "text": "Covalent bond"
+      },
+      {
+        "id": "80000000-0000-02e5-0000-000000000003",
+        "label": "C",
+        "text": "Metallic bond"
+      },
+      {
+        "id": "80000000-0000-02e5-0000-000000000004",
+        "label": "D",
+        "text": "Hydrogen bond"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e5-0000-000000000002",
+    "explanation": "A covalent bond forms when atoms share one or more pairs of electrons.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e6",
+    "code": "AFNS-Q-742",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 742. The energy of a photon is directly proportional to its:",
+    "options": [
+      {
+        "id": "80000000-0000-02e6-0000-000000000001",
+        "label": "A",
+        "text": "Wavelength"
+      },
+      {
+        "id": "80000000-0000-02e6-0000-000000000002",
+        "label": "B",
+        "text": "Frequency"
+      },
+      {
+        "id": "80000000-0000-02e6-0000-000000000003",
+        "label": "C",
+        "text": "Velocity only"
+      },
+      {
+        "id": "80000000-0000-02e6-0000-000000000004",
+        "label": "D",
+        "text": "Amplitude only"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e6-0000-000000000002",
+    "explanation": "E = h*f shows that photon energy is directly proportional to frequency.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e7",
+    "code": "AFNS-Q-743",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 743. The main function of red blood cells is to:",
+    "options": [
+      {
+        "id": "80000000-0000-02e7-0000-000000000001",
+        "label": "A",
+        "text": "Fight infections"
+      },
+      {
+        "id": "80000000-0000-02e7-0000-000000000002",
+        "label": "B",
+        "text": "Transport oxygen"
+      },
+      {
+        "id": "80000000-0000-02e7-0000-000000000003",
+        "label": "C",
+        "text": "Produce antibodies"
+      },
+      {
+        "id": "80000000-0000-02e7-0000-000000000004",
+        "label": "D",
+        "text": "Form hormones"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e7-0000-000000000002",
+    "explanation": "Red blood cells transport oxygen using the hemoglobin they contain.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e8",
+    "code": "AFNS-Q-744",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 744. If the frequency of a wave is doubled while its speed remains constant, its wavelength becomes:",
+    "options": [
+      {
+        "id": "80000000-0000-02e8-0000-000000000001",
+        "label": "A",
+        "text": "Doubled"
+      },
+      {
+        "id": "80000000-0000-02e8-0000-000000000002",
+        "label": "B",
+        "text": "Halved"
+      },
+      {
+        "id": "80000000-0000-02e8-0000-000000000003",
+        "label": "C",
+        "text": "Four times"
+      },
+      {
+        "id": "80000000-0000-02e8-0000-000000000004",
+        "label": "D",
+        "text": "Unchanged"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e8-0000-000000000002",
+    "explanation": "Since v = f*lambda, doubling frequency at fixed wave speed halves wavelength.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002e9",
+    "code": "AFNS-Q-745",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 745. Which condition is necessary for total internal reflection?",
+    "options": [
+      {
+        "id": "80000000-0000-02e9-0000-000000000001",
+        "label": "A",
+        "text": "Light travels from rarer to denser medium"
+      },
+      {
+        "id": "80000000-0000-02e9-0000-000000000002",
+        "label": "B",
+        "text": "Light travels from denser to rarer medium and angle exceeds critical angle"
+      },
+      {
+        "id": "80000000-0000-02e9-0000-000000000003",
+        "label": "C",
+        "text": "Angle of incidence is always zero"
+      },
+      {
+        "id": "80000000-0000-02e9-0000-000000000004",
+        "label": "D",
+        "text": "Light must travel through vacuum"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02e9-0000-000000000002",
+    "explanation": "Total internal reflection requires travel toward a lower refractive index with incidence angle above the critical angle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ea",
+    "code": "AFNS-Q-746",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 746. During translation, the anticodon is present on:",
+    "options": [
+      {
+        "id": "80000000-0000-02ea-0000-000000000001",
+        "label": "A",
+        "text": "mRNA"
+      },
+      {
+        "id": "80000000-0000-02ea-0000-000000000002",
+        "label": "B",
+        "text": "DNA"
+      },
+      {
+        "id": "80000000-0000-02ea-0000-000000000003",
+        "label": "C",
+        "text": "tRNA"
+      },
+      {
+        "id": "80000000-0000-02ea-0000-000000000004",
+        "label": "D",
+        "text": "rRNA"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ea-0000-000000000003",
+    "explanation": "The tRNA anticodon pairs with the complementary codon on mRNA during translation.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002eb",
+    "code": "AFNS-Q-747",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 747. In an ideal gas, the collisions between gas molecules are assumed to be:",
+    "options": [
+      {
+        "id": "80000000-0000-02eb-0000-000000000001",
+        "label": "A",
+        "text": "Perfectly inelastic"
+      },
+      {
+        "id": "80000000-0000-02eb-0000-000000000002",
+        "label": "B",
+        "text": "Perfectly elastic"
+      },
+      {
+        "id": "80000000-0000-02eb-0000-000000000003",
+        "label": "C",
+        "text": "Completely stationary"
+      },
+      {
+        "id": "80000000-0000-02eb-0000-000000000004",
+        "label": "D",
+        "text": "Electrically charged"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02eb-0000-000000000002",
+    "explanation": "The ideal-gas model assumes molecular collisions conserve kinetic energy and are perfectly elastic.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ec",
+    "code": "AFNS-Q-748",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Physics & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 748. The Pfund series is produced when an electron falls to:",
+    "options": [
+      {
+        "id": "80000000-0000-02ec-0000-000000000001",
+        "label": "A",
+        "text": "n = 3"
+      },
+      {
+        "id": "80000000-0000-02ec-0000-000000000002",
+        "label": "B",
+        "text": "n = 4"
+      },
+      {
+        "id": "80000000-0000-02ec-0000-000000000003",
+        "label": "C",
+        "text": "n = 5"
+      },
+      {
+        "id": "80000000-0000-02ec-0000-000000000004",
+        "label": "D",
+        "text": "n = 6"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ec-0000-000000000003",
+    "explanation": "Hydrogen transitions ending at n = 5 form the Pfund series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ed",
+    "code": "AFNS-Q-749",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 749. When an electron falls from n = 6 to n = 3 in a hydrogen atom, the emitted radiation belongs to the:",
+    "options": [
+      {
+        "id": "80000000-0000-02ed-0000-000000000001",
+        "label": "A",
+        "text": "Lyman series"
+      },
+      {
+        "id": "80000000-0000-02ed-0000-000000000002",
+        "label": "B",
+        "text": "Balmer series"
+      },
+      {
+        "id": "80000000-0000-02ed-0000-000000000003",
+        "label": "C",
+        "text": "Paschen series"
+      },
+      {
+        "id": "80000000-0000-02ed-0000-000000000004",
+        "label": "D",
+        "text": "Brackett series"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ed-0000-000000000003",
+    "explanation": "The final level n = 3 identifies the Paschen series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ee",
+    "code": "AFNS-Q-750",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 750. When an electron falls from n = 6 to n = 4 in a hydrogen atom, the emitted radiation belongs to the:",
+    "options": [
+      {
+        "id": "80000000-0000-02ee-0000-000000000001",
+        "label": "A",
+        "text": "Lyman series"
+      },
+      {
+        "id": "80000000-0000-02ee-0000-000000000002",
+        "label": "B",
+        "text": "Balmer series"
+      },
+      {
+        "id": "80000000-0000-02ee-0000-000000000003",
+        "label": "C",
+        "text": "Paschen series"
+      },
+      {
+        "id": "80000000-0000-02ee-0000-000000000004",
+        "label": "D",
+        "text": "Brackett series"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ee-0000-000000000004",
+    "explanation": "The final level n = 4 identifies the Brackett series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002ef",
+    "code": "AFNS-Q-751",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 751. When an electron falls from n = 7 to n = 5 in a hydrogen atom, the emitted radiation belongs to the:",
+    "options": [
+      {
+        "id": "80000000-0000-02ef-0000-000000000001",
+        "label": "A",
+        "text": "Lyman series"
+      },
+      {
+        "id": "80000000-0000-02ef-0000-000000000002",
+        "label": "B",
+        "text": "Balmer series"
+      },
+      {
+        "id": "80000000-0000-02ef-0000-000000000003",
+        "label": "C",
+        "text": "Brackett series"
+      },
+      {
+        "id": "80000000-0000-02ef-0000-000000000004",
+        "label": "D",
+        "text": "Pfund series"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02ef-0000-000000000004",
+    "explanation": "The final level n = 5 identifies the Pfund series.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f0",
+    "code": "AFNS-Q-752",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Biology & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 752. Which sugar is present in DNA?",
+    "options": [
+      {
+        "id": "80000000-0000-02f0-0000-000000000001",
+        "label": "A",
+        "text": "Ribose"
+      },
+      {
+        "id": "80000000-0000-02f0-0000-000000000002",
+        "label": "B",
+        "text": "Glucose"
+      },
+      {
+        "id": "80000000-0000-02f0-0000-000000000003",
+        "label": "C",
+        "text": "Deoxyribose"
+      },
+      {
+        "id": "80000000-0000-02f0-0000-000000000004",
+        "label": "D",
+        "text": "Fructose"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f0-0000-000000000003",
+    "explanation": "DNA nucleotides contain deoxyribose rather than ribose sugar.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f1",
+    "code": "AFNS-Q-753",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 753. Which of the following is a pronoun?",
+    "options": [
+      {
+        "id": "80000000-0000-02f1-0000-000000000001",
+        "label": "A",
+        "text": "Quickly"
+      },
+      {
+        "id": "80000000-0000-02f1-0000-000000000002",
+        "label": "B",
+        "text": "Beautiful"
+      },
+      {
+        "id": "80000000-0000-02f1-0000-000000000003",
+        "label": "C",
+        "text": "He"
+      },
+      {
+        "id": "80000000-0000-02f1-0000-000000000004",
+        "label": "D",
+        "text": "Running"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f1-0000-000000000003",
+    "explanation": "He replaces a male person's name and is a personal pronoun.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f2",
+    "code": "AFNS-Q-754",
+    "subject": "INTELLIGENCE_VERBAL",
+    "subjectName": "Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 754. If the 14th day of the month is Sunday, then the 4th day will be?",
+    "options": [
+      {
+        "id": "80000000-0000-02f2-0000-000000000001",
+        "label": "A",
+        "text": "Friday"
+      },
+      {
+        "id": "80000000-0000-02f2-0000-000000000002",
+        "label": "B",
+        "text": "Thursday"
+      },
+      {
+        "id": "80000000-0000-02f2-0000-000000000003",
+        "label": "C",
+        "text": "Wednesday"
+      },
+      {
+        "id": "80000000-0000-02f2-0000-000000000004",
+        "label": "D",
+        "text": "Tuesday"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f2-0000-000000000002",
+    "explanation": "The 4th is ten days before the 14th; counting back ten days from Sunday gives Thursday.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f3",
+    "code": "AFNS-Q-755",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 755. Boyle's law graph is a:",
+    "options": [
+      {
+        "id": "80000000-0000-02f3-0000-000000000001",
+        "label": "A",
+        "text": "Straight line"
+      },
+      {
+        "id": "80000000-0000-02f3-0000-000000000002",
+        "label": "B",
+        "text": "Hyperbola"
+      },
+      {
+        "id": "80000000-0000-02f3-0000-000000000003",
+        "label": "C",
+        "text": "Parabola"
+      },
+      {
+        "id": "80000000-0000-02f3-0000-000000000004",
+        "label": "D",
+        "text": "Circle"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f3-0000-000000000002",
+    "explanation": "At fixed temperature, P = constant/V produces a rectangular hyperbola on a pressure-versus-volume graph.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f4",
+    "code": "AFNS-Q-756",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 756. Choose the antonym of \"Transparent.\"",
+    "options": [
+      {
+        "id": "80000000-0000-02f4-0000-000000000001",
+        "label": "A",
+        "text": "Clear"
+      },
+      {
+        "id": "80000000-0000-02f4-0000-000000000002",
+        "label": "B",
+        "text": "Bright"
+      },
+      {
+        "id": "80000000-0000-02f4-0000-000000000003",
+        "label": "C",
+        "text": "Opaque"
+      },
+      {
+        "id": "80000000-0000-02f4-0000-000000000004",
+        "label": "D",
+        "text": "Visible"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f4-0000-000000000003",
+    "explanation": "Transparent allows light through, whereas opaque blocks transmission.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f5",
+    "code": "AFNS-Q-757",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 757. Choose the antonym of \"Reluctant.\"",
+    "options": [
+      {
+        "id": "80000000-0000-02f5-0000-000000000001",
+        "label": "A",
+        "text": "Unwilling"
+      },
+      {
+        "id": "80000000-0000-02f5-0000-000000000002",
+        "label": "B",
+        "text": "Hesitant"
+      },
+      {
+        "id": "80000000-0000-02f5-0000-000000000003",
+        "label": "C",
+        "text": "Willing"
+      },
+      {
+        "id": "80000000-0000-02f5-0000-000000000004",
+        "label": "D",
+        "text": "Doubtful"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f5-0000-000000000003",
+    "explanation": "Reluctant means unwilling, while willing expresses readiness to act.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f6",
+    "code": "AFNS-Q-758",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 758. Choose the correct sentence:",
+    "options": [
+      {
+        "id": "80000000-0000-02f6-0000-000000000001",
+        "label": "A",
+        "text": "Neither of the boys are present."
+      },
+      {
+        "id": "80000000-0000-02f6-0000-000000000002",
+        "label": "B",
+        "text": "Neither of the boys is present."
+      },
+      {
+        "id": "80000000-0000-02f6-0000-000000000003",
+        "label": "C",
+        "text": "Neither boys is present."
+      },
+      {
+        "id": "80000000-0000-02f6-0000-000000000004",
+        "label": "D",
+        "text": "Neither the boys are present."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f6-0000-000000000002",
+    "explanation": "Neither used as the subject with of the boys takes the singular verb is.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f7",
+    "code": "AFNS-Q-759",
+    "subject": "GENERAL_KNOWLEDGE",
+    "subjectName": "General Knowledge",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 759. Choose the correctly spelled word:",
+    "options": [
+      {
+        "id": "80000000-0000-02f7-0000-000000000001",
+        "label": "A",
+        "text": "Accomodation"
+      },
+      {
+        "id": "80000000-0000-02f7-0000-000000000002",
+        "label": "B",
+        "text": "Acommodation"
+      },
+      {
+        "id": "80000000-0000-02f7-0000-000000000003",
+        "label": "C",
+        "text": "Accommodation"
+      },
+      {
+        "id": "80000000-0000-02f7-0000-000000000004",
+        "label": "D",
+        "text": "Accommadation"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f7-0000-000000000003",
+    "explanation": "Accommodation is spelled with two c letters and two m letters.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f8",
+    "code": "AFNS-Q-760",
+    "subject": "ACADEMIC_PHYSICS",
+    "subjectName": "Chemistry & Academic",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 760. The hybridization of carbon atoms in ethyne (C2H2) is:",
+    "options": [
+      {
+        "id": "80000000-0000-02f8-0000-000000000001",
+        "label": "A",
+        "text": "sp^3"
+      },
+      {
+        "id": "80000000-0000-02f8-0000-000000000002",
+        "label": "B",
+        "text": "sp^2"
+      },
+      {
+        "id": "80000000-0000-02f8-0000-000000000003",
+        "label": "C",
+        "text": "sp"
+      },
+      {
+        "id": "80000000-0000-02f8-0000-000000000004",
+        "label": "D",
+        "text": "dsp^2"
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f8-0000-000000000003",
+    "explanation": "Each carbon in ethyne has two sigma-bond directions and linear sp hybridization.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002f9",
+    "code": "AFNS-Q-761",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 761. Choose the correct sentence:",
+    "options": [
+      {
+        "id": "80000000-0000-02f9-0000-000000000001",
+        "label": "A",
+        "text": "If I was you, I will study harder."
+      },
+      {
+        "id": "80000000-0000-02f9-0000-000000000002",
+        "label": "B",
+        "text": "If I were you, I would study harder."
+      },
+      {
+        "id": "80000000-0000-02f9-0000-000000000003",
+        "label": "C",
+        "text": "If I am you, I would studied harder."
+      },
+      {
+        "id": "80000000-0000-02f9-0000-000000000004",
+        "label": "D",
+        "text": "If I were you, I will studied harder."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02f9-0000-000000000002",
+    "explanation": "The hypothetical second conditional uses were in the if-clause and would plus the base verb.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  {
+    "id": "70000000-0000-0000-0000-0000000002fa",
+    "code": "AFNS-Q-762",
+    "subject": "ACADEMIC_ENGLISH",
+    "subjectName": "English",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "AFNS--Q no 762. Choose the correct sentence:",
+    "options": [
+      {
+        "id": "80000000-0000-02fa-0000-000000000001",
+        "label": "A",
+        "text": "Neither of the students are present."
+      },
+      {
+        "id": "80000000-0000-02fa-0000-000000000002",
+        "label": "B",
+        "text": "Neither of the students is present."
+      },
+      {
+        "id": "80000000-0000-02fa-0000-000000000003",
+        "label": "C",
+        "text": "Neither students is present."
+      },
+      {
+        "id": "80000000-0000-02fa-0000-000000000004",
+        "label": "D",
+        "text": "Neither student are present."
+      }
+    ],
+    "correctOptionId": "80000000-0000-02fa-0000-000000000002",
+    "explanation": "Neither as the head of the subject phrase takes singular is.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "AFNS Examination Board",
+    "tags": [
+      "AFNS",
+      "AFNS Academic",
+      "Army Nursing"
+    ],
+    "updatedAt": "2026-10-06"
+  }
+];
