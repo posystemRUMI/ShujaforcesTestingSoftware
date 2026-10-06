@@ -734,28 +734,10 @@ export const TestBuilderPage: React.FC = () => {
                                   type="checkbox"
                                   checked={isSelected}
                                   onChange={(e) => {
-                                    const isArmyCourse = f.branch === 'PAKISTAN_ARMY' || f.name.includes('Army') || c.code === 'PMA_LONG_COURSE' || c.code === 'AFNS' || c.name.includes('PMA') || c.name.includes('AFNS');
-                                    if (isArmyCourse) {
-                                      const armyCourses = forceCourses;
-                                      if (e.target.checked) {
-                                        const merged = [...selectedEligibilities];
-                                        armyCourses.forEach((ac) => {
-                                          if (!merged.some((x) => x.course_id === ac.id)) {
-                                            merged.push({ force_id: f.id, course_id: ac.id });
-                                          }
-                                        });
-                                        setSelectedEligibilities(merged);
-                                        toast.info('Pakistan Army: PMA Long Course & AFNS selected (Shared Syllabus & Pattern)');
-                                      } else {
-                                        const armyIds = new Set(armyCourses.map((ac) => ac.id));
-                                        setSelectedEligibilities(selectedEligibilities.filter((x) => !armyIds.has(x.course_id)));
-                                      }
+                                    if (e.target.checked) {
+                                      setSelectedEligibilities([...selectedEligibilities, { force_id: f.id, course_id: c.id }]);
                                     } else {
-                                      if (e.target.checked) {
-                                        setSelectedEligibilities([...selectedEligibilities, { force_id: f.id, course_id: c.id }]);
-                                      } else {
-                                        setSelectedEligibilities(selectedEligibilities.filter((x) => x.course_id !== c.id));
-                                      }
+                                      setSelectedEligibilities(selectedEligibilities.filter((x) => x.course_id !== c.id));
                                     }
                                   }}
                                   className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] focus:ring-[#0E1B2A] cursor-pointer"

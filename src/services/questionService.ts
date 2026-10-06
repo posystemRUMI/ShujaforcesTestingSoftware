@@ -272,12 +272,24 @@ export const questionService = {
 
     // Upsert course eligibilities
     if (payload.courseIds && payload.courseIds.length > 0) {
-      await (supabase as any).from('question_course_eligibilities').delete().eq('question_id', questionId);
-      const eligRows = payload.courseIds.map((cid) => ({
+      const qRows = payload.courseIds.map((cid) => ({
         question_id: questionId,
         course_id: cid,
       }));
-      await (supabase as any).from('question_course_eligibilities').insert(eligRows);
+
+      try {
+        await (supabase as any).from('question_courses').delete().eq('question_id', questionId);
+        await (supabase as any).from('question_courses').insert(qRows);
+      } catch (e) {
+        /* ignore */
+      }
+
+      try {
+        await (supabase as any).from('question_course_eligibilities').delete().eq('question_id', questionId);
+        await (supabase as any).from('question_course_eligibilities').insert(qRows);
+      } catch (e) {
+        /* ignore */
+      }
     }
 
     return questionId as string;
