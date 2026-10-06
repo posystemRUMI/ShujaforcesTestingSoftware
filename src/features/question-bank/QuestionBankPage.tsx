@@ -64,14 +64,15 @@ export const QuestionBankPage: React.FC = () => {
   // Sort sequentially and numerically (Verbal 1..19 -> AFNS 1..762 -> PMA 1..1630)
   filteredQuestions.sort((a, b) => {
     const parseStemNum = (str: string) => {
-      const m = str.match(/(?:PMA|V|AFNS)--Q\s*(?:no\.?|#)?\s*(\d+)/i) || str.match(/(?:PMA|VERBAL|AFNS)-Q-(\d+)/i);
+      const m = str.match(/(?:PMA|NV|V|AFNS)--Q\s*(?:no\.?|#)?\s*(\d+)/i) || str.match(/(?:PMA|NON-VERBAL|VERBAL|AFNS)-Q-(\d+)/i);
       return m ? parseInt(m[1], 10) : 999999;
     };
 
     const getPrefixGroup = (str: string) => {
       if (str.includes('V--Q') || str.includes('VERBAL')) return 1;
-      if (str.includes('AFNS')) return 2;
-      return 3;
+      if (str.includes('NV--Q') || str.includes('NON-VERBAL')) return 2;
+      if (str.includes('AFNS')) return 3;
+      return 4;
     };
 
     const groupA = getPrefixGroup(a.stem + a.code);
@@ -112,9 +113,9 @@ export const QuestionBankPage: React.FC = () => {
 
   // Metrics
   const totalCount = questions.length;
-  const verbalCount = questions.filter((q) => q.subject === 'INTELLIGENCE_VERBAL').length;
-  const nonVerbalCount = questions.filter((q) => q.subject === 'INTELLIGENCE_NON_VERBAL').length;
-  const academicCount = questions.filter((q) => q.subject.startsWith('ACADEMIC_')).length;
+  const verbalCount = questions.filter((q) => q.subject === 'INTELLIGENCE_VERBAL' || q.code.startsWith('VERBAL')).length;
+  const nonVerbalCount = questions.filter((q) => q.subject === 'INTELLIGENCE_NON_VERBAL' || q.code.startsWith('NON-VERBAL') || q.tags?.includes('Non-Verbal')).length;
+  const academicCount = questions.filter((q) => q.subject.startsWith('ACADEMIC_') || q.code.startsWith('PMA') || q.code.startsWith('AFNS')).length;
   const approvedCount = questions.filter((q) => q.status === 'APPROVED').length;
 
   return (

@@ -4931,6 +4931,506 @@ export const mockQuestions: Question[] = [
     "isVerified": true
   },
   {
+    "id": "45000000-0000-0000-0000-000000000001",
+    "code": "NON-VERBAL-Q-001",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 1. Select the figure that completes the 3x3 grid pattern when rotated 90 degrees clockwise.",
+    "options": [
+      {
+        "id": "46000000-0000-0001-0000-000000000001",
+        "label": "A",
+        "text": "Figure A (Single Shaded Triangle)"
+      },
+      {
+        "id": "46000000-0000-0001-0000-000000000002",
+        "label": "B",
+        "text": "Figure B (Double Shaded Quadrant)"
+      },
+      {
+        "id": "46000000-0000-0001-0000-000000000003",
+        "label": "C",
+        "text": "Figure C (Inverted Diagonal Bar)"
+      },
+      {
+        "id": "46000000-0000-0001-0000-000000000004",
+        "label": "D",
+        "text": "Figure D (Crossed Circle)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0001-0000-000000000002",
+    "explanation": "Rotating the previous cell 90 degrees clockwise produces Figure B with the double shaded quadrant.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000002",
+    "code": "NON-VERBAL-Q-002",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 2. Which figure is the odd one out among the four geometric shapes?",
+    "options": [
+      {
+        "id": "46000000-0000-0002-0000-000000000001",
+        "label": "A",
+        "text": "Shape A (4 Dots Inside Hexagon)"
+      },
+      {
+        "id": "46000000-0000-0002-0000-000000000002",
+        "label": "B",
+        "text": "Shape B (3 Dots Inside Pentagon)"
+      },
+      {
+        "id": "46000000-0000-0002-0000-000000000003",
+        "label": "C",
+        "text": "Shape C (5 Dots Inside Quadrilateral)"
+      },
+      {
+        "id": "46000000-0000-0002-0000-000000000004",
+        "label": "D",
+        "text": "Shape D (2 Dots Inside Triangle)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0002-0000-000000000003",
+    "explanation": "In shapes A, B, and D, the number of dots is 2 less than the number of polygon sides. Shape C has 5 dots inside a 4-sided quadrilateral, breaking the pattern.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000003",
+    "code": "NON-VERBAL-Q-003",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 3. Identify the missing pattern in the 2x2 figure matrix series.",
+    "options": [
+      {
+        "id": "46000000-0000-0003-0000-000000000001",
+        "label": "A",
+        "text": "Pattern A (Shaded Center Circle)"
+      },
+      {
+        "id": "46000000-0000-0003-0000-000000000002",
+        "label": "B",
+        "text": "Pattern B (Hatched Diamond)"
+      },
+      {
+        "id": "46000000-0000-0003-0000-000000000003",
+        "label": "C",
+        "text": "Pattern C (Blank Square)"
+      },
+      {
+        "id": "46000000-0000-0003-0000-000000000004",
+        "label": "D",
+        "text": "Pattern D (Double Concentric Ring)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0003-0000-000000000001",
+    "explanation": "The horizontal rule requires shading the inner element; Pattern A provides the shaded center circle.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000004",
+    "code": "NON-VERBAL-Q-004",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 4. Select the correct mirror image of the given asymmetrical arrow diagram.",
+    "options": [
+      {
+        "id": "46000000-0000-0004-0000-000000000001",
+        "label": "A",
+        "text": "Diagram A (Arrow Pointing Left)"
+      },
+      {
+        "id": "46000000-0000-0004-0000-000000000002",
+        "label": "B",
+        "text": "Diagram B (Arrow Pointing Right)"
+      },
+      {
+        "id": "46000000-0000-0004-0000-000000000003",
+        "label": "C",
+        "text": "Diagram C (Inverted Arrow Down)"
+      },
+      {
+        "id": "46000000-0000-0004-0000-000000000004",
+        "label": "D",
+        "text": "Diagram D (Vertical Arrow Up)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0004-0000-000000000001",
+    "explanation": "Mirror reflection across a vertical axis flips horizontal direction from right to left.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000005",
+    "code": "NON-VERBAL-Q-005",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 5. Which shape continues the sequence of 45-degree rotational transformations?",
+    "options": [
+      {
+        "id": "46000000-0000-0005-0000-000000000001",
+        "label": "A",
+        "text": "Shape 1 (Vertical Axis Alignment)"
+      },
+      {
+        "id": "46000000-0000-0005-0000-000000000002",
+        "label": "B",
+        "text": "Shape 2 (Diagonal Right Tilt)"
+      },
+      {
+        "id": "46000000-0000-0005-0000-000000000003",
+        "label": "C",
+        "text": "Shape 3 (Horizontal Axis Alignment)"
+      },
+      {
+        "id": "46000000-0000-0005-0000-000000000004",
+        "label": "D",
+        "text": "Shape 4 (Diagonal Left Tilt)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0005-0000-000000000002",
+    "explanation": "Continuing a 45-degree clockwise rotation from 0 degrees yields the diagonal right tilt (Shape 2).",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000006",
+    "code": "NON-VERBAL-Q-006",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 6. Determine the number of hidden triangles in the given star polygon diagram.",
+    "options": [
+      {
+        "id": "46000000-0000-0006-0000-000000000001",
+        "label": "A",
+        "text": "8 Triangles"
+      },
+      {
+        "id": "46000000-0000-0006-0000-000000000002",
+        "label": "B",
+        "text": "10 Triangles"
+      },
+      {
+        "id": "46000000-0000-0006-0000-000000000003",
+        "label": "C",
+        "text": "12 Triangles"
+      },
+      {
+        "id": "46000000-0000-0006-0000-000000000004",
+        "label": "D",
+        "text": "16 Triangles"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0006-0000-000000000003",
+    "explanation": "Counting 6 small outer triangles plus 6 inner overlapping large triangles yields 12 total triangles.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000007",
+    "code": "NON-VERBAL-Q-007",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 7. Find the figure that completes the symmetrical pattern across both axes.",
+    "options": [
+      {
+        "id": "46000000-0000-0007-0000-000000000001",
+        "label": "A",
+        "text": "Quadrant A (Symmetrical Cross)"
+      },
+      {
+        "id": "46000000-0000-0007-0000-000000000002",
+        "label": "B",
+        "text": "Quadrant B (Diagonal Hatching)"
+      },
+      {
+        "id": "46000000-0000-0007-0000-000000000003",
+        "label": "C",
+        "text": "Quadrant C (Solid Black Corner)"
+      },
+      {
+        "id": "46000000-0000-0007-0000-000000000004",
+        "label": "D",
+        "text": "Quadrant D (Dotted Ring)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0007-0000-000000000001",
+    "explanation": "Bilateral symmetry requires Quadrant A to balance the left-hand patterns.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000008",
+    "code": "NON-VERBAL-Q-008",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 8. Select the figure that is identical to the unfolded 3D cube net model.",
+    "options": [
+      {
+        "id": "46000000-0000-0008-0000-000000000001",
+        "label": "A",
+        "text": "Cube A (Top Face Dot)"
+      },
+      {
+        "id": "46000000-0000-0008-0000-000000000002",
+        "label": "B",
+        "text": "Cube B (Side Cross & Top Dot)"
+      },
+      {
+        "id": "46000000-0000-0008-0000-000000000003",
+        "label": "C",
+        "text": "Cube C (Blank Faces)"
+      },
+      {
+        "id": "46000000-0000-0008-0000-000000000004",
+        "label": "D",
+        "text": "Cube D (Bottom Diagonal Stripe)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0008-0000-000000000002",
+    "explanation": "Folding the net brings the cross and dot into adjacent top and front faces.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-000000000009",
+    "code": "NON-VERBAL-Q-009",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 9. Which diagram represents the correct Venn relationship between Polygons, Squares, and Triangles?",
+    "options": [
+      {
+        "id": "46000000-0000-0009-0000-000000000001",
+        "label": "A",
+        "text": "Diagram A (Two Disjoint Circles Inside Large Circle)"
+      },
+      {
+        "id": "46000000-0000-0009-0000-000000000002",
+        "label": "B",
+        "text": "Diagram B (Three Intersecting Equal Circles)"
+      },
+      {
+        "id": "46000000-0000-0009-0000-000000000003",
+        "label": "C",
+        "text": "Diagram C (Concentric Concentric Rings)"
+      },
+      {
+        "id": "46000000-0000-0009-0000-000000000004",
+        "label": "D",
+        "text": "Diagram D (Single Isolated Circle)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-0009-0000-000000000001",
+    "explanation": "Squares and Triangles are distinct sub-categories contained entirely within the master set of Polygons.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
+    "id": "45000000-0000-0000-0000-00000000000a",
+    "code": "NON-VERBAL-Q-010",
+    "subject": "INTELLIGENCE_NON_VERBAL",
+    "subjectName": "Non-Verbal Intelligence",
+    "branch": "PAKISTAN_ARMY",
+    "stem": "NV--Q no 10. Choose the figure that completes the water reflection image of the figure.",
+    "options": [
+      {
+        "id": "46000000-0000-000a-0000-000000000001",
+        "label": "A",
+        "text": "Image A (Inverted Top-Down Reflection)"
+      },
+      {
+        "id": "46000000-0000-000a-0000-000000000002",
+        "label": "B",
+        "text": "Image B (Horizontal Left-Right Flip)"
+      },
+      {
+        "id": "46000000-0000-000a-0000-000000000003",
+        "label": "C",
+        "text": "Image C (Identical Copy)"
+      },
+      {
+        "id": "46000000-0000-000a-0000-000000000004",
+        "label": "D",
+        "text": "Image D (90 Degree Rotation)"
+      }
+    ],
+    "correctOptionId": "46000000-0000-000a-0000-000000000001",
+    "explanation": "Water reflection flips images vertically along the horizontal base line.",
+    "difficulty": "MEDIUM",
+    "timeLimitSeconds": 30,
+    "status": "APPROVED",
+    "authorName": "Forces Intelligence Board",
+    "tags": [
+      "Non-Verbal",
+      "Intelligence",
+      "PMA",
+      "AFNS",
+      "TestDummy"
+    ],
+    "updatedAt": "2026-10-06",
+    "courseIds": [
+      "10000000-0000-0000-0000-000000000001",
+      "00000000-0000-0000-0000-000000000101",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "isVerified": true
+  },
+  {
     "id": "75000000-0000-0000-0000-000000000217",
     "code": "PMA-Q-535",
     "subject": "GENERAL_KNOWLEDGE",
