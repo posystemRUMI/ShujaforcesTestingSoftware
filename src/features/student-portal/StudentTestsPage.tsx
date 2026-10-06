@@ -22,18 +22,19 @@ export const StudentTestsPage: React.FC = () => {
     async function fetchTestsAndResults() {
       try {
         if (isSupabaseConfigured()) {
-          const [assignedTests, dbResults] = await Promise.all([
+          const [assignedTests, allTests, dbResults] = await Promise.all([
             testService.getStudentAssignedTests(user?.cadetId || user?.id || '').catch(() => []),
+            testService.getTests().catch(() => []),
             resultService.getResults({ studentId: user?.cadetId || user?.id }).catch(() => [] as ResultRecord[]),
           ]);
 
-          let rawTests = assignedTests;
-          
-          // Fallback to platform published tests if assigned tests list is empty
-          if (!rawTests || rawTests.length === 0) {
-            const allTests = await testService.getTests().catch(() => []);
-            rawTests = allTests.filter((t) => t.status === 'PUBLISHED' || t.status === 'ACTIVE');
-          }
+          const activePublished = (allTests || []).filter((t) => t.status === 'PUBLISHED' || t.status === 'ACTIVE');
+
+          const testMap = new Map<string, any>();
+          (activePublished || []).forEach((t) => testMap.set(t.id, t));
+          (assignedTests || []).forEach((t) => testMap.set(t.id, t));
+
+          const rawTests = Array.from(testMap.values());
 
           if (rawTests && rawTests.length > 0) {
             const mapped: TestBlueprint[] = rawTests.map((t: any) => {
@@ -41,7 +42,7 @@ export const StudentTestsPage: React.FC = () => {
               const courseTarget = t.courses?.name || t.course_name || user?.courseName || user?.courseTarget || 'PMA Long Course';
               return {
                 id: t.id,
-                code: t.name.slice(0, 8),
+                code: t.code || t.name.slice(0, 12),
                 title: t.name,
                 branch: testBranch,
                 courseTarget: courseTarget,

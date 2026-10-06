@@ -349,9 +349,9 @@ export const StudentDashboardPage: React.FC = () => {
               (t) =>
                 t.title.toLowerCase().includes(pConfig.testName.toLowerCase()) ||
                 t.code.toLowerCase().includes(pConfig.code.toLowerCase())
-            ) || tests[0];
+            );
 
-            const dbTestId = matchedDbTest?.id || `test-${pConfig.code}`;
+            const dbTestId = matchedDbTest?.id || (tests[0]?.id || `test-${pConfig.code}`);
             const testResult = results.find((r) => r.testId === matchedDbTest?.id);
 
             return (
