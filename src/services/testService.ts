@@ -46,6 +46,10 @@ export interface TestSectionRecord {
   subject_id: string | null;
   marks_per_question: number;
   shuffle_questions: boolean;
+  section_code?: string | null;
+  source_template_section_id?: string | null;
+  is_mandatory?: boolean | null;
+  passing_percentage?: number | null;
 }
 
 export interface TestAssignmentRecord {
@@ -381,15 +385,16 @@ export const testService = {
 
       // Manual questions assignment if provided
       if (sec.question_ids && sec.question_ids.length > 0) {
-        const rows = sec.question_ids.map((qId, qIdx) => ({
+        const uniqueQIds = Array.from(new Set(sec.question_ids));
+        const rows = uniqueQIds.map((qId, qIdx) => ({
           test_section_id: createdSec.id,
           question_id: qId,
           position: qIdx + 1,
+          marks: 1,
         }));
-        try {
-          await supabase.from('test_section_questions').insert(rows);
-        } catch (mErr) {
-          console.warn('Notice attaching manual questions:', mErr);
+        const { error: mErr } = await supabase.from('test_section_questions').insert(rows);
+        if (mErr) {
+          throw new Error(`Failed to assign questions to section "${sec.name}": ${mErr.message}`);
         }
       }
 
@@ -423,6 +428,263 @@ export const testService = {
 
     return createdTest;
   },
+
+  /**
+   * Fetch full test details including eligibilities, sections, and exact assigned questions.
+   * Used by Test Builder when editing an existing test.
+   */
+  async getTestWithFullDetails(testId: string): Promise<FullTestDetails | null> {
+    if (!isSupabaseConfigured() || !testId) return null;
+
+    const [testRes, eligRes, sectionsRes] = await Promise.all([
+      supabase.from('tests').select('*').eq('id', testId).single(),
+      supabase.from('test_eligible_courses').select('force_id, course_id').eq('test_id', testId),
+      supabase.from('test_sections').select('*').eq('test_id', testId).order('position', { ascending: true }),
+    ]);
+
+    if (testRes.error || !testRes.data) return null;
+
+    const sections = (sectionsRes.data || []) as TestSectionRecord[];
+    const sectionIds = sections.map((s) => s.id);
+
+    let tsqRows: Array<{ test_section_id: string; question_id: string; position: number }> = [];
+    if (sectionIds.length > 0) {
+      const { data } = await supabase
+        .from('test_section_questions')
+        .select('test_section_id, question_id, position')
+        .in('test_section_id', sectionIds)
+        .order('position', { ascending: true });
+      tsqRows = data || [];
+    }
+
+    const qMap = new Map<string, string[]>();
+    for (const row of tsqRows) {
+      if (!qMap.has(row.test_section_id)) {
+        qMap.set(row.test_section_id, []);
+      }
+      qMap.get(row.test_section_id)!.push(row.question_id);
+    }
+
+    const fullSections: FullTestSectionDetails[] = sections.map((s) => ({
+      ...s,
+      question_ids: qMap.get(s.id) || [],
+    }));
+
+    return {
+      test: testRes.data as TestRecord,
+      eligibilities: eligRes.data || [],
+      sections: fullSections,
+    };
+  },
+
+  /**
+   * Atomically upserts question assignments for a section.
+   * Removes existing assignments and inserts the exact provided list in order.
+   * Updates test_sections.question_count to stay strictly synchronized.
+   */
+  async upsertSectionQuestions(sectionId: string, questionIds: string[]): Promise<number> {
+    if (!isSupabaseConfigured()) return questionIds.length;
+
+    // Deduplicate while preserving order
+    const uniqueIds = Array.from(new Set(questionIds.filter(Boolean)));
+
+    // 1. Delete existing assignments
+    const { error: delErr } = await supabase
+      .from('test_section_questions')
+      .delete()
+      .eq('test_section_id', sectionId);
+    if (delErr) {
+      throw new Error(`Failed to clear existing section questions: ${delErr.message}`);
+    }
+
+    // 2. Insert new assignments in exact order
+    if (uniqueIds.length > 0) {
+      const rows = uniqueIds.map((qId, idx) => ({
+        test_section_id: sectionId,
+        question_id: qId,
+        position: idx + 1,
+        marks: 1,
+      }));
+
+      const { error: insErr } = await supabase.from('test_section_questions').insert(rows);
+      if (insErr) {
+        throw new Error(`Failed to assign questions to section: ${insErr.message}`);
+      }
+    }
+
+    // 3. Keep test_sections.question_count synchronized
+    await supabase
+      .from('test_sections')
+      .update({ question_count: uniqueIds.length })
+      .eq('id', sectionId);
+
+    return uniqueIds.length;
+  },
+
+  /**
+   * Unified upsert for tests.
+   * If testId is provided, updates the existing test in-place (no duplicate created).
+   * If testId is omitted, creates a new test.
+   * Enforces exact question count validation and atomic section/question synchronization.
+   */
+  async upsertTest(payload: UpsertTestPayload): Promise<TestRecord> {
+    // 1. Validate exact counts for all sections
+    for (const sec of payload.sections) {
+      const allocated = (sec.question_ids || []).length;
+      if (allocated !== sec.question_count) {
+        throw new Error(
+          `Section "${sec.name}" requires exactly ${sec.question_count} questions, but has ${allocated} assigned.`
+        );
+      }
+    }
+
+    // 2. If no testId, delegate to compileTestFromPattern
+    if (!payload.testId) {
+      return this.compileTestFromPattern(payload);
+    }
+
+    if (!isSupabaseConfigured()) {
+      return {
+        ...payload.test,
+        id: payload.testId,
+      } as TestRecord;
+    }
+
+    const totalMarks = payload.sections.reduce((acc, s) => acc + s.question_count, 0);
+    const durationMinutes = payload.sections.reduce((acc, s) => acc + s.duration_minutes, 0);
+
+    // 3. Update existing test record
+    const { data: updatedTest, error: testErr } = await supabase
+      .from('tests')
+      .update({
+        name: payload.test.name,
+        description: payload.test.description ?? null,
+        passing_threshold: payload.test.passing_threshold ?? 50,
+        total_marks: totalMarks,
+        duration_minutes: durationMinutes,
+        shuffle_questions: payload.test.shuffle_questions ?? true,
+        shuffle_options: payload.test.shuffle_options ?? true,
+        allow_section_navigation: payload.test.allow_section_navigation ?? false,
+        show_result_immediately: payload.test.show_result_immediately ?? true,
+        show_answer_review: payload.test.show_answer_review ?? true,
+        negative_marking: payload.test.negative_marking ?? false,
+        negative_mark_value: payload.test.negative_mark_value ?? 0,
+        template_id: payload.test.template_id || undefined,
+        template_version: payload.test.template_version ?? 1,
+        test_type: payload.test.test_type ?? 'FULL',
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', payload.testId)
+      .select()
+      .single();
+
+    if (testErr || !updatedTest) {
+      throw new Error(`Failed to update test record: ${testErr?.message || 'Unknown error'}`);
+    }
+
+    // 4. Update eligible courses
+    if (payload.eligibilities && payload.eligibilities.length > 0) {
+      await supabase.from('test_eligible_courses').delete().eq('test_id', payload.testId);
+      const eligRows = payload.eligibilities.map((e) => ({
+        test_id: payload.testId!,
+        force_id: e.force_id,
+        course_id: e.course_id,
+      }));
+      await supabase.from('test_eligible_courses').insert(eligRows);
+    }
+
+    // 5. Sync Sections & Questions
+    const { data: existingSecs } = await supabase
+      .from('test_sections')
+      .select('id, name')
+      .eq('test_id', payload.testId);
+
+    const existingSecMap = new Map((existingSecs || []).map((s) => [s.id, s]));
+    const retainedSecIds = new Set<string>();
+
+    for (let i = 0; i < payload.sections.length; i++) {
+      const sec = payload.sections[i];
+      let sectionId = sec.id;
+      const alreadyExists = Boolean(sectionId && existingSecMap.has(sectionId));
+
+      const secPayload: any = {
+        name: sec.name,
+        position: i + 1,
+        question_count: sec.question_ids.length,
+        duration_minutes: sec.duration_minutes,
+        subject_id: sec.subject_id || null,
+        section_code: sec.section_code || null,
+        source_template_section_id: sec.source_template_section_id || null,
+        passing_percentage: sec.passing_percentage || 50,
+        is_mandatory: sec.is_mandatory ?? false,
+      };
+
+      if (alreadyExists && sectionId) {
+        const { error: secUpErr } = await supabase
+          .from('test_sections')
+          .update(secPayload)
+          .eq('id', sectionId);
+        if (secUpErr) throw secUpErr;
+      } else {
+        secPayload.test_id = payload.testId;
+        const { data: newSec, error: secInsErr } = await supabase
+          .from('test_sections')
+          .insert(secPayload)
+          .select()
+          .single();
+        if (secInsErr || !newSec) throw secInsErr || new Error(`Failed to create section ${sec.name}`);
+        sectionId = newSec.id;
+      }
+
+      retainedSecIds.add(sectionId!);
+
+      // Save exact question composition
+      await this.upsertSectionQuestions(sectionId!, sec.question_ids);
+    }
+
+    // 6. Delete sections that were removed
+    for (const oldSec of (existingSecs || [])) {
+      if (!retainedSecIds.has(oldSec.id)) {
+        await supabase.from('test_section_questions').delete().eq('test_section_id', oldSec.id);
+        await supabase.from('test_sections').delete().eq('id', oldSec.id);
+      }
+    }
+
+    return updatedTest as TestRecord;
+  },
 };
 
+export interface FullTestSectionDetails extends TestSectionRecord {
+  question_ids: string[];
+}
+
+export interface FullTestDetails {
+  test: TestRecord;
+  eligibilities: Array<{ force_id: string; course_id: string }>;
+  sections: FullTestSectionDetails[];
+}
+
+export interface UpsertTestPayload {
+  testId?: string | null;
+  eligibilities?: Array<{ force_id: string; course_id: string }>;
+  test: Partial<TestRecord>;
+  sections: Array<{
+    id?: string;
+    name: string;
+    section_code?: string;
+    source_template_section_id?: string;
+    position: number;
+    question_count: number;
+    duration_minutes: number;
+    subject_id?: string | null;
+    subject_ids?: string[];
+    is_mandatory?: boolean;
+    passing_percentage?: number;
+    question_ids: string[];
+  }>;
+  batchId?: string;
+  autoGenerateQuestions?: boolean;
+}
+
 export default testService;
+

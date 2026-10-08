@@ -60,8 +60,13 @@ export const SectionPerformance: React.FC<SectionPerformanceProps> = ({ sections
               </div>
 
               <div className="mt-3 flex items-baseline justify-between">
-                <div className="text-2xl font-extrabold font-sans text-[#0E1B2A] tabular-nums">
-                  {sec.pct}%
+                <div>
+                  <span className="text-2xl font-extrabold font-sans text-[#0E1B2A] tabular-nums">
+                    {sec.correct}/{sec.total}
+                  </span>
+                  <span className="ml-2 text-sm font-bold text-[#64748B] tabular-nums">
+                    ({sec.pct}%)
+                  </span>
                 </div>
                 <div className="text-xs font-sans text-[#64748B] tabular-nums font-semibold">
                   Total: {sec.total} MCQs

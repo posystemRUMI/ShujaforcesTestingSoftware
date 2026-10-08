@@ -201,8 +201,9 @@ export const ExamInstructionsPage: React.FC = () => {
           <div className="flex items-start space-x-2">
             <span className="font-bold text-[#0E1B2A] font-sans tabular-nums">01.</span>
             <p>
-              <strong>Timed Execution:</strong> You have <strong>{testData?.duration_minutes || 65} minutes</strong> to complete all questions.
-              The countdown timer at the top cannot be paused once initiated.
+              <strong>Timed Execution:</strong> You have <strong>{testData?.duration_minutes ? `${testData.duration_minutes} minutes` : '—'}</strong> to complete all questions
+              (time per section as shown in the exam runner).
+
             </p>
           </div>
           <div className="flex items-start space-x-2">

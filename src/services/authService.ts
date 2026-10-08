@@ -250,6 +250,22 @@ export const authService = {
    * Terminate current tab session
    */
   async logout(): Promise<void> {
+    try {
+      // Targeted cleanup — only remove exam state keys, not all FA_/cbt_ keys
+      const examKeyPatterns = [/^FA_EXAM_/, /^cbt_session_answers_/];
+      const purgeStorage = (store: Storage) => {
+        const toRemove: string[] = [];
+        for (let i = 0; i < store.length; i++) {
+          const k = store.key(i);
+          if (k && examKeyPatterns.some(p => p.test(k))) toRemove.push(k);
+        }
+        toRemove.forEach(k => store.removeItem(k));
+      };
+      purgeStorage(localStorage);
+      purgeStorage(sessionStorage);
+    } catch {
+      /* ignore */
+    }
     if (isSupabaseConfigured()) {
       try {
         await supabase.auth.signOut();

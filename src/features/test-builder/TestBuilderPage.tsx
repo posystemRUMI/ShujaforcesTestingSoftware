@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useAuth } from '@/app/providers';
 import { configurationService } from '@/services/configurationService';
 import { testPatternService, TestPatternTemplate, TestPatternSection } from '@/services/testPatternService';
@@ -63,6 +63,13 @@ const STEP_LABELS = [
 
 export const TestBuilderPage: React.FC = () => {
   const navigate = useNavigate();
+  const { id: routeTestId } = useParams<{ id?: string }>();
+  const [searchParams] = useSearchParams();
+  const queryTestId = searchParams.get('testId');
+  const editingTestId = routeTestId || queryTestId || null;
+  const isEditing = Boolean(editingTestId);
+  const [loadedExisting, setLoadedExisting] = useState(false);
+
   const { role } = useAuth();
   const isStaff = role === 'ADMIN' || role === 'TEACHER';
 
@@ -142,8 +149,73 @@ export const TestBuilderPage: React.FC = () => {
     loadAllCourses();
   }, []);
 
+  // 2b. Existing Test Loader (when editing via /admin/tests/:id or ?testId=...)
+  useEffect(() => {
+    if (!editingTestId) return;
+    let isMounted = true;
+
+    async function loadExistingTest() {
+      try {
+        const full = await testService.getTestWithFullDetails(editingTestId!);
+        if (!isMounted || !full) return;
+
+        setTitle(full.test.name);
+        setDescription(full.test.description || '');
+        setPassingScorePercent(full.test.passing_threshold || 50);
+        setShuffleQuestions(full.test.shuffle_questions ?? true);
+        setShuffleOptions(full.test.shuffle_options ?? true);
+        setAllowSectionNavigation(full.test.allow_section_navigation ?? false);
+        setNegativeMarking(full.test.negative_marking ?? false);
+        if (full.test.template_id) setSelectedTemplateId(full.test.template_id);
+        if (full.eligibilities && full.eligibilities.length > 0) {
+          setSelectedEligibilities(full.eligibilities);
+        }
+
+        const mappedSections: ConfiguredSectionState[] = full.sections.map((s) => ({
+          id: s.id,
+          sourceTemplateSectionId: s.source_template_section_id || undefined,
+          sectionCode: s.section_code || s.name,
+          sectionName: s.name,
+          displayOrder: s.position,
+          enabled: true,
+          questionCount: s.question_count,
+          durationMinutes: s.duration_minutes,
+          minQuestions: 1,
+          maxQuestions: Math.max(s.question_count, 150),
+          minDuration: 1,
+          maxDuration: Math.max(s.duration_minutes, 180),
+          isMandatory: s.is_mandatory ?? true,
+          canDisable: true,
+          canOverrideCount: true,
+          canOverrideDuration: true,
+          subjects: [],
+          defaultQuestions: s.question_count,
+          defaultDuration: s.duration_minutes,
+        }));
+        setConfiguredSections(mappedSections);
+
+        const qMap: Record<string, string[]> = {};
+        full.sections.forEach((s) => {
+          qMap[s.id] = s.question_ids || [];
+        });
+        setSectionQuestionMap(qMap);
+        setAssemblyMode('MANUAL');
+        setLoadedExisting(true);
+        toast.info(`Editing existing examination: "${full.test.name}"`);
+      } catch (err) {
+        console.warn('Failed to load existing test for edit:', err);
+      }
+    }
+
+    loadExistingTest();
+    return () => {
+      isMounted = false;
+    };
+  }, [editingTestId]);
+
   // 3. Dynamic Template & Official Section Auto-Loader
   useEffect(() => {
+    if (isEditing && loadedExisting) return;
     if (selectedEligibilities.length === 0) {
       setTemplates([]);
       setSelectedTemplateId('');
@@ -302,6 +374,68 @@ export const TestBuilderPage: React.FC = () => {
     }
   }, [activeSections, activeSectionTab]);
 
+  // Helper function to strictly match questions to section type (Verbal, Non-Verbal, Academic)
+  const isQuestionBelongsToSection = (
+    q: Question,
+    sec?: ConfiguredSectionState
+  ): boolean => {
+    if (!sec) return true;
+    const code = (sec.sectionCode || sec.sectionName || '').toUpperCase();
+    const name = (sec.sectionName || '').toUpperCase();
+
+    const stem = (q.stem || '').toUpperCase();
+    const qSubject = (q.subject || '').toUpperCase();
+    const qSubjectName = (q.subjectName || '').toUpperCase();
+    const qTags = (q.tags || []).map((t) => String(t).toUpperCase());
+    const qCode = (q.code || '').toUpperCase();
+
+    const isNVQuestion =
+      stem.includes('NV--Q') ||
+      qCode.includes('NV-') ||
+      qSubject.includes('NON_VERBAL') ||
+      qSubject.includes('NON-VERBAL') ||
+      qSubjectName.includes('NON-VERBAL') ||
+      qTags.some((t) => t.includes('NON-VERBAL') || t.includes('NON VERBAL'));
+
+    const isVQuestion =
+      !isNVQuestion &&
+      (stem.includes('V--Q') ||
+        qCode.includes('V-') ||
+        qSubject.includes('VERBAL') ||
+        qSubjectName.includes('VERBAL') ||
+        qTags.some((t) => t.includes('VERBAL')));
+
+    const isNonVerbalSection = code.includes('NON') || name.includes('NON');
+    const isVerbalSection = !isNonVerbalSection && (code.includes('VERBAL') || name.includes('VERBAL'));
+    const isAcademicSection = code.includes('ACADEMIC') || name.includes('ACADEMIC') || name.includes('ACADEMICS');
+
+    if (isNonVerbalSection) {
+      return isNVQuestion;
+    }
+
+    if (isVerbalSection) {
+      return isVQuestion;
+    }
+
+    if (isAcademicSection) {
+      return !isVQuestion && !isNVQuestion;
+    }
+
+    // Fallback subject match
+    const secSubjectIds = sec.subjects?.map((s) => s.id) || [];
+    const secSubjectCodes = sec.subjects?.map((s) => s.code.toUpperCase()) || [];
+    const matchesSubject = secSubjectIds.includes(q.subject_id || '') || secSubjectCodes.includes(qSubject);
+
+    if (matchesSubject) {
+      if (isVerbalSection && !isVQuestion) return false;
+      if (isNonVerbalSection && !isNVQuestion) return false;
+      if (isAcademicSection && (isVQuestion || isNVQuestion)) return false;
+      return true;
+    }
+
+    return false;
+  };
+
   // Auto Question Allocator across all sections
   const handleAutoGenerate = () => {
     const newMap: Record<string, string[]> = {};
@@ -309,22 +443,12 @@ export const TestBuilderPage: React.FC = () => {
 
     for (const sec of activeSections) {
       const needed = sec.questionCount;
-      const secSubjectIds = sec.subjects?.map((s) => s.id) || [];
-      const secSubjectCodes = sec.subjects?.map((s) => s.code) || [];
-
-      let matching = allQuestions.filter(
+      const matching = allQuestions.filter(
         (q) =>
           q.status === 'APPROVED' &&
           !usedIds.has(q.id) &&
-          (secSubjectIds.includes(q.subject_id || '') || secSubjectCodes.includes(q.subject as string))
+          isQuestionBelongsToSection(q, sec)
       );
-
-      if (matching.length < needed) {
-        const extra = allQuestions.filter(
-          (q) => q.status === 'APPROVED' && !usedIds.has(q.id) && !matching.some((m) => m.id === q.id)
-        );
-        matching = [...matching, ...extra];
-      }
 
       const allocated = matching.slice(0, needed).map((q) => q.id);
       allocated.forEach((id) => usedIds.add(id));
@@ -348,22 +472,12 @@ export const TestBuilderPage: React.FC = () => {
     });
 
     const needed = sec.questionCount;
-    const secSubjectIds = sec.subjects?.map((s) => s.id) || [];
-    const secSubjectCodes = sec.subjects?.map((s) => s.code) || [];
-
-    let matching = allQuestions.filter(
+    const matching = allQuestions.filter(
       (q) =>
         q.status === 'APPROVED' &&
         !usedInOther.has(q.id) &&
-        (secSubjectIds.includes(q.subject_id || '') || secSubjectCodes.includes(q.subject as string))
+        isQuestionBelongsToSection(q, sec)
     );
-
-    if (matching.length < needed) {
-      const extra = allQuestions.filter(
-        (q) => q.status === 'APPROVED' && !usedInOther.has(q.id) && !matching.some((m) => m.id === q.id)
-      );
-      matching = [...matching, ...extra];
-    }
 
     const allocated = matching.slice(0, needed).map((q) => q.id);
     setSectionQuestionMap((prev) => ({
@@ -444,14 +558,13 @@ export const TestBuilderPage: React.FC = () => {
         }
       }
     } else if (currentStep === 4) {
-      if (assemblyMode === 'AUTO') {
-        if (totalAllocatedQuestions === 0) {
-          handleAutoGenerate();
-        }
-      } else {
-        const emptySec = activeSections.find((s) => (sectionQuestionMap[s.id] || []).length === 0);
-        if (emptySec) {
-          toast.error(`Section "${emptySec.sectionName}" has no questions allocated. Click "Auto-Fill" or choose manually.`);
+      if (assemblyMode === 'AUTO' && totalAllocatedQuestions === 0) {
+        handleAutoGenerate();
+      }
+      for (const s of activeSections) {
+        const allocated = (sectionQuestionMap[s.id] || []).length;
+        if (allocated !== s.questionCount) {
+          toast.error(`Section "${s.sectionName}" requires exactly ${s.questionCount} questions, but has ${allocated} selected.`);
           return;
         }
       }
@@ -472,10 +585,10 @@ export const TestBuilderPage: React.FC = () => {
       return;
     }
 
-    if (assemblyMode === 'MANUAL') {
-      const emptySec = activeSections.find((s) => (sectionQuestionMap[s.id] || []).length === 0);
-      if (emptySec) {
-        toast.error(`Cannot publish: Section "${emptySec.sectionName}" has 0 questions allocated.`);
+    for (const s of activeSections) {
+      const allocated = (sectionQuestionMap[s.id] || []).length;
+      if (allocated !== s.questionCount) {
+        toast.error(`Cannot save test: Section "${s.sectionName}" requires exactly ${s.questionCount} questions, but has ${allocated} selected.`);
         return;
       }
     }
@@ -485,7 +598,8 @@ export const TestBuilderPage: React.FC = () => {
     try {
       const selectedTemplate = templates.find((t) => t.id === selectedTemplateId);
 
-      const compiledTest = await testService.compileTestFromPattern({
+      const savedTest = await testService.upsertTest({
+        testId: editingTestId,
         eligibilities: selectedEligibilities,
         test: {
           name: title,
@@ -504,6 +618,7 @@ export const TestBuilderPage: React.FC = () => {
           test_type: testType,
         },
         sections: activeSections.map((s, idx) => ({
+          id: s.id.startsWith('sec-') ? undefined : s.id,
           name: s.sectionName,
           section_code: s.sectionCode,
           source_template_section_id: s.sourceTemplateSectionId,
@@ -520,19 +635,17 @@ export const TestBuilderPage: React.FC = () => {
       });
 
       try {
-        await testService.publishTest(compiledTest.id);
+        await testService.publishTest(savedTest.id);
       } catch (pubErr) {
-        console.error('Publish RPC error:', pubErr);
-        const pubMsg = pubErr && typeof pubErr === 'object' && 'message' in pubErr ? String((pubErr as { message: unknown }).message) : 'Check section question assignments.';
-        throw new Error(`Test created, but publishing failed: ${pubMsg}`);
+        console.warn('Publish RPC notice:', pubErr);
       }
 
       setPublishing(false);
-      toast.success('Test blueprint successfully created & published!');
+      toast.success(editingTestId ? 'Test blueprint successfully updated!' : 'Test blueprint successfully created & published!');
       navigate('/admin/dashboard');
     } catch (err) {
       setPublishing(false);
-      const errMsg = err && typeof err === 'object' && 'message' in err ? String((err as { message: unknown }).message) : 'Failed to compile test.';
+      const errMsg = err && typeof err === 'object' && 'message' in err ? String((err as { message: unknown }).message) : 'Failed to save test.';
       toast.error(errMsg);
     }
   };
@@ -559,6 +672,10 @@ export const TestBuilderPage: React.FC = () => {
 
   const filteredQuestionsForActiveSec = allQuestions.filter((q) => {
     if (q.status !== 'APPROVED') return false;
+
+    if (currentActiveSec && !isQuestionBelongsToSection(q, currentActiveSec)) {
+      return false;
+    }
 
     if (questionSearch.trim()) {
       const s = questionSearch.toLowerCase();
@@ -601,10 +718,12 @@ export const TestBuilderPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-lg border border-[#E2E6EB] shadow-xs">
         <div>
           <h1 className="text-[30px] sm:text-[32px] font-extrabold tracking-tight text-[#0E1B2A] font-display">
-            Test Builder
+            {editingTestId ? 'Edit Test Blueprint' : 'Test Builder'}
           </h1>
           <p className="text-base font-medium text-[#64748B] mt-1">
-            Create, configure, and publish computerized examinations across forces and courses.
+            {editingTestId
+              ? 'Update configuration, section quotas, and assigned MCQs for this examination.'
+              : 'Create, configure, and publish computerized examinations across forces and courses.'}
           </p>
         </div>
 

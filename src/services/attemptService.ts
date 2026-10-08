@@ -2,12 +2,16 @@
  * Attempt Service — Production backend adapter for exam attempts
  * Bridges frozen frontend exam engine → Supabase RPCs
  * Owner: BACKEND-AGENT-2 / Claude (B26)
+ *
+ * QUESTION LOADING CONTRACT:
+ *  - Questions are always loaded from test_section_questions (persisted at test creation).
+ *  - If saved IDs ≠ configured question_count, a blocking error is thrown.
+ *  - No random selection, no padding from the full bank, no hardcoded defaults.
+ *  - Session-only (localStorage-only) attempts are NOT created. If the DB fails, an error is thrown.
  */
 import supabase, { isSupabaseConfigured } from '@/lib/supabaseClient';
 import type { Json } from '@/types/database.types';
 import { testService } from '@/services/testService';
-import { questionService } from '@/services/questionService';
-import { mockQuestions } from '@/lib/mock-data/questions';
 
 // ============================================================================
 // Types
@@ -139,6 +143,44 @@ export const attemptService = {
   },
 
   async startAttempt(testId: string): Promise<StartAttemptResult> {
+    // 0. Strict Pre-flight Validation: Verify every section has EXACT assigned question count in database
+    if (isSupabaseConfigured() && testId) {
+      const { data: testSections, error: secErr } = await (supabase as any)
+        .from('test_sections')
+        .select('id, name, question_count, duration_minutes')
+        .eq('test_id', testId)
+        .order('position', { ascending: true });
+
+      if (secErr || !testSections || testSections.length === 0) {
+        throw new Error('Test configuration is invalid: this examination has no configured sections. Please contact your instructor.');
+      }
+
+      const sectionIds = testSections.map((s: any) => s.id);
+      const { data: qRows, error: qErr } = await (supabase as any)
+        .from('test_section_questions')
+        .select('test_section_id, question_id')
+        .in('test_section_id', sectionIds);
+
+      if (qErr) {
+        throw new Error(`Failed to verify test question assignments: ${qErr.message}`);
+      }
+
+      const qCountMap: Record<string, number> = {};
+      for (const r of (qRows || [])) {
+        qCountMap[r.test_section_id] = (qCountMap[r.test_section_id] || 0) + 1;
+      }
+
+      for (const sec of testSections) {
+        const assignedCount = qCountMap[sec.id] || 0;
+        if (assignedCount !== sec.question_count) {
+          throw new Error(
+            `Test configuration is invalid: section "${sec.name}" requires ${sec.question_count} questions but only ${assignedCount} are assigned. ` +
+            `The test administrator must assign the required questions before testing can begin.`
+          );
+        }
+      }
+    }
+
     try {
       const { data, error } = await (supabase as any).rpc('start_test_attempt', {
         p_test_id: testId,
@@ -146,9 +188,19 @@ export const attemptService = {
       if (!error && data && data.attempt_id) {
         return data as unknown as StartAttemptResult;
       }
-      if (error) throw error;
+      if (error) {
+        // If error is configuration, auth, or validation error, rethrow directly
+        const msg = error.message || '';
+        if (msg.includes('requires') || msg.includes('configuration') || msg.includes('Access Denied') || msg.includes('Only registered')) {
+          throw new Error(msg);
+        }
+        throw error;
+      }
     } catch (rpcErr: any) {
-      console.warn('start_test_attempt RPC failed, applying automatic fallback assignment & attempt creation:', rpcErr);
+      if (rpcErr.message?.includes('requires') || rpcErr.message?.includes('configuration') || rpcErr.message?.includes('Access Denied')) {
+        throw rpcErr;
+      }
+      console.warn('start_test_attempt RPC notice, checking fallback assignment & attempt creation:', rpcErr);
 
       if (isSupabaseConfigured()) {
         try {
@@ -238,7 +290,7 @@ export const attemptService = {
               .eq('id', testId)
               .maybeSingle();
 
-            const durationMin = testData?.duration_minutes || 65;
+            const durationMin = testData?.duration_minutes || 30;
             const expiresAt = new Date(Date.now() + durationMin * 60000).toISOString();
 
             const attemptInsertData: any = {
@@ -287,36 +339,14 @@ export const attemptService = {
         }
       }
 
-      // Safe Active Session Attempt Fallback (Zero crash guarantee)
-      const sessionAttemptId = `session-attempt-${testId}-${Date.now()}`;
-      try {
-        sessionStorage.setItem(`cbt_session_attempt_${sessionAttemptId}`, JSON.stringify({
-          testId,
-          startedAt: new Date().toISOString(),
-        }));
-      } catch {
-        // ignore
-      }
-
-      return {
-        attempt_id: sessionAttemptId,
-        attempt_number: 1,
-        started_at: new Date().toISOString(),
-        expires_at: new Date(Date.now() + 65 * 60000).toISOString(),
-        server_time: new Date().toISOString(),
-        resumed: false,
-      };
+      // All DB paths exhausted — throw a clear error. Do NOT create an ungradeable ghost session.
+      throw new Error(
+        'Unable to create your exam attempt. Please check your internet connection and try again, or contact your proctor.'
+      );
     }
 
-    const defaultSessionAttemptId = `session-attempt-${testId}-${Date.now()}`;
-    return {
-      attempt_id: defaultSessionAttemptId,
-      attempt_number: 1,
-      started_at: new Date().toISOString(),
-      expires_at: new Date(Date.now() + 65 * 60000).toISOString(),
-      server_time: new Date().toISOString(),
-      resumed: false,
-    };
+    // If Supabase is not configured throw as well — no fallback sessions.
+    throw new Error('Examination system is not configured. Please contact your proctor.');
   },
 
   async getSafeExamPayload(attemptId: string): Promise<SafeExamPayload> {
@@ -325,141 +355,351 @@ export const attemptService = {
         const { data, error } = await (supabase as any).rpc('get_safe_exam_payload', {
           p_attempt_id: attemptId,
         });
-        if (!error && data && data.test) {
-          return data as unknown as SafeExamPayload;
-        }
-      } catch (err) {
-        console.warn('get_safe_exam_payload RPC failed, building dynamic safe exam payload:', err);
-      }
-    }
+        if (!error && data && (data.test || data.test_id || data.test_name)) {
+          // ── Normalize whichever RPC shape is returned ──
+          // Latest RPC (20260911051500) returns a flat shape with time_remaining_seconds.
+          // Earlier RPC returns the nested SafeExamPayload shape directly.
+          // We normalise to SafeExamPayload for the runner.
+          const d = data as any;
 
-    let targetTestId = attemptId.startsWith('session-attempt-') ? attemptId.split('-')[2] : attemptId;
-    let testRecord: any = null;
-    let sections: any[] = [];
-    if (isSupabaseConfigured()) {
-      try {
-        testRecord = await testService.getTestById(targetTestId).catch(() => null);
-        if (testRecord) {
-          sections = await testService.getSections(testRecord.id).catch(() => []);
-        }
-      } catch {
-        // fallback
-      }
-    }
+          // If it's already the full SafeExamPayload shape, use it as-is
+          if (d.attempt && d.sections && Array.isArray(d.sections) && d.sections[0]?.questions !== undefined) {
+            // Enrich sections with question_count if missing
+            const enrichedSections = d.sections.map((sec: any) => ({
+              ...sec,
+              question_count: sec.question_count ?? (sec.questions?.length ?? 0),
+              duration_minutes: sec.duration_minutes,
+              started_at: sec.started_at ?? null,
+              expires_at: sec.expires_at ?? null,
+              completed_at: sec.completed_at ?? null,
+            }));
+            return { ...d, sections: enrichedSections } as unknown as SafeExamPayload;
+          }
 
-    if (!testRecord) {
-      const allTests = await testService.getTests().catch(() => []);
-      testRecord = allTests.find(t => t.id === targetTestId) || allTests[0];
-      if (testRecord) {
-        sections = await testService.getSections(testRecord.id).catch(() => []);
-      }
-    }
+          // Latest flat shape: time_remaining_seconds at root, sections[] with questions[].
+          // The RPC also returns current_section_id and current_section_status at the root.
+          const rpcCurrentSectionId: string | null = d.current_section_id || d.attempt?.current_section_id || null;
+          const rpcCurrentSectionStatus: string = d.current_section_status || 'IN_PROGRESS';
 
-    let dbQuestions = await questionService.getQuestions().catch(() => []);
-    if (!dbQuestions || dbQuestions.length === 0) {
-      dbQuestions = (mockQuestions as any) || [];
-    }
+          const sections = (d.sections || []).map((sec: any, idx: number) => {
+            const isCurrentSection = rpcCurrentSectionId
+              ? sec.id === rpcCurrentSectionId
+              : idx === 0;
 
-    const formattedSections = (sections && sections.length > 0)
-      ? sections.map((sec, idx) => {
-          const secQs = dbQuestions.filter(q => 
-            q.subject_id === sec.subject_id || 
-            q.subject === sec.subject_id ||
-            q.subjectName === sec.name
-          ).slice(0, sec.question_count || 50);
+            // Sections before the current one are completed — lock them.
+            // The RPC returns them in position order; any section appearing before the
+            // current one in the list that is not the current section is already done.
+            const isBefore = rpcCurrentSectionId
+              ? (d.sections || []).findIndex((s: any) => s.id === rpcCurrentSectionId) > idx
+              : false;
 
-          const safeQs = (secQs.length > 0 ? secQs : dbQuestions.slice(idx * 25, (idx + 1) * 25)).map(q => ({
-            id: q.id,
-            code: q.code,
-            stem: q.stem,
-            stem_image_url: q.imageUrl || null,
-            subject_id: q.subject_id || sec.id,
-            options: (q.options || []).map(o => ({
-              id: o.id,
-              label: o.label,
-              text: o.text,
-              image_url: o.imageUrl || null,
-            })),
-          }));
+            const sectionCompletedAt =
+              sec.completed_at ?? (isBefore ? new Date(0).toISOString() : null);
+
+            // For the active section: compute expires_at from time_remaining_seconds.
+            // For completed sections: keep expires_at null (locked, no countdown).
+            let sectionExpiresAt: string | null = null;
+            if (isCurrentSection && rpcCurrentSectionStatus !== 'COMPLETED' && d.time_remaining_seconds != null) {
+              sectionExpiresAt = new Date(Date.now() + d.time_remaining_seconds * 1000).toISOString();
+            }
+
+            return {
+              id: sec.id || `sec-${idx}`,
+              name: sec.name || `Section ${idx + 1}`,
+              position: idx + 1,
+              question_count: sec.questions?.length ?? 0,
+              duration_minutes: sec.duration_minutes ?? 0,
+              marks_per_question: sec.marks_per_question ?? 1,
+              started_at: sec.started_at ?? null,
+              expires_at: sectionExpiresAt,
+              completed_at: sectionCompletedAt,
+              questions: (sec.questions || []).map((q: any) => ({
+                id: q.id,
+                code: q.code || '',
+                stem: q.stem || '',
+                stem_image_url: q.stem_image_url || null,
+                subject_id: q.subject_id || 'GENERAL',
+                options: (q.options || []).map((o: any) => ({
+                  id: o.id,
+                  label: o.label,
+                  text: o.text,
+                  image_url: o.image_url || null,
+                })),
+              })),
+            };
+          });
+
+          const totalDuration = sections.reduce((acc: number, s: any) => acc + (s.duration_minutes || 0), 0);
 
           return {
-            id: sec.id,
-            name: sec.name || `Section ${idx + 1}`,
-            position: sec.position || idx + 1,
-            question_count: safeQs.length,
-            duration_minutes: sec.duration_minutes || 20,
-            marks_per_question: sec.marks_per_question || 1,
-            started_at: new Date().toISOString(),
-            expires_at: new Date(Date.now() + (sec.duration_minutes || 20) * 60000).toISOString(),
-            completed_at: null,
-            questions: safeQs,
-          };
-        })
-      : [{
-          id: 'sec-default-01',
-          name: 'Computerized Intelligence & Academic Battery',
-          position: 1,
-          question_count: Math.min(dbQuestions.length, 100),
-          duration_minutes: testRecord?.duration_minutes || 65,
-          marks_per_question: 1,
-          started_at: new Date().toISOString(),
-          expires_at: new Date(Date.now() + (testRecord?.duration_minutes || 65) * 60000).toISOString(),
-          completed_at: null,
-          questions: dbQuestions.slice(0, 100).map(q => ({
-            id: q.id,
-            code: q.code,
-            stem: q.stem,
-            stem_image_url: q.imageUrl || null,
-            subject_id: q.subject_id || 'INTELLIGENCE_VERBAL',
-            options: (q.options || []).map(o => ({
-              id: o.id,
-              label: o.label,
-              text: o.text,
-              image_url: o.imageUrl || null,
-            })),
-          })),
-        }];
+            attempt: {
+              id: d.attempt?.id || d.attempt_id || attemptId,
+              attempt_number: d.attempt?.attempt_number ?? 1,
+              started_at: d.attempt?.started_at || d.started_at || new Date().toISOString(),
+              expires_at: d.attempt?.expires_at || new Date(Date.now() + totalDuration * 60000).toISOString(),
+              status: d.attempt?.status || d.attempt_status || 'IN_PROGRESS',
+              current_section_id: d.attempt?.current_section_id || d.current_section_id || null,
+              question_order: d.attempt?.question_order ?? [],
+              option_order: d.attempt?.option_order ?? {},
+            },
+            test: {
+              id: d.test?.id || d.test_id,
+              name: d.test?.name || d.test_name || '',
+              description: d.test?.description || null,
+              duration_minutes: d.test?.duration_minutes || totalDuration,
+              total_marks: d.test?.total_marks ?? 0,
+              passing_threshold: d.test?.passing_threshold ?? 50,
+              shuffle_questions: d.test?.shuffle_questions ?? false,
+              shuffle_options: d.test?.shuffle_options ?? false,
+              allow_section_navigation: d.test?.allow_section_navigation ?? false,
+              show_result_immediately: d.test?.show_result_immediately ?? true,
+            },
+            student: {
+              id: d.student?.id || '',
+              roll_number: d.student?.roll_number || '',
+            },
+            sections,
+            saved_answers: d.saved_answers || {},
+            server_time: d.server_time || new Date().toISOString(),
+          } as SafeExamPayload;
+        }
+      } catch (err) {
+        console.warn('get_safe_exam_payload RPC failed, using direct DB fallback:', err);
+      }
+    }
 
-    let savedAnswers: any = {};
+
+    // ── Fallback: RPC unavailable — read directly from DB tables ──────────────
+    // IMPORTANT: This path ONLY reads from test_section_questions (persisted at
+    // test creation). It never pads or randomises from the full question bank.
+
+    if (!isSupabaseConfigured()) {
+      throw new Error('Examination system is not configured. Please contact your proctor.');
+    }
+
+    const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+    // 1. Resolve test_id from the attempt record
+    if (!UUID_RE.test(attemptId)) {
+      throw new Error(
+        `Invalid attempt ID "${attemptId}". Cannot load exam — please contact your proctor.`
+      );
+    }
+
+    const { data: attRecord, error: attErr } = await (supabase as any)
+      .from('test_attempts')
+      .select('test_id, started_at, expires_at, student_id, attempt_number, status, current_section_id')
+      .eq('id', attemptId)
+      .maybeSingle();
+
+    if (attErr || !attRecord?.test_id) {
+      throw new Error(
+        'Your exam attempt record was not found. Please restart the exam or contact your proctor.'
+      );
+    }
+
+    // Ownership check (defense-in-depth; Supabase RLS also enforces this server-side)
+    try {
+      const { data: authUser } = await (supabase as any).auth.getUser();
+      if (authUser?.user?.id) {
+        const { data: stdRecord } = await (supabase as any)
+          .from('students')
+          .select('id')
+          .or(`id.eq.${authUser.user.id},profile_id.eq.${authUser.user.id}`)
+          .maybeSingle();
+        if (stdRecord?.id && stdRecord.id !== attRecord.student_id) {
+          throw new Error('Access Denied: This attempt does not belong to your account.');
+        }
+      }
+    } catch (ownershipErr: any) {
+      if (ownershipErr.message?.includes('Access Denied')) throw ownershipErr;
+      // If auth lookup fails, RLS will still enforce ownership; proceed.
+    }
+
+    const targetTestId: string = attRecord.test_id;
+
+
+    // 2. Load test record
+    const testRecord = await testService.getTestById(targetTestId).catch(() => null);
+    if (!testRecord) {
+      throw new Error(
+        'The exam configuration could not be loaded. Please contact your proctor.'
+      );
+    }
+
+    // 3. Load sections (ordered by position)
+    const sections = await testService.getSections(targetTestId).catch(() => [] as any[]);
+    if (!sections || sections.length === 0) {
+      throw new Error(
+        `No sections found for this exam ("${testRecord.name}"). Please contact your proctor.`
+      );
+    }
+
+    // 4. Load saved question IDs from test_section_questions (the source of truth)
+    const sectionIds: string[] = sections.map((s: any) => s.id);
+    const { data: sqRows, error: sqErr } = await (supabase as any)
+      .from('test_section_questions')
+      .select('test_section_id, question_id, position')
+      .in('test_section_id', sectionIds)
+      .order('position', { ascending: true });
+
+    if (sqErr) {
+      throw new Error(
+        `Failed to load assigned questions from the database: ${sqErr.message}. Please contact your proctor.`
+      );
+    }
+
+    // Group question IDs by section
+    const savedQIdsBySec: Record<string, string[]> = {};
+    for (const row of (sqRows || [])) {
+      if (!savedQIdsBySec[row.test_section_id]) savedQIdsBySec[row.test_section_id] = [];
+      savedQIdsBySec[row.test_section_id].push(row.question_id);
+    }
+
+    // 5. Validate: each section must have exactly question_count assigned IDs
+    for (const sec of sections) {
+      const ids = savedQIdsBySec[sec.id] || [];
+      if (ids.length !== sec.question_count) {
+        throw new Error(
+          `Section "${sec.name}" has ${ids.length} questions saved but is configured for ${sec.question_count}. ` +
+          `Please ask the admin to re-save or fix this test before it can be attempted.`
+        );
+      }
+    }
+
+    // 6. Fetch full question data for all assigned IDs
+    const allAssignedIds = Object.values(savedQIdsBySec).flat();
+    const { data: rawQRows, error: qErr } = await (supabase as any)
+      .from('questions')
+      .select('id, code, stem, stem_image_url, subject_id, options(id, label, text, image_url)')
+      .in('id', allAssignedIds);
+
+    if (qErr) {
+      throw new Error(
+        `Failed to load question details: ${qErr.message}. Please contact your proctor.`
+      );
+    }
+
+    const questionMap: Record<string, any> = {};
+    for (const q of (rawQRows || [])) {
+      // Strip correct answer data — students must never receive it
+      const safeOptions = (q.options || []).map((o: any) => ({
+        id: o.id,
+        label: o.label,
+        text: o.text,
+        image_url: o.image_url || null,
+      }));
+      questionMap[q.id] = {
+        id: q.id,
+        code: q.code || `Q-${q.id.slice(0, 6)}`,
+        stem: q.stem || 'Question stem',
+        stem_image_url: q.stem_image_url || null,
+        subject_id: q.subject_id || 'GENERAL',
+        options: safeOptions,
+      };
+    }
+
+    // 7. Build formatted sections with only saved questions, in saved order
+    const formattedSections = sections.map((sec: any, idx: number) => {
+      const orderedIds = savedQIdsBySec[sec.id] || [];
+      const secQs = orderedIds.map((qid: string) => questionMap[qid]).filter(Boolean);
+
+      return {
+        id: sec.id,
+        name: sec.name || `Section ${idx + 1}`,
+        position: sec.position || idx + 1,
+        question_count: sec.question_count,   // configured count — not padded
+        duration_minutes: sec.duration_minutes,
+        marks_per_question: sec.marks_per_question || 1,
+        started_at: null as string | null,
+        expires_at: null as string | null,
+        completed_at: null as string | null,
+        questions: secQs,
+      };
+    });
+
+    // 8. Load section progress (timer state) for resume
+    const { data: secProgress } = await (supabase as any)
+      .from('attempt_section_progress')
+      .select('section_id, started_at, expires_at, completed_at')
+      .eq('attempt_id', attemptId)
+      .catch(() => ({ data: [] }));
+
+    if (secProgress && secProgress.length > 0) {
+      const progressMap: Record<string, any> = {};
+      for (const p of secProgress) progressMap[p.section_id] = p;
+      for (const fs of formattedSections) {
+        const prog = progressMap[fs.id];
+        if (prog) {
+          fs.started_at = prog.started_at || null;
+          fs.expires_at = prog.expires_at || null;
+          fs.completed_at = prog.completed_at || null;
+        }
+      }
+    }
+
+    // 9. Load saved answers
+    let savedAnswers: Record<string, any> = {};
     try {
       const rawAns = sessionStorage.getItem(`cbt_session_answers_${attemptId}`);
       if (rawAns) savedAnswers = JSON.parse(rawAns);
     } catch {
       // ignore
     }
+    // Also try to load from DB if RPC is available (best-effort)
+    try {
+      const { data: dbAnswers } = await (supabase as any)
+        .from('attempt_answers')
+        .select('question_id, selected_option_id, marked_for_review, answered_at')
+        .eq('attempt_id', attemptId);
+      if (dbAnswers && dbAnswers.length > 0) {
+        for (const a of dbAnswers) {
+          savedAnswers[a.question_id] = {
+            selected_option_id: a.selected_option_id || null,
+            marked_for_review: a.marked_for_review || false,
+            answered_at: a.answered_at,
+          };
+        }
+      }
+    } catch {
+      // sessionStorage answers will be used
+    }
+
+    const totalDuration = sections.reduce((acc: number, s: any) => acc + (s.duration_minutes || 0), 0);
 
     return {
       attempt: {
         id: attemptId,
-        attempt_number: 1,
-        started_at: new Date().toISOString(),
-        expires_at: new Date(Date.now() + (testRecord?.duration_minutes || 65) * 60000).toISOString(),
-        status: 'IN_PROGRESS',
-        current_section_id: formattedSections[0]?.id || null,
+        attempt_number: attRecord.attempt_number || 1,
+        started_at: attRecord.started_at,
+        expires_at: attRecord.expires_at || new Date(Date.now() + totalDuration * 60000).toISOString(),
+        status: attRecord.status || 'IN_PROGRESS',
+        current_section_id: attRecord.current_section_id || formattedSections[0]?.id || null,
         question_order: [],
         option_order: {},
       },
       test: {
-        id: testRecord?.id || targetTestId,
-        name: testRecord?.name || 'Preliminary Computerized Screening Examination',
-        description: testRecord?.description || null,
-        duration_minutes: testRecord?.duration_minutes || 65,
-        total_marks: testRecord?.total_marks || 100,
-        passing_threshold: testRecord?.passing_threshold || 50,
-        shuffle_questions: testRecord?.shuffle_questions ?? true,
-        shuffle_options: testRecord?.shuffle_options ?? true,
-        allow_section_navigation: testRecord?.allow_section_navigation ?? false,
-        show_result_immediately: testRecord?.show_result_immediately ?? true,
+        id: testRecord.id,
+        name: testRecord.name,
+        description: testRecord.description || null,
+        duration_minutes: totalDuration,
+        total_marks: testRecord.total_marks,
+        passing_threshold: testRecord.passing_threshold || 50,
+        shuffle_questions: testRecord.shuffle_questions ?? false,
+        shuffle_options: testRecord.shuffle_options ?? false,
+        allow_section_navigation: testRecord.allow_section_navigation ?? false,
+        show_result_immediately: testRecord.show_result_immediately ?? true,
       },
       student: {
-        id: 'std-session-01',
-        roll_number: 'PMA-CADET-SESSION',
+        id: attRecord.student_id || 'unknown',
+        roll_number: '',
       },
       sections: formattedSections,
       saved_answers: savedAnswers,
       server_time: new Date().toISOString(),
     };
   },
+
 
   async saveAnswer(attemptId: string, questionId: string, selectedOptionId?: string, markedForReview?: boolean): Promise<boolean> {
     if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(attemptId) && isSupabaseConfigured()) {
@@ -519,56 +759,26 @@ export const attemptService = {
           p_attempt_id: attemptId,
         });
         if (!error && data) return data as unknown as SubmitResult;
-      } catch {
-        // ignore
-      }
-    }
-
-    const rawAnswers = JSON.parse(sessionStorage.getItem(`cbt_session_answers_${attemptId}`) || '{}');
-    let dbQuestions = await questionService.getQuestions().catch(() => []);
-    if (!dbQuestions || dbQuestions.length === 0) {
-      dbQuestions = (mockQuestions as any) || [];
-    }
-
-    let correctCount = 0;
-    let incorrectCount = 0;
-    let skippedCount = 0;
-    const answeredKeys = Object.keys(rawAnswers);
-    const totalQs = Math.max(answeredKeys.length, 50);
-
-    for (const [qId, ansObj] of Object.entries<any>(rawAnswers)) {
-      if (!ansObj.selected_option_id) {
-        skippedCount++;
-      } else {
-        const q = dbQuestions.find(item => item.id === qId);
-        if (q && q.correctOptionId && ansObj.selected_option_id === q.correctOptionId) {
-          correctCount++;
-        } else {
-          incorrectCount++;
+        if (error) {
+          throw new Error(error.message || 'Submission failed on server.');
         }
+      } catch (rpcErr: any) {
+        // Rethrow — do NOT fall back to client-side grading (would expose answer keys)
+        throw new Error(
+          rpcErr.message ||
+          'Unable to submit your attempt. Please check your connection and try again, or contact your proctor.'
+        );
       }
     }
 
-    const marksObtained = correctCount;
-    const maxMarks = totalQs;
-    const percentage = maxMarks > 0 ? Math.round((marksObtained / maxMarks) * 100) : 0;
-    const passed = percentage >= 50;
-
-    return {
-      result_id: `res-${attemptId}`,
-      already_submitted: false,
-      percentage,
-      passed,
-      correct_count: correctCount,
-      incorrect_count: incorrectCount,
-      skipped_count: skippedCount,
-      marks_obtained: marksObtained,
-      max_marks: maxMarks,
-      time_spent_seconds: 120,
-    };
+    // Supabase not configured — cannot grade server-side
+    throw new Error(
+      'Examination system is not configured. Cannot submit attempt. Please contact your proctor.'
+    );
   },
 
   async getServerTime(): Promise<string> {
+
     if (isSupabaseConfigured()) {
       try {
         const { data, error } = await (supabase as any).rpc('get_server_time');

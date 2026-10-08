@@ -121,16 +121,57 @@ export const ExamFinishPage: React.FC = () => {
     return [];
   }, [resultDetail]);
 
-  const filteredQuestions = useMemo(() => {
-    return reviewQuestions.filter((q) => {
-      if (filterTab === 'CORRECT') return q.status === 'correct';
-      if (filterTab === 'INCORRECT') return q.status === 'incorrect';
-      if (filterTab === 'SKIPPED') return q.status === 'skipped';
-      return true;
-    });
-  }, [reviewQuestions, filterTab]);
+  // Section-wise review mapping
+  const sectionReviewList = useMemo(() => {
+    if (resultDetail && resultDetail.sections && resultDetail.sections.length > 0) {
+      return resultDetail.sections.map((sec) => {
+        const questions = sec.questions.filter((q) => {
+          if (filterTab === 'CORRECT') return q.status === 'correct';
+          if (filterTab === 'INCORRECT') return q.status === 'incorrect';
+          if (filterTab === 'SKIPPED') return q.status === 'skipped';
+          return true;
+        });
 
-  // Section breakdown
+        const correctCount = sec.questions.filter((q) => q.status === 'correct').length;
+        const totalCount = sec.questions.length;
+        const percentage = totalCount > 0 ? Math.round((correctCount / totalCount) * 100) : 0;
+
+        return {
+          id: sec.section_id,
+          name: sec.section_name,
+          correctCount,
+          totalCount,
+          percentage,
+          questions,
+        };
+      });
+    }
+
+    if (reviewQuestions.length > 0) {
+      const filtered = reviewQuestions.filter((q) => {
+        if (filterTab === 'CORRECT') return q.status === 'correct';
+        if (filterTab === 'INCORRECT') return q.status === 'incorrect';
+        if (filterTab === 'SKIPPED') return q.status === 'skipped';
+        return true;
+      });
+      const corr = reviewQuestions.filter((q) => q.status === 'correct').length;
+      const pct = reviewQuestions.length > 0 ? Math.round((corr / reviewQuestions.length) * 100) : 0;
+      return [
+        {
+          id: 'sec-all',
+          name: 'Computerized Evaluation Battery',
+          correctCount: corr,
+          totalCount: reviewQuestions.length,
+          percentage: pct,
+          questions: filtered,
+        },
+      ];
+    }
+
+    return [];
+  }, [resultDetail, reviewQuestions, filterTab]);
+
+  // Section breakdown for performance cards
   const sectionBreakdown = useMemo(() => {
     if (resultDetail?.result.section_results && Array.isArray(resultDetail.result.section_results)) {
       return resultDetail.result.section_results.map((sr: any) => ({
@@ -254,14 +295,14 @@ export const ExamFinishPage: React.FC = () => {
         </div>
       </div>
 
-      {/* 5. EXISTING CURRENT DETAILED ANSWER REVIEW (100% PRESERVED DATA BEHAVIOR) */}
+      {/* 5. DETAILED ANSWER REVIEW (GROUPED SECTION-BY-SECTION) */}
       <div ref={answerReviewRef} className="bg-white border border-[#D4D9DF] rounded-xl p-6 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-[#E2E6EB] pb-4 gap-3">
           <div>
             <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
               POST-EXAMINATION SOLUTION DOSSIER
             </span>
-            <h2 className="text-lg font-bold text-[#0E1B2A]">Detailed Answer Key & Derivations</h2>
+            <h2 className="text-lg font-bold text-[#0E1B2A]">Section-Wise Answer Key & Solution Derivations</h2>
           </div>
 
           <div className="flex items-center space-x-3">
@@ -294,105 +335,128 @@ export const ExamFinishPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Question Review Cards */}
+        {/* Section-Wise Grouped Question Review Cards */}
         {showAnswerKey && (
-          <div className="space-y-6">
-            {filteredQuestions.length === 0 ? (
+          <div className="space-y-8">
+            {sectionReviewList.length === 0 ? (
               <div className="text-center py-8 text-xs text-[#64748B]">
                 No questions found matching the selected filter ({filterTab}).
               </div>
             ) : (
-              filteredQuestions.map((q, idx) => {
-                const isCorrect = q.status === 'correct';
-                const isIncorrect = q.status === 'incorrect';
-                const isSkipped = q.status === 'skipped';
-
-                return (
-                  <div key={q.id} className="border border-[#D4D9DF] rounded-xl p-5 bg-white space-y-4 shadow-xs">
-                    <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-2">
-                      <div className="flex items-center space-x-2">
-                        <span className="px-2.5 py-0.5 font-sans tabular-nums text-xs font-bold bg-[#0E1B2A] text-white rounded-md">
-                          QUESTION #{idx + 1}
-                        </span>
-                        <span className="text-xs font-mono text-[#64748B]">[{q.code}]</span>
-                      </div>
-
-                      {isCorrect && (
-                        <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#234E35] bg-[#EDF6F0] px-2.5 py-0.5 rounded-full border border-[#88BE9B]">
-                          <Check className="w-3.5 h-3.5" /> CORRECT
-                        </span>
-                      )}
-                      {isIncorrect && (
-                        <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#782525] bg-[#FDF2F2] px-2.5 py-0.5 rounded-full border border-[#E29A9A]">
-                          <X className="w-3.5 h-3.5" /> INCORRECT
-                        </span>
-                      )}
-                      {isSkipped && (
-                        <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#64748B] bg-[#F1F5F9] px-2.5 py-0.5 rounded-full border border-[#CBD5E1]">
-                          SKIPPED
-                        </span>
-                      )}
+              sectionReviewList.map((secGroup, secIdx) => (
+                <div key={secGroup.id || secIdx} className="space-y-4 pt-4 border-t border-[#E2E6EB] first:border-t-0 first:pt-0">
+                  <div className="flex items-center justify-between bg-[#F8FAFC] px-4 py-3 rounded-xl border border-[#E2E6EB]">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#0E1B2A]" />
+                      <h3 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wider font-sans">
+                        {secGroup.name}
+                      </h3>
                     </div>
+                    <span className="text-xs font-bold font-sans text-[#234E35] bg-[#EDF6F0] px-3 py-1 rounded-full border border-[#88BE9B] tabular-nums">
+                      Section Score: {secGroup.correctCount} / {secGroup.totalCount} ({secGroup.percentage}%)
+                    </span>
+                  </div>
 
-                    {/* Stem */}
-                    <h3 className="text-sm font-semibold text-[#0E1B2A] leading-relaxed">{q.stem}</h3>
+                  {secGroup.questions.length === 0 ? (
+                    <p className="text-xs text-[#64748B] italic px-2">No items matching filter tab in {secGroup.name}.</p>
+                  ) : (
+                    secGroup.questions.map((q: any, qIdx) => {
+                      const isCorrect = q.status === 'correct';
+                      const isIncorrect = q.status === 'incorrect';
+                      const isSkipped = q.status === 'skipped';
 
-                    {/* Options List */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-                      {q.options.map((opt) => {
-                        const isCorrectOpt = opt.is_correct;
-                        const isUserSelected = q.selectedOptionId === opt.id;
+                      const qId = q.question_id || q.id || qIdx;
+                      const selectedOptId = q.selected_option_id || q.selectedOptionId;
 
-                        return (
-                          <div
-                            key={opt.id}
-                            className={`p-3 rounded-lg border flex items-center space-x-3 transition-colors ${
-                              isCorrectOpt
-                                ? 'bg-[#EDF6F0] border-[#234E35] text-[#234E35] font-semibold'
-                                : isUserSelected
-                                ? 'bg-[#FDF2F2] border-[#782525] text-[#782525]'
-                                : 'bg-[#F6F8FA] border-[#D4D9DF] text-[#1F2937]'
-                            }`}
-                          >
-                            <span
-                              className={`w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs font-sans border ${
-                                isCorrectOpt
-                                  ? 'bg-[#234E35] text-white border-[#234E35]'
-                                  : isUserSelected
-                                  ? 'bg-[#782525] text-white border-[#782525]'
-                                  : 'bg-white border-[#D4D9DF] text-[#0E1B2A]'
-                              }`}
-                            >
-                              {opt.label}
-                            </span>
-                            <span className="flex-1">{opt.text}</span>
-                            {isCorrectOpt && (
-                              <span className="text-[10px] font-sans uppercase font-bold bg-[#234E35] text-white px-1.5 py-0.5 rounded">
-                                Official Key
+                      return (
+                        <div key={qId} className="border border-[#D4D9DF] rounded-xl p-5 bg-white space-y-4 shadow-xs">
+                          <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-2">
+                            <div className="flex items-center space-x-2">
+                              <span className="px-2.5 py-0.5 font-sans tabular-nums text-xs font-bold bg-[#0E1B2A] text-white rounded-md">
+                                ITEM #{qIdx + 1}
+                              </span>
+                              <span className="text-xs font-mono text-[#64748B]">[{q.code}]</span>
+                            </div>
+
+                            {isCorrect && (
+                              <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#234E35] bg-[#EDF6F0] px-2.5 py-0.5 rounded-full border border-[#88BE9B]">
+                                <Check className="w-3.5 h-3.5" /> CORRECT
                               </span>
                             )}
-                            {isUserSelected && !isCorrectOpt && (
-                              <span className="text-[10px] font-sans uppercase font-bold bg-[#782525] text-white px-1.5 py-0.5 rounded">
-                                Your Choice
+                            {isIncorrect && (
+                              <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#782525] bg-[#FDF2F2] px-2.5 py-0.5 rounded-full border border-[#E29A9A]">
+                                <X className="w-3.5 h-3.5" /> INCORRECT
+                              </span>
+                            )}
+                            {isSkipped && (
+                              <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-[#64748B] bg-[#F1F5F9] px-2.5 py-0.5 rounded-full border border-[#CBD5E1]">
+                                SKIPPED
                               </span>
                             )}
                           </div>
-                        );
-                      })}
-                    </div>
 
-                    {/* Derivation Explanation */}
-                    {q.explanation && (
-                      <div className="mt-3 p-3.5 bg-[#F6F8FA] rounded-lg border border-[#E2E6EB] text-xs text-[#64748B]">
-                        <span className="font-bold text-[#0E1B2A] font-sans block mb-1 uppercase text-[10px] tracking-wider">
-                          Military Evaluation Key & Derivation:
-                        </span>
-                        {q.explanation}
-                      </div>
-                    )}
-                  </div>
-                );
-              })
+                          {/* Stem */}
+                          <h4 className="text-sm font-semibold text-[#0E1B2A] leading-relaxed">{q.stem}</h4>
+
+                          {/* Options List */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                            {q.options.map((opt: any) => {
+                              const isCorrectOpt = opt.is_correct;
+                              const isUserSelected = selectedOptId === opt.id;
+
+                              return (
+                                <div
+                                  key={opt.id}
+                                  className={`p-3 rounded-lg border flex items-center space-x-3 transition-colors ${
+                                    isCorrectOpt
+                                      ? 'bg-[#EDF6F0] border-[#234E35] text-[#234E35] font-semibold'
+                                      : isUserSelected
+                                      ? 'bg-[#FDF2F2] border-[#782525] text-[#782525]'
+                                      : 'bg-[#F6F8FA] border-[#D4D9DF] text-[#1F2937]'
+                                  }`}
+                                >
+                                  <span
+                                    className={`w-6 h-6 rounded-md flex items-center justify-center font-bold text-xs font-sans border ${
+                                      isCorrectOpt
+                                        ? 'bg-[#234E35] text-white border-[#234E35]'
+                                        : isUserSelected
+                                        ? 'bg-[#782525] text-white border-[#782525]'
+                                        : 'bg-white border-[#D4D9DF] text-[#0E1B2A]'
+                                    }`}
+                                  >
+                                    {opt.label}
+                                  </span>
+                                  <span className="flex-1">{opt.text}</span>
+                                  {isCorrectOpt && (
+                                    <span className="text-[10px] font-sans uppercase font-bold bg-[#234E35] text-white px-1.5 py-0.5 rounded">
+                                      Official Key
+                                    </span>
+                                  )}
+                                  {isUserSelected && !isCorrectOpt && (
+                                    <span className="text-[10px] font-sans uppercase font-bold bg-[#782525] text-white px-1.5 py-0.5 rounded">
+                                      Your Choice
+                                    </span>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+
+                          {/* Derivation Explanation */}
+                          {q.explanation && (
+                            <div className="mt-3 p-3.5 bg-[#F6F8FA] rounded-lg border border-[#E2E8F0] text-xs text-[#64748B]">
+                              <span className="font-bold text-[#0E1B2A] font-sans block mb-1 uppercase text-[10px] tracking-wider">
+                                Military Evaluation Key & Solution Derivation:
+                              </span>
+                              {q.explanation}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+              ))
             )}
           </div>
         )}

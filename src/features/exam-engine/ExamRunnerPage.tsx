@@ -18,10 +18,9 @@ import {
 } from 'lucide-react';
 import { formatTime } from '@/lib/utils';
 import { toast } from 'sonner';
+import { useAuth } from '@/app/providers';
 import { attemptService } from '@/services/attemptService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
-
-const STORAGE_KEY = 'FA_ACTIVE_EXAM_STATE_V1';
 
 export interface SafeQuestionOption {
   id: string;
@@ -52,6 +51,9 @@ export const ExamRunnerPage: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const attemptId = searchParams.get('attemptId');
+  const { user } = useAuth();
+  const studentId = user?.cadetId || user?.id || 'ANONYMOUS';
+  const storageKey = attemptId && studentId ? `FA_EXAM_${studentId}_${attemptId}` : `FA_EXAM_TEMP`;
 
   // Questions and Sections state (Safe payload - NEVER contains correctOptionId)
   const [questions, setQuestions] = useState<SafeQuestion[]>([]);
@@ -64,10 +66,13 @@ export const ExamRunnerPage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        return parsed.answers || {};
+      localStorage.removeItem('FA_ACTIVE_EXAM_STATE_V1');
+      if (attemptId && studentId !== 'ANONYMOUS') {
+        const saved = localStorage.getItem(storageKey);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          return parsed.answers || {};
+        }
       }
     } catch (e) {
       /* ignore */
@@ -77,11 +82,13 @@ export const ExamRunnerPage: React.FC = () => {
 
   const [flagged, setFlagged] = useState<Set<string>>(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed.flagged)) {
-          return new Set(parsed.flagged);
+      if (attemptId && studentId !== 'ANONYMOUS') {
+        const saved = localStorage.getItem(storageKey);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed.flagged)) {
+            return new Set(parsed.flagged);
+          }
         }
       }
     } catch (e) {
@@ -92,11 +99,13 @@ export const ExamRunnerPage: React.FC = () => {
 
   const [skipped, setSkipped] = useState<Set<string>>(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed.skipped)) {
-          return new Set(parsed.skipped);
+      if (attemptId && studentId !== 'ANONYMOUS') {
+        const saved = localStorage.getItem(storageKey);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed.skipped)) {
+            return new Set(parsed.skipped);
+          }
         }
       }
     } catch (e) {
@@ -105,7 +114,7 @@ export const ExamRunnerPage: React.FC = () => {
     return new Set();
   });
 
-  const [secondsRemaining, setSecondsRemaining] = useState(3900); // 65 min default
+  const [secondsRemaining, setSecondsRemaining] = useState(1800); // dynamic default
 
   // UI state
   const [autosaveStatus, setAutosaveStatus] = useState<'SAVED' | 'SAVING' | 'UNSYNCED'>('SAVED');
@@ -176,15 +185,69 @@ export const ExamRunnerPage: React.FC = () => {
               setFlagged(restoredFlags);
             }
 
-            // Sync chronometer with exact section duration or valid server seconds
-            const serverSecs = (payload as any).time_remaining_seconds;
-            if (typeof serverSecs === 'number' && serverSecs > 0 && serverSecs <= 7200) {
-              setSecondsRemaining(serverSecs);
-            } else if (secList.length > 0 && secList[0].durationMinutes) {
-              setSecondsRemaining(secList[0].durationMinutes * 60);
+            // ── Resume: restore active section index from server current_section_id ──
+            const serverCurrentSectionId = payload.attempt?.current_section_id;
+            let resumeSectionIdx = 0;
+            if (serverCurrentSectionId) {
+              const idx = (payload.sections || []).findIndex(
+                (s: any) => s.id === serverCurrentSectionId
+              );
+              if (idx >= 0) resumeSectionIdx = idx;
+            }
+
+            // Set question pointer to the first question of the resumed section
+            const resumeSection = secList[resumeSectionIdx];
+            if (resumeSection) {
+              setActiveSectionIndex(resumeSectionIdx);
+              setCurrentIndex(resumeSection.startIndex);
+            }
+
+            // ── Timer initialization — prefer server-side deadline, then localStorage, then config ──
+            let restoredTime: number | null = null;
+
+            // 1. Server-set deadline for the ACTIVE section (not always section 0)
+            const activeSectionPayload = (payload.sections || [])[resumeSectionIdx];
+            if (activeSectionPayload?.expires_at) {
+              const serverRemaining = Math.floor(
+                (new Date(activeSectionPayload.expires_at).getTime() - Date.now()) / 1000
+              );
+              const maxAllowed = (activeSectionPayload.duration_minutes || 180) * 60 + 30;
+              if (serverRemaining > 0 && serverRemaining <= maxAllowed) {
+                restoredTime = serverRemaining;
+              }
+            }
+
+            // 2. Fall back to localStorage (elapsed since last save) — but validate against active section
+            if (restoredTime === null) {
+              try {
+                const savedRaw = localStorage.getItem(storageKey);
+                if (savedRaw) {
+                  const saved = JSON.parse(savedRaw);
+                  if (typeof saved.secondsRemaining === 'number' && saved.secondsRemaining > 0 && saved.updatedAt) {
+                    const elapsedSecs = Math.floor((Date.now() - new Date(saved.updatedAt).getTime()) / 1000);
+                    const rem = saved.secondsRemaining - elapsedSecs;
+                    const maxAllowed = (secList[resumeSectionIdx]?.durationMinutes || 180) * 60;
+                    if (rem > 0 && rem <= maxAllowed) {
+                      restoredTime = rem;
+                    }
+                  }
+                }
+              } catch {
+                /* ignore */
+              }
+            }
+
+            if (restoredTime !== null) {
+              setSecondsRemaining(restoredTime);
+            } else if (secList[resumeSectionIdx]?.durationMinutes) {
+              setSecondsRemaining(secList[resumeSectionIdx].durationMinutes * 60);
+            } else if (payload.test?.duration_minutes) {
+              setSecondsRemaining(payload.test.duration_minutes * 60);
             } else {
               setSecondsRemaining(1800);
             }
+
+
           } else {
             setErrorMsg('No questions available in examination payload.');
           }
@@ -211,7 +274,7 @@ export const ExamRunnerPage: React.FC = () => {
   useEffect(() => {
     try {
       localStorage.setItem(
-        STORAGE_KEY,
+        storageKey,
         JSON.stringify({
           answers,
           flagged: Array.from(flagged),
@@ -224,7 +287,7 @@ export const ExamRunnerPage: React.FC = () => {
     } catch (e) {
       /* ignore */
     }
-  }, [answers, flagged, skipped, secondsRemaining, currentIndex]);
+  }, [answers, flagged, skipped, secondsRemaining, currentIndex, storageKey]);
 
   // Server Telemetry Heartbeat (every 20s)
   useEffect(() => {
@@ -250,7 +313,7 @@ export const ExamRunnerPage: React.FC = () => {
 
   // Chronometer countdown with per-section timer auto-advancement
   useEffect(() => {
-    if (loading) return;
+    if (loading || showSectionModal || showSubmitModal) return;
 
     const timer = setInterval(() => {
       setSecondsRemaining((prev: number) => {
@@ -259,8 +322,8 @@ export const ExamRunnerPage: React.FC = () => {
 
           if (activeSectionIndex < sections.length - 1) {
             const currentTitle = sections[activeSectionIndex]?.title || 'Current Section';
-            toast.warning(`Timer expired for section "${currentTitle}". Advancing to next section...`);
-            handleProceedNextSection();
+            toast.warning(`Timer expired for section "${currentTitle}". Ready for next section.`);
+            setShowSectionModal(true);
           } else {
             toast.warning('Final section timer expired! Submitting examination automatically.');
             handleFinalSubmit();
@@ -272,7 +335,7 @@ export const ExamRunnerPage: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [loading, activeSectionIndex, sections]);
+  }, [loading, activeSectionIndex, sections, showSectionModal, showSubmitModal]);
 
   const currentQ = questions[currentIndex] || questions[0];
   const isFlagged = currentQ ? flagged.has(currentQ.id) : false;
@@ -282,6 +345,12 @@ export const ExamRunnerPage: React.FC = () => {
   const handleSelectOption = useCallback(
     (optionId: string) => {
       if (!currentQ) return;
+
+      const currentSec = sections[activeSectionIndex];
+      if (currentSec && (currentIndex < currentSec.startIndex || currentIndex > currentSec.endIndex)) {
+        toast.error('This section is locked. Answers can only be submitted for the active section.');
+        return;
+      }
 
       setAnswers((prev) => ({
         ...prev,
@@ -309,7 +378,7 @@ export const ExamRunnerPage: React.FC = () => {
           });
       }
     },
-    [currentQ, attemptId, flagged]
+    [currentQ, attemptId, flagged, sections, activeSectionIndex, currentIndex]
   );
 
   // Toggle Review Flag with Instant Server Synchronization
@@ -349,16 +418,20 @@ export const ExamRunnerPage: React.FC = () => {
       return;
     }
 
-    if (currentIndex < questions.length - 1) {
+    if (currentSec && currentIndex < currentSec.endIndex) {
+      setCurrentIndex((prev) => prev + 1);
+    } else if (!currentSec && currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     }
   }, [currentIndex, activeSectionIndex, sections, questions.length]);
 
   const handlePrev = useCallback(() => {
-    if (currentIndex > 0) {
+    const currentSec = sections[activeSectionIndex];
+    const minIndex = currentSec ? currentSec.startIndex : 0;
+    if (currentIndex > minIndex) {
       setCurrentIndex((prev) => prev - 1);
     }
-  }, [currentIndex]);
+  }, [currentIndex, activeSectionIndex, sections]);
 
   // Explicit Skip Question: marks as skipped and advances
   const handleSkip = useCallback(() => {
@@ -422,7 +495,7 @@ export const ExamRunnerPage: React.FC = () => {
     try {
       if (attemptId && isSupabaseConfigured()) {
         const res = await attemptService.submitAttempt(attemptId);
-        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(storageKey);
         navigate(`/exam/finish?attemptId=${attemptId}&resultId=${res.result_id}`);
       } else {
         toast.error('Unable to submit: missing active exam session.');
@@ -835,13 +908,18 @@ export const ExamRunnerPage: React.FC = () => {
             {/* Question Grid */}
             <div className="grid grid-cols-5 gap-2 max-h-[360px] overflow-y-auto pr-1 py-1">
               {questions.map((q, idx) => {
+                const currentSec = sections[activeSectionIndex];
+                const isLocked = currentSec ? (idx < currentSec.startIndex || idx > currentSec.endIndex) : false;
                 const isCurrent = idx === currentIndex;
                 const status = getQuestionStatus(q.id);
                 const isFlag = flagged.has(q.id);
 
                 let tileClass =
                   'bg-white text-[#64748B] border border-[#E6E8EC] hover:border-[#94A3B8] hover:bg-[#F8FAFC]';
-                if (status === 'attempted') {
+                if (isLocked) {
+                  tileClass =
+                    'bg-[#F1F5F9] text-[#94A3B8] border border-[#E2E8F0] cursor-not-allowed opacity-45';
+                } else if (status === 'attempted') {
                   tileClass =
                     'bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] hover:border-[#86EFAC]';
                 } else if (status === 'skipped' || isFlag) {
@@ -853,7 +931,10 @@ export const ExamRunnerPage: React.FC = () => {
                   <button
                     key={q.id}
                     type="button"
-                    onClick={() => setCurrentIndex(idx)}
+                    disabled={isLocked}
+                    onClick={() => {
+                      if (!isLocked) setCurrentIndex(idx);
+                    }}
                     className={`h-9 rounded-lg font-sans tabular-nums text-xs font-semibold relative flex items-center justify-center transition-all ${
                       isCurrent
                         ? 'bg-[#0E1B2A] text-white border border-[#0E1B2A] ring-2 ring-[#0E1B2A] ring-offset-2 scale-105 z-10 shadow-xs'
@@ -862,9 +943,11 @@ export const ExamRunnerPage: React.FC = () => {
                     aria-label={`Go to question ${idx + 1}, status: ${status}${
                       isFlag ? ', flagged' : ''
                     }`}
-                    title={`Question ${idx + 1} (${status.toUpperCase()}${
-                      isFlag ? ', FLAGGED' : ''
-                    })`}
+                    title={
+                      isLocked
+                        ? `Question ${idx + 1} (Locked - Section Completed or Inactive)`
+                        : `Question ${idx + 1} (${status.toUpperCase()}${isFlag ? ', FLAGGED' : ''})`
+                    }
                   >
                     {(idx + 1).toString().padStart(2, '0')}
                     {isFlag && (
@@ -941,13 +1024,18 @@ export const ExamRunnerPage: React.FC = () => {
 
               <div className="grid grid-cols-5 gap-2 max-h-[50vh] overflow-y-auto pr-1 py-1">
                 {questions.map((q, idx) => {
+                  const currentSec = sections[activeSectionIndex];
+                  const isLocked = currentSec ? (idx < currentSec.startIndex || idx > currentSec.endIndex) : false;
                   const isCurrent = idx === currentIndex;
                   const status = getQuestionStatus(q.id);
                   const isFlag = flagged.has(q.id);
 
                   let tileClass =
                     'bg-white text-[#64748B] border border-[#E6E8EC] hover:border-[#94A3B8]';
-                  if (status === 'attempted') {
+                  if (isLocked) {
+                    tileClass =
+                      'bg-[#F1F5F9] text-[#94A3B8] border border-[#E2E8F0] cursor-not-allowed opacity-45';
+                  } else if (status === 'attempted') {
                     tileClass =
                       'bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0]';
                   } else if (status === 'skipped' || isFlag) {
@@ -959,9 +1047,12 @@ export const ExamRunnerPage: React.FC = () => {
                     <button
                       key={q.id}
                       type="button"
+                      disabled={isLocked}
                       onClick={() => {
-                        setCurrentIndex(idx);
-                        setShowMatrixDrawer(false);
+                        if (!isLocked) {
+                          setCurrentIndex(idx);
+                          setShowMatrixDrawer(false);
+                        }
                       }}
                       className={`h-9 rounded-lg font-sans tabular-nums text-xs font-semibold relative flex items-center justify-center transition-all ${
                         isCurrent
@@ -1007,38 +1098,48 @@ export const ExamRunnerPage: React.FC = () => {
                   SECTION COMPLETED
                 </span>
                 <h3 className="text-base font-bold text-[#0E1B2A]">
-                  {sections[activeSectionIndex]?.title} Complete
+                  {sections[activeSectionIndex]?.title} Completed
                 </h3>
               </div>
             </div>
 
-            <div className="bg-[#F8FAFC] p-3.5 rounded-xl border border-[#E2E8F0] text-xs space-y-2 font-sans">
-              <div className="flex justify-between">
-                <span className="text-[#64748B]">Next Section:</span>
-                <span className="font-semibold text-[#0E1B2A]">
-                  {sections[activeSectionIndex + 1]?.title}
+            <div className="bg-[#F8FAFC] p-4 rounded-xl border border-[#E2E8F0] text-xs space-y-3 font-sans">
+              <div className="flex justify-between items-center pb-2 border-b border-[#E2E8F0]">
+                <span className="text-[#64748B] font-medium">Upcoming Section:</span>
+                <span className="font-bold text-[#0E1B2A]">
+                  {sections[activeSectionIndex + 1]?.title || 'Next Section'}
                 </span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-[#64748B]">Questions:</span>
-                <span className="font-semibold text-[#0E1B2A] tabular-nums">
-                  {sections[activeSectionIndex + 1]?.questionCount} Items
+              <div className="flex justify-between items-center">
+                <span className="text-[#64748B] font-medium">Total Questions:</span>
+                <span className="font-bold text-[#0E1B2A] tabular-nums">
+                  {sections[activeSectionIndex + 1]?.questionCount} Questions
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-[#64748B] font-medium">Allocated Time:</span>
+                <span className="font-bold text-[#0E1B2A] tabular-nums">
+                  {sections[activeSectionIndex + 1]?.durationMinutes} Minutes
                 </span>
               </div>
             </div>
 
             <p className="text-xs text-[#64748B] leading-relaxed">
-              Click proceed to advance into the next section. Your examination timer remains active.
+              When you click the button below, your allocated timer of{' '}
+              <strong className="text-[#0E1B2A]">
+                {sections[activeSectionIndex + 1]?.durationMinutes} minutes
+              </strong>{' '}
+              for <strong className="text-[#0E1B2A]">{sections[activeSectionIndex + 1]?.title}</strong> will start automatically.
             </p>
 
             <div className="flex justify-end pt-2">
               <button
                 type="button"
                 onClick={handleProceedNextSection}
-                className="bg-[#0E1B2A] hover:bg-[#1C2E42] text-white px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-1.5"
+                className="w-full sm:w-auto bg-[#0E1B2A] hover:bg-[#1C2E42] text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-2 shadow-md"
               >
-                <span>Proceed to Next Section</span>
-                <ChevronRight className="w-4 h-4" />
+                <span>Start {sections[activeSectionIndex + 1]?.title || 'Next Section'} Test</span>
+                <ChevronRight className="w-4 h-4 text-[#C6A75E]" />
               </button>
             </div>
           </div>
