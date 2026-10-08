@@ -56,9 +56,8 @@ const STEP_LABELS = [
   { step: 2, label: '2. Eligibility' },
   { step: 3, label: '3. Pattern' },
   { step: 4, label: '4. Questions' },
-  { step: 5, label: '5. Rules' },
-  { step: 6, label: '6. Review' },
-  { step: 7, label: '7. Publish' },
+  { step: 5, label: '5. Review' },
+  { step: 6, label: '6. Publish' },
 ];
 
 export const TestBuilderPage: React.FC = () => {
@@ -103,14 +102,14 @@ export const TestBuilderPage: React.FC = () => {
   const [difficultyFilter, setDifficultyFilter] = useState<string>('ALL');
   const [subjectFilter, setSubjectFilter] = useState<string>('ALL');
 
-  // Stage 5: Timing & Rules
-  const [passingScorePercent, setPassingScorePercent] = useState<number>(50);
-  const [shuffleQuestions, setShuffleQuestions] = useState(true);
-  const [shuffleOptions, setShuffleOptions] = useState(true);
-  const [allowSectionNavigation, setAllowSectionNavigation] = useState(false);
-  const [negativeMarking, setNegativeMarking] = useState(false);
-  const negativeMarkValue = 0.25;
-  const [showResultImmediately, setShowResultImmediately] = useState(true);
+  // Fixed Global Examination Rules: 55% Passing Score, Instant Results & Review
+  const passingScorePercent = 55;
+  const shuffleQuestions = true;
+  const shuffleOptions = true;
+  const allowSectionNavigation = false;
+  const negativeMarking = false;
+  const negativeMarkValue = 0;
+  const showResultImmediately = true;
   const showAnswerReview = true;
 
   // Stage 7: Publishing State
@@ -161,11 +160,6 @@ export const TestBuilderPage: React.FC = () => {
 
         setTitle(full.test.name);
         setDescription(full.test.description || '');
-        setPassingScorePercent(full.test.passing_threshold || 50);
-        setShuffleQuestions(full.test.shuffle_questions ?? true);
-        setShuffleOptions(full.test.shuffle_options ?? true);
-        setAllowSectionNavigation(full.test.allow_section_navigation ?? false);
-        setNegativeMarking(full.test.negative_marking ?? false);
         if (full.test.template_id) setSelectedTemplateId(full.test.template_id);
         if (full.eligibilities && full.eligibilities.length > 0) {
           setSelectedEligibilities(full.eligibilities);
@@ -570,10 +564,10 @@ export const TestBuilderPage: React.FC = () => {
       }
     }
 
-    setCurrentStep((prev) => Math.min(prev + 1, 7));
+    setCurrentStep((prev) => Math.min(prev + 1, 6));
   };
 
-  // Step 7: Final Compilation & Publish
+  // Step 6: Final Compilation & Publish
   const handlePublish = async () => {
     if (role === 'STUDENT') {
       toast.error('Access Denied: Cadets cannot author or publish tests.');
@@ -628,7 +622,7 @@ export const TestBuilderPage: React.FC = () => {
           subject_id: s.subjects && s.subjects[0] ? s.subjects[0].id : null,
           subject_ids: s.subjects?.map((sub) => sub.id) || [],
           is_mandatory: s.isMandatory,
-          passing_percentage: 50,
+          passing_percentage: 55,
           question_ids: sectionQuestionMap[s.id] || [],
         })),
         autoGenerateQuestions: assemblyMode === 'AUTO',
@@ -729,14 +723,14 @@ export const TestBuilderPage: React.FC = () => {
 
         <div className="flex items-center space-x-2 shrink-0">
           <span className="bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] px-3.5 py-1.5 rounded-lg text-sm font-bold tabular-nums">
-            Step {currentStep} of 7
+            Step {currentStep} of 6
           </span>
         </div>
       </div>
 
-      {/* 7-Step Stepper Bar */}
+      {/* 6-Step Stepper Bar */}
       <div className="bg-white border border-[#E2E6EB] rounded-lg p-3 shadow-xs">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 text-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-center">
           {STEP_LABELS.map((item) => (
             <button
               key={item.step}
@@ -1085,7 +1079,7 @@ export const TestBuilderPage: React.FC = () => {
                     Select or automatically allocate question bank items across your examination sections.
                   </p>
                 </div>
-                <span className="text-xs font-semibold text-[#64748B]">Step 4 of 7</span>
+                <span className="text-xs font-semibold text-[#64748B]">Step 4 of 6</span>
               </div>
 
               {/* Assembly Mode Selector */}
@@ -1521,130 +1515,19 @@ export const TestBuilderPage: React.FC = () => {
             </div>
           )}
 
-          {/* STAGE 5: Rules */}
+          {/* STAGE 5: Review */}
           {currentStep === 5 && (
             <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
               <div className="border-b border-[#EDF1F5] pb-4 flex items-center justify-between">
                 <div>
                   <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
-                    Stage 5 — Administration & Rules
-                  </h2>
-                  <p className="text-sm font-medium text-[#64748B] mt-1">
-                    Configure examination delivery policies, timing controls, and scoring rules.
-                  </p>
-                </div>
-                <span className="text-xs font-semibold text-[#64748B]">Step 5 of 7</span>
-              </div>
-
-              <div className="space-y-5 text-sm">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
-                    <label className="flex items-center space-x-3 cursor-pointer select-none">
-                      <input
-                        type="checkbox"
-                        checked={shuffleQuestions}
-                        onChange={(e) => setShuffleQuestions(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
-                      />
-                      <span className="font-bold text-[#0E1B2A]">Randomize Question Order</span>
-                    </label>
-                    <p className="text-xs font-medium text-[#64748B] pl-7">
-                      Presents questions in randomized sequence for each candidate terminal.
-                    </p>
-                  </div>
-
-                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
-                    <label className="flex items-center space-x-3 cursor-pointer select-none">
-                      <input
-                        type="checkbox"
-                        checked={shuffleOptions}
-                        onChange={(e) => setShuffleOptions(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
-                      />
-                      <span className="font-bold text-[#0E1B2A]">Randomize Options Order</span>
-                    </label>
-                    <p className="text-xs font-medium text-[#64748B] pl-7">
-                      Shuffles options (A, B, C, D) per question on the candidate client interface.
-                    </p>
-                  </div>
-
-                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
-                    <label className="flex items-center space-x-3 cursor-pointer select-none">
-                      <input
-                        type="checkbox"
-                        checked={allowSectionNavigation}
-                        onChange={(e) => setAllowSectionNavigation(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
-                      />
-                      <span className="font-bold text-[#0E1B2A]">Allow Free Section Navigation</span>
-                    </label>
-                    <p className="text-xs font-medium text-[#64748B] pl-7">
-                      If disabled, candidates must complete sections strictly in sequential lockstep.
-                    </p>
-                  </div>
-
-                  <div className="p-4 bg-[#F8FAFC] border border-[#E2E6EB] rounded-xl space-y-2">
-                    <label className="flex items-center space-x-3 cursor-pointer select-none">
-                      <input
-                        type="checkbox"
-                        checked={negativeMarking}
-                        onChange={(e) => setNegativeMarking(e.target.checked)}
-                        className="w-4 h-4 rounded border-[#CBD5E1] text-[#0E1B2A] cursor-pointer"
-                      />
-                      <span className="font-bold text-[#0E1B2A]">Enforce Negative Marking</span>
-                    </label>
-                    <p className="text-xs font-medium text-[#64748B] pl-7">
-                      Deduct {negativeMarkValue} mark for each incorrect response.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-                  <div>
-                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
-                      Minimum Passing Score (%)
-                    </label>
-                    <input
-                      type="number"
-                      min={10}
-                      max={90}
-                      value={passingScorePercent}
-                      onChange={(e) => setPassingScorePercent(Number(e.target.value))}
-                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-bold text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#0E1B2A] mb-2">
-                      Post-Exam Result Display
-                    </label>
-                    <select
-                      value={showResultImmediately ? 'YES' : 'NO'}
-                      onChange={(e) => setShowResultImmediately(e.target.value === 'YES')}
-                      className="w-full h-11 bg-white border border-[#D4D9DF] rounded-lg px-4 text-sm font-medium text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A]"
-                    >
-                      <option value="YES">Display Score & Ranking Immediately</option>
-                      <option value="NO">Proctor Reserved Release</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* STAGE 6: Review */}
-          {currentStep === 6 && (
-            <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6">
-              <div className="border-b border-[#EDF1F5] pb-4 flex items-center justify-between">
-                <div>
-                  <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
-                    Stage 6 — Specification Review
+                    Stage 5 — Specification Review
                   </h2>
                   <p className="text-sm font-medium text-[#64748B] mt-1">
                     Review examination details and structure before compilation.
                   </p>
                 </div>
-                <span className="text-xs font-semibold text-[#64748B]">Step 6 of 7</span>
+                <span className="text-xs font-semibold text-[#64748B]">Step 5 of 6</span>
               </div>
 
               <div className="space-y-5 text-sm font-sans">
@@ -1679,7 +1562,7 @@ export const TestBuilderPage: React.FC = () => {
                             {i + 1}. {sec.sectionName}
                           </span>
                           <div className="text-xs font-medium text-[#64748B] mt-0.5">
-                            Code: {sec.sectionCode} • Pass: 50%
+                            Code: {sec.sectionCode} • Pass: 55%
                           </div>
                         </div>
                         <div className="text-right">
@@ -1693,14 +1576,14 @@ export const TestBuilderPage: React.FC = () => {
 
                 <div className="p-4 bg-[#EDF6F0] border border-[#88BE9B] rounded-xl text-sm font-medium text-[#234E35] flex items-center space-x-3">
                   <CheckCircle2 className="w-5 h-5 text-[#234E35] shrink-0" />
-                  <span>Specification conforms to academy standards. Ready for compilation.</span>
+                  <span>Specification conforms to academy standards (55% pass mark, immediate result release). Ready for compilation.</span>
                 </div>
               </div>
             </div>
           )}
 
-          {/* STAGE 7: Publish & Assign */}
-          {currentStep === 7 && (
+          {/* STAGE 6: Publish & Assign */}
+          {currentStep === 6 && (
             <div className="bg-white border border-[#E2E6EB] rounded-lg p-6 sm:p-8 shadow-xs space-y-6 text-center">
               <div className="w-14 h-14 bg-[#EDF6F0] border border-[#88BE9B] rounded-full flex items-center justify-center mx-auto text-[#234E35]">
                 <FileCheck className="w-7 h-7" />
@@ -1708,7 +1591,7 @@ export const TestBuilderPage: React.FC = () => {
 
               <div>
                 <h2 className="text-2xl font-bold text-[#0E1B2A] font-display">
-                  Publish Examination
+                  Stage 6 — Publish Examination
                 </h2>
                 <p className="text-sm font-medium text-[#64748B] mt-1 max-w-lg mx-auto">
                   Compile section rules, allocate question pool, and publish this examination for candidate delivery.
@@ -1723,6 +1606,14 @@ export const TestBuilderPage: React.FC = () => {
                 <div className="flex justify-between border-b border-[#E2E6EB] pb-2">
                   <span className="text-[#64748B]">Deployment Scope:</span>
                   <span className="text-[#166534] font-bold">All Eligible Forces & Courses</span>
+                </div>
+                <div className="flex justify-between border-b border-[#E2E6EB] pb-2">
+                  <span className="text-[#64748B]">Passing Threshold:</span>
+                  <span className="text-[#0E1B2A] font-bold">55% (Fixed Minimum)</span>
+                </div>
+                <div className="flex justify-between border-b border-[#E2E6EB] pb-2">
+                  <span className="text-[#64748B]">Result Display:</span>
+                  <span className="text-[#166534] font-bold">Immediate Post-Submission</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#64748B]">Sections / Items:</span>
@@ -1764,7 +1655,7 @@ export const TestBuilderPage: React.FC = () => {
               Previous
             </button>
 
-            {currentStep < 7 ? (
+            {currentStep < 6 ? (
               <button
                 type="button"
                 onClick={handleNextStep}

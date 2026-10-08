@@ -170,7 +170,7 @@ export const reportService = {
 
       attempts.forEach((att: any) => {
         const score = typeof att.total_score === 'number' ? att.total_score : 0;
-        const isPassed = att.passed === true || score >= (att.tests?.passing_threshold || 50);
+        const isPassed = att.passed === true || score >= (att.tests?.passing_threshold || 55);
         if (isPassed) passedAttemptsCount++;
         scoreSum += score;
 

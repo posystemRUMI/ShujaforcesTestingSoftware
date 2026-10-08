@@ -73,13 +73,15 @@ export const ExamFinishPage: React.FC = () => {
 
   // Derive final values from Server result
   const testName = resultDetail?.test.name || 'Computerized Examination';
-  const passingThreshold = resultDetail?.test.passing_threshold || 50;
+  const passingThreshold = resultDetail?.test.passing_threshold || 55;
   const percentage = resultDetail?.result.percentage ?? 0;
   
   // Exact Pass/Fail Condition:
-  // percentage > passingThreshold -> PASS
-  // percentage <= passingThreshold -> FAILED
-  const isPassed = percentage > passingThreshold;
+  // percentage >= passingThreshold -> PASS
+  // percentage < passingThreshold -> FAILED
+  const isPassed = resultDetail?.result.passed !== undefined
+    ? Boolean(resultDetail.result.passed)
+    : percentage >= passingThreshold;
 
   const correctCount = resultDetail?.result.correct_count ?? 0;
   const incorrectCount = resultDetail?.result.incorrect_count ?? 0;
@@ -179,7 +181,7 @@ export const ExamFinishPage: React.FC = () => {
         pct: sr.percentage || 0,
         correct: sr.correct_count || 0,
         total: sr.total_questions || 0,
-        cleared: (sr.percentage || 0) > passingThreshold,
+        cleared: (sr.percentage || 0) >= passingThreshold,
       }));
     }
 
@@ -193,7 +195,7 @@ export const ExamFinishPage: React.FC = () => {
           pct,
           correct: corr,
           total: secQs.length,
-          cleared: pct > passingThreshold,
+          cleared: pct >= passingThreshold,
         };
       });
     }

@@ -285,7 +285,7 @@ export const testService = {
         force_id: payload.test.force_id || '',
         course_id: payload.test.course_id || '',
         batch_id: payload.batchId || payload.test.batch_id || null,
-        passing_threshold: payload.test.passing_threshold || 50,
+        passing_threshold: payload.test.passing_threshold || 55,
         total_marks: payload.sections.reduce((acc, s) => acc + s.question_count, 0),
         duration_minutes: payload.sections.reduce((acc, s) => acc + s.duration_minutes, 0),
         shuffle_questions: payload.test.shuffle_questions ?? true,
@@ -342,7 +342,7 @@ export const testService = {
           ...baseSectionPayload,
           section_code: sec.section_code || null,
           source_template_section_id: sec.source_template_section_id || null,
-          passing_percentage: sec.passing_percentage || 50,
+          passing_percentage: sec.passing_percentage || 55,
           is_mandatory: sec.is_mandatory ?? false,
         })
         .select()
@@ -559,7 +559,7 @@ export const testService = {
       .update({
         name: payload.test.name,
         description: payload.test.description ?? null,
-        passing_threshold: payload.test.passing_threshold ?? 50,
+        passing_threshold: payload.test.passing_threshold ?? 55,
         total_marks: totalMarks,
         duration_minutes: durationMinutes,
         shuffle_questions: payload.test.shuffle_questions ?? true,
@@ -615,7 +615,7 @@ export const testService = {
         subject_id: sec.subject_id || null,
         section_code: sec.section_code || null,
         source_template_section_id: sec.source_template_section_id || null,
-        passing_percentage: sec.passing_percentage || 50,
+        passing_percentage: sec.passing_percentage || 55,
         is_mandatory: sec.is_mandatory ?? false,
       };
 
