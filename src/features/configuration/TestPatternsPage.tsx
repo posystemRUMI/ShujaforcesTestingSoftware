@@ -356,9 +356,6 @@ export const TestPatternsPage: React.FC = () => {
           <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
             Test Pattern Templates Master Registry
           </h1>
-          <p className="text-xs text-[#64748B] mt-0.5">
-            Define, customize, and maintain examination blueprints, academy default counts, item bounds, durations, and faculty override permissions.
-          </p>
         </div>
 
         {isAdmin && (

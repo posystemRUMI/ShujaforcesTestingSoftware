@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppLogo } from '@/components/ui';
-import { ShieldCheck, Lock, Award } from 'lucide-react';
 
 export const AuthShell: React.FC = () => {
   return (
@@ -36,36 +35,13 @@ export const AuthShell: React.FC = () => {
               size="lg"
               theme="dark"
             />
-            <div className="mt-1.5 lg:pl-[62px]">
-              <span className="text-[13px] lg:text-[14px] font-medium text-white/95 tracking-wide drop-shadow-sm">
-                Computerized Testing & Examination System
-              </span>
-            </div>
           </div>
 
           {/* Middle/Bottom Copy (Hidden on Mobile for brevity) */}
-          <div className="hidden lg:flex flex-col mt-auto space-y-4 mb-16 xl:mb-24">
+          <div className="hidden lg:flex flex-col mt-auto mb-16 xl:mb-24">
             <h1 className="text-3xl xl:text-4xl font-bold text-white tracking-tight drop-shadow-md">
               Discipline. Knowledge. Excellence.
             </h1>
-            <p className="text-[15px] xl:text-[16px] text-white/95 max-w-lg leading-relaxed font-normal drop-shadow-sm">
-              Secure digital assessment for students, instructors and academy administration.
-            </p>
-
-            <div className="flex items-center space-x-6 pt-6">
-              <div className="flex items-center space-x-2.5 text-[13px] font-medium text-white drop-shadow-sm">
-                <ShieldCheck className="w-[18px] h-[18px] text-[#C6A75E]" />
-                <span>Secure Access</span>
-              </div>
-              <div className="flex items-center space-x-2.5 text-[13px] font-medium text-white drop-shadow-sm">
-                <Lock className="w-[18px] h-[18px] text-[#C6A75E]" />
-                <span>Structured Assessments</span>
-              </div>
-              <div className="flex items-center space-x-2.5 text-[13px] font-medium text-white drop-shadow-sm">
-                <Award className="w-[18px] h-[18px] text-[#C6A75E]" />
-                <span>Verified Results</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

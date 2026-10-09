@@ -68,7 +68,6 @@ export const StudentFormPage: React.FC = () => {
   }, [isEditMode, id, reset]);
 
   const avatarUrl = watch('avatarUrl');
-  const currentFullName = watch('fullName');
 
   const onSubmit = async (data: StudentFormValues) => {
     try {
@@ -114,11 +113,6 @@ export const StudentFormPage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-6 select-none">
       <PageHeader
         title={isEditMode ? 'Modify Cadet Docket' : 'New Cadet Induction Enrollment'}
-        subtitle={
-          isEditMode
-            ? `Editing military credentials and course track for ${currentFullName || id}`
-            : 'Register candidate personal dossier, service branch, and initial security clearance'
-        }
         breadcrumbs={[
           { label: 'Cadets Roster', href: '/admin/students' },
           { label: isEditMode ? 'Edit Docket' : 'Enrollment Form' },
@@ -140,7 +134,6 @@ export const StudentFormPage: React.FC = () => {
         <FormSection
           stepNumber={1}
           title="Candidate Personal Identification"
-          subtitle="Biometric identity, national registration, and communication details"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="md:col-span-1">
@@ -224,7 +217,6 @@ export const StudentFormPage: React.FC = () => {
         <FormSection
           stepNumber={2}
           title="Academy Training & Service Details"
-          subtitle="Target force allocation, cohort batch assignment, and security clearance"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>

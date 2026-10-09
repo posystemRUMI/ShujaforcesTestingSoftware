@@ -224,8 +224,7 @@ export const ExamFinishPage: React.FC = () => {
           variant="dark"
           size="md"
           showLocation={true}
-          showSubtitle={true}
-          subtitle="Computerized Testing & Examination System"
+          showSubtitle={false}
         />
         <div className="inline-flex items-center space-x-2 text-xs font-sans font-bold text-[#234E35] bg-[#EDF6F0] px-3.5 py-1.5 rounded-full border border-[#88BE9B] uppercase tracking-wider">
           <Shield className="w-4 h-4 text-[#234E35]" />
@@ -271,42 +270,14 @@ export const ExamFinishPage: React.FC = () => {
         passingThreshold={passingThreshold}
       />
 
-      {/* Saved result reference and utility controls */}
-      <div className="p-4 bg-white rounded-xl border border-[#D4D9DF] shadow-xs text-xs font-mono text-[#64748B] flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="flex items-center space-x-2">
-          <span className="font-bold text-[#0E1B2A] font-sans">RESULT REFERENCE:</span>
-          <span className="truncate max-w-[280px] sm:max-w-none">
-            {resultDetail.result.id}
-          </span>
-        </div>
-        <div className="flex items-center space-x-3">
-          <button
-            type="button"
-            onClick={handlePrint}
-            className="inline-flex items-center space-x-1.5 px-3 py-1.5 border border-[#D4D9DF] text-[#0E1B2A] bg-[#F8FAFC] rounded text-xs font-sans font-bold hover:bg-[#EDF1F5] cursor-pointer"
-          >
-            <Printer className="w-3.5 h-3.5" />
-            <span>Print Docket</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate('/student/leaderboard')}
-            className="inline-flex items-center space-x-1.5 px-3 py-1.5 border border-[#C6A75E] text-[#7A5312] bg-[#FAF8F5] rounded text-xs font-sans font-bold hover:bg-[#F3EDE2] cursor-pointer"
-          >
-            <Trophy className="w-3.5 h-3.5 text-[#C6A75E]" />
-            <span>Merit Leaderboard</span>
-          </button>
-        </div>
-      </div>
-
       {/* 5. DETAILED ANSWER REVIEW (GROUPED SECTION-BY-SECTION) */}
-      <div ref={answerReviewRef} className="bg-white border border-[#D4D9DF] rounded-xl p-6 shadow-sm space-y-6">
+      <section ref={answerReviewRef} aria-labelledby="answer-review-title" className="bg-white border border-[#D4D9DF] rounded-xl p-6 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-[#E2E6EB] pb-4 gap-3">
           <div>
             <span className="text-[10px] font-sans font-bold text-[#C6A75E] uppercase tracking-wider">
-              POST-EXAMINATION SOLUTION DOSSIER
+              COMPLETED TEST REVIEW
             </span>
-            <h2 className="text-lg font-bold text-[#0E1B2A]">Section-Wise Answer Key & Solution Derivations</h2>
+            <h2 id="answer-review-title" className="text-lg font-bold text-[#0E1B2A]">Questions & Answer Review</h2>
           </div>
 
           <div className="flex items-center space-x-3">
@@ -340,7 +311,8 @@ export const ExamFinishPage: React.FC = () => {
         </div>
 
         {/* Section-Wise Grouped Question Review Cards */}
-        {showAnswerKey && (
+        {!resultDetail.answer_review_enabled && <p className="text-sm text-slate-500">Answer review is unavailable for this saved attempt.</p>}
+        {resultDetail.answer_review_enabled && showAnswerKey && (
           <div className="space-y-8">
             {sectionReviewList.length === 0 ? (
               <div className="text-center py-8 text-xs text-[#64748B]">
@@ -402,6 +374,8 @@ export const ExamFinishPage: React.FC = () => {
                           {/* Stem */}
                           <h4 className="text-sm font-semibold text-[#0E1B2A] leading-relaxed">{q.stem}</h4>
 
+                          {q.stem_image_url && <img src={q.stem_image_url} alt="Question diagram" className="max-h-48 max-w-full object-contain rounded border" />}
+
                           {/* Options List */}
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                             {q.options.map((opt: any) => {
@@ -431,15 +405,15 @@ export const ExamFinishPage: React.FC = () => {
                                   >
                                     {opt.label}
                                   </span>
-                                  <span className="flex-1">{opt.text}</span>
+                                  <span className="flex-1">{opt.text}{opt.image_url && <img src={opt.image_url} alt={`Option ${opt.label}`} className="max-h-32 max-w-full object-contain mt-2" />}</span>
                                   {isCorrectOpt && (
                                     <span className="text-[10px] font-sans uppercase font-bold bg-[#234E35] text-white px-1.5 py-0.5 rounded">
-                                      Official Key
+                                      Correct Answer
                                     </span>
                                   )}
-                                  {isUserSelected && !isCorrectOpt && (
-                                    <span className="text-[10px] font-sans uppercase font-bold bg-[#782525] text-white px-1.5 py-0.5 rounded">
-                                      Your Choice
+                                  {isUserSelected && (
+                                    <span className={`text-[10px] font-sans uppercase font-bold text-white px-1.5 py-0.5 rounded ${isCorrectOpt ? 'bg-[#234E35]' : 'bg-[#782525]'}`}>
+                                      Your Answer
                                     </span>
                                   )}
                                 </div>
@@ -451,7 +425,7 @@ export const ExamFinishPage: React.FC = () => {
                           {q.explanation && (
                             <div className="mt-3 p-3.5 bg-[#F6F8FA] rounded-lg border border-[#E2E8F0] text-xs text-[#64748B]">
                               <span className="font-bold text-[#0E1B2A] font-sans block mb-1 uppercase text-[10px] tracking-wider">
-                                Military Evaluation Key & Solution Derivation:
+                                Explanation:
                               </span>
                               {q.explanation}
                             </div>
@@ -465,6 +439,34 @@ export const ExamFinishPage: React.FC = () => {
             )}
           </div>
         )}
+      </section>
+
+      {/* Saved result reference and utility controls */}
+      <div className="p-4 bg-white rounded-xl border border-[#D4D9DF] shadow-xs text-xs font-mono text-[#64748B] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="flex items-center space-x-2">
+          <span className="font-bold text-[#0E1B2A] font-sans">RESULT REFERENCE:</span>
+          <span className="truncate max-w-[280px] sm:max-w-none">
+            {resultDetail.result.id}
+          </span>
+        </div>
+        <div className="flex items-center space-x-3">
+          <button
+            type="button"
+            onClick={handlePrint}
+            className="inline-flex items-center space-x-1.5 px-3 py-1.5 border border-[#D4D9DF] text-[#0E1B2A] bg-[#F8FAFC] rounded text-xs font-sans font-bold hover:bg-[#EDF1F5] cursor-pointer"
+          >
+            <Printer className="w-3.5 h-3.5" />
+            <span>Print Docket</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate('/student/leaderboard')}
+            className="inline-flex items-center space-x-1.5 px-3 py-1.5 border border-[#C6A75E] text-[#7A5312] bg-[#FAF8F5] rounded text-xs font-sans font-bold hover:bg-[#F3EDE2] cursor-pointer"
+          >
+            <Trophy className="w-3.5 h-3.5 text-[#C6A75E]" />
+            <span>Merit Leaderboard</span>
+          </button>
+        </div>
       </div>
 
       {/* Bottom Footer Actions */}

@@ -146,7 +146,6 @@ export const SubjectsPage: React.FC = () => {
     <div className="space-y-6 pb-12 max-w-6xl">
       <PageHeader
         title="SUBJECT DISCIPLINES & SYLLABI"
-        subtitle="Catalog of psychometric intelligence modules, academic disciplines, and general awareness taxonomies"
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Configuration' },
@@ -164,25 +163,21 @@ export const SubjectsPage: React.FC = () => {
         <MetricCard
           title="Total Disciplines"
           value={subjects.length.toString()}
-          subtitle="Accredited subjects"
           icon={<BookOpen className="w-5 h-5 text-[#0E1B2A]" />}
         />
         <MetricCard
           title="Active in Testing"
           value={activeCount.toString()}
-          subtitle="Operational syllabi"
           icon={<Brain className="w-5 h-5 text-emerald-600" />}
         />
         <MetricCard
           title="Item Bank Coverage"
           value={totalQuestions.toLocaleString()}
-          subtitle="Verified question items"
           icon={<FileQuestion className="w-5 h-5 text-[#C6A75E]" />}
         />
         <MetricCard
           title="Active Batteries"
           value="24"
-          subtitle="Tests using catalog"
           icon={<Radio className="w-5 h-5 text-sky-600" />}
         />
       </div>

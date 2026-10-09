@@ -129,9 +129,6 @@ export const QuestionBankPage: React.FC = () => {
           <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
             Question Bank Repository
           </h1>
-          <p className="text-xs text-[#64748B]">
-            Categorized intelligence, verbal, non-verbal, and academic question item studio.
-          </p>
         </div>
         <Link
           to="/admin/authoring"

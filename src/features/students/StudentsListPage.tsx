@@ -216,7 +216,6 @@ export const StudentsListPage: React.FC = () => {
     <div className="space-y-4 select-none">
       <PageHeader
         title="Cadet Identification Dockets"
-        subtitle="Pakistan Armed Forces Induction Registrations, Biometric Credentials & Academic Standings"
         breadcrumbs={[{ label: 'Cadets Roster' }]}
         actions={
           <div className="flex items-center space-x-2">

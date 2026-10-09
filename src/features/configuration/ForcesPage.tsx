@@ -47,7 +47,6 @@ export const ForcesPage: React.FC = () => {
     <div className="space-y-6 pb-12 max-w-6xl">
       <PageHeader
         title="ARMED FORCES BRANCHES"
-        subtitle="Tri-service induction branches, commissioning courses, and service-specific examination syllabi"
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Armed Forces Branches' },
@@ -59,19 +58,16 @@ export const ForcesPage: React.FC = () => {
         <MetricCard
           title="Commissioning Courses"
           value={totalCourses.toString()}
-          subtitle="Accredited officer programs"
           icon={<BookOpen className="w-5 h-5 text-[#0E1B2A]" />}
         />
         <MetricCard
           title="Active Enrolled Candidates"
           value={totalCadets.toString()}
-          subtitle="Under current induction training"
           icon={<Users className="w-5 h-5 text-emerald-600" />}
         />
         <MetricCard
           title="Question Bank Depth"
           value={totalQuestions.toLocaleString()}
-          subtitle="Tri-service validated items"
           icon={<FileQuestion className="w-5 h-5 text-[#C6A75E]" />}
         />
       </div>

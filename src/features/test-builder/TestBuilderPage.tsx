@@ -651,11 +651,6 @@ export const TestBuilderPage: React.FC = () => {
           <h1 className="text-[30px] sm:text-[32px] font-extrabold tracking-tight text-[#0E1B2A] font-display">
             {editingTestId ? 'Edit Test Blueprint' : 'Test Builder'}
           </h1>
-          <p className="text-base font-medium text-[#64748B] mt-1">
-            {editingTestId
-              ? 'Update configuration, section quotas, and assigned MCQs for this examination.'
-              : 'Create, configure, and publish computerized examinations across forces and courses.'}
-          </p>
         </div>
 
         <div className="flex items-center space-x-2 shrink-0">
@@ -701,9 +696,6 @@ export const TestBuilderPage: React.FC = () => {
                 <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
                   Test Details
                 </h2>
-                <p className="text-sm font-medium text-[#64748B] mt-1">
-                  Define the examination identity, deployment scope, and evaluation type.
-                </p>
               </div>
 
               <div className="space-y-5 text-sm">
@@ -743,9 +735,6 @@ export const TestBuilderPage: React.FC = () => {
                 <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
                   Test Eligibility & Pattern
                 </h2>
-                <p className="text-sm font-medium text-[#64748B] mt-1">
-                  Select the forces and courses eligible for this test, then choose the pattern template.
-                </p>
               </div>
 
               {/* Grouped Selection Cards Per Force */}
@@ -876,9 +865,6 @@ export const TestBuilderPage: React.FC = () => {
                   <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
                     Stage 3 — Section Configuration
                   </h2>
-                  <p className="text-sm font-medium text-[#64748B] mt-1">
-                    Customize sections, item counts, and durations according to academy policies.
-                  </p>
                 </div>
                 <span className="text-xs bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B] px-3 py-1 rounded-lg font-bold">
                   {activeSections.length} Sections Active
@@ -1017,9 +1003,6 @@ export const TestBuilderPage: React.FC = () => {
                   <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
                     Stage 4 — Question Composition
                   </h2>
-                  <p className="text-sm font-medium text-[#64748B] mt-1">
-                    Select or automatically allocate question bank items across your examination sections.
-                  </p>
                 </div>
                 <span className="text-xs font-semibold text-[#64748B]">Step 4 of 6</span>
               </div>
@@ -1035,13 +1018,10 @@ export const TestBuilderPage: React.FC = () => {
                       : 'bg-white border-[#E2E6EB] text-[#64748B] hover:bg-[#F8FAFC]'
                   }`}
                 >
-                  <div className="flex items-center space-x-2 font-bold mb-1 text-base">
+                  <div className="flex items-center space-x-2 font-bold text-base">
                     <Sparkles className="w-5 h-5 text-[#16A34A]" />
                     <span>Automatic Balanced Allocation</span>
                   </div>
-                  <p className="text-xs font-medium leading-relaxed">
-                    System automatically selects verified questions matching each section's syllabus subjects from the question repository.
-                  </p>
                 </button>
 
                 <button
@@ -1058,13 +1038,10 @@ export const TestBuilderPage: React.FC = () => {
                       : 'bg-white border-[#E2E6EB] text-[#64748B] hover:bg-[#F8FAFC]'
                   }`}
                 >
-                  <div className="flex items-center space-x-2 font-bold mb-1 text-base">
+                  <div className="flex items-center space-x-2 font-bold text-base">
                     <BookOpen className="w-5 h-5 text-[#0E1B2A]" />
                     <span>Manual Item Selection</span>
                   </div>
-                  <p className="text-xs font-medium leading-relaxed">
-                    Inspect, search, and manually hand-pick individual items from the active question bank catalog for each section.
-                  </p>
                 </button>
               </div>
 
@@ -1406,9 +1383,6 @@ export const TestBuilderPage: React.FC = () => {
                     <h3 className="text-sm font-bold text-[#0E1B2A] uppercase tracking-wide">
                       Automated Question Allocation Preview
                     </h3>
-                    <span className="text-xs font-medium text-[#64748B]">
-                      Dynamic balance: Approved questions selected per section syllabus
-                    </span>
                   </div>
 
                   <div className="space-y-3">
@@ -1465,9 +1439,6 @@ export const TestBuilderPage: React.FC = () => {
                   <h2 className="text-xl font-bold text-[#0E1B2A] font-display">
                     Stage 5 — Specification Review
                   </h2>
-                  <p className="text-sm font-medium text-[#64748B] mt-1">
-                    Review examination details and structure before compilation.
-                  </p>
                 </div>
                 <span className="text-xs font-semibold text-[#64748B]">Step 5 of 6</span>
               </div>
@@ -1535,9 +1506,6 @@ export const TestBuilderPage: React.FC = () => {
                 <h2 className="text-2xl font-bold text-[#0E1B2A] font-display">
                   Stage 6 — Publish Examination
                 </h2>
-                <p className="text-sm font-medium text-[#64748B] mt-1 max-w-lg mx-auto">
-                  Compile section rules, allocate question pool, and publish this examination for candidate delivery.
-                </p>
               </div>
 
               <div className="bg-[#F8FAFC] border border-[#E2E6EB] p-5 rounded-xl max-w-md mx-auto text-sm text-left space-y-3">

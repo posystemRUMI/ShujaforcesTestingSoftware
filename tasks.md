@@ -118,3 +118,26 @@ Details: [report](Docs/ARMY_TESTS_FEES_BACKEND_REPORT.md), [reusable prompt](Doc
 - [ ] Deploy updated frontend to production.
 
 This reset supersedes the retained QA records described in previous sections. See [reset report](Docs/STUDENT_TEST_RESET_REPORT.md).
+
+## Completed original-test answer review
+
+- [x] Add saved answers/correct answers below Score & Threshold Benchmark.
+- [x] Enforce own valid finalized result only; keep active exam/bank keys private.
+- [x] Capture immutable explanations privately and retain saved question/key ordering.
+- [x] Verify hosted security/immutability, real browser review/filters/refresh and existing results.
+- [x] Remove temporary review QA data and preserve new real registrations/tests.
+- [x] TypeScript, production build and diff checks.
+- [ ] Deploy frontend to production.
+
+Details: [completed-test review report](Docs/COMPLETED_TEST_ANSWER_REVIEW.md).
+
+## System-wide heading text cleanup
+
+- [x] Audit all 83 TSX files and remove descriptive heading subtitles/paragraphs across Admin, Teacher, Student and shared UI.
+- [x] Preserve actual data, headings, handlers, validations, empty states and important instructions.
+- [x] Tighten shared headers/form sections and selection-card spacing.
+- [x] Add student-detail loading guard exposed by browser verification.
+- [x] TypeScript, production build, diff checks and 38 read-only desktop/mobile browser checks.
+- [ ] Deploy updated frontend to production.
+
+Details: [UI heading cleanup](Docs/UI_HEADING_CLEANUP.md).

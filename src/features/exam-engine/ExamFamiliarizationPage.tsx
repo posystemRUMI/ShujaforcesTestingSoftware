@@ -242,9 +242,6 @@ export const ExamFamiliarizationPage: React.FC = () => {
               <h1 className="text-2xl font-bold uppercase tracking-wide text-[#0E1B2A] mt-1">
                 Practice Round Concluded
               </h1>
-              <p className="text-xs text-[#64748B]">
-                Shuja Forces Academy Pindsultani — Pre-Test Familiarization
-              </p>
             </div>
             <div className="w-12 h-12 rounded-lg bg-[#0E1B2A] text-[#C6A75E] flex items-center justify-center font-bold text-lg border border-[#C6A75E]">
               <Sparkles className="w-6 h-6" />

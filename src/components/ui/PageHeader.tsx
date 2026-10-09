@@ -31,7 +31,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <div
       className={cn(
-        'border-b border-[#E8ECF0] pb-5 mb-8 select-none space-y-2',
+        'border-b border-[#E8ECF0] pb-4 mb-6 select-none space-y-2',
         className,
       )}
       {...props}

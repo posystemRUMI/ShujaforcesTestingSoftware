@@ -364,9 +364,6 @@ export const FinancePage: React.FC = () => {
               <h1 className="text-2xl font-black tracking-tight text-[#0E1B2A]">
                 Finance & Accounts Management
               </h1>
-              <p className="text-xs text-slate-500 font-medium">
-                Shuja Forces Academy Pindsultani • Authoritative Double-Entry Financial Control
-              </p>
             </div>
           </div>
         </div>

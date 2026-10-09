@@ -62,7 +62,7 @@ export const TeacherDetailPage: React.FC = () => {
       {/* Top Header */}
       <PageHeader
         title={`${teacher.titleRank} ${teacher.fullName}`}
-        subtitle={`Faculty Docket ID: ${teacher.employeeId} · Commissioned & Faculty Appointment`}
+        subtitle={`Faculty Docket ID: ${teacher.employeeId}`}
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Faculty & Instructors', href: '/admin/teachers' },
@@ -139,25 +139,21 @@ export const TeacherDetailPage: React.FC = () => {
         <MetricCard
           title="Authored Items"
           value={teacher.questionsCreatedCount.toString()}
-          subtitle="Contributed to question bank"
           icon={<FileQuestion className="w-5 h-5 text-[#0E1B2A]" />}
         />
         <MetricCard
           title="Active Test Batteries"
           value={teacher.activeTestsManaged.toString()}
-          subtitle="Under active supervision"
           icon={<ShieldCheck className="w-5 h-5 text-emerald-600" />}
         />
         <MetricCard
           title="Assigned Subjects"
           value={teacher.assignedSubjects.length.toString()}
-          subtitle="Core instructional fields"
           icon={<BookOpen className="w-5 h-5 text-[#C6A75E]" />}
         />
         <MetricCard
           title="Moderation Index"
           value="99.2%"
-          subtitle="Editorial clearance rate"
           icon={<Award className="w-5 h-5 text-sky-600" />}
         />
       </div>

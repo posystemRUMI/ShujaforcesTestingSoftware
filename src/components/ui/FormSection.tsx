@@ -3,21 +3,16 @@ import { cn } from '@/lib/utils';
 
 export interface FormSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
-  subtitle?: string;
-  description?: string;
   stepNumber?: number | string;
 }
 
 export const FormSection: React.FC<FormSectionProps> = ({
   title,
-  subtitle,
-  description,
   stepNumber,
   children,
   className,
   ...props
 }) => {
-  const sub = subtitle ?? description;
   return (
     <div
       className={cn(
@@ -37,14 +32,9 @@ export const FormSection: React.FC<FormSectionProps> = ({
             {title}
           </h3>
         </div>
-        {sub && (
-          <p className="text-sm font-medium text-[#64748B] mt-1 font-sans leading-normal">
-            {sub}
-          </p>
-        )}
       </div>
 
-      <div className="space-y-4 pt-1">{children}</div>
+      <div className="space-y-4">{children}</div>
     </div>
   );
 };

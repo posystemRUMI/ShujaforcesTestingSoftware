@@ -67,7 +67,9 @@ export const StudentDetailPage: React.FC = () => {
     return () => { isMounted = false; };
   }, [id]);
 
-  if (!student && !loading) {
+  if (loading) return <p role="status">Loading student record...</p>;
+
+  if (!student) {
     return (
       <div className="p-8 text-center bg-white border border-[#D4D9DF] rounded space-y-3">
         <h3 className="text-sm font-bold text-[#0E1B2A] uppercase">Cadet Record Not Located</h3>
@@ -217,25 +219,21 @@ export const StudentDetailPage: React.FC = () => {
           title="Total Attempts"
           value={student.totalAttempts || 0}
           icon={<FileQuestion className="w-4 h-4" />}
-          subtext="across completed test batteries"
         />
         <MetricCard
           title="Average Score"
           value={`${student.academicScoreAverage || 0}%`}
           icon={<TrendingUp className="w-4 h-4 text-[#234E35]" />}
-          subtext="composite battery average"
         />
         <MetricCard
           title="Highest Score"
           value={`${student.highestScore || 0}%`}
           icon={<Award className="w-4 h-4 text-[#C6A75E]" />}
-          subtext="highest achieved score"
         />
         <MetricCard
           title="Pass Rate"
           value={`${student.passRate || 0}%`}
           icon={<CheckCircle2 className="w-4 h-4 text-[#234E35]" />}
-          subtext="qualified attempts ratio"
         />
       </div>
 
@@ -313,15 +311,9 @@ export const StudentDetailPage: React.FC = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
                   <span className="font-semibold text-[#0E1B2A]">Intelligence Battery Quotient</span>
-                  <p className="text-[#64748B]">
-                    Evaluation standing based on completed official CBT examination modules.
-                  </p>
                 </div>
                 <div className="p-3.5 bg-[#F6F8FA] border border-[#E2E6EB] rounded space-y-1.5">
                   <span className="font-semibold text-[#0E1B2A]">Academic Foundations Standing</span>
-                  <p className="text-[#64748B]">
-                    Academic proficiency verified per official forces syllabus standards.
-                  </p>
                 </div>
               </div>
             </div>

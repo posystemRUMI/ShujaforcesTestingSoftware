@@ -183,7 +183,6 @@ export const ReportsPage: React.FC = () => {
       {/* Page Header */}
       <PageHeader
         title="Performance Reports & Analytics Dossier"
-        subtitle="Cross-Wing Assessment Analytics, Score Distributions & Force Branch Benchmarks"
         actions={
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -261,7 +260,6 @@ export const ReportsPage: React.FC = () => {
           value={totalTestedSum.toLocaleString()}
           icon={<Users className="w-4 h-4 text-[#C6A75E]" />}
           trend={{ value: '+14.2%', direction: 'up' }}
-          subtext="Candidates evaluated across all wings"
         />
         <MetricCard
           title="Aggregate Pass Rate"
@@ -275,13 +273,11 @@ export const ReportsPage: React.FC = () => {
           value={`${avgScoreGlobal}%`}
           icon={<Award className="w-4 h-4 text-[#C6A75E]" />}
           trend={{ value: '+0.4%', direction: 'up' }}
-          subtext="Cohort average mean score"
         />
         <MetricCard
           title="Top Performing Wing"
           value={reportData.topPerformingWing}
           icon={<TrendingUp className="w-4 h-4 text-[#0E1B2A]" />}
-          subtext={reportData.topPerformingWing !== '—' ? 'Leading pass rate cohort' : 'No active cohort evaluated'}
         />
       </div>
 
@@ -328,7 +324,6 @@ export const ReportsPage: React.FC = () => {
                   <div className="flex items-center justify-between border-b border-[#E6E8EC] pb-3">
                     <div>
                       <h3 className="text-sm font-bold text-[#0E1B2A]">Batch Course Pass Rate & Score Comparison</h3>
-                      <p className="text-xs text-[#64748B]">Average percentage scores and qualification rates per wing cohort</p>
                     </div>
                     <span className="text-[11px] font-sans font-semibold text-[#234E35] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                       Standardized Evaluation
@@ -361,7 +356,6 @@ export const ReportsPage: React.FC = () => {
                 <div className="bg-white border border-[#E6E8EC] rounded-xl p-5 shadow-sm space-y-4 flex flex-col">
                   <div className="border-b border-[#E6E8EC] pb-3">
                     <h3 className="text-sm font-bold text-[#0E1B2A]">Overall Qualification Status</h3>
-                    <p className="text-xs text-[#64748B]">Ratio of qualified cadets vs remediation required</p>
                   </div>
 
                   <div className="h-56 w-full relative flex items-center justify-center my-auto">
@@ -413,7 +407,6 @@ export const ReportsPage: React.FC = () => {
                 <div className="flex items-center justify-between border-b border-[#E6E8EC] pb-3">
                   <div>
                     <h3 className="text-sm font-bold text-[#0E1B2A]">6-Month Historical Performance Trend</h3>
-                    <p className="text-xs text-[#64748B]">Cross-service average percentage trajectories over time</p>
                   </div>
                   <div className="flex items-center space-x-3 text-xs font-semibold">
                     <span className="flex items-center space-x-1.5 text-[#0E1B2A]">
@@ -465,7 +458,6 @@ export const ReportsPage: React.FC = () => {
                 <div className="bg-white border border-[#E6E8EC] rounded-xl p-5 shadow-sm space-y-4">
                   <div className="border-b border-[#E6E8EC] pb-3">
                     <h3 className="text-sm font-bold text-[#0E1B2A]">Subject Mastery Radar by Armed Forces Wing</h3>
-                    <p className="text-xs text-[#64748B]">Comparative subject category scores across Army, Navy, and PAF</p>
                   </div>
 
                   <div className="h-80 w-full flex items-center justify-center">
@@ -488,7 +480,6 @@ export const ReportsPage: React.FC = () => {
                 <div className="bg-white border border-[#E6E8EC] rounded-xl p-5 shadow-sm space-y-4 flex flex-col">
                   <div className="border-b border-[#E6E8EC] pb-3">
                     <h3 className="text-sm font-bold text-[#0E1B2A]">Wing Cadre Benchmark Summary</h3>
-                    <p className="text-xs text-[#64748B]">Aggregated metrics categorized by service branch</p>
                   </div>
 
                   <div className="overflow-x-auto flex-1">
@@ -548,7 +539,6 @@ export const ReportsPage: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E6E8EC] pb-3">
                   <div>
                     <h3 className="text-sm font-bold text-[#0E1B2A]">Test Blueprint & Item Difficulty Index</h3>
-                    <p className="text-xs text-[#64748B]">Granular performance metrics across individual examination blueprints</p>
                   </div>
 
                   {/* Search input */}
@@ -627,7 +617,6 @@ export const ReportsPage: React.FC = () => {
                 <div className="lg:col-span-2 bg-white border border-[#E6E8EC] rounded-xl p-5 shadow-sm space-y-4">
                   <div className="border-b border-[#E6E8EC] pb-3">
                     <h3 className="text-sm font-bold text-[#0E1B2A]">Candidate Score Bracket Distribution</h3>
-                    <p className="text-xs text-[#64748B]">Count of candidates mapped across performance score brackets</p>
                   </div>
 
                   <div className="h-72 w-full pt-2">
@@ -672,7 +661,6 @@ export const ReportsPage: React.FC = () => {
                   <div className="border-b border-[#E6E8EC] pb-3 flex items-center justify-between">
                     <div>
                       <h3 className="text-sm font-bold text-[#0E1B2A]">Cadet Distinction Honor Roll</h3>
-                      <p className="text-xs text-[#64748B]">Top scoring candidates across all wings</p>
                     </div>
                     <Award className="w-5 h-5 text-[#C6A75E]" />
                   </div>

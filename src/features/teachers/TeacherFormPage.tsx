@@ -107,11 +107,6 @@ export const TeacherFormPage: React.FC = () => {
     <div className="space-y-6 max-w-4xl pb-12">
       <PageHeader
         title={isEdit ? 'EDIT FACULTY RECORD' : 'ENROL FACULTY OFFICER'}
-        subtitle={
-          isEdit
-            ? `Updating credentials and duties for ${existingTeacher?.titleRank} ${existingTeacher?.fullName}`
-            : 'Register an instructor, examiner, or proctor with academic and testing clearance'
-        }
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Faculty & Instructors', href: '/admin/teachers' },
@@ -129,7 +124,6 @@ export const TeacherFormPage: React.FC = () => {
         {/* Section 1: Officer Identification */}
         <FormSection
           title="Identity & Service Branch"
-          description="Institutional ranking, full legal name, employee code, and branch clearance"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
@@ -200,7 +194,6 @@ export const TeacherFormPage: React.FC = () => {
         {/* Section 2: Contact & Official Communications */}
         <FormSection
           title="Communications & Clearance"
-          description="Official academy email and emergency telephone docket"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -238,7 +231,6 @@ export const TeacherFormPage: React.FC = () => {
         {/* Section 3: Duty Designation & Status */}
         <FormSection
           title="Faculty Role & Operational Status"
-          description="Define exam-management permissions and administrative standing"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -282,7 +274,6 @@ export const TeacherFormPage: React.FC = () => {
         {/* Section 4: Assigned Subject Specialties */}
         <FormSection
           title="Assigned Subject Domains"
-          description="Disciplines for question generation, evaluation, and syllabus management"
         >
           <div className="space-y-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -320,7 +311,6 @@ export const TeacherFormPage: React.FC = () => {
         {/* Section 5: Dossier / Professional Biography */}
         <FormSection
           title="Service Record & Professional Bio"
-          description="Academic credentials, past military appointments, or specialty certifications"
         >
           <div>
             <textarea

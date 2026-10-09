@@ -399,7 +399,6 @@ export const StudentRegistrationPage: React.FC = () => {
       {/* Page Header */}
       <PageHeader
         title="New Student Registration"
-        subtitle="Register candidate dossier, assign target branch and course, and create portal credentials"
         breadcrumbs={[
           { label: 'Students Roster', href: '/admin/students' },
           { label: 'Register Student' },
@@ -421,7 +420,6 @@ export const StudentRegistrationPage: React.FC = () => {
         <FormSection
           stepNumber={1}
           title="Personal Information"
-          subtitle="Candidate identity, CNIC, and contact details"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Passport Photo Upload Box */}
@@ -593,7 +591,6 @@ export const StudentRegistrationPage: React.FC = () => {
         <FormSection
           stepNumber={2}
           title="Education & Target"
-          subtitle="Academic background, target force, and course"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -695,9 +692,6 @@ export const StudentRegistrationPage: React.FC = () => {
                   <Receipt className="w-4 h-4 text-emerald-600" />
                   <span>Course Fee, Duration & Admission Payment</span>
                 </h4>
-                <p className="text-[11px] text-slate-500">
-                  Set total course fee, view course duration, and record initial fee payment during candidate registration.
-                </p>
               </div>
               <div className="bg-white px-3 py-1.5 rounded border border-slate-200 text-left sm:text-right shrink-0">
                 <span className="text-[10px] text-slate-500 font-bold block uppercase">Course Duration</span>
@@ -793,7 +787,6 @@ export const StudentRegistrationPage: React.FC = () => {
         <FormSection
           stepNumber={3}
           title="Login Details"
-          subtitle="Roll identification, login credentials, and status"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {/* Roll Number with Generator & Availability Check */}
@@ -945,7 +938,6 @@ export const StudentRegistrationPage: React.FC = () => {
         <FormSection
           stepNumber={4}
           title="Guardian & Address"
-          subtitle="Next-of-kin emergency references and residential address"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>

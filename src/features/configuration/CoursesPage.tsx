@@ -161,7 +161,6 @@ export const CoursesPage: React.FC = () => {
     <div className="space-y-6 pb-12 max-w-6xl">
       <PageHeader
         title="COMMISSIONING COURSES"
-        subtitle="Accredited officer induction streams, prerequisite criteria, and minimum merit benchmarks"
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Configuration' },
@@ -179,7 +178,6 @@ export const CoursesPage: React.FC = () => {
         <MetricCard
           title="Total Inductions"
           value={courses.length.toString()}
-          subtitle="All service academies"
           icon={<BookOpen className="w-5 h-5 text-[#0E1B2A]" />}
         />
         <MetricCard

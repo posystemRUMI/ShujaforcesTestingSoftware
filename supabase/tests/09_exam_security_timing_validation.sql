@@ -51,9 +51,9 @@ BEGIN
  IF (result->>'correct_count')::int<>1 OR (SELECT status FROM test_attempts WHERE id=aid)<>'AUTO_SUBMITTED' THEN RAISE EXCEPTION 'Snapshot grading or expiration status failed'; END IF;
  INSERT INTO exam_security_report VALUES('Expiry auto-submits with immutable original answer key and all 16 recorded questions',true);
  payload:=get_result_detail((result->>'result_id')::uuid);
- IF payload::text LIKE '%is_correct%' OR payload::text LIKE '%answer_keys%' OR (payload->>'answer_review_enabled')::boolean THEN RAISE EXCEPTION 'Student result exposed keyed review'; END IF;
+ IF payload::text LIKE '%answer_keys%' OR NOT (payload->>'answer_review_enabled')::boolean OR jsonb_array_length(payload#>'{sections,0,questions}')<>8 THEN RAISE EXCEPTION 'Finalized own review invalid'; END IF;
  IF (payload#>>'{result,correct_count}')::int<>1 OR (payload#>>'{result,total_questions}')::int<>16 THEN RAISE EXCEPTION 'Result privacy removed valid result totals'; END IF;
- INSERT INTO exam_security_report VALUES('Finalized student result preserves totals and sections without answer keys',true);
+ INSERT INTO exam_security_report VALUES('Finalized own result exposes authorized saved answer review; active exam keys stay private',true);
  INSERT INTO exam_security_context VALUES(aid,uid,tid,qids[1],opt);
  -- Wrong bank and extra/missing questions cannot publish, including direct table writes.
  PERFORM set_config('request.jwt.claim.sub',staff::text,true);

@@ -103,9 +103,6 @@ export const ResultsPage: React.FC = () => {
           <h1 className="text-xl font-bold uppercase tracking-wider text-[#0E1B2A] mt-0.5">
             Candidate Results & Transcripts
           </h1>
-          <p className="text-xs text-[#64748B]">
-            Institutional score evaluations, merit rankings, and cryptographically signed transcripts.
-          </p>
         </div>
 
         <div className="flex items-center space-x-2">

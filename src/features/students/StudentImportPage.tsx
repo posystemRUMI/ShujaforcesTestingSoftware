@@ -132,7 +132,6 @@ export const StudentImportPage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-6 select-none">
       <PageHeader
         title="Candidate CSV/Excel Bulk Import"
-        subtitle="4-Stage Onboarding Flow: File Upload → Pre-Parse → Integrity Validation → Docket Commitment"
         breadcrumbs={[
           { label: 'Cadets Roster', href: '/admin/students' },
           { label: 'Bulk Import' },
@@ -178,7 +177,6 @@ export const StudentImportPage: React.FC = () => {
       {currentStep === 'upload' && (
         <FormSection
           title="Upload Cohort Roster File"
-          subtitle="Support for official CSV and Excel formatted roster sheets"
         >
           <div
             onClick={handleSimulateUpload}

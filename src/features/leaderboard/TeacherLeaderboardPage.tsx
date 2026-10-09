@@ -186,9 +186,6 @@ export const TeacherLeaderboardPage: React.FC = () => {
               Academy Standing & Leaderboard
             </h1>
           </div>
-          <p className="text-xs sm:text-sm text-[#64748B] mt-1">
-            Standardized merit rankings across Forces, Entry Courses, and Official Assessments.
-          </p>
         </div>
 
         <span className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-white border border-[#E2E8F0] text-[#0E1B2A] self-start sm:self-auto shadow-xs">
@@ -302,9 +299,6 @@ export const TeacherLeaderboardPage: React.FC = () => {
                 ? 'Test Assessment Leaderboard'
                 : 'Aggregate Merit Leaderboard'}
             </h2>
-            <p className="text-xs text-[#64748B]">
-              Top 40 candidates ordered by DENSE_RANK based on performance metrics.
-            </p>
           </div>
         </div>
 

@@ -63,9 +63,6 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
               <div className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#C6A75E] mt-1 font-sans">
                 You Passed
               </div>
-              <p className="text-sm sm:text-base text-[#94A3B8] font-sans mt-3 max-w-xl leading-relaxed">
-                Your hard work, discipline and determination have paid off.
-              </p>
             </div>
 
             {/* Cadet Metadata Banner */}
@@ -161,9 +158,6 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
               <div className="text-2xl sm:text-3xl font-bold text-[#E29A9A] mt-2 font-sans">
                 You Did Not Meet the Passing Score
               </div>
-              <p className="text-sm sm:text-base text-[#94A3B8] font-sans mt-3 max-w-xl leading-relaxed">
-                Review your performance, identify the sections that need attention, and prepare for your next attempt.
-              </p>
             </div>
 
             {/* Cadet Metadata Banner */}

@@ -74,9 +74,6 @@ export const LoginPage: React.FC = () => {
         <h1 className="text-3xl sm:text-[38px] font-bold text-[#0E1B2A] tracking-tight">
           Welcome back
         </h1>
-        <p className="text-[15px] text-[#475569] mt-2 leading-relaxed font-normal">
-          Sign in to access the Shuja Forces Academy examination and administration system.
-        </p>
       </div>
 
       {/* Compact Inline Error Alert */}

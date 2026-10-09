@@ -40,7 +40,6 @@ export const SettingsPage: React.FC = () => {
     <div className="space-y-6 pb-12 max-w-5xl">
       <PageHeader
         title="SYSTEM & ACADEMY CONFIGURATION"
-        subtitle="Air-gapped examination parameters, institutional profile, testing rules, and DEFCON radar preferences"
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Configuration' },
@@ -123,7 +122,6 @@ export const SettingsPage: React.FC = () => {
             <div className="space-y-6">
               <FormSection
                 title="Institutional Identity"
-                description="Official credentials of the examination center printed on cadet dockets and merit certificates"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="sm:col-span-2">
@@ -255,7 +253,6 @@ export const SettingsPage: React.FC = () => {
             <div className="space-y-6">
               <FormSection
                 title="Default Timing & Scoring Benchmarks"
-                description="Global baseline presets automatically pre-filled into new Test Builder blueprints"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -351,7 +348,6 @@ export const SettingsPage: React.FC = () => {
 
               <FormSection
                 title="Randomization & Anti-Cheating Presets"
-                description="Automated entropy variables applied during candidate test compilation"
               >
                 <div className="space-y-3">
                   <label className="flex items-center space-x-3 cursor-pointer">
@@ -438,7 +434,6 @@ export const SettingsPage: React.FC = () => {
             <div className="space-y-6">
               <FormSection
                 title="Live Proctor Radar Sensitivity"
-                description="Audio-visual monitoring alerts for examination hall invigilators"
               >
                 <div className="space-y-3">
                   <label className="flex items-center space-x-3 cursor-pointer">

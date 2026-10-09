@@ -262,7 +262,6 @@ export const TeachersListPage: React.FC = () => {
       {/* Top Banner Header */}
       <PageHeader
         title="FACULTY & INSTRUCTORS"
-        subtitle="Academic faculty, psychometric evaluators, question authors, and proctoring supervisors"
         breadcrumbs={[
           { label: 'Command Console', href: '/admin/dashboard' },
           { label: 'Faculty & Instructors' },
@@ -279,26 +278,22 @@ export const TeachersListPage: React.FC = () => {
         <MetricCard
           title="Total Faculty Officers"
           value={metrics.total.toString()}
-          subtitle="Accredited examiners"
           icon={<Users className="w-5 h-5 text-[#0E1B2A]" />}
         />
         <MetricCard
           title="Active on Duty"
           value={metrics.active.toString()}
-          subtitle="Operational clearance"
           icon={<Award className="w-5 h-5 text-emerald-600" />}
           badge={{ text: 'Ready', variant: 'success' }}
         />
         <MetricCard
           title="Authored Questions"
           value={metrics.totalQuestions.toLocaleString()}
-          subtitle="Validated in active item bank"
           icon={<BookOpen className="w-5 h-5 text-[#C6A75E]" />}
         />
         <MetricCard
           title="Supervisors & Proctors"
           value={metrics.activeProctors.toString()}
-          subtitle="Cleared for exam radar duty"
           icon={<Radio className="w-5 h-5 text-sky-600" />}
         />
       </div>

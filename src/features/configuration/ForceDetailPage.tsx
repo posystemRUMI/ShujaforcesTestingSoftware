@@ -92,25 +92,21 @@ export const ForceDetailPage: React.FC = () => {
           <MetricCard
             title="Commissioning Courses"
             value={courses.length.toString()}
-            subtitle="Officer programs"
             icon={<BookOpen className="w-5 h-5 text-[#0E1B2A]" />}
           />
           <MetricCard
             title="Enrolled Cadets"
             value={force.enrolledCadetsCount.toString()}
-            subtitle="Under active preparation"
             icon={<Users className="w-5 h-5 text-emerald-600" />}
           />
           <MetricCard
             title="Item Bank Coverage"
             value={force.totalQuestionsCount.toLocaleString()}
-            subtitle="Categorized items"
             icon={<FileQuestion className="w-5 h-5 text-[#C6A75E]" />}
           />
           <MetricCard
             title="Active Batteries"
             value={force.activeTestsCount.toString()}
-            subtitle="Online mock tests"
             icon={<Radio className="w-5 h-5 text-sky-600" />}
           />
         </div>
@@ -123,9 +119,6 @@ export const ForceDetailPage: React.FC = () => {
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#0E1B2A]">
               Accredited Commissioning Courses ({courses.length})
             </h3>
-            <p className="text-xs text-[#64748B] mt-0.5">
-              Specific entrance and induction qualifications for {force.name}
-            </p>
           </div>
           <Link
             to="/admin/courses"

@@ -133,7 +133,6 @@ export const DashboardPage: React.FC = () => {
       {/* Page Header */}
       <PageHeader
         title="Dashboard"
-        subtitle="Shuja Forces Academy Pindsultani · Overview & recent activity"
         breadcrumbs={[{ label: 'Dashboard' }]}
         badge={
           <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[12px] font-medium bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B]">
@@ -169,9 +168,6 @@ export const DashboardPage: React.FC = () => {
                       Real-Time Ledger
                     </span>
                   </h2>
-                  <p className="text-[13px] text-[#64748B]">
-                    Real-time fee collections, operating expenses, and net cash balance
-                  </p>
                 </div>
               </div>
             </div>
@@ -191,13 +187,11 @@ export const DashboardPage: React.FC = () => {
               value={`PKR ${(financeSummary?.fees_collected || 0).toLocaleString()}`}
               icon={<Wallet className="w-5 h-5 text-[#234E35]" />}
               trend={{ value: 'Collected', direction: 'up' }}
-              subtext="Cadet tuition & admission dues"
             />
             <MetricCard
               title="Outstanding Dues"
               value={`PKR ${(financeSummary?.outstanding_fees || 0).toLocaleString()}`}
               icon={<AlertCircle className="w-5 h-5 text-[#7A5312]" />}
-              subtext="Pending student fee balances"
               highlight={(financeSummary?.outstanding_fees || 0) > 0}
             />
             <MetricCard
@@ -214,7 +208,6 @@ export const DashboardPage: React.FC = () => {
                 value: (financeSummary?.net_cash_flow || 0) >= 0 ? '+Surplus' : '-Deficit',
                 direction: (financeSummary?.net_cash_flow || 0) >= 0 ? 'up' : 'down',
               }}
-              subtext="Current net operating balance"
             />
           </div>
 
@@ -227,7 +220,6 @@ export const DashboardPage: React.FC = () => {
                   <h3 className="text-[14.5px] font-semibold text-[#0E1B2A] font-display">
                     Recent Financial Activity
                   </h3>
-                  <p className="text-[12px] text-[#64748B]">Latest fee payments and expense vouchers</p>
                 </div>
                 <Link
                   to="/admin/finance"
@@ -313,7 +305,6 @@ export const DashboardPage: React.FC = () => {
                 <h3 className="text-[14.5px] font-semibold text-[#0E1B2A] font-display">
                   Operational Distribution
                 </h3>
-                <p className="text-[12px] text-[#64748B]">Breakdown of outgoing operational costs</p>
               </div>
 
               <div className="space-y-3.5 flex-1">
@@ -418,32 +409,27 @@ export const DashboardPage: React.FC = () => {
           title="Enrolled Students"
           value={studentCount}
           icon={<Users className="w-5 h-5" />}
-          subtext="Active cadet roster"
         />
         <MetricCard
           title="Active Tests"
           value={testCount}
           icon={<FileQuestion className="w-5 h-5 text-[#C6A75E]" />}
-          subtext="Published CBT batteries"
           highlight={testCount > 0}
         />
         <MetricCard
           title="Item Bank Questions"
           value={questionCount}
           icon={<BookOpen className="w-5 h-5 text-[#234E35]" />}
-          subtext="Validated question items"
         />
         <MetricCard
           title="Faculty Officers"
           value={teacherCount}
           icon={<Award className="w-5 h-5 text-sky-600" />}
-          subtext="Accredited examiners"
         />
         <MetricCard
           title="Official Courses"
           value={5}
           icon={<Building className="w-5 h-5 text-[#0E1B2A]" />}
-          subtext="Army, PAF & Navy tracks"
         />
       </div>
 
@@ -456,7 +442,6 @@ export const DashboardPage: React.FC = () => {
               <h3 className="text-[15px] font-semibold text-[#0E1B2A] font-display">
                 30-Day Score Trend
               </h3>
-              <p className="text-[13px] text-[#64748B] mt-0.5">Academy score progression vs. standard pass threshold</p>
             </div>
             <span className="px-2.5 py-1 rounded-md font-sans text-[12px] font-semibold tabular-nums bg-[#EDF6F0] text-[#234E35] border border-[#88BE9B]">
               Pass threshold: 60%
@@ -526,7 +511,6 @@ export const DashboardPage: React.FC = () => {
             <h3 className="text-[15px] font-semibold text-[#0E1B2A] font-display">
               Enrolled Candidates by Branch
             </h3>
-            <p className="text-[13px] text-[#64748B] mt-0.5">Current active intake breakdown</p>
           </div>
 
           <div className="space-y-4 flex-1 flex flex-col justify-center">
