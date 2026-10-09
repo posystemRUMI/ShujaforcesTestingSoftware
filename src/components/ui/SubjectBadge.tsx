@@ -7,6 +7,8 @@ const SUBJECT_LABELS: Record<SubjectCategory, string> = {
   INTELLIGENCE_VERBAL: 'Verbal Intelligence',
   INTELLIGENCE_NON_VERBAL: 'Non-Verbal Intelligence',
   ACADEMIC_PHYSICS: 'Physics',
+  ACADEMIC_CHEMISTRY: 'Chemistry',
+  ACADEMIC_BIOLOGY: 'Biology',
   ACADEMIC_MATH: 'Mathematics',
   ACADEMIC_ENGLISH: 'English',
   GENERAL_KNOWLEDGE: 'General Knowledge',

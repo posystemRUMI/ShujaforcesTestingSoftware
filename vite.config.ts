@@ -12,5 +12,11 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
+    fs: {
+      deny: [
+        '.env', '.env.*', '*.{crt,pem}', '**/.git/**',
+        '**/supabase/**', '**/qa-artifacts/**', '**/scratch/**', '**/Docs/**',
+      ],
+    },
   },
 });

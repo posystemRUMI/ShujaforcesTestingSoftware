@@ -60,8 +60,11 @@ export const testPatternService = {
 
     try {
       if (courseId === '00000000-0000-0000-0000-000000000103') {
-        const { data, error } = await (supabase as any).from('course_test_patterns').select('*').eq('course_id', courseId);
+        let navyQuery = (supabase as any).from('course_test_patterns').select('*').eq('course_id', courseId);
+        if (forceId) navyQuery = navyQuery.eq('force_id', forceId);
+        const { data, error } = await navyQuery;
         if (error) throw new Error(error.message);
+        if (!data?.length) throw new Error('The saved PN Cadet pattern is required.');
         return (data || []).map((row: any) => ({ ...row.configuration, id: row.course_id, forceId: row.force_id, entryCourseId: row.course_id }));
       }
       let query = (supabase as any)
@@ -91,6 +94,7 @@ export const testPatternService = {
         isActive: t.is_active,
       }));
     } catch (e) {
+      if (courseId === '00000000-0000-0000-0000-000000000103') throw e;
       console.warn('Error fetching test patterns:', e);
       return [];
     }
@@ -196,6 +200,7 @@ export const testPatternService = {
         sections: mappedSections,
       };
     } catch (err) {
+      if (templateId === '00000000-0000-0000-0000-000000000103') throw err;
       console.warn('Error loading template details:', err);
       return null;
     }
@@ -203,6 +208,11 @@ export const testPatternService = {
 
   async saveTemplate(template: TestPatternTemplate): Promise<void> {
     if (!isSupabaseConfigured()) {
+      return;
+    }
+    if (template.id === '00000000-0000-0000-0000-000000000103') {
+      const { error } = await (supabase as any).rpc('save_pn_cadet_test_pattern', { p_template: template });
+      if (error) throw new Error(error.message);
       return;
     }
 

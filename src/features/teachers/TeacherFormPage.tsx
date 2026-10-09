@@ -13,6 +13,8 @@ const ALL_SUBJECTS: { id: SubjectCategory; label: string }[] = [
   { id: 'INTELLIGENCE_VERBAL', label: 'Verbal Intelligence' },
   { id: 'INTELLIGENCE_NON_VERBAL', label: 'Non-Verbal Intelligence' },
   { id: 'ACADEMIC_PHYSICS', label: 'Academic Physics' },
+  { id: 'ACADEMIC_CHEMISTRY', label: 'Academic Chemistry' },
+  { id: 'ACADEMIC_BIOLOGY', label: 'Academic Biology' },
   { id: 'ACADEMIC_MATH', label: 'Academic Mathematics' },
   { id: 'ACADEMIC_ENGLISH', label: 'Academic English' },
   { id: 'GENERAL_KNOWLEDGE', label: 'General Knowledge & Pak Studies' },

@@ -21,6 +21,8 @@ export const teacherSchema = z.object({
         'INTELLIGENCE_VERBAL',
         'INTELLIGENCE_NON_VERBAL',
         'ACADEMIC_PHYSICS',
+        'ACADEMIC_CHEMISTRY',
+        'ACADEMIC_BIOLOGY',
         'ACADEMIC_MATH',
         'ACADEMIC_ENGLISH',
         'GENERAL_KNOWLEDGE',

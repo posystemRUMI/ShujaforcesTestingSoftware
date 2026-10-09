@@ -12,7 +12,7 @@ function mapQuestion(q: any): Question {
   return {
     id: q.id, code: q.code, subject_id: q.subject_id, subject: q.subject_code,
     subjectName: q.subject_name, bankKey: q.bank_key,
-    branch: ['v', 'nv'].includes(q.bank_key) ? 'TRI_SERVICE' : 'PAKISTAN_ARMY',
+    branch: ['v', 'nv'].includes(q.bank_key) ? 'TRI_SERVICE' : q.bank_key?.startsWith('PN-') ? 'PAKISTAN_NAVY' : q.bank_key?.startsWith('PAF-') ? 'PAKISTAN_AIR_FORCE' : 'PAKISTAN_ARMY',
     courseIds: (q.question_courses || []).map((m: any) => m.course_id),
     stem: q.stem, sourceLabel: q.source_label || undefined,
     sourceCourse: q.source_course || undefined, sourceType: q.source_type || undefined,

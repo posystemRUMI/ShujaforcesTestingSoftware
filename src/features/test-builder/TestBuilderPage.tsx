@@ -378,7 +378,7 @@ export const TestBuilderPage: React.FC = () => {
     if (code.includes('VERBAL') || name.includes('VERBAL')) return subject === 'INTELLIGENCE_VERBAL';
     if (sec.subjects?.length) return sec.subjects.some((sub) => sub.id === q.subject_id);
     if (code.includes('ACADEMIC') || name.includes('ACADEMIC')) {
-      return ['ACADEMIC_PHYSICS','ACADEMIC_ENGLISH','ACADEMIC_MATH','GENERAL_KNOWLEDGE'].includes(subject);
+      return ['ACADEMIC_PHYSICS','ACADEMIC_CHEMISTRY','ACADEMIC_BIOLOGY','ACADEMIC_ENGLISH','ACADEMIC_MATH','GENERAL_KNOWLEDGE'].includes(subject);
     }
     return false;
   };
@@ -408,6 +408,11 @@ export const TestBuilderPage: React.FC = () => {
 
     setSectionQuestionMap(newMap);
     const totalAssigned = Object.values(newMap).reduce((acc, arr) => acc + arr.length, 0);
+    const shortSections = activeSections.filter(sec => (newMap[sec.id] || []).length !== sec.questionCount);
+    if (shortSections.length) {
+      toast.error(`Question bank shortage: ${shortSections.map(sec => `${sec.sectionName} ${(newMap[sec.id] || []).length}/${sec.questionCount}`).join(', ')}. Add approved questions before publishing.`);
+      return;
+    }
     toast.success(`Allocated ${totalAssigned} items across ${activeSections.length} examination sections.`);
   };
 
@@ -434,6 +439,10 @@ export const TestBuilderPage: React.FC = () => {
       ...prev,
       [secId]: allocated,
     }));
+    if (allocated.length !== sec.questionCount) {
+      toast.error(`Question bank shortage: ${sec.sectionName} has ${allocated.length}/${sec.questionCount} eligible questions. Add approved questions before publishing.`);
+      return;
+    }
     toast.success(`Allocated ${allocated.length} questions for section "${sec.sectionName}".`);
   };
 

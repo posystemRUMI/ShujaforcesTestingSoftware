@@ -1,0 +1,94 @@
+﻿-- Real hosted RPCs and approved questions; all temporary accounts/tests roll back.
+BEGIN;
+CREATE TEMP TABLE navy_checks(name text,passed boolean,details text);
+CREATE TEMP TABLE navy_context(uid uuid);
+DO $$
+DECLARE staff uuid; c courses%ROWTYPE; old_uid uuid:=gen_random_uuid(); new_uid uuid:=gen_random_uuid(); uid uuid; sid uuid; tid uuid; aid uuid; qids uuid[]; intel uuid[]; opt uuid; cfg jsonb; r jsonb; payload jsonb; detail jsonb; deadline timestamptz; t tests%ROWTYPE; denied boolean; n integer;
+BEGIN
+ SELECT id INTO staff FROM profiles WHERE role='ADMIN' AND status='ACTIVE' LIMIT 1;
+ SELECT * INTO c FROM courses WHERE code='PN_CADET';
+ SELECT array_agg(id ORDER BY code) INTO qids FROM (SELECT id,code FROM questions WHERE bank_key='PN-CADET-A' AND status='APPROVED' ORDER BY code LIMIT 40)x;
+ IF cardinality(qids)<>40 THEN RAISE EXCEPTION 'Academic bank insufficient'; END IF;
+ IF EXISTS(SELECT 1 FROM questions q WHERE bank_key='PN-CADET-A' AND (trim(explanation)='' OR (SELECT count(*) FROM question_options WHERE question_id=q.id)<>4 OR (SELECT count(*) FROM question_options WHERE question_id=q.id AND is_correct)<>1 OR (SELECT count(DISTINCT lower(trim(text))) FROM question_options WHERE question_id=q.id)<>4 OR (SELECT count(*) FROM question_courses WHERE question_id=q.id)<>1 OR NOT exam_question_course_eligible(q.id,c.id))) THEN RAISE EXCEPTION 'Imported structure/bank isolation failed'; END IF;
+ INSERT INTO navy_checks VALUES('Imported questions, explanations, four distinct options, one key and PN-only Academic mappings',true,'749 questions');
+ PERFORM set_config('request.jwt.claim.sub',staff::text,true);PERFORM set_config('request.jwt.claim.role','authenticated',true);
+ r:=get_staff_question_bank(c.force_id,c.id,'ACADEMIC',NULL,'','ALL',1,50);
+ IF (r->>'total')::integer<>749 OR jsonb_array_length(r->'questions')<>50 THEN RAISE EXCEPTION 'Bank counts/pagination mismatch'; END IF;
+ r:=get_staff_question_bank(c.force_id,c.id,'ACADEMIC',NULL,'','ALL',15,50);
+ IF jsonb_array_length(r->'questions')<>49 THEN RAISE EXCEPTION 'Last page mismatch'; END IF;
+ INSERT INTO navy_checks VALUES('Navy filter counts cover every page',true,'749 total; 50 first page; 49 final page');
+ INSERT INTO auth.users(id,email) VALUES(old_uid,old_uid||'@navy-rollback.invalid');
+ INSERT INTO students(profile_id,roll_number,father_name,target_force_id,target_course_id) VALUES(old_uid,'NAVY-OLD-'||old_uid,'Fixture',c.force_id,c.id);
+ cfg:=jsonb_build_object('test',jsonb_build_object('name','PN Cadet Academic rollback verification','duration_minutes',25,'passing_threshold',60,'show_result_immediately',true,'show_answer_review',true), 'eligibilities',jsonb_build_array(jsonb_build_object('force_id',c.force_id,'course_id',c.id)), 'sections',jsonb_build_array(jsonb_build_object('name','Academic','section_code','ACADEMIC_PN_CADET','position',1,'question_count',40,'duration_minutes',25,'subject_ids',(SELECT jsonb_agg(DISTINCT subject_id) FROM questions WHERE id=ANY(qids)),'question_ids',to_jsonb(qids))));
+ t:=save_test_blueprint(cfg);tid:=t.id;
+ INSERT INTO auth.users(id,email) VALUES(new_uid,new_uid||'@navy-rollback.invalid');
+ INSERT INTO navy_context VALUES(new_uid);
+ PERFORM set_config('request.jwt.claim.role','service_role',true);
+ r:=portal_register_student(new_uid,staff,jsonb_build_object('email',new_uid||'@navy-rollback.invalid','fullName','Navy rollback registration','fatherName','Fixture','cnic','9919988776655','phone','03001234567','targetForceId',c.force_id,'targetCourseId',c.id,'rollNumber','NAVY-NEW-'||new_uid,'education','Intermediate','gender','Male','courseFeeAmount',0,'initialPaymentAmount',0,'paymentMethod','CASH'));
+ IF NOT (r->>'success')::boolean THEN RAISE EXCEPTION 'Registration failed'; END IF;
+ FOREACH uid IN ARRAY ARRAY[old_uid,new_uid] LOOP
+  PERFORM set_config('request.jwt.claim.sub',uid::text,true);PERFORM set_config('request.jwt.claim.role','authenticated',true);sid:=portal_student_id();
+  IF NOT EXISTS(SELECT 1 FROM portal_pending(sid) WHERE id=tid) THEN RAISE EXCEPTION 'Automatic eligibility missing'; END IF;
+  r:=start_test_attempt(tid);aid:=(r->>'attempt_id')::uuid;payload:=get_safe_exam_payload(aid);deadline:=(payload#>>'{attempt,expires_at}')::timestamptz;
+  IF jsonb_array_length(payload#>'{sections,0,questions}')<>40 OR extract(epoch FROM (deadline-(payload#>>'{attempt,started_at}')::timestamptz))<>1500 THEN RAISE EXCEPTION 'Exact count/timer failed'; END IF;
+  IF payload::text LIKE '%is_correct%' OR payload::text LIKE '%explanation%' OR payload::text LIKE '%answer_keys%' THEN RAISE EXCEPTION 'Private keys leaked'; END IF;
+  r:=start_test_attempt(tid);IF (r->>'attempt_id')::uuid<>aid OR (SELECT expires_at FROM test_attempts WHERE id=aid)<>deadline THEN RAISE EXCEPTION 'Resume reset deadline'; END IF;
+  FOREACH opt IN ARRAY qids LOOP
+   SELECT id INTO opt FROM question_options WHERE question_id=opt AND is_correct;
+   SELECT question_id INTO sid FROM question_options WHERE id=opt;
+   PERFORM save_answer(aid,sid,opt,false);
+  END LOOP;
+  sid:=portal_student_id();r:=submit_test_attempt(aid);
+  IF (SELECT count(*) FROM attempt_answers WHERE attempt_id=aid)<>40 OR NOT EXISTS(SELECT 1 FROM test_results WHERE attempt_id=aid AND total_questions=40 AND marks_obtained=40 AND max_marks=40 AND jsonb_array_length(section_results)=1) THEN RAISE EXCEPTION 'Submission persistence failed'; END IF;
+  detail:=get_result_detail((r->>'result_id')::uuid);
+  IF jsonb_array_length(detail#>'{sections,0,questions}')<>40 OR EXISTS(SELECT 1 FROM jsonb_array_elements(detail#>'{sections,0,questions}') q WHERE coalesce(trim(q->>'explanation'),'')='') THEN RAISE EXCEPTION 'Saved review missing explanations'; END IF;
+  IF (SELECT completed_tests FROM student_performance WHERE student_id=sid)<>1 OR EXISTS(SELECT 1 FROM portal_pending(sid) WHERE id=tid) THEN RAISE EXCEPTION 'Dashboard statistics not updated'; END IF;
+  IF NOT (submit_test_attempt(aid)->>'already_submitted')::boolean THEN RAISE EXCEPTION 'Repeated submission not idempotent'; END IF;
+ END LOOP;
+ INSERT INTO navy_checks VALUES('Old and backend-registered Navy students automatically eligible',true,'Zero fees; no manual assignments');
+ INSERT INTO navy_checks VALUES('Academic start/resume has exact questions, 25-minute persisted timer and no keys',true,'40 questions; 1,500 seconds; same attempt/deadline on resume');
+ INSERT INTO navy_checks VALUES('Submission, saved answers, marks, explanations and dashboard records',true,'40 answers; 40/40 marks; completed_tests=1 for both students');
+ PERFORM set_config('request.jwt.claim.sub',old_uid::text,true);denied:=false;BEGIN PERFORM get_result_detail((r->>'result_id')::uuid);EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Cross-owner review allowed'; END IF;
+ INSERT INTO navy_checks VALUES('Cross-student result access rejected',true,'Ownership retained');
+ PERFORM set_config('request.jwt.claim.sub',staff::text,true);
+ r:=get_academy_leaderboard(c.force_id,c.id,NULL,40,1);
+ IF (r->>'total_participants')::integer<>2 THEN RAISE EXCEPTION 'Navy leaderboard not updated'; END IF;
+ INSERT INTO navy_checks VALUES('Backend Navy leaderboard updated',true,'Both submitted Navy students ranked from saved results');
+ DECLARE q questions%ROWTYPE; options jsonb; option_ids uuid[];
+ BEGIN
+  SELECT * INTO q FROM questions WHERE bank_key='nv' ORDER BY code LIMIT 1;
+  SELECT jsonb_agg(jsonb_build_object('label',label,'text',text,'image_url',image_url,'is_correct',is_correct) ORDER BY label),array_agg(id ORDER BY label) INTO options,option_ids FROM question_options WHERE question_id=q.id;
+  PERFORM admin_upsert_question(q.id,q.code,q.subject_id,q.difficulty,q.stem,q.stem_image_url,q.explanation,q.time_limit_seconds,q.status,q.tags,'{}'::uuid[],options);
+  IF NOT exam_question_course_eligible(q.id,c.id) OR (SELECT code FROM questions WHERE id=q.id)<>q.code OR (SELECT array_agg(id ORDER BY label) FROM question_options WHERE question_id=q.id)<>option_ids THEN RAISE EXCEPTION 'Shared authoring lost Navy mapping or UUIDs'; END IF;
+ END;
+ INSERT INTO navy_checks VALUES('Staff shared-bank writer includes Navy and preserves codes/option UUIDs',true,'The same default course set is used for new and edited intelligence records');
+ denied:=false;BEGIN UPDATE questions SET bank_key='PN-CADET-A' WHERE id=(SELECT id FROM questions WHERE bank_key='v' ORDER BY code LIMIT 1);EXCEPTION WHEN OTHERS THEN denied:=SQLERRM LIKE '%bank must match%';END;IF NOT denied THEN RAISE EXCEPTION 'Bank/subject mismatch accepted'; END IF;
+ INSERT INTO navy_checks VALUES('Database rejects relabeling shared Verbal as an Academic bank',true,'Direct writes cannot bypass subject/bank consistency');
+ r:=(SELECT configuration||jsonb_build_object('id',course_id,'entryCourseId',course_id,'forceId',force_id) FROM course_test_patterns WHERE course_id=c.id);
+ PERFORM save_pn_cadet_test_pattern(r);
+ INSERT INTO navy_checks VALUES('Administrator master-pattern save uses the hosted authorized writer',true,'Fixed banks, quotas and durations retained');
+ denied:=false;BEGIN PERFORM save_test_blueprint(jsonb_set(jsonb_set(cfg,'{test,duration_minutes}','30'),'{sections,0,duration_minutes}','30'));EXCEPTION WHEN OTHERS THEN denied:=SQLERRM LIKE '%PN Cadet Academic%';END;IF NOT denied THEN RAISE EXCEPTION 'Wrong Navy timer accepted'; END IF;
+ INSERT INTO navy_checks VALUES('Backend rejects wrong Academic duration',true,'30-minute substitution rejected');
+ SELECT array_agg(id) INTO intel FROM ((SELECT id FROM questions WHERE bank_key='v' AND status='APPROVED' ORDER BY code LIMIT 30) UNION ALL (SELECT id FROM questions WHERE bank_key='nv' AND status='APPROVED' ORDER BY code LIMIT 10))x;
+ cfg:=jsonb_set(cfg,'{sections,0}',jsonb_build_object('name','Intelligence','section_code','INTEL_PN_CADET','position',1,'question_count',40,'duration_minutes',25,'subject_ids',(SELECT jsonb_agg(id) FROM subjects WHERE code IN('INTELLIGENCE_VERBAL','INTELLIGENCE_NON_VERBAL')),'question_ids',to_jsonb(intel)));
+ denied:=false;BEGIN PERFORM save_test_blueprint(cfg);EXCEPTION WHEN OTHERS THEN denied:=SQLERRM LIKE '%25 Verbal + 15 Non-Verbal%';END;IF NOT denied THEN RAISE EXCEPTION 'Wrong intelligence distribution accepted'; END IF;
+ INSERT INTO navy_checks VALUES('Backend rejects 30 Verbal + 10 Non-Verbal replacement',true,'Requires exact 25 + 15');
+ SELECT array_agg(id) INTO intel FROM (SELECT id FROM questions WHERE bank_key='v' AND status='APPROVED' ORDER BY code LIMIT 40)x;
+ cfg:=jsonb_set(cfg,'{sections,0}',jsonb_build_object('name','Custom title','section_code','ACADEMIC_PN_CADET','position',1,'question_count',40,'duration_minutes',25,'subject_ids',(SELECT jsonb_agg(id) FROM subjects WHERE code='INTELLIGENCE_VERBAL'),'question_ids',to_jsonb(intel)));
+ denied:=false;BEGIN PERFORM save_test_blueprint(cfg);EXCEPTION WHEN OTHERS THEN denied:=SQLERRM LIKE '%designated Academic bank%';END;IF NOT denied THEN RAISE EXCEPTION 'Academic bank check bypassed with a custom title'; END IF;
+ INSERT INTO navy_checks VALUES('Section-code bank enforcement survives a changed section title',true,'Verbal questions cannot be disguised as Academic');
+ INSERT INTO navy_checks VALUES('Full Intelligence publication',false,'BLOCKED: 10 approved Non-Verbal available; 15 required; no fallback questions inserted');
+END $$;
+GRANT SELECT ON navy_context,navy_checks TO authenticated;
+SELECT set_config('request.jwt.claim.sub',(SELECT uid::text FROM navy_context),true);
+SET LOCAL ROLE authenticated;
+DO $$ DECLARE denied boolean:=false; BEGIN
+ IF EXISTS(SELECT 1 FROM question_options) OR EXISTS(SELECT 1 FROM exam_attempt_snapshots) OR EXISTS(SELECT 1 FROM course_test_patterns) THEN RAISE EXCEPTION 'Private keys, snapshots or staff configuration visible through student RLS'; END IF;
+ BEGIN PERFORM get_staff_question_bank();EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Student accessed staff bank'; END IF;
+ denied:=false;BEGIN PERFORM save_pn_cadet_test_pattern('{}');EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Student wrote a master pattern'; END IF;
+END $$;
+RESET ROLE;
+INSERT INTO navy_checks VALUES('Actual authenticated student role retains RLS and staff-operation denial',true,'Raw keys/private snapshots/staff configuration hidden; staff read/write RPCs denied');
+SELECT * FROM navy_checks;
+ROLLBACK;
+
