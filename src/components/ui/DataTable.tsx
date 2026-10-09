@@ -49,7 +49,7 @@ export function DataTable<T>({
   return (
     <div
       className={cn(
-        'bg-white border border-[#E2E6EB] rounded-lg overflow-hidden shadow-[0_1px_4px_rgba(0,0,0,0.06)] select-none',
+        'staff-data-table bg-white border border-[#E2E6EB] rounded-lg overflow-hidden shadow-[0_1px_4px_rgba(0,0,0,0.06)] select-none',
         className,
       )}
       {...props}

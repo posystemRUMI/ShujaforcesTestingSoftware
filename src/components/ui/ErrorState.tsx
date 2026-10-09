@@ -18,7 +18,7 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
   return (
     <div
       className={cn(
-        'bg-[#FDF2F2] border border-[#E29A9A] rounded p-6 flex flex-col sm:flex-row items-center justify-between gap-4 select-none',
+        'staff-error-state bg-[#FDF2F2] border border-[#E29A9A] rounded p-6 flex flex-col sm:flex-row items-center justify-between gap-4 select-none',
         className,
       )}
       {...props}

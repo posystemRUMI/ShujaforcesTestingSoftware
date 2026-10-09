@@ -15,7 +15,7 @@ export const SkeletonTable: React.FC<SkeletonTableProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border border-[#D4D9DF] rounded overflow-hidden shadow-sm animate-pulse',
+        'staff-skeleton bg-white border border-[#D4D9DF] rounded overflow-hidden shadow-sm animate-pulse',
         className,
       )}
       {...props}

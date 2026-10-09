@@ -36,7 +36,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
 
   return (
     <>
-      <header className="h-[66px] bg-white border-b border-[#E8ECF0] px-5 sm:px-7 flex items-center justify-between z-20 select-none flex-shrink-0">
+      <header className="staff-topbar h-[66px] bg-white border-b border-[#E8ECF0] px-5 sm:px-7 flex items-center justify-between z-20 select-none flex-shrink-0">
         {/* Left: Mobile Menu & Search */}
         <div className="flex items-center space-x-3 flex-1 max-w-lg">
           {onMobileMenuToggle && (
@@ -50,7 +50,9 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
             </button>
           )}
 
-          <div
+          <button
+            type="button"
+            aria-label="Search cadets, tests, questions..."
             onClick={() => setCommandSearchOpen(true)}
             className="w-full flex items-center justify-between px-3.5 py-2.5 bg-[#F4F6F9] border border-[#E2E6EB] rounded-lg text-sm text-[#64748B] hover:border-[#B0B8C4] cursor-pointer transition-colors"
           >
@@ -61,7 +63,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onMobileMenuToggle }) => {
             <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[11px] font-mono bg-white border border-[#D4D9DF] rounded text-[#64748B]">
               Ctrl+K
             </kbd>
-          </div>
+          </button>
         </div>
 
         {/* Right: Academy Status, Notifications, User Profile */}

@@ -359,7 +359,7 @@ export const StudentRegistrationPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6 select-none pb-12">
+    <div className="staff-page staff-student-registration max-w-5xl mx-auto space-y-6 select-none pb-12">
       {/* Page Header */}
       <PageHeader
         title="New Student Registration"

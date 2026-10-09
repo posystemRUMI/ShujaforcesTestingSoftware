@@ -668,7 +668,7 @@ export const TestBuilderPage: React.FC = () => {
   });
 
   return (
-    <div className="space-y-6 max-w-[1500px] mx-auto font-sans pb-12">
+    <div className="staff-page staff-test-builder space-y-6 max-w-[1500px] mx-auto font-sans pb-12">
       {/* Wizard Page Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-lg border border-[#E2E6EB] shadow-xs">
         <div>

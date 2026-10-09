@@ -129,7 +129,7 @@ export const StudentImportPage: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 select-none">
+    <div className="staff-page staff-student-import max-w-4xl mx-auto space-y-6 select-none">
       <PageHeader
         title="Candidate CSV/Excel Bulk Import"
         breadcrumbs={[

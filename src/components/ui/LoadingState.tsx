@@ -14,7 +14,7 @@ export const LoadingState: React.FC<LoadingStateProps> = ({
   return (
     <div
       className={cn(
-        'p-12 flex flex-col items-center justify-center space-y-3 select-none text-center',
+        'staff-loading-state p-12 flex flex-col items-center justify-center space-y-3 select-none text-center',
         className,
       )}
       {...props}

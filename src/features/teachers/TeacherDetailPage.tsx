@@ -11,7 +11,7 @@ export const TeacherDetailPage: React.FC = () => {
     if (id) teacherService.getTeacherById(id).then(t => { if (live) setTeacher(t); }).catch(e => { if (live) setError(e.message); }).finally(() => { if (live) setLoading(false); });
     return () => { live = false; };
   }, [id]);
-  return <div className="space-y-6 max-w-4xl">
+  return <div className="staff-page staff-teacher-detail space-y-6 max-w-4xl">
     <PageHeader title={teacher ? teacher.titleRank+' '+teacher.fullName : 'FACULTY RECORD'} breadcrumbs={[{ label: 'Faculty', href: '/admin/teachers' }]}
       action={teacher ? { label: 'Edit Faculty', icon: Edit, onClick: () => navigate('/admin/teachers/'+teacher.id+'/edit') } : undefined} />
     {loading ? <p>Loading faculty?</p> : error ? <p role="alert">Could not load faculty: {error}</p> : !teacher ? <p>Faculty member not found.</p> : <>

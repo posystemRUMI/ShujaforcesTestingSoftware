@@ -16,7 +16,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border border-[#E2E6EB] rounded-lg p-6 shadow-[0_1px_4px_rgba(0,0,0,0.06)] space-y-4 select-none',
+        'staff-form-section bg-white border border-[#E2E6EB] rounded-lg p-6 shadow-[0_1px_4px_rgba(0,0,0,0.06)] space-y-4 select-none',
         className,
       )}
       {...props}

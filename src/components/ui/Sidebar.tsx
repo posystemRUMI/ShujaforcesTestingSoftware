@@ -26,7 +26,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside
       className={cn(
-        'w-[250px] bg-[#0E1B2A] text-white flex flex-col flex-shrink-0 border-r border-[#0E1B2A] select-none z-20',
+        'staff-sidebar w-[250px] bg-[#0E1B2A] text-white flex flex-col flex-shrink-0 border-r border-[#0E1B2A] select-none z-20',
         className,
       )}
       {...props}

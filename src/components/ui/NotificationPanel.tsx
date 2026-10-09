@@ -38,6 +38,8 @@ export const NotificationPanel: React.FC<NotificationPanelProps> = ({
         <button
           type="button"
           onClick={onClose}
+          aria-label="Close notifications"
+          title="Close notifications"
           className="text-[#64748B] hover:text-[#0E1B2A] p-0.5 rounded"
         >
           <X className="w-3.5 h-3.5" />

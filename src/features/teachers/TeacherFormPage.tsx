@@ -106,7 +106,7 @@ export const TeacherFormPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 max-w-4xl pb-12">
+    <div className="staff-page staff-teacher-form space-y-6 max-w-4xl pb-12">
       <PageHeader
         title={isEdit ? 'EDIT FACULTY RECORD' : 'ENROL FACULTY OFFICER'}
         breadcrumbs={[

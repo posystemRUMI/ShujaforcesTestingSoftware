@@ -22,7 +22,7 @@ export const TeachersListPage: React.FC = () => {
       <button type="button" title="Edit Faculty" onClick={() => navigate('/admin/teachers/'+t.id+'/edit')}><Edit className="w-4 h-4" /></button>
     </div> },
   ];
-  return <div className="space-y-6">
+  return <div className="staff-page staff-teachers-list space-y-6">
     <PageHeader title="FACULTY & INSTRUCTORS" action={{ label: 'Enrol Faculty Member', icon: Plus, onClick: () => navigate('/admin/teachers/new') }} />
     <div className="font-semibold text-sm">Total Faculty: {teachers.length}</div>
     <div className="flex flex-col sm:flex-row gap-3">

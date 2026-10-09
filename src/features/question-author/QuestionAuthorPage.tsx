@@ -152,7 +152,7 @@ export const QuestionAuthorPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="staff-page staff-question-author space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-[#D4D9DF] shadow-sm">
         <div className="flex items-center space-x-3">

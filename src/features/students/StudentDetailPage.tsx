@@ -144,7 +144,7 @@ export const StudentDetailPage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-6 select-none max-w-5xl mx-auto">
+    <div className="staff-page staff-student-detail space-y-6 select-none max-w-5xl mx-auto">
       <PageHeader
         title={student.fullName}
         subtitle={`Candidate Docket: ${student.rollNumber} | CNIC: ${student.cnic} | Branch: ${student.branch}`}

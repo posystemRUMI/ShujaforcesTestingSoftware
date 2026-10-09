@@ -35,7 +35,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border rounded-lg p-5 sm:p-6 shadow-[0_1px_4px_rgba(0,0,0,0.06)] select-none transition-colors',
+        'staff-metric bg-white border rounded-lg p-5 sm:p-6 shadow-[0_1px_4px_rgba(0,0,0,0.06)] select-none transition-colors',
         highlight ? 'border-[#0E1B2A] ring-1 ring-[#0E1B2A]/10' : 'border-[#E2E6EB]',
         className,
       )}

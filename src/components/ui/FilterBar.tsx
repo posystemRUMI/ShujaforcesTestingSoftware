@@ -20,7 +20,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   return (
     <div
       className={cn(
-        'bg-white border border-[#D4D9DF] rounded p-3 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 shadow-sm select-none',
+        'staff-filter-bar bg-white border border-[#D4D9DF] rounded p-3 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 shadow-sm select-none',
         className,
       )}
       {...props}

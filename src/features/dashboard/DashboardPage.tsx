@@ -103,7 +103,7 @@ export const DashboardPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="staff-page staff-dashboard space-y-8">
       {/* Page Header */}
       <PageHeader
         title="Dashboard"

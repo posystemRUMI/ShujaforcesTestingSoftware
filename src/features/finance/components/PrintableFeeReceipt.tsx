@@ -200,7 +200,7 @@ export const PrintableFeeReceipt: React.FC<PrintableFeeReceiptProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 overflow-y-auto">
+    <div role="dialog" aria-modal="true" aria-label="Official Fee Receipt" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 overflow-y-auto">
       {/* Print Stylesheet injection */}
       <style>{`
         @media print {
@@ -251,6 +251,8 @@ export const PrintableFeeReceipt: React.FC<PrintableFeeReceiptProps> = ({
             </button>
             <button
               onClick={onClose}
+              aria-label="Close receipt"
+              title="Close receipt"
               className="p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors"
             >
               <X className="w-5 h-5" />

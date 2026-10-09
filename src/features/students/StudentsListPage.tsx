@@ -213,7 +213,7 @@ export const StudentsListPage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-4 select-none">
+    <div className="staff-page staff-students-list space-y-4 select-none">
       <PageHeader
         title="Cadet Identification Dockets"
         breadcrumbs={[{ label: 'Cadets Roster' }]}

@@ -107,7 +107,7 @@ export const StudentFormPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 select-none">
+    <div className="staff-page staff-student-form max-w-4xl mx-auto space-y-6 select-none">
       <PageHeader
         title={isEditMode ? 'Modify Cadet Docket' : 'New Cadet Induction Enrollment'}
         breadcrumbs={[

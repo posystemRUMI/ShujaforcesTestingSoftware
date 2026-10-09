@@ -40,7 +40,7 @@ export function QuestionBankPage() {
     catch (e: any) { toast.error(e.message); }
   }
   const selectClass = 'border rounded px-3 py-2 text-xs bg-white min-w-0';
-  return <div className="space-y-4">
+  return <div className="staff-page staff-question-bank space-y-4">
     <div className="flex flex-wrap justify-between items-center gap-3 bg-white border rounded-md p-4">
       <h1 className="text-xl font-bold text-[#0E1B2A]">Question Bank Repository</h1>
       <Link to="/admin/authoring" className="flex items-center gap-2 bg-[#0E1B2A] text-white text-xs rounded px-3 py-2"><Plus size={16} />Question Authoring Studio</Link>

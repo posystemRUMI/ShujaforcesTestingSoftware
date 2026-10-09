@@ -20,7 +20,7 @@ export const TeacherSalaryPanel: React.FC<{ refreshKey: number }> = ({ refreshKe
     return () => { window.removeEventListener('focus', focus); window.clearInterval(timer); };
   }, [load, refreshKey]);
   const paid = payments.filter(p => p.status === 'ACTIVE');
-  return <section className="bg-white border border-slate-200 rounded-xl p-4 sm:p-6 space-y-4">
+  return <section className="staff-salary-panel bg-white border border-slate-200 rounded-xl p-4 sm:p-6 space-y-4">
     <div className="flex flex-wrap items-center justify-between gap-3">
       <h2 className="font-bold text-lg">My Salary</h2>
       <select aria-label="Salary history year" value={year} onChange={e => setYear(Number(e.target.value))} className="border rounded px-3 py-2 text-sm">

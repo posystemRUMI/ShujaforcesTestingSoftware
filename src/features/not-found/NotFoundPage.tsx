@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { ShieldAlert, ArrowLeft } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import '@/styles/student-portal.css';
+import '@/styles/management-portal.css';
 
 export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
   const { role } = useAuth();
 
   return (
-    <div className={`${role === 'STUDENT' ? 'academy-exam student-not-found ' : ''}min-h-screen bg-[#F6F8FA] flex items-center justify-center p-6 select-none`}>
+    <div className={`${role === 'STUDENT' ? 'academy-exam student-not-found ' : 'academy-management staff-not-found '}min-h-screen bg-[#F6F8FA] flex items-center justify-center p-6 select-none`}>
       <div className="max-w-md w-full bg-white border border-[#D4D9DF] rounded p-8 text-center shadow-[0_4px_0_0_rgba(14,27,42,0.06)] space-y-4">
         <div className="w-12 h-12 rounded bg-[#EDF1F5] flex items-center justify-center text-[#0E1B2A] mx-auto">
           <ShieldAlert className="w-6 h-6" />

@@ -14,6 +14,8 @@ import {
 import { Sidebar, Topbar, ResponsiveDrawer } from '@/components/ui';
 import { useAuth } from '@/app/providers';
 import { useRealtimeSync } from '@/hooks/useRealtimeSync';
+import '@/styles/management-portal.css';
+import { MotionConfig } from 'framer-motion';
 
 const NAV_ITEMS = [
   { label: 'Dashboard', to: '/admin/dashboard', icon: LayoutDashboard },
@@ -44,7 +46,7 @@ export const AdminShell: React.FC = () => {
   }, [role]);
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[#F6F8FA] select-none text-[#1F2937]">
+    <MotionConfig reducedMotion="user"><div className="academy-management flex h-screen w-screen overflow-hidden bg-[#F6F8FA] select-none text-[#1F2937]" data-role={role}>
       {/* Desktop Structural Navigation Sidebar (240px) */}
       <Sidebar items={filteredNavItems} className="hidden md:flex" />
 
@@ -70,13 +72,13 @@ export const AdminShell: React.FC = () => {
         <Topbar onMobileMenuToggle={() => setMobileMenuOpen(true)} />
 
         {/* Scrollable Page Canvas */}
-        <main className="flex-1 overflow-y-auto p-6 sm:p-8">
-          <div className="max-w-[1520px] mx-auto w-full">
+        <main className="staff-content flex-1 overflow-y-auto p-6 sm:p-8">
+          <div className="staff-canvas max-w-[1520px] mx-auto w-full">
             <Outlet />
           </div>
         </main>
       </div>
-    </div>
+    </div></MotionConfig>
   );
 };
 

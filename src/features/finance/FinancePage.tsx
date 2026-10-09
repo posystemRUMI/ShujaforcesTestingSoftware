@@ -343,7 +343,7 @@ export const FinancePage: React.FC = () => {
   }, [summary]);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto pb-12">
+    <div className="staff-page staff-finance space-y-6 max-w-7xl mx-auto pb-12">
       {/* Top Header Bar */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -1664,14 +1664,14 @@ const CollectPaymentModal: React.FC<CollectModalProps> = ({ account, student, on
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-md w-full overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Receipt className="w-5 h-5 text-emerald-600" />
             <h3 className="text-sm font-bold text-slate-900">Collect Cadet Fee Payment</h3>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600">
             <XCircle className="w-5 h-5" />
           </button>
         </div>
@@ -1805,11 +1805,11 @@ const AdjustFeeModal: React.FC<{ account: StudentFeeAccount; onClose: () => void
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-sm w-full overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <h3 className="text-sm font-bold text-slate-900">Adjust Discount & Late Fine</h3>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600">
             <XCircle className="w-5 h-5" />
           </button>
         </div>
@@ -1903,11 +1903,11 @@ const WaiveFeeModal: React.FC<{ account: StudentFeeAccount; onClose: () => void;
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-sm w-full overflow-hidden">
         <div className="p-4 border-b border-slate-200 bg-purple-50 flex items-center justify-between">
           <h3 className="text-sm font-bold text-purple-950">Waive Cadet Fee Account</h3>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600">
             <XCircle className="w-5 h-5" />
           </button>
         </div>
@@ -1991,14 +1991,14 @@ const RecordExpenseModal: React.FC<{ onClose: () => void; onSuccess: () => void 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-md w-full overflow-hidden">
         <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <DollarSign className="w-5 h-5 text-rose-600" />
             <h3 className="text-sm font-bold text-slate-900">Record Operational Expense</h3>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600">
             <XCircle className="w-5 h-5" />
           </button>
         </div>
@@ -2207,14 +2207,14 @@ const RecordSalaryModal: React.FC<{
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-md w-full overflow-hidden">
         <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <GraduationCap className="w-5 h-5 text-indigo-600" />
             <h3 className="text-sm font-bold text-slate-900">Faculty Salary Disbursement</h3>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600">
             <XCircle className="w-5 h-5" />
           </button>
         </div>
@@ -2413,14 +2413,14 @@ const GenerateFeesModal: React.FC<{ onClose: () => void; onSuccess: () => void }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-xl shadow-2xl border border-slate-200 max-w-sm w-full overflow-hidden">
         <div className="p-4 border-b border-slate-200 bg-blue-50 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Sparkles className="w-5 h-5 text-blue-700" />
             <h3 className="text-sm font-bold text-blue-950">Generate Monthly Cadet Fees</h3>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600">
             <XCircle className="w-5 h-5" />
           </button>
         </div>
@@ -2546,11 +2546,11 @@ const EditExpenseModal: React.FC<{
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl max-w-lg w-full p-6 shadow-2xl border border-slate-200">
         <div className="flex items-center justify-between pb-4 border-b border-slate-150">
           <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">Edit Expense Record</h3>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4 pt-4 text-xs font-sans">
           <div>
@@ -2683,14 +2683,14 @@ const EditFeeAccountModal: React.FC<{
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
         <div className="flex items-center justify-between pb-4 border-b border-slate-150">
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">Edit Cadet Fee Record</h3>
             <p className="text-[11px] text-slate-500">{account.fee_type} ({account.fee_month ? `${account.fee_month}/${account.fee_year}` : account.fee_year})</p>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4 pt-4 text-xs font-sans">
           <div>
@@ -2816,14 +2816,14 @@ const EditSalaryModal: React.FC<{
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
+    <div role="dialog" aria-modal="true" className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
         <div className="flex items-center justify-between pb-4 border-b border-slate-150">
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">Edit Faculty Payroll Record</h3>
             <p className="text-[11px] text-slate-500">{salary.teacher_name} ({salary.salary_month}/{salary.salary_year})</p>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
+          <button aria-label="Close dialog" title="Close dialog" onClick={onClose} className="text-slate-400 hover:text-slate-600 font-bold">✕</button>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4 pt-4 text-xs font-sans">
           <div>

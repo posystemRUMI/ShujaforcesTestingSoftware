@@ -93,7 +93,7 @@ export const ResultsPage: React.FC = () => {
   const highestScore = results.length ? Math.max(...results.map((r) => r.percentage)) : 0;
 
   return (
-    <div className="space-y-6">
+    <div className="staff-page staff-results space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-6 rounded-md border border-[#D4D9DF] shadow-sm">
         <div>
@@ -270,7 +270,7 @@ export const ResultsPage: React.FC = () => {
 
       {/* Item-by-Item Answer Review Modal Drawer (Phase 13 Result Detail) */}
       {selectedResult && (
-        <div className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+        <div role="dialog" aria-modal="true" aria-label="Candidate script inspection" className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
           <div className="bg-white border-2 border-[#0E1B2A] rounded-md p-6 max-w-3xl w-full shadow-2xl space-y-5 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-[#E2E6EB] pb-3">
               <div>
