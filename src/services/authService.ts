@@ -36,7 +36,7 @@ export const authService = {
         .eq('id', session.user.id)
         .maybeSingle();
 
-      if (profileError || !profile) {
+      if (profileError || !profile || profile.status !== 'ACTIVE') {
         return null;
       }
 
@@ -46,11 +46,9 @@ export const authService = {
       let rankTitle: string | undefined;
 
       if (profile.role === 'STUDENT') {
-        const { data: std } = await (supabase as any)
-          .from('students')
-          .select('id, roll_number, forces(code)')
-          .eq('profile_id', profile.id)
-          .maybeSingle();
+        const { data: std, error: studentError } = await (supabase as any)
+          .rpc('student_session_identity');
+        if (studentError || !std || std.profile_id !== session.user.id) return null;
 
         if (std) {
           cadetId = std.id;
@@ -175,7 +173,7 @@ export const authService = {
         return { user: null, error: new Error('Your account is not configured correctly. Contact administration.') };
       }
 
-      if (profile.status === 'SUSPENDED' || profile.status === 'INACTIVE') {
+      if (profile.status !== 'ACTIVE') {
         await supabase.auth.signOut();
         return { user: null, error: new Error('Account access suspended. Contact academy command center.') };
       }
@@ -190,11 +188,12 @@ export const authService = {
       let rankTitle: string | undefined;
 
       if (profile.role === 'STUDENT') {
-        const { data: std } = await (supabase as any)
-          .from('students')
-          .select('id, roll_number, forces(id, code, name), courses(id, code, name)')
-          .eq('profile_id', profile.id)
-          .maybeSingle();
+        const { data: std, error: studentError } = await (supabase as any)
+          .rpc('student_session_identity');
+        if (studentError || !std || std.profile_id !== data.user.id) {
+          await supabase.auth.signOut();
+          return { user: null, error: new Error('Your active student registration is incomplete. Contact academy administration.') };
+        }
 
         if (std) {
           cadetId = std.id;

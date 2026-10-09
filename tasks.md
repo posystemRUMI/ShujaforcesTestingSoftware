@@ -102,3 +102,19 @@ Details: [initial audit](Docs/TEST_SYSTEM_AUDIT.md), [changes and every verifica
 - [ ] Deploy updated frontend to production.
 
 Details: [report](Docs/ARMY_TESTS_FEES_BACKEND_REPORT.md), [reusable prompt](Docs/ARMY_TEST_AND_FEES_TASK_PROMPT.md).
+
+## Authorized student/test reset and authentication verification
+
+- [x] Audit Auth/profile/student/status/role/RLS chain; identify 41 orphan student profiles.
+- [x] Apply active-session identity and registration linkage enforcement migration to hosted DB.
+- [x] Back up original records, Auth identities and five exclusive photos; prepare and rehearse rollback recovery.
+- [x] Delete five original students, twelve tests and 45 student-only Auth accounts with all dependencies.
+- [x] Preserve four staff accounts and one mixed-role account without changing permissions; report exception.
+- [x] Fresh PMA/AFNS actual registration, all student pages, empty states, zero fees, refresh/logout/login and ownership checks.
+- [x] Temporary exact 13/19-question exams, persisted timers, submission/results/history/leaderboards and orientation/instructions.
+- [x] Remove both QA students/Auth accounts/tests/dependencies; final zero students/tests and 98-FK orphan check.
+- [x] TypeScript, production build and diff checks.
+- [ ] Administratively review the protected mixed-role account.
+- [ ] Deploy updated frontend to production.
+
+This reset supersedes the retained QA records described in previous sections. See [reset report](Docs/STUDENT_TEST_RESET_REPORT.md).

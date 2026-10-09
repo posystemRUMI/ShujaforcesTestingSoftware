@@ -306,7 +306,7 @@ export const studentRegistrationService = {
   },
 
   /**
-   * Register a new student via Edge Function with direct Auth+RPC fallback
+   * Register a new student through the authenticated atomic Edge Function.
    */
   async registerStudent(input: StudentRegistrationInput): Promise<RegistrationResult> {
     const { data: { session } } = await supabase.auth.getSession();

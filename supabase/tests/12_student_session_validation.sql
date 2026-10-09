@@ -1,0 +1,30 @@
+BEGIN;
+CREATE TEMP TABLE session_checks(name text,passed boolean);
+DO $$
+DECLARE staff uuid; uid uuid:=gen_random_uuid(); c record; r jsonb; denied boolean;
+BEGIN
+ SELECT id INTO staff FROM profiles WHERE role='ADMIN' AND status='ACTIVE' LIMIT 1;
+ SELECT * INTO c FROM courses WHERE code='PMA_LONG_COURSE';
+ INSERT INTO auth.users(id,email) VALUES(uid,uid||'@session-rollback.invalid');
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);
+ denied:=false;BEGIN PERFORM student_session_identity();EXCEPTION WHEN OTHERS THEN denied:=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Orphan profile accepted'; END IF;
+ INSERT INTO session_checks VALUES('Orphan Auth/profile cannot resolve student identity',true);
+ PERFORM set_config('request.jwt.claim.role','service_role',true);
+ r:=portal_register_student(uid,staff,jsonb_build_object('email',uid||'@session-rollback.invalid','fullName','Session rollback','fatherName','Fixture','cnic','999'||right(replace(uid::text,'-',''),10),'phone','03000000000','targetForceId',c.force_id,'targetCourseId',c.id,'rollNumber','QA-SESSION-'||uid,'education','Intermediate','courseFeeAmount',0,'initialPaymentAmount',0));
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);PERFORM set_config('request.jwt.claim.role','authenticated',true);
+ IF student_session_identity()->>'profile_id'<>uid::text THEN RAISE EXCEPTION 'Identity mismatch'; END IF;
+ INSERT INTO session_checks VALUES('Atomic registration creates active Auth/profile/student linkage',true);
+ UPDATE students SET status='INACTIVE' WHERE profile_id=uid;
+ denied:=false;BEGIN PERFORM student_session_identity();EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Inactive student accepted'; END IF;
+ UPDATE students SET status='ACTIVE' WHERE profile_id=uid;UPDATE profiles SET status='INACTIVE' WHERE id=uid;
+ denied:=false;BEGIN PERFORM student_session_identity();EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Inactive profile accepted'; END IF;
+ UPDATE profiles SET status='ACTIVE',role='TEACHER' WHERE id=uid;
+ denied:=false;BEGIN PERFORM student_session_identity();EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Wrong role accepted'; END IF;
+ INSERT INTO session_checks VALUES('Inactive student/profile and wrong role remain denied',true);
+ PERFORM set_config('request.jwt.claim.role','service_role',true);
+ denied:=false;BEGIN PERFORM portal_register_student(staff,staff,jsonb_build_object('email',(SELECT email FROM profiles WHERE id=staff)));EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Staff conversion accepted';END IF;
+ INSERT INTO session_checks VALUES('Registration refuses conversion of staff Auth accounts',true);
+END $$;
+SELECT * FROM session_checks;
+ROLLBACK;

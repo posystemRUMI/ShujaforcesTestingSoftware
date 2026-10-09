@@ -55,7 +55,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             setTimeout(() => {
               if (!mounted) return;
               authService.getCurrentUser().then((freshUser) => {
-                if (freshUser && mounted) setUser(freshUser);
+                if (mounted) setUser(freshUser);
               }).catch((error) => console.warn('Could not refresh the signed-in profile:', error));
             }, 0);
           } else if (event === 'SIGNED_OUT') {
