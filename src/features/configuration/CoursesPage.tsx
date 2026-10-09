@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+﻿import React, { useState, useEffect, useMemo } from 'react';
 import {
   PageHeader,
   SearchInput,
@@ -80,7 +80,7 @@ export const CoursesPage: React.FC = () => {
 
   // Filtered courses (strictly only official 5 courses)
   const filteredCourses = useMemo(() => {
-    const OFFICIAL_CODES = ['PMA_LONG_COURSE', 'AFNS', 'GDP_CAE', 'AIRMAN', 'SAILOR'];
+    const OFFICIAL_CODES = ['PMA_LONG_COURSE', 'AFNS', 'CAE', 'AIRMAN', 'PN_CADET'];
     return courses.filter((c) => {
       const code = normalizeCourseCode(c.code || c.name);
       if (!OFFICIAL_CODES.includes(code)) return false;
@@ -189,13 +189,13 @@ export const CoursesPage: React.FC = () => {
         <MetricCard
           title="PAF Streams"
           value={courses.filter((c) => c.branch === 'PAKISTAN_AIR_FORCE').length.toString()}
-          subtitle="GD(P) & Airman"
+          subtitle="CAE & Airman"
           icon={<GraduationCap className="w-5 h-5 text-sky-600" />}
         />
         <MetricCard
           title="Navy Branches"
           value={courses.filter((c) => c.branch === 'PAKISTAN_NAVY').length.toString()}
-          subtitle="Sailor"
+          subtitle="PN Cadet"
           icon={<GraduationCap className="w-5 h-5 text-[#C6A75E]" />}
         />
       </div>

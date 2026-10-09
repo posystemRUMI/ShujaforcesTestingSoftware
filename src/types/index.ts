@@ -1,4 +1,4 @@
-export type MilitaryBranch = 'PAKISTAN_ARMY' | 'PAKISTAN_AIR_FORCE' | 'PAKISTAN_NAVY';
+﻿export type MilitaryBranch = 'PAKISTAN_ARMY' | 'PAKISTAN_AIR_FORCE' | 'PAKISTAN_NAVY';
 
 export type UserRole = 'ADMIN' | 'TEACHER' | 'STUDENT';
 
@@ -46,7 +46,7 @@ export interface Batch {
   startDate: string;
   endDate: string;
   status: 'ACTIVE' | 'COMPLETED' | 'UPCOMING';
-  targetCourse: string; // e.g., "PMA Long Course", "AFNS", "GD(P) & Aeronautical Engineering", "Airman", "Sailor"
+  targetCourse: string; // e.g., "PMA Long Course", "AFNS", "CAE", "Airman", "PN Cadet"
 }
 
 export type SubjectCategory =

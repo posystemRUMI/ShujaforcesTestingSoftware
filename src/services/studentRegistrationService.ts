@@ -105,9 +105,9 @@ export const studentRegistrationService = {
     if (forceCode.includes('ARMY')) {
       targetOfficialCodes = ['PMA_LONG_COURSE', 'AFNS'];
     } else if (forceCode.includes('AIR') || forceCode.includes('PAF')) {
-      targetOfficialCodes = ['GDP_CAE', 'AIRMAN'];
+      targetOfficialCodes = ['CAE', 'AIRMAN'];
     } else if (forceCode.includes('NAVY')) {
-      targetOfficialCodes = ['SAILOR'];
+      targetOfficialCodes = ['PN_CADET'];
     }
 
     // 3. Query DB courses first to match DB UUIDs where available

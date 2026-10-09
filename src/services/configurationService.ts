@@ -60,6 +60,7 @@ export const configurationService = {
             name
           )
         `)
+        .eq('status', 'ACTIVE')
         .order('sort_order', { ascending: true });
 
       if (forceId) {

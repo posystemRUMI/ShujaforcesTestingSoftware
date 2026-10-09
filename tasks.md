@@ -169,6 +169,18 @@ Details: [dashboard and explanation report](Docs/DASHBOARD_EXPLANATIONS.md).
 
 Details: [complete source accounting and correction report](Docs/VERBAL_LC159_IMPORT_REPORT.md).
 
+## Five supported courses
+
+- [x] Back up course catalog/references and keep canonical PMA, AFNS, CAE, Airman and PN Cadet UUIDs.
+- [x] Deactivate 16 duplicate/unsupported courses and block unsupported activation/enrollment/test creation.
+- [x] Filter all connected course selectors and remove GDP/Sailor offerings from frontend definitions.
+- [x] Preserve students, tests, fees, bank mappings and historical references.
+- [x] Hosted backend checks, TypeScript and production build.
+- [x] Six Admin/Teacher browser checks for five-course selectors, refresh and responsive layout.
+- [ ] Deploy frontend changes to production.
+
+Details: [supported course catalog](Docs/SUPPORTED_COURSE_CATALOG.md).
+
 ## Remove Reports & Analytics
 
 - [x] Delete Reports page, lazy import, route and dedicated report service/export.

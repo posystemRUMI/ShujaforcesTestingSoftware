@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -275,9 +275,9 @@ export const StudentFormPage: React.FC = () => {
               >
                 <option value="PMA Long Course">Pakistan Army – PMA Long Course</option>
                 <option value="AFNS">Pakistan Army – AFNS</option>
-                <option value="GD(P) & Aeronautical Engineering">PAF – GD(P) & Aeronautical Engineering</option>
+                <option value="CAE">PAF – CAE</option>
                 <option value="Airman">PAF – Airman</option>
-                <option value="Sailor">Pakistan Navy – Sailor</option>
+                <option value="PN Cadet">Pakistan Navy – PN Cadet</option>
               </select>
               {errors.targetCourse && (
                 <p className="text-[11px] text-[#782525] mt-1">{errors.targetCourse.message}</p>

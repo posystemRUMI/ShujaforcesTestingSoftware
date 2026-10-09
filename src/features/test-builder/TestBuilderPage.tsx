@@ -48,6 +48,7 @@ interface ConfiguredSectionState {
   canOverrideCount: boolean;
   canOverrideDuration: boolean;
   subjects: Array<{ id: string; code: string; name: string }>;
+  subjectQuotas?: Record<string, number>;
   defaultQuestions: number;
   defaultDuration: number;
 }
@@ -283,6 +284,7 @@ export const TestBuilderPage: React.FC = () => {
                 canOverrideCount: s.teacherCanOverrideQuestionCount,
                 canOverrideDuration: s.teacherCanOverrideDuration,
                 subjects: s.subjects || [],
+                subjectQuotas: s.subjectQuotas,
                 defaultQuestions: s.defaultQuestionCount,
                 defaultDuration: s.defaultDurationMinutes,
               };
@@ -381,13 +383,17 @@ export const TestBuilderPage: React.FC = () => {
     return false;
   };
 
+  const allocateSection = (sec: ConfiguredSectionState, pool: Question[]): string[] => {
+    if (!sec.subjectQuotas) return pool.slice(0, sec.questionCount).map(q => q.id);
+    return Object.entries(sec.subjectQuotas).flatMap(([subjectId, count]) => pool.filter(q => q.subject_id === subjectId).slice(0, count).map(q => q.id));
+  };
+
   // Auto Question Allocator across all sections
   const handleAutoGenerate = () => {
     const newMap: Record<string, string[]> = {};
     const usedIds = new Set<string>();
 
     for (const sec of activeSections) {
-      const needed = sec.questionCount;
       const matching = allQuestions.filter(
         (q) =>
           q.status === 'APPROVED' &&
@@ -395,7 +401,7 @@ export const TestBuilderPage: React.FC = () => {
           isQuestionBelongsToSection(q, sec)
       );
 
-      const allocated = matching.slice(0, needed).map((q) => q.id);
+      const allocated = allocateSection(sec, matching);
       allocated.forEach((id) => usedIds.add(id));
       newMap[sec.id] = allocated;
     }
@@ -416,7 +422,6 @@ export const TestBuilderPage: React.FC = () => {
       }
     });
 
-    const needed = sec.questionCount;
     const matching = allQuestions.filter(
       (q) =>
         q.status === 'APPROVED' &&
@@ -424,7 +429,7 @@ export const TestBuilderPage: React.FC = () => {
         isQuestionBelongsToSection(q, sec)
     );
 
-    const allocated = matching.slice(0, needed).map((q) => q.id);
+    const allocated = allocateSection(sec, matching);
     setSectionQuestionMap((prev) => ({
       ...prev,
       [secId]: allocated,
@@ -443,6 +448,15 @@ export const TestBuilderPage: React.FC = () => {
         [secId]: currentList.filter((id) => id !== qId),
       }));
     } else {
+      const selectedQuestion = allQuestions.find(q => q.id === qId);
+      if (sec.subjectQuotas && selectedQuestion?.subject_id) {
+        const limit = sec.subjectQuotas[selectedQuestion.subject_id];
+        const selectedCount = allQuestions.filter(q => currentList.includes(q.id) && q.subject_id === selectedQuestion.subject_id).length;
+        if (limit === undefined || selectedCount >= limit) {
+          toast.error(`This subject requires exactly ${limit ?? 0} questions.`);
+          return;
+        }
+      }
       if (currentList.length >= sec.questionCount) {
         toast.error(`Section quota reached (${sec.questionCount} questions). Remove an item first.`);
         return;
@@ -980,7 +994,7 @@ export const TestBuilderPage: React.FC = () => {
                                       key={sub.id}
                                       className="text-xs font-semibold bg-[#EDF1F5] text-[#334155] px-2.5 py-1 rounded-md border border-[#E2E8F0]"
                                     >
-                                      {sub.name}
+                                      {sub.name}{sec.subjectQuotas?.[sub.id] !== undefined ? `: ${sec.subjectQuotas[sub.id]}` : ''}
                                     </span>
                                   ))}
                                 </div>

@@ -39,7 +39,7 @@ export const questionService = {
   async getTaxonomy(): Promise<{ forces: Array<{ id: string; name: string }>; courses: Array<{ id: string; name: string; code: string; force_id: string }>; subjects: Array<{ id: string; name: string; code: string; category: string }> }> {
     const responses = await Promise.all([
       supabase.from('forces').select('id,name').order('sort_order'),
-      supabase.from('courses').select('id,name,code,force_id').order('sort_order'),
+      supabase.from('courses').select('id,name,code,force_id').eq('status', 'ACTIVE').order('sort_order'),
       supabase.from('subjects').select('id,name,code,category').order('sort_order'),
     ]);
     for (const response of responses) if (response.error) throw response.error;

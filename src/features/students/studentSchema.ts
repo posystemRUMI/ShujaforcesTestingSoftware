@@ -1,4 +1,4 @@
-import { z } from 'zod';
+﻿import { z } from 'zod';
 
 export const studentFormSchema = z.object({
   fullName: z.string().min(3, 'Full name must be at least 3 characters'),
@@ -11,7 +11,7 @@ export const studentFormSchema = z.object({
   temporaryCredential: z.string().min(6, 'Initial clearance code must be at least 6 characters'),
   branch: z.enum(['PAKISTAN_ARMY', 'PAKISTAN_AIR_FORCE', 'PAKISTAN_NAVY']),
   batchId: z.string().optional(),
-  targetCourse: z.string().min(2, 'Induction target course required (e.g. PMA Long Course, GD(P) & Aeronautical Engineering)'),
+  targetCourse: z.string().min(2, 'Induction target course required (e.g. PMA Long Course, CAE)'),
   status: z.enum(['ACTIVE', 'GRADUATED', 'RETAKE_REQUIRED', 'DISQUALIFIED']),
   avatarUrl: z.string().optional(),
 });

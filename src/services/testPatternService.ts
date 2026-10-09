@@ -49,6 +49,7 @@ export interface TestPatternSection {
     name: string;
     isDefault: boolean;
   }[];
+  subjectQuotas?: Record<string, number>;
 }
 
 export const testPatternService = {
@@ -58,6 +59,11 @@ export const testPatternService = {
     }
 
     try {
+      if (courseId === '00000000-0000-0000-0000-000000000103') {
+        const { data, error } = await (supabase as any).from('course_test_patterns').select('*').eq('course_id', courseId);
+        if (error) throw new Error(error.message);
+        return (data || []).map((row: any) => ({ ...row.configuration, id: row.course_id, forceId: row.force_id, entryCourseId: row.course_id }));
+      }
       let query = (supabase as any)
         .from('test_pattern_templates')
         .select('*')
@@ -96,6 +102,11 @@ export const testPatternService = {
     }
 
     try {
+      if (templateId === '00000000-0000-0000-0000-000000000103') {
+        const { data, error } = await (supabase as any).from('course_test_patterns').select('*').eq('course_id', templateId).single();
+        if (error) throw new Error(error.message);
+        return { ...data.configuration, id: data.course_id, forceId: data.force_id, entryCourseId: data.course_id };
+      }
       const { data: tpl, error: tplError } = await (supabase as any)
         .from('test_pattern_templates')
         .select('*')

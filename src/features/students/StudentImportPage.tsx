@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PageHeader, FormSection, DataTable, ColumnDef, StatusBadge } from '@/components/ui';
 import { Upload, FileSpreadsheet, CheckCircle2, ArrowLeft, ArrowRight } from 'lucide-react';
@@ -73,7 +73,7 @@ export const StudentImportPage: React.FC = () => {
         phone: r.phone,
         rollNumber: r.rollNumber,
         branch: r.branch,
-        targetCourse: r.branch === 'PAKISTAN_ARMY' ? 'PMA Long Course' : r.branch === 'PAKISTAN_AIR_FORCE' ? 'GD(P) & Aeronautical Engineering' : 'Sailor',
+        targetCourse: r.branch === 'PAKISTAN_ARMY' ? 'PMA Long Course' : r.branch === 'PAKISTAN_AIR_FORCE' ? 'CAE' : 'PN Cadet',
         status: 'ACTIVE',
       });
     });

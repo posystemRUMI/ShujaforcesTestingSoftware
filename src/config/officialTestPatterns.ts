@@ -2,8 +2,8 @@
  * Official Armed Forces Test Patterns & Configuration Engine
  * Strictly enforces ONLY:
  * 1. Pakistan Army (PMA Long Course, AFNS)
- * 2. Pakistan Air Force (GD(P) & Aeronautical Engineering, Airman)
- * 3. Pakistan Navy (Sailor)
+ * 2. Pakistan Air Force (CAE, Airman)
+ * 3. Pakistan Navy (PN Cadet)
  */
 
 export interface OfficialForce {
@@ -54,7 +54,7 @@ export const OFFICIAL_FORCES: OfficialForce[] = [
 export const OFFICIAL_COURSES: OfficialCourse[] = [
   // Pakistan Army Courses
   {
-    id: '10000000-0000-0000-0000-000000000001',
+    id: '00000000-0000-0000-0000-000000000101',
     forceCode: 'PAKISTAN_ARMY',
     code: 'PMA_LONG_COURSE',
     name: 'PMA Long Course',
@@ -67,10 +67,10 @@ export const OFFICIAL_COURSES: OfficialCourse[] = [
   },
   // PAF Courses
   {
-    id: '20000000-0000-0000-0000-000000000001',
+    id: '20000000-0000-0000-0000-000000000003',
     forceCode: 'PAKISTAN_AIR_FORCE',
-    code: 'GDP_CAE',
-    name: 'GD(P) & Aeronautical Engineering',
+    code: 'CAE',
+    name: 'CAE',
   },
   {
     id: '20000000-0000-0000-0000-000000000006',
@@ -80,21 +80,21 @@ export const OFFICIAL_COURSES: OfficialCourse[] = [
   },
   // Navy Courses
   {
-    id: '30000000-0000-0000-0000-000000000004',
+    id: '00000000-0000-0000-0000-000000000103',
     forceCode: 'PAKISTAN_NAVY',
-    code: 'SAILOR',
-    name: 'Sailor',
+    code: 'PN_CADET',
+    name: 'PN Cadet',
   },
 ];
 
 export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
-  // 1. PAF — GD(P) & Aeronautical Engineering
+  // 1. PAF — CAE
   // Sequence: Intelligence -> Physics -> English -> Mathematics
-  GDP_CAE: [
+  CAE: [
     {
       sequence: 1,
       testName: 'Intelligence',
-      code: 'INTEL_GDP',
+      code: 'INTEL_CAE',
       totalQuestions: 100,
       passingMarks: 55,
       passingScorePercent: 55,
@@ -103,7 +103,7 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
     {
       sequence: 2,
       testName: 'Physics',
-      code: 'PHYS_GDP',
+      code: 'PHYS_CAE',
       totalQuestions: 50,
       passingMarks: 30,
       passingScorePercent: 60,
@@ -112,7 +112,7 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
     {
       sequence: 3,
       testName: 'English',
-      code: 'ENG_GDP',
+      code: 'ENG_CAE',
       totalQuestions: 70,
       passingMarks: 40,
       passingScorePercent: 57.14,
@@ -121,7 +121,7 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
     {
       sequence: 4,
       testName: 'Mathematics',
-      code: 'MATH_GDP',
+      code: 'MATH_CAE',
       totalQuestions: 50,
       passingMarks: 30,
       passingScorePercent: 60,
@@ -234,26 +234,26 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
     },
   ],
 
-  // 5. Pakistan Navy — Sailor
+  // 5. Pakistan Navy — PN Cadet
   // Sequence: Intelligence -> Academic
-  SAILOR: [
+  PN_CADET: [
     {
       sequence: 1,
       testName: 'Intelligence',
-      code: 'INTEL_SAILOR',
+      code: 'INTEL_PN_CADET',
       totalQuestions: 40,
       passingMarks: 24,
       passingScorePercent: 60,
-      durationMinutes: 20,
+      durationMinutes: 25,
     },
     {
       sequence: 2,
       testName: 'Academic',
-      code: 'ACADEMIC_SAILOR',
+      code: 'ACADEMIC_PN_CADET',
       totalQuestions: 40,
       passingMarks: 24,
       passingScorePercent: 60,
-      durationMinutes: 20,
+      durationMinutes: 25,
     },
   ],
 };
@@ -265,9 +265,9 @@ export function normalizeCourseCode(input?: string | null): string {
   if (!input) return 'UNKNOWN';
   const str = input.toLowerCase().trim();
 
-  if (str.includes('gdp') || str.includes('gd(p)') || str.includes('cae') || str.includes('aeronautical')) return 'GDP_CAE';
-  if (str.includes('airman')) return 'AIRMAN';
-  if (str.includes('sailor')) return 'SAILOR';
+  if (str.includes('cae') || str.includes('aeronautical')) return 'CAE';
+  if (str.includes('airman') || str.includes('airmen')) return 'AIRMAN';
+  if (str.includes('pn_cadet') || str.includes('pn cadet')) return 'PN_CADET';
   if (str.includes('afns') || str.includes('nursing')) return 'AFNS';
   if (str.includes('pma') || str.includes('long course')) return 'PMA_LONG_COURSE';
 
