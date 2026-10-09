@@ -108,7 +108,6 @@ export const FinancePage: React.FC = () => {
 
   // Salaries Tab Data
   const [salaries, setSalaries] = useState<TeacherSalaryPayment[]>([]);
-  const [teachersList, setTeachersList] = useState<TeacherDropdownItem[]>([]);
   const [salaryMonth, setSalaryMonth] = useState<number>(new Date().getMonth() + 1);
   const [salaryYear, setSalaryYear] = useState<number>(new Date().getFullYear());
   const [loadingSalaries, setLoadingSalaries] = useState(false);
@@ -121,7 +120,6 @@ export const FinancePage: React.FC = () => {
   // Initial Load
   useEffect(() => {
     loadSummary();
-    loadTeachers();
   }, [dateRange]);
 
   const loadSummary = async () => {
@@ -154,14 +152,7 @@ export const FinancePage: React.FC = () => {
     }
   };
 
-  const loadTeachers = async () => {
-    try {
-      const res = await financeService.getTeachersForSalaryDropdown();
-      setTeachersList(res);
-    } catch (e) {
-      console.error('Failed to load teachers for dropdown', e);
-    }
-  };
+
 
   const loadAllStudentsOverview = async () => {
     setLoadingAllStudents(true);
@@ -1546,7 +1537,8 @@ export const FinancePage: React.FC = () => {
       {/* MODAL 5: RECORD TEACHER SALARY */}
       {isRecordSalaryOpen && (
         <RecordSalaryModal
-          teachers={teachersList}
+          initialMonth={salaryMonth}
+          initialYear={salaryYear}
           onClose={() => setIsRecordSalaryOpen(false)}
           onSuccess={() => {
             setIsRecordSalaryOpen(false);
@@ -2144,13 +2136,17 @@ const RecordExpenseModal: React.FC<{ onClose: () => void; onSuccess: () => void 
 // SUB-COMPONENT: RECORD TEACHER SALARY MODAL
 // -----------------------------------------------------------------------------
 const RecordSalaryModal: React.FC<{
-  teachers: TeacherDropdownItem[];
+  initialMonth: number;
+  initialYear: number;
   onClose: () => void;
   onSuccess: () => void;
-}> = ({ teachers, onClose, onSuccess }) => {
-  const [teacherId, setTeacherId] = useState(teachers[0]?.id || '');
-  const [month, setMonth] = useState<number>(new Date().getMonth() + 1);
-  const [year, setYear] = useState<number>(new Date().getFullYear());
+}> = ({ initialMonth, initialYear, onClose, onSuccess }) => {
+  const [teacherId, setTeacherId] = useState('');
+  const [teachers, setTeachers] = useState<TeacherDropdownItem[]>([]);
+  const [loadingTeachers, setLoadingTeachers] = useState(true);
+  const [teacherLoadError, setTeacherLoadError] = useState('');
+  const [month, setMonth] = useState<number>(initialMonth);
+  const [year, setYear] = useState<number>(initialYear);
   const [paymentType, setPaymentType] = useState<SalaryPaymentType>('REGULAR');
   const [baseSalary, setBaseSalary] = useState<number>(0);
   const [bonus, setBonus] = useState<number>(0);
@@ -2159,6 +2155,16 @@ const RecordSalaryModal: React.FC<{
   const [refNo, setRefNo] = useState('');
   const [notes, setNotes] = useState('');
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    let live = true;
+    setLoadingTeachers(true); setTeacherLoadError(''); setTeacherId(''); setTeachers([]);
+    financeService.getTeachersForSalaryDropdown(year, month).then(rows => {
+      if (live) setTeachers(rows);
+    }).catch(err => { if (live) setTeacherLoadError(err.message || 'Failed to load eligible teachers'); })
+      .finally(() => { if (live) setLoadingTeachers(false); });
+    return () => { live = false; };
+  }, [year, month]);
 
   const netSalary = Math.max(0, baseSalary + bonus - deduction);
 
@@ -2217,23 +2223,28 @@ const RecordSalaryModal: React.FC<{
           <div>
             <label className="font-bold text-slate-700 block mb-1">Select Faculty Member *</label>
             <select
+              aria-label="Salary teacher"
+              disabled={loadingTeachers || Boolean(teacherLoadError)}
               value={teacherId}
               onChange={(e) => setTeacherId(e.target.value)}
               required
               className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold text-slate-900 focus:outline-none"
             >
+              <option value="">{loadingTeachers ? 'Loading teachers...' : teachers.length ? 'Select a teacher' : 'No unpaid teachers for this month'}</option>
               {teachers.map((t) => (
                 <option key={t.id} value={t.id}>
-                  {t.display_name} ({t.email})
+                  {t.display_name}{t.service_number ? ` (${t.service_number})` : ''} - {t.email}
                 </option>
               ))}
             </select>
+            {teacherLoadError && <p role="alert" className="text-red-700 mt-1">{teacherLoadError}</p>}
           </div>
 
           <div className="grid grid-cols-3 gap-2">
             <div>
               <label className="font-bold text-slate-700 block mb-1">Month *</label>
               <select
+                aria-label="Salary month"
                 value={month}
                 onChange={(e) => setMonth(Number(e.target.value))}
                 className="w-full px-2 py-2 bg-slate-50 border border-slate-300 rounded-lg font-medium text-slate-800"
@@ -2248,6 +2259,7 @@ const RecordSalaryModal: React.FC<{
             <div>
               <label className="font-bold text-slate-700 block mb-1">Year *</label>
               <select
+                aria-label="Salary year"
                 value={year}
                 onChange={(e) => setYear(Number(e.target.value))}
                 className="w-full px-2 py-2 bg-slate-50 border border-slate-300 rounded-lg font-medium text-slate-800"
@@ -2354,7 +2366,7 @@ const RecordSalaryModal: React.FC<{
             </button>
             <button
               type="submit"
-              disabled={submitting}
+              disabled={submitting || loadingTeachers || !teacherId}
               className="px-4 py-2 bg-[#0E1B2A] text-white rounded-lg font-bold disabled:opacity-50"
             >
               {submitting ? 'Disbursing...' : 'Confirm Salary'}
@@ -2791,13 +2803,13 @@ const EditSalaryModal: React.FC<{
         bonus,
         deduction,
         payment_type: paymentType,
-        notes,
+        notes: notes.trim() || null,
       });
       toast.success('Teacher payroll record updated successfully.');
       onSuccess();
       onClose();
     } catch (err: any) {
-      toast.error('Failed to update salary payment: ' + (err?.message || ''));
+      toast.error(err?.message || 'Failed to update salary payment');
     } finally {
       setSubmitting(false);
     }
@@ -2856,7 +2868,7 @@ const EditSalaryModal: React.FC<{
             >
               <option value="REGULAR">REGULAR</option>
               <option value="BONUS">BONUS</option>
-              <option value="ADVANCE">ADVANCE</option>
+              <option value="ADJUSTMENT">ADJUSTMENT</option>
             </select>
           </div>
           <div>

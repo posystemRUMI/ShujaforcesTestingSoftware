@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -12,9 +12,6 @@ import {
   RefreshCw,
   CheckCircle2,
   AlertCircle,
-  Upload,
-  Trash2,
-  User,
   Sparkles,
   Receipt,
 } from 'lucide-react';
@@ -60,7 +57,6 @@ const registrationFormSchema = z
     guardianRelationship: z.enum(['Father', 'Mother', 'Brother', 'Uncle', 'Guardian']).optional(),
     guardianPhone: z.string().max(16).optional().or(z.literal('')),
     address: z.string().max(250).optional().or(z.literal('')),
-    photoUrl: z.string().optional().or(z.literal('')),
     admissionDate: z.string().min(1, 'Admission date is required'),
     notes: z.string().max(500).optional().or(z.literal('')),
     courseFeeAmount: z.coerce.number().min(0, 'Fee cannot be negative').optional(),
@@ -93,12 +89,12 @@ export const StudentRegistrationPage: React.FC = () => {
 
   // Security & preview controls state
   const [showPassword, setShowPassword] = useState(false);
+  const personalEmailEntered = useRef(false);
+  const suggestionRequest = useRef(0);
   const [isCheckingRoll, setIsCheckingRoll] = useState(false);
   const [rollAvailable, setRollAvailable] = useState<boolean | null>(null);
   const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [emailAvailable, setEmailAvailable] = useState<boolean | null>(null);
-  const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
-  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
   const {
     register,
@@ -131,7 +127,6 @@ export const StudentRegistrationPage: React.FC = () => {
       guardianRelationship: 'Father',
       guardianPhone: '',
       address: '',
-      photoUrl: '',
       admissionDate: new Date().toISOString().split('T')[0],
       notes: '',
       courseFeeAmount: 25000,
@@ -145,6 +140,7 @@ export const StudentRegistrationPage: React.FC = () => {
   const selectedEducation = watch('education');
   const watchRollNumber = watch('rollNumber');
   const watchEmail = watch('email');
+  const watchFullName = watch('fullName');
   const watchCourseFee = watch('courseFeeAmount') || 0;
   const watchInitialPayment = watch('initialPaymentAmount') || 0;
   const selectedCourseObj = courses.find((c) => c.id === selectedCourseId);
@@ -221,46 +217,38 @@ export const StudentRegistrationPage: React.FC = () => {
     setValue('cnic', formatted, { shouldValidate: true });
   };
 
-  // Auto-suggest guaranteed unique Roll Number & Email
+  // Suggestions come from the same DB sequence enforced during registration.
   const generateRollNumber = async () => {
-    const selectedForce = forces.find((f) => f.id === selectedForceId);
-    let prefix = 'SFA';
-    if (selectedForce?.code === 'PAKISTAN_ARMY') prefix = 'SFA-PMA';
-    else if (selectedForce?.code === 'PAKISTAN_AIR_FORCE') prefix = 'SFA-PAF';
-    else if (selectedForce?.code === 'PAKISTAN_NAVY') prefix = 'SFA-NAVY';
-
-    const year = new Date().getFullYear().toString().slice(-2);
-    let newRoll = '';
-    let newEmail = '';
-    let isAvailable = false;
-    let attempts = 0;
-
-    while (!isAvailable && attempts < 10) {
-      attempts++;
-      const randNum = Math.floor(100000 + Math.random() * 900000); // 6-digit unique randomizer
-      newRoll = `${prefix}-${year}${randNum}`;
-      const cleanRoll = newRoll.toLowerCase().replace(/[^a-z0-9]/g, '.');
-      newEmail = `${cleanRoll}@gmail.com`;
-
-      const [rollExists, emailExists] = await Promise.all([
-        studentRegistrationService.checkRollNumberExists(newRoll),
-        studentRegistrationService.checkEmailExists(newEmail),
-      ]);
-
-      if (!rollExists && !emailExists) {
-        isAvailable = true;
+    if (!selectedForceId || !selectedCourseId || selectedCourseObj?.forceId !== selectedForceId) return;
+    const request = ++suggestionRequest.current;
+    setIsCheckingRoll(true);
+    try {
+      const suggestion = await studentRegistrationService.suggestRegistration(
+        selectedForceId, selectedCourseId, getValues('fullName'),
+      );
+      if (request !== suggestionRequest.current) return;
+      setValue('rollNumber', suggestion.rollNumber, { shouldValidate: true });
+      setRollAvailable(null);
+      if (!personalEmailEntered.current) {
+        setValue('email', suggestion.email || '', { shouldValidate: Boolean(suggestion.email) });
+        setEmailAvailable(null);
       }
-    }
-
-    setValue('rollNumber', newRoll, { shouldValidate: true });
-    setRollAvailable(true);
-
-    const existingEmail = getValues('email');
-    if (!existingEmail || existingEmail.trim() === '') {
-      setValue('email', newEmail, { shouldValidate: true });
-      setEmailAvailable(true);
+    } catch (err: any) {
+      if (request !== suggestionRequest.current) return;
+      setValue('rollNumber', '');
+      setRollAvailable(null);
+      toast.error(err.message || 'Failed to load the next roll number.');
+    } finally {
+      if (request === suggestionRequest.current) setIsCheckingRoll(false);
     }
   };
+
+  useEffect(() => {
+    ++suggestionRequest.current;
+    setValue('rollNumber', '');
+    const timer = window.setTimeout(() => { void generateRollNumber(); }, 250);
+    return () => { window.clearTimeout(timer); ++suggestionRequest.current; };
+  }, [selectedForceId, selectedCourseId, watchFullName, setValue]);
 
   // Generate Strong Password
   const generateStrongPassword = () => {
@@ -308,29 +296,6 @@ export const StudentRegistrationPage: React.FC = () => {
     }
   };
 
-  // Private Photo Upload Handler
-  const handlePhotoSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    if (file.size > 5 * 1024 * 1024) {
-      toast.error('Image file size exceeds 5 MB limit.');
-      return;
-    }
-
-    try {
-      setIsUploadingPhoto(true);
-      const result = await studentRegistrationService.uploadStudentPhoto(file);
-      setPhotoPreview(result.signedUrl);
-      setValue('photoUrl', result.path);
-      toast.success('Photo uploaded securely.');
-    } catch (err: any) {
-      toast.error(err.message || 'Failed to upload photo.');
-    } finally {
-      setIsUploadingPhoto(false);
-    }
-  };
-
   // Form submission handler
   const onSubmit = async (data: RegistrationFormData) => {
     try {
@@ -360,7 +325,6 @@ export const StudentRegistrationPage: React.FC = () => {
         guardianRelationship: data.guardianRelationship,
         guardianPhone: data.guardianPhone,
         address: data.address,
-        photoUrl: data.photoUrl,
         admissionDate: data.admissionDate,
         notes: data.notes,
         courseFeeAmount: data.courseFeeAmount,
@@ -421,66 +385,9 @@ export const StudentRegistrationPage: React.FC = () => {
           stepNumber={1}
           title="Personal Information"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Passport Photo Upload Box */}
-            <div className="md:col-span-1 flex flex-col items-center">
-              <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-2 self-start">
-                Student Photo
-              </label>
-              <div className="w-44 h-52 border-2 border-dashed border-[#D4D9DF] rounded-md bg-[#F8FAFC] flex flex-col items-center justify-center p-3 relative overflow-hidden group hover:border-[#0E1B2A] transition-colors">
-                {photoPreview ? (
-                  <>
-                    <img
-                      src={photoPreview}
-                      alt="Student Portrait"
-                      className="w-full h-full object-cover rounded"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setPhotoPreview(null);
-                        setValue('photoUrl', '');
-                      }}
-                      className="absolute top-2 right-2 p-1.5 bg-[#782525] text-white rounded-full opacity-80 hover:opacity-100 shadow"
-                      title="Remove Photo"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
-                  </>
-                ) : (
-                  <div className="flex flex-col items-center text-center space-y-2">
-                    {isUploadingPhoto ? (
-                      <RefreshCw className="w-8 h-8 text-[#0E1B2A] animate-spin" />
-                    ) : (
-                      <>
-                        <div className="w-12 h-12 rounded-full bg-[#EDF1F5] flex items-center justify-center text-[#0E1B2A]">
-                          <User className="w-6 h-6" />
-                        </div>
-                        <span className="text-[11px] font-medium text-[#64748B]">
-                          Student Portrait Photo
-                        </span>
-                        <label className="cursor-pointer inline-flex items-center space-x-1 px-2.5 py-1.5 bg-white border border-[#D4D9DF] hover:bg-[#EDF1F5] rounded text-[10px] font-bold text-[#0E1B2A] shadow-xs">
-                          <Upload className="w-3 h-3" />
-                          <span>Choose Photo</span>
-                          <input
-                            type="file"
-                            accept="image/png,image/jpeg,image/webp"
-                            onChange={handlePhotoSelect}
-                            className="hidden"
-                          />
-                        </label>
-                      </>
-                    )}
-                  </div>
-                )}
-              </div>
-              <span className="text-[10px] text-[#64748B] mt-2 text-center">
-                JPG, PNG, or WebP (Max 5MB)
-              </span>
-            </div>
-
+          <div className="grid grid-cols-1 gap-6">
             {/* Identity Form Fields */}
-            <div className="md:col-span-2 space-y-4">
+            <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">
@@ -797,7 +704,7 @@ export const StudentRegistrationPage: React.FC = () => {
                 </label>
                 <button
                   type="button"
-                  onClick={generateRollNumber}
+                  onClick={() => { void generateRollNumber(); }}
                   className="text-[10px] text-[#0E1B2A] font-bold hover:underline inline-flex items-center space-x-1"
                 >
                   <Sparkles className="w-2.5 h-2.5 text-[#C6A75E]" />
@@ -808,8 +715,9 @@ export const StudentRegistrationPage: React.FC = () => {
                 <input
                   type="text"
                   {...register('rollNumber')}
+                  readOnly
                   onBlur={checkRollAvailability}
-                  placeholder="e.g., SFA-PMA-2601"
+                  placeholder="SFA-NAVY-1"
                   className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded font-mono font-bold text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E]"
                 />
                 <div className="absolute right-2.5 top-2.5">
@@ -842,9 +750,9 @@ export const StudentRegistrationPage: React.FC = () => {
               <div className="relative">
                 <input
                   type="email"
-                  {...register('email')}
+                  {...register('email', { onChange: () => { personalEmailEntered.current = true; setEmailAvailable(null); } })}
                   onBlur={checkEmailAvailability}
-                  placeholder="cadet.roll@gmail.com"
+                  placeholder="firstname.1@gmail.com"
                   className="w-full px-3 py-2 text-xs bg-[#F6F8FA] border border-[#D4D9DF] rounded text-[#0E1B2A] font-mono focus:outline-none focus:border-[#0E1B2A] focus:ring-1 focus:ring-[#C6A75E] pr-8"
                 />
                 <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center">
@@ -1010,7 +918,7 @@ export const StudentRegistrationPage: React.FC = () => {
         <div className="flex items-center justify-between pt-4 border-t border-[#D4D9DF]">
           <button
             type="button"
-            onClick={() => reset()}
+            onClick={() => { personalEmailEntered.current = false; reset(); }}
             className="px-4 py-2 text-xs font-medium text-[#64748B] hover:text-[#0E1B2A] transition-colors"
           >
             Clear / Reset Inputs

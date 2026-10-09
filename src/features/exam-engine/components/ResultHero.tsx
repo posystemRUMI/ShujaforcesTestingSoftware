@@ -1,11 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Download, Eye, LayoutDashboard, ShieldCheck, RefreshCw, AlertTriangle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Download, Eye, LayoutDashboard, ShieldCheck, AlertTriangle } from 'lucide-react';
 
-// Lazy-load 3D WebGL components to keep page loading lightweight
-const PassCelebration3D = lazy(() => import('./PassCelebration3D'));
-const ProgressCompass3D = lazy(() => import('./ProgressCompass3D'));
 
 interface ResultHeroProps {
   testName: string;
@@ -33,7 +29,7 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
   const scoreGap = passingThreshold - percentage;
 
   return (
-    <div className="w-full bg-[#0E1B2A] text-white rounded-xl border border-[#1C2E42] shadow-xl overflow-hidden relative">
+    <div className="student-result-hero w-full bg-[#0E1B2A] text-white rounded-xl border border-[#1C2E42] shadow-xl overflow-hidden relative">
       {/* Subtle Military Grid Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#C6A75E_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
 
@@ -43,10 +39,7 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
         // ====================================================================
         <div className="p-6 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           {/* Left / Center Content Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
             className="lg:col-span-7 space-y-6 text-center lg:text-left"
           >
             {/* Institution Badge */}
@@ -116,20 +109,11 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
                 <span>Return to Dashboard</span>
               </button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right 3D Trophy Column */}
           <div className="lg:col-span-5 flex items-center justify-center relative">
-            <Suspense
-              fallback={
-                <div className="h-[260px] w-full flex items-center justify-center text-xs text-[#94A3B8] font-sans">
-                  <RefreshCw className="w-5 h-5 animate-spin mr-2 text-[#C6A75E]" />
-                  Loading 3D Visual...
-                </div>
-              }
-            >
-              <PassCelebration3D />
-            </Suspense>
+            <ShieldCheck className="student-result-emblem" aria-hidden="true" />
           </div>
         </div>
       ) : (
@@ -138,10 +122,7 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
         // ====================================================================
         <div className="p-6 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           {/* Left / Center Content Column (65% width on desktop) */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
             className="lg:col-span-8 space-y-6 text-center sm:text-left"
           >
             {/* Evaluation Status Badge */}
@@ -222,20 +203,11 @@ export const ResultHero: React.FC<ResultHeroProps> = ({
                 <span>Return to Dashboard</span>
               </button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right 3D Visual Column (35% width on desktop) */}
           <div className="lg:col-span-4 flex items-center justify-center relative">
-            <Suspense
-              fallback={
-                <div className="h-[260px] w-full flex items-center justify-center text-xs text-[#94A3B8] font-sans">
-                  <RefreshCw className="w-5 h-5 animate-spin mr-2 text-[#C6A75E]" />
-                  Loading 3D Visual...
-                </div>
-              }
-            >
-              <ProgressCompass3D />
-            </Suspense>
+            <AlertTriangle className="student-result-emblem" aria-hidden="true" />
           </div>
         </div>
       )}

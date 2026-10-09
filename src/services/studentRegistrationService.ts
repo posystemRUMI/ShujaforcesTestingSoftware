@@ -326,4 +326,15 @@ export const studentRegistrationService = {
     if (!data?.success || !data.studentId) throw new Error('Registration did not return a saved student record.');
     return data;
   },
+
+  async suggestRegistration(forceId: string, courseId: string, fullName: string): Promise<{ rollNumber: string; email: string | null }> {
+    const { data, error } = await (supabase.rpc as any)('suggest_student_registration', {
+      p_force_id: forceId,
+      p_course_id: courseId,
+      p_full_name: fullName.trim(),
+    });
+    if (error) throw new Error(error.message);
+    if (!data?.rollNumber) throw new Error('No saved roll sequence is available.');
+    return data;
+  },
 };

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppLogo } from '@/components/ui';
+import '@/styles/student-portal.css';
 
 export const AuthShell: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col lg:flex-row select-none font-sans">
+    <div className="academy-student-login min-h-screen bg-white flex flex-col lg:flex-row select-none font-sans">
       {/* Left Media & Branding Panel */}
       <div className="relative w-full lg:w-[55%] xl:w-[60%] flex flex-col justify-between bg-[#0E1B2A] min-h-[180px] sm:min-h-[230px] lg:min-h-screen overflow-hidden">
         

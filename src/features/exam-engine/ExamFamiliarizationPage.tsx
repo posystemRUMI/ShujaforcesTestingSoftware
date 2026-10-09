@@ -215,7 +215,7 @@ export const ExamFamiliarizationPage: React.FC = () => {
     }
   };
 
-  if (loadError) return <div role="alert" className="p-6"><p>{loadError}</p><button onClick={() => navigate('/student/tests')}>Return to Assigned Tests</button></div>;
+  if (loadError) return <div role="alert" className="student-error p-6"><p>{loadError}</p><button onClick={() => navigate('/student/tests')}>Return to Assigned Tests</button></div>;
   if (savingCompletion) return <p role="status" className="p-6">Saving orientation completion…</p>;
   if (loading) {
     return (
@@ -231,7 +231,7 @@ export const ExamFamiliarizationPage: React.FC = () => {
   // --- PRACTICE COMPLETE SUMMARY SCREEN (ANSWERS SHOWN ONLY HERE) ---
   if (isFinished) {
     return (
-      <div className="flex-1 flex flex-col justify-center max-w-4xl mx-auto w-full py-6 select-none animate-in fade-in zoom-in-95 duration-200 space-y-6">
+      <div className="student-practice-summary flex-1 flex flex-col justify-center max-w-4xl mx-auto w-full py-6 select-none animate-in fade-in zoom-in-95 duration-200 space-y-6">
         <div className="bg-white border-2 border-[#0E1B2A] rounded-lg p-6 sm:p-8 shadow-[0_4px_0_0_rgba(14,27,42,0.12)] space-y-6">
           {/* Header Badge */}
           <div className="flex items-center justify-between border-b border-[#D4D9DF] pb-5">
@@ -438,7 +438,7 @@ export const ExamFamiliarizationPage: React.FC = () => {
   const isTimeCritical = secondsRemaining <= 15;
 
   return (
-    <div className="flex-1 flex flex-col max-w-6xl mx-auto w-full py-4 select-none space-y-4">
+    <div className="student-practice flex-1 flex flex-col max-w-6xl mx-auto w-full py-4 select-none space-y-4">
       {/* Banner / Instructions Strip */}
       <div className="bg-[#0E1B2A] text-white rounded-lg px-6 py-3 flex items-center justify-between border-b-2 border-[#C6A75E] shadow-xs">
         <div className="flex items-center space-x-3">

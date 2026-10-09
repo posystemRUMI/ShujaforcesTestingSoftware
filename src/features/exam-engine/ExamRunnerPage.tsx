@@ -585,9 +585,9 @@ export const ExamRunnerPage: React.FC = () => {
     : 'bg-[#1C2E42] text-slate-100 border-[#2E425A]';
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F6F8FA] text-[#1F2937] select-none">
+    <div className="student-exam-runner flex flex-col min-h-screen bg-[#F6F8FA] text-[#1F2937] select-none">
       {/* Premium Compact Header */}
-      <header className="h-14 sm:h-16 bg-[#0E1B2A] text-white px-4 sm:px-6 lg:px-8 flex items-center justify-between border-b border-[#1C2E42] sticky top-0 z-30 shadow-xs">
+      <header className="student-exam-header h-14 sm:h-16 bg-[#0E1B2A] text-white px-4 sm:px-6 lg:px-8 flex items-center justify-between border-b border-[#1C2E42] sticky top-0 z-30 shadow-xs">
         {/* Left: Shuja Forces Academy Mark & Test Title */}
         <div className="flex items-center gap-3 min-w-0">
           <div className="w-8 h-8 rounded-lg bg-[#0E1B2A] border border-[#C6A75E]/40 flex items-center justify-center shrink-0">
@@ -633,7 +633,7 @@ export const ExamRunnerPage: React.FC = () => {
 
           {/* Calm Timer */}
           <div
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono tabular-nums text-sm font-medium border transition-colors ${timerBadgeStyle}`}
+            className={`student-exam-timer flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono tabular-nums text-sm font-medium border transition-colors ${timerBadgeStyle}`}
             aria-label={`Time remaining: ${formatTime(secondsRemaining)}`}
           >
             <Clock className="w-3.5 h-3.5 opacity-80" />
@@ -656,9 +656,9 @@ export const ExamRunnerPage: React.FC = () => {
       </header>
 
       {/* Main Examination Layout Container (1440px wide max) */}
-      <div className="flex-1 w-full max-w-[1440px] mx-auto p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+      <div className="student-exam-layout flex-1 w-full max-w-[1440px] mx-auto p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
         {/* Left / Primary Question Workspace */}
-        <main className="flex-1 w-full min-w-0 bg-white border border-[#E6E8EC] rounded-2xl p-6 sm:p-8 lg:p-9 shadow-xs flex flex-col justify-between">
+        <main className="student-question-surface flex-1 w-full min-w-0 bg-white border border-[#E6E8EC] rounded-2xl p-6 sm:p-8 lg:p-9 shadow-xs flex flex-col justify-between">
           <div>
             {/* Question Top Metadata Bar */}
             <div className="flex flex-wrap items-center justify-between pb-4 mb-6 border-b border-[#F1F5F9] gap-3">
@@ -721,16 +721,16 @@ export const ExamRunnerPage: React.FC = () => {
                     role="radio"
                     aria-checked={isSelected}
                     onClick={() => handleSelectOption(opt.id)}
-                    className={`w-full min-h-[58px] sm:min-h-[64px] text-left p-4 rounded-xl border transition-all flex items-center gap-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E1B2A]/20 ${
+                    className={`student-answer-option w-full min-h-[58px] sm:min-h-[64px] text-left p-4 rounded-xl border transition-all flex items-center gap-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0E1B2A]/20 ${
                       isSelected
-                        ? 'bg-[#F0FDF4] border-[#10B981] shadow-xs'
+                        ? 'bg-[#F0FDF4] border-[var(--student-emerald)] shadow-xs'
                         : 'bg-white border-[#E6E8EC] hover:border-[#CBD5E1] hover:bg-[#F8FAFC]'
                     }`}
                   >
                     <span
                       className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm font-sans shrink-0 transition-colors border ${
                         isSelected
-                          ? 'bg-[#10B981] text-white border-[#10B981]'
+                          ? 'bg-[var(--student-emerald)] text-white border-[var(--student-emerald)]'
                           : 'bg-[#F8FAFC] border-[#E2E8F0] text-[#475569]'
                       }`}
                     >
@@ -753,7 +753,7 @@ export const ExamRunnerPage: React.FC = () => {
                       )}
                     </div>
                     {isSelected && (
-                      <CheckCircle2 className="w-5 h-5 text-[#10B981] shrink-0 ml-auto" />
+                      <CheckCircle2 className="w-5 h-5 text-[var(--student-emerald)] shrink-0 ml-auto" />
                     )}
                   </button>
                 );
@@ -859,7 +859,7 @@ export const ExamRunnerPage: React.FC = () => {
             {/* Progress Bar */}
             <div className="w-full h-1.5 bg-[#F1F5F9] rounded-full overflow-hidden mt-3">
               <div
-                className="h-full bg-[#10B981] rounded-full transition-all duration-300"
+                className="h-full bg-[var(--student-emerald)] rounded-full transition-all duration-300"
                 style={{
                   width: `${Math.round((attemptedCount / Math.max(questions.length, 1)) * 100)}%`,
                 }}
@@ -869,7 +869,7 @@ export const ExamRunnerPage: React.FC = () => {
             {/* Subtle 4-State Legend (No bright red) */}
             <div className="grid grid-cols-2 gap-2 my-4 pt-3 border-t border-[#F1F5F9] text-xs font-medium text-[#64748B]">
               <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--student-emerald)]" />
                 <span>Answered ({attemptedCount})</span>
               </div>
               <div className="flex items-center gap-1.5">
@@ -976,7 +976,7 @@ export const ExamRunnerPage: React.FC = () => {
               {/* Progress Bar */}
               <div className="w-full h-1.5 bg-[#F1F5F9] rounded-full overflow-hidden mb-4">
                 <div
-                  className="h-full bg-[#10B981] rounded-full transition-all duration-300"
+                  className="h-full bg-[var(--student-emerald)] rounded-full transition-all duration-300"
                   style={{
                     width: `${Math.round((attemptedCount / Math.max(questions.length, 1)) * 100)}%`,
                   }}
@@ -986,7 +986,7 @@ export const ExamRunnerPage: React.FC = () => {
               {/* Status Legend */}
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs font-medium text-[#64748B]">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[var(--student-emerald)]" />
                   <span>Answered ({attemptedCount})</span>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -1068,7 +1068,7 @@ export const ExamRunnerPage: React.FC = () => {
 
       {/* Section Transition Interstitial Modal */}
       {showSectionModal && (
-        <div className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+        <div role="dialog" aria-modal="true" aria-label="Section completed" className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
           <div className="bg-white border border-[#E6E8EC] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl space-y-5 animate-in fade-in zoom-in-95 duration-150">
             <div className="flex items-center gap-3 pb-3 border-b border-[#F1F5F9]">
               <div className="w-10 h-10 rounded-xl bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] flex items-center justify-center shrink-0">
@@ -1129,7 +1129,7 @@ export const ExamRunnerPage: React.FC = () => {
 
       {/* Submission Confirmation Modal */}
       {showSubmitModal && (
-        <div className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+        <div role="dialog" aria-modal="true" aria-label="Ready to submit your test?" className="fixed inset-0 bg-[#0E1B2A]/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
           <div className="bg-white border border-[#E6E8EC] rounded-2xl p-6 sm:p-8 max-w-lg w-full shadow-2xl space-y-6 animate-in fade-in zoom-in-95 duration-150">
             <div className="flex items-center gap-3 pb-4 border-b border-[#F1F5F9]">
               <div className="w-10 h-10 rounded-xl bg-[#0E1B2A] text-[#C6A75E] flex items-center justify-center shrink-0">

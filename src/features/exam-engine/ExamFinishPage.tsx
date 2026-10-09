@@ -219,7 +219,7 @@ export const ExamFinishPage: React.FC = () => {
   if (!resultDetail || maxMarks <= 0 || passingThreshold <= 0) return <div role="alert" className="p-6">The saved result could not be loaded. Please return to My Results and try again.</div>;
 
   return (
-    <div className="max-w-5xl mx-auto w-full py-6 space-y-6 select-none px-4 sm:px-6">
+    <div className="student-result-page max-w-5xl mx-auto w-full py-6 space-y-6 select-none px-4 sm:px-6">
       {/* Institutional Top Header */}
       <div className="bg-white border border-[#D4D9DF] rounded-xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
         <ShujaForcesLogo

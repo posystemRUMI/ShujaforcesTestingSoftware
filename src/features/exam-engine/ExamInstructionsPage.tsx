@@ -61,8 +61,8 @@ export const ExamInstructionsPage: React.FC = () => {
     }
   }, [testData, testIdParam, user, searchParams, navigate, authorized]);
 
-  if (loadingTest) return <p role="status" className="p-6">Loading your assignment…</p>;
-  if (loadError || !authorized) return <div role="alert" className="p-6"><p>{loadError || 'Assignment unavailable.'}</p><button onClick={() => navigate('/student/tests')}>Return to Assigned Tests</button></div>;
+  if (loadingTest) return <p role="status" className="student-loading p-6">Loading your assignment…</p>;
+  if (loadError || !authorized) return <div role="alert" className="student-error p-6"><p>{loadError || 'Assignment unavailable.'}</p><button className="student-button student-button-secondary" onClick={() => navigate('/student/tests')}>Return to Assigned Tests</button></div>;
 
   const handleStartExam = async () => {
     if (!agreed || loading) return;
@@ -101,7 +101,7 @@ export const ExamInstructionsPage: React.FC = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col justify-center max-w-3xl mx-auto w-full py-6 select-none">
+    <div className="student-instructions flex-1 flex flex-col justify-center max-w-3xl mx-auto w-full py-6 select-none">
       <div className="bg-white border border-[#0E1B2A] rounded p-8 shadow-[0_4px_0_0_rgba(14,27,42,0.08)] space-y-6">
         {/* Header */}
         <div className="border-b border-[#D4D9DF] pb-4 flex items-center justify-between">

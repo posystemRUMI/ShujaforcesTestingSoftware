@@ -25,12 +25,14 @@ import { studentService } from '@/services/studentService';
 import { testService } from '@/services/testService';
 import { questionService } from '@/services/questionService';
 import { teacherService } from '@/services/teacherService';
+import { TeacherSalaryPanel } from './TeacherSalaryPanel';
 import type { FinanceSummary, FinanceTransaction } from '@/types/finance.types';
 import { toast } from 'sonner';
 
 export const DashboardPage: React.FC = () => {
   const { role } = useAuth();
   const isAdmin = role === 'ADMIN';
+  const [salaryRefreshKey, setSalaryRefreshKey] = useState(0);
 
   const [financeSummary, setFinanceSummary] = useState<FinanceSummary | null>(null);
   const [financeTransactions, setFinanceTransactions] = useState<FinanceTransaction[]>([]);
@@ -95,6 +97,7 @@ export const DashboardPage: React.FC = () => {
   }, [loadDashboardMetrics]);
 
   const handleSyncFeed = () => {
+    setSalaryRefreshKey(k => k + 1);
     loadDashboardMetrics();
     toast.success('Dashboard feeds refreshed');
   };
@@ -122,6 +125,8 @@ export const DashboardPage: React.FC = () => {
           </button>
         }
       />
+
+      {role === 'TEACHER' && <TeacherSalaryPanel refreshKey={salaryRefreshKey} />}
 
       {/* Financial Health & Cash Flow Overview (Admin Access) */}
       {isAdmin && (

@@ -68,7 +68,7 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full mx-auto space-y-8 select-none font-sans">
+    <div className="student-login-form w-full mx-auto space-y-8 select-none font-sans">
       {/* Top Welcome Heading */}
       <div>
         <h1 className="text-3xl sm:text-[38px] font-bold text-[#0E1B2A] tracking-tight">

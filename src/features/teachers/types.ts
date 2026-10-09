@@ -18,13 +18,7 @@ export interface Teacher {
   phone: string;
   assignedSubjects: SubjectCategory[];
   branchAffiliation: MilitaryBranch | 'TRI_SERVICE';
-  role: TeacherRole;
-  status: TeacherStatus;
-  questionsCreatedCount: number;
-  activeTestsManaged: number;
-  lastActiveAt: string;
   joinedAt: string;
-  bio?: string;
   avatarUrl?: string;
 }
 

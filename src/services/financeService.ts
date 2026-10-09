@@ -336,35 +336,11 @@ export const financeService = {
       bonus?: number;
       deduction?: number;
       payment_type?: SalaryPaymentType;
-      notes?: string;
+      notes?: string | null;
       status?: string;
     }
   ): Promise<void> {
-    let net_paid: number | undefined = undefined;
-    if (updates.base_salary !== undefined || updates.bonus !== undefined || updates.deduction !== undefined) {
-      net_paid = Math.max(0, (updates.base_salary || 0) + (updates.bonus || 0) - (updates.deduction || 0));
-    }
-
-    const payload: any = {
-      base_salary: updates.base_salary,
-      bonus: updates.bonus,
-      deduction: updates.deduction,
-      payment_type: updates.payment_type,
-      notes: updates.notes,
-      status: updates.status,
-      updated_at: new Date().toISOString(),
-    };
-    if (net_paid !== undefined) payload.net_paid = net_paid;
-    Object.keys(payload).forEach((key) => payload[key] === undefined && delete payload[key]);
-
-    const { error } = await supabase
-      .from('teacher_salary_payments')
-      .update(payload)
-      .eq('id', salaryId);
-
-    if (error) {
-      throw new Error(`Failed to update salary payment: ${error.message}`);
-    }
+    await financeRpc('finance_update_salary_payment', { p_salary_id: salaryId, p_updates: updates });
   },
 
   /**
@@ -411,35 +387,13 @@ export const financeService = {
   /**
    * Fetch eligible teachers for salary dropdown (Role = TEACHER)
    */
-  async getTeachersForSalaryDropdown(): Promise<TeacherDropdownItem[]> {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select(`
-        id,
-        display_name,
-        email,
-        teachers(service_number, rank)
-      `)
-      .eq('role', 'TEACHER')
-      .eq('status', 'ACTIVE')
-      .order('display_name', { ascending: true });
-
-    if (error) {
-      throw new Error(`Failed to load teachers list: ${error.message}`);
-    }
-
-    return (data || []).map((row: any) => {
-      const tch = (Array.isArray(row.teachers) ? row.teachers[0] : row.teachers) as any;
-      return {
-        id: row.id,
-        display_name: row.display_name,
-        email: row.email,
-        service_number: tch?.service_number || null,
-        rank: tch?.rank || null,
-      };
-    });
+  async getTeachersForSalaryDropdown(year?: number, month?: number): Promise<TeacherDropdownItem[]> {
+    return financeRpc('finance_salary_eligible_teachers', { p_year: year ?? null, p_month: month ?? null });
   },
 
+  async getMyTeacherSalaries(year: number, month?: number): Promise<TeacherSalaryPayment[]> {
+    return financeRpc('get_my_teacher_salaries', { p_year: year, p_month: month ?? null });
+  },
   /**
    * Fetch all active fee types
    */

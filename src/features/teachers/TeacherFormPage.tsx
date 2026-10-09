@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PageHeader, FormSection } from '@/components/ui';
 import { teacherSchema, TeacherFormData } from './teacherSchema';
-import { teacherStore } from './teacherStore';
+import { teacherService } from '@/services/teacherService';
 import { SubjectCategory } from '@/types';
 import { toast } from 'sonner';
 import { Save, ArrowLeft } from 'lucide-react';
@@ -25,7 +25,7 @@ export const TeacherFormPage: React.FC = () => {
   const isEdit = Boolean(id);
   const navigate = useNavigate();
 
-  const existingTeacher = id ? teacherStore.getTeacherById(id) : undefined;
+  const [loading, setLoading] = useState(true);
 
   const {
     register,
@@ -41,36 +41,34 @@ export const TeacherFormPage: React.FC = () => {
       titleRank: 'Maj.',
       employeeId: '',
       email: '',
+      password: '',
       phone: '',
       branchAffiliation: 'PAKISTAN_ARMY',
-      role: 'SENIOR_INSTRUCTOR',
-      status: 'ACTIVE',
       assignedSubjects: ['INTELLIGENCE_VERBAL'],
-      bio: '',
     },
   });
 
   useEffect(() => {
-    if (isEdit) {
-      if (!existingTeacher) {
-        toast.error('Faculty member record not found');
-        navigate('/admin/teachers');
-        return;
-      }
-      reset({
-        fullName: existingTeacher.fullName,
-        titleRank: existingTeacher.titleRank,
-        employeeId: existingTeacher.employeeId,
-        email: existingTeacher.email,
-        phone: existingTeacher.phone,
-        branchAffiliation: existingTeacher.branchAffiliation,
-        role: existingTeacher.role,
-        status: existingTeacher.status,
-        assignedSubjects: existingTeacher.assignedSubjects,
-        bio: existingTeacher.bio || '',
-      });
-    }
-  }, [isEdit, existingTeacher, reset, navigate]);
+    let live = true;
+    setLoading(true);
+    const load = async () => {
+      try {
+        if (isEdit && id) {
+          const t = await teacherService.getTeacherById(id);
+          if (!t) throw new Error('Faculty member record not found');
+          if (live) reset({ fullName: t.fullName, titleRank: t.titleRank, employeeId: t.employeeId,
+            email: t.email, phone: t.phone, branchAffiliation: t.branchAffiliation,
+            assignedSubjects: t.assignedSubjects, password: '' });
+        } else {
+          const code = await teacherService.suggestCode();
+          if (live) setValue('employeeId', code);
+        }
+      } catch (err: any) { if (live) toast.error(err.message || 'Failed to load faculty form'); }
+      finally { if (live) setLoading(false); }
+    };
+    void load();
+    return () => { live = false; };
+  }, [id, isEdit, reset, setValue]);
 
   const selectedSubjects = watch('assignedSubjects') || [];
 
@@ -90,18 +88,20 @@ export const TeacherFormPage: React.FC = () => {
     }
   };
 
-  const onSubmit = (data: TeacherFormData) => {
+  const onSubmit = async (data: TeacherFormData) => {
     try {
-      if (isEdit && id) {
-        teacherStore.updateTeacher(id, data);
-        toast.success('Faculty profile updated successfully');
-      } else {
-        teacherStore.addTeacher(data);
-        toast.success('New faculty officer enrolled successfully');
+      if (!isEdit && (!data.password || data.password.length < 6)) {
+        toast.error('Login password must contain at least 6 characters');
+        return;
       }
+      await teacherService.saveTeacher(data, isEdit ? id : undefined);
+      toast.success(isEdit ? 'Faculty record saved' : 'Faculty member registered');
       navigate('/admin/teachers');
-    } catch {
-      toast.error('An unexpected error occurred while saving the record');
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to save faculty record');
+      if (!isEdit) {
+        try { setValue('employeeId', await teacherService.suggestCode()); } catch { /* Original error remains visible. */ }
+      }
     }
   };
 
@@ -165,7 +165,8 @@ export const TeacherFormPage: React.FC = () => {
               <input
                 type="text"
                 {...register('employeeId')}
-                placeholder="e.g. FAC-2024-08"
+                placeholder="FAC-1"
+                readOnly
                 className="w-full text-xs font-mono uppercase px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
               />
               {errors.employeeId && (
@@ -230,48 +231,13 @@ export const TeacherFormPage: React.FC = () => {
           </div>
         </FormSection>
 
-        {/* Section 3: Duty Designation & Status */}
-        <FormSection
-          title="Faculty Role & Operational Status"
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-xs font-semibold text-[#0E1B2A] mb-1">
-                Assigned Duty Role <span className="text-red-500">*</span>
-              </label>
-              <select
-                {...register('role')}
-                className="w-full text-xs px-3 py-2 bg-white border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
-              >
-                <option value="CHIEF_EXAMINER">Chief Examiner (Curriculum & Blueprint Clearance)</option>
-                <option value="SENIOR_INSTRUCTOR">Senior Instructor (Question Review & Cadets)</option>
-                <option value="SUBJECT_SPECIALIST">Subject Specialist (Item Bank Authoring)</option>
-                <option value="PROCTOR_OFFICER">Proctor Officer (Live Radar Monitoring)</option>
-                <option value="QUESTION_AUTHOR">Question Author (Content Drafts)</option>
-              </select>
-              {errors.role && (
-                <p className="text-[11px] text-red-500 mt-1">{errors.role.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-[#0E1B2A] mb-1">
-                Operational Status <span className="text-red-500">*</span>
-              </label>
-              <select
-                {...register('status')}
-                className="w-full text-xs px-3 py-2 bg-white border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
-              >
-                <option value="ACTIVE">Active Duty (Full System Access)</option>
-                <option value="ON_LEAVE">On Leave (Temporary Inactive)</option>
-                <option value="INACTIVE">Inactive (Suspended Credentials)</option>
-              </select>
-              {errors.status && (
-                <p className="text-[11px] text-red-500 mt-1">{errors.status.message}</p>
-              )}
-            </div>
-          </div>
-        </FormSection>
+        {!isEdit && (
+          <FormSection title="Login">
+            <label className="block text-xs font-semibold mb-1" htmlFor="faculty-password">Login Password *</label>
+            <input id="faculty-password" type="password" autoComplete="new-password" {...register('password')}
+              className="w-full text-xs px-3 py-2 border border-[#CBD5E1] rounded" minLength={6} required />
+          </FormSection>
+        )}
 
         {/* Section 4: Assigned Subject Specialties */}
         <FormSection
@@ -285,6 +251,8 @@ export const TeacherFormPage: React.FC = () => {
                   <button
                     key={subj.id}
                     type="button"
+                    aria-label={subj.label}
+                    aria-pressed={isSelected}
                     onClick={() => toggleSubject(subj.id)}
                     className={`flex items-center justify-between p-3 rounded text-xs border text-left transition-all ${
                       isSelected
@@ -310,23 +278,6 @@ export const TeacherFormPage: React.FC = () => {
           </div>
         </FormSection>
 
-        {/* Section 5: Dossier / Professional Biography */}
-        <FormSection
-          title="Service Record & Professional Bio"
-        >
-          <div>
-            <textarea
-              {...register('bio')}
-              rows={4}
-              placeholder="e.g. Former ISSB Psychometric Evaluator with 14 years instructional service in intelligence testing..."
-              className="w-full text-xs px-3 py-2 border border-[#CBD5E1] rounded focus:outline-none focus:ring-1 focus:ring-[#0E1B2A]"
-            />
-            {errors.bio && (
-              <p className="text-[11px] text-red-500 mt-1">{errors.bio.message}</p>
-            )}
-          </div>
-        </FormSection>
-
         {/* Action Controls */}
         <div className="flex items-center justify-end space-x-3 pt-4 border-t border-[#E2E8F0]">
           <button
@@ -338,7 +289,7 @@ export const TeacherFormPage: React.FC = () => {
           </button>
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || loading}
             className="inline-flex items-center space-x-2 px-5 py-2 text-xs font-semibold bg-[#0E1B2A] text-white rounded hover:bg-[#1A2C42] focus:outline-none focus:ring-2 focus:ring-[#C6A75E] disabled:opacity-50 transition-colors shadow-xs"
           >
             <Save className="w-4 h-4 text-[#C6A75E]" />

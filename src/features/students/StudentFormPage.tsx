@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { studentFormSchema, StudentFormValues } from './studentSchema';
 import { studentStore } from './studentStore';
-import { PageHeader, FormSection, ImageUploader } from '@/components/ui';
+import { PageHeader, FormSection } from '@/components/ui';
 import { Save, ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -16,8 +16,6 @@ export const StudentFormPage: React.FC = () => {
   const {
     register,
     handleSubmit,
-    setValue,
-    watch,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<StudentFormValues>({
@@ -67,7 +65,6 @@ export const StudentFormPage: React.FC = () => {
     };
   }, [isEditMode, id, reset]);
 
-  const avatarUrl = watch('avatarUrl');
 
   const onSubmit = async (data: StudentFormValues) => {
     try {
@@ -135,17 +132,8 @@ export const StudentFormPage: React.FC = () => {
           stepNumber={1}
           title="Candidate Personal Identification"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="md:col-span-1">
-              <ImageUploader
-                value={avatarUrl}
-                onChange={(url) => setValue('avatarUrl', url)}
-                label="Passport Photo Docket"
-                hint="Formal cadet portrait (neutral military background)"
-              />
-            </div>
-
-            <div className="md:col-span-2 space-y-4">
+          <div className="grid grid-cols-1 gap-6">
+            <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-[#0E1B2A] uppercase tracking-wider mb-1">

@@ -18,13 +18,13 @@ BEGIN
  IF jsonb_array_length(r->'questions')<>49 THEN RAISE EXCEPTION 'Last page mismatch'; END IF;
  INSERT INTO navy_checks VALUES('Navy filter counts cover every page',true,'749 total; 50 first page; 49 final page');
  INSERT INTO auth.users(id,email) VALUES(old_uid,old_uid||'@navy-rollback.invalid');
- INSERT INTO students(profile_id,roll_number,father_name,target_force_id,target_course_id) VALUES(old_uid,'NAVY-OLD-'||old_uid,'Fixture',c.force_id,c.id);
+ INSERT INTO students(profile_id,roll_number,father_name,target_force_id,target_course_id) VALUES(old_uid,'SFA-NAVY-'||(SELECT last_issued+1 FROM student_roll_counters WHERE prefix='SFA-NAVY'),'Fixture',c.force_id,c.id);
  cfg:=jsonb_build_object('test',jsonb_build_object('name','PN Cadet Academic rollback verification','duration_minutes',25,'passing_threshold',60,'show_result_immediately',true,'show_answer_review',true), 'eligibilities',jsonb_build_array(jsonb_build_object('force_id',c.force_id,'course_id',c.id)), 'sections',jsonb_build_array(jsonb_build_object('name','Academic','section_code','ACADEMIC_PN_CADET','position',1,'question_count',40,'duration_minutes',25,'subject_ids',(SELECT jsonb_agg(DISTINCT subject_id) FROM questions WHERE id=ANY(qids)),'question_ids',to_jsonb(qids))));
  t:=save_test_blueprint(cfg);tid:=t.id;
  INSERT INTO auth.users(id,email) VALUES(new_uid,new_uid||'@navy-rollback.invalid');
  INSERT INTO navy_context VALUES(new_uid);
  PERFORM set_config('request.jwt.claim.role','service_role',true);
- r:=portal_register_student(new_uid,staff,jsonb_build_object('email',new_uid||'@navy-rollback.invalid','fullName','Navy rollback registration','fatherName','Fixture','cnic','9919988776655','phone','03001234567','targetForceId',c.force_id,'targetCourseId',c.id,'rollNumber','NAVY-NEW-'||new_uid,'education','Intermediate','gender','Male','courseFeeAmount',0,'initialPaymentAmount',0,'paymentMethod','CASH'));
+ r:=portal_register_student(new_uid,staff,jsonb_build_object('email',new_uid||'@navy-rollback.invalid','fullName','Navy rollback registration','fatherName','Fixture','cnic','9919988776655','phone','03001234567','targetForceId',c.force_id,'targetCourseId',c.id,'rollNumber','SFA-NAVY-'||(SELECT last_issued+1 FROM student_roll_counters WHERE prefix='SFA-NAVY'),'education','Intermediate','gender','Male','courseFeeAmount',0,'initialPaymentAmount',0,'paymentMethod','CASH'));
  IF NOT (r->>'success')::boolean THEN RAISE EXCEPTION 'Registration failed'; END IF;
  FOREACH uid IN ARRAY ARRAY[old_uid,new_uid] LOOP
   PERFORM set_config('request.jwt.claim.sub',uid::text,true);PERFORM set_config('request.jwt.claim.role','authenticated',true);sid:=portal_student_id();
