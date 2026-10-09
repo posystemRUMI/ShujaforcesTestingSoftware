@@ -141,3 +141,11 @@ Details: [completed-test review report](Docs/COMPLETED_TEST_ANSWER_REVIEW.md).
 - [ ] Deploy updated frontend to production.
 
 Details: [UI heading cleanup](Docs/UI_HEADING_CLEANUP.md).
+
+## Remove Reports & Analytics
+
+- [x] Delete Reports page, lazy import, route and dedicated report service/export.
+- [x] Remove shared Admin/Teacher navigation entry and unused icon import.
+- [x] Browser: both roles have no Reports menu link; former /admin/reports URL returns 404.
+- [x] TypeScript and production build; no remaining app-source references or Reports build chunk.
+- [ ] Deploy updated frontend to production.

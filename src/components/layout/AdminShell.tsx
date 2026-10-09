@@ -7,7 +7,6 @@ import {
   FileQuestion,
   PenSquare,
   BarChart3,
-  PieChart,
   Sparkles,
   Trophy,
   Wallet,
@@ -25,7 +24,6 @@ const NAV_ITEMS = [
   { label: 'Test Builder', to: '/admin/test-builder', icon: Sparkles },
   { label: 'Leaderboard', to: '/admin/leaderboard', icon: Trophy },
   { label: 'Results', to: '/admin/results', icon: BarChart3 },
-  { label: 'Reports & Analytics', to: '/admin/reports', icon: PieChart },
   { label: 'Finance', to: '/admin/finance', icon: Wallet },
 ];
 

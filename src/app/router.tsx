@@ -39,7 +39,6 @@ const QuestionBankPage = safeLazy(() => import('@/features/question-bank/Questio
 const QuestionAuthorPage = safeLazy(() => import('@/features/question-author/QuestionAuthorPage'));
 const TestBuilderPage = safeLazy(() => import('@/features/test-builder/TestBuilderPage'));
 const ResultsPage = safeLazy(() => import('@/features/results/ResultsPage'));
-const ReportsPage = safeLazy(() => import('@/features/reports/ReportsPage'));
 const StudentDashboardPage = safeLazy(() => import('@/features/student-portal/StudentDashboardPage'));
 const StudentFeesPage = safeLazy(() => import('@/features/student-portal/StudentFeesPage'));
 const StudentTestsPage = safeLazy(() => import('@/features/student-portal/StudentTestsPage'));
@@ -291,14 +290,6 @@ export const router = createBrowserRouter([
       {
         path: 'retakes',
         element: <Navigate to="/admin/dashboard" replace />,
-      },
-      {
-        path: 'reports',
-        element: (
-          <Suspense fallback={<PageLoadingFallback />}>
-            <ReportsPage />
-          </Suspense>
-        ),
       },
       {
         path: 'finance',
