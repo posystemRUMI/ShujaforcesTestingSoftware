@@ -16,7 +16,8 @@ import {
 } from 'lucide-react';
 import { familiarizationService, PracticeQuestion } from '@/services/familiarizationService';
 import { testService, TestRecord } from '@/services/testService';
-import { isSupabaseConfigured } from '@/lib/supabaseClient';
+import { studentPortalService } from '@/services/studentPortalService';
+import { attemptService } from '@/services/attemptService';
 
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const PRACTICE_DURATION_SECONDS = 60; // Fixed 1-minute practice per specification
@@ -35,81 +36,53 @@ export const ExamFamiliarizationPage: React.FC = () => {
   const [flagged, setFlagged] = useState<Set<string>>(new Set());
   const [secondsRemaining, setSecondsRemaining] = useState(PRACTICE_DURATION_SECONDS);
   const [isFinished, setIsFinished] = useState(false);
+  const [savingCompletion, setSavingCompletion] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Load real test metadata to extract sections for dynamic subject matching
   useEffect(() => {
-    let isMounted = true;
-    async function loadTestData() {
+    let active = true;
+    setLoading(true); setLoadError(null);
+    async function load() {
       try {
-        let t: TestRecord | null = null;
-        if (rawTestId && UUID_REGEX.test(rawTestId) && isSupabaseConfigured()) {
-          t = await testService.getTestById(rawTestId);
+        if (!rawTestId || !UUID_REGEX.test(rawTestId)) throw new Error('Choose a test from Assigned Tests.');
+        const portal = await studentPortalService.snapshot();
+        if (!portal.assigned_tests.some(t => t.id === rawTestId)) throw new Error('No eligible pending assignment for this test.');
+        const [test, practice] = await Promise.all([testService.getTestById(rawTestId), attemptService.getFamiliarizationPayload(rawTestId)]);
+        if (!test) throw new Error('Test not found.');
+        if (active) {
+          setTargetTest(test);
+          setQuestions(practice.questions.map(q => ({ id:q.id,code:q.code,subjectId:q.subject_name,subjectName:q.subject_name,stem:q.stem,
+            imageUrl:q.stem_image_url || undefined,options:q.options.map(o=>({id:o.id,label:o.label,text:o.text,imageUrl:o.image_url || undefined})),
+            correctOptionId:q.options.find(o=>o.is_correct)?.id || '',explanation:q.explanation || '' })));
+          setSecondsRemaining(practice.duration_seconds);
         }
-        if (!t && isSupabaseConfigured()) {
-          const allTests = await testService.getTests();
-          if (allTests && allTests.length > 0) {
-            t = allTests[0];
-          }
-        }
-        if (isMounted && t) {
-          setTargetTest(t);
-        }
-
-        // Fetch test sections if available for discipline matching
-        let sections: Array<{ subject_id?: string | null; name: string }> = [];
-        if (t && isSupabaseConfigured()) {
-          try {
-            sections = await testService.getSections(t.id);
-          } catch {
-            // Fallback gracefully
-          }
-        }
-
-        // Load exactly 5 practice MCQs dynamically matching test pattern
-        let famQuestions: PracticeQuestion[] = [];
-        let durationSec = PRACTICE_DURATION_SECONDS;
-        try {
-          const famData = await familiarizationService.getFamiliarizationData(t?.id || rawTestId, sections);
-          famQuestions = famData.questions;
-          durationSec = famData.durationSeconds || PRACTICE_DURATION_SECONDS;
-        } catch {
-          famQuestions = familiarizationService.generatePracticeQuestions(sections, 5);
-        }
-
-        if (isMounted) {
-          setQuestions(famQuestions);
-          setSecondsRemaining(durationSec);
-          setLoading(false);
-        }
-      } catch (err: any) {
-        if (isMounted) {
-          const fallbackQs = familiarizationService.generatePracticeQuestions([], 5);
-          setQuestions(fallbackQs);
-          setSecondsRemaining(PRACTICE_DURATION_SECONDS);
-          setLoading(false);
-        }
-      }
+      } catch (error) { if (active) setLoadError(error instanceof Error ? error.message : 'Could not load the assignment.'); }
+      finally { if (active) setLoading(false); }
     }
-
-    loadTestData();
-    return () => {
-      isMounted = false;
-    };
+    load(); return () => { active = false; };
   }, [rawTestId]);
 
   // Handle Practice Conclusion
-  const handleFinishPractice = useCallback(() => {
-    setIsFinished(true);
+  const handleFinishPractice = useCallback(async () => {
+    if (savingCompletion || isFinished) return;
+    setSavingCompletion(true);
     const resolvedId = targetTest?.id || rawTestId;
     if (resolvedId) {
-      familiarizationService.markFamiliarizationCompleted(resolvedId);
+      try {
+        await familiarizationService.markFamiliarizationCompleted(resolvedId);
+        setIsFinished(true);
+      } catch (error) {
+        setLoadError(error instanceof Error ? error.message : 'Could not save orientation completion.');
+      } finally {
+        setSavingCompletion(false);
+      }
     }
-  }, [targetTest?.id, rawTestId]);
+  }, [targetTest?.id, rawTestId, savingCompletion, isFinished]);
 
   // Fixed 1-minute countdown timer
   useEffect(() => {
-    if (loading || isFinished) return;
+    if (loading || loadError || isFinished || savingCompletion) return;
 
     const timer = setInterval(() => {
       setSecondsRemaining((prev) => {
@@ -123,7 +96,7 @@ export const ExamFamiliarizationPage: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [loading, isFinished, handleFinishPractice]);
+  }, [loading, loadError, isFinished, savingCompletion, handleFinishPractice]);
 
   // Current active question
   const currentQ = useMemo(() => questions[currentIndex], [questions, currentIndex]);
@@ -222,10 +195,7 @@ export const ExamFamiliarizationPage: React.FC = () => {
 
   // Reset for Repeat Practice
   const handleRepeatPractice = () => {
-    const resolvedId = targetTest?.id || rawTestId;
-    if (resolvedId) {
-      familiarizationService.clearFamiliarization(resolvedId);
-    }
+
     setSelectedAnswers({});
     setSkipped(new Set());
     setFlagged(new Set());
@@ -244,6 +214,8 @@ export const ExamFamiliarizationPage: React.FC = () => {
     }
   };
 
+  if (loadError) return <div role="alert" className="p-6"><p>{loadError}</p><button onClick={() => navigate('/student/tests')}>Return to Assigned Tests</button></div>;
+  if (savingCompletion) return <p role="status" className="p-6">Saving orientation completion…</p>;
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[450px] space-y-3">

@@ -4,87 +4,12 @@ import { Question } from '@/types';
 const UUID_REGEX = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
 
 async function resolveSubjectUuid(subjectIdOrCode?: string | null): Promise<string> {
-  const fallbackCode = subjectIdOrCode || 'INTELLIGENCE_VERBAL';
-
-  if (UUID_REGEX.test(fallbackCode)) {
-    return fallbackCode;
-  }
-
-  if (!isSupabaseConfigured()) {
-    return '00000000-0000-0000-0000-000000000001';
-  }
-
-  try {
-    const { data: codeMatch } = await (supabase as any)
-      .from('subjects')
-      .select('id')
-      .eq('code', fallbackCode)
-      .maybeSingle();
-
-    if (codeMatch?.id) return codeMatch.id;
-
-    const searchTerms: string[] = [];
-    if (fallbackCode.includes('NON_VERBAL') || fallbackCode.includes('NON-VERBAL')) {
-      searchTerms.push('Non-Verbal', 'INTELLIGENCE_NON_VERBAL');
-    } else if (fallbackCode.includes('VERBAL')) {
-      searchTerms.push('Verbal', 'INTELLIGENCE_VERBAL');
-    } else if (fallbackCode.includes('PHYSICS')) {
-      searchTerms.push('Physics', 'PHYSICS');
-    } else if (fallbackCode.includes('MATH')) {
-      searchTerms.push('Mathematics', 'Math', 'MATHEMATICS');
-    } else if (fallbackCode.includes('ENGLISH')) {
-      searchTerms.push('English', 'ENGLISH');
-    } else if (fallbackCode.includes('ACADEMIC')) {
-      searchTerms.push('Academic', 'ACADEMIC');
-    }
-
-    for (const term of searchTerms) {
-      const { data: termMatch } = await (supabase as any)
-        .from('subjects')
-        .select('id')
-        .or(`code.ilike.%${term}%,name.ilike.%${term}%`)
-        .limit(1)
-        .maybeSingle();
-
-      if (termMatch?.id) return termMatch.id;
-    }
-
-    const { data: firstSubject } = await (supabase as any)
-      .from('subjects')
-      .select('id')
-      .limit(1)
-      .maybeSingle();
-
-    if (firstSubject?.id) return firstSubject.id;
-
-    const cleanCode = fallbackCode.toUpperCase();
-    const cleanName = cleanCode
-      .replace(/_/g, ' ')
-      .toLowerCase()
-      .replace(/\b\w/g, (c) => c.toUpperCase());
-    const category = cleanCode.includes('INTELLIGENCE')
-      ? 'INTELLIGENCE'
-      : cleanCode.includes('ACADEMIC') || cleanCode.includes('PHYSICS') || cleanCode.includes('MATH') || cleanCode.includes('ENGLISH')
-      ? 'ACADEMIC'
-      : 'GENERAL';
-
-    const { data: created } = await (supabase as any)
-      .from('subjects')
-      .insert({
-        code: cleanCode,
-        name: cleanName,
-        category: category,
-        description: `${cleanName} assessment subject`,
-      })
-      .select('id')
-      .single();
-
-    if (created?.id) return created.id;
-  } catch (err) {
-    console.warn('Failed to resolve subject UUID for:', fallbackCode, err);
-  }
-
-  return '00000000-0000-0000-0000-000000000001';
+  if (!subjectIdOrCode) throw new Error('Select an explicit question bank subject.');
+  if (UUID_REGEX.test(subjectIdOrCode)) return subjectIdOrCode;
+  const { data, error } = await supabase.from('subjects').select('id').eq('code', subjectIdOrCode).maybeSingle();
+  if (error) throw error;
+  if (!data?.id) throw new Error('The selected subject bank does not exist.');
+  return data.id;
 }
 
 export const questionService = {
@@ -103,6 +28,7 @@ export const questionService = {
         .from('questions')
         .select(`
           *,
+          question_courses (course_id),
           subjects (
             id,
             code,
@@ -122,12 +48,16 @@ export const questionService = {
         `)
         .range(from, from + PAGE_SIZE - 1);
 
-      if (error || !data || data.length === 0) break;
+      if (error) throw error;
+      if (!data || data.length === 0) break;
       allData.push(...data);
       if (data.length < PAGE_SIZE) break;
       from += PAGE_SIZE;
     }
 
+    const { data: sharedCourses, error: courseError } = await supabase.from('courses').select('id,code').in('code', ['PMA_LONG_COURSE','PMA_LC','AFNS']);
+    if (courseError) throw courseError;
+    const sharedIds = (sharedCourses || []).map(c => c.id);
     const mapped = allData.map((q: any) => {
       const subject = q.subjects as any;
       const profile = q.profiles as any;
@@ -144,10 +74,15 @@ export const questionService = {
         ? 'TRI_SERVICE' 
         : 'PAKISTAN_ARMY';
 
+      const linkedIds: string[] = (q.question_courses || []).map((c: any) => c.course_id);
+      const ambiguousAcademic = !['INTELLIGENCE_VERBAL','INTELLIGENCE_NON_VERBAL'].includes(subject?.code)
+        && sharedCourses?.some(c => c.code === 'AFNS' && linkedIds.includes(c.id))
+        && sharedCourses?.some(c => c.code !== 'AFNS' && linkedIds.includes(c.id));
       return {
         id: q.id,
         code: q.code,
         subject_id: q.subject_id,
+        courseIds: ambiguousAcademic ? linkedIds.filter(id => !sharedIds.includes(id)) : ['INTELLIGENCE_VERBAL','INTELLIGENCE_NON_VERBAL'].includes(subject?.code) && (q.question_courses || []).some((c: any) => sharedIds.includes(c.course_id)) ? Array.from(new Set([...sharedIds, ...(q.question_courses || []).map((c: any) => c.course_id)])) : (q.question_courses || []).map((c: any) => c.course_id),
         subjectName: subject?.name || subject?.code || 'General',
         subject: (subject?.code || 'INTELLIGENCE_VERBAL') as any,
         branch: branch as any,

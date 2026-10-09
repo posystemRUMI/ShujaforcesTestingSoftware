@@ -73,7 +73,7 @@ export const ExamFinishPage: React.FC = () => {
 
   // Derive final values from Server result
   const testName = resultDetail?.test.name || 'Computerized Examination';
-  const passingThreshold = resultDetail?.test.passing_threshold || 55;
+  const passingThreshold = resultDetail?.test.passing_threshold ?? 0;
   const percentage = resultDetail?.result.percentage ?? 0;
   
   // Exact Pass/Fail Condition:
@@ -88,10 +88,10 @@ export const ExamFinishPage: React.FC = () => {
   const skippedCount = resultDetail?.result.skipped_count ?? 0;
   const totalCount = resultDetail?.result.total_questions ?? 0;
   const marksObtained = resultDetail?.result.marks_obtained ?? 0;
-  const maxMarks = resultDetail?.result.max_marks ?? 100;
+  const maxMarks = resultDetail?.result.max_marks ?? 0;
 
-  const cadetName = user?.name || resultDetail?.student.roll_number || 'Cadet';
-  const rollNumber = user?.rollNumber || resultDetail?.student.roll_number || 'PMA-2601';
+  const cadetName = user?.name || 'Not provided';
+  const rollNumber = resultDetail?.student.roll_number || 'Not provided';
 
   // Smooth scroll helper to navigate directly to answer review section
   const handleScrollToDetails = () => {
@@ -179,7 +179,7 @@ export const ExamFinishPage: React.FC = () => {
       return resultDetail.result.section_results.map((sr: any) => ({
         title: sr.section_name || 'Section',
         pct: sr.percentage || 0,
-        correct: sr.correct_count || 0,
+        correct: sr.correct ?? sr.correct_count ?? 0,
         total: sr.total_questions || 0,
         cleared: (sr.percentage || 0) >= passingThreshold,
       }));
@@ -213,6 +213,8 @@ export const ExamFinishPage: React.FC = () => {
       </div>
     );
   }
+
+  if (!resultDetail || maxMarks <= 0 || passingThreshold <= 0) return <div role="alert" className="p-6">The saved result could not be loaded. Please return to My Results and try again.</div>;
 
   return (
     <div className="max-w-5xl mx-auto w-full py-6 space-y-6 select-none px-4 sm:px-6">
@@ -269,12 +271,12 @@ export const ExamFinishPage: React.FC = () => {
         passingThreshold={passingThreshold}
       />
 
-      {/* Cryptographic Verification Hash & Utility Controls */}
+      {/* Saved result reference and utility controls */}
       <div className="p-4 bg-white rounded-xl border border-[#D4D9DF] shadow-xs text-xs font-mono text-[#64748B] flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="flex items-center space-x-2">
-          <span className="font-bold text-[#0E1B2A] font-sans">VERIFICATION HASH:</span>
+          <span className="font-bold text-[#0E1B2A] font-sans">RESULT REFERENCE:</span>
           <span className="truncate max-w-[280px] sm:max-w-none">
-            SHA256:7B9E2D8F0A1C4E5F6B7A8D9C0E1F2A3B
+            {resultDetail.result.id}
           </span>
         </div>
         <div className="flex items-center space-x-3">
@@ -406,7 +408,8 @@ export const ExamFinishPage: React.FC = () => {
                               const isCorrectOpt = opt.is_correct;
                               const isUserSelected = selectedOptId === opt.id;
 
-                              return (
+
+  return (
                                 <div
                                   key={opt.id}
                                   className={`p-3 rounded-lg border flex items-center space-x-3 transition-colors ${

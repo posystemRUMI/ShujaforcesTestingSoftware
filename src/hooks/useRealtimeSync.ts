@@ -45,11 +45,13 @@ export function useRealtimeSync(scope?: 'admin' | 'student' | 'global') {
         console.log('⚡ Realtime Event: tests changed');
         queryClient.invalidateQueries({ queryKey: ['tests'] });
         queryClient.invalidateQueries({ queryKey: ['student-tests'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'test_assignments' }, () => {
         console.log('⚡ Realtime Event: test_assignments changed');
         queryClient.invalidateQueries({ queryKey: ['tests'] });
         queryClient.invalidateQueries({ queryKey: ['student-tests'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'test_pattern_templates' }, () => {
         console.log('⚡ Realtime Event: test_pattern_templates changed');
@@ -63,30 +65,56 @@ export function useRealtimeSync(scope?: 'admin' | 'student' | 'global') {
       .on('postgres_changes', { event: '*', schema: 'public', table: 'test_attempts' }, () => {
         console.log('⚡ Realtime Event: test_attempts changed');
         queryClient.invalidateQueries({ queryKey: ['results'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
         queryClient.invalidateQueries({ queryKey: ['leaderboard'] });
         queryClient.invalidateQueries({ queryKey: ['student-tests'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'test_results' }, () => {
         console.log('⚡ Realtime Event: test_results changed');
         queryClient.invalidateQueries({ queryKey: ['results'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
         queryClient.invalidateQueries({ queryKey: ['leaderboard'] });
       })
       // 7. Finance (Ledger, Fee Payments, Expenses, Salary Payments)
       .on('postgres_changes', { event: '*', schema: 'public', table: 'finance_transactions' }, () => {
         console.log('⚡ Realtime Event: finance_transactions changed');
         queryClient.invalidateQueries({ queryKey: ['finance'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'student_fee_accounts' }, () => {
+        queryClient.invalidateQueries({ queryKey: ['finance'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'student_fee_payments' }, () => {
         console.log('⚡ Realtime Event: student_fee_payments changed');
         queryClient.invalidateQueries({ queryKey: ['finance'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'finance_expenses' }, () => {
         console.log('⚡ Realtime Event: finance_expenses changed');
         queryClient.invalidateQueries({ queryKey: ['finance'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'teacher_salary_payments' }, () => {
         console.log('⚡ Realtime Event: teacher_salary_payments changed');
         queryClient.invalidateQueries({ queryKey: ['finance'] });
+        queryClient.invalidateQueries({ queryKey: ['student'] });
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'student_performance' }, () => {
+        queryClient.invalidateQueries({ queryKey: ['student'] });
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'test_assignments' }, () => {
+        queryClient.invalidateQueries({ queryKey: ['student'] });
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'student_fee_accounts' }, () => {
+        queryClient.invalidateQueries({ queryKey: ['student'] });
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'profiles' }, () => {
+        queryClient.invalidateQueries({ queryKey: ['student'] });
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'retake_permissions' }, () => {
+        queryClient.invalidateQueries({ queryKey: ['student'] });
       })
       .subscribe((status) => {
         if (status === 'SUBSCRIBED') {

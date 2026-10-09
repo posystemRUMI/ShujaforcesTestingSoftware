@@ -41,6 +41,7 @@ const TestBuilderPage = safeLazy(() => import('@/features/test-builder/TestBuild
 const ResultsPage = safeLazy(() => import('@/features/results/ResultsPage'));
 const ReportsPage = safeLazy(() => import('@/features/reports/ReportsPage'));
 const StudentDashboardPage = safeLazy(() => import('@/features/student-portal/StudentDashboardPage'));
+const StudentFeesPage = safeLazy(() => import('@/features/student-portal/StudentFeesPage'));
 const StudentTestsPage = safeLazy(() => import('@/features/student-portal/StudentTestsPage'));
 const StudentResultsPage = safeLazy(() => import('@/features/student-portal/StudentResultsPage'));
 const StudentProfilePage = safeLazy(() => import('@/features/student-portal/StudentProfilePage'));
@@ -364,6 +365,10 @@ export const router = createBrowserRouter([
             <StudentTestsPage />
           </Suspense>
         ),
+      },
+      {
+        path: 'fees',
+        element: <Suspense fallback={<PageLoadingFallback />}><StudentFeesPage /></Suspense>,
       },
       {
         path: 'results',

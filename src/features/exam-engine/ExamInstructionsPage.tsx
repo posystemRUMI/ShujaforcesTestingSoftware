@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Play, Lock, Loader2, CheckCircle2, RotateCcw, ShieldAlert } from 'lucide-react';
+import { Play, Lock, Loader2, CheckCircle2, RotateCcw } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { attemptService } from '@/services/attemptService';
 import { testService, TestRecord } from '@/services/testService';
 import { familiarizationService } from '@/services/familiarizationService';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
 import { toast } from 'sonner';
-import { isTestAuthorizedForStudent } from '@/config/officialTestPatterns';
+import { studentPortalService } from '@/services/studentPortalService';
 
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -18,86 +18,51 @@ export const ExamInstructionsPage: React.FC = () => {
   const testIdParam = id || searchParams.get('testId');
 
   const { user } = useAuth();
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [authorized, setAuthorized] = useState(false);
+  const [loadingTest, setLoadingTest] = useState(true);
   const [agreed, setAgreed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [testData, setTestData] = useState<TestRecord | null>(null);
 
   useEffect(() => {
-    let isMounted = true;
-    async function loadTest() {
-      if (!isSupabaseConfigured()) return;
+    let active = true;
+    setLoadingTest(true); setLoadError(null); setAuthorized(false);
+    async function load() {
       try {
-        let t: TestRecord | null = null;
-        if (testIdParam && UUID_REGEX.test(testIdParam)) {
-          t = await testService.getTestById(testIdParam);
+        if (!testIdParam || !UUID_REGEX.test(testIdParam)) throw new Error('Choose a test from Assigned Tests.');
+        if (user?.role === 'STUDENT') {
+          const portal = await studentPortalService.snapshot();
+          if (!portal.assigned_tests.some(t => t.id === testIdParam)) throw new Error('No eligible pending assignment for this test.');
         }
-        if (!t) {
-          const tests = await testService.getTests();
-          if (tests && tests.length > 0) {
-            t = tests[0];
-          }
-        }
-        if (isMounted && t) {
-          setTestData(t);
-        }
-      } catch (e) {
-        console.warn('Failed to load test details:', e);
-      }
+        const test = await testService.getTestById(testIdParam);
+        if (!test) throw new Error('Test not found.');
+        if (active) { setTestData(test); setAuthorized(true); }
+      } catch (error) { if (active) setLoadError(error instanceof Error ? error.message : 'Could not load the assignment.'); }
+      finally { if (active) setLoadingTest(false); }
     }
-    loadTest();
-    return () => { isMounted = false; };
-  }, [testIdParam]);
+    load(); return () => { active = false; };
+  }, [testIdParam, user?.id, user?.role]);
 
   // Mandatory Pre-Test Familiarization Guard
   useEffect(() => {
-    if (!testData && !testIdParam) return;
+    if (!authorized || !testData) return;
     // Bypass for preview or explicit instructor override
     if (user && user.role !== 'STUDENT') return;
     if (searchParams.get('skipFamiliarization') === 'true') return;
 
     const targetId = testData?.id || testIdParam;
     if (targetId) {
-      const completed = familiarizationService.isFamiliarizationCompleted(targetId);
-      if (!completed) {
-        navigate(`/exam/familiarization?testId=${targetId}`, { replace: true });
-      }
+      familiarizationService.isFamiliarizationCompleted(targetId).then((completed) => {
+        if (!completed) {
+          navigate(`/exam/familiarization?testId=${targetId}`, { replace: true });
+        }
+      }).catch((error) => setLoadError(error.message));
     }
-  }, [testData, testIdParam, user, searchParams, navigate]);
+  }, [testData, testIdParam, user, searchParams, navigate, authorized]);
 
-  // 403 Forbidden Guard for Course Mismatch
-  const isAuthorized =
-    !user ||
-    user.role !== 'STUDENT' ||
-    isTestAuthorizedForStudent(user.courseName || user.courseTarget, testData?.name);
-
-  if (testData && !isAuthorized) {
-    return (
-      <div className="flex-1 flex flex-col justify-center max-w-xl mx-auto w-full py-12 select-none px-4">
-        <div className="bg-white border-2 border-[#782525] rounded p-8 shadow-md text-center space-y-4">
-          <div className="w-16 h-16 rounded-full bg-[#FDF2F2] border border-[#E29A9A] mx-auto flex items-center justify-center text-[#782525]">
-            <ShieldAlert className="w-8 h-8" />
-          </div>
-          <span className="text-[11px] font-sans font-bold text-[#782525] bg-[#FDF2F2] px-3 py-1 rounded border border-[#E29A9A] uppercase tracking-wider">
-            403 FORBIDDEN • ACCESS DENIED
-          </span>
-          <h1 className="text-xl font-bold text-[#0E1B2A]">Course Target Mismatch</h1>
-          <p className="text-xs text-[#64748B] leading-relaxed">
-            You are enrolled in <strong className="text-[#0E1B2A]">{user?.courseName || user?.courseTarget}</strong>.
-            This test (<span className="font-semibold text-[#0E1B2A]">{testData.name}</span>) is restricted to candidates of a different course pattern.
-          </p>
-          <div className="pt-2">
-            <button
-              type="button"
-              onClick={() => navigate('/student')}
-              className="px-5 py-2.5 bg-[#0E1B2A] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#1C2E42]"
-            >
-              Return to Cadet Dashboard
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  if (loadingTest) return <p role="status" className="p-6">Loading your assignment…</p>;
+  if (loadError || !authorized) return <div role="alert" className="p-6"><p>{loadError || 'Assignment unavailable.'}</p><button onClick={() => navigate('/student/tests')}>Return to Assigned Tests</button></div>;
 
   const handleStartExam = async () => {
     if (!agreed || loading) return;
@@ -117,11 +82,6 @@ export const ExamInstructionsPage: React.FC = () => {
           targetTestId = testIdParam;
         } else if (testData?.id && UUID_REGEX.test(testData.id)) {
           targetTestId = testData.id;
-        } else {
-          const tests = await testService.getTests();
-          if (tests && tests.length > 0 && UUID_REGEX.test(tests[0].id)) {
-            targetTestId = tests[0].id;
-          }
         }
 
         if (!targetTestId) {
@@ -168,10 +128,6 @@ export const ExamInstructionsPage: React.FC = () => {
           <div>
             <span className="text-[#64748B]">DOCKET: </span>
             <span className="font-bold text-[#0E1B2A] font-mono">{user?.rollNumber || '—'}</span>
-          </div>
-          <div>
-            <span className="text-[#64748B]">TERMINAL: </span>
-            <span className="font-bold text-[#234E35] font-mono">WS-CBT-01 (LOCKED)</span>
           </div>
         </div>
 

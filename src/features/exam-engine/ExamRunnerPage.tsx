@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Clock,
@@ -59,6 +59,7 @@ export const ExamRunnerPage: React.FC = () => {
   const [questions, setQuestions] = useState<SafeQuestion[]>([]);
   const [sections, setSections] = useState<SectionMeta[]>([]);
   const [testTitle, setTestTitle] = useState('Preliminary Computerized Screening Examination');
+  const [courseLabel, setCourseLabel] = useState('');
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -114,7 +115,23 @@ export const ExamRunnerPage: React.FC = () => {
     return new Set();
   });
 
-  const [secondsRemaining, setSecondsRemaining] = useState(1800); // dynamic default
+  const [secondsRemaining, setSecondsRemaining] = useState(0);
+  const deadlineRef = useRef<number>(0);
+  const overallDeadlineRef = useRef<number>(0);
+  const serverOffsetRef = useRef<number>(0);
+  const answerQueueRef = useRef<Promise<unknown>>(Promise.resolve());
+  const failedSavesRef = useRef(new Map<string, { option?: string; flagged: boolean }>());
+  const submittingRef = useRef(false);
+  const saveToServer = (qid: string, option: string | undefined, review: boolean) => {
+    setAutosaveStatus('SAVING');
+    const pending = { option, flagged: review };
+    failedSavesRef.current.set(qid, pending);
+    const request = answerQueueRef.current.catch(() => undefined).then(() => attemptService.saveAnswer(attemptId!, qid, option, review));
+    answerQueueRef.current = request;
+    request.then(() => { if (failedSavesRef.current.get(qid) === pending) failedSavesRef.current.delete(qid); setAutosaveStatus(failedSavesRef.current.size ? 'UNSYNCED' : 'SAVED'); })
+      .catch(() => { setAutosaveStatus('UNSYNCED'); });
+    return request;
+  };
 
   // UI state
   const [autosaveStatus, setAutosaveStatus] = useState<'SAVED' | 'SAVING' | 'UNSYNCED'>('SAVED');
@@ -142,7 +159,7 @@ export const ExamRunnerPage: React.FC = () => {
             const secQs: SafeQuestion[] = (sec.questions || []).map((q) => ({
               id: q.id,
               code: q.code,
-              subject: q.subject_id || 'GENERAL',
+              subject: q.subject_code || '',
               stem: q.stem,
               imageUrl: q.stem_image_url || undefined,
               options: (q.options || []).map((opt) => ({
@@ -159,7 +176,7 @@ export const ExamRunnerPage: React.FC = () => {
               startIndex: offset,
               endIndex: offset + secQs.length - 1,
               questionCount: secQs.length,
-              durationMinutes: sec.duration_minutes || 30,
+              durationMinutes: sec.duration_minutes,
             });
 
             offset += secQs.length;
@@ -167,6 +184,7 @@ export const ExamRunnerPage: React.FC = () => {
           }
 
           if (qList.length > 0) {
+            setCourseLabel(payload.test.course_name || '');
             setQuestions(qList);
             setSections(secList);
             setTestTitle(payload.test?.name || (payload as any).test_name || 'Preliminary Computerized Screening Examination');
@@ -181,7 +199,17 @@ export const ExamRunnerPage: React.FC = () => {
                 if (ans.marked_for_review) restoredFlags.add(qid);
               }
 
-              setAnswers((prev) => ({ ...restoredAnswers, ...prev }));
+              try {
+                const cached = JSON.parse(localStorage.getItem(storageKey) || '{}');
+                for (const [qid, pending] of Object.entries(cached.pendingAnswers || {}) as Array<[string, {option?: string; flagged: boolean}]>) {
+                  if (!qList.some((q) => q.id === qid)) continue;
+                  failedSavesRef.current.set(qid, pending);
+                  if (pending.option) restoredAnswers[qid] = pending.option; else delete restoredAnswers[qid];
+                  if (pending.flagged) restoredFlags.add(qid); else restoredFlags.delete(qid);
+                }
+                if (failedSavesRef.current.size) setAutosaveStatus('UNSYNCED');
+              } catch { /* Corrupt cache does not replace backend state. */ }
+              setAnswers(restoredAnswers);
               setFlagged(restoredFlags);
             }
 
@@ -202,50 +230,16 @@ export const ExamRunnerPage: React.FC = () => {
               setCurrentIndex(resumeSection.startIndex);
             }
 
-            // ── Timer initialization — prefer server-side deadline, then localStorage, then config ──
-            let restoredTime: number | null = null;
-
-            // 1. Server-set deadline for the ACTIVE section (not always section 0)
-            const activeSectionPayload = (payload.sections || [])[resumeSectionIdx];
-            if (activeSectionPayload?.expires_at) {
-              const serverRemaining = Math.floor(
-                (new Date(activeSectionPayload.expires_at).getTime() - Date.now()) / 1000
-              );
-              const maxAllowed = (activeSectionPayload.duration_minutes || 180) * 60 + 30;
-              if (serverRemaining > 0 && serverRemaining <= maxAllowed) {
-                restoredTime = serverRemaining;
-              }
+            const active = payload.sections[resumeSectionIdx];
+            if (!active?.expires_at || !payload.attempt.expires_at || !payload.server_time || active.questions.length !== active.question_count) {
+              throw new Error('Saved examination deadline or exact composition is missing.');
             }
-
-            // 2. Fall back to localStorage (elapsed since last save) — but validate against active section
-            if (restoredTime === null) {
-              try {
-                const savedRaw = localStorage.getItem(storageKey);
-                if (savedRaw) {
-                  const saved = JSON.parse(savedRaw);
-                  if (typeof saved.secondsRemaining === 'number' && saved.secondsRemaining > 0 && saved.updatedAt) {
-                    const elapsedSecs = Math.floor((Date.now() - new Date(saved.updatedAt).getTime()) / 1000);
-                    const rem = saved.secondsRemaining - elapsedSecs;
-                    const maxAllowed = (secList[resumeSectionIdx]?.durationMinutes || 180) * 60;
-                    if (rem > 0 && rem <= maxAllowed) {
-                      restoredTime = rem;
-                    }
-                  }
-                }
-              } catch {
-                /* ignore */
-              }
-            }
-
-            if (restoredTime !== null) {
-              setSecondsRemaining(restoredTime);
-            } else if (secList[resumeSectionIdx]?.durationMinutes) {
-              setSecondsRemaining(secList[resumeSectionIdx].durationMinutes * 60);
-            } else if (payload.test?.duration_minutes) {
-              setSecondsRemaining(payload.test.duration_minutes * 60);
-            } else {
-              setSecondsRemaining(1800);
-            }
+            if (payload.sections.some((sec) => sec.questions.length !== sec.question_count || sec.duration_minutes <= 0)) throw new Error('Invalid saved section configuration.');
+            serverOffsetRef.current = Date.parse(payload.server_time) - Date.now();
+            overallDeadlineRef.current = Date.parse(payload.attempt.expires_at);
+            deadlineRef.current = Math.min(Date.parse(active.expires_at), overallDeadlineRef.current);
+            if (!Number.isFinite(deadlineRef.current)) throw new Error('Invalid backend examination deadline.');
+            setSecondsRemaining(Math.max(0, Math.ceil((deadlineRef.current - Date.now() - serverOffsetRef.current) / 1000)));
 
 
           } else {
@@ -277,6 +271,7 @@ export const ExamRunnerPage: React.FC = () => {
         storageKey,
         JSON.stringify({
           answers,
+          pendingAnswers: Object.fromEntries(failedSavesRef.current),
           flagged: Array.from(flagged),
           skipped: Array.from(skipped),
           secondsRemaining,
@@ -287,7 +282,7 @@ export const ExamRunnerPage: React.FC = () => {
     } catch (e) {
       /* ignore */
     }
-  }, [answers, flagged, skipped, secondsRemaining, currentIndex, storageKey]);
+  }, [answers, flagged, skipped, secondsRemaining, currentIndex, storageKey, autosaveStatus]);
 
   // Server Telemetry Heartbeat (every 20s)
   useEffect(() => {
@@ -311,31 +306,21 @@ export const ExamRunnerPage: React.FC = () => {
     return () => clearInterval(heartbeatTimer);
   }, [attemptId, answers, currentIndex, sections, loading]);
 
-  // Chronometer countdown with per-section timer auto-advancement
+  // Absolute backend deadlines continue while dialogs are open or the tab is idle.
   useEffect(() => {
-    if (loading || showSectionModal || showSubmitModal) return;
-
-    const timer = setInterval(() => {
-      setSecondsRemaining((prev: number) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-
-          if (activeSectionIndex < sections.length - 1) {
-            const currentTitle = sections[activeSectionIndex]?.title || 'Current Section';
-            toast.warning(`Timer expired for section "${currentTitle}". Ready for next section.`);
-            setShowSectionModal(true);
-          } else {
-            toast.warning('Final section timer expired! Submitting examination automatically.');
-            handleFinalSubmit();
-          }
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
+    if (loading || errorMsg) return;
+    const tick = () => {
+      const now = Date.now() + serverOffsetRef.current;
+      const remaining = Math.max(0, Math.ceil((deadlineRef.current - now) / 1000));
+      setSecondsRemaining(remaining);
+      if (now >= overallDeadlineRef.current || (remaining === 0 && activeSectionIndex === sections.length - 1)) {
+        void handleFinalSubmit();
+      } else if (remaining === 0) setShowSectionModal(true);
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
-  }, [loading, activeSectionIndex, sections, showSectionModal, showSubmitModal]);
+  }, [loading, errorMsg, activeSectionIndex, sections]);
 
   const currentQ = questions[currentIndex] || questions[0];
   const isFlagged = currentQ ? flagged.has(currentQ.id) : false;
@@ -344,7 +329,7 @@ export const ExamRunnerPage: React.FC = () => {
   // Handle Option Selection with Instant Server Autosave (SAVE-009)
   const handleSelectOption = useCallback(
     (optionId: string) => {
-      if (!currentQ) return;
+      if (submittingRef.current || !currentQ || Date.now() + serverOffsetRef.current >= deadlineRef.current) return;
 
       const currentSec = sections[activeSectionIndex];
       if (currentSec && (currentIndex < currentSec.startIndex || currentIndex > currentSec.endIndex)) {
@@ -369,13 +354,7 @@ export const ExamRunnerPage: React.FC = () => {
 
       if (attemptId && isSupabaseConfigured()) {
         setAutosaveStatus('SAVING');
-        attemptService
-          .saveAnswer(attemptId, currentQ.id, optionId, flagged.has(currentQ.id))
-          .then(() => setAutosaveStatus('SAVED'))
-          .catch((err) => {
-            console.warn('Server autosave error:', err);
-            setAutosaveStatus('UNSYNCED');
-          });
+        void saveToServer(currentQ.id, optionId, flagged.has(currentQ.id));
       }
     },
     [currentQ, attemptId, flagged, sections, activeSectionIndex, currentIndex]
@@ -383,7 +362,7 @@ export const ExamRunnerPage: React.FC = () => {
 
   // Toggle Review Flag with Instant Server Synchronization
   const toggleFlag = useCallback(() => {
-    if (!currentQ) return;
+    if (!currentQ || submittingRef.current) return;
 
     setFlagged((prev) => {
       const next = new Set(prev);
@@ -398,13 +377,7 @@ export const ExamRunnerPage: React.FC = () => {
       }
 
       if (attemptId && isSupabaseConfigured()) {
-        attemptService
-          .saveAnswer(attemptId, currentQ.id, answers[currentQ.id], willBeFlagged)
-          .then(() => setAutosaveStatus('SAVED'))
-          .catch((err) => {
-            console.warn('Server flag sync error:', err);
-            setAutosaveStatus('UNSYNCED');
-          });
+        void saveToServer(currentQ.id, answers[currentQ.id], willBeFlagged);
       }
 
       return next;
@@ -451,7 +424,7 @@ export const ExamRunnerPage: React.FC = () => {
 
   // Clear Selected Option
   const handleClearAnswer = useCallback(() => {
-    if (!currentQ || !answers[currentQ.id]) return;
+    if (!currentQ || !answers[currentQ.id] || submittingRef.current) return;
 
     setAnswers((prev) => {
       const next = { ...prev };
@@ -460,50 +433,54 @@ export const ExamRunnerPage: React.FC = () => {
     });
 
     if (attemptId && isSupabaseConfigured()) {
-      attemptService
-        .saveAnswer(attemptId, currentQ.id, '', flagged.has(currentQ.id))
-        .catch((e) => console.warn('Clear answer sync error:', e));
+      void saveToServer(currentQ.id, undefined, flagged.has(currentQ.id));
     }
     toast.info(`Selection cleared for Question ${currentIndex + 1}`);
   }, [currentQ, answers, attemptId, flagged, currentIndex]);
 
-  const handleProceedNextSection = async () => {
-    setShowSectionModal(false);
-    const nextSecIndex = activeSectionIndex + 1;
-    if (nextSecIndex < sections.length) {
-      const nextSection = sections[nextSecIndex];
-      setActiveSectionIndex(nextSecIndex);
-      setCurrentIndex(nextSection.startIndex);
-      setSecondsRemaining(nextSection.durationMinutes * 60);
+  const flushAnswers = async () => {
+    await answerQueueRef.current.catch(() => undefined);
+    for (const [qid, pending] of failedSavesRef.current) await saveToServer(qid, pending.option, pending.flagged);
+    if (failedSavesRef.current.size) throw new Error('Some answers remain unsaved. Retry after restoring your connection.');
+  };
 
-      if (attemptId && isSupabaseConfigured()) {
-        attemptService.advanceSection(attemptId, nextSection.id).catch((e) => {
-          console.warn('Section advance RPC error:', e);
-        });
-      }
-      toast.success(`Started ${nextSection.title} (${nextSection.durationMinutes} mins allocated)`);
-    } else {
-      handleFinalSubmit();
-    }
+  const handleProceedNextSection = async () => {
+    const nextSecIndex = activeSectionIndex + 1;
+    if (nextSecIndex >= sections.length) { await handleFinalSubmit(); return; }
+    try {
+      await flushAnswers();
+      const next = sections[nextSecIndex];
+      const saved = await attemptService.advanceSection(attemptId!, next.id);
+      serverOffsetRef.current = Date.parse(saved.server_time) - Date.now();
+      deadlineRef.current = Math.min(Date.parse(saved.expires_at), overallDeadlineRef.current);
+      setActiveSectionIndex(nextSecIndex);
+      setCurrentIndex(next.startIndex);
+      setSecondsRemaining(Math.max(0, Math.ceil((deadlineRef.current - Date.now() - serverOffsetRef.current) / 1000)));
+      setShowSectionModal(false);
+    } catch (err) { toast.error(err instanceof Error ? err.message : 'Section could not be started.'); }
   };
 
   // Final Server Submission (Server-authoritative scoring)
   const handleFinalSubmit = async () => {
-    if (submitting) return;
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setSubmitting(true);
 
     try {
       if (attemptId && isSupabaseConfigured()) {
+        await flushAnswers();
         const res = await attemptService.submitAttempt(attemptId);
         localStorage.removeItem(storageKey);
         navigate(`/exam/finish?attemptId=${attemptId}&resultId=${res.result_id}`);
       } else {
         toast.error('Unable to submit: missing active exam session.');
+        submittingRef.current = false;
         setSubmitting(false);
       }
     } catch (err: any) {
       console.error('Final submission error:', err);
       toast.error(err.message || 'Error submitting test attempt. Please notify proctor immediately.');
+      submittingRef.current = false;
       setSubmitting(false);
     }
   };
@@ -641,7 +618,7 @@ export const ExamRunnerPage: React.FC = () => {
             ) : autosaveStatus === 'UNSYNCED' ? (
               <>
                 <span className="w-2 h-2 rounded-full bg-amber-400" />
-                <span className="text-amber-300">Not saved — retrying</span>
+                <button type="button" onClick={() => void flushAnswers().catch((err) => toast.error(err.message))} className="text-amber-300">Not saved — click to retry</button>
               </>
             ) : (
               <>
@@ -690,7 +667,7 @@ export const ExamRunnerPage: React.FC = () => {
                   [{currentQ.code}]
                 </span>
                 <span className="text-[11px] font-bold text-[#854D0E] bg-[#FEF9C3] px-2 py-0.5 rounded border border-[#FDE047] font-mono tracking-tight">
-                  {(currentQ as any).tags?.includes('AFNS') && !(currentQ as any).tags?.includes('PMA') ? 'AFNS' : 'LC-159'}
+                  {courseLabel}
                 </span>
                 <span className="text-xs font-medium text-[#475569] bg-[#F1F5F9] px-2.5 py-0.5 rounded-md border border-[#E2E8F0] hidden sm:inline-block">
                   {currentQ.subject.replace('INTELLIGENCE_', '').replace('ACADEMIC_', '')}
@@ -736,6 +713,7 @@ export const ExamRunnerPage: React.FC = () => {
                 return (
                   <button
                     key={opt.id}
+                    aria-label={`Option ${opt.label}: ${opt.text}`}
                     type="button"
                     role="radio"
                     aria-checked={isSelected}

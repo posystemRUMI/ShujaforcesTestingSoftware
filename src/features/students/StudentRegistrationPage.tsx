@@ -54,7 +54,7 @@ const registrationFormSchema = z
       .max(30, 'Roll number too long')
       .regex(/^[A-Za-z0-9-_]+$/, 'Roll number must contain only letters, numbers, hyphens or underscores'),
     email: z.string().email('Valid email address is required'),
-    password: z.string().min(4, 'Password must be at least 4 characters'),
+    password: z.string().min(6, 'Password must be at least 6 characters'),
     status: z.enum(['ACTIVE', 'INACTIVE', 'SUSPENDED', 'DISQUALIFIED']),
     guardianName: z.string().max(100).optional().or(z.literal('')),
     guardianRelationship: z.enum(['Father', 'Mother', 'Brother', 'Uncle', 'Guardian']).optional(),

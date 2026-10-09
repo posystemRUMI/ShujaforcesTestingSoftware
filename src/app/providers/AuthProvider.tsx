@@ -47,13 +47,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     let authListener: any;
     if (isSupabaseConfigured()) {
       try {
-        const { data } = supabase.auth.onAuthStateChange(async (event: string, session: any) => {
+        const { data } = supabase.auth.onAuthStateChange((event: string, session: any) => {
           if (!mounted) return;
           if ((event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') && session?.user) {
-            const freshUser = await authService.getCurrentUser();
-            if (freshUser && mounted) {
-              setUser(freshUser);
-            }
+            // GoTrue invokes this callback while holding its session lock.
+            // Defer session reads so a new student's sign-in cannot deadlock.
+            setTimeout(() => {
+              if (!mounted) return;
+              authService.getCurrentUser().then((freshUser) => {
+                if (freshUser && mounted) setUser(freshUser);
+              }).catch((error) => console.warn('Could not refresh the signed-in profile:', error));
+            }, 0);
           } else if (event === 'SIGNED_OUT') {
             if (mounted) {
               setUser(null);

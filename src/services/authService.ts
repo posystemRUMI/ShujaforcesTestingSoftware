@@ -42,7 +42,7 @@ export const authService = {
 
       let cadetId: string | undefined;
       let rollNumber: string | undefined;
-      let branch: any = 'PAKISTAN_ARMY';
+      let branch: any = undefined;
       let rankTitle: string | undefined;
 
       if (profile.role === 'STUDENT') {
@@ -55,7 +55,7 @@ export const authService = {
         if (std) {
           cadetId = std.id;
           rollNumber = std.roll_number;
-          branch = (std.forces as any)?.code || 'PAKISTAN_ARMY';
+          branch = (std.forces as any)?.code;
         }
       } else if (profile.role === 'TEACHER') {
         const { data: tch } = await (supabase as any)
@@ -186,7 +186,7 @@ export const authService = {
       let forceName: string | undefined;
       let courseId: string | undefined;
       let courseName: string | undefined;
-      let branch: MilitaryBranch | undefined = 'PAKISTAN_ARMY';
+      let branch: MilitaryBranch | undefined;
       let rankTitle: string | undefined;
 
       if (profile.role === 'STUDENT') {
@@ -199,11 +199,11 @@ export const authService = {
         if (std) {
           cadetId = std.id;
           rollNumber = std.roll_number;
-          branch = ((std.forces as any)?.code || 'PAKISTAN_ARMY') as MilitaryBranch;
+          branch = ((std.forces as any)?.code) as MilitaryBranch;
           forceId = (std.forces as any)?.id || (std.forces as any)?.code;
-          forceName = (std.forces as any)?.name || 'Pakistan Air Force';
+          forceName = (std.forces as any)?.name;
           courseId = (std.courses as any)?.id || (std.courses as any)?.code;
-          courseName = (std.courses as any)?.name || 'Airman';
+          courseName = (std.courses as any)?.name;
         }
       } else if (profile.role === 'TEACHER') {
         const { data: tch } = await (supabase as any)

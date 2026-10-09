@@ -1,13 +1,22 @@
 import React from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LogOut, ArrowRight, BookOpen, Award, UserCheck, LayoutDashboard, Trophy } from 'lucide-react';
+import { LogOut, ArrowRight, BookOpen, Award, UserCheck, LayoutDashboard, Trophy, Wallet } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { ShujaForcesLogo } from '@/components/brand/ShujaForcesLogo';
 import { useRealtimeSync } from '@/hooks/useRealtimeSync';
+import { useQuery } from '@tanstack/react-query';
+import { studentPortalService } from '@/services/studentPortalService';
 
 export const StudentShell: React.FC = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const portal = useQuery({
+    queryKey: ['student', 'portal', user?.id],
+    queryFn: studentPortalService.snapshot,
+    enabled: !!user,
+    staleTime: 0,
+    refetchInterval: 30000,
+  });
 
   // Initialize Supabase Realtime auto-refresh query invalidation for student portal
   useRealtimeSync('student');
@@ -77,6 +86,8 @@ export const StudentShell: React.FC = () => {
             <span>Leaderboard</span>
           </NavLink>
 
+          <NavLink to="/student/fees" className={({ isActive }) => `h-[42px] px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 ${isActive ? 'bg-[#1C2E42] text-white' : 'text-[#A0AEC0] hover:text-white'}`}><Wallet className="w-[17px] h-[17px]"/><span>My Fees</span></NavLink>
+
           <NavLink
             to="/student/profile"
             className={({ isActive }) =>
@@ -93,7 +104,7 @@ export const StudentShell: React.FC = () => {
         {/* User Identity & Direct Exam Action */}
         <div className="flex items-center space-x-3 sm:space-x-4">
           <NavLink
-            to="/exam/familiarization"
+            to="/student/tests"
             className="h-[42px] px-4 sm:px-5 rounded-xl text-[13px] font-semibold bg-[#C6A75E] text-[#0E1B2A] hover:bg-[#D8BA70] transition-colors shadow-xs flex items-center gap-2 shrink-0"
           >
             <span className="hidden sm:inline">Launch Exam</span>
@@ -102,8 +113,8 @@ export const StudentShell: React.FC = () => {
           </NavLink>
 
           <div className="text-right hidden sm:flex flex-col justify-center min-w-[110px] lg:min-w-[130px] border-l border-[#1C2E42] pl-3.5 pr-1">
-            <p className="text-[13px] font-semibold text-white leading-tight truncate">{user?.name || 'Cadet User'}</p>
-            <p className="text-xs text-[#C6A75E] font-mono font-semibold leading-tight mt-0.5">{user?.rollNumber || 'SFA-CADET'}</p>
+            <p className="text-[13px] font-semibold text-white leading-tight truncate">{portal.data?.profile.name ?? (portal.isError ? 'Unavailable' : 'Loading…')}</p>
+            <p className="text-xs text-[#C6A75E] font-mono font-semibold leading-tight mt-0.5">{portal.data?.profile.roll_number ?? (portal.isError ? 'Unavailable' : 'Loading…')}</p>
           </div>
 
           <button
@@ -148,6 +159,7 @@ export const StudentShell: React.FC = () => {
         >
           Rankings
         </NavLink>
+        <NavLink to="/student/fees" className={({ isActive }) => isActive ? 'text-[#C6A75E] font-bold' : 'text-[#A0AEC0]'}>Fees</NavLink>
         <NavLink
           to="/student/profile"
           className={({ isActive }) => (isActive ? 'text-[#C6A75E] font-bold' : 'text-[#A0AEC0]')}

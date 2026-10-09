@@ -182,7 +182,7 @@ export const TestBuilderPage: React.FC = () => {
           canDisable: true,
           canOverrideCount: true,
           canOverrideDuration: true,
-          subjects: [],
+          subjects: s.subjects,
           defaultQuestions: s.question_count,
           defaultDuration: s.duration_minutes,
         }));
@@ -238,9 +238,9 @@ export const TestBuilderPage: React.FC = () => {
         questionCount: cfg.totalQuestions,
         durationMinutes: cfg.durationMinutes,
         minQuestions: 1,
-        maxQuestions: cfg.totalQuestions, // STRICT CAP: cannot be greater than official pattern totalQuestions!
+        maxQuestions: cfg.totalQuestions, // Pattern reference; configured counts remain explicit.
         minDuration: 1,
-        maxDuration: cfg.durationMinutes, // STRICT CAP: cannot be greater than official pattern durationMinutes!
+        maxDuration: cfg.durationMinutes, // Pattern reference; configured duration remains explicit.
         isMandatory: true,
         canDisable: true,
         canOverrideCount: true,
@@ -271,19 +271,19 @@ export const TestBuilderPage: React.FC = () => {
                 sectionName: s.sectionName,
                 displayOrder: s.displayOrder,
                 enabled: s.defaultEnabled,
-                questionCount: Math.min(s.defaultQuestionCount, officialMaxQuestions),
-                durationMinutes: Math.min(s.defaultDurationMinutes, officialMaxDuration),
+                questionCount: s.defaultQuestionCount,
+                durationMinutes: s.defaultDurationMinutes,
                 minQuestions: s.minQuestionCount,
-                maxQuestions: officialMaxQuestions, // STRICT CAP
+                maxQuestions: officialMaxQuestions, // Pattern reference
                 minDuration: s.minDurationMinutes,
-                maxDuration: officialMaxDuration, // STRICT CAP
+                maxDuration: officialMaxDuration, // Pattern reference
                 isMandatory: s.isMandatory,
                 canDisable: s.teacherCanDisable,
                 canOverrideCount: s.teacherCanOverrideQuestionCount,
                 canOverrideDuration: s.teacherCanOverrideDuration,
                 subjects: s.subjects || [],
-                defaultQuestions: Math.min(s.defaultQuestionCount, officialMaxQuestions),
-                defaultDuration: Math.min(s.defaultDurationMinutes, officialMaxDuration),
+                defaultQuestions: s.defaultQuestionCount,
+                defaultDuration: s.defaultDurationMinutes,
               };
             });
             setConfiguredSections(mapped);
@@ -325,11 +325,7 @@ export const TestBuilderPage: React.FC = () => {
             toast.error(`Question count override is locked for "${s.sectionName}".`);
             return s;
           }
-          if (count > s.maxQuestions) {
-            toast.error(`Question count for "${s.sectionName}" cannot be greater than the official pattern limit of ${s.maxQuestions}.`);
-          }
-          const valid = Math.max(s.minQuestions, Math.min(s.maxQuestions, count));
-          return { ...s, questionCount: valid };
+          return { ...s, questionCount: count };
         }
         return s;
       })
@@ -344,11 +340,7 @@ export const TestBuilderPage: React.FC = () => {
             toast.error(`Duration override is locked for "${s.sectionName}".`);
             return s;
           }
-          if (duration > s.maxDuration) {
-            toast.error(`Duration for "${s.sectionName}" cannot be greater than the official pattern limit of ${s.maxDuration} minutes.`);
-          }
-          const valid = Math.max(s.minDuration, Math.min(s.maxDuration, duration));
-          return { ...s, durationMinutes: valid };
+          return { ...s, durationMinutes: duration };
         }
         return s;
       })
@@ -377,56 +369,14 @@ export const TestBuilderPage: React.FC = () => {
     const code = (sec.sectionCode || sec.sectionName || '').toUpperCase();
     const name = (sec.sectionName || '').toUpperCase();
 
-    const stem = (q.stem || '').toUpperCase();
-    const qSubject = (q.subject || '').toUpperCase();
-    const qSubjectName = (q.subjectName || '').toUpperCase();
-    const qTags = (q.tags || []).map((t) => String(t).toUpperCase());
-    const qCode = (q.code || '').toUpperCase();
-
-    const isNVQuestion =
-      stem.includes('NV--Q') ||
-      qCode.includes('NV-') ||
-      qSubject.includes('NON_VERBAL') ||
-      qSubject.includes('NON-VERBAL') ||
-      qSubjectName.includes('NON-VERBAL') ||
-      qTags.some((t) => t.includes('NON-VERBAL') || t.includes('NON VERBAL'));
-
-    const isVQuestion =
-      !isNVQuestion &&
-      (stem.includes('V--Q') ||
-        qCode.includes('V-') ||
-        qSubject.includes('VERBAL') ||
-        qSubjectName.includes('VERBAL') ||
-        qTags.some((t) => t.includes('VERBAL')));
-
-    const isNonVerbalSection = code.includes('NON') || name.includes('NON');
-    const isVerbalSection = !isNonVerbalSection && (code.includes('VERBAL') || name.includes('VERBAL'));
-    const isAcademicSection = code.includes('ACADEMIC') || name.includes('ACADEMIC') || name.includes('ACADEMICS');
-
-    if (isNonVerbalSection) {
-      return isNVQuestion;
+    if (!selectedEligibilities.length || !selectedEligibilities.every((e) => q.courseIds?.includes(e.course_id))) return false;
+    const subject = String(q.subject);
+    if (code.includes('NON') || name.includes('NON')) return subject === 'INTELLIGENCE_NON_VERBAL';
+    if (code.includes('VERBAL') || name.includes('VERBAL')) return subject === 'INTELLIGENCE_VERBAL';
+    if (sec.subjects?.length) return sec.subjects.some((sub) => sub.id === q.subject_id);
+    if (code.includes('ACADEMIC') || name.includes('ACADEMIC')) {
+      return ['ACADEMIC_PHYSICS','ACADEMIC_ENGLISH','ACADEMIC_MATH','GENERAL_KNOWLEDGE'].includes(subject);
     }
-
-    if (isVerbalSection) {
-      return isVQuestion;
-    }
-
-    if (isAcademicSection) {
-      return !isVQuestion && !isNVQuestion;
-    }
-
-    // Fallback subject match
-    const secSubjectIds = sec.subjects?.map((s) => s.id) || [];
-    const secSubjectCodes = sec.subjects?.map((s) => s.code.toUpperCase()) || [];
-    const matchesSubject = secSubjectIds.includes(q.subject_id || '') || secSubjectCodes.includes(qSubject);
-
-    if (matchesSubject) {
-      if (isVerbalSection && !isVQuestion) return false;
-      if (isNonVerbalSection && !isNVQuestion) return false;
-      if (isAcademicSection && (isVQuestion || isNVQuestion)) return false;
-      return true;
-    }
-
     return false;
   };
 
@@ -538,16 +488,8 @@ export const TestBuilderPage: React.FC = () => {
         return;
       }
       for (const s of activeSections) {
-        if (s.questionCount <= 0 || s.durationMinutes <= 0) {
+        if (!Number.isInteger(s.questionCount) || !Number.isInteger(s.durationMinutes) || s.questionCount <= 0 || s.durationMinutes <= 0) {
           toast.error(`Invalid question count or duration in "${s.sectionName}".`);
-          return;
-        }
-        if (s.questionCount > s.maxQuestions) {
-          toast.error(`Question count in "${s.sectionName}" (${s.questionCount}) cannot be greater than the official pattern limit of ${s.maxQuestions}.`);
-          return;
-        }
-        if (s.durationMinutes > s.maxDuration) {
-          toast.error(`Duration for "${s.sectionName}" (${s.durationMinutes} min) cannot be greater than the official pattern limit of ${s.maxDuration} minutes.`);
           return;
         }
       }
@@ -592,7 +534,7 @@ export const TestBuilderPage: React.FC = () => {
     try {
       const selectedTemplate = templates.find((t) => t.id === selectedTemplateId);
 
-      const savedTest = await testService.upsertTest({
+      await testService.upsertTest({
         testId: editingTestId,
         eligibilities: selectedEligibilities,
         test: {
@@ -612,7 +554,7 @@ export const TestBuilderPage: React.FC = () => {
           test_type: testType,
         },
         sections: activeSections.map((s, idx) => ({
-          id: s.id.startsWith('sec-') ? undefined : s.id,
+          id: editingTestId && !s.id.startsWith('sec-') ? s.id : undefined,
           name: s.sectionName,
           section_code: s.sectionCode,
           source_template_section_id: s.sourceTemplateSectionId,
@@ -620,7 +562,7 @@ export const TestBuilderPage: React.FC = () => {
           question_count: s.questionCount,
           duration_minutes: s.durationMinutes,
           subject_id: s.subjects && s.subjects[0] ? s.subjects[0].id : null,
-          subject_ids: s.subjects?.map((sub) => sub.id) || [],
+          subject_ids: s.subjects?.length ? s.subjects.map((sub) => sub.id) : Array.from(new Set(allQuestions.filter((q) => isQuestionBelongsToSection(q, s)).map((q) => q.subject_id).filter((id): id is string => Boolean(id)))),
           is_mandatory: s.isMandatory,
           passing_percentage: 55,
           question_ids: sectionQuestionMap[s.id] || [],
@@ -628,11 +570,6 @@ export const TestBuilderPage: React.FC = () => {
         autoGenerateQuestions: assemblyMode === 'AUTO',
       });
 
-      try {
-        await testService.publishTest(savedTest.id);
-      } catch (pubErr) {
-        console.warn('Publish RPC notice:', pubErr);
-      }
 
       setPublishing(false);
       toast.success(editingTestId ? 'Test blueprint successfully updated!' : 'Test blueprint successfully created & published!');
@@ -831,6 +768,11 @@ export const TestBuilderPage: React.FC = () => {
                           </span>
                         </div>
 
+                        <button type="button" className="text-xs font-semibold text-[#0E1B2A] underline" onClick={() => {
+                          const allSelected = forceCourses.every((c) => selectedEligibilities.some((e) => e.course_id === c.id));
+                          const otherForces = selectedEligibilities.filter((e) => e.force_id !== f.id);
+                          setSelectedEligibilities(allSelected ? otherForces : [...otherForces, ...forceCourses.map((c) => ({ force_id: f.id, course_id: c.id }))]);
+                        }}>Select / clear all courses for this Force</button>
                         <div className="space-y-3">
                           {forceCourses.map((c) => {
                             const isSelected = selectedEligibilities.some((e) => e.course_id === c.id);
@@ -1017,7 +959,7 @@ export const TestBuilderPage: React.FC = () => {
                                   className="w-32 h-10 bg-white border border-[#D4D9DF] rounded-lg px-3 text-sm font-bold text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] disabled:bg-[#EDF1F5] disabled:cursor-not-allowed"
                                 />
                                 <span className="text-xs font-medium text-[#64748B]">
-                                  Range: {sec.minQuestions} – {sec.maxQuestions}
+                                  Select exactly this many questions
                                 </span>
                               </div>
                             </div>
@@ -1035,7 +977,7 @@ export const TestBuilderPage: React.FC = () => {
                                   className="w-32 h-10 bg-white border border-[#D4D9DF] rounded-lg px-3 text-sm font-bold text-[#0E1B2A] focus:outline-none focus:border-[#0E1B2A] disabled:bg-[#EDF1F5] disabled:cursor-not-allowed"
                                 />
                                 <span className="text-xs font-medium text-[#64748B]">
-                                  Range: {sec.minDuration} – {sec.maxDuration} min
+                                  Enter the exact section duration in minutes
                                 </span>
                               </div>
                             </div>

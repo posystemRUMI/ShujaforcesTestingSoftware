@@ -87,8 +87,8 @@ export const TeacherLeaderboardPage: React.FC = () => {
 
   const availableTests = useMemo(() => {
     let list = tests;
-    if (selectedForceId) list = list.filter((t) => t.force_id === selectedForceId);
-    if (selectedCourseId) list = list.filter((t) => t.course_id === selectedCourseId);
+    if (selectedForceId) list = list.filter((t) => t.force_id === selectedForceId || t.eligibilities?.some(e => e.force_id === selectedForceId));
+    if (selectedCourseId) list = list.filter((t) => t.course_id === selectedCourseId || t.eligibilities?.some(e => e.course_id === selectedCourseId));
     return list;
   }, [tests, selectedForceId, selectedCourseId]);
 

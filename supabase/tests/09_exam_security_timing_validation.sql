@@ -1,0 +1,100 @@
+BEGIN;
+CREATE TEMP TABLE exam_security_report(check_name text,passed boolean);
+CREATE TEMP TABLE exam_security_context(aid uuid,uid uuid,tid uuid,qid uuid,opt uuid);
+DO $$
+DECLARE staff uuid; uid uuid; other_uid uuid; sid uuid; c record; verbal uuid; nonverbal uuid; qids uuid[]:='{}'; qid uuid; opt uuid; tid uuid; aid uuid; config jsonb; t tests%ROWTYPE; payload jsonb; original jsonb; sections uuid[]; i int; denied boolean; expires timestamptz; result jsonb; count_before int; draft_id uuid; draft_sec uuid;
+BEGIN
+ SELECT id INTO staff FROM profiles WHERE role='ADMIN' LIMIT 1;SELECT * INTO c FROM courses WHERE code='PMA_LONG_COURSE';SELECT id INTO verbal FROM subjects WHERE code='INTELLIGENCE_VERBAL';SELECT id INTO nonverbal FROM subjects WHERE code='INTELLIGENCE_NON_VERBAL';
+ uid:=gen_random_uuid();other_uid:=gen_random_uuid();
+ INSERT INTO auth.users(id,email) VALUES(uid,uid||'@exam-security-fixture.invalid'),(other_uid,other_uid||'@exam-security-fixture.invalid');
+ INSERT INTO profiles(id,email,display_name,role) VALUES(uid,uid||'@exam-security-fixture.invalid','Exam fixture','STUDENT'),(other_uid,other_uid||'@exam-security-fixture.invalid','Wrong owner','STUDENT') ON CONFLICT(id) DO UPDATE SET role='STUDENT';
+ INSERT INTO students(profile_id,roll_number,father_name,target_force_id,target_course_id) VALUES(uid,'EXAM-SEC-'||uid,'Fixture',c.force_id,c.id),(other_uid,'EXAM-SEC-'||other_uid,'Fixture',c.force_id,c.id);
+ FOR i IN 1..16 LOOP
+ INSERT INTO questions(code,subject_id,difficulty,stem,status,author_id) VALUES('EXAM-SEC-'||gen_random_uuid(),CASE WHEN i<=8 THEN verbal ELSE nonverbal END,'EASY','Immutable fixture '||i,'APPROVED',staff) RETURNING id INTO qid;
+ INSERT INTO question_courses VALUES(qid,c.id);
+ INSERT INTO question_options(question_id,option_key,label,text,is_correct) VALUES(qid,'A','A','Original correct',true),(qid,'B','B','B',false),(qid,'C','C','C',false),(qid,'D','D','D',false);
+ qids:=array_append(qids,qid);
+ END LOOP;
+ PERFORM set_config('request.jwt.claim.sub',staff::text,true);PERFORM set_config('request.jwt.claim.role','authenticated',true);
+ config:=jsonb_build_object('test',jsonb_build_object('name','EXAM security fixture','duration_minutes',15,'passing_threshold',50), 'eligibilities',jsonb_build_array(jsonb_build_object('force_id',c.force_id,'course_id',c.id)), 'sections',jsonb_build_array(
+ jsonb_build_object('name','Verbal Intelligence','position',1,'question_count',8,'duration_minutes',5,'subject_ids',jsonb_build_array(verbal),'question_ids',to_jsonb(qids[1:8])),
+ jsonb_build_object('name','Non-Verbal Intelligence','position',2,'question_count',8,'duration_minutes',10,'subject_ids',jsonb_build_array(nonverbal),'question_ids',to_jsonb(qids[9:16]))));
+ t:=save_test_blueprint(config);tid:=t.id;SELECT array_agg(id ORDER BY position) INTO sections FROM test_sections WHERE test_id=tid;
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);result:=start_test_attempt(tid);aid:=(result->>'attempt_id')::uuid;original:=get_safe_exam_payload(aid);
+ denied:=false;BEGIN PERFORM save_answer(aid,qids[9],NULL,false);EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Future section unlocked'; END IF;
+ INSERT INTO exam_security_report VALUES('Future section answers rejected by backend',true);
+ SELECT id INTO opt FROM question_options WHERE question_id=qids[1] AND is_correct;PERFORM save_answer(aid,qids[1],opt,true);
+ -- Mutate live stem, option text, correctness and configured section duration after snapshot.
+ UPDATE questions SET stem='Edited after start' WHERE id=qids[1];UPDATE question_options SET text='Edited option',is_correct=NOT is_correct WHERE question_id=qids[1] AND label IN('A','B');
+ PERFORM set_config('request.jwt.claim.sub',staff::text,true);
+ UPDATE test_sections SET duration_minutes=1 WHERE id=sections[2];UPDATE tests SET duration_minutes=6 WHERE id=tid;
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);
+ payload:=get_safe_exam_payload(aid);IF payload#>>'{sections,0,questions,0,stem}'<>original#>>'{sections,0,questions,0,stem}' OR payload#>>'{test,duration_minutes}'<>'15' THEN RAISE EXCEPTION 'Snapshot changed after edit'; END IF;
+ INSERT INTO exam_security_report VALUES('Saved questions/options/rubric remain immutable after live edits',true);
+ expires:=(advance_section(aid,sections[2])->>'expires_at')::timestamptz;
+ IF extract(epoch FROM (expires-clock_timestamp()))<599 THEN RAISE EXCEPTION 'New section used mutable duration instead of saved 10 minutes'; END IF;
+ IF (advance_section(aid,sections[2])->>'expires_at')::timestamptz<>expires THEN RAISE EXCEPTION 'Repeated advance reset deadline'; END IF;
+ denied:=false;BEGIN PERFORM advance_section(aid,sections[1]);EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Reopened prior section'; END IF;
+ denied:=false;BEGIN PERFORM save_answer(aid,qids[1],NULL,false);EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Closed section answered'; END IF;
+ INSERT INTO exam_security_report VALUES('Section advance uses saved duration; repeat is idempotent; earlier section locked',true);
+ UPDATE attempt_section_progress SET expires_at=clock_timestamp()-interval '1 second' WHERE attempt_id=aid AND section_id=sections[2];
+ denied:=false;BEGIN PERFORM save_answer(aid,qids[9],NULL,false);EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Expired section answered'; END IF;
+ INSERT INTO exam_security_report VALUES('Expired section answer denied despite unexpired overall test',true);
+ UPDATE test_attempts SET expires_at=clock_timestamp()-interval '1 second' WHERE id=aid;
+ IF (start_test_attempt(tid)->>'attempt_id')::uuid<>aid THEN RAISE EXCEPTION 'Expired resume recreated timer'; END IF;
+ INSERT INTO exam_security_report VALUES('Expired resume returns same attempt and never resets time',true);
+ PERFORM set_config('request.jwt.claim.sub',other_uid::text,true);
+ denied:=false;BEGIN PERFORM get_safe_exam_payload(aid);EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Foreign payload exposed'; END IF;
+ denied:=false;BEGIN PERFORM submit_test_attempt(aid);EXCEPTION WHEN OTHERS THEN denied:=true;END;IF NOT denied THEN RAISE EXCEPTION 'Foreign submission accepted'; END IF;
+ INSERT INTO exam_security_report VALUES('Wrong student cannot read or submit attempt',true);
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);result:=submit_test_attempt(aid);
+ IF (result->>'correct_count')::int<>1 OR (SELECT status FROM test_attempts WHERE id=aid)<>'AUTO_SUBMITTED' THEN RAISE EXCEPTION 'Snapshot grading or expiration status failed'; END IF;
+ INSERT INTO exam_security_report VALUES('Expiry auto-submits with immutable original answer key and all 16 recorded questions',true);
+ payload:=get_result_detail((result->>'result_id')::uuid);
+ IF payload::text LIKE '%is_correct%' OR payload::text LIKE '%answer_keys%' OR (payload->>'answer_review_enabled')::boolean THEN RAISE EXCEPTION 'Student result exposed keyed review'; END IF;
+ IF (payload#>>'{result,correct_count}')::int<>1 OR (payload#>>'{result,total_questions}')::int<>16 THEN RAISE EXCEPTION 'Result privacy removed valid result totals'; END IF;
+ INSERT INTO exam_security_report VALUES('Finalized student result preserves totals and sections without answer keys',true);
+ INSERT INTO exam_security_context VALUES(aid,uid,tid,qids[1],opt);
+ -- Wrong bank and extra/missing questions cannot publish, including direct table writes.
+ PERFORM set_config('request.jwt.claim.sub',staff::text,true);
+ count_before:=(SELECT count(*) FROM tests);denied:=false;
+ BEGIN PERFORM save_test_blueprint(jsonb_set(config,'{sections,0,question_ids,0}',to_jsonb(qids[9]::text)));EXCEPTION WHEN OTHERS THEN denied:=true;END;
+ IF NOT denied OR (SELECT count(*) FROM tests)<>count_before THEN RAISE EXCEPTION 'Wrong bank not rejected atomically'; END IF;
+ INSERT INTO exam_security_report VALUES('Wrong subject bank rejected atomically',true);
+ denied:=false;BEGIN UPDATE test_sections SET question_count=7 WHERE id=sections[1]; SET CONSTRAINTS ALL IMMEDIATE; EXCEPTION WHEN OTHERS THEN denied:=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Direct table bypass accepted extra questions'; END IF;
+ INSERT INTO exam_security_report VALUES('Direct published-table bypass rejected by deferred DB constraint',true);
+ -- Generator cannot silently change an admin-configured count or pad a short bank.
+ INSERT INTO tests(name,created_by,status,duration_minutes) VALUES('Generator rollback fixture',staff,'DRAFT',15) RETURNING id INTO draft_id;
+ INSERT INTO test_eligible_courses(test_id,force_id,course_id) VALUES(draft_id,c.force_id,c.id);
+ INSERT INTO test_sections(test_id,name,position,question_count,duration_minutes,subject_id) VALUES(draft_id,'Verbal Intelligence',1,100000,15,verbal) RETURNING id INTO draft_sec;
+ INSERT INTO test_section_subjects VALUES(draft_sec,verbal);
+ INSERT INTO test_section_questions(test_section_id,question_id,position) VALUES(draft_sec,qids[1],1);
+ denied:=false;BEGIN PERFORM generate_test_section_questions(draft_sec,verbal,16,c.force_id,c.id);EXCEPTION WHEN OTHERS THEN denied:=true;END;
+ IF NOT denied OR (SELECT question_count FROM test_sections WHERE id=draft_sec)<>100000 THEN RAISE EXCEPTION 'Generator replaced configured count'; END IF;
+ INSERT INTO exam_security_report VALUES('Generator rejects a requested count different from configured count',true);
+ denied:=false;BEGIN PERFORM generate_test_section_questions(draft_sec,verbal,100000,c.force_id,c.id);EXCEPTION WHEN OTHERS THEN denied:=true;END;
+ IF NOT denied OR (SELECT count(*) FROM test_section_questions WHERE test_section_id=draft_sec)<>1 OR (SELECT question_count FROM test_sections WHERE id=draft_sec)<>100000 THEN RAISE EXCEPTION 'Short bank silently shrank count or destroyed composition'; END IF;
+ INSERT INTO exam_security_report VALUES('Insufficient bank rejected with original configured count and selected questions intact',true);
+ t:=save_test_blueprint(config);
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);
+ result:=start_test_attempt(t.id);
+ PERFORM set_config('request.jwt.claim.sub',staff::text,true);
+ result:=force_submit_attempt((result->>'attempt_id')::uuid);
+ IF NOT EXISTS(SELECT 1 FROM test_results r JOIN test_attempts a ON a.id=r.attempt_id WHERE r.id=(result->>'result_id')::uuid AND a.status='FORCE_SUBMITTED' AND r.total_questions=16) THEN RAISE EXCEPTION 'Staff force submission failed'; END IF;
+ INSERT INTO exam_security_report VALUES('Authorized staff force submission remains functional and records all 16 questions',true);
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);
+END $$;
+GRANT SELECT ON exam_security_context TO authenticated;
+SET LOCAL ROLE authenticated;
+DO $$ DECLARE a uuid; t uuid; p jsonb; BEGIN SELECT aid,tid INTO a,t FROM exam_security_context;
+ IF EXISTS(SELECT 1 FROM question_options) OR EXISTS(SELECT 1 FROM exam_attempt_snapshots) OR EXISTS(SELECT 1 FROM questions) THEN RAISE EXCEPTION 'Student can read answer keys'; END IF;
+ p:=get_safe_exam_payload(a);IF jsonb_array_length(p#>'{sections,0,questions}')<>8 THEN RAISE EXCEPTION 'Authenticated safe payload inaccessible'; END IF;
+ IF (SELECT count(*) FROM test_sections WHERE test_id=t)<>2 THEN RAISE EXCEPTION 'Individual assignment section metadata hidden'; END IF;
+END $$;
+RESET ROLE;
+INSERT INTO exam_security_report VALUES('Actual authenticated RLS: private keys/banks hidden; own safe payload and section metadata available',true);
+SET CONSTRAINTS ALL IMMEDIATE;
+SELECT * FROM exam_security_report;
+ROLLBACK;
+
