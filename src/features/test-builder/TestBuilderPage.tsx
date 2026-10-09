@@ -1,3 +1,4 @@
+import { QuestionStatement } from '@/components/ui/QuestionStatement';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useAuth } from '@/app/providers';
@@ -1318,7 +1319,7 @@ export const TestBuilderPage: React.FC = () => {
                                     </div>
 
                                     <p className="font-bold text-[#0E1B2A] text-sm leading-relaxed">
-                                      {q.stem}
+                                      <QuestionStatement stem={q.stem} sourceLabel={q.sourceLabel} />
                                     </p>
 
                                     <div className="grid grid-cols-2 gap-2 pt-1 text-xs">
@@ -1408,7 +1409,7 @@ export const TestBuilderPage: React.FC = () => {
                               {secQuestions.slice(0, 3).map((q, idx) => (
                                 <div key={q.id} className="text-xs font-medium text-[#334155] flex items-center space-x-2 truncate">
                                   <span className="text-[#64748B] font-mono w-5">{idx + 1}.</span>
-                                  <span className="truncate">{q.stem}</span>
+                                  <span className="break-words"><QuestionStatement stem={q.stem} sourceLabel={q.sourceLabel} /></span>
                                 </div>
                               ))}
                               {secQuestions.length > 3 && (

@@ -1,3 +1,5 @@
+import { QuestionStatement } from '@/components/ui/QuestionStatement';
+import { AnswerExplanation } from './components/AnswerExplanation';
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
 import { FileText, Shield, Check, X, RefreshCw, Trophy, ArrowRight, Printer } from 'lucide-react';
@@ -372,7 +374,7 @@ export const ExamFinishPage: React.FC = () => {
                           </div>
 
                           {/* Stem */}
-                          <h4 className="text-sm font-semibold text-[#0E1B2A] leading-relaxed">{q.stem}</h4>
+                          <h4 className="text-sm font-semibold text-[#0E1B2A] leading-relaxed"><QuestionStatement stem={q.stem} sourceLabel={q.source_label} /></h4>
 
                           {q.stem_image_url && <img src={q.stem_image_url} alt="Question diagram" className="max-h-48 max-w-full object-contain rounded border" />}
 
@@ -421,15 +423,7 @@ export const ExamFinishPage: React.FC = () => {
                             })}
                           </div>
 
-                          {/* Derivation Explanation */}
-                          {q.explanation && (
-                            <div className="mt-3 p-3.5 bg-[#F6F8FA] rounded-lg border border-[#E2E8F0] text-xs text-[#64748B]">
-                              <span className="font-bold text-[#0E1B2A] font-sans block mb-1 uppercase text-[10px] tracking-wider">
-                                Explanation:
-                              </span>
-                              {q.explanation}
-                            </div>
-                          )}
+                          <AnswerExplanation correctAnswers={q.options.filter((option: { is_correct: boolean }) => option.is_correct)} explanation={q.explanation} />
                         </div>
                       );
                     })

@@ -44,6 +44,7 @@ export interface ResultDetailResponse {
       question_id: string;
       code: string;
       stem: string;
+      source_label?: string | null;
       stem_image_url: string | null;
       explanation: string | null;
       subject_id: string;

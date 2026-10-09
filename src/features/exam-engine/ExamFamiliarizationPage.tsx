@@ -1,3 +1,4 @@
+import { AnswerExplanation } from './components/AnswerExplanation';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import {
@@ -398,15 +399,7 @@ export const ExamFamiliarizationPage: React.FC = () => {
                       })}
                     </div>
 
-                    {/* Explanation */}
-                    {q.explanation && (
-                      <div className="p-3 bg-[#F1F5F9] rounded border border-[#CBD5E1] text-xs text-[#334155] space-y-1">
-                        <span className="font-bold text-[#0E1B2A] uppercase text-[10px] tracking-wider block">
-                          Official Derivation / Explanation:
-                        </span>
-                        <p className="text-[11px] leading-relaxed">{q.explanation}</p>
-                      </div>
-                    )}
+                    <AnswerExplanation correctAnswers={q.options.filter(option => option.id === q.correctOptionId)} explanation={q.explanation} />
                   </div>
                 );
               })}

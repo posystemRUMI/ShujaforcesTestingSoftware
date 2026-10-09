@@ -80,7 +80,11 @@ export const leaderboardService = {
   /**
    * Get official leaderboard for a specific test
    */
-  async getTestLeaderboard(testId: string, limit = 40): Promise<LeaderboardResponse> {
+  async getTestLeaderboard(
+    testId: string,
+    limit = 40,
+    filters?: { forceId?: string | null; courseId?: string | null }
+  ): Promise<LeaderboardResponse> {
     if (!isSupabaseConfigured() || !testId) {
       return { leaders: [], current_student: null, total_participants: 0 };
     }
@@ -91,11 +95,27 @@ export const leaderboardService = {
         p_limit: limit,
       });
 
-      if (!error && data && data.leaders && data.leaders.length > 0) {
+      if (!error && data && Array.isArray(data.leaders)) {
+        let leaders: LeaderboardEntry[] = data.leaders;
+        if (filters?.forceId) {
+          leaders = leaders.filter(
+            (l) =>
+              l.force_id === filters.forceId ||
+              (l.force_name && l.force_name.toLowerCase().includes(filters.forceId!.toLowerCase()))
+          );
+        }
+        if (filters?.courseId) {
+          leaders = leaders.filter(
+            (l) =>
+              l.course_id === filters.courseId ||
+              (l.course_name && l.course_name.toLowerCase().includes(filters.courseId!.toLowerCase()))
+          );
+        }
+        leaders = leaders.map((l, idx) => ({ ...l, rank: idx + 1 }));
         return {
-          leaders: data.leaders,
+          leaders,
           current_student: data.current_student || null,
-          total_participants: Number(data.total_participants || 0),
+          total_participants: leaders.length,
         };
       }
     } catch (err) {
@@ -115,24 +135,52 @@ export const leaderboardService = {
           total_questions,
           passed,
           generated_at,
-          students (
+          students:students!test_results_student_id_fkey (
             id,
             roll_number,
             profile_id,
-            forces ( name ),
-            courses ( name ),
+            target_force_id,
+            target_course_id,
+            forces:forces!students_target_force_id_fkey ( id, name, code ),
+            courses:courses!students_target_course_id_fkey ( id, name, code ),
             profiles:profiles!students_profile_id_fkey ( display_name )
           )
         `)
         .eq('test_id', testId)
-        .order('percentage', { ascending: false })
-        .limit(limit);
+        .order('percentage', { ascending: false });
 
       if (resErr || !results || results.length === 0) {
         return { leaders: [], current_student: null, total_participants: 0 };
       }
 
-      const leadersList: LeaderboardEntry[] = results.map((r: any, idx: number) => {
+      const filteredResults = results.filter((r: any) => {
+        const std = r.students;
+        if (!std) return false;
+
+        if (filters?.forceId) {
+          const forceMatch =
+            std.target_force_id === filters.forceId ||
+            std.forces?.id === filters.forceId ||
+            std.forces?.code === filters.forceId;
+          if (!forceMatch) return false;
+        }
+
+        if (filters?.courseId) {
+          const courseMatch =
+            std.target_course_id === filters.courseId ||
+            std.courses?.id === filters.courseId ||
+            std.courses?.code === filters.courseId;
+          if (!courseMatch) return false;
+        }
+
+        return true;
+      });
+
+      if (filteredResults.length === 0) {
+        return { leaders: [], current_student: null, total_participants: 0 };
+      }
+
+      const leadersList: LeaderboardEntry[] = filteredResults.slice(0, limit).map((r: any, idx: number) => {
         const std = r.students;
         return {
           rank: idx + 1,
@@ -141,14 +189,15 @@ export const leaderboardService = {
           student_name: std?.profiles?.display_name || std?.roll_number || 'Cadet Officer',
           batch_id: null,
           batch_name: 'Active Batch',
-          course_id: null,
+          course_id: std?.target_course_id || std?.courses?.id || null,
           course_name: std?.courses?.name || 'Official Course',
-          force_id: null,
+          force_id: std?.target_force_id || std?.forces?.id || null,
           force_name: std?.forces?.name || 'Pakistan Armed Forces',
           tests_completed: 1,
           percentage: r.percentage || 0,
           best_percentage: r.percentage || 0,
           score: r.marks_obtained || 0,
+          total_marks: r.max_marks || 100,
           passed: r.passed,
           is_current_user: false,
         };
@@ -157,7 +206,7 @@ export const leaderboardService = {
       return {
         leaders: leadersList,
         current_student: leadersList[0] || null,
-        total_participants: results.length,
+        total_participants: filteredResults.length,
       };
     } catch (e) {
       console.warn('Direct test leaderboard fallback failed:', e);
@@ -172,7 +221,8 @@ export const leaderboardService = {
     courseId: string,
     batchId?: string | null,
     limit = 40,
-    minTests = 1
+    minTests = 1,
+    forceId?: string | null
   ): Promise<LeaderboardResponse> {
     if (!isSupabaseConfigured() || !courseId) {
       return { leaders: [], current_student: null, total_participants: 0 };
@@ -186,18 +236,27 @@ export const leaderboardService = {
         p_min_tests: minTests,
       });
 
-      if (!error && data && data.leaders && data.leaders.length > 0) {
+      if (!error && data && Array.isArray(data.leaders)) {
+        let leaders: LeaderboardEntry[] = data.leaders;
+        if (forceId) {
+          leaders = leaders.filter(
+            (l) =>
+              l.force_id === forceId ||
+              (l.force_name && l.force_name.toLowerCase().includes(forceId.toLowerCase()))
+          );
+        }
+        leaders = leaders.map((l, idx) => ({ ...l, rank: idx + 1 }));
         return {
-          leaders: data.leaders,
+          leaders,
           current_student: data.current_student || null,
-          total_participants: Number(data.total_participants || 0),
+          total_participants: leaders.length,
         };
       }
     } catch (err) {
       console.warn('RPC get_course_leaderboard error, using academy fallback:', err);
     }
 
-    return this.getAcademyLeaderboard({ courseId, batchId, limit });
+    return this.getAcademyLeaderboard({ courseId, batchId, limit, forceId });
   },
 
   /**
@@ -217,11 +276,27 @@ export const leaderboardService = {
         p_min_tests: filters?.minTests || 1,
       });
 
-      if (!error && data && data.leaders && data.leaders.length > 0) {
+      if (!error && data && Array.isArray(data.leaders)) {
+        let leaders: LeaderboardEntry[] = data.leaders;
+        if (filters?.forceId) {
+          leaders = leaders.filter(
+            (l) =>
+              l.force_id === filters.forceId ||
+              (l.force_name && l.force_name.toLowerCase().includes(filters.forceId!.toLowerCase()))
+          );
+        }
+        if (filters?.courseId) {
+          leaders = leaders.filter(
+            (l) =>
+              l.course_id === filters.courseId ||
+              (l.course_name && l.course_name.toLowerCase().includes(filters.courseId!.toLowerCase()))
+          );
+        }
+        leaders = leaders.map((l, idx) => ({ ...l, rank: idx + 1 }));
         return {
-          leaders: data.leaders,
+          leaders,
           current_student: data.current_student || null,
-          total_participants: Number(data.total_participants || 0),
+          total_participants: leaders.length,
         };
       }
     } catch (err) {
@@ -230,7 +305,7 @@ export const leaderboardService = {
 
     // Direct table fallback: query test_results
     try {
-      const { data: results, error: resErr } = await (supabase as any)
+      let query = (supabase as any)
         .from('test_results')
         .select(`
           id,
@@ -241,28 +316,65 @@ export const leaderboardService = {
           total_questions,
           passed,
           generated_at,
-          students (
+          test_id,
+          students:students!test_results_student_id_fkey (
             id,
             roll_number,
             profile_id,
-            forces ( name ),
-            courses ( name ),
+            target_force_id,
+            target_course_id,
+            forces:forces!students_target_force_id_fkey ( id, name, code ),
+            courses:courses!students_target_course_id_fkey ( id, name, code ),
             profiles:profiles!students_profile_id_fkey ( display_name )
           )
-        `)
-        .order('percentage', { ascending: false });
+        `);
+
+      if (filters?.testId) {
+        query = query.eq('test_id', filters.testId);
+      }
+
+      const { data: results, error: resErr } = await query.order('percentage', { ascending: false });
 
       if (resErr || !results || results.length === 0) {
         return { leaders: [], current_student: null, total_participants: 0 };
       }
 
+      const filteredResults = results.filter((r: any) => {
+        const std = r.students;
+        if (!std) return false;
+
+        if (filters?.forceId) {
+          const forceMatch =
+            std.target_force_id === filters.forceId ||
+            std.forces?.id === filters.forceId ||
+            std.forces?.code === filters.forceId;
+          if (!forceMatch) return false;
+        }
+
+        if (filters?.courseId) {
+          const courseMatch =
+            std.target_course_id === filters.courseId ||
+            std.courses?.id === filters.courseId ||
+            std.courses?.code === filters.courseId;
+          if (!courseMatch) return false;
+        }
+
+        return true;
+      });
+
+      if (filteredResults.length === 0) {
+        return { leaders: [], current_student: null, total_participants: 0 };
+      }
+
       const studentMap = new Map<string, any>();
-      for (const r of results) {
+      for (const r of filteredResults) {
         const std = r.students;
         if (!std) continue;
         const sId = std.id;
         const sName = std.profiles?.display_name || std.roll_number || 'Cadet';
+        const forceId = std.target_force_id || std.forces?.id || null;
         const forceName = std.forces?.name || 'Pakistan Armed Forces';
+        const courseId = std.target_course_id || std.courses?.id || null;
         const courseName = std.courses?.name || 'Standard Course';
 
         if (!studentMap.has(sId)) {
@@ -272,9 +384,9 @@ export const leaderboardService = {
             student_name: sName,
             batch_id: null,
             batch_name: 'Active Batch',
-            course_id: null,
+            course_id: courseId,
             course_name: courseName,
-            force_id: null,
+            force_id: forceId,
             force_name: forceName,
             tests_completed: 1,
             total_marks_obtained: r.marks_obtained || 0,
@@ -286,17 +398,33 @@ export const leaderboardService = {
             percentage: r.percentage || 0,
             passed: r.passed,
             is_current_user: false,
+            _attempts: [r],
           });
+        } else {
+          const existing = studentMap.get(sId);
+          existing.tests_completed += 1;
+          existing.total_marks_obtained += (r.marks_obtained || 0);
+          existing.total_marks_possible += (r.max_marks || 100);
+          existing.best_percentage = Math.max(existing.best_percentage, r.percentage || 0);
+          existing._attempts.push(r);
+          const sumPercentages = existing._attempts.reduce((acc: number, curr: any) => acc + (curr.percentage || 0), 0);
+          existing.average_percentage = Math.round((sumPercentages / existing._attempts.length) * 100) / 100;
+          existing.aggregate_percentage = existing.total_marks_possible > 0
+            ? Math.round((existing.total_marks_obtained / existing.total_marks_possible) * 10000) / 100
+            : 0;
         }
       }
 
       const leadersList: LeaderboardEntry[] = Array.from(studentMap.values())
-        .sort((a, b) => b.best_percentage - a.best_percentage)
+        .sort((a, b) => b.aggregate_percentage - a.aggregate_percentage || b.best_percentage - a.best_percentage)
         .slice(0, filters?.limit || 40)
-        .map((entry, idx) => ({
-          ...entry,
-          rank: idx + 1,
-        }));
+        .map((entry, idx) => {
+          const { _attempts, ...cleanEntry } = entry;
+          return {
+            ...cleanEntry,
+            rank: idx + 1,
+          };
+        });
 
       return {
         leaders: leadersList,
@@ -365,9 +493,12 @@ export const leaderboardService = {
 
     // Fetch broader leaderboard and match by name or roll_number
     const res = filters?.testId
-      ? await this.getTestLeaderboard(filters.testId, 200)
+      ? await this.getTestLeaderboard(filters.testId, 200, {
+          forceId: filters.forceId,
+          courseId: filters.courseId,
+        })
       : filters?.courseId
-      ? await this.getCourseLeaderboard(filters.courseId, filters.batchId, 200)
+      ? await this.getCourseLeaderboard(filters.courseId, filters.batchId, 200, 1, filters.forceId)
       : await this.getAcademyLeaderboard({ ...filters, limit: 200 });
 
     const q = query.toLowerCase().trim();

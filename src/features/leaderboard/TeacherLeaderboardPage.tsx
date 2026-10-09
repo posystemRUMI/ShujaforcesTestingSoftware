@@ -104,6 +104,19 @@ export const TeacherLeaderboardPage: React.FC = () => {
     setSelectedTestId('');
   };
 
+  // Keep dependent selections valid
+  useEffect(() => {
+    if (selectedCourseId && !availableCourses.some((c) => c.id === selectedCourseId)) {
+      setSelectedCourseId('');
+    }
+  }, [availableCourses, selectedCourseId]);
+
+  useEffect(() => {
+    if (selectedTestId && !availableTests.some((t) => t.id === selectedTestId)) {
+      setSelectedTestId('');
+    }
+  }, [availableTests, selectedTestId]);
+
   // 3. Load Leaderboard Data based on Filters & Search
   useEffect(() => {
     let isMounted = true;
@@ -119,8 +132,32 @@ export const TeacherLeaderboardPage: React.FC = () => {
             testId: selectedTestId || null,
           });
           if (isMounted) {
-            setLeaders(results);
-            setTotalParticipants(results.length);
+            // Apply defensive filtering to search results as well
+            let filteredResults = results;
+            if (selectedForceId) {
+              const selectedForce = forces.find((f) => f.id === selectedForceId);
+              filteredResults = filteredResults.filter((l) => {
+                if (l.force_id && l.force_id === selectedForceId) return true;
+                if (selectedForce && l.force_name) {
+                  const fn = l.force_name.toLowerCase();
+                  return fn === selectedForce.name.toLowerCase() || fn.includes(selectedForce.code.toLowerCase());
+                }
+                return false;
+              });
+            }
+            if (selectedCourseId) {
+              const selectedCourse = courses.find((c) => c.id === selectedCourseId);
+              filteredResults = filteredResults.filter((l) => {
+                if (l.course_id && l.course_id === selectedCourseId) return true;
+                if (selectedCourse && l.course_name) {
+                  return l.course_name.toLowerCase() === selectedCourse.name.toLowerCase();
+                }
+                return false;
+              });
+            }
+            filteredResults = filteredResults.map((r, idx) => ({ ...r, rank: idx + 1 }));
+            setLeaders(filteredResults);
+            setTotalParticipants(filteredResults.length);
           }
           setSearching(false);
           return;
@@ -128,12 +165,17 @@ export const TeacherLeaderboardPage: React.FC = () => {
 
         let res = { leaders: [] as LeaderboardEntry[], current_student: null as LeaderboardEntry | null, total_participants: 0 };
         if (selectedTestId) {
-          res = await leaderboardService.getTestLeaderboard(selectedTestId, 40);
+          res = await leaderboardService.getTestLeaderboard(selectedTestId, 40, {
+            forceId: selectedForceId || null,
+            courseId: selectedCourseId || null,
+          });
         } else if (selectedCourseId) {
           res = await leaderboardService.getCourseLeaderboard(
             selectedCourseId,
             null,
-            40
+            40,
+            1,
+            selectedForceId || null
           );
         } else {
           res = await leaderboardService.getAcademyLeaderboard({
@@ -144,8 +186,40 @@ export const TeacherLeaderboardPage: React.FC = () => {
         }
 
         if (!isMounted) return;
-        setLeaders(res.leaders);
-        setTotalParticipants(res.total_participants);
+
+        // Strict defensive filtering for UI guarantees
+        let displayLeaders = res.leaders || [];
+        if (selectedForceId) {
+          const selectedForce = forces.find((f) => f.id === selectedForceId);
+          displayLeaders = displayLeaders.filter((l) => {
+            if (l.force_id && l.force_id === selectedForceId) return true;
+            if (selectedForce && l.force_name) {
+              const fn = l.force_name.toLowerCase();
+              return fn === selectedForce.name.toLowerCase() || fn.includes(selectedForce.code.toLowerCase());
+            }
+            return false;
+          });
+        }
+
+        if (selectedCourseId) {
+          const selectedCourse = courses.find((c) => c.id === selectedCourseId);
+          displayLeaders = displayLeaders.filter((l) => {
+            if (l.course_id && l.course_id === selectedCourseId) return true;
+            if (selectedCourse && l.course_name) {
+              return l.course_name.toLowerCase() === selectedCourse.name.toLowerCase();
+            }
+            return false;
+          });
+        }
+
+        // Re-number ranks sequentially 1..N
+        displayLeaders = displayLeaders.map((item, idx) => ({
+          ...item,
+          rank: idx + 1,
+        }));
+
+        setLeaders(displayLeaders);
+        setTotalParticipants(displayLeaders.length);
       } catch (err) {
         console.warn('Failed to load teacher leaderboard:', err);
       } finally {
@@ -157,7 +231,7 @@ export const TeacherLeaderboardPage: React.FC = () => {
     return () => {
       isMounted = false;
     };
-  }, [selectedForceId, selectedCourseId, selectedTestId, searchQuery]);
+  }, [selectedForceId, selectedCourseId, selectedTestId, searchQuery, forces, courses]);
 
   // Inspect student detail modal handler
   const handleInspectStudent = async (entry: LeaderboardEntry) => {

@@ -5,6 +5,7 @@ import { configurationService } from '@/services/configurationService';
 import { MilitaryBranch, QuestionApprovalStatus, DifficultyLevel } from '@/types';
 import { Save, Eye, ArrowLeft, Image as ImageIcon, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { QuestionStatement } from '@/components/ui/QuestionStatement';
 
 export const QuestionAuthorPage: React.FC = () => {
   const navigate = useNavigate();
@@ -12,8 +13,11 @@ export const QuestionAuthorPage: React.FC = () => {
   const editId = searchParams.get('id');
 
   // Form state
-  const [code, setCode] = useState(`Q-${Math.floor(1000 + Math.random() * 9000)}`);
+  const [code, setCode] = useState('Assigned when saved');
+  const [taxonomy, setTaxonomy] = useState<Awaited<ReturnType<typeof questionService.getTaxonomy>>>({ forces: [], courses: [], subjects: [] });
+  const [courseIds, setCourseIds] = useState<string[]>([]);
   const [stem, setStem] = useState('');
+  const [sourceLabel, setSourceLabel] = useState<string>();
   const [subject, setSubject] = useState<string>('INTELLIGENCE_VERBAL');
   const [dbSubjects, setDbSubjects] = useState<Array<{ id: string; code: string; name: string }>>([]);
   const [branch, setBranch] = useState<MilitaryBranch | 'TRI_SERVICE'>('TRI_SERVICE');
@@ -37,6 +41,7 @@ export const QuestionAuthorPage: React.FC = () => {
     let isMounted = true;
     async function loadSubjects() {
       try {
+        setTaxonomy(await questionService.getTaxonomy());
         const subs = await configurationService.getSubjects();
         if (isMounted && subs && subs.length > 0) {
           setDbSubjects(subs);
@@ -61,7 +66,9 @@ export const QuestionAuthorPage: React.FC = () => {
           const q = qs.find((item) => item.id === editId);
           if (q) {
             setCode(q.code);
+            setCourseIds(q.courseIds || []);
             setStem(q.stem);
+            setSourceLabel(q.sourceLabel);
             setSubject(q.subject_id || q.subject || 'INTELLIGENCE_VERBAL');
             setBranch(q.branch);
             setDifficulty(q.difficulty);
@@ -128,7 +135,7 @@ export const QuestionAuthorPage: React.FC = () => {
         timeLimitSeconds,
         status: status as any,
         tags: [subject, branch, difficulty],
-        courseIds: [],
+        courseIds,
         options: options.map((o) => ({
           option_key: o.id,
           label: o.label,
@@ -199,7 +206,7 @@ export const QuestionAuthorPage: React.FC = () => {
               <input
                 type="text"
                 value={code}
-                onChange={(e) => setCode(e.target.value)}
+                readOnly
                 className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-mono font-bold focus:outline-none focus:border-[#0E1B2A]"
               />
             </div>
@@ -244,6 +251,14 @@ export const QuestionAuthorPage: React.FC = () => {
             </div>
           </div>
 
+          {!['INTELLIGENCE_VERBAL', 'INTELLIGENCE_NON_VERBAL'].includes(dbSubjects.find(s => s.id === subject)?.code || subject) && <div>
+            <label htmlFor="academic-course" className="block text-xs font-semibold mb-1">Academic Course Bank</label>
+            <select id="academic-course" value={courseIds[0] || ''} onChange={e => {
+              const c = taxonomy.courses.find(c => c.id === e.target.value);
+              setCourseIds(c ? taxonomy.courses.filter(x => c.code.startsWith('PMA_') && ['PMA_LC','PMA_LONG_COURSE'].includes(c.code) ? ['PMA_LC','PMA_LONG_COURSE'].includes(x.code) : x.id === c.id).map(x => x.id) : []);
+            }} className="border rounded px-3 py-2 text-xs w-full"><option value="">Select Course</option>{taxonomy.courses.map(c => <option key={c.id} value={c.id}>{c.name} ({c.code})</option>)}</select>
+          </div>}
+
           <div className="grid grid-cols-3 gap-4 text-xs font-sans">
             <div>
               <label className="block font-semibold text-[#0E1B2A] mb-1 uppercase">Difficulty</label>
@@ -274,7 +289,7 @@ export const QuestionAuthorPage: React.FC = () => {
                 className="w-full bg-[#F6F8FA] border border-[#D4D9DF] rounded px-3 py-2 text-[#0E1B2A] font-bold focus:outline-none"
               >
                 <option value="APPROVED">Approved</option>
-                <option value="PENDING_REVIEW">Pending Review</option>
+                <option value="INACTIVE">Inactive</option>
                 <option value="DRAFT">Draft</option>
               </select>
             </div>
@@ -431,7 +446,7 @@ export const QuestionAuthorPage: React.FC = () => {
             {/* Stem */}
             <div>
               <h3 className="text-sm font-semibold text-[#0E1B2A] leading-relaxed">
-                {stem || 'Question statement stem preview will render here in real time as you type...'}
+                <QuestionStatement stem={stem || 'Question statement'} sourceLabel={sourceLabel} />
               </h3>
               {imageUrl && (
                 <div className="mt-3 p-2 border rounded bg-[#F6F8FA]">

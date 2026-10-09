@@ -142,6 +142,33 @@ Details: [completed-test review report](Docs/COMPLETED_TEST_ANSWER_REVIEW.md).
 
 Details: [UI heading cleanup](Docs/UI_HEADING_CLEANUP.md).
 
+## Dashboard and database answer explanations
+
+- [x] Remove score trend and recent submissions widgets and their exclusive code; reflow dashboard.
+- [x] Show correct answers followed by saved explanations in authorized reviews.
+- [x] Audit all 2,401 bank explanations; none missing, preserve all question content and keys.
+- [x] Restore 25 missing legacy snapshot explanations through hosted migration 00034.
+- [x] Preserve active-exam privacy, ownership and RLS; pass hosted security checks.
+- [x] Resolve teacher bank query timeout using paginated policy-protected reads.
+- [x] Pass all 12 browser layout, staff preview and student review refresh checks.
+- [x] TypeScript checks and production build.
+- [ ] Deploy updated frontend to production.
+
+Details: [dashboard and explanation report](Docs/DASHBOARD_EXPLANATIONS.md).
+
+## Shared banks and LC-159 import
+
+- [x] Back up hosted bank records/options/mappings and historical snapshots; confirm 60 existing Verbal records and all 292 source entries.
+- [x] Solve, correct and deduplicate supplied MCQs; account for six unresolved source entries without creating review queues.
+- [x] Apply stable, collision-safe codes and idempotent import; preserve UUIDs and historical snapshots.
+- [x] Import 52 complete LC-159 recalls by inserting six and matching 46; save provenance and isolated PMA Academic mappings.
+- [x] Add database counts, Force/Course/Bank filters, active/inactive totals and pagination.
+- [x] Persist/render inline source labels in bank, builder and new exam/review snapshots; keep active-exam answers private.
+- [x] Pass hosted persistence/idempotence/security checks, Admin/Teacher browser checks, actual PMA/AFNS builder selection, TypeScript and production build.
+- [ ] Deploy updated frontend to production.
+
+Details: [complete source accounting and correction report](Docs/VERBAL_LC159_IMPORT_REPORT.md).
+
 ## Remove Reports & Analytics
 
 - [x] Delete Reports page, lazy import, route and dedicated report service/export.

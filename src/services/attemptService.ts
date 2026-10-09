@@ -67,6 +67,7 @@ export interface SafeExamPayload {
       id: string;
       code: string;
       stem: string;
+      source_label?: string | null;
       stem_image_url: string | null;
       subject_id: string;
       subject_code?: string;

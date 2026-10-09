@@ -70,6 +70,37 @@ export const configurationService = {
       if (!error && data) dbData = data;
     }
 
+    if (dbData && dbData.length > 0) {
+      const coursesList: CourseConfig[] = [];
+      const seenIds = new Set<string>();
+
+      for (const c of dbData) {
+        if (seenIds.has(c.id)) continue;
+        seenIds.add(c.id);
+
+        const targetForceId = c.force_id || c.forces?.id || '';
+        if (forceId && targetForceId !== forceId && c.forces?.code !== forceId) {
+          continue;
+        }
+
+        coursesList.push({
+          id: c.id,
+          code: c.code,
+          name: c.name,
+          forceId: targetForceId,
+          branch: (c.forces?.code || 'PAKISTAN_ARMY') as any,
+          durationMonths: Math.round(((c.duration_weeks || 24) / 4)),
+          minAge: 17,
+          maxAge: 22,
+          educationRequirement: 'F.Sc / A-Level',
+          passingMarksPercent: 50,
+          status: c.status || 'ACTIVE',
+          description: c.description || undefined,
+        });
+      }
+      return coursesList;
+    }
+
     const officialCoursesList: CourseConfig[] = [];
     const seenCourseCodes = new Set<string>();
 
@@ -82,10 +113,10 @@ export const configurationService = {
       const targetBranch = offCourse.forceCode;
       const defaultForceId =
         targetBranch === 'PAKISTAN_ARMY'
-          ? 'force-army-001'
+          ? '00000000-0000-0000-0000-000000000001'
           : targetBranch === 'PAKISTAN_AIR_FORCE'
-          ? 'force-paf-002'
-          : 'force-navy-003';
+          ? '00000000-0000-0000-0000-000000000002'
+          : '00000000-0000-0000-0000-000000000003';
 
       const effectiveForceId = dbMatch?.force_id || defaultForceId;
 

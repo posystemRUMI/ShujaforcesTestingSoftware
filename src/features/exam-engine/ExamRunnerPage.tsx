@@ -1,3 +1,4 @@
+import { QuestionStatement } from '@/components/ui/QuestionStatement';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
@@ -34,6 +35,7 @@ export interface SafeQuestion {
   code: string;
   subject: string;
   stem: string;
+  sourceLabel?: string;
   imageUrl?: string;
   options: SafeQuestionOption[];
 }
@@ -161,6 +163,7 @@ export const ExamRunnerPage: React.FC = () => {
               code: q.code,
               subject: q.subject_code || '',
               stem: q.stem,
+              sourceLabel: q.source_label || undefined,
               imageUrl: q.stem_image_url || undefined,
               options: (q.options || []).map((opt) => ({
                 id: opt.id,
@@ -685,7 +688,7 @@ export const ExamRunnerPage: React.FC = () => {
             {/* Question Stem (20-22px, font-semibold, leading-relaxed) */}
             <div className="mb-6">
               <h2 className="text-xl sm:text-[22px] font-semibold text-[#111827] leading-[1.55]">
-                {currentQ.stem}
+                <QuestionStatement stem={currentQ.stem} sourceLabel={currentQ.sourceLabel} />
               </h2>
 
               {currentQ.imageUrl && (

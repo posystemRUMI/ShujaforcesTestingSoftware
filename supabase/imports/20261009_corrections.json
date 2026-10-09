@@ -1,0 +1,1650 @@
+[
+  {
+    "source": "B1Q7",
+    "field": "stem",
+    "original": "How many months in a year have 30 days?",
+    "final": "How many months in a year have exactly 30 days?",
+    "reason": "Clarify exactly 30 days, rather than at least 30."
+  },
+  {
+    "source": "B1Q15",
+    "field": "stem",
+    "original": "Which one is different from the rest?",
+    "final": "Which sport is different because players primarily move the ball using their feet?",
+    "reason": "Use a defensible distinguishing property; football uses feet."
+  },
+  {
+    "source": "B1Q15",
+    "field": "answer",
+    "original": "D",
+    "final": "B",
+    "reason": "Use a defensible distinguishing property; football uses feet."
+  },
+  {
+    "source": "B2Q17",
+    "field": "stem",
+    "original": "Which one of the following is the odd one out?",
+    "final": "Which sport is different because players primarily move the ball using their feet?",
+    "reason": "Use a defensible distinguishing property; football uses feet."
+  },
+  {
+    "source": "B2Q17",
+    "field": "answer",
+    "original": "D",
+    "final": "C",
+    "reason": "Use a defensible distinguishing property; football uses feet."
+  },
+  {
+    "source": "B1Q16",
+    "field": "stem",
+    "original": "Which one is different from the rest?",
+    "final": "Which sport can be played as singles rather than only as opposing teams?",
+    "reason": "Make the distinguishing property explicit."
+  },
+  {
+    "source": "B1Q38",
+    "field": "stem",
+    "original": "A bat cannot see and a snake cannot _____.",
+    "final": "Which statement about bats and snakes is correct?",
+    "reason": "Correct the false claims about bat vision and snake hearing."
+  },
+  {
+    "source": "B1Q38",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Swim",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Walk",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Hear",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Fly",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "All bats are blind",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Snakes cannot detect any sound",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Bats can see, and snakes detect vibrations and some airborne sounds",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Snakes have external ear openings",
+        "ticked": false
+      }
+    ],
+    "reason": "Correct the false claims about bat vision and snake hearing."
+  },
+  {
+    "source": "B3Q7",
+    "field": "stem",
+    "original": "A bat cannot see, and a snake cannot hear. Which of the following statements is correct?",
+    "final": "Which statement about bats and snakes is correct?",
+    "reason": "Correct the false claims about bat vision and snake hearing."
+  },
+  {
+    "source": "B3Q7",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "A bat cannot see and a snake cannot hear",
+        "ticked": true
+      },
+      {
+        "label": "B",
+        "text": "A bat cannot hear and a snake cannot see",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Both can see and hear normally",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Neither can see nor hear",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "All bats are blind",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Snakes cannot detect any sound",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Bats can see, and snakes detect vibrations and some airborne sounds",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Snakes have external ear openings",
+        "ticked": false
+      }
+    ],
+    "reason": "Correct the false claims about bat vision and snake hearing."
+  },
+  {
+    "source": "B3Q7",
+    "field": "answer",
+    "original": "A",
+    "final": "C",
+    "reason": "Correct the false claims about bat vision and snake hearing."
+  },
+  {
+    "source": "B1Q57",
+    "field": "stem",
+    "original": "If my brother's sister is your mother, who am I to you?",
+    "final": "I am a man. My brother's only sister is your mother. How am I related to you?",
+    "reason": "Specify the speaker is male and exclude mother/aunt ambiguity."
+  },
+  {
+    "source": "B2Q19",
+    "field": "stem",
+    "original": "If my brother's sister is your mother, what is my relationship to you?",
+    "final": "I am a man. My brother's only sister is your mother. How am I related to you?",
+    "reason": "Specify the speaker is male and exclude mother/aunt ambiguity."
+  },
+  {
+    "source": "B2Q19",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Father",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Uncle",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Maternal Uncle",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Brother",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Father",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Cousin",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Maternal Uncle",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Brother",
+        "ticked": false
+      }
+    ],
+    "reason": "Uncle and maternal uncle were both valid choices; remove the duplicate meaning."
+  },
+  {
+    "source": "B1Q58",
+    "field": "answer",
+    "original": "C",
+    "final": "B",
+    "reason": "Monday + 11 days is Friday."
+  },
+  {
+    "source": "B1Q59",
+    "field": "answer",
+    "original": "A",
+    "final": "C",
+    "reason": "One man takes five minutes per paper."
+  },
+  {
+    "source": "B1Q61",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "0.9 minutes",
+        "ticked": true
+      },
+      {
+        "label": "B",
+        "text": "1.0 minute",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "1.2 minutes",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "1.5 minutes",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Approximately 1.11 minutes",
+        "ticked": true
+      },
+      {
+        "label": "B",
+        "text": "1.0 minute",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "1.2 minutes",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "1.5 minutes",
+        "ticked": false
+      }
+    ],
+    "reason": "100 minutes Ã· 90 km â‰ˆ 1.11 minutes per km."
+  },
+  {
+    "source": "B1Q63",
+    "field": "answer",
+    "original": "B",
+    "final": "A",
+    "reason": "Monday + 10 days is Thursday."
+  },
+  {
+    "source": "B1Q74",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "20 km",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "25 km",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "30 km",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "40 km",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "20 km",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "25 km",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "18 km",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "40 km",
+        "ticked": false
+      }
+    ],
+    "reason": "120 Ã— 15 Ã· 100 = 18 km, omitted from the original options."
+  },
+  {
+    "source": "B1Q76",
+    "field": "answer",
+    "original": "B",
+    "final": "D",
+    "reason": "Sunday + 10 days is Wednesday."
+  },
+  {
+    "source": "B1Q87",
+    "field": "stem",
+    "original": "After arranging “RAPIS” alphabetically, it is the name of a _____.",
+    "final": "Rearranging the letters RAPIS forms the name of a _____.",
+    "reason": "Anagrams require rearrangement, not alphabetical sorting."
+  },
+  {
+    "source": "B1Q91",
+    "field": "answer",
+    "original": "C",
+    "final": "B",
+    "reason": "The third alphabetically sorted MANAGEMENT letter is E."
+  },
+  {
+    "source": "B1Q98",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "120",
+        "ticked": true
+      },
+      {
+        "label": "B",
+        "text": "130",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "140",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "150",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "170",
+        "ticked": true
+      },
+      {
+        "label": "B",
+        "text": "130",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "140",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "150",
+        "ticked": false
+      }
+    ],
+    "reason": "6 Ã— 70 âˆ’ 5 Ã— 50 = 170, omitted from the options."
+  },
+  {
+    "source": "B1Q101",
+    "field": "answer",
+    "original": "B",
+    "final": "A",
+    "reason": "The sister is 12 + 6 = 18."
+  },
+  {
+    "source": "B2Q2",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "9",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "3",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "-3",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "0",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "9",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "3",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "âˆ’27",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "0",
+        "ticked": false
+      }
+    ],
+    "reason": "Doubling decrements require subtracting 48 from 21."
+  },
+  {
+    "source": "B2Q15",
+    "field": "stem",
+    "original": "Which one of the following is different from the others: Peshawar, Rawalpindi, Sindh, Quetta, Lahore?",
+    "final": "Which place is a province rather than a city?",
+    "reason": "The stem listed five places but only four choices; retain the existing four choices."
+  },
+  {
+    "source": "B2Q16",
+    "field": "answer",
+    "original": "D",
+    "final": "A",
+    "reason": "Angle is the non-polygon; square is a polygon."
+  },
+  {
+    "source": "B2Q20",
+    "field": "answer",
+    "original": "B",
+    "final": "A",
+    "reason": "10 + 15 âˆ’ 1 = 24."
+  },
+  {
+    "source": "B2Q22",
+    "field": "stem",
+    "original": "Which of the following letters is symmetrical when viewed in a vertical mirror?",
+    "final": "Which of these uppercase letters has vertical reflection symmetry in a standard symmetrical block font?",
+    "reason": "All three letters are symmetric; All of these is the single correct choice."
+  },
+  {
+    "source": "B2Q22",
+    "field": "answer",
+    "original": "A",
+    "final": "D",
+    "reason": "All three letters are symmetric; All of these is the single correct choice."
+  },
+  {
+    "source": "B2Q24",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "A bat cannot see.",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "A snake cannot hear through external ears.",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "A snake has external ears.",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "A bat is completely blind.",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "A bat cannot see.",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Snakes lack external ear openings but can detect vibrations and some airborne sounds.",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "A snake has external ears.",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "A bat is completely blind.",
+        "ticked": false
+      }
+    ],
+    "reason": "Avoid implying that snakes cannot hear."
+  },
+  {
+    "source": "B3Q2",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "4.8",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "4.8",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "9.6",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "48",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "2.4",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "4.8",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "9.6",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "48",
+        "ticked": false
+      }
+    ],
+    "reason": "Replace the repeated 4.8 distractor, preserving the correct B choice."
+  },
+  {
+    "source": "B3Q8",
+    "field": "stem",
+    "original": "If 25 butterflies were caught by Ahmed and Ahmed caught four times as many butterflies as Ali, how many butterflies did Ali catch?",
+    "final": "Ahmed caught 24 butterflies, four times as many as Ali. How many butterflies did Ali catch?",
+    "reason": "Individual butterflies require an integer count; minimally change 25 to 24."
+  },
+  {
+    "source": "B3Q8",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "4",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "6.25",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "8",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "10",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "4",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "6",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "8",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "10",
+        "ticked": false
+      }
+    ],
+    "reason": "24 Ã· 4 = 6 butterflies."
+  },
+  {
+    "source": "B3Q9",
+    "field": "stem",
+    "original": "If cows are twice as many as horses and cats are three times as many as cows, and there are 5 cows, how many animals are there in total?",
+    "final": "Cows are twice as numerous as horses, and cats are three times as numerous as cows. If there are 10 cows, how many animals are there in total?",
+    "reason": "Five cows imply fractional horses; use ten cows for integer animals."
+  },
+  {
+    "source": "B3Q9",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "25",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "30",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "35",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "40",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "25",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "30",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "45",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "40",
+        "ticked": false
+      }
+    ],
+    "reason": "10 cows + 5 horses + 30 cats = 45."
+  },
+  {
+    "source": "B3Q11",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Sunday",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Thursday",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "Friday",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Saturday",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Sunday",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Tuesday",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "Friday",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Saturday",
+        "ticked": false
+      }
+    ],
+    "reason": "Friday âˆ’ 17 days is Tuesday."
+  },
+  {
+    "source": "B3Q14",
+    "field": "stem",
+    "original": "Which of the following sports is different from the others?",
+    "final": "Which sport can be played as singles rather than only as opposing teams?",
+    "reason": "Tennis has singles; the other listed sports are team sports."
+  },
+  {
+    "source": "B3Q14",
+    "field": "answer",
+    "original": "D",
+    "final": "A",
+    "reason": "Tennis has singles; the other listed sports are team sports."
+  },
+  {
+    "source": "B3Q16",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Liberated",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Equalized",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Dictatorial",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Modernized",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Liberated",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Equalized",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Made dictatorial",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Modernized",
+        "ticked": false
+      }
+    ],
+    "reason": "Use a phrase matching the grammatical form of democratized."
+  },
+  {
+    "source": "B3Q23",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "49",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "57",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "61",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "69",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "49",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "âˆ’25",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "61",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "69",
+        "ticked": false
+      }
+    ],
+    "reason": "12 + 45 + 6 + 2 âˆ’ 2 Ã— 45 = âˆ’25."
+  },
+  {
+    "source": "B3Q24",
+    "field": "stem",
+    "original": "Which of the following patterns would look the same in a mirror?",
+    "final": "Which uppercase pattern remains unchanged in a vertical mirror, assuming a standard symmetrical block font?",
+    "reason": "State the font and reflection axis."
+  },
+  {
+    "source": "B3Q30",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "7th",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "8th",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "9th",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "22nd اہم",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "7th",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "8th",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "9th",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "22nd",
+        "ticked": false
+      }
+    ],
+    "reason": "Remove the decorative trailing Urdu heading, not part of the option."
+  },
+  {
+    "source": "B4Q9",
+    "field": "stem",
+    "original": "In a class of 60 male and 35 female students, 80% of the class failed in Chemistry and 30% in English. Which one is true?",
+    "final": "In a class of 60 male and 35 female students, 80% failed Chemistry. Which statement about those Chemistry failures must be true?",
+    "reason": "The English rate is irrelevant and cannot determine the sex distribution of English failures."
+  },
+  {
+    "source": "B4Q14",
+    "field": "stem",
+    "original": "Saw is to Seed as Reap is to ______?",
+    "final": "Sow is to Seed as Reap is to _____?",
+    "reason": "Correct Saw to Sow, the agricultural verb."
+  },
+  {
+    "source": "B4Q14",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Crop",
+        "ticked": true
+      },
+      {
+        "label": "B",
+        "text": "Sunshine",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Rain",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Grain",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Crop",
+        "ticked": true
+      },
+      {
+        "label": "B",
+        "text": "Sunshine",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Rain",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Stone",
+        "ticked": false
+      }
+    ],
+    "reason": "Grain and crop overlapped as valid harvested products."
+  },
+  {
+    "source": "B4Q21",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Mile",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Inch",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Foot",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Yard",
+        "ticked": false
+      },
+      {
+        "label": "E",
+        "text": "Acre",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Mile",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Inch",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Foot",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Acre",
+        "ticked": false
+      }
+    ],
+    "reason": "Convert five choices to four; remove distractor Yard and relabel the area unit as D."
+  },
+  {
+    "source": "B4Q21",
+    "field": "answer",
+    "original": "E",
+    "final": "D",
+    "reason": "Convert five choices to four; remove distractor Yard and relabel the area unit as D."
+  },
+  {
+    "source": "B4Q34",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Foot",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Yard",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Centimeter",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Meter",
+        "ticked": false
+      },
+      {
+        "label": "E",
+        "text": "Square Yard",
+        "ticked": true
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Foot",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Yard",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Centimeter",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Square Yard",
+        "ticked": true
+      }
+    ],
+    "reason": "Convert five choices to four; remove distractor Meter and relabel the area unit as D."
+  },
+  {
+    "source": "B4Q34",
+    "field": "answer",
+    "original": "E",
+    "final": "D",
+    "reason": "Convert five choices to four; remove distractor Meter and relabel the area unit as D."
+  },
+  {
+    "source": "B4Q37",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "22, 23",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "24, 23",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "22, 21",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "20, 21",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "23, 21",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "24, 23",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "22, 21",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "20, 21",
+        "ticked": false
+      }
+    ],
+    "reason": "The alternating âˆ’2,+1 pattern gives 23 then 21."
+  },
+  {
+    "source": "B4Q41",
+    "field": "stem",
+    "original": "We wear clothes because ______.",
+    "final": "What is a main protective purpose of wearing clothes?",
+    "reason": "Use an objective protective purpose rather than subjective appearance."
+  },
+  {
+    "source": "B4Q41",
+    "field": "answer",
+    "original": "C",
+    "final": "B",
+    "reason": "Use an objective protective purpose rather than subjective appearance."
+  },
+  {
+    "source": "B4Q43",
+    "field": "stem",
+    "original": "If the second of the following numbers is added to the shortest number and divided by the third number, the answer will be: 2, 14, 4",
+    "final": "Add the second number to the smallest number, then divide by the third number: 2, 14, 4.",
+    "reason": "Replace shortest with smallest and clarify the order."
+  },
+  {
+    "source": "B4Q45",
+    "field": "stem",
+    "original": "AB, DEF, HIJK, MNOP, ______?",
+    "final": "Complete the letter groups: AB, DEF, HIJK, MNOPQ, _____?",
+    "reason": "Restore the missing Q to make group lengths 2,3,4,5,6 with one skipped letter between groups."
+  },
+  {
+    "source": "B4Q45",
+    "field": "answer",
+    "original": "B",
+    "final": "A",
+    "reason": "Restore the missing Q to make group lengths 2,3,4,5,6 with one skipped letter between groups."
+  },
+  {
+    "source": "B4Q45",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "STUVWX",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "STUVW X",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "STUVXZ",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "SUTV XW",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "STUVWX",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "STUVWY",
+        "ticked": true
+      },
+      {
+        "label": "C",
+        "text": "STUVXZ",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "SUTV XW",
+        "ticked": false
+      }
+    ],
+    "reason": "Remove the duplicated correct choice STUVWX."
+  },
+  {
+    "source": "B4Q51",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Sadness",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Anger",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Happiness",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Sorrow",
+        "ticked": true
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Excitement",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Anger",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Happiness",
+        "ticked": false
+      },
+      {
+        "label": "D",
+        "text": "Sorrow",
+        "ticked": true
+      }
+    ],
+    "reason": "Sadness and sorrow were synonyms, giving two correct choices."
+  },
+  {
+    "source": "B4Q51",
+    "field": "stem",
+    "original": "Laughter is to Joy as Tears are to ______?",
+    "final": "Laughter is to Joy as Tears of grief are to _____?",
+    "reason": "Specify tears of grief to exclude tears of happiness."
+  },
+  {
+    "source": "B4Q55",
+    "field": "stem",
+    "original": "Fish is to Water as Animal is to ______?",
+    "final": "Fish is to Water as a terrestrial animal is to _____?",
+    "reason": "Animals include fish; specify terrestrial for a defensible habitat comparison."
+  },
+  {
+    "source": "B4Q64",
+    "field": "answer",
+    "original": "D",
+    "final": "C",
+    "reason": "New York is the only non-national-capital city."
+  },
+  {
+    "source": "B4Q66",
+    "field": "stem",
+    "original": "Fowl is to Hen as Cub is to ______?",
+    "final": "Chick is to Hen as Cub is to _____?",
+    "reason": "Use matching young-to-adult relationships instead of Fowl-to-Hen."
+  },
+  {
+    "source": "B4Q67",
+    "field": "stem",
+    "original": "If Mushed is smaller than Azhar, but taller than Aqeel, who is the tallest of the three?",
+    "final": "Mushed is shorter than Azhar but taller than Aqeel. Who is tallest?",
+    "reason": "Replace smaller with shorter to specify height."
+  },
+  {
+    "source": "B4Q73",
+    "field": "stem",
+    "original": "Find the odd-man out.",
+    "final": "Which vehicle travels on land rather than water?",
+    "reason": "Specify the defensible boat-versus-land-vehicle distinction."
+  },
+  {
+    "source": "B4Q73",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Junk",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Packet",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Rickshaw",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Dhow",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Junk",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Packet boat",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Rickshaw",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Dhow",
+        "ticked": false
+      }
+    ],
+    "reason": "Clarify the nautical meaning of packet."
+  },
+  {
+    "source": "B4Q75",
+    "field": "stem",
+    "original": "Find the odd-man out.",
+    "final": "Which item is specifically an enclosure for a small child to play in?",
+    "reason": "Playpens are also furniture; specify the distinct use."
+  },
+  {
+    "source": "B4Q79",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "20",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "21",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "19",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "23",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "7",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "21",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "19",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "23",
+        "ticked": false
+      }
+    ],
+    "reason": "The next odd-position term is 7, omitted from the supplied choices."
+  },
+  {
+    "source": "B4Q79",
+    "field": "answer",
+    "original": "C",
+    "final": "A",
+    "reason": "19 is the following even-position term, not the next term."
+  },
+  {
+    "source": "B4Q84",
+    "field": "stem",
+    "original": "Which one is different from the rest?",
+    "final": "Which animal name explicitly refers to a male?",
+    "reason": "Clarify the sex distinction."
+  },
+  {
+    "source": "B4Q84",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "Duck",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Cow",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Bull",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Mare",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "Female duck",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "Cow",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "Bull",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "Mare",
+        "ticked": false
+      }
+    ],
+    "reason": "Duck can refer to either sex; specify female to ensure one correct choice."
+  },
+  {
+    "source": "B4Q85",
+    "field": "stem",
+    "original": "A cake is cut so that one piece, which is half of the cake, is twice as large as the other piece. How many pieces are there?",
+    "final": "A cake is cut into one half-size piece and equal remaining pieces, each half the size of that first piece. How many pieces are there?",
+    "reason": "Clarify that the remaining half forms two quarters."
+  },
+  {
+    "source": "B4Q89",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "T",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "P",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "K",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "U",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "T",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "P",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "N",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "U",
+        "ticked": false
+      }
+    ],
+    "reason": "J is two places from L; K is only one place away."
+  },
+  {
+    "source": "B4Q89",
+    "field": "stem",
+    "original": "Which letter is as far from L as J is?",
+    "final": "Which letter is two positions after L, just as J is two positions before L?",
+    "reason": "Specify the opposite direction of equal alphabet distance."
+  },
+  {
+    "source": "B4Q91",
+    "field": "stem",
+    "original": "Find the odd man out.",
+    "final": "Which vehicle runs on runners rather than wheels?",
+    "reason": "Make the sleigh distinction explicit."
+  },
+  {
+    "source": "B4Q93",
+    "field": "stem",
+    "original": "Scooter is to Petrol as Truck is to ____?",
+    "final": "In a conventional comparison, a petrol-powered scooter is to Petrol as a diesel-powered truck is to _____?",
+    "reason": "Some trucks use petrol; specify the intended fuel types."
+  },
+  {
+    "source": "B5Q2",
+    "field": "options",
+    "original": [
+      {
+        "label": "A",
+        "text": "17",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "5",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "20",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "9",
+        "ticked": false
+      }
+    ],
+    "final": [
+      {
+        "label": "A",
+        "text": "17",
+        "ticked": false
+      },
+      {
+        "label": "B",
+        "text": "5",
+        "ticked": false
+      },
+      {
+        "label": "C",
+        "text": "19",
+        "ticked": true
+      },
+      {
+        "label": "D",
+        "text": "9",
+        "ticked": false
+      }
+    ],
+    "reason": "Interleaved sequences +5 and +4 make the next even-position term 19."
+  },
+  {
+    "source": "B5Q6",
+    "field": "stem",
+    "original": "Find the missing number: 3, 7, 16 6, 13, 28 9, 19, ____",
+    "final": "Complete the third row using the same rule in each row: (3, 7, 16); (6, 13, 28); (9, 19, _____).",
+    "reason": "Preserve the three-row structure lost in pasted formatting."
+  },
+  {
+    "source": "B5Q12",
+    "field": "stem",
+    "original": "What do all books have?",
+    "final": "What do all ordinary printed books contain?",
+    "reason": "Exclude audiobooks and clarify the intended printed-book context."
+  }
+]

@@ -76,6 +76,10 @@ export interface Question {
   subjectName?: string;
   branch: MilitaryBranch | 'TRI_SERVICE';
   stem: string;
+  bankKey?: string;
+  sourceLabel?: string;
+  sourceCourse?: string;
+  sourceType?: string;
   options: QuestionOption[];
   correctOptionId: string;
   explanation: string;
