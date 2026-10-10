@@ -378,6 +378,14 @@ export const TestBuilderPage: React.FC = () => {
     if (code.includes('NON') || name.includes('NON')) return subject === 'INTELLIGENCE_NON_VERBAL';
     if (code.includes('VERBAL') || name.includes('VERBAL')) return subject === 'INTELLIGENCE_VERBAL';
     if (sec.subjects?.length) return sec.subjects.some((sub) => sub.id === q.subject_id);
+    if (code === 'INTEL_AIRMAN' || code === 'INTEL_CAE') {
+      return ['INTELLIGENCE_VERBAL', 'INTELLIGENCE_NON_VERBAL'].includes(subject);
+    }
+    // Subject-specific official sections (including the Airman fallback pattern)
+    // resolve against the existing subject codes returned by the database.
+    if (code.startsWith('ENG_') || name === 'ENGLISH') return subject === 'ACADEMIC_ENGLISH';
+    if (code.startsWith('PHYS_') || name === 'PHYSICS') return subject === 'ACADEMIC_PHYSICS';
+    if (code.startsWith('MATH_') || name === 'MATHEMATICS' || name === 'MATH') return subject === 'ACADEMIC_MATH';
     if (code.includes('ACADEMIC') || name.includes('ACADEMIC')) {
       return ['ACADEMIC_PHYSICS','ACADEMIC_CHEMISTRY','ACADEMIC_BIOLOGY','ACADEMIC_ENGLISH','ACADEMIC_MATH','GENERAL_KNOWLEDGE'].includes(subject);
     }
