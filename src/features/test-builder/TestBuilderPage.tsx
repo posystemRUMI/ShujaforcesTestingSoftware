@@ -1,4 +1,5 @@
 import { QuestionStatement } from '@/components/ui/QuestionStatement';
+import { shuffled } from '@/lib/random';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useAuth } from '@/app/providers';
@@ -384,8 +385,10 @@ export const TestBuilderPage: React.FC = () => {
   };
 
   const allocateSection = (sec: ConfiguredSectionState, pool: Question[]): string[] => {
-    if (!sec.subjectQuotas) return pool.slice(0, sec.questionCount).map(q => q.id);
-    return Object.entries(sec.subjectQuotas).flatMap(([subjectId, count]) => pool.filter(q => q.subject_id === subjectId).slice(0, count).map(q => q.id));
+    const randomized = shuffled(pool);
+    if (!sec.subjectQuotas) return randomized.slice(0, sec.questionCount).map(q => q.id);
+    const selected = Object.entries(sec.subjectQuotas).flatMap(([subjectId, count]) => randomized.filter(q => q.subject_id === subjectId).slice(0, count).map(q => q.id));
+    return shuffled(selected);
   };
 
   // Auto Question Allocator across all sections

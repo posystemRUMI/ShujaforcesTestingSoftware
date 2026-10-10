@@ -1,0 +1,1322 @@
+[
+  {
+    "ref": "V1",
+    "bank_key": "v",
+    "stem": "Which animal does not have external ears?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Rabbit",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Snake",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Cat",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Horse",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Snakes lack external ears but have inner-ear structures that detect vibrations and sound.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V2",
+    "bank_key": "v",
+    "stem": "A person walks 5 metres north and then turns right and walks 3 metres. Which direction is the person now facing?",
+    "options": [
+      {
+        "label": "A",
+        "text": "West",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "South",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "East",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "North",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Turning right while facing north means facing east.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V3",
+    "bank_key": "v",
+    "stem": "A person faces east, turns left, and then turns left again. Which direction are they facing?",
+    "options": [
+      {
+        "label": "A",
+        "text": "West",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "North",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "South",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "East",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Two left turns take the person from east to north and then west.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V4",
+    "bank_key": "v",
+    "stem": "Ali walks 4 kilometres south and then 3 kilometres east. In which direction is he from his starting point?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Northeast",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Northwest",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Southwest",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Southeast",
+        "is_correct": true
+      }
+    ],
+    "explanation": "His final position is both south and east of the starting point.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V5",
+    "bank_key": "v",
+    "stem": "A student faces north, turns right, and then turns left. Which direction is the student facing?",
+    "options": [
+      {
+        "label": "A",
+        "text": "South",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "North",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "East",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "West",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The right turn faces east, and the following left turn returns to north.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V6",
+    "bank_key": "v",
+    "stem": "A person walks 6 metres west and then 6 metres east. How far are they from their starting point?",
+    "options": [
+      {
+        "label": "A",
+        "text": "6 metres",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "12 metres",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "0 metres",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "3 metres",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Equal distances in opposite directions return the person to the starting point.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V7",
+    "bank_key": "v",
+    "stem": "What is one-third of 90?",
+    "options": [
+      {
+        "label": "A",
+        "text": "30",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "45",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "20",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "60",
+        "is_correct": false
+      }
+    ],
+    "explanation": "One-third of 90 is 90 ÷ 3 = 30.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V8",
+    "bank_key": "v",
+    "stem": "What is one-quarter of 100?",
+    "options": [
+      {
+        "label": "A",
+        "text": "20",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "50",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "40",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "25",
+        "is_correct": true
+      }
+    ],
+    "explanation": "One-quarter of 100 is 100 ÷ 4 = 25.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V9",
+    "bank_key": "v",
+    "stem": "What is one-third of one-quarter of 120?",
+    "options": [
+      {
+        "label": "A",
+        "text": "15",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "10",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "30",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "40",
+        "is_correct": false
+      }
+    ],
+    "explanation": "One-quarter of 120 is 30, and one-third of 30 is 10.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V10",
+    "bank_key": "v",
+    "stem": "One-third of a number is 24. What is one-quarter of that number?",
+    "options": [
+      {
+        "label": "A",
+        "text": "12",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "24",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "18",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "36",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The number is 24 × 3 = 72, and its quarter is 18.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V11",
+    "bank_key": "v",
+    "stem": "A car travels at 60 kilometres per hour for 2 hours. What distance does it cover?",
+    "options": [
+      {
+        "label": "A",
+        "text": "120 kilometres",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "30 kilometres",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "90 kilometres",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "180 kilometres",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Distance = speed × time = 60 × 2 = 120 kilometres.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V12",
+    "bank_key": "v",
+    "stem": "A bus covers 150 kilometres in 3 hours. What is its average speed?",
+    "options": [
+      {
+        "label": "A",
+        "text": "30 km/h",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "45 km/h",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "60 km/h",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "50 km/h",
+        "is_correct": true
+      }
+    ],
+    "explanation": "Average speed = distance ÷ time = 150 ÷ 3 = 50 km/h.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V13",
+    "bank_key": "v",
+    "stem": "How long does a vehicle take to cover 180 kilometres at 60 kilometres per hour?",
+    "options": [
+      {
+        "label": "A",
+        "text": "2 hours",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "3 hours",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "4 hours",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "5 hours",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Time = distance ÷ speed = 180 ÷ 60 = 3 hours.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V14",
+    "bank_key": "v",
+    "stem": "Evaluate: 18 ÷ 3 × 2 + 4.",
+    "options": [
+      {
+        "label": "A",
+        "text": "10",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "7",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "16",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "20",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Perform division and multiplication left to right, then add: 6 × 2 + 4 = 16.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "V15",
+    "bank_key": "v",
+    "stem": "Evaluate: 20 − 4 × 3 + 8 ÷ 2.",
+    "options": [
+      {
+        "label": "A",
+        "text": "12",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "28",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "8",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "16",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Multiplication and division first give 20 − 12 + 4 = 12.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A1",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who was the first Governor-General of Pakistan?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Liaquat Ali Khan",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Iskander Mirza",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Khawaja Nazimuddin",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Muhammad Ali Jinnah",
+        "is_correct": true
+      }
+    ],
+    "explanation": "Muhammad Ali Jinnah became Pakistan’s first Governor-General in August 1947.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A2",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who was Pakistan’s first Foreign Minister?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Liaquat Ali Khan",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Sir Muhammad Zafrulla Khan",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Zulfikar Ali Bhutto",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Huseyn Shaheed Suhrawardy",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sir Muhammad Zafrulla Khan served as Pakistan’s first Foreign Minister from 1947 to 1954.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A3",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who wrote The Discovery of India?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mahatma Gandhi",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Muhammad Ali Jinnah",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Jawaharlal Nehru",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Rabindranath Tagore",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Jawaharlal Nehru wrote The Discovery of India during his imprisonment.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A4",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who holds the record for the most wickets in men’s Test cricket?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Muttiah Muralitharan",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Shane Warne",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Wasim Akram",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Anil Kumble",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Muttiah Muralitharan finished his Test career with a record 800 wickets.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A5",
+    "bank_key": "PMA-LC-A",
+    "stem": "Jahangir Khan is famous for which sport?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Cricket",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Hockey",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Tennis",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Squash",
+        "is_correct": true
+      }
+    ],
+    "explanation": "Jahangir Khan is a Pakistani squash champion renowned for his dominance of the sport.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A6",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who was the President of Azad Jammu and Kashmir on 9 October 2026?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Sardar Masood Khan",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Dr Najeeb Naqi",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Sultan Mahmood Chaudhry",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Sardar Muhammad Yaqoob Khan",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Dr Najeeb Naqi was sworn in as AJK President on 24 September 2026.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A7",
+    "bank_key": "PMA-LC-A",
+    "stem": "According to the scholarly view that dates its obligation to the Year of Delegations, Hajj became obligatory in which Hijri year?",
+    "options": [
+      {
+        "label": "A",
+        "text": "2 AH",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "5 AH",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "9 AH",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "10 AH",
+        "is_correct": false
+      }
+    ],
+    "explanation": "This scholarly view dates the obligation of Hajj to 9 AH, although other datings exist.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": "Scholars dispute the obligation year (5/6/9/10 AH); hold for academy review even with the supplied qualified wording."
+  },
+  {
+    "ref": "A8",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who is recognised as the first martyr in Islam?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Sumayyah bint Khayyat (RA)",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Hamza ibn Abdul-Muttalib (RA)",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Bilal ibn Rabah (RA)",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Mus‘ab ibn Umayr (RA)",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Sumayyah (RA) was martyred in Makkah during the early persecution of Muslims.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": null
+  },
+  {
+    "ref": "A9",
+    "bank_key": "PMA-LC-A",
+    "stem": "What purchase price for Gwadar is reported by the MUSLIM Institute?",
+    "options": [
+      {
+        "label": "A",
+        "text": "US$1 million",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "US$5 million",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "US$10 million",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "US$3 million",
+        "is_correct": true
+      }
+    ],
+    "explanation": "The MUSLIM Institute reports that Pakistan purchased Gwadar from Oman for US$3 million in 1958.",
+    "provenance": "Practice — based on LC-159 reported topics",
+    "review_reason": "Purchase-price currency is disputed (US dollars versus pounds); the supplied institute reference could not be retrieved. Hold for authoritative-reference review."
+  },
+  {
+    "ref": "A10",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who led the Quit India Movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Jawaharlal Nehru",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Mahatma Gandhi",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Subhas Chandra Bose",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Bal Gangadhar Tilak",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Gandhi called for the end of British rule through the Quit India Movement.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A11",
+    "bank_key": "PMA-LC-A",
+    "stem": "In which year was the Quit India Movement launched?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1930",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1919",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "1942",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "1947",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The Quit India Movement was launched in August 1942.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A12",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who launched the Civil Disobedience Movement in India in 1930?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mahatma Gandhi",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Muhammad Ali Jinnah",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Sir Syed Ahmad Khan",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Lord Curzon",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Gandhi launched the movement through nonviolent defiance of British laws.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A13",
+    "bank_key": "PMA-LC-A",
+    "stem": "In which year did Gandhi’s Civil Disobedience Movement begin?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1920",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1942",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "1905",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1930",
+        "is_correct": true
+      }
+    ],
+    "explanation": "The movement began in 1930 with Gandhi’s Salt March.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A14",
+    "bank_key": "PMA-LC-A",
+    "stem": "Which event marked the beginning of the Civil Disobedience Movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Partition of Bengal",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Salt March",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Formation of the Muslim League",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Quit India resolution",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The Salt March challenged the British salt monopoly and initiated the movement.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A15",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who led the Salt March?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Annie Besant",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Bal Gangadhar Tilak",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Mahatma Gandhi",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Muhammad Ali Jinnah",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Gandhi led the march to Dandi in 1930 to protest the British salt tax.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A16",
+    "bank_key": "PMA-LC-A",
+    "stem": "In which year did the Non-Cooperation Movement begin?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1920",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "1905",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "1930",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1942",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The Non-Cooperation Movement began in 1920 against British colonial rule.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A17",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who launched the Non-Cooperation Movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Lord Mountbatten",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Sir Syed Ahmad Khan",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Subhas Chandra Bose",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Mahatma Gandhi",
+        "is_correct": true
+      }
+    ],
+    "explanation": "Gandhi urged Indians to withdraw cooperation from British institutions.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A18",
+    "bank_key": "PMA-LC-A",
+    "stem": "The Swadeshi Movement was strongly associated with which event?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Quit India Movement",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Partition of Bengal in 1905",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Lahore Resolution",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Cabinet Mission",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The movement opposed Bengal’s partition through boycotts and support for Indian-made goods.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A19",
+    "bank_key": "PMA-LC-A",
+    "stem": "In which year did the anti-partition Swadeshi Movement begin?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1916",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1920",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "1905",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "1930",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The anti-partition Swadeshi campaign began in 1905.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A20",
+    "bank_key": "PMA-LC-A",
+    "stem": "Which brothers were prominent leaders of the Khilafat Movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Muhammad Ali Jauhar and Shaukat Ali",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Muhammad Ali Jinnah and Ahmad Ali",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Jawaharlal Nehru and Motilal Nehru",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Muhammad Iqbal and Muhammad Ali Jinnah",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The Ali brothers were leading organisers of the Khilafat Movement.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A21",
+    "bank_key": "PMA-LC-A",
+    "stem": "The Khilafat Movement primarily sought to protect which institution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "British monarchy",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Indian National Congress",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Mughal Empire",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Ottoman Caliphate",
+        "is_correct": true
+      }
+    ],
+    "explanation": "The movement sought to preserve the Ottoman Caliph’s position after World War I.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A22",
+    "bank_key": "PMA-LC-A",
+    "stem": "In which year did the Khilafat Movement begin in India?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1905",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1919",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "1930",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1942",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The Khilafat Movement emerged in India in 1919.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A23",
+    "bank_key": "PMA-LC-A",
+    "stem": "Which leaders established the major Home Rule leagues in India?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Gandhi and Jinnah",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Nehru and Subhas Chandra Bose",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Annie Besant and Bal Gangadhar Tilak",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Sir Syed Ahmad Khan and Muhammad Iqbal",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Besant and Tilak established separate Home Rule leagues seeking Indian self-government.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A24",
+    "bank_key": "PMA-LC-A",
+    "stem": "In which year were the major Indian Home Rule leagues launched?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1916",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "1905",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "1930",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1942",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Tilak’s and Besant’s Home Rule leagues were founded in 1916.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A25",
+    "bank_key": "PMA-LC-A",
+    "stem": "Martin Luther King Jr. was prominently associated with which movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Swadeshi Movement",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Khilafat Movement",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Home Rule Movement",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "American Civil Rights Movement",
+        "is_correct": true
+      }
+    ],
+    "explanation": "King was a leading advocate of racial equality through nonviolent protest in the United States.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A26",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who was a prominent leader of the American Civil Rights Movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nelson Mandela",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Martin Luther King Jr.",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Winston Churchill",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Bal Gangadhar Tilak",
+        "is_correct": false
+      }
+    ],
+    "explanation": "King helped lead campaigns against racial segregation and discrimination.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A27",
+    "bank_key": "PMA-LC-A",
+    "stem": "What was a central aim of the American Civil Rights Movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Restoring the Ottoman Caliphate",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Establishing British rule",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Securing racial equality and equal civil rights",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Promoting the partition of Bengal",
+        "is_correct": false
+      }
+    ],
+    "explanation": "The movement challenged racial discrimination, segregation, and unequal access to voting rights.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A28",
+    "bank_key": "PMA-LC-A",
+    "stem": "Who was a prominent leader of South Africa’s anti-apartheid movement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nelson Mandela",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Abraham Lincoln",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Jawaharlal Nehru",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Winston Churchill",
+        "is_correct": false
+      }
+    ],
+    "explanation": "Mandela was a leading figure in the struggle against apartheid in South Africa.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  },
+  {
+    "ref": "A29",
+    "bank_key": "PMA-LC-A",
+    "stem": "What did the Suffragette Movement primarily demand?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Higher import taxes",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Restoration of monarchy",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Colonial expansion",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Women’s right to vote",
+        "is_correct": true
+      }
+    ],
+    "explanation": "Suffragettes campaigned for women to receive voting rights.",
+    "provenance": "LC-159 preparation",
+    "review_reason": null
+  }
+]
