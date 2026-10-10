@@ -103,3 +103,29 @@ Browser evidence is stored in ignored `qa-artifacts/attendance-*` files. Existin
 - No migration-access blockers remain.
 - Historical active/archive transitions from before this module cannot be recovered from the old schema; explicit historical creation uses known enrollment data and then preserves its snapshot.
 - Physical printer output and browsers other than the tested Chromium desktop/mobile viewports were not tested.
+
+## Hosted follow-up verification — 10 October 2026
+
+- The authenticated student attendance RPC returned today's saved `PRESENT` status, an `OPEN` register and the persisted arrival timestamp `09:26:01 UTC` (`14:26:01 Asia/Karachi`).
+- Its October summary returned zero finalized Present/Absent/Excused days and a null percentage. This is expected while no eligible finalized class-day records exist; today's live status is reported separately.
+- Clarified the student summary label to “Finalized attendance” and its empty percentage text to “No finalized attendance percentage yet.” Backend calculations were preserved.
+- Reran the hosted rollback regression: all nine returned check groups passed, including course eligibility, duplicate marking, finalization, corrections, percentages, non-class days, timezone handling and actual authenticated RLS. The existing live-day synchronization scenario was skipped because today's register already exists.
+- Confirmed no rollback-fixture Auth users remained. No live register was finalized or real student attendance changed for this verification. Live administrator activity may continue during read-only checks.
+
+## Course-specific attendance entry — 10 October 2026
+
+The existing admin page now shows five course panels instead of three force panels: PMA Long Course, AFNS, CAE, Airman and PN Cadet. Each panel obtains its actual course ID, force relationship and fixed prefix from the hosted report catalog, filters its records/counts by that course, and accepts only a numeric suffix.
+
+| Course | Fixed entry prefix |
+| --- | --- |
+| PMA Long Course | SFA-PMA- |
+| AFNS | SFA-AFNS- |
+| CAE | SFA-CAE- |
+| Airman | SFA-AIRMAN- |
+| PN Cadet | SFA-PNCADET- |
+
+Applied migration `20261010000055_course_attendance_entry.sql` adds unique, constrained `attendance_course_rules.roll_prefix` values and the admin-only `attendance_mark_course(date, course, suffix)` RPC. The backend validates the actual saved course/force eligibility and historical roster before completing a mark; failures roll back marking, roster synchronization and audit together. Register locking, one daily student record, finalization restrictions, RLS and student dashboard calculations remain intact.
+
+Existing Navy `SFA-NAVY-*` and Air Force `SFA-PAF-*` identifiers are preserved and resolved server-side under the corresponding course label. The entry prefixes do not rename students or change registration numbering. Saved additional course enrollments can resolve the same original roll; ambiguous suffixes are rejected rather than guessing a student. Suffixes remain strings, preserving leading zeros.
+
+Verification: all seven hosted course regression groups and nine existing attendance regression groups passed using rollback-only fixtures. The browser verified all five database prefixes, reload persistence, suffix-only inputs, leading-zero preservation and no horizontal overflow at 1440, 768 and 390px. Enter submits the exact course ID/suffix; an aborted write displays an error and retains input without saving. TypeScript and production build passed, with the existing asset/chunk warnings. No real student attendance was changed for QA. Hosted migration applied; frontend deployment was not performed.
