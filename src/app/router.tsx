@@ -51,6 +51,8 @@ const ExamFinishPage = safeLazy(() => import('@/features/exam-engine/ExamFinishP
 const StudentLeaderboardPage = safeLazy(() => import('@/features/leaderboard/StudentLeaderboardPage'));
 const TeacherLeaderboardPage = safeLazy(() => import('@/features/leaderboard/TeacherLeaderboardPage'));
 const FinancePage = safeLazy(() => import('@/features/finance/FinancePage'));
+const AttendancePage = safeLazy(() => import('@/features/attendance/AttendancePage'));
+const StudentAttendancePage = safeLazy(() => import('@/features/attendance/StudentAttendance'));
 const NotFoundPage = safeLazy(() => import('@/features/not-found/NotFoundPage'));
 
 // Sober Institutional Loading Fallback
@@ -150,6 +152,10 @@ export const router = createBrowserRouter([
             <StudentsListPage />
           </Suspense>
         ),
+      },
+      {
+        path: 'attendance',
+        element: <RequireRole allowedRoles={['ADMIN']}><Suspense fallback={<PageLoadingFallback />}><AttendancePage /></Suspense></RequireRole>,
       },
       {
         path: 'students/register',
@@ -333,6 +339,10 @@ export const router = createBrowserRouter([
       </RequireRole>
     ),
     children: [
+      {
+        path: 'attendance',
+        element: <Suspense fallback={<PageLoadingFallback />}><StudentAttendancePage /></Suspense>,
+      },
       {
         index: true,
         element: (

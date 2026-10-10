@@ -235,19 +235,28 @@ export const OFFICIAL_TEST_PATTERNS: Record<string, OfficialTestConfig[]> = {
   ],
 
   // 5. Pakistan Navy — PN Cadet
-  // Sequence: Intelligence -> Academic
+  // Separate Navy sections; counts and minutes are editable defaults.
   PN_CADET: [
     {
       sequence: 1,
-      testName: 'Intelligence',
-      code: 'INTEL_PN_CADET',
-      totalQuestions: 40,
-      passingMarks: 24,
+      testName: 'Verbal Intelligence',
+      code: 'VERBAL_PN_CADET',
+      totalQuestions: 25,
+      passingMarks: 15,
       passingScorePercent: 60,
       durationMinutes: 25,
     },
     {
       sequence: 2,
+      testName: 'Non-Verbal Intelligence',
+      code: 'NON_VERBAL_PN_CADET',
+      totalQuestions: 15,
+      passingMarks: 9,
+      passingScorePercent: 60,
+      durationMinutes: 25,
+    },
+    {
+      sequence: 3,
       testName: 'Academic',
       code: 'ACADEMIC_PN_CADET',
       totalQuestions: 40,

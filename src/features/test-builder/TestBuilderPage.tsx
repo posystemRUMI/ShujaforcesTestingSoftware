@@ -957,12 +957,16 @@ export const TestBuilderPage: React.FC = () => {
                         {sec.enabled && (
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-sm pt-1">
                             <div>
-                              <label className="block text-xs font-bold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
+                              <label htmlFor={`section-count-${sec.id}`} className="block text-xs font-bold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
                                 Question Count (Default: {sec.defaultQuestions})
                               </label>
                               <div className="flex items-center space-x-3">
                                 <input
+                                  id={`section-count-${sec.id}`}
+                                  aria-label={`${sec.sectionName} question count`}
                                   type="number"
+                                  min={1}
+                                  step={1}
                                   disabled={!sec.canOverrideCount}
                                   value={sec.questionCount}
                                   onChange={(e) => updateSectionQuestionCount(sec.id, Number(e.target.value))}
@@ -975,12 +979,16 @@ export const TestBuilderPage: React.FC = () => {
                             </div>
 
                             <div>
-                              <label className="block text-xs font-bold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
+                              <label htmlFor={`section-duration-${sec.id}`} className="block text-xs font-bold text-[#0E1B2A] mb-1.5 uppercase tracking-wide">
                                 Duration Minutes (Default: {sec.defaultDuration} min)
                               </label>
                               <div className="flex items-center space-x-3">
                                 <input
+                                  id={`section-duration-${sec.id}`}
+                                  aria-label={`${sec.sectionName} duration minutes`}
                                   type="number"
+                                  min={1}
+                                  step={1}
                                   disabled={!sec.canOverrideDuration}
                                   value={sec.durationMinutes}
                                   onChange={(e) => updateSectionDuration(sec.id, Number(e.target.value))}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { StudentAttendanceCard } from '@/features/attendance/StudentAttendance';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Clock3, ListChecks, ShieldCheck, Target } from 'lucide-react';
@@ -48,6 +49,7 @@ export function PortalPage({ page }: { page: 'dashboard' | 'profile' | 'results'
       <Panel title="Your Standings"><p className="student-standing">{p.course_name || 'Course not recorded'}: {rank(d.course_position)}</p><Link className="student-button student-button-secondary" to="/student/leaderboard">View Leaderboard<ArrowUpRight size={15} aria-hidden="true" /></Link></Panel>
       <Panel title="Fees"><Metrics items={[["Total Fee", money(d.fees.total_fee)], ["Paid Fee", d.fees.total_fee === null ? 'Not recorded' : money(d.fees.paid_fee)], ["Remaining Fee", money(d.fees.remaining_fee)]]} /><Link className="student-link" to="/student/fees">View fee accounts and payment history</Link></Panel>
     </div>
+    <StudentAttendanceCard />
     <Panel title="Assigned Tests"><Assignments tests={d.assigned_tests} /></Panel>
     <Panel title="Recent Examination History"><History results={d.results.slice(0, 10)} timezone={d.timezone} /></Panel>
   </div>;

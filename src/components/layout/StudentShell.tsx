@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom';
-import { LogOut, ArrowRight, BookOpen, Award, UserCheck, LayoutDashboard, Trophy, Wallet } from 'lucide-react';
+import { LogOut, ArrowRight, BookOpen, Award, UserCheck, LayoutDashboard, Trophy, Wallet, CalendarCheck } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { ShujaForcesLogo } from '@/components/brand/ShujaForcesLogo';
 import { useRealtimeSync } from '@/hooks/useRealtimeSync';
@@ -14,6 +14,7 @@ const links = [
   { to: '/student/results', label: 'My Results', mobile: 'Results', icon: Award },
   { to: '/student/leaderboard', label: 'Leaderboard', mobile: 'Rankings', icon: Trophy },
   { to: '/student/fees', label: 'My Fees', mobile: 'Fees', icon: Wallet },
+  { to: '/student/attendance', label: 'My Attendance', mobile: 'Attendance', icon: CalendarCheck },
   { to: '/student/profile', label: 'My Profile', mobile: 'Profile', icon: UserCheck },
 ];
 export const StudentShell: React.FC = () => {

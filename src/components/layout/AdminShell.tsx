@@ -10,6 +10,7 @@ import {
   Sparkles,
   Trophy,
   Wallet,
+  CalendarCheck,
 } from 'lucide-react';
 import { Sidebar, Topbar, ResponsiveDrawer } from '@/components/ui';
 import { useAuth } from '@/app/providers';
@@ -20,6 +21,7 @@ import { MotionConfig } from 'framer-motion';
 const NAV_ITEMS = [
   { label: 'Dashboard', to: '/admin/dashboard', icon: LayoutDashboard },
   { label: 'Students', to: '/admin/students', icon: IdCard },
+  { label: 'Attendance', to: '/admin/attendance', icon: CalendarCheck },
   { label: 'Faculty', to: '/admin/teachers', icon: GraduationCap },
   { label: 'Question Bank', to: '/admin/questions', icon: FileQuestion },
   { label: 'Question Authoring', to: '/admin/authoring', icon: PenSquare },
@@ -38,7 +40,7 @@ export const AdminShell: React.FC = () => {
 
   const filteredNavItems = React.useMemo(() => {
     return NAV_ITEMS.filter((item) => {
-      if (item.to === '/admin/finance') {
+      if (item.to === '/admin/finance' || item.to === '/admin/attendance') {
         return role === 'ADMIN';
       }
       return true;
